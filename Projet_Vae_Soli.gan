@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Untitled Gantt Project" company="" webLink="http://" view-date="2010-11-03" view-index="0" gantt-divider-location="467" resource-divider-location="-1" version="2.0">
+    <description/>
+    <view zooming-state="default:0" id="gantt-chart"/>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="55" order="0"/>
+        <field id="1" name="Rôle par défaut" width="44" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <calendar id="1" name="default">
+                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+                <overriden-day-types/>
+                <days/>
+            </calendar>
+        </day-types>
+    </calendars>
+    <tasks color="#8cb6ce">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Properties" color="#8cb6ce" meeting="false" start="2010-11-01" duration="3" complete="0" priority="1" expand="true">
+            <task id="1" name="Récupérer les properties de VS" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="3" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="2" name="Récupérer les properties de l2j" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="3" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="3" name="Comparer les deux properties" color="#8cb6ce" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true">
+                <depend id="4" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="48" name="Lister les différences" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="4" name="Adapter les properties de l2j à VS" color="#8cb6ce" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="true">
+                <depend id="27" type="2" difference="0" hardness="Strong"/>
+                <depend id="46" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="5" name="Base de données" color="#8cb6ce" meeting="false" start="2010-11-01" duration="4" complete="0" priority="1" expand="true">
+            <task id="6" name="Récupérer la bdd de VS" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="7" name="Récupérer la bdd vierge de l2j" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="8" name="Comparer les deux bdd" color="#8cb6ce" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true">
+                <depend id="26" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="26" name="Lister les différences" color="#8cb6ce" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="true">
+                <depend id="9" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="9" name="Fabriquer un outil de conversion" color="#8cb6ce" meeting="false" start="2010-11-04" duration="1" complete="0" priority="1" expand="true">
+                <depend id="27" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="49" name="Convertir la bdd" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="12" name="Emulateur" color="#8cb6ce" meeting="false" start="2010-11-01" duration="3" complete="0" priority="1" expand="true">
+            <task id="13" name="Récupérer les sources de VS" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="14" name="Récupérer les sources de l2j" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="15" name="Lister tous les MODs de VS" color="#8cb6ce" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true">
+                <depend id="16" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="16" name="Adapter les MODS à VS" color="#8cb6ce" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="true">
+                <depend id="27" type="2" difference="0" hardness="Strong"/>
+                <depend id="46" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="20" name="HTML" color="#8cb6ce" meeting="false" start="2010-11-01" duration="3" complete="0" priority="1" expand="true">
+            <task id="22" name="Récupérer les HTML de VS" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="24" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="23" name="Récupérer les HTML de l2j" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="24" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="24" name="Lister les modifications de VS" color="#8cb6ce" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true">
+                <depend id="25" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="25" name="Adapter les HTML à VS" color="#8cb6ce" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="true">
+                <depend id="27" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="28" name="XML" color="#8cb6ce" meeting="false" start="2010-11-01" duration="4" complete="0" priority="1" expand="true">
+            <task id="43" name="Récupérer les XML de VS" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="false">
+                <depend id="39" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="41" name="Récupérer les XML de l2j" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="false">
+                <depend id="39" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="39" name="Comparer les XML" color="#8cb6ce" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="false">
+                <depend id="37" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="37" name="Lister les différences" color="#8cb6ce" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="false">
+                <depend id="35" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="35" name="Adapter les XML à VS" color="#8cb6ce" meeting="false" start="2010-11-04" duration="1" complete="0" priority="1" expand="false">
+                <depend id="27" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="44" name="Wiki" color="#8cb6ce" meeting="false" start="2010-11-01" duration="4" complete="0" priority="1" expand="true">
+            <task id="45" name="Choix du wiki" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="47" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="47" name="Mise en place du wiki" color="#8cb6ce" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true">
+                <depend id="46" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="46" name="Ecriture des tutoriels" color="#8cb6ce" meeting="false" start="2010-11-04" duration="1" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="18" name="PTS" color="#8cb6ce" meeting="false" start="2010-11-05" duration="4" complete="0" priority="1" expand="true">
+            <task id="27" name="Compiler le server" color="#8cb6ce" meeting="false" start="2010-11-05" duration="1" complete="0" priority="1" expand="true">
+                <depend id="53" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="53" name="Mise en PTS" color="#8cb6ce" meeting="false" start="2010-11-08" duration="1" complete="0" priority="1" expand="true">
+                <depend id="54" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="54" name="Effectuer les tests" color="#8cb6ce" meeting="false" start="2010-11-09" duration="1" complete="0" priority="1" expand="true">
+                <depend id="55" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="55" name="Valider la production" color="#8cb6ce" meeting="false" start="2010-11-10" duration="1" complete="0" priority="1" expand="true">
+                <depend id="51" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="19" name="Production" color="#8cb6ce" meeting="false" start="2010-11-11" duration="3" complete="0" priority="1" expand="true">
+            <task id="51" name="Récupérer la dernière bdd de VS" color="#8cb6ce" meeting="false" start="2010-11-11" duration="1" complete="0" priority="1" expand="true">
+                <depend id="52" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="52" name="Convertir la bdd" color="#8cb6ce" meeting="false" start="2010-11-12" duration="1" complete="0" priority="1" expand="true">
+                <depend id="56" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="56" name="Mise en production" color="#8cb6ce" meeting="false" start="2010-11-15" duration="1" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="57" name="Dédié" color="#8cb6ce" meeting="false" start="2010-11-01" duration="5" complete="0" priority="1" expand="true">
+            <task id="58" name="Etude de l'existant" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="60" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="59" name="Etude des possibilités de OVH" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="60" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="60" name="Décision de changer ou non" color="#8cb6ce" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true">
+                <depend id="61" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="61" name="Récupération des config du dédié (Kirieh)" color="#8cb6ce" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="true">
+                <depend id="62" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="62" name="Commande du dédié" color="#8cb6ce" meeting="false" start="2010-11-04" duration="1" complete="0" priority="1" expand="true">
+                <depend id="63" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="63" name="Mise en place du dédié" color="#8cb6ce" meeting="false" start="2010-11-05" duration="1" complete="0" priority="1" expand="true">
+                <depend id="56" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd3" order="0" width="163"/>
+        <displaycolumn property-id="tpd4" order="1" width="32"/>
+        <displaycolumn property-id="tpd5" order="2" width="30"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
