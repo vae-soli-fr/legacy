@@ -135,6 +135,12 @@
             </task>
             <task id="70" name="Mise en place du codebrowser" color="#8cb6ce" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="true"/>
         </task>
+        <task id="71" name="Dropcalc" color="#8cb6ce" meeting="false" start="2010-11-01" duration="2" complete="0" priority="1" expand="true">
+            <task id="72" name="Récupérer les sources de KMD" color="#8cb6ce" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                <depend id="73" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="73" name="Adapter à VS" color="#8cb6ce" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true"/>
+        </task>
         <task id="18" name="PTS" color="#8cb6ce" meeting="false" start="2010-11-05" duration="4" complete="0" priority="1" expand="true">
             <task id="27" name="Compiler le server" color="#8cb6ce" meeting="false" start="2010-11-05" duration="1" complete="0" priority="1" expand="true">
                 <depend id="53" type="2" difference="0" hardness="Strong"/>
