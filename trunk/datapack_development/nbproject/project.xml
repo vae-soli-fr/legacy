@@ -22,12 +22,6 @@
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
-                    <label>build</label>
-                    <type>java</type>
-                    <location>build</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
                     <label>cb_data</label>
                     <type>java</type>
                     <location>cb_data</location>
@@ -43,12 +37,6 @@
                     <label>data</label>
                     <type>java</type>
                     <location>data</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>nbproject</label>
-                    <type>java</type>
-                    <location>nbproject</location>
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
@@ -83,10 +71,6 @@
                         <location>.settings</location>
                     </source-folder>
                     <source-folder style="packages">
-                        <label>build</label>
-                        <location>build</location>
-                    </source-folder>
-                    <source-folder style="packages">
                         <label>cb_data</label>
                         <location>cb_data</location>
                     </source-folder>
@@ -97,10 +81,6 @@
                     <source-folder style="packages">
                         <label>data</label>
                         <location>data</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>nbproject</label>
-                        <location>nbproject</location>
                     </source-folder>
                     <source-folder style="packages">
                         <label>sql</label>
@@ -125,33 +105,10 @@
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
             <compilation-unit>
                 <package-root>.settings</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>build</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
                 <package-root>cb_data</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
                 <package-root>cb_sql</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
                 <package-root>data</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>nbproject</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
                 <package-root>sql</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
                 <package-root>tools</package-root>
                 <source-level>1.5</source-level>
             </compilation-unit>

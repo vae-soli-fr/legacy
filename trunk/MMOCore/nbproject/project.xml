@@ -22,21 +22,9 @@
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
-                    <label>build</label>
-                    <type>java</type>
-                    <location>build</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
                     <label>lib</label>
                     <type>java</type>
                     <location>lib</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>nbproject</label>
-                    <type>java</type>
-                    <location>nbproject</location>
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
@@ -65,16 +53,8 @@
                         <location>.settings</location>
                     </source-folder>
                     <source-folder style="packages">
-                        <label>build</label>
-                        <location>build</location>
-                    </source-folder>
-                    <source-folder style="packages">
                         <label>lib</label>
                         <location>lib</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>nbproject</label>
-                        <location>nbproject</location>
                     </source-folder>
                     <source-folder style="packages">
                         <label>src</label>
@@ -95,22 +75,9 @@
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
             <compilation-unit>
                 <package-root>.settings</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>build</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
                 <package-root>lib</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>nbproject</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
                 <package-root>src</package-root>
+                <classpath mode="compile">lib/javolution.jar</classpath>
                 <source-level>1.5</source-level>
             </compilation-unit>
         </java-data>
