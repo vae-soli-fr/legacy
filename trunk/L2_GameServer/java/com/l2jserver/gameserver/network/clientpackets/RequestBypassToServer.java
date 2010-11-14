@@ -110,6 +110,13 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				
 				ach.useAdminCommand(_command, activeChar);
 			}
+            // autoriser les requêtes d'édition de description
+            else if (_command.startsWith("char_desc"))
+            {
+            String description = _command.substring(10);
+            activeChar.setDesc(description);
+            activeChar.sendMessage("Votre description a été enregistrée.");
+            }
 			else if (_command.equals("come_here") && ( activeChar.isGM()))
 			{
 				comeHere(activeChar);

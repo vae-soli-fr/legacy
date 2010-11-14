@@ -524,7 +524,15 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-			
+
+            /**
+             * Suppression des descriptions associées
+             **/
+            statement = con.prepareStatement("DELETE FROM descriptions WHERE charId=?");
+            statement.setInt(1, objid);
+            statement.execute();
+            statement.close();
+
 			statement = con.prepareStatement("DELETE FROM characters WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();

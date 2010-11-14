@@ -240,6 +240,7 @@ import handlers.voicedcommandhandlers.Lang;
 import handlers.voicedcommandhandlers.TvTVoicedInfo;
 import handlers.voicedcommandhandlers.Wedding;
 import handlers.voicedcommandhandlers.stats;
+import handlers.voicedcommandhandlers.Desc;
 
 import java.util.logging.Logger;
 
@@ -536,6 +537,8 @@ public class MasterHandler
 			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Lang());
 		if (Config.L2JMOD_DEBUG_VOICE_COMMAND)
 			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Debug());
+        if (Config.VAEMOD_DESC)
+            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Desc());
 		_log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	

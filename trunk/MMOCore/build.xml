@@ -29,6 +29,7 @@
             description="Compile the source.">
 
         <javac destdir="${build.classes}"
+               encoding="UTF-8"
                optimize="off"
                debug="on"
                source="1.5"

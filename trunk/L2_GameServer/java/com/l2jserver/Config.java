@@ -81,9 +81,22 @@ public final class Config
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer.properties";
 	public static final String GRANDBOSS_CONFIG_FILE = "./config/Grandboss.properties";
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
-	
+	public static final String CUSTOM_FILE = "./config/custom.properties";
 	
 	//--------------------------------------------------
+	// Paramètres des customisations de Vae Soli
+	//--------------------------------------------------
+    public static boolean VAEMOD_DESC; // mod description
+    public static boolean VAEMOD_REDSKY; // mod redsky
+    public static boolean VAEMOD_SKYISRED = false; // mod redsky
+    public static boolean VAEMOD_NPCCREST; // mod npccrest
+    public static boolean VAEMOD_MOVIE; // mod movie
+    public static int VAEMOD_MOVIELVL; // mod movie
+    public static String VAEMOD_ADMINMESSAGEAREA; // mod adminmessage
+    public static boolean VAEMOD_TITLE; // mod titre
+    public static boolean VAEMOD_FSDAMAGES; // mod Damages
+
+    //--------------------------------------------------
 	// L2J Variable Definitions
 	//--------------------------------------------------
 	public static int MASTERACCESS_LEVEL;
@@ -1161,7 +1174,29 @@ public final class Config
 					e.printStackTrace();
 					throw new Error("Failed to Load "+IP_CONFIG_FILE+" File.");
 				}
-				
+
+                // Chargement des paramètres de customisation de Vae Soli
+				try
+				{
+					L2Properties customSettings = new L2Properties();
+					is = new FileInputStream(new File(CUSTOM_FILE));
+					customSettings.load(is);
+                    VAEMOD_ADMINMESSAGEAREA = customSettings.getProperty("AdminMessageArea", "OFF");
+                    VAEMOD_DESC = Boolean.parseBoolean(customSettings.getProperty("ActiverDescriptions", "false"));
+                    VAEMOD_FSDAMAGES = Boolean.parseBoolean(customSettings.getProperty("ActiverFSDamages", "false"));
+                    VAEMOD_MOVIE = Boolean.parseBoolean(customSettings.getProperty("ActiverModMovie", "false"));
+                    VAEMOD_MOVIELVL = Integer.parseInt(customSettings.getProperty("AccessLevelMovie", "1"));
+                    VAEMOD_NPCCREST = Boolean.parseBoolean(customSettings.getProperty("ActiverNpcCrest", "false"));
+                    VAEMOD_REDSKY = Boolean.parseBoolean(customSettings.getProperty("ActiverModRedSky", "false"));
+                    VAEMOD_TITLE = Boolean.parseBoolean(customSettings.getProperty("ActiverModTitre", "false"));
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+					throw new Error("Failed to Load " + CUSTOM_FILE + " File.");
+				}
+
+
 				// Load Community Properties file (if exists)
 				try
 				{

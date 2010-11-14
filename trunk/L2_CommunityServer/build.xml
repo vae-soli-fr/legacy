@@ -31,6 +31,7 @@
     
     <target name="compile" depends="init">
         <javac destdir="${build.classes}"
+               encoding="UTF-8"
                optimize="on"
                debug="on"
                source="1.6"

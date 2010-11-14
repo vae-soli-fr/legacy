@@ -6994,7 +6994,79 @@ public final class L2PcInstance extends L2Playable
 	{
 		return getAccessLevel().isGm();
 	}
-	
+
+    /**
+     *  Mod DescByName par Melua
+     * relie la description au nom et non pas à l'ID
+     */
+
+    public void showDesc(L2PcInstance viewer)
+    {
+    String description = this.getDesc();
+    if (description != null)
+    {
+    NpcHtmlMessage html = new NpcHtmlMessage(1);
+    html.setHtml("<html><title>" + this.getName() + "</title><body>" + description + "</body></html>");
+    viewer.sendPacket(html);
+    } else {
+    viewer.sendMessage("Ce personnage ne possède pas de description.");
+    }
+    }
+
+    public String getDesc() // BY NAME
+    {
+    Connection con = null;
+    String description = null;
+    try
+    {
+    con = L2DatabaseFactory.getInstance().getConnection();
+    PreparedStatement statement = con.prepareStatement("SELECT char_desc FROM descriptions WHERE charId = ? AND char_name = ?");
+    statement.setInt(1, this.getObjectId());
+    statement.setString(2, this.getName());
+    ResultSet rset = statement.executeQuery();
+    while (rset.next()) description = rset.getString("char_desc");
+    rset.close();
+    statement.close();
+    }
+    catch (Exception e) { }
+    finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
+    return description;
+    }
+
+    public void setDesc(String description) // BY NAME
+    {
+    this.delDesc();
+    if (description.length() > 600) description = description.substring(0, 599);
+    Connection con = null;
+    try
+    {
+    con = L2DatabaseFactory.getInstance().getConnection();
+    PreparedStatement statement = con.prepareStatement("INSERT INTO descriptions VALUES (?,?,'" + description + "');");
+    statement.setInt(1, this.getObjectId());
+    statement.setString(2, this.getName());
+    statement.execute();
+    statement.close();
+    }
+    catch (Exception e) { }
+    finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
+    }
+
+    public void delDesc() // BY NAME
+    {
+    Connection con = null;
+    try
+    {
+    con = L2DatabaseFactory.getInstance().getConnection();
+    PreparedStatement statement = con.prepareStatement("DELETE FROM descriptions WHERE charId = ? AND char_name = ?");
+    statement.setInt(1, this.getObjectId());
+    statement.setString(2, this.getName());
+    statement.execute();
+    statement.close();
+    }
+    catch (Exception e) { }
+    finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
+    }
+
 	/**
 	 * Set the _accessLevel of the L2PcInstance.<BR><BR>
 	 */
