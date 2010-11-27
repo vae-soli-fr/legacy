@@ -558,78 +558,74 @@
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="485" name="Tattoo of Power">
-		<for>
-			<add order="0x10" stat="pDef" val="53" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="486" name="Tattoo of Fire">
-		<for>
-			<add order="0x10" stat="pDef" val="73" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="487" name="Tattoo of Resolve">
-		<for>
-			<add order="0x10" stat="pDef" val="73" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="488" name="Tattoo of Flame">
-		<for>
-			<add order="0x10" stat="pDef" val="139" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="489" name="Tattoo of Bravery">
-		<for>
-			<add order="0x10" stat="pDef" val="110" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="490" name="Tattoo of Blood">
-		<for>
-			<add order="0x10" stat="pDef" val="132" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="491" name="Tattoo of Absolute">
-		<for>
-			<add order="0x10" stat="pDef" val="146" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="492" name="Tattoo of Soul">
-		<for>
-			<add order="0x10" stat="pDef" val="65" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="493" name="Tattoo of Avadon">
-		<for>
-			<add order="0x10" stat="pDef" val="117" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="494" name="Tattoo of Doom">
-		<for>
-			<add order="0x10" stat="pDef" val="125" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="495" name="Tattoo of Pledge">
-		<for>
-			<add order="0x10" stat="pDef" val="124" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="496" name="Tattoo of Divine">
-		<for>
-			<add order="0x10" stat="pDef" val="131" />
-			<enchant order="0x0C" stat="pDef" val="0" />
-		</for>
-	</item>
+  <item id="485" name="Tattoo of Power">
+    <for>
+      <mul val="1.05" order="0x40" stat="pAtk"/>
+    </for>
+  </item>
+  <item id="486" name="Tattoo of Fire">
+    <for>
+      <mul val="1.05" order="0x40" stat="mAtk"/>
+      <mul val="1.05" order="0x30" stat="mAtkSpd"/>
+    </for>
+  </item>
+  <item id="487" name="Tattoo of Resolve">
+     <for>
+      <mul val="1.05" order="0x40" stat="pAtk"/>
+      <mul val="1.05" order="0x30" stat="pAtkSpd"/>
+    </for>
+  </item>
+  <item id="488" name="Tattoo of Flame">
+    <for>
+      <add val="1000" order="0x10" stat="maxMp"/>
+      <mul val="1.10" order="0x40" stat="mAtk"/>
+    </for>
+  </item>
+  <item id="489" name="Tattoo of Bravery">
+      <for>
+      <add val="1000" order="0x10" stat="maxHp"/>
+      <mul val="1.10" order="0x40" stat="pAtk"/>
+    </for>
+  </item>
+  <item id="490" name="Tattoo of Blood">
+    <for>
+      <mul val="1.15" order="0x30" stat="pAtkSpd"/>
+      <mul val="1.15" order="0x30" stat="mAtkSpd"/>
+    </for>
+  </item>
+  <item id="491" name="Tattoo of Absolute">
+     <for>
+      <add val="1250" order="0x10" stat="maxHp"/>
+      <mul val="1.20" order="0x40" stat="pAtk"/>
+    </for>
+  </item>
+  <item id="492" name="Tattoo of Soul">
+   <for>
+      <mul val="1.05" order="0x40" stat="mAtk"/>
+    </for>
+  </item>
+  <item id="493" name="Tattoo of Avadon">
+   <for>
+      <mul val="1.1" order="0x30" stat="pAtkSpd"/>
+      <mul val="1.1" order="0x40" stat="pAtk"/>
+    </for>
+  </item>
+  <item id="494" name="Tattoo of Doom">
+    <for>
+      <add val="125" order="0x40" stat="pAtk"/>
+    </for>
+  </item>
+  <item id="495" name="Tattoo of Pledge">
+   <for>
+      <mul val="1.1" order="0x30" stat="mAtkSpd"/>
+      <mul val="1.1" order="0x40" stat="mAtk"/>
+    </for>
+  </item>
+  <item id="496" name="Tattoo of Divine">
+   <for>
+      <add val="125" order="0x40" stat="mAtk"/>
+    </for>
+  </item>
 	<item id="497" name="Chain Helmet">
 		<for>
 			<add order="0x10" stat="pDef" val="45" />
