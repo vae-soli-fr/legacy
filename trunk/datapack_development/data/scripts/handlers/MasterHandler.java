@@ -241,6 +241,7 @@ import handlers.voicedcommandhandlers.TvTVoicedInfo;
 import handlers.voicedcommandhandlers.Wedding;
 import handlers.voicedcommandhandlers.stats;
 import handlers.voicedcommandhandlers.Desc;
+import handlers.voicedcommandhandlers.Damages;
 
 import java.util.logging.Logger;
 
@@ -539,6 +540,8 @@ public class MasterHandler
 			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Debug());
         if (Config.VAEMOD_DESC)
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Desc());
+        if (Config.VAEMOD_FSDAMAGES)
+            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Damages());
 		_log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	
