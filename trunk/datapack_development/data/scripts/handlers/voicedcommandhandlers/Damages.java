@@ -1,6 +1,8 @@
 package handlers.voicedcommandhandlers;
 
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
+import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+
 
 
 /**
@@ -32,7 +34,6 @@ public class Damages implements IVoicedCommandHandler {
                 activeChar.sendMessage("Usage: damages <on|off>");
                 }
             }
-        }
         return true;
     }
 

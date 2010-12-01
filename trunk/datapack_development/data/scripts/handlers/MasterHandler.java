@@ -538,11 +538,11 @@ public class MasterHandler
 			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Lang());
 		if (Config.L2JMOD_DEBUG_VOICE_COMMAND)
 			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Debug());
-        if (Config.VAEMOD_DESC)
-            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Desc());
-        if (Config.VAEMOD_FSDAMAGES)
-            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Damages());
-		_log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
+                if (Config.VAEMOD_DESC)
+                    VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Desc());
+                if (Config.VAEMOD_FSDAMAGES)
+                    VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Damages());
+                _log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	
 	/**
