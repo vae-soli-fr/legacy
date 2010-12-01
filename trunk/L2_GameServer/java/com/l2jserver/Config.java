@@ -89,7 +89,6 @@ public final class Config
     public static boolean VAEMOD_DESC; // mod description
     public static boolean VAEMOD_REDSKY; // mod redsky
     public static boolean VAEMOD_SKYISRED = false; // mod redsky
-    public static boolean VAEMOD_NPCCREST; // mod npccrest
     public static boolean VAEMOD_MOVIE; // mod movie
     public static int VAEMOD_MOVIELVL; // mod movie
     public static String VAEMOD_ADMINMESSAGEAREA; // mod adminmessage
@@ -1186,7 +1185,6 @@ public final class Config
                     VAEMOD_FSDAMAGES = Boolean.parseBoolean(customSettings.getProperty("ActiverFSDamages", "false"));
                     VAEMOD_MOVIE = Boolean.parseBoolean(customSettings.getProperty("ActiverModMovie", "false"));
                     VAEMOD_MOVIELVL = Integer.parseInt(customSettings.getProperty("AccessLevelMovie", "1"));
-                    VAEMOD_NPCCREST = Boolean.parseBoolean(customSettings.getProperty("ActiverNpcCrest", "false"));
                     VAEMOD_REDSKY = Boolean.parseBoolean(customSettings.getProperty("ActiverModRedSky", "false"));
                     VAEMOD_TITLE = Boolean.parseBoolean(customSettings.getProperty("ActiverModTitre", "false"));
 				}
