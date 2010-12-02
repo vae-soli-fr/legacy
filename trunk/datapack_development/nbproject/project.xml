@@ -110,7 +110,7 @@
                 <package-root>data</package-root>
                 <package-root>sql</package-root>
                 <package-root>tools</package-root>
-                <classpath mode="compile">../L2_GameServer/lib/bsh-2.0b5.jar:../L2_GameServer/lib/bsh-engine.jar:../L2_GameServer/lib/c3p0-0.9.2-pre1.jar:../L2_GameServer/lib/ecj-3.6.1.jar:../L2_GameServer/lib/java-engine.jar:../L2_GameServer/lib/javolution-5.5.1.jar:../L2_GameServer/lib/jython-engine.jar:../L2_GameServer/lib/jython.jar:../L2_GameServer/lib/mchange-commons-0.2.jar:../L2_GameServer/lib/mmocore.jar:../L2_GameServer/lib/mysql-connector-java-5.1.13-bin.jar:../L2_GameServer/lib/netcon.jar:../L2_GameServer/lib/trove-2.1.0.jar:../L2_GameServer/java</classpath>
+                <classpath mode="compile">../L2_GameServer/lib/bsh-2.0b5.jar:../L2_GameServer/lib/bsh-engine.jar:../L2_GameServer/lib/c3p0-0.9.2-pre1.jar:../L2_GameServer/lib/ecj-3.6.1.jar:../L2_GameServer/lib/java-engine.jar:../L2_GameServer/lib/javolution-5.5.1.jar:../L2_GameServer/lib/jython-engine.jar:../L2_GameServer/lib/jython.jar:../L2_GameServer/lib/mchange-commons-0.2.jar:../L2_GameServer/lib/mmocore.jar:../L2_GameServer/lib/mysql-connector-java-5.1.13-bin.jar:../L2_GameServer/lib/netcon.jar:../L2_GameServer/lib/trove-2.1.0.jar:../L2_GameServer/build/l2jserver.jar</classpath>
                 <source-level>1.5</source-level>
             </compilation-unit>
         </java-data>

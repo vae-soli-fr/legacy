@@ -18,7 +18,6 @@ public class Desc implements IVoicedCommandHandler {
         "desc"
     };
 
-    @Override
     public boolean useVoicedCommand(String command, L2PcInstance activeChar, String option) {
 
         if (command.equalsIgnoreCase("desc")) {
@@ -48,7 +47,6 @@ public class Desc implements IVoicedCommandHandler {
         return true;
     }
 
-    @Override
     public String[] getVoicedCommandList() {
         return VOICED_COMMANDS;
     }

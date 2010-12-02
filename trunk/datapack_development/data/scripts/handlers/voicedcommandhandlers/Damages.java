@@ -17,17 +17,16 @@ public class Damages implements IVoicedCommandHandler {
         "damages"
     };
 
-    @Override
     public boolean useVoicedCommand(String command, L2PcInstance activeChar, String option) {
 
         if (command.equalsIgnoreCase("damages")) {
 
             if (option.equalsIgnoreCase("on")) {
-                activeChar.setFsDamages(true);
+                activeChar.setShowFsDamages(true);
                 activeChar.sendMessage("Dégats plein écran activés.");
 
             } else if (option.equalsIgnoreCase("off")) {
-                activeChar.setFsDamages(false);
+                activeChar.setShowFsDamages(false);
                 activeChar.sendMessage("Dégats plein écran désactivés.");
 
             } else {
@@ -37,7 +36,6 @@ public class Damages implements IVoicedCommandHandler {
         return true;
     }
 
-    @Override
     public String[] getVoicedCommandList() {
         return VOICED_COMMANDS;
     }
