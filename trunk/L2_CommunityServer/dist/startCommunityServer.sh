@@ -1,3 +1,3 @@
 #! /bin/sh
 
-./CommunityServer_loop.sh &
+./CommunityFreya_loop.sh &

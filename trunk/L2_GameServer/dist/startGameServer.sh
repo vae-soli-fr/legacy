@@ -1,3 +1,3 @@
 #! /bin/sh
 
-./GameServer_loop.sh &
+./GameFreya_loop.sh &

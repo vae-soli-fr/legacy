@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./LoginServer_loop.sh &
+./LoginFreya_loop.sh &
