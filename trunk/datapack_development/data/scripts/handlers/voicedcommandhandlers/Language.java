@@ -1,4 +1,4 @@
-package scripts.handlers.voicedcommandhandlers;
+package handlers.voicedcommandhandlers;
 
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;

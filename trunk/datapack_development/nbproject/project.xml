@@ -16,12 +16,6 @@
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
-                    <label>.settings</label>
-                    <type>java</type>
-                    <location>.settings</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
                     <label>cb_data</label>
                     <type>java</type>
                     <location>cb_data</location>
@@ -67,10 +61,6 @@
             <view>
                 <items>
                     <source-folder style="packages">
-                        <label>.settings</label>
-                        <location>.settings</location>
-                    </source-folder>
-                    <source-folder style="packages">
                         <label>cb_data</label>
                         <location>cb_data</location>
                     </source-folder>
@@ -104,7 +94,6 @@
         </general-data>
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
             <compilation-unit>
-                <package-root>.settings</package-root>
                 <package-root>cb_data</package-root>
                 <package-root>cb_sql</package-root>
                 <package-root>data</package-root>

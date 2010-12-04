@@ -22,18 +22,6 @@
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
-                    <label>images</label>
-                    <type>java</type>
-                    <location>images</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>launcher</label>
-                    <type>java</type>
-                    <location>launcher</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
                     <label>dist</label>
                     <type>java</type>
                     <location>dist</location>
@@ -49,18 +37,6 @@
                     <label>data</label>
                     <type>java</type>
                     <location>data</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>.settings</label>
-                    <type>java</type>
-                    <location>.settings</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>languages</label>
-                    <type>java</type>
-                    <location>languages</location>
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
@@ -89,14 +65,6 @@
                         <location>java</location>
                     </source-folder>
                     <source-folder style="packages">
-                        <label>images</label>
-                        <location>images</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>launcher</label>
-                        <location>launcher</location>
-                    </source-folder>
-                    <source-folder style="packages">
                         <label>dist</label>
                         <location>dist</location>
                     </source-folder>
@@ -107,14 +75,6 @@
                     <source-folder style="packages">
                         <label>data</label>
                         <location>data</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>.settings</label>
-                        <location>.settings</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>languages</label>
-                        <location>languages</location>
                     </source-folder>
                     <source-folder style="packages">
                         <label>javaTest</label>
@@ -139,14 +99,6 @@
                 <source-level>1.5</source-level>
             </compilation-unit>
             <compilation-unit>
-                <package-root>images</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>launcher</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
                 <package-root>dist</package-root>
                 <source-level>1.5</source-level>
             </compilation-unit>
@@ -156,14 +108,6 @@
             </compilation-unit>
             <compilation-unit>
                 <package-root>data</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>.settings</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>languages</package-root>
                 <source-level>1.5</source-level>
             </compilation-unit>
             <compilation-unit>

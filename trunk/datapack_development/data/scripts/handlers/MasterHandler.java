@@ -242,9 +242,10 @@ import handlers.voicedcommandhandlers.Wedding;
 import handlers.voicedcommandhandlers.stats;
 import handlers.voicedcommandhandlers.Desc;
 import handlers.voicedcommandhandlers.Damages;
-import handlers.voicedcommandhandlers.Title;
 import handlers.voicedcommandhandlers.ChatVolume;
 import handlers.voicedcommandhandlers.Language;
+import handlers.voicedcommandhandlers.Title;
+import handlers.voicedcommandhandlers.RPTime;
 
 import java.util.logging.Logger;
 
@@ -551,6 +552,8 @@ public class MasterHandler
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Language());
         if (Config.VAEMOD_CHATVOLUME)
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new ChatVolume());
+        if (Config.VAEMOD_RPTIME)
+            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new RPTime());
         _log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	

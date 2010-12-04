@@ -16,12 +16,6 @@
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
-                    <label>.settings</label>
-                    <type>java</type>
-                    <location>.settings</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
                     <label>dist</label>
                     <type>java</type>
                     <location>dist</location>
@@ -31,12 +25,6 @@
                     <label>java</label>
                     <type>java</type>
                     <location>java</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>launcher</label>
-                    <type>java</type>
-                    <location>launcher</location>
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
@@ -61,20 +49,12 @@
             <view>
                 <items>
                     <source-folder style="packages">
-                        <label>.settings</label>
-                        <location>.settings</location>
-                    </source-folder>
-                    <source-folder style="packages">
                         <label>dist</label>
                         <location>dist</location>
                     </source-folder>
                     <source-folder style="packages">
                         <label>java</label>
                         <location>java</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>launcher</label>
-                        <location>launcher</location>
                     </source-folder>
                     <source-folder style="packages">
                         <label>lib</label>
@@ -94,10 +74,8 @@
         </general-data>
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
             <compilation-unit>
-                <package-root>.settings</package-root>
                 <package-root>dist</package-root>
                 <package-root>java</package-root>
-                <package-root>launcher</package-root>
                 <package-root>lib</package-root>
                 <classpath mode="compile">lib/c3p0-0.9.1.2.jar;lib/javolution-5.5.1.jar;lib/mysql-connector-java-5.1.12-bin.jar</classpath>
                 <source-level>1.5</source-level>
