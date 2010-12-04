@@ -17,6 +17,7 @@ package handlers.itemhandlers;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.L2ItemInstance;
 import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
@@ -29,11 +30,17 @@ public class ManaPotion extends ItemSkills
 	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
+        L2PcInstance activeChar = playable.getActingPlayer();
 		if (!Config.L2JMOD_ENABLE_MANA_POTIONS_SUPPORT)
 		{
 			playable.sendPacket(new SystemMessage(SystemMessageId.NOTHING_HAPPENED));
 			return;
 		}
+        else if (Config.VAEMOD_PVPMANA && activeChar.getPvpFlag() == 1)
+        {
+            playable.sendMessage("Pas de mana potion en pvp.");
+			return;
+        }
 		super.useItem(playable, item, forceUse);
 	}
 }

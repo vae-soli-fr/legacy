@@ -97,6 +97,8 @@ public final class Config
     public static boolean VAEMOD_RPLANG; // mod langues en roleplay
     public static boolean VAEMOD_CHATVOLUME; // mod chatvolume
     public static boolean VAEMOD_RPTIME; // afficher l'heure roleplay
+    public static boolean VAEMOD_FREECHATHERO; // chan hero pour tous
+    public static boolean VAEMOD_PVPMANA; // désactiver les potions de mana en PvP
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1193,6 +1195,8 @@ public final class Config
                     VAEMOD_RPLANG = Boolean.parseBoolean(customSettings.getProperty("LangageRP", "false"));
                     VAEMOD_CHATVOLUME = Boolean.parseBoolean(customSettings.getProperty("ChatVolume", "false"));
                     VAEMOD_RPTIME = Boolean.parseBoolean(customSettings.getProperty("RPTime", "false"));
+                    VAEMOD_FREECHATHERO = Boolean.parseBoolean(customSettings.getProperty("FreeChatHero", "false"));
+                    VAEMOD_PVPMANA = Boolean.parseBoolean(customSettings.getProperty("NoManaPotionInPvP", "false"));
 				}
 				catch (Exception e)
 				{

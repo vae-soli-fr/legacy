@@ -14,6 +14,7 @@
  */
 package handlers.chathandlers;
 
+import com.l2jserver.Config;
 import java.util.Collection;
 
 import com.l2jserver.gameserver.handler.IChatHandler;
@@ -40,7 +41,7 @@ public class ChatHeroVoice implements IChatHandler
 	 */
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
-		if (activeChar.isHero() || activeChar.isGM())
+		if (Config.VAEMOD_FREECHATHERO || activeChar.isHero() || activeChar.isGM())
 		{
 			if (!activeChar.getFloodProtectors().getHeroVoice().tryPerformAction("hero voice"))
 			{
