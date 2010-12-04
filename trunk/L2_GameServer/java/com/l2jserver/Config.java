@@ -88,12 +88,14 @@ public final class Config
 	//--------------------------------------------------
     public static boolean VAEMOD_DESC; // mod description
     public static boolean VAEMOD_REDSKY; // mod redsky
-    public static boolean VAEMOD_SKYISRED = false; // mod redsky
+    public static boolean VAEMOD_SKYISRED = false; // mod redsky (false au reboot)
     public static boolean VAEMOD_MOVIE; // mod movie
     public static int VAEMOD_MOVIELVL; // mod movie
     public static String VAEMOD_ADMINMESSAGEAREA; // mod adminmessage
     public static boolean VAEMOD_TITLE; // mod titre
-    public static boolean VAEMOD_FSDAMAGES; // mod Damages
+    public static boolean VAEMOD_FSDAMAGES; // mod Damages en plein écran
+    public static boolean VAEMOD_RPLANG; // mod langues en roleplay
+    public static boolean VAEMOD_CHATVOLUME; // mod chatvolume
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1187,6 +1189,8 @@ public final class Config
                     VAEMOD_MOVIELVL = Integer.parseInt(customSettings.getProperty("AccessLevelMovie", "1"));
                     VAEMOD_REDSKY = Boolean.parseBoolean(customSettings.getProperty("ActiverModRedSky", "false"));
                     VAEMOD_TITLE = Boolean.parseBoolean(customSettings.getProperty("ActiverModTitre", "false"));
+                    VAEMOD_RPLANG = Boolean.parseBoolean(customSettings.getProperty("LangageRP", "false"));
+                    VAEMOD_CHATVOLUME = Boolean.parseBoolean(customSettings.getProperty("ChatVolume", "false"));
 				}
 				catch (Exception e)
 				{

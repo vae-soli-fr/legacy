@@ -48,6 +48,7 @@ public class ChatAll implements IChatHandler
 	public void handleChat(int type, L2PcInstance activeChar, String params, String text)
 	{
 		boolean vcd_used = false;
+        boolean isRPaction = false;
 		if (text.startsWith("."))
 		{
 			StringTokenizer st = new StringTokenizer(text);
@@ -81,6 +82,8 @@ public class ChatAll implements IChatHandler
 		}
 		if (!vcd_used)
 		{
+            if (!text.startsWith(" *")) text = activeChar.getRPvolume() + activeChar.getRPlanguage() + text;
+            else isRPaction = true;
 			CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(), text);
 			
 			Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
@@ -88,14 +91,24 @@ public class ChatAll implements IChatHandler
 			{
 				for (L2PcInstance player : plrs)
 				{
-					if (player != null && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
-						player.sendPacket(cs);
-				}
-			}
+
+                    //if (player != null && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
+					//	player.sendPacket(cs);
+                    if (player != null && !BlockList.isBlocked(player, activeChar))
+                    {
+                        if (activeChar.isInsideRadius(player, 1250, false, true) && (activeChar.getRPvolume().equals("") || isRPaction))
+                            player.sendPacket(cs);
+                        else if(activeChar.isInsideRadius(player, 100, false, true) && activeChar.getRPvolume().equals(" *chuchote* ") && !isRPaction)
+                            player.sendPacket(cs);
+                        else if(activeChar.isInsideRadius(player, 2900, false, true) && activeChar.getRPvolume().equals(" *crie* ") && !isRPaction)
+                            player.sendPacket(cs);
+                    }
+                }
+            }
 			
 			activeChar.sendPacket(cs);
-		}
-	}
+        }
+    }
 	
 	/**
 	 * Returns the chat types registered to this handler

@@ -393,8 +393,13 @@ public final class L2PcInstance extends L2Playable
 	private long _lastAccess;
 	private long _uptime;
 
-        /** ALL customs for Vae Soli in L2PcInstance */
-        private boolean _showFsDamages;
+    /**
+     * ALL customs for Vae Soli in L2PcInstance
+     * keywords : Kirieh, Melua, Ariskan, mods
+     */
+    private boolean _showFsDamages;
+    private String _rplanguage;
+    private String _volume;
 	
 	private final ReentrantLock _subclassLock = new ReentrantLock();
 	protected int _baseClass;
@@ -6999,78 +7004,6 @@ public final class L2PcInstance extends L2Playable
 		return getAccessLevel().isGm();
 	}
 
-    /**
-     *  Mod DescByName par Melua
-     * relie la description au nom et non pas à l'ID
-     */
-
-    public void showDesc(L2PcInstance viewer)
-    {
-    String description = this.getDesc();
-    if (description != null)
-    {
-    NpcHtmlMessage html = new NpcHtmlMessage(1);
-    html.setHtml("<html><title>" + this.getName() + "</title><body>" + description + "</body></html>");
-    viewer.sendPacket(html);
-    } else {
-    viewer.sendMessage("Ce personnage ne possède pas de description.");
-    }
-    }
-
-    public String getDesc() // BY NAME
-    {
-    Connection con = null;
-    String description = null;
-    try
-    {
-    con = L2DatabaseFactory.getInstance().getConnection();
-    PreparedStatement statement = con.prepareStatement("SELECT char_desc FROM descriptions WHERE charId = ? AND char_name = ?");
-    statement.setInt(1, this.getObjectId());
-    statement.setString(2, this.getName());
-    ResultSet rset = statement.executeQuery();
-    while (rset.next()) description = rset.getString("char_desc");
-    rset.close();
-    statement.close();
-    }
-    catch (Exception e) { }
-    finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
-    return description;
-    }
-
-    public void setDesc(String description) // BY NAME
-    {
-    this.delDesc();
-    if (description.length() > 600) description = description.substring(0, 599);
-    Connection con = null;
-    try
-    {
-    con = L2DatabaseFactory.getInstance().getConnection();
-    PreparedStatement statement = con.prepareStatement("INSERT INTO descriptions VALUES (?,?,'" + description + "');");
-    statement.setInt(1, this.getObjectId());
-    statement.setString(2, this.getName());
-    statement.execute();
-    statement.close();
-    }
-    catch (Exception e) { }
-    finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
-    }
-
-    public void delDesc() // BY NAME
-    {
-    Connection con = null;
-    try
-    {
-    con = L2DatabaseFactory.getInstance().getConnection();
-    PreparedStatement statement = con.prepareStatement("DELETE FROM descriptions WHERE charId = ? AND char_name = ?");
-    statement.setInt(1, this.getObjectId());
-    statement.setString(2, this.getName());
-    statement.execute();
-    statement.close();
-    }
-    catch (Exception e) { }
-    finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
-    }
-
 	/**
 	 * Set the _accessLevel of the L2PcInstance.<BR><BR>
 	 */
@@ -7474,8 +7407,10 @@ public final class L2PcInstance extends L2Playable
 				// Language
 				player.setLang(rset.getString("language"));
 
-                                // ALL customs for Vae Soli in L2PcInstance
-                                player.setShowFsDamages(rset.getInt("showFsDamages") == 1);
+                // ALL customs for Vae Soli in L2PcInstance
+                player.setShowFsDamages(rset.getInt("showFsDamages") == 1);
+                player.setRPlanguage("");
+                player.setRPvolume("");
 				
 				// Retrieve the name and ID of the other characters assigned to this account.
 				PreparedStatement stmt = con.prepareStatement("SELECT charId, char_name FROM characters WHERE account_name=? AND charId<>?");
@@ -15016,40 +14951,152 @@ public final class L2PcInstance extends L2Playable
 		return result;
 	}
 
-        /**
-         * Option d'affichage des dégats en plein écran
-         * @param true si les dégats doivent être affichés
-         * @param false si les dégats ne doivent pas êtres affichés
-         * @author Melua
-         */
-            public void setShowFsDamages(boolean showFsDamages)
-            {
-            _showFsDamages = showFsDamages;
-            }
+    /**
+     *  Mod DescByName par Melua
+     * relie la description au nom et non pas à l'ID
+     */
 
-        /**
-         * Etat de l'affichage des dégats en plein écran
-         * @return vrai(true) si les dégats sont affichés ou faux(false) dans le cas contraire
-         * @author Melua
-         */
-            public boolean isFsDamages()
-            {
-            return _showFsDamages;
-            }
+        public void showDesc(L2PcInstance viewer)
+        {
+        String description = this.getDesc();
+        if (description != null)
+        {
+        NpcHtmlMessage html = new NpcHtmlMessage(1);
+        html.setHtml("<html><title>" + this.getName() + "</title><body>" + description + "</body></html>");
+        viewer.sendPacket(html);
+        } else {
+        viewer.sendMessage("Ce personnage ne possède pas de description.");
+        }
+        }
+
+        public String getDesc() // BY NAME
+        {
+        Connection con = null;
+        String description = null;
+        try
+        {
+        con = L2DatabaseFactory.getInstance().getConnection();
+        PreparedStatement statement = con.prepareStatement("SELECT char_desc FROM descriptions WHERE charId = ? AND char_name = ?");
+        statement.setInt(1, this.getObjectId());
+        statement.setString(2, this.getName());
+        ResultSet rset = statement.executeQuery();
+        while (rset.next()) description = rset.getString("char_desc");
+        rset.close();
+        statement.close();
+        }
+        catch (Exception e) { }
+        finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
+        return description;
+        }
+
+        public void setDesc(String description) // BY NAME
+        {
+        this.delDesc();
+        if (description.length() > 600) description = description.substring(0, 599);
+        Connection con = null;
+        try
+        {
+        con = L2DatabaseFactory.getInstance().getConnection();
+        PreparedStatement statement = con.prepareStatement("INSERT INTO descriptions VALUES (?,?,'" + description + "');");
+        statement.setInt(1, this.getObjectId());
+        statement.setString(2, this.getName());
+        statement.execute();
+        statement.close();
+        }
+        catch (Exception e) { }
+        finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
+        }
+
+        public void delDesc() // BY NAME
+        {
+        Connection con = null;
+        try
+        {
+        con = L2DatabaseFactory.getInstance().getConnection();
+        PreparedStatement statement = con.prepareStatement("DELETE FROM descriptions WHERE charId = ? AND char_name = ?");
+        statement.setInt(1, this.getObjectId());
+        statement.setString(2, this.getName());
+        statement.execute();
+        statement.close();
+        }
+        catch (Exception e) { }
+        finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
+        }
+
+    /**
+     * Option d'affichage des dégats en plein écran
+     * @param true si les dégats doivent être affichés
+     * @param false si les dégats ne doivent pas êtres affichés
+     * @author Melua
+     */
+        public void setShowFsDamages(boolean showFsDamages)
+        {
+        _showFsDamages = showFsDamages;
+        }
+
+    /**
+     * Etat de l'affichage des dégats en plein écran
+     * @return vrai(true) si les dégats sont affichés ou faux(false) dans le cas contraire
+     * @author Melua
+     */
+        public boolean isFsDamages()
+        {
+        return _showFsDamages;
+        }
+        
+    /**
+     * Règlage la langue utilisée en RolePlay
+     *
+     */
+        public void setRPlanguage(String langue)
+        {
+            _rplanguage = langue;
+        }
+     
+    /**
+     * Etat de la langue utilisée en RP
+     * @return la langue utilisée
+     */
+        public String getRPlanguage()
+        {
+            return _rplanguage;
+        }
+
+    /**
+     * Règlage du volume utilisé en RP
+     *
+     */
+        public void setRPvolume(String vol)
+        {
+            _volume = vol;
+        }
+
+    /**
+     * Etat de la langue utilisée en RP
+     * @return la langue utilisée
+     */
+        public String getRPvolume()
+        {
+            return _volume;
+        }
+
+
+
+
+        
+        public long getOfflineStartTime()
+        {
+            return _offlineShopStart;
+        }
+
+        public void setOfflineStartTime(long time)
+        {
+            _offlineShopStart = time;
+        }
 	
-	public long getOfflineStartTime()
-	{
-		return _offlineShopStart;
-	}
-	
-	public void setOfflineStartTime(long time)
-	{
-		_offlineShopStart = time;
-	}
-	
-	/**
-	 * Remove player from BossZones (used on char logout/exit)
-	 */
+    /**
+     * Remove player from BossZones (used on char logout/exit)
+     */
 	public void removeFromBossZone()
 	{
 		try
