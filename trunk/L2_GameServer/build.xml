@@ -215,6 +215,12 @@
 				<include name="*.pn" />
 			</fileset>
 		</copy>
+        <mkdir dir="${build.dist.game}/updater" />
+		<copy todir="${build.dist.game}/updater">
+			<fileset dir="dist/updater">
+				<include name="PUT YOUR NEW JAR HERE" />
+			</fileset>
+		</copy>
 		<zip destfile="${build}/L2J_Server.zip" basedir="${build.dist}" />
 	</target>
 
