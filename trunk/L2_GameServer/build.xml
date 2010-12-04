@@ -154,7 +154,7 @@
 			<fileset dir="dist">
 				<include name="startAccountManager.*" />
 				<include name="startSQLAccountManager.*" />
-				<include name="LoginServer_loop.sh" />
+				<include name="LoginFreya_loop.sh" />
 				<include name="startLoginServer.*" />
 				<include name="RegisterGameServer.*" />
 				<include name="GSRegister.exe" />
@@ -164,7 +164,7 @@
 		</copy>
 		<copy todir="${build.dist.game}">
 			<fileset dir="dist">
-				<include name="GameServer_loop.sh" />
+				<include name="GameFreya_loop.sh" />
 				<include name="startGameServer.*" />
 				<include name="L2JConfig.exe" />
 				<include name="L2JConfig.sh" />

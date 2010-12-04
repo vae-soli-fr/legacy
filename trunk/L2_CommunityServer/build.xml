@@ -85,6 +85,7 @@
         
         <copy todir="${build.dist.community}">
             <fileset dir="dist">
+                <include name="CommunityFreya_loop.sh" />
                 <include name="startCommunityServer.*"/>
             </fileset>
         </copy>
