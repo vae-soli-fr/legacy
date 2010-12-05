@@ -96,6 +96,7 @@ import handlers.admincommandhandlers.AdminTvTEvent;
 import handlers.admincommandhandlers.AdminUnblockIp;
 import handlers.admincommandhandlers.AdminVitality;
 import handlers.admincommandhandlers.AdminZone;
+import handlers.admincommandhandlers.AdminRedSky;
 import handlers.bypasshandlers.Augment;
 import handlers.bypasshandlers.Buy;
 import handlers.bypasshandlers.BuyShadowItem;
@@ -260,6 +261,7 @@ import com.l2jserver.gameserver.handler.UserCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
 
 
+
 /**
  *
  * @author  nBd
@@ -362,6 +364,8 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminUnblockIp());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminVitality());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminZone());
+        if (Config.VAEMOD_REDSKY)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRedSky());
 		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + "  AdminCommandHandlers");
 	}
 	

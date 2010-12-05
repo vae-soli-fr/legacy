@@ -84,6 +84,7 @@ import com.l2jserver.gameserver.network.serverpackets.QuestList;
 import com.l2jserver.gameserver.network.serverpackets.ShortCutInit;
 import com.l2jserver.gameserver.network.serverpackets.SkillCoolTime;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import com.l2jserver.gameserver.vaesoli.RedEnterWorld;
 
 
 /**
@@ -493,6 +494,12 @@ public class EnterWorld extends L2GameClientPacket
 		
 		if(!activeChar.getPremiumItemList().isEmpty())
 			activeChar.sendPacket(new ExNotifyPremiumItem());
+
+        // redsky & effects at connection
+        if (Config.VAEMOD_SKYISRED &&Config.VAEMOD_REDSKY)
+        {
+        RedEnterWorld.RedEffects(activeChar);
+        }
 	}
 	
 	/**
