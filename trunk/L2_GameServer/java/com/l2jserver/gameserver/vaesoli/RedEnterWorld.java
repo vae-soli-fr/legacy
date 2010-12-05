@@ -19,7 +19,7 @@ public class RedEnterWorld {
         /* Nuit */
         player.sendPacket(new SunSet());
         /* Effet Air Root */
-        player.startAbnormalEffect(AbnormalEffect.S_AIR_ROOT.getMask());
+        player.startSpecialEffect(AbnormalEffect.S_AIR_ROOT.getMask());
         /* Dusk */
         player.sendPacket(new SSQInfo(1));
         /* Ciel rouge 24h */

@@ -48,14 +48,14 @@
             </folders>
             <ide-actions>
                 <action name="build">
-                    <target>dist</target>
+                    <target>dist-deflate</target>
                 </action>
                 <action name="clean">
                     <target>clean</target>
                 </action>
                 <action name="rebuild">
                     <target>clean</target>
-                    <target>dist</target>
+                    <target>dist-deflate</target>
                 </action>
             </ide-actions>
             <view>

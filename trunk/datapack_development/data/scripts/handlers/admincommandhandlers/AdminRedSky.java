@@ -21,8 +21,6 @@ import java.util.StringTokenizer;
 public class AdminRedSky implements IAdminCommandHandler {
 
     private static final String[] ADMIN_COMMANDS = {"admin_redsky"};
-    private static final int HERO = 16;
-    private static final int AIR_ROOT = AbnormalEffect.S_AIR_ROOT.getMask();
 
     public boolean useAdminCommand(String command, L2PcInstance activeChar) {
         StringTokenizer st = new StringTokenizer(command);
@@ -55,11 +53,11 @@ public class AdminRedSky implements IAdminCommandHandler {
         /* for each player IG */
        for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
             /* Stop vitality si besoin est */
-            if (player.getAbnormalEffect() == AIR_ROOT) {
-                player.stopAbnormalEffect(AIR_ROOT);
+            if (player.getSpecialEffect() == AbnormalEffect.S_AIR_ROOT.getMask()) {
+                player.stopSpecialEffect(AbnormalEffect.S_AIR_ROOT.getMask());
             }
             /* Effet Hero */
-            player.broadcastPacket(new SocialAction(player.getObjectId(), HERO));
+            player.broadcastPacket(new SocialAction(player.getObjectId(), SocialAction.LEVEL_UP));
             /* Son neutral rise */
             player.sendPacket(new PlaySound("ssq_neutral_01"));
             /* fin du ciel rouge */
