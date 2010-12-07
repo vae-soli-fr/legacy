@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.l2jserver.gameserver.vaesoli;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -8,12 +12,13 @@ import com.l2jserver.gameserver.network.serverpackets.SunSet;
 import com.l2jserver.gameserver.skills.AbnormalEffect;
 
 /**
+ *
  * @author Melua
- * @see com.l2jserver.gameserver.network.clientpackets.EnterWorld#runImpl()
  */
+
 public class RedEnterWorld {
 
-        public static final void RedEffects(L2PcInstance player) {
+    public static final void RedEffects(L2PcInstance player) {
         /* Son dusk rise */
         player.sendPacket(new PlaySound("ssq_dusk_01"));
         /* Nuit */
@@ -25,5 +30,4 @@ public class RedEnterWorld {
         /* Ciel rouge 24h */
         player.sendPacket(new ExRedSky(86400));
     }
-
 }

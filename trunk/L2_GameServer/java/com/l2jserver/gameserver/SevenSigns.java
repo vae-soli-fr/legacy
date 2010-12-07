@@ -296,7 +296,8 @@ public class SevenSigns
 						AutoSpawnHandler.getInstance().setSpawnActive(spawnInst, true);
 				
 				if (!AutoChatHandler.getInstance().getAutoChatInstance(PREACHER_NPC_ID, false).isActive()
-						&& !AutoChatHandler.getInstance().getAutoChatInstance(ORATOR_NPC_ID, false).isActive())
+						&& !AutoChatHandler.getInstance().getAutoChatInstance(ORATOR_NPC_ID, false).isActive()
+                        && !Config.VAEMOD_SHUTUP7SIGNS)
 					AutoChatHandler.getInstance().setAutoChatActive(true);
 			}
 			else

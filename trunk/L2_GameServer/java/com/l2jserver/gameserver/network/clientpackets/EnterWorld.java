@@ -496,10 +496,16 @@ public class EnterWorld extends L2GameClientPacket
 			activeChar.sendPacket(new ExNotifyPremiumItem());
 
         // redsky & effects at connection
-        if (Config.VAEMOD_SKYISRED &&Config.VAEMOD_REDSKY)
+        if (Config.VAEMOD_SKYISRED && Config.VAEMOD_REDSKY)
         {
         RedEnterWorld.RedEffects(activeChar);
         }
+
+        // Introduction à Freya
+/*if (Config.VAEMOD_INTROFREYA && !IntroductionFreya.hasAlreadySeen(activeChar))
+        {
+        new IntroductionFreya(activeChar);
+        }*/
 	}
 	
 	/**

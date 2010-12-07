@@ -90,7 +90,6 @@ public final class Config
     public static boolean VAEMOD_REDSKY; // mod redsky
     public static boolean VAEMOD_SKYISRED = false; // mod redsky (false au reboot)
     public static boolean VAEMOD_MOVIE; // mod movie
-    public static int VAEMOD_MOVIELVL; // mod movie
     public static String VAEMOD_ADMINMESSAGEAREA; // mod adminmessage
     public static boolean VAEMOD_TITLE; // mod titre
     public static boolean VAEMOD_FSDAMAGES; // mod Damages en plein écran
@@ -99,6 +98,8 @@ public final class Config
     public static boolean VAEMOD_RPTIME; // afficher l'heure roleplay
     public static boolean VAEMOD_FREECHATHERO; // chan hero pour tous
     public static boolean VAEMOD_PVPMANA; // désactiver les potions de mana en PvP
+    public static boolean VAEMOD_INTROFREYA; // afficher la cinématique Freya
+    public static boolean VAEMOD_SHUTUP7SIGNS; // Faire taire les Preachers et Orators
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1189,7 +1190,6 @@ public final class Config
                     VAEMOD_DESC = Boolean.parseBoolean(customSettings.getProperty("ActiverDescriptions", "false"));
                     VAEMOD_FSDAMAGES = Boolean.parseBoolean(customSettings.getProperty("ActiverFSDamages", "false"));
                     VAEMOD_MOVIE = Boolean.parseBoolean(customSettings.getProperty("ActiverModMovie", "false"));
-                    VAEMOD_MOVIELVL = Integer.parseInt(customSettings.getProperty("AccessLevelMovie", "1"));
                     VAEMOD_REDSKY = Boolean.parseBoolean(customSettings.getProperty("ActiverModRedSky", "false"));
                     VAEMOD_TITLE = Boolean.parseBoolean(customSettings.getProperty("ActiverModTitre", "false"));
                     VAEMOD_RPLANG = Boolean.parseBoolean(customSettings.getProperty("LangageRP", "false"));
@@ -1197,6 +1197,8 @@ public final class Config
                     VAEMOD_RPTIME = Boolean.parseBoolean(customSettings.getProperty("RPTime", "false"));
                     VAEMOD_FREECHATHERO = Boolean.parseBoolean(customSettings.getProperty("FreeChatHero", "false"));
                     VAEMOD_PVPMANA = Boolean.parseBoolean(customSettings.getProperty("NoManaPotionInPvP", "false"));
+                    VAEMOD_INTROFREYA = Boolean.parseBoolean(customSettings.getProperty("NoManaPotionInPvP", "false"));
+                    VAEMOD_SHUTUP7SIGNS = Boolean.parseBoolean(customSettings.getProperty("MuteSevenSigns", "false"));
 				}
 				catch (Exception e)
 				{
