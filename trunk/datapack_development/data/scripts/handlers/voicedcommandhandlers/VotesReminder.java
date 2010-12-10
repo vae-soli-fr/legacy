@@ -14,7 +14,7 @@ public class VotesReminder implements IVoicedCommandHandler {
 
     public boolean useVoicedCommand(String command, L2PcInstance activeChar, String option) {
 
-        if (command.equalsIgnoreCase("desc")) {
+        if (command.equalsIgnoreCase("votes")) {
 
             if (option.equalsIgnoreCase("on")) {
                 activeChar.setVoting(true);
