@@ -21,7 +21,7 @@ public class ChatVolume implements IVoicedCommandHandler {
                 activeChar.sendMessage("Vous murmurez.");
             }
         }
-        if (command.startsWith("cri")) {
+        else if (command.startsWith("cri")) {
             if (activeChar.getRPvolume().equals(" *crie* ")) {
                 activeChar.setRPvolume("");
                 activeChar.sendMessage("Vous parlez normalement.");

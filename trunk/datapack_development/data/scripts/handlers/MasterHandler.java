@@ -247,6 +247,8 @@ import handlers.voicedcommandhandlers.ChatVolume;
 import handlers.voicedcommandhandlers.Language;
 import handlers.voicedcommandhandlers.Title;
 import handlers.voicedcommandhandlers.RPTime;
+import handlers.admincommandhandlers.AdminMovie;
+import handlers.voicedcommandhandlers.VotesReminder;
 
 import java.util.logging.Logger;
 
@@ -259,6 +261,7 @@ import com.l2jserver.gameserver.handler.ItemHandler;
 import com.l2jserver.gameserver.handler.SkillHandler;
 import com.l2jserver.gameserver.handler.UserCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
+
 
 
 
@@ -366,6 +369,8 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminZone());
         if (Config.VAEMOD_REDSKY)
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRedSky());
+        if (Config.VAEMOD_MOVIE)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMovie());
 		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + "  AdminCommandHandlers");
 	}
 	
@@ -558,6 +563,8 @@ public class MasterHandler
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new ChatVolume());
         if (Config.VAEMOD_RPTIME)
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new RPTime());
+        if (Config.VAEMOD_VOTESCHECK > 0)
+            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new VotesReminder());
         _log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	

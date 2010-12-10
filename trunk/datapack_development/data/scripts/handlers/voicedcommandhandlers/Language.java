@@ -22,7 +22,7 @@ public class Language implements IVoicedCommandHandler {
             }
         }
 
-        if (command.startsWith("sombre")) {
+        else if (command.startsWith("sombre")) {
             if (activeChar.getRPlanguage().equals(" *sombre* ")) {
                 activeChar.setRPlanguage("");
                 activeChar.sendMessage("Vous parlez en commun.");
@@ -32,7 +32,7 @@ public class Language implements IVoicedCommandHandler {
             }
         }
 
-        if (command.startsWith("nain")) {
+        else if (command.startsWith("nain")) {
             if (activeChar.getRPlanguage().equals(" *nain* ")) {
                 activeChar.setRPlanguage("");
                 activeChar.sendMessage("Vous parlez en commun.");
@@ -42,7 +42,7 @@ public class Language implements IVoicedCommandHandler {
             }
         }
 
-        if (command.startsWith("orc")) {
+        else if (command.startsWith("orc")) {
             if (activeChar.getRPlanguage().equals(" *orc* ")) {
                 activeChar.setRPlanguage("");
                 activeChar.sendMessage("Vous parlez en commun.");
@@ -52,7 +52,7 @@ public class Language implements IVoicedCommandHandler {
             }
         }
 
-        if (command.startsWith("kamael")) {
+        else if (command.startsWith("kamael")) {
             if (activeChar.getRPlanguage().equals(" *kamael* ")) {
                 activeChar.setRPlanguage("");
                 activeChar.sendMessage("Vous parlez en commun.");

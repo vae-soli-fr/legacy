@@ -133,6 +133,7 @@ import com.l2jserver.gameserver.taskmanager.AutoAnnounceTaskManager;
 import com.l2jserver.gameserver.taskmanager.KnownListUpdateTaskManager;
 import com.l2jserver.gameserver.taskmanager.TaskManager;
 import com.l2jserver.gameserver.util.DynamicExtension;
+import com.l2jserver.gameserver.vaesoli.Votes;
 import com.l2jserver.status.Status;
 import com.l2jserver.util.DeadLockDetector;
 import com.l2jserver.util.IPv4Filter;
@@ -383,6 +384,9 @@ public class GameServer
 		
 		if (Config.L2JMOD_ALLOW_WEDDING)
 			CoupleManager.getInstance();
+
+        if (Config.VAEMOD_VOTESCHECK > 0)
+            Votes.getInstance();
 		
 		TaskManager.getInstance();
 

@@ -281,8 +281,8 @@ public final class L2PcInstance extends L2Playable
 	
 	// Character Character SQL String Definitions:
 	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,karma,fame,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,accesslevel,online,isin7sdungeon,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,last_recom_date,createTime) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,karma=?,fame=?,pvpkills=?,pkkills=?,rec_have=?,rec_left=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,punish_level=?,punish_timer=?,newbie=?,nobless=?,power_grade=?,subpledge=?,last_recom_date=?,lvl_joined_academy=?,apprentice=?,sponsor=?,varka_ketra_ally=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=?,showFsDamages=? WHERE charId=?";
-	private static final String RESTORE_CHARACTER = "SELECT account_name, charId, char_name, level, maxHp, curHp, maxCp, curCp, maxMp, curMp, face, hairStyle, hairColor, sex, heading, x, y, z, exp, expBeforeDeath, sp, karma, fame, pvpkills, pkkills, clanid, race, classid, deletetime, cancraft, title, title_color, rec_have, rec_left, accesslevel, online, char_slot, lastAccess, clan_privs, wantspeace, base_class, onlinetime, isin7sdungeon, punish_level, punish_timer, newbie, nobless, power_grade, subpledge, last_recom_date, lvl_joined_academy, apprentice, sponsor, varka_ketra_ally,clan_join_expiry_time,clan_create_expiry_time,death_penalty_level,bookmarkslot,vitality_points,createTime,language,showFsDamages FROM characters WHERE charId=?";
+	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,karma=?,fame=?,pvpkills=?,pkkills=?,rec_have=?,rec_left=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,punish_level=?,punish_timer=?,newbie=?,nobless=?,power_grade=?,subpledge=?,last_recom_date=?,lvl_joined_academy=?,apprentice=?,sponsor=?,varka_ketra_ally=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=?,showFsDamages=?,voting=? WHERE charId=?";
+	private static final String RESTORE_CHARACTER = "SELECT account_name, charId, char_name, level, maxHp, curHp, maxCp, curCp, maxMp, curMp, face, hairStyle, hairColor, sex, heading, x, y, z, exp, expBeforeDeath, sp, karma, fame, pvpkills, pkkills, clanid, race, classid, deletetime, cancraft, title, title_color, rec_have, rec_left, accesslevel, online, char_slot, lastAccess, clan_privs, wantspeace, base_class, onlinetime, isin7sdungeon, punish_level, punish_timer, newbie, nobless, power_grade, subpledge, last_recom_date, lvl_joined_academy, apprentice, sponsor, varka_ketra_ally,clan_join_expiry_time,clan_create_expiry_time,death_penalty_level,bookmarkslot,vitality_points,createTime,language,showFsDamages,voting FROM characters WHERE charId=?";
 	
 	// Character Teleport Bookmark:
 	private static final String INSERT_TP_BOOKMARK = "INSERT INTO character_tpbookmark (charId,Id,x,y,z,icon,tag,name) values (?,?,?,?,?,?,?,?)";
@@ -398,8 +398,10 @@ public final class L2PcInstance extends L2Playable
      * keywords : Kirieh, Melua, Ariskan, mods
      */
     private boolean _showFsDamages;
+    private boolean _voting;
     private String _rplanguage;
     private String _volume;
+    private long _votetime = 0;
 	
 	private final ReentrantLock _subclassLock = new ReentrantLock();
 	protected int _baseClass;
@@ -7409,8 +7411,10 @@ public final class L2PcInstance extends L2Playable
 
                 // ALL customs for Vae Soli in L2PcInstance
                 player.setShowFsDamages(rset.getInt("showFsDamages") == 1);
+                player.setVoting(rset.getInt("voting") == 1);
                 player.setRPlanguage("");
                 player.setRPvolume("");
+                player.setVoteTime();
 				
 				// Retrieve the name and ID of the other characters assigned to this account.
 				PreparedStatement stmt = con.prepareStatement("SELECT charId, char_name FROM characters WHERE account_name=? AND charId<>?");
@@ -7849,8 +7853,9 @@ public final class L2PcInstance extends L2Playable
 			statement.setInt(53, getBookMarkSlot());
 			statement.setInt(54, getVitalityPoints());
 			statement.setString(55, getLang());
-                        statement.setInt(56, isFsDamages() ? 1 : 0);
-			statement.setInt(57, getObjectId());
+            statement.setInt(56, isFsDamages() ? 1 : 0);
+            statement.setInt(57, isVoting() ? 1 : 0);
+			statement.setInt(58, getObjectId());
 			
 			statement.execute();
 			statement.close();
@@ -15035,6 +15040,27 @@ public final class L2PcInstance extends L2Playable
         }
 
     /**
+     * Option de rappel de vote en plein écran
+     * @param true si les rappels doivent être affichés
+     * @param false si les rappels ne doivent pas êtres affichés
+     * @author Melua
+     */
+        public void setVoting(boolean vote)
+        {
+        _voting = vote;
+        }
+
+    /**
+     * Etat des rappels de vote
+     * @return vrai(true) si le joueur vote ou faux(false) dans le cas contraire
+     * @author Melua
+     */
+        public boolean isVoting()
+        {
+        return _voting;
+        }
+
+    /**
      * Etat de l'affichage des dégats en plein écran
      * @return vrai(true) si les dégats sont affichés ou faux(false) dans le cas contraire
      * @author Melua
@@ -15080,7 +15106,38 @@ public final class L2PcInstance extends L2Playable
             return _volume;
         }
 
+    /**
+     * Règlage du temps de vote
+     *
+     */
+       private void setVoteTime()
+        {
+        this.hasVoted(); // le votetime etant initialisé à 0 il va forcement mettre a jour cet attribut
+        }
 
+        public boolean hasVoted()
+        {
+        long currenttime = System.currentTimeMillis();
+        if ( currenttime < _votetime) return true;
+        else {
+        Connection con = null;
+        long newtime = 0;
+        try
+        { con = L2DatabaseFactory.getInstance().getConnection();
+        PreparedStatement statement = con.prepareStatement("SELECT next FROM votes WHERE charId = ?");
+        statement.setInt(1, this.getObjectId());
+        ResultSet rset = statement.executeQuery();
+        while (rset.next()) newtime = rset.getLong("next");
+        rset.close();
+        statement.close();
+        }
+        catch (Exception e) { }
+        finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
+        _votetime = newtime;
+        if (currenttime < _votetime) return true;
+        else return false;
+        }
+        }
 
 
         

@@ -100,6 +100,8 @@ public final class Config
     public static boolean VAEMOD_PVPMANA; // désactiver les potions de mana en PvP
     public static boolean VAEMOD_INTROFREYA; // afficher la cinématique Freya
     public static boolean VAEMOD_SHUTUP7SIGNS; // Faire taire les Preachers et Orators
+    public static int VAEMOD_VOTESCHECK; // intervalle de vérification des votes
+    public static int VAEMOD_VOTESDELAY; // intervalle minimal entre deux votes
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1199,6 +1201,8 @@ public final class Config
                     VAEMOD_PVPMANA = Boolean.parseBoolean(customSettings.getProperty("NoManaPotionInPvP", "false"));
                     VAEMOD_INTROFREYA = Boolean.parseBoolean(customSettings.getProperty("NoManaPotionInPvP", "false"));
                     VAEMOD_SHUTUP7SIGNS = Boolean.parseBoolean(customSettings.getProperty("MuteSevenSigns", "false"));
+                    VAEMOD_VOTESCHECK = Integer.parseInt(customSettings.getProperty("VotesCheckTimer", "10"));
+                    VAEMOD_VOTESDELAY = Integer.parseInt(customSettings.getProperty("DelayBetweenVotes", "120"));
 				}
 				catch (Exception e)
 				{
