@@ -311,7 +311,7 @@ public class RegionBBSManager extends BaseBBSManager
 				if (!page.contains(player))
 				{
 					page.add(player);
-					if (!player.getAppearance().getInvisible())
+					if (!player.getAppearance().getInvisible() && !(Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
 						_onlineCount++;
 					_onlineCountGm++;
 				}
@@ -332,7 +332,7 @@ public class RegionBBSManager extends BaseBBSManager
 			if (temp.add(player))
 			{
 				_onlinePlayers.put(page, temp);
-				if (!player.getAppearance().getInvisible())
+				if (!player.getAppearance().getInvisible() && !(Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
 					_onlineCount++;
 				_onlineCountGm++;
 			}
@@ -352,14 +352,14 @@ public class RegionBBSManager extends BaseBBSManager
 		{
 			FastMap<String, String> communityPage = new FastMap<String, String>();
 			htmlCode.setLength(0);
-			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Server Restarted: ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
-					+ trClose + "</table>" + "<table>" + trOpen + tdOpen + "XP Rate: x", String.valueOf(Config.RATE_XP), tdClose
-					+ colSpacer + tdOpen + "Party XP Rate: x", String.valueOf(Config.RATE_XP * Config.RATE_PARTY_XP), tdClose + colSpacer
+			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Server redémarré le ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
+					+ trClose + "</table>" + "<table>" + trOpen + tdOpen + "XP x", String.valueOf(Config.RATE_XP), tdClose
+					+ colSpacer + tdOpen + "Party XP x", String.valueOf(Config.RATE_XP * Config.RATE_PARTY_XP), tdClose + colSpacer
 					+ tdOpen + "XP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_XP), tdClose + trClose + trOpen + tdOpen
-					+ "SP Rate: x", String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen + "Party SP Rate: x", String.valueOf(Config.RATE_SP
+					+ "SP x", String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen + "Party SP x", String.valueOf(Config.RATE_SP
 							* Config.RATE_PARTY_SP), tdClose + colSpacer + tdOpen + "SP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_SP), tdClose
-							+ trClose + trOpen + tdOpen + "Drop Rate: ", String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen
-							+ "Spoil Rate: ", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena Rate: ", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
+							+ trClose + trOpen + tdOpen + "Drop x", String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen
+							+ "Spoil x", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena ", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
 							+ trClose
 							+ "</table>"
 							+ "<table>"
@@ -367,7 +367,7 @@ public class RegionBBSManager extends BaseBBSManager
 							+ "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>"
 							+ trClose
 							+ trOpen + tdOpen, String.valueOf(L2World.getInstance().getAllVisibleObjectsCount()), " Object count</td>" + trClose
-							+ trOpen + tdOpen, String.valueOf(getOnlineCount("gm")), " Player(s) Online</td>" + trClose + "</table>");
+							+ trOpen + tdOpen, String.valueOf(getOnlineCount("gm")), " joueur(s) en ligne</td>" + trClose + "</table>");
 			
 			int cell = 0;
 			if (Config.BBS_SHOW_PLAYERLIST)
@@ -376,34 +376,34 @@ public class RegionBBSManager extends BaseBBSManager
 				
 				for (L2PcInstance player : getOnlinePlayers(page))
 				{
-					cell++;
-					
-					if (cell == 1)
-					{
-						htmlCode.append(trOpen);
-					}
-					
-					StringUtil.append(htmlCode, "<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;", player.getName(), "\">");
-					
-					if (player.isGM())
-					{
-						StringUtil.append(htmlCode, "<font color=\"LEVEL\">", player.getName(), "</font>");
-					}
-					else
-					{
-						htmlCode.append(player.getName());
-					}
-					
-					htmlCode.append("</a></td>");
-					
-					if (cell < Config.NAME_PER_ROW_COMMUNITYBOARD)
-						htmlCode.append(colSpacer);
-					
-					if (cell == Config.NAME_PER_ROW_COMMUNITYBOARD)
-					{
-						cell = 0;
-						htmlCode.append(trClose);
-					}
+                    if (!(Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
+                    {
+                        cell++;
+
+                        if (cell == 1) {
+                            htmlCode.append(trOpen);
+                        }
+
+                        StringUtil.append(htmlCode, "<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;", player.getName(), "\">");
+
+                        if (player.isGM()) {
+                            StringUtil.append(htmlCode, "<font color=\"LEVEL\">", player.getName(), "</font>");
+                        } else {
+                            htmlCode.append(player.getName());
+                        }
+
+                        htmlCode.append("</a></td>");
+
+                        if (cell < Config.NAME_PER_ROW_COMMUNITYBOARD) {
+                            htmlCode.append(colSpacer);
+
+
+                        }
+                        if (cell == Config.NAME_PER_ROW_COMMUNITYBOARD) {
+                            cell = 0;
+                            htmlCode.append(trClose);
+                        }
+                    }
 				}
 				if (cell > 0 && cell < Config.NAME_PER_ROW_COMMUNITYBOARD)
 				{
@@ -444,20 +444,20 @@ public class RegionBBSManager extends BaseBBSManager
 			communityPage.put("gm", htmlCode.toString());
 			
 			htmlCode.setLength(0);
-			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Server Restarted: ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
-					+ trClose + "</table>" + "<table>" + trOpen + tdOpen + "XP Rate: ", String.valueOf(Config.RATE_XP), tdClose + colSpacer
-					+ tdOpen + "Party XP Rate: ", String.valueOf(Config.RATE_PARTY_XP), tdClose + colSpacer + tdOpen + "XP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_XP), tdClose
-					+ trClose + trOpen + tdOpen + "SP Rate: ", String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen
-					+ "Party SP Rate: ", String.valueOf(Config.RATE_PARTY_SP), tdClose + colSpacer + tdOpen + "SP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_SP), tdClose
-					+ trClose + trOpen + tdOpen + "Drop Rate: ", String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen
-					+ "Spoil Rate: ", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena Rate: ", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
+			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Serveur redémarré le ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
+					+ trClose + "</table>" + "<table>" + trOpen + tdOpen + "XP x", String.valueOf(Config.RATE_XP), tdClose + colSpacer
+					+ tdOpen + "Party XP x", String.valueOf(Config.RATE_PARTY_XP), tdClose + colSpacer + tdOpen + "XP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_XP), tdClose
+					+ trClose + trOpen + tdOpen + "SP x", String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen
+					+ "Party SP x", String.valueOf(Config.RATE_PARTY_SP), tdClose + colSpacer + tdOpen + "SP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_SP), tdClose
+					+ trClose + trOpen + tdOpen + "Drop x", String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen
+					+ "Spoil x", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena x", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
 					+ trClose
 					+ "</table>"
 					+ "<table>"
 					+ trOpen
 					+ "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>"
 					+ trClose
-					+ trOpen + tdOpen, String.valueOf(getOnlineCount("pl")), " Player(s) Online</td>" + trClose + "</table>");
+					+ trOpen + tdOpen, String.valueOf(getOnlineCount("pl")), " joueur(s) en ligne</td>" + trClose + "</table>");
 			
 			if (Config.BBS_SHOW_PLAYERLIST)
 			{

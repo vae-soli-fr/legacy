@@ -254,6 +254,7 @@ import com.l2jserver.gameserver.templates.item.L2Weapon;
 import com.l2jserver.gameserver.templates.item.L2WeaponType;
 import com.l2jserver.gameserver.templates.skills.L2EffectType;
 import com.l2jserver.gameserver.templates.skills.L2SkillType;
+import com.l2jserver.gameserver.vaesoli.Votes;
 import com.l2jserver.gameserver.util.FloodProtectors;
 import com.l2jserver.gameserver.util.Util;
 import com.l2jserver.util.Point3D;
@@ -15115,10 +15116,15 @@ public final class L2PcInstance extends L2Playable
         this.hasVoted(); // le votetime etant initialisé à 0 il va forcement mettre a jour cet attribut
         }
 
+    /**
+     * Etat du vote
+     * @return vrai(true) si le joueur à voté ou faux(false) dans le cas contraire
+     * @author melua
+     */
+
         public boolean hasVoted()
         {
-        long currenttime = System.currentTimeMillis();
-        if ( currenttime < _votetime) return true;
+        if ( Votes.CURRENTTIME < _votetime) return true;
         else {
         Connection con = null;
         long newtime = 0;
@@ -15134,10 +15140,21 @@ public final class L2PcInstance extends L2Playable
         catch (Exception e) { }
         finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
         _votetime = newtime;
-        if (currenttime < _votetime) return true;
+        if (Votes.CURRENTTIME < _votetime) return true;
         else return false;
         }
         }
+
+  /** Etat de l'offline
+    * @return vrai(true) si le PJ est offline ou faux(false) dans le cas contraire
+    * @author melua
+    */
+        public boolean isInOfflineMode()
+        {
+            return getClient() == null || getClient().isDetached();
+        }
+
+
 
 
         

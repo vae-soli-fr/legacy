@@ -249,6 +249,7 @@ import handlers.voicedcommandhandlers.Title;
 import handlers.voicedcommandhandlers.RPTime;
 import handlers.admincommandhandlers.AdminMovie;
 import handlers.voicedcommandhandlers.VotesReminder;
+import handlers.admincommandhandlers.AdminMessage;
 
 import java.util.logging.Logger;
 
@@ -371,6 +372,8 @@ public class MasterHandler
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRedSky());
         if (Config.VAEMOD_MOVIE)
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMovie());
+        if (!Config.VAEMOD_ADMINMESSAGEAREA.equalsIgnoreCase("OFF"))
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMessage());
 		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + "  AdminCommandHandlers");
 	}
 	
