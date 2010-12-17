@@ -376,8 +376,6 @@ public class RegionBBSManager extends BaseBBSManager
 				
 				for (L2PcInstance player : getOnlinePlayers(page))
 				{
-                    if (!(Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
-                    {
                         cell++;
 
                         if (cell == 1) {
@@ -388,7 +386,13 @@ public class RegionBBSManager extends BaseBBSManager
 
                         if (player.isGM()) {
                             StringUtil.append(htmlCode, "<font color=\"LEVEL\">", player.getName(), "</font>");
-                        } else {
+                        }
+                        else if (player.isInOfflineMode())
+                        {
+                            StringUtil.append(htmlCode, "<font color=\"808080\">", player.getName(), "</font>");
+                        }
+
+                        else {
                             htmlCode.append(player.getName());
                         }
 
@@ -403,7 +407,6 @@ public class RegionBBSManager extends BaseBBSManager
                             cell = 0;
                             htmlCode.append(trClose);
                         }
-                    }
 				}
 				if (cell > 0 && cell < Config.NAME_PER_ROW_COMMUNITYBOARD)
 				{
@@ -466,7 +469,7 @@ public class RegionBBSManager extends BaseBBSManager
 				cell = 0;
 				for (L2PcInstance player : getOnlinePlayers(page))
 				{
-					if ((player == null) || (player.getAppearance().getInvisible()))
+					if ((player == null) || (player.getAppearance().getInvisible()) || (Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
 						continue; // Go to next
 					
 					cell++;
