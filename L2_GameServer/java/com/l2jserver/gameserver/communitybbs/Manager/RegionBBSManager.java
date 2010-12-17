@@ -352,14 +352,14 @@ public class RegionBBSManager extends BaseBBSManager
 		{
 			FastMap<String, String> communityPage = new FastMap<String, String>();
 			htmlCode.setLength(0);
-			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Server redémarré le ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
+			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Serveur redémarré le ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
 					+ trClose + "</table>" + "<table>" + trOpen + tdOpen + "XP x", String.valueOf(Config.RATE_XP), tdClose
 					+ colSpacer + tdOpen + "Party XP x", String.valueOf(Config.RATE_XP * Config.RATE_PARTY_XP), tdClose + colSpacer
 					+ tdOpen + "XP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_XP), tdClose + trClose + trOpen + tdOpen
 					+ "SP x", String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen + "Party SP x", String.valueOf(Config.RATE_SP
 							* Config.RATE_PARTY_SP), tdClose + colSpacer + tdOpen + "SP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_SP), tdClose
 							+ trClose + trOpen + tdOpen + "Drop x", String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen
-							+ "Spoil x", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena ", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
+							+ "Spoil x", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena x", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
 							+ trClose
 							+ "</table>"
 							+ "<table>"
