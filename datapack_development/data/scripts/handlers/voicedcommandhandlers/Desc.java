@@ -22,25 +22,31 @@ public class Desc implements IVoicedCommandHandler {
 
         if (command.equalsIgnoreCase("desc")) {
 
-            if (option.equalsIgnoreCase("delete")) {
-                activeChar.delDesc();
-                activeChar.sendMessage("Votre description a été supprimée.");
-
-            } else if (option.equalsIgnoreCase("add")) {
-                NpcHtmlMessage descWindow = new NpcHtmlMessage(1);
-                TextBuilder replyMSG = new TextBuilder("<html><title>" + activeChar.getName() + "</title><body>");
-                replyMSG.append("<center>Ecrivez la description de votre personnage ici<br></center>");
-                replyMSG.append("<center><multiedit var=\"new_desc\" width=240 height=255><br>");
-                replyMSG.append("<button value=\"Enregistrer\" action=\"bypass -h char_desc $new_desc\" width=110 height=30 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center>");
-                replyMSG.append("<table width=300><tr><td align=\"right\"><font color=\"444444\">.desc by Melua</font></td></tr></table>");
-                replyMSG.append("</body></html>");
-                descWindow.setHtml(replyMSG.toString());
-                activeChar.sendPacket(descWindow);
-
+            if (option == null) {
+                if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)
+                {
+                L2PcInstance target = (L2PcInstance) activeChar.getTarget();
+                target.showDesc(activeChar);
+                }
+                else activeChar.sendMessage("Sélectionnez un joueur pour voir sa description.");
             } else {
-                if (activeChar.getTarget() instanceof L2PcInstance) {
-                    L2PcInstance target = (L2PcInstance) activeChar.getTarget();
-                    target.showDesc(activeChar);
+                if (option.equalsIgnoreCase("delete")) {
+                    activeChar.delDesc();
+                    activeChar.sendMessage("Votre description a été supprimée.");
+
+                } else if (option.equalsIgnoreCase("add")) {
+                    NpcHtmlMessage descWindow = new NpcHtmlMessage(1);
+                    TextBuilder replyMSG = new TextBuilder("<html><title>" + activeChar.getName() + "</title><body>");
+                    replyMSG.append("<center>Ecrivez la description de votre personnage ici<br></center>");
+                    replyMSG.append("<center><multiedit var=\"new_desc\" width=240 height=255><br>");
+                    replyMSG.append("<button value=\"Enregistrer\" action=\"bypass -h char_desc $new_desc\" width=110 height=30 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center>");
+                    replyMSG.append("<table width=300><tr><td align=\"right\"><font color=\"444444\">.desc by Melua</font></td></tr></table>");
+                    replyMSG.append("</body></html>");
+                    descWindow.setHtml(replyMSG.toString());
+                    activeChar.sendPacket(descWindow);
+
+                } else {
+                    activeChar.sendMessage("Usage: .desc [add|delete]");
                 }
             }
         }
