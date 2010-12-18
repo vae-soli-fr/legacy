@@ -15130,8 +15130,8 @@ public final class L2PcInstance extends L2Playable
         long newtime = 0;
         try
         { con = L2DatabaseFactory.getInstance().getConnection();
-        PreparedStatement statement = con.prepareStatement("SELECT next FROM votes WHERE charId = ?");
-        statement.setInt(1, this.getObjectId());
+        PreparedStatement statement = con.prepareStatement("SELECT next FROM votes WHERE account = ?");
+        statement.setString(1, this.getAccountName());
         ResultSet rset = statement.executeQuery();
         while (rset.next()) newtime = rset.getLong("next");
         rset.close();
