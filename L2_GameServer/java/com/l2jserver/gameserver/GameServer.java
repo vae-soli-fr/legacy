@@ -133,6 +133,7 @@ import com.l2jserver.gameserver.taskmanager.AutoAnnounceTaskManager;
 import com.l2jserver.gameserver.taskmanager.KnownListUpdateTaskManager;
 import com.l2jserver.gameserver.taskmanager.TaskManager;
 import com.l2jserver.gameserver.util.DynamicExtension;
+import com.l2jserver.gameserver.vaesoli.SpeakingMob;
 import com.l2jserver.gameserver.vaesoli.Votes;
 import com.l2jserver.status.Status;
 import com.l2jserver.util.DeadLockDetector;
@@ -281,6 +282,9 @@ public class GameServer
 		FourSepulchersManager.getInstance().init();
 		DimensionalRiftManager.getInstance();
 		EventDroplist.getInstance();
+
+        printSection("SpeakingMob");
+        SpeakingMob.getInstance();
 		
 		printSection("Siege");
 		SiegeManager.getInstance().getSieges();
