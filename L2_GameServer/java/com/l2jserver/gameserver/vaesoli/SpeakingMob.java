@@ -55,11 +55,11 @@ public class SpeakingMob {
                 map.put(cle, line);
                 cle++;
             }
-            _log.info(this.path + " Loaded : " + this.map.size() + " phrases.");
+            _log.info(this.path + ": Loaded " + this.map.size() + " phrases.");
         } catch (FileNotFoundException e) {
-            _log.warning(path + " is missing");
+            _log.warning(path + " is missing !");
         } catch (IOException e) {
-            _log.log(Level.WARNING, "Error while loading speech " + e.getMessage(), e);
+            _log.log(Level.WARNING, "Error while loading file " + e.getMessage(), e);
         } finally {
             try {
                 lnr.close();

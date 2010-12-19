@@ -41,6 +41,7 @@ import com.l2jserver.gameserver.model.olympiad.Olympiad;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import com.l2jserver.gameserver.vaesoli.SpeakingMob;
 
 
 /**
@@ -300,6 +301,11 @@ public class AdminAdmin implements IAdminCommandHandler
 					ExtractableSkillsData.getInstance().reload();
 					activeChar.sendMessage("Extractable Items and Skills have been reloaded");
 				}
+                else if (type.startsWith("speechs"))
+                {
+                    SpeakingMob.getInstance().reloadAll();
+                    activeChar.sendMessage("All Speechs have been reloaded");
+                }
 				
 				activeChar.sendMessage("WARNING: There are several known issues regarding this feature. Reloading server data during runtime is STRONGLY NOT RECOMMENDED for live servers, just for developing environments.");
 			}
