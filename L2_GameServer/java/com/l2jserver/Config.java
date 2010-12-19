@@ -103,6 +103,7 @@ public final class Config
     public static int VAEMOD_VOTESCHECK; // intervalle de vérification des votes
     public static int VAEMOD_VOTESDELAY; // intervalle minimal entre deux votes
     public static boolean VAEMOD_HIDEOFFLINE; // cacher les offlines dans le CB
+    public static int VAEMOD_SPEAKINGMOB; // chance pour les mobs de parler
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1205,6 +1206,7 @@ public final class Config
                     VAEMOD_VOTESCHECK = Integer.parseInt(customSettings.getProperty("VotesCheckTimer", "10"));
                     VAEMOD_VOTESDELAY = Integer.parseInt(customSettings.getProperty("DelayBetweenVotes", "120"));
                     VAEMOD_HIDEOFFLINE = Boolean.parseBoolean(customSettings.getProperty("CacherOffline", "false"));
+                    VAEMOD_SPEAKINGMOB = Integer.parseInt(customSettings.getProperty("SpeakingMobChance", "0"));
 				}
 				catch (Exception e)
 				{
