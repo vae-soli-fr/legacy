@@ -18,235 +18,31 @@ import java.util.logging.Logger;
 
 /**
  *
+ * Cette classe sert à faire parler les mobs selon leur race
  * @author Kevin
  */
 public class SpeakingMob {
 
-    private static final Logger _log = Logger.getLogger(SpeakingMob.class.getName());
-    private HashMap<Integer, String> _ANGEL = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _ANIMAL = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _BEAST = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _BUG = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _DARKELVE = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _DEFENDINGARMY = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _DEMON = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _DRAGON = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _DWARVE = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _ELVE = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _FAIRIE = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _GIANT = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _HUMAN = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _HUMANOID = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _KAMAEL = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _MAGICCREATURE = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _MERCENAIRE = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _NONE = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _NONLIVING = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _ORC = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _OTHER = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _PLANT = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _SIEGEWEAPON = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _SPIRIT = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _UNDEAD = new HashMap<Integer, String>();
-    private HashMap<Integer, String> _UNKNOWN = new HashMap<Integer, String>();
-
-    private boolean _angelIsEmpty;
-    private boolean _animalIsEmpty;
-    private boolean _beastIsEmpty;
-    private boolean _dugIsEmpty;
-    private boolean _darkelveIsEmpty;
-    private boolean _defendingarmyIsEmpty;
-
-
-    private SpeakingMob() {
-        load();
+        /**
+         *  Cette interne classe permet de wrapper (et remplir) la HashMap avec
+         *  des variables constantes pour éviter des calculs répétitifs
+         */
+        private class Speech {
+        private HashMap<Integer, String> map;
+        private final boolean isEmpty;
+        private final int size;
+        private final String path;
+        public Speech(String path) {
+            this.map = new HashMap<Integer, String>();
+            this.path = path;
+            this.fillMap();
+            this.isEmpty = this.map.isEmpty();
+            this.size = this.map.size();
         }
-
-    public void roleplaying(L2Npc npc) {
-        if (probability() && npc instanceof L2MonsterInstance) {
-            switch (npc.getTemplate().getRace()) {
-                case ANGEL:
-                    if (!_ANGEL.isEmpty()) {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _ANGEL.get(Rnd.get(_ANGEL.size()))));
-                    }
-                    break;
-                case ANIMAL:
-                    if (!_ANIMAL.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _ANIMAL.get(Rnd.get(_ANIMAL.size()))));
-                    }
-                    break;
-                case BEAST:
-                    if (!_BEAST.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _BEAST.get(Rnd.get(_BEAST.size()))));
-                    }
-                    break;
-                case BUG:
-                    if (!_BUG.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _BUG.get(Rnd.get(_BUG.size()))));
-                    }
-                    break;
-                case DARKELVE:
-                    if (!_DARKELVE.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _DARKELVE.get(Rnd.get(_DARKELVE.size()))));
-                    }
-                    break;
-                case DEFENDINGARMY:
-                    if (!_DEFENDINGARMY.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _DEFENDINGARMY.get(Rnd.get(_DEFENDINGARMY.size()))));
-                    }
-                    break;
-                case DEMON:
-                    if (!_DEMON.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _DEMON.get(Rnd.get(_DEMON.size()))));
-                    }
-                    break;
-                case DRAGON:
-                    if (!_DRAGON.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _DRAGON.get(Rnd.get(_DRAGON.size()))));
-                    }
-                    break;
-                case DWARVE:
-                    if (!_DWARVE.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _DWARVE.get(Rnd.get(_DWARVE.size()))));
-                    }
-                    break;
-                case ELVE:
-                    if (!_ELVE.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _ELVE.get(Rnd.get(_ELVE.size()))));
-                    }
-                    break;
-                case FAIRIE:
-                    if (!_FAIRIE.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _FAIRIE.get(Rnd.get(_FAIRIE.size()))));
-                    }
-                    break;
-                case GIANT:
-                    if (!_GIANT.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _GIANT.get(Rnd.get(_GIANT.size()))));
-                    }
-                    break;
-                case HUMAN:
-                    if (!_HUMAN.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _HUMAN.get(Rnd.get(_HUMAN.size()))));
-                    }
-                    break;
-                case HUMANOID:
-                    if (!_HUMANOID.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _HUMANOID.get(Rnd.get(_HUMANOID.size()))));
-                    }
-                    break;
-                case KAMAEL:
-                    if (!_KAMAEL.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _KAMAEL.get(Rnd.get(_KAMAEL.size()))));
-                    }
-                    break;
-                case MAGICCREATURE:
-                    if (!_MAGICCREATURE.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _MAGICCREATURE.get(Rnd.get(_MAGICCREATURE.size()))));
-                    }
-                    break;
-                case MERCENARIE:
-                    if (!_MERCENAIRE.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _MERCENAIRE.get(Rnd.get(_MERCENAIRE.size()))));
-                    }
-                    break;
-                default:
-
-                case NONE:
-                    if (!_NONE.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _NONE.get(Rnd.get(_NONE.size()))));
-                    }
-                    break;
-                case NONLIVING:
-                    if (!_NONLIVING.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _NONLIVING.get(Rnd.get(_NONLIVING.size()))));
-                    }
-                    break;
-                case ORC:
-                    if (!_ORC.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _ORC.get(Rnd.get(_ORC.size()))));
-                    }
-                    break;
-                case OTHER:
-                    if (!_OTHER.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _OTHER.get(Rnd.get(_OTHER.size()))));
-                    }
-                    break;
-                case PLANT:
-                    if (!_PLANT.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _PLANT.get(Rnd.get(_PLANT.size()))));
-                    }
-                    break;
-                case SIEGEWEAPON:
-                    if (!_SIEGEWEAPON.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _SIEGEWEAPON.get(Rnd.get(_SIEGEWEAPON.size()))));
-                    }
-                    break;
-                case SPIRIT:
-                    if (!_SPIRIT.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _SPIRIT.get(Rnd.get(_SPIRIT.size()))));
-                    }
-                    break;
-                case UNDEAD:
-                    if (!_UNDEAD.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _UNDEAD.get(Rnd.get(_UNDEAD.size()))));
-                    }
-                    break;
-                case UNKNOWN:
-                    if (!_UNKNOWN.isEmpty())  {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _UNKNOWN.get(Rnd.get(_UNKNOWN.size()))));
-                    }
-                    break;
-            }
-        }
-    }
-
-    public static SpeakingMob getInstance() {
-        return SingletonHolder.INSTANCE;
-    }
-
-    private static class SingletonHolder {
-
-        protected static final SpeakingMob INSTANCE = new SpeakingMob();
-    }
-
-    private void load() {
-        loadPhrases(_ANGEL, "data/speech/angel.csv");
-        loadPhrases(_ANIMAL, "data/speech/animal.csv");
-        loadPhrases(_BEAST, "data/speech/beast.csv");
-        loadPhrases(_BUG, "data/speech/bug.csv");
-        loadPhrases(_DARKELVE, "data/speech/darkelve.csv");
-        loadPhrases(_DEFENDINGARMY, "data/speech/defendingarmy.csv");
-        loadPhrases(_DEMON, "data/speech/demon.csv");
-        loadPhrases(_DRAGON, "data/speech/dragon.csv");
-        loadPhrases(_DWARVE, "data/speech/dwarve.csv");
-        loadPhrases(_ELVE, "data/speech/elve.csv");
-        loadPhrases(_FAIRIE, "data/speech/fairie.csv");
-        loadPhrases(_GIANT, "data/speech/giant.csv");
-        loadPhrases(_HUMAN, "data/speech/human.csv");
-        loadPhrases(_HUMANOID, "data/speech/humanoid.csv");
-        loadPhrases(_KAMAEL, "data/speech/kamael.csv");
-        loadPhrases(_MAGICCREATURE, "data/speech/magiccreature");
-        loadPhrases(_MERCENAIRE, "data/speech/mercenaire.csv");
-        loadPhrases(_NONE, "data/speech/none.csv");
-        loadPhrases(_NONLIVING, "data/speech/nonliving.csv");
-        loadPhrases(_ORC, "data/speech/orc.csv");
-        loadPhrases(_OTHER, "data/speech/other.csv");
-        loadPhrases(_PLANT, "data/speech/plant.csv");
-        loadPhrases(_SIEGEWEAPON, "data/speech/siegeweapon.csv");
-        loadPhrases(_SPIRIT, "data/speech/spirit.csv");
-        loadPhrases(_UNDEAD, "data/speech/undead.csv");
-        loadPhrases(_UNKNOWN, "data/speech/unknown.csv");
-    }
-
-    private boolean probability() {
-        return Rnd.get(1, 100) <= Config.VAEMOD_VOTESCHECK; //20% chance
-    }
-
-    private void loadPhrases(HashMap map, String path) {
+        private void fillMap() {
         LineNumberReader lnr = null;
         try {
-            File speechData = new File(Config.DATAPACK_ROOT, path);
+            File speechData = new File(Config.DATAPACK_ROOT, this.path);
             lnr = new LineNumberReader(new BufferedReader(new FileReader(speechData)));
 
             String line = null;
@@ -259,7 +55,7 @@ public class SpeakingMob {
                 map.put(cle, line);
                 cle++;
             }
-            _log.info(path + " Loaded : " + map.size() + " phrases.");
+            _log.info(this.path + " Loaded : " + this.map.size() + " phrases.");
         } catch (FileNotFoundException e) {
             _log.warning(path + " is missing");
         } catch (IOException e) {
@@ -270,35 +66,119 @@ public class SpeakingMob {
             } catch (Exception e) {
             }
         }
-    }
+        }
+        public boolean getIsEmpty() {
+            return this.isEmpty;
+        }
+        public int getSize() {
+            return this.size;
+        }
+        public String getValue(int key) {
+            return this.map.get(key);
+        }
+        }
 
-    public void reloadAll() {
-    _ANGEL.clear();
-    _ANIMAL.clear();
-    _BEAST.clear();
-    _BUG.clear();
-    _DARKELVE.clear();
-    _DEFENDINGARMY.clear();
-    _DEMON.clear();
-    _DRAGON.clear();
-    _DWARVE.clear();
-    _ELVE.clear();
-    _FAIRIE.clear();
-    _GIANT.clear();
-    _HUMAN.clear();
-    _HUMANOID.clear();
-    _KAMAEL.clear();
-    _MAGICCREATURE.clear();
-    _MERCENAIRE.clear();
-    _NONE.clear();
-    _NONLIVING.clear();
-    _ORC.clear();
-    _OTHER.clear();
-    _PLANT.clear();
-    _SIEGEWEAPON.clear();
-    _SPIRIT.clear();
-    _UNDEAD.clear();
-    _UNKNOWN.clear();
-    load();
+    private static final Logger _log = Logger.getLogger(SpeakingMob.class.getName());
+    Speech _ANGEL;
+    Speech _ANIMAL;
+    Speech _BEAST;
+    Speech _BUG;
+    Speech _DARKELVE;
+    Speech _DEFENDINGARMY;
+    Speech _DEMON;
+    Speech _DRAGON;
+    Speech _DWARVE;
+    Speech _ELVE;
+    Speech _FAIRIE;
+    Speech _GIANT;
+    Speech _HUMAN;
+    Speech _HUMANOID;
+    Speech _KAMAEL;
+    Speech _MAGICCREATURE;
+    Speech _MERCENAIRE;
+    Speech _NONE;
+    Speech _NONLIVING;
+    Speech _ORC;
+    Speech _OTHER;
+    Speech _PLANT;
+    Speech _SIEGEWEAPON;
+    Speech _SPIRIT;
+    Speech _UNDEAD;
+    Speech _UNKNOWN;
+    public static SpeakingMob getInstance() {
+    return SingletonHolder.INSTANCE;
+    }
+    private static class SingletonHolder {
+    protected static final SpeakingMob INSTANCE = new SpeakingMob();
+    }
+    private SpeakingMob() {
+        reloadAll();
+        }
+    private void reloadAll() {
+    _ANGEL = new Speech("data/speech/angel.csv");
+    _ANIMAL = new Speech("data/speech/animal.csv");
+    _BEAST = new Speech("data/speech/beast.csv");
+    _BUG = new Speech("data/speech/bug.csv");
+    _DARKELVE = new Speech("data/speech/darkelve.csv");
+    _DEFENDINGARMY = new Speech("data/speech/defendingarmy.csv");
+    _DEMON = new Speech("data/speech/demon.csv");
+    _DRAGON = new Speech("data/speech/dragon.csv");
+    _DWARVE = new Speech("data/speech/dwarve.csv");
+    _ELVE = new Speech("data/speech/elve.csv");
+    _FAIRIE = new Speech("data/speech/fairie.csv");
+    _GIANT = new Speech("data/speech/giant.csv");
+    _HUMAN = new Speech("data/speech/human.csv");
+    _HUMANOID = new Speech("data/speech/humanoid.csv");
+    _KAMAEL = new Speech("data/speech/kamael.csv");
+    _MAGICCREATURE = new Speech("data/speech/magiccreature");
+    _MERCENAIRE = new Speech("data/speech/mercenaire.csv");
+    _NONE = new Speech("data/speech/none.csv");
+    _NONLIVING = new Speech("data/speech/nonliving.csv");
+    _ORC = new Speech("data/speech/orc.csv");
+    _OTHER = new Speech("data/speech/other.csv");
+    _PLANT = new Speech("data/speech/plant.csv");
+    _SIEGEWEAPON = new Speech("data/speech/siegeweapon.csv");
+    _SPIRIT = new Speech("data/speech/spirit.csv");
+    _UNDEAD = new Speech("data/speech/undead.csv");
+    _UNKNOWN = new Speech("data/speech/unknown.csv");
+    }
+    private boolean probability() {
+    return Rnd.get(1, 100) <= Config.VAEMOD_VOTESCHECK; //20% chance
+    }
+    private void doSpeak(L2Npc npc, Speech speech) {
+       if (!speech.getIsEmpty()) npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), speech.getValue(Rnd.get(speech.getSize()))));
+    }
+    public void roleplaying(L2Npc npc) {
+        if (Config.VAEMOD_SPEAKINGMOB > 0 && probability() && npc instanceof L2MonsterInstance) {
+            switch (npc.getTemplate().getRace()) {
+                case ANGEL: doSpeak(npc, _ANGEL); break;
+                case ANIMAL: doSpeak(npc, _ANIMAL); break;
+                case BEAST: doSpeak(npc, _BEAST); break;
+                case BUG: doSpeak(npc, _BUG); break;
+                case DARKELVE: doSpeak(npc, _DARKELVE); break;
+                case DEFENDINGARMY: doSpeak(npc, _DEFENDINGARMY); break;
+                case DEMON: doSpeak(npc, _DEMON); break;
+                case DRAGON: doSpeak(npc, _DRAGON); break;
+                case DWARVE: doSpeak(npc, _DWARVE); break;
+                case ELVE: doSpeak(npc, _ELVE); break;
+                case FAIRIE: doSpeak(npc, _FAIRIE); break;
+                case GIANT: doSpeak(npc, _GIANT); break;
+                case HUMAN: doSpeak(npc, _HUMAN); break;
+                case HUMANOID: doSpeak(npc, _HUMANOID); break;
+                case KAMAEL: doSpeak(npc, _KAMAEL); break;
+                case MAGICCREATURE: doSpeak(npc, _MAGICCREATURE); break;
+                case MERCENARIE: doSpeak(npc, _MERCENAIRE); break;
+                default:
+                case NONE: doSpeak(npc, _NONE); break;
+                case NONLIVING: doSpeak(npc, _NONLIVING); break;
+                case ORC: doSpeak(npc, _ORC); break;
+                case OTHER: doSpeak(npc, _OTHER); break;
+                case PLANT: doSpeak(npc, _PLANT); break;
+                case SIEGEWEAPON: doSpeak(npc, _SIEGEWEAPON); break;
+                case SPIRIT: doSpeak(npc, _SPIRIT); break;
+                case UNDEAD: doSpeak(npc, _UNDEAD); break;
+                case UNKNOWN: doSpeak(npc, _UNKNOWN); break;
+            }
+        }
     }
 }
