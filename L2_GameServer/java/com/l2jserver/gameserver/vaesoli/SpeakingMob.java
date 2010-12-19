@@ -95,7 +95,7 @@ public class SpeakingMob {
     Speech _HUMANOID;
     Speech _KAMAEL;
     Speech _MAGICCREATURE;
-    Speech _MERCENAIRE;
+    Speech _MERCENARIE;
     Speech _NONE;
     Speech _NONLIVING;
     Speech _ORC;
@@ -115,32 +115,32 @@ public class SpeakingMob {
         reloadAll();
         }
     public void reloadAll() {
-    _ANGEL = new Speech("data/speech/angel.csv");
-    _ANIMAL = new Speech("data/speech/animal.csv");
-    _BEAST = new Speech("data/speech/beast.csv");
-    _BUG = new Speech("data/speech/bug.csv");
-    _DARKELVE = new Speech("data/speech/darkelve.csv");
-    _DEFENDINGARMY = new Speech("data/speech/defendingarmy.csv");
-    _DEMON = new Speech("data/speech/demon.csv");
-    _DRAGON = new Speech("data/speech/dragon.csv");
-    _DWARVE = new Speech("data/speech/dwarve.csv");
-    _ELVE = new Speech("data/speech/elve.csv");
-    _FAIRIE = new Speech("data/speech/fairie.csv");
-    _GIANT = new Speech("data/speech/giant.csv");
-    _HUMAN = new Speech("data/speech/human.csv");
-    _HUMANOID = new Speech("data/speech/humanoid.csv");
-    _KAMAEL = new Speech("data/speech/kamael.csv");
-    _MAGICCREATURE = new Speech("data/speech/magiccreature.csv");
-    _MERCENAIRE = new Speech("data/speech/mercenaire.csv");
-    _NONE = new Speech("data/speech/none.csv");
-    _NONLIVING = new Speech("data/speech/nonliving.csv");
-    _ORC = new Speech("data/speech/orc.csv");
-    _OTHER = new Speech("data/speech/other.csv");
-    _PLANT = new Speech("data/speech/plant.csv");
-    _SIEGEWEAPON = new Speech("data/speech/siegeweapon.csv");
-    _SPIRIT = new Speech("data/speech/spirit.csv");
-    _UNDEAD = new Speech("data/speech/undead.csv");
-    _UNKNOWN = new Speech("data/speech/unknown.csv");
+    _ANGEL = new Speech("data/speechs/angel.csv");
+    _ANIMAL = new Speech("data/speechs/animal.csv");
+    _BEAST = new Speech("data/speechs/beast.csv");
+    _BUG = new Speech("data/speechs/bug.csv");
+    _DARKELVE = new Speech("data/speechs/darkelve.csv");
+    _DEFENDINGARMY = new Speech("data/speechs/defendingarmy.csv");
+    _DEMON = new Speech("data/speechs/demon.csv");
+    _DRAGON = new Speech("data/speechs/dragon.csv");
+    _DWARVE = new Speech("data/speechs/dwarve.csv");
+    _ELVE = new Speech("data/speechs/elve.csv");
+    _FAIRIE = new Speech("data/speechs/fairie.csv");
+    _GIANT = new Speech("data/speechs/giant.csv");
+    _HUMAN = new Speech("data/speechs/human.csv");
+    _HUMANOID = new Speech("data/speechs/humanoid.csv");
+    _KAMAEL = new Speech("data/speechs/kamael.csv");
+    _MAGICCREATURE = new Speech("data/speechs/magiccreature.csv");
+    _MERCENARIE = new Speech("data/speechs/mercenarie.csv");
+    _NONE = new Speech("data/speechs/none.csv");
+    _NONLIVING = new Speech("data/speechs/nonliving.csv");
+    _ORC = new Speech("data/speechs/orc.csv");
+    _OTHER = new Speech("data/speechs/other.csv");
+    _PLANT = new Speech("data/speechs/plant.csv");
+    _SIEGEWEAPON = new Speech("data/speechs/siegeweapon.csv");
+    _SPIRIT = new Speech("data/speechs/spirit.csv");
+    _UNDEAD = new Speech("data/speechs/undead.csv");
+    _UNKNOWN = new Speech("data/speechs/unknown.csv");
     }
     private boolean probability() {
     return Rnd.get(1, 100) <= Config.VAEMOD_VOTESCHECK; //20% chance
@@ -167,7 +167,7 @@ public class SpeakingMob {
                 case HUMANOID: doSpeak(npc, _HUMANOID); break;
                 case KAMAEL: doSpeak(npc, _KAMAEL); break;
                 case MAGICCREATURE: doSpeak(npc, _MAGICCREATURE); break;
-                case MERCENARIE: doSpeak(npc, _MERCENAIRE); break;
+                case MERCENARIE: doSpeak(npc, _MERCENARIE); break;
                 default:
                 case NONE: doSpeak(npc, _NONE); break;
                 case NONLIVING: doSpeak(npc, _NONLIVING); break;
