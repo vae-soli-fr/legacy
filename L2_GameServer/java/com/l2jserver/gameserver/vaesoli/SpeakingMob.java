@@ -114,7 +114,7 @@ public class SpeakingMob {
     private SpeakingMob() {
         reloadAll();
         }
-    private void reloadAll() {
+    public void reloadAll() {
     _ANGEL = new Speech("data/speech/angel.csv");
     _ANIMAL = new Speech("data/speech/animal.csv");
     _BEAST = new Speech("data/speech/beast.csv");
@@ -130,7 +130,7 @@ public class SpeakingMob {
     _HUMAN = new Speech("data/speech/human.csv");
     _HUMANOID = new Speech("data/speech/humanoid.csv");
     _KAMAEL = new Speech("data/speech/kamael.csv");
-    _MAGICCREATURE = new Speech("data/speech/magiccreature");
+    _MAGICCREATURE = new Speech("data/speech/magiccreature.csv");
     _MERCENAIRE = new Speech("data/speech/mercenaire.csv");
     _NONE = new Speech("data/speech/none.csv");
     _NONLIVING = new Speech("data/speech/nonliving.csv");
