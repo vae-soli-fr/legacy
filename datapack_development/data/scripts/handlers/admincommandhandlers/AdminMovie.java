@@ -19,17 +19,19 @@ public class AdminMovie implements IAdminCommandHandler {
         StringTokenizer st = new StringTokenizer(command, " ");
         st.nextToken();
         String option = st.nextToken();
-        if (option.equalsIgnoreCase("on")) {
-            /* 1st person */
-            activeChar.sendPacket(new CameraMode(1));
-            /* invisible : consultez AdminEffect */
-            activeChar.getAppearance().setInvisible();
-            activeChar.broadcastUserInfo();
-        } else if (option.equalsIgnoreCase("off")) {
-            /* synchronisation avec le serveur : */
-            activeChar.teleToLocation(activeChar.getClientX(), activeChar.getClientY(), activeChar.getClientZ());
-            /* 3rd person */
-            activeChar.sendPacket(new CameraMode(0));
+        if (option != null) {
+            if (option.equalsIgnoreCase("on")) {
+                /* 1st person */
+                activeChar.sendPacket(new CameraMode(1));
+                /* invisible : consultez AdminEffect */
+                activeChar.getAppearance().setInvisible();
+                activeChar.broadcastUserInfo();
+            } else if (option.equalsIgnoreCase("off")) {
+                /* synchronisation avec le serveur : */
+                activeChar.teleToLocation(activeChar.getClientX(), activeChar.getClientY(), activeChar.getClientZ());
+                /* 3rd person */
+                activeChar.sendPacket(new CameraMode(0));
+            }
         } else {
             activeChar.sendMessage("Usage: //movie <on|off>");
         }

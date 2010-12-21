@@ -251,6 +251,7 @@ import handlers.admincommandhandlers.AdminMovie;
 import handlers.voicedcommandhandlers.VotesReminder;
 import handlers.admincommandhandlers.AdminMessage;
 import handlers.voicedcommandhandlers.PetSay;
+import handlers.admincommandhandlers.AdminNpcSay;
 
 import java.util.logging.Logger;
 
@@ -375,6 +376,8 @@ public class MasterHandler
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMovie());
         if (!Config.VAEMOD_ADMINMESSAGEAREA.equalsIgnoreCase("OFF"))
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMessage());
+        if (!Config.VAEMOD_NPCSAY)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminNpcSay());
 		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + "  AdminCommandHandlers");
 	}
 	

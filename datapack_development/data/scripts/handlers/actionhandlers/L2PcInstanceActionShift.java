@@ -50,7 +50,7 @@ public class L2PcInstanceActionShift implements IActionHandler
 		}
         else if (target instanceof L2PcInstance){
             L2PcInstance player = (L2PcInstance) target;
-            player.showDesc(activeChar);
+            if (!player.isDead()) player.showDesc(activeChar);
         }
 		return true;
 	}
