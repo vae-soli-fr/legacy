@@ -250,6 +250,7 @@ import handlers.voicedcommandhandlers.RPTime;
 import handlers.admincommandhandlers.AdminMovie;
 import handlers.voicedcommandhandlers.VotesReminder;
 import handlers.admincommandhandlers.AdminMessage;
+import handlers.voicedcommandhandlers.PetSay;
 
 import java.util.logging.Logger;
 
@@ -568,6 +569,8 @@ public class MasterHandler
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new RPTime());
         if (Config.VAEMOD_VOTESCHECK > 0)
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new VotesReminder());
+        if (Config.VAEMOD_PETSAY)
+            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new PetSay());
         _log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	

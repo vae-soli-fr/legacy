@@ -72,7 +72,6 @@ import com.l2jserver.gameserver.templates.chars.L2NpcTemplate.AIType;
 import com.l2jserver.gameserver.templates.item.L2Item;
 import com.l2jserver.gameserver.templates.item.L2Weapon;
 import com.l2jserver.gameserver.util.Broadcast;
-import com.l2jserver.gameserver.vaesoli.SpeakingMob;
 import com.l2jserver.util.Rnd;
 import com.l2jserver.util.StringUtil;
 
@@ -488,7 +487,6 @@ public class L2Npc extends L2Character
 		{
 			_lastSocialBroadcast = now;
 			broadcastPacket(new SocialAction(getObjectId(), animationId));
-            SpeakingMob.getInstance().roleplaying(this);
         }
 	}
 
