@@ -3,6 +3,7 @@ package handlers.admincommandhandlers;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.L2Summon;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
 
@@ -25,7 +26,9 @@ public class AdminNpcSay implements IAdminCommandHandler {
                     activeChar.sendMessage("Usage : //>> texte roleplay");
                 }
             } else if (activeChar.getTarget() instanceof L2PcInstance) {
-                activeChar.sendMessage("Il n'est pas permis de faire parler un joueur.");
+                activeChar.sendMessage("Il est interdit de faire parler un joueur.");
+            } else if (activeChar.getTarget() instanceof L2Summon) {
+                activeChar.sendMessage("Il est interdit de faire parler un summon avec cette commande, utilisez .>> pour votre propre summon.");
             }
         } else {
             activeChar.sendMessage("Vous n'avez pas de cible à faire parler.");
