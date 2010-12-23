@@ -12490,11 +12490,10 @@ public final class L2PcInstance extends L2Playable
 	public int getWareHouseLimit()
 	{
 		int whlim;
-        /*if (getRace() == Race.Dwarf)
+        if (getRace() == Race.Dwarf)
         whlim = Config.WAREHOUSE_SLOTS_DWARF;
         else
-        whlim = Config.WAREHOUSE_SLOTS_NO_DWARF;*/
-        whlim = Config.VAEMOD_WHACCOUNTLIMIT;
+        whlim = Config.WAREHOUSE_SLOTS_NO_DWARF;
 		
 		whlim += (int)getStat().calcStat(Stats.WH_LIM, 0, null, null);
 		
