@@ -1442,7 +1442,62 @@ public final class L2ItemInstance extends L2Object
 			_dbLock.unlock();
 		}
 	}
-	
+
+    /**
+	 * Updates the database.<BR>
+	 */
+	public void updateDatabase(String account)
+	{
+		this.updateDatabase(account, false);
+	}
+
+	/**
+	 * Updates the database.<BR>
+	 *
+	 * @param force if the update should necessarilly be done.
+	 */
+	public void updateDatabase(String account, boolean force)
+	{
+		if (isWear()) //avoid saving weared items
+		{
+			return;
+		}
+
+		_dbLock.lock();
+		try
+		{
+			if (_existsInDb)
+			{
+				if (_ownerId == 0
+						|| _loc == ItemLocation.VOID
+						|| _loc == ItemLocation.REFUND
+						|| (getCount() == 0 && _loc != ItemLocation.LEASE))
+				{
+					removeFromDb();
+				}
+				else if (!Config.LAZY_ITEMS_UPDATE || force)
+				{
+					updateInDb(account);
+				}
+			}
+			else
+			{
+				if (_ownerId == 0
+						|| _loc == ItemLocation.VOID
+						|| _loc == ItemLocation.REFUND
+						|| (getCount() == 0 && _loc != ItemLocation.LEASE))
+				{
+					return;
+				}
+				insertIntoDb(account);
+			}
+		}
+		finally
+		{
+			_dbLock.unlock();
+		}
+	}
+
 	/**
 	 * Returns a L2ItemInstance stored in database from its objectID
 	 * @param objectId : int designating the objectID of the item
@@ -1621,6 +1676,53 @@ public final class L2ItemInstance extends L2Object
 			L2DatabaseFactory.close(con);
 		}
 	}
+
+    /**
+	 * Update the database with values of the item
+	 */
+	private void updateInDb(String account)
+	{
+		assert _existsInDb;
+
+		if (_wear)
+			return;
+
+		if (_storedInDb)
+			return;
+
+		Connection con = null;
+		PreparedStatement statement = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			statement = con.prepareStatement(
+					"UPDATE items SET owner_id=?,count=?,loc=?,loc_data=?,enchant_level=?,custom_type1=?,custom_type2=?,mana_left=?,time=?,account=? " +
+			"WHERE object_id = ?");
+			statement.setInt(1, _ownerId);
+			statement.setLong(2, getCount());
+			statement.setString(3, _loc.name());
+			statement.setInt(4, _locData);
+			statement.setInt(5, getEnchantLevel());
+			statement.setInt(6, getCustomType1());
+			statement.setInt(7, getCustomType2());
+			statement.setInt(8, getMana());
+			statement.setLong(9, getTime());
+            statement.setString(10, account);
+			statement.setInt(11, getObjectId());
+			statement.executeUpdate();
+			_existsInDb = true;
+			_storedInDb = true;
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			_log.log(Level.SEVERE, "Could not update item "+this+" in DB: Reason: "+e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
 	
 	/**
 	 * Insert the item in database
@@ -1657,6 +1759,57 @@ public final class L2ItemInstance extends L2Object
 			_storedInDb = true;
 			statement.close();
 			
+			if (_augmentation != null)
+				updateItemAttributes(con);
+			if (_elementals != null)
+				updateItemElements(con);
+		}
+		catch (Exception e)
+		{
+			_log.log(Level.SEVERE, "Could not insert item " + this + " into DB: Reason: " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
+
+    /**
+	 * Insert the item in database
+	 */
+	private void insertIntoDb(String account)
+	{
+		assert !_existsInDb && getObjectId() != 0;
+
+		if (_wear)
+			return;
+
+		Connection con = null;
+		PreparedStatement statement = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			statement = con.prepareStatement(
+					"INSERT INTO items (owner_id,item_id,count,loc,loc_data,enchant_level,object_id,custom_type1,custom_type2,mana_left,time,account) " +
+			"VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+			statement.setInt(1, _ownerId);
+			statement.setInt(2, _itemId);
+			statement.setLong(3, getCount());
+			statement.setString(4, _loc.name());
+			statement.setInt(5, _locData);
+			statement.setInt(6, getEnchantLevel());
+			statement.setInt(7, getObjectId());
+			statement.setInt(8, _type1);
+			statement.setInt(9, _type2);
+			statement.setInt(10, getMana());
+			statement.setLong(11, getTime());
+            statement.setString(12, account);
+
+			statement.executeUpdate();
+			_existsInDb = true;
+			_storedInDb = true;
+			statement.close();
+
 			if (_augmentation != null)
 				updateItemAttributes(con);
 			if (_elementals != null)

@@ -95,5 +95,4 @@ public class PcWarehouse extends Warehouse
                 L2DatabaseFactory.close(con);
             }
     }
-
 }

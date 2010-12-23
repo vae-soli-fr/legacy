@@ -24,6 +24,7 @@ import javolution.util.FastList;
 
 import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
+import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.model.L2ItemInstance;
 import com.l2jserver.gameserver.model.L2ItemInstance.ItemLocation;
@@ -413,7 +414,45 @@ public class PcInventory extends Inventory
 	@Override
 	public L2ItemInstance addItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference)
 	{
-		item = super.addItem(process, item, actor, reference);
+		L2ItemInstance olditem = getItemByItemId(item.getItemId());
+
+		// If stackable item is found in inventory just add to current quantity
+		if (olditem != null && olditem.isStackable())
+		{
+			long count = item.getCount();
+			olditem.changeCount(process, count, actor, reference);
+			olditem.setLastChange(L2ItemInstance.MODIFIED);
+
+			// And destroys the item
+			ItemTable.getInstance().destroyItem(process, item, actor, reference);
+			item.updateDatabase(actor.getAccountName());
+			item = olditem;
+
+			// Updates database
+			if (item.getItemId() == 57 && count < 10000 * Config.RATE_DROP_ITEMS_ID.get(57))
+			{
+				// Small adena changes won't be saved to database all the time
+				if (GameTimeController.getGameTicks() % 5 == 0)
+					item.updateDatabase(actor.getAccountName());
+			}
+			else
+				item.updateDatabase(actor.getAccountName());
+		}
+		// If item hasn't be found in inventory, create new one
+		else
+		{
+			item.setOwnerId(process, getOwnerId(), actor, reference);
+			item.setLocation(getBaseLocation());
+			item.setLastChange((L2ItemInstance.ADDED));
+
+			// Add item in inventory
+			addItem(item);
+
+			// Updates database
+			item.updateDatabase(actor.getAccountName());
+		}
+
+		refreshWeight();
 		
 		if (item != null && item.getItemId() == ADENA_ID && !item.equals(_adena))
 			_adena = item;
@@ -436,7 +475,52 @@ public class PcInventory extends Inventory
 	@Override
 	public L2ItemInstance addItem(String process, int itemId, long count, L2PcInstance actor, Object reference)
 	{
-		L2ItemInstance item = super.addItem(process, itemId, count, actor, reference);
+		L2ItemInstance item = getItemByItemId(itemId);
+
+		// If stackable item is found in inventory just add to current quantity
+		if (item != null && item.isStackable())
+		{
+			item.changeCount(process, count, actor, reference);
+			item.setLastChange(L2ItemInstance.MODIFIED);
+			// Updates database
+			if (itemId == 57 && count < 10000 * Config.RATE_DROP_ITEMS_ID.get(57))
+			{
+				// Small adena changes won't be saved to database all the time
+				if (GameTimeController.getGameTicks() % 5 == 0)
+					item.updateDatabase(actor.getAccountName());
+			}
+			else
+				item.updateDatabase(actor.getAccountName());
+		}
+		// If item hasn't be found in inventory, create new one
+		else
+		{
+			for (int i = 0; i < count; i++)
+			{
+				L2Item template = ItemTable.getInstance().getTemplate(itemId);
+				if (template == null)
+				{
+					_log.log(Level.WARNING, (actor != null ? "[" + actor.getName() + "] " : "") + "Invalid ItemId requested: ", itemId);
+					return null;
+				}
+
+				item = ItemTable.getInstance().createItem(process, itemId, template.isStackable() ? count : 1, actor, reference);
+				item.setOwnerId(getOwnerId());
+				item.setLocation(getBaseLocation());
+				item.setLastChange(L2ItemInstance.ADDED);
+
+				// Add item in inventory
+				addItem(item);
+				// Updates database
+				item.updateDatabase(actor.getAccountName());
+
+				// If stackable, end loop as entire count is included in 1 instance of item
+				if (template.isStackable() || !Config.MULTIPLE_ITEM_DROP)
+					break;
+			}
+		}
+
+		refreshWeight();
 		
 		if (item != null && item.getItemId() == ADENA_ID && !item.equals(_adena))
 			_adena = item;
@@ -476,7 +560,70 @@ public class PcInventory extends Inventory
 	@Override
 	public L2ItemInstance transferItem(String process, int objectId, long count, ItemContainer target, L2PcInstance actor, Object reference)
 	{
-		L2ItemInstance item = super.transferItem(process, objectId, count, target, actor, reference);
+		if (target == null)
+		{
+			return null;
+		}
+
+		L2ItemInstance sourceitem = getItemByObjectId(objectId);
+		if (sourceitem == null)
+		{
+			return null;
+		}
+		L2ItemInstance targetitem = sourceitem.isStackable() ? target.getItemByItemId(sourceitem.getItemId()) : null;
+
+		synchronized (sourceitem)
+		{
+			// check if this item still present in this container
+			if (getItemByObjectId(objectId) != sourceitem)
+			{
+				return null;
+			}
+
+			// Check if requested quantity is available
+			if (count > sourceitem.getCount())
+				count = sourceitem.getCount();
+
+			// If possible, move entire item object
+			if (sourceitem.getCount() == count && targetitem == null)
+			{
+				removeItem(sourceitem);
+				target.addItem(process, sourceitem, actor, reference);
+				targetitem = sourceitem;
+			}
+			else
+			{
+				if (sourceitem.getCount() > count) // If possible, only update counts
+				{
+					sourceitem.changeCount(process, -count, actor, reference);
+				}
+				else
+					// Otherwise destroy old item
+				{
+					removeItem(sourceitem);
+					ItemTable.getInstance().destroyItem(process, sourceitem, actor, reference);
+				}
+
+				if (targetitem != null) // If possible, only update counts
+				{
+					targetitem.changeCount(process, count, actor, reference);
+				}
+				else
+					// Otherwise add new item
+				{
+					targetitem = target.addItem(process, sourceitem.getItemId(), count, actor, reference);
+				}
+			}
+
+			// Updates database
+			sourceitem.updateDatabase(actor.getAccountName(), true);
+			if (targetitem != sourceitem && targetitem != null)
+				targetitem.updateDatabase(actor.getAccountName());
+			if (sourceitem.isAugmented())
+				sourceitem.getAugmentation().removeBonus(actor);
+			refreshWeight();
+			target.refreshWeight();
+		}
 		
 		if (_adena != null && (_adena.getCount() <= 0 || _adena.getOwnerId() != getOwnerId()))
 			_adena = null;
@@ -484,7 +631,7 @@ public class PcInventory extends Inventory
 		if (_ancientAdena != null && (_ancientAdena.getCount() <= 0 || _ancientAdena.getOwnerId() != getOwnerId()))
 			_ancientAdena = null;
 		
-		return item;
+		return targetitem;
 	}
 	
 	/**
