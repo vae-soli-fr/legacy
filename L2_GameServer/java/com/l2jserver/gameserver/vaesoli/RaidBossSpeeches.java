@@ -85,7 +85,7 @@ public class RaidBossSpeeches {
         }
     }
     private static final Logger _log = Logger.getLogger(RaidBossSpeeches.class.getName());
-    private FastMap<Integer, Speech> _speechs;
+    private FastMap<Integer, Speech> _speeches;
 
     public static RaidBossSpeeches getInstance() {
         return SingletonHolder.INSTANCE;
@@ -101,12 +101,12 @@ public class RaidBossSpeeches {
     }
 
     public void reloadAll() {
-        File[] files = new File(Config.DATAPACK_ROOT, "data/speechs").listFiles(new TxtFilter());
+        File[] files = new File(Config.DATAPACK_ROOT, "data/speeches").listFiles(new TxtFilter());
         int count = 0;
         for (File file : files) {
             if (!file.isDirectory()) {
                 int id = Integer.parseInt(file.getName().split(".txt").toString());
-                _speechs.put(id, new Speech(file.getPath()));
+                _speeches.put(id, new Speech(file.getPath()));
                 count++;
             }
         }
@@ -114,22 +114,22 @@ public class RaidBossSpeeches {
     }
 
     private boolean probability() {
-        return Rnd.get(1, 100) <= Config.VAEMOD_VOTESCHECK; //20% chance
+        return Rnd.get(1, 100) <= Config.VAEMOD_SPEAKINGBOSS; // % chance
     }
 
     public void roleplaying(L2GrandBossInstance wb) {
         if ( Config.VAEMOD_SPEAKINGBOSS > 0) return;
         int id = wb.getNpcId();
-        if (_speechs.containsKey(id) && !_speechs.get(id).getIsEmpty()&& probability()) {
-            wb.broadcastPacket(new CreatureSay(wb.getObjectId(), Say2.ALL, wb.getName(), _speechs.get(id).getValue(Rnd.get(_speechs.get(id).getSize()))));
+        if (_speeches.containsKey(id) && !_speeches.get(id).getIsEmpty()&& probability()) {
+            wb.broadcastPacket(new CreatureSay(wb.getObjectId(), Say2.ALL, wb.getName(), _speeches.get(id).getValue(Rnd.get(_speeches.get(id).getSize()))));
         }
         }
 
     public void roleplaying(L2RaidBossInstance rb) {
         if ( Config.VAEMOD_SPEAKINGBOSS > 0) return;
         int id = rb.getNpcId();
-        if (_speechs.containsKey(id) && !_speechs.get(id).getIsEmpty()&& probability()) {
-            rb.broadcastPacket(new CreatureSay(rb.getObjectId(), Say2.ALL, rb.getName(), _speechs.get(id).getValue(Rnd.get(_speechs.get(id).getSize()))));
+        if (_speeches.containsKey(id) && !_speeches.get(id).getIsEmpty()&& probability()) {
+            rb.broadcastPacket(new CreatureSay(rb.getObjectId(), Say2.ALL, rb.getName(), _speeches.get(id).getValue(Rnd.get(_speeches.get(id).getSize()))));
         }
     }
 
