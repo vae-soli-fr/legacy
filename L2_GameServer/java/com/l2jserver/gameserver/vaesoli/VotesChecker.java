@@ -6,7 +6,7 @@ import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
 
-public class Votes {
+public class VotesChecker {
 
     public static long CURRENTTIME = 0;
     private final int INTERVAL = Config.VAEMOD_VOTESDELAY;
@@ -14,14 +14,14 @@ public class Votes {
 
     private static final class SingletonHolder {
 
-        private static final Votes INSTANCE = new Votes();
+        private static final VotesChecker INSTANCE = new VotesChecker();
     }
 
-    public static Votes getInstance() {
+    public static VotesChecker getInstance() {
         return SingletonHolder.INSTANCE;
     }
 
-    private Votes() {
+    private VotesChecker() {
         ThreadPoolManager.getInstance().scheduleGeneral(new Rappel(), TIMER);
     }
 

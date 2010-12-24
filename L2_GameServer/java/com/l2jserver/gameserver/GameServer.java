@@ -133,8 +133,8 @@ import com.l2jserver.gameserver.taskmanager.AutoAnnounceTaskManager;
 import com.l2jserver.gameserver.taskmanager.KnownListUpdateTaskManager;
 import com.l2jserver.gameserver.taskmanager.TaskManager;
 import com.l2jserver.gameserver.util.DynamicExtension;
-import com.l2jserver.gameserver.vaesoli.SpeakingMob;
-import com.l2jserver.gameserver.vaesoli.Votes;
+import com.l2jserver.gameserver.vaesoli.RaidBossSpeeches;
+import com.l2jserver.gameserver.vaesoli.VotesChecker;
 import com.l2jserver.status.Status;
 import com.l2jserver.util.DeadLockDetector;
 import com.l2jserver.util.IPv4Filter;
@@ -283,8 +283,8 @@ public class GameServer
 		DimensionalRiftManager.getInstance();
 		EventDroplist.getInstance();
 
-        printSection("SpeakingMob");
-        SpeakingMob.getInstance();
+        printSection("RaidBoss Speeches");
+        RaidBossSpeeches.getInstance();
 		
 		printSection("Siege");
 		SiegeManager.getInstance().getSieges();
@@ -390,7 +390,7 @@ public class GameServer
 			CoupleManager.getInstance();
 
         if (Config.VAEMOD_VOTESCHECK > 0)
-            Votes.getInstance();
+            VotesChecker.getInstance();
 		
 		TaskManager.getInstance();
 

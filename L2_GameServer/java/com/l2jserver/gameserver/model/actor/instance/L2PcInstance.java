@@ -254,7 +254,7 @@ import com.l2jserver.gameserver.templates.item.L2Weapon;
 import com.l2jserver.gameserver.templates.item.L2WeaponType;
 import com.l2jserver.gameserver.templates.skills.L2EffectType;
 import com.l2jserver.gameserver.templates.skills.L2SkillType;
-import com.l2jserver.gameserver.vaesoli.Votes;
+import com.l2jserver.gameserver.vaesoli.VotesChecker;
 import com.l2jserver.gameserver.util.FloodProtectors;
 import com.l2jserver.gameserver.util.Util;
 import com.l2jserver.util.Point3D;
@@ -15124,7 +15124,7 @@ public final class L2PcInstance extends L2Playable
 
         public boolean hasVoted()
         {
-        if ( Votes.CURRENTTIME < _votetime) return true;
+        if ( VotesChecker.CURRENTTIME < _votetime) return true;
         else {
         Connection con = null;
         long newtime = 0;
@@ -15140,7 +15140,7 @@ public final class L2PcInstance extends L2Playable
         catch (Exception e) { }
         finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
         _votetime = newtime;
-        if (Votes.CURRENTTIME < _votetime) return true;
+        if (VotesChecker.CURRENTTIME < _votetime) return true;
         else return false;
         }
         }

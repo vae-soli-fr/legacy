@@ -24,8 +24,11 @@ import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Summon;
 import com.l2jserver.gameserver.model.entity.Hero;
 import com.l2jserver.gameserver.network.SystemMessageId;
+import com.l2jserver.gameserver.network.serverpackets.SocialAction;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.templates.chars.L2NpcTemplate;
+import com.l2jserver.gameserver.vaesoli.RaidBossLimiter;
+import com.l2jserver.gameserver.vaesoli.RaidBossSpeeches;
 import com.l2jserver.util.Rnd;
 
 /**
@@ -40,6 +43,8 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	
 	private RaidBossSpawnManager.StatusEnum _raidStatus;
 	private boolean _useRaidCurse = true;
+	private long _lastSocialBroadcast = 0;
+	private int _minimalSocialInterval = 6000;
 	
 	/**
 	 * Constructor of L2RaidBossInstance (use L2Character and L2NpcInstance constructor).<BR><BR>
@@ -92,14 +97,16 @@ public class L2RaidBossInstance extends L2MonsterInstance
 				for (L2PcInstance member : player.getParty().getPartyMembers())
 				{
 					RaidBossPointsManager.getInstance().addPoints(member, this.getNpcId(), (this.getLevel() / 2) + Rnd.get(-5, 5));
-					if(member.isNoble())
+					RaidBossLimiter.getInstance().addPoint(member);
+                    if(member.isNoble())
 						Hero.getInstance().setRBkilled(member.getObjectId(), this.getNpcId());
 				}
 			}
 			else
 			{
 				RaidBossPointsManager.getInstance().addPoints(player, this.getNpcId(), (this.getLevel() / 2) + Rnd.get(-5, 5));
-				if(player.isNoble())
+				RaidBossLimiter.getInstance().addPoint(player);
+                if(player.isNoble())
 					Hero.getInstance().setRBkilled(player.getObjectId(), this.getNpcId());
 			}
 		}
@@ -199,4 +206,16 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	{
 		return _useRaidCurse;
 	}
+
+    @Override
+    public void onRandomAnimation(int animationId) {
+        // Send a packet SocialAction to all L2PcInstance in the _KnownPlayers of the L2NpcInstance
+		long now = System.currentTimeMillis();
+		if (now - _lastSocialBroadcast > _minimalSocialInterval)
+		{
+			_lastSocialBroadcast = now;
+			broadcastPacket(new SocialAction(getObjectId(), animationId));
+            RaidBossSpeeches.getInstance().roleplaying(this);
+        }
+    }
 }
