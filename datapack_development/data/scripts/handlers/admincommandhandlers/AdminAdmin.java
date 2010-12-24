@@ -41,8 +41,7 @@ import com.l2jserver.gameserver.model.olympiad.Olympiad;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
-import com.l2jserver.gameserver.vaesoli.SpeakingMob;
-
+import com.l2jserver.gameserver.vaesoli.RaidBossSpeeches;
 
 /**
  * This class handles following admin commands:
@@ -303,7 +302,7 @@ public class AdminAdmin implements IAdminCommandHandler
 				}
                 else if (type.startsWith("speechs"))
                 {
-                    SpeakingMob.getInstance().reloadAll();
+                    RaidBossSpeeches.getInstance().reloadAll();
                     activeChar.sendMessage("All Speechs have been reloaded");
                 }
 				

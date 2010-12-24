@@ -110,7 +110,7 @@ public class RaidBossSpeeches {
                 count++;
             }
         }
-        _log.info("Loaded " + count + " speechs files.");
+        _log.info("Loaded " + count + " speech files.");
     }
 
     private boolean probability() {
