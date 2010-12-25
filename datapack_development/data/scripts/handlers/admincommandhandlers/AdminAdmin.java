@@ -300,10 +300,10 @@ public class AdminAdmin implements IAdminCommandHandler
 					ExtractableSkillsData.getInstance().reload();
 					activeChar.sendMessage("Extractable Items and Skills have been reloaded");
 				}
-                else if (type.startsWith("speechs"))
+                else if (type.startsWith("speeches"))
                 {
                     RaidBossSpeeches.getInstance().reloadAll();
-                    activeChar.sendMessage("All Speechs have been reloaded");
+                    activeChar.sendMessage("All Speeches have been reloaded");
                 }
 				
 				activeChar.sendMessage("WARNING: There are several known issues regarding this feature. Reloading server data during runtime is STRONGLY NOT RECOMMENDED for live servers, just for developing environments.");
