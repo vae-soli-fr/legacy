@@ -33,6 +33,10 @@ public class RaidBossLimiter
         _jail = jail;
     }
 
+    public boolean isJailing() {
+        return _jail;
+    }
+
 	public void addPoint(L2PcInstance player)
 	{
         if (!_jail) return;
@@ -50,9 +54,9 @@ public class RaidBossLimiter
     {
         if (player.isFlyingMounted()) player.untransform();
         player.setPunishLevel(L2PcInstance.PunishLevel.JAIL, 1440);
-        player.sendMessage("Les RBs sont limités à 3 par jour (après reboot). Vous avez dépassé le quota autorisé. Ce personnage est en prison pour 24 heures.");
-        _log.info("Le joueur " + player.getName() + " du compte " + player.getAccountName() + " a été ban 24h par le RaidBossLimiter");
-        if (Config.GMAUDIT) GMAudit.auditGMAction("[RaidBossLimiter]", "Ban de 24h", player.getName() + " du compte " + player.getAccountName());
+        player.sendMessage("Les RBs sont limités à 3 par jour (après reboot). Vous avez dépassé le quota autorisé.");
+        _log.info("Le personnage " + player.getName() + " du compte " + player.getAccountName() + " est banni 24h par le RaidBossLimiter");
+        if (Config.GMAUDIT) GMAudit.auditGMAction("RaidBossLimiter", "jail 1440 minutes", player.getName() + " (" + player.getAccountName() + ")");
     }
 
 

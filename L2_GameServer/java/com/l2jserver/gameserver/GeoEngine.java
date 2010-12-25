@@ -758,7 +758,7 @@ public class GeoEngine extends GeoData
 		}
         catch (FileNotFoundException e)
         {
-            _log.info("Geo Engine: - Missing file : perhaps disabled");
+            _log.info("Geo Engine: - Missing file: perhaps disabled");
         }
 		catch (Exception e)
 		{

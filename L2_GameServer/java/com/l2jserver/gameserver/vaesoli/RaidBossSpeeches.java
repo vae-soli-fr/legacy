@@ -46,7 +46,7 @@ public class RaidBossSpeeches {
         private void fillMap() {
             LineNumberReader lnr = null;
             try {
-                File speechData = new File(Config.DATAPACK_ROOT, this.path);
+                File speechData = new File(this.path);
                 lnr = new LineNumberReader(new BufferedReader(new FileReader(speechData)));
 
                 String line = null;
@@ -61,7 +61,7 @@ public class RaidBossSpeeches {
                 }
                 _log.info(this.path + ": Loaded " + this.map.size() + " phrases.");
             } catch (FileNotFoundException e) {
-                _log.warning(path + " is missing !");
+                _log.warning(this.path + " is missing !");
             } catch (IOException e) {
                 _log.log(Level.WARNING, "Error while loading file " + e.getMessage(), e);
             } finally {
@@ -101,12 +101,14 @@ public class RaidBossSpeeches {
     }
 
     public void reloadAll() {
+        _speeches = new FastMap<Integer, Speech>();
         File[] files = new File(Config.DATAPACK_ROOT, "data/speeches").listFiles(new TxtFilter());
         int count = 0;
         for (File file : files) {
             if (!file.isDirectory()) {
-                int id = Integer.parseInt(file.getName().split(".txt").toString());
-                _speeches.put(id, new Speech(file.getPath()));
+                int id = Integer.parseInt(file.getName().substring(0, file.getName().length()-4));
+                Speech speech = new Speech(file.getPath());
+                _speeches.put(id, speech);
                 count++;
             }
         }
@@ -118,7 +120,6 @@ public class RaidBossSpeeches {
     }
 
     public void roleplaying(L2GrandBossInstance wb) {
-        if ( Config.VAEMOD_SPEAKINGBOSS > 0) return;
         int id = wb.getNpcId();
         if (_speeches.containsKey(id) && !_speeches.get(id).getIsEmpty()&& probability()) {
             wb.broadcastPacket(new CreatureSay(wb.getObjectId(), Say2.ALL, wb.getName(), _speeches.get(id).getValue(Rnd.get(_speeches.get(id).getSize()))));
@@ -126,7 +127,6 @@ public class RaidBossSpeeches {
         }
 
     public void roleplaying(L2RaidBossInstance rb) {
-        if ( Config.VAEMOD_SPEAKINGBOSS > 0) return;
         int id = rb.getNpcId();
         if (_speeches.containsKey(id) && !_speeches.get(id).getIsEmpty()&& probability()) {
             rb.broadcastPacket(new CreatureSay(rb.getObjectId(), Say2.ALL, rb.getName(), _speeches.get(id).getValue(Rnd.get(_speeches.get(id).getSize()))));
