@@ -15,7 +15,6 @@ import com.l2jserver.gameserver.util.GMAudit;
 public class RaidBossLimiter
 {
 	private final static Logger _log = Logger.getLogger(RaidBossLimiter.class.getName());
-    private boolean _jail;
 	private FastMap<String, Integer> _list;
 
 	public static final RaidBossLimiter getInstance()
@@ -26,20 +25,11 @@ public class RaidBossLimiter
 	private RaidBossLimiter()
 	{
 		_list = new FastMap<String, Integer>();
-        _jail = true;
 	}
-
-    public void setJail(boolean jail) {
-        _jail = jail;
-    }
-
-    public boolean isJailing() {
-        return _jail;
-    }
 
 	public void addPoint(L2PcInstance player)
 	{
-        if (!_jail) return;
+        if (!Config.VAEMOD_RBJAIL) return;
         if (_list.containsKey(player.getAccountName()))
         {
             int points = _list.get(player.getAccountName());

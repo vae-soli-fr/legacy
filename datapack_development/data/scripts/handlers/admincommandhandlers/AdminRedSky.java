@@ -30,8 +30,10 @@ public class AdminRedSky implements IAdminCommandHandler {
 
             if (!Config.VAEMOD_SKYISRED) {
                 RedStart();
+                activeChar.sendMessage("Red Sky activé temporairement.");
             } else if (Config.VAEMOD_SKYISRED) {
                 RedStop();
+                activeChar.sendMessage("Red Sky désactivé.");
             }
         }
 

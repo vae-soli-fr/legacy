@@ -105,7 +105,8 @@ public final class Config
     public static boolean VAEMOD_HIDEOFFLINE; // cacher les offlines dans le CB
     public static int VAEMOD_SPEAKINGBOSS; // chance pour les mobs de parler
     public static boolean VAEMOD_PETSAY; // commande pour faire parler son pet
-    public static boolean VAEMOD_NPCSAY; // commannde admin pour faire parler les Npc
+    public static boolean VAEMOD_NPCSAY; // commande admin pour faire parler les Npc
+    public static boolean VAEMOD_RBJAIL = true; // bannir les joueur qui font plus de 3 RBs
 
     //--------------------------------------------------
 	// L2J Variable Definitions
