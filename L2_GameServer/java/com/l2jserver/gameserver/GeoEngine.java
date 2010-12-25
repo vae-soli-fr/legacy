@@ -41,6 +41,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2DefenderInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.util.Point3D;
+import java.io.FileNotFoundException;
 
 /**
  *
@@ -755,6 +756,10 @@ public class GeoEngine extends GeoData
 			
 			_log.info("Geo Engine: - Max Layers: " + flor + " Size: " + size + " Loaded: " + index);
 		}
+        catch (FileNotFoundException e)
+        {
+            _log.info("Geo Engine: - Missing file : perhaps disabled");
+        }
 		catch (Exception e)
 		{
 			_log.log(Level.WARNING, "Failed to Load GeoFile at block: " + block, e);
