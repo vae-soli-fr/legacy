@@ -252,6 +252,7 @@ import handlers.voicedcommandhandlers.VotesReminder;
 import handlers.admincommandhandlers.AdminMessage;
 import handlers.voicedcommandhandlers.PetSay;
 import handlers.admincommandhandlers.AdminNpcSay;
+import handlers.admincommandhandlers.AdminRBjail;
 
 import java.util.logging.Logger;
 
@@ -264,8 +265,6 @@ import com.l2jserver.gameserver.handler.ItemHandler;
 import com.l2jserver.gameserver.handler.SkillHandler;
 import com.l2jserver.gameserver.handler.UserCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
-
-
 
 
 /**
@@ -370,6 +369,7 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminUnblockIp());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminVitality());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminZone());
+        AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRBjail());
         if (Config.VAEMOD_REDSKY)
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRedSky());
         if (Config.VAEMOD_MOVIE)
