@@ -12964,7 +12964,7 @@ public final class L2PcInstance extends L2Playable
 		
 		public void run()
 		{
-			if (!_player.isInsideZone(L2Character.ZONE_PEACE))
+			if (!_player.isInsideZone(L2Character.ZONE_TOWN))
 				return;
 			
 			if (_player.getVitalityPoints() >= PcStat.MAX_VITALITY_POINTS)
