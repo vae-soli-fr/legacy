@@ -21,9 +21,14 @@ public class AdminNpcSay implements IAdminCommandHandler {
             if (activeChar.getTarget() instanceof L2Npc) {
                 if (command.length() > 9) {
                     L2Npc npc = (L2Npc) activeChar.getTarget();
-                    npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), command.substring(9)));
+                    String vox = command.substring(9);
+                    if (vox.startsWith("!")) {
+                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.SHOUT, npc.getName(), vox.substring(1)));
+                    } else {
+                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.BATTLEFIELD, npc.getName(), vox));
+                    }
                 } else {
-                    activeChar.sendMessage("Usage : //>> texte roleplay");
+                    activeChar.sendMessage("Usage : //>> [!]texte roleplay");
                 }
             } else if (activeChar.getTarget() instanceof L2PcInstance) {
                 activeChar.sendMessage("Il est interdit de faire parler un joueur.");

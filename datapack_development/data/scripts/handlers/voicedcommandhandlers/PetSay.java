@@ -18,7 +18,7 @@ if (command.equalsIgnoreCase(">>")) {
             if (activeChar.getPet() != null) {
                 if (option != null) {
                     if (activeChar.getPet().getName() != null) {
-                        activeChar.getPet().broadcastPacket(new CreatureSay(activeChar.getPet().getObjectId(), Say2.ALL, activeChar.getPet().getName(), option));
+                        activeChar.getPet().broadcastPacket(new CreatureSay(activeChar.getPet().getObjectId(), Say2.ALL, "{" + activeChar.getPet().getName() + "}", option));
                     } else {
                         activeChar.sendMessage("Votre animal ne possède pas de nom.");
                     }

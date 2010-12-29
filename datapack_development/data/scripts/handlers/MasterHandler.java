@@ -377,7 +377,7 @@ public class MasterHandler
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMovie());
         if (!Config.VAEMOD_ADMINMESSAGEAREA.equalsIgnoreCase("OFF"))
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMessage());
-        if (!Config.VAEMOD_NPCSAY)
+        if (Config.VAEMOD_NPCSAY)
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminNpcSay());
 		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + "  AdminCommandHandlers");
 	}
