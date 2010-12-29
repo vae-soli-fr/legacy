@@ -253,6 +253,7 @@ import handlers.admincommandhandlers.AdminMessage;
 import handlers.voicedcommandhandlers.PetSay;
 import handlers.admincommandhandlers.AdminNpcSay;
 import handlers.admincommandhandlers.AdminRBjail;
+import handlers.voicedcommandhandlers.HellboundVoiced;
 
 import java.util.logging.Logger;
 
@@ -546,6 +547,7 @@ public class MasterHandler
 	private static void loadVoicedHandlers()
 	{
 		VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new stats());
+        VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new HellboundVoiced());
 		if (Config.L2JMOD_ALLOW_WEDDING)
 			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Wedding());
 		if (Config.BANKING_SYSTEM_ENABLED)

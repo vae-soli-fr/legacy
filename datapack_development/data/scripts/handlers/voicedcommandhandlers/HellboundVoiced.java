@@ -23,11 +23,11 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  */
 public class HellboundVoiced implements IVoicedCommandHandler
 {
-	private static final String[] VOICED_COMMANDS = { "hellbound" };
+	private static final String[] VOICED_COMMANDS = { "hellbound", "trust" };
 
 	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)
 	{
-		if (command.startsWith("hellbound") || command.equalsIgnoreCase("hellbound"))
+		if (command.startsWith("hellbound") || command.equalsIgnoreCase("hellbound") || command.startsWith("trust"))
 		{
 			HellboundManager.getInstance().checkHellboundLevel();
 			boolean _isOpen = HellboundManager.getInstance().checkIsOpen();
@@ -49,8 +49,4 @@ public class HellboundVoiced implements IVoicedCommandHandler
 		return VOICED_COMMANDS;
 	}
 
-	public static void main(String[] args)
-	{
-		new HellboundVoiced();
-	}
 }
