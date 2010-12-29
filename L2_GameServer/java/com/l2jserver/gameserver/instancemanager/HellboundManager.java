@@ -36,7 +36,7 @@ public class HellboundManager
 	private void init()
 	{
 		checkHellboundLevel();
-		_log.info("HelboundManager: Loaded ");
+		_log.info("HellboundManager: Loaded ");
 	}
 
 	public static final HellboundManager getInstance()
@@ -242,6 +242,10 @@ public class HellboundManager
 		if (tempLevel != _level && tempLevel != 5)
 			changeLevel(_level);
 	}
+
+    public boolean isLocked() {
+    return false;
+    }
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder

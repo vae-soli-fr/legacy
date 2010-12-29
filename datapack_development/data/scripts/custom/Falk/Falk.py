@@ -1,7 +1,7 @@
 import sys
 from java.lang import System
 from com.l2jserver import L2DatabaseFactory
-from com.l2jservergameserver.model.quest import State
+from com.l2jserver.gameserver.model.quest import State
 from com.l2jserver.gameserver.model.quest import QuestState
 from com.l2jserver.gameserver.model.quest.jython import QuestJython as JQuest
 from com.l2jserver.gameserver.instancemanager import HellboundManager
