@@ -98,6 +98,9 @@ public class L2Spawn
 	
 	/** If true then spawn is custom */
 	private boolean _customSpawn;
+
+    /** Link to Hellbound ? */
+    private int _onKillDelay = 5000;
 	
 	private L2Npc _lastSpawn;
 	private static List<SpawnListener> _spawnListeners = new FastList<SpawnListener>();
@@ -655,4 +658,15 @@ public class L2Spawn
 	{
 		_instanceId = instanceId;
 	}
+
+    public int getOnKillDelay()
+    {
+    	return _onKillDelay;
+    }
+
+    public void setOnKillDelay(int delay)
+    {
+    	_onKillDelay = delay;
+    }
+
 }
