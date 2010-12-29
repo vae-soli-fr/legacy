@@ -769,6 +769,7 @@ games.sql
 global_tasks.sql
 grandboss_data.sql
 grandboss_list.sql
+hellbound_table.sql
 helper_buff_list.sql
 henna.sql
 henna_trees.sql
@@ -1118,4 +1119,3 @@ echo visit http://www.l2jdp.com for more info about
 echo the Official L2J Datapack project.
 echo.
 pause
-color
