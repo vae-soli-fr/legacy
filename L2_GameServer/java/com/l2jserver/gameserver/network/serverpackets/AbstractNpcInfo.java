@@ -14,10 +14,13 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
+import java.text.DecimalFormat;
 import com.l2jserver.Config;
+import com.l2jserver.gameserver.datatables.CharTemplateTable;
 import com.l2jserver.gameserver.datatables.ClanTable;
 import com.l2jserver.gameserver.instancemanager.TownManager;
 import com.l2jserver.gameserver.model.L2Clan;
+import com.l2jserver.gameserver.model.actor.FakePc;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Summon;
@@ -26,6 +29,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.skills.AbnormalEffect;
+import com.l2jserver.gameserver.templates.chars.L2PcTemplate;
 
 /**
  * This class ...
@@ -142,61 +146,207 @@ public abstract class AbstractNpcInfo extends L2GameServerPacket
 		@Override
 		protected void writeImpl()
 		{
-			writeC(0x0c);
-			writeD(_npc.getObjectId());
-			writeD(_idTemplate + 1000000); // npctype id
-			writeD(_isAttackable ? 1 : 0);
-			writeD(_x);
-			writeD(_y);
-			writeD(_z);
-			writeD(_heading);
-			writeD(0x00);
-			writeD(_mAtkSpd);
-			writeD(_pAtkSpd);
-			writeD(_runSpd);
-			writeD(_walkSpd);
-			writeD(_runSpd); // swim run speed
-			writeD(_walkSpd); // swim walk speed
-			writeD(_runSpd); // swim run speed
-			writeD(_walkSpd); // swim walk speed
-			writeD(_runSpd); // fly run speed
-			writeD(_walkSpd); // fly run speed
-			writeF(_npc.getMovementSpeedMultiplier());
-			writeF(_npc.getAttackSpeedMultiplier());
-			writeF(_collisionRadius);
-			writeF(_collisionHeight);
-			writeD(_rhand); // right hand weapon
-			writeD(_chest);
-			writeD(_lhand); // left hand weapon
-			writeC(1); // name above char 1=true ... ??
-			writeC(_npc.isRunning() ? 1 : 0);
-			writeC(_npc.isInCombat() ? 1 : 0);
-			writeC(_npc.isAlikeDead() ? 1 : 0);
-			writeC(_isSummoned ? 2 : 0); // 0=teleported 1=default 2=summoned
-			writeS(_name);
-			writeS(_title);
-			writeD(0x00); // Title color 0=client default
-			writeD(0x00); //pvp flag
-			writeD(0x00); // karma
-			
-			writeD(_npc.getAbnormalEffect()); // C2
-			writeD(_clanId); //clan id
-			writeD(_clanCrest); //crest id
-			writeD(_allyId); // ally id
-			writeD(_allyCrest); // all crest
-			writeC(_npc.isFlying() ? 2 : 0); // C2
-			writeC(0x00); // title color 0=client
-			
-			writeF(_collisionRadius);
-			writeF(_collisionHeight);
-			writeD(_enchantEffect); // C4
-			writeD(_npc.isFlying() ? 1 : 0); // C6
-			writeD(0x00);
-			writeD(0x00);// CT1.5 Pet form and skills
-			writeC(_npc.isHideName() ? 0x00 : 0x01);
-			writeC(_npc.isHideName() ? 0x00 : 0x01);
-			writeD(_npc.getSpecialEffect());
-			writeD(_displayEffect);
+			FakePc fpc = _npc.getFakePc();
+			if (fpc != null)
+			{
+				writeC(0x31);
+				writeD(_x);
+				writeD(_y);
+				writeD(_z);
+				writeD(0x00); // vehicle id
+				writeD(_npc.getObjectId());
+				writeS(fpc.name); // visible name
+				writeD(fpc.race);
+				writeD(fpc.sex);
+				writeD(fpc.clazz);
+
+				writeD(fpc.pdUnder);
+				writeD(fpc.pdHead);
+				writeD(fpc.pdRHand);
+				writeD(fpc.pdLHand);
+				writeD(fpc.pdGloves);
+				writeD(fpc.pdChest);
+				writeD(fpc.pdLegs);
+				writeD(fpc.pdFeet);
+				writeD(fpc.pdBack);
+				writeD(fpc.pdLRHand);
+				writeD(fpc.pdHair);
+				writeD(fpc.pdHair2);
+				writeD(fpc.pdRBracelet);
+				writeD(fpc.pdLBracelet);
+				writeD(fpc.pdDeco1);
+				writeD(fpc.pdDeco2);
+				writeD(fpc.pdDeco3);
+				writeD(fpc.pdDeco4);
+				writeD(fpc.pdDeco5);
+				writeD(fpc.pdDeco6);
+				writeD(0x00); // belt
+
+				writeD(fpc.pdUnderAug);
+				writeD(fpc.pdHeadAug);
+				writeD(fpc.pdRHandAug);
+				writeD(fpc.pdLHandAug);
+				writeD(fpc.pdGlovesAug);
+				writeD(fpc.pdChestAug);
+				writeD(fpc.pdLegsAug);
+				writeD(fpc.pdFeetAug);
+				writeD(fpc.pdBackAug);
+				writeD(fpc.pdLRHandAug);
+				writeD(fpc.pdHairAug);
+				writeD(fpc.pdHair2Aug);
+				writeD(fpc.pdRBraceletAug);
+				writeD(fpc.pdLBraceletAug);
+				writeD(fpc.pdDeco1Aug);
+				writeD(fpc.pdDeco2Aug);
+				writeD(fpc.pdDeco3Aug);
+				writeD(fpc.pdDeco4Aug);
+				writeD(fpc.pdDeco5Aug);
+				writeD(fpc.pdDeco6Aug);
+				writeD(0x00); // belt aug
+				writeD(0x00);
+				writeD(0x01);
+
+				writeD(fpc.pvpFlag);
+				writeD(fpc.karma);
+
+				writeD(_mAtkSpd);
+				writeD(_pAtkSpd);
+
+				writeD(0x00);
+
+				writeD(_runSpd);
+				writeD(_walkSpd);
+				writeD(_runSpd); // swim run speed
+				writeD(_walkSpd); // swim walk speed
+				writeD(_runSpd); // fly run speed
+				writeD(_walkSpd); // fly walk speed
+				writeD(_runSpd);
+				writeD(_walkSpd);
+				writeF(_npc.getMovementSpeedMultiplier()); // _activeChar.getProperMultiplier()
+				writeF(_npc.getAttackSpeedMultiplier()); // _activeChar.getAttackSpeedMultiplier()
+
+				// TODO: add handling of mount collision
+				L2PcTemplate pctmpl = CharTemplateTable.getInstance().getTemplate(fpc.clazz);
+				writeF(fpc.sex == 0 ? pctmpl.fCollisionRadius : pctmpl.fCollisionRadius_female);
+				writeF(fpc.sex == 0 ? pctmpl.fCollisionHeight : pctmpl.fCollisionHeight_female);
+
+				writeD(fpc.hairStyle);
+				writeD(fpc.hairColor);
+				writeD(fpc.face);
+
+				if (_npc instanceof L2MonsterInstance)
+					writeS(fpc.title + " - HP " + new DecimalFormat("#.##").format(100.0 * _npc.getCurrentHp() / _npc.getMaxVisibleHp()) + "%"); // visible title
+				else
+					writeS(fpc.title);
+
+				writeD(0x00); // clan id
+				writeD(0x00); // clan crest id
+				writeD(0x00); // ally id
+				writeD(0x00); // ally crest id
+
+				writeC(0x01); // standing = 1  sitting = 0
+				writeC(_npc.isRunning() ? 1 : 0); // running = 1   walking = 0
+				writeC(_npc.isInCombat() ? 1 : 0);
+				writeC(_npc.isAlikeDead() ? 1 : 0);
+
+				writeC(fpc.invisible); // invisible = 1  visible =0
+
+				writeC(fpc.mount); // 1 on strider   2 on wyvern  3 on Great Wolf  0 no mount
+				writeC(0x00); //  1 - sellshop
+				writeH(0x00); // cubic count
+				//for (int id : allCubics)
+				//    writeH(id);
+				writeC(0x00); // find party members
+				writeD(0x00); // abnormal effect
+				writeC(0x00); // isFlying() ? 2 : 0
+				writeH(0x00); //getRecomHave(): Blue value for name (0 = white, 255 = pure blue)
+				writeD(1000000); // getMountNpcId() + 1000000
+				writeD(fpc.clazz);
+				writeD(0x00); // ?
+				writeC(fpc.enchantEffect);
+				writeC(fpc.team); //team circle around feet 1= Blue, 2 = red
+				writeD(0x00); // getClanCrestLargeId()
+				writeC(0x00); // isNoble(): Symbol on char menu ctrl+I
+				writeC(fpc.hero); // Hero Aura
+				writeC(fpc.fishing); //0x01: Fishing Mode (Cant be undone by setting back to 0)
+				writeD(fpc.fishingX);
+				writeD(fpc.fishingY);
+				writeD(fpc.fishingZ);
+
+				writeD(fpc.nameColor);
+				writeD(_heading);
+				writeD(0x00); // pledge class
+				writeD(0x00); // pledge type
+				writeD(fpc.titleColor);
+
+				writeD(0x00); // cursed weapon level
+				writeD(0x00); // reputation score
+				writeD(0x00); // transformation id
+				writeD(0x00); // agathion id
+				writeD(0x01); // T2 ?
+				writeD(0x00); // special effect
+				/*writeD(0x00); // territory Id
+				writeD(0x00); // is Disguised
+				writeD(0x00); // territory Id*/
+			}
+			else
+			{
+				writeC(0x0c);
+				writeD(_npc.getObjectId());
+				writeD(_idTemplate + 1000000); // npctype id
+				writeD(_isAttackable ? 1 : 0);
+				writeD(_x);
+				writeD(_y);
+				writeD(_z);
+				writeD(_heading);
+				writeD(0x00);
+				writeD(_mAtkSpd);
+				writeD(_pAtkSpd);
+				writeD(_runSpd);
+				writeD(_walkSpd);
+				writeD(_runSpd); // swim run speed
+				writeD(_walkSpd); // swim walk speed
+				writeD(_runSpd); // swim run speed
+				writeD(_walkSpd); // swim walk speed
+				writeD(_runSpd); // fly run speed
+				writeD(_walkSpd); // fly run speed
+				writeF(_npc.getMovementSpeedMultiplier());
+				writeF(_npc.getAttackSpeedMultiplier());
+				writeF(_collisionRadius);
+				writeF(_collisionHeight);
+				writeD(_rhand); // right hand weapon
+				writeD(_chest);
+				writeD(_lhand); // left hand weapon
+				writeC(1); // name above char 1=true ... ??
+				writeC(_npc.isRunning() ? 1 : 0);
+				writeC(_npc.isInCombat() ? 1 : 0);
+				writeC(_npc.isAlikeDead() ? 1 : 0);
+				writeC(_isSummoned ? 2 : 0); // 0=teleported 1=default 2=summoned
+				writeS(_name);
+				writeS(_title);
+				writeD(0x00); // Title color 0=client default
+				writeD(0x00); //pvp flag
+				writeD(0x00); // karma
+
+				writeD(_npc.getAbnormalEffect()); // C2
+				writeD(_clanId); //clan id
+				writeD(_clanCrest); //crest id
+				writeD(_allyId); // ally id
+				writeD(_allyCrest); // all crest
+				writeC(_npc.isFlying() ? 2 : 0); // C2
+				writeC(0x00); // title color 0=client
+
+				writeF(_collisionRadius);
+				writeF(_collisionHeight);
+				writeD(_enchantEffect); // C4
+				writeD(_npc.isFlying() ? 1 : 0); // C6
+				writeD(0x00);
+				writeD(0x00);// CT1.5 Pet form and skills
+				writeC(_npc.isHideName() ? 0x00 : 0x01);
+				writeC(_npc.isHideName() ? 0x00 : 0x01);
+				writeD(_npc.getSpecialEffect());
+				writeD(_displayEffect);
+			}
 		}
 	}
 	

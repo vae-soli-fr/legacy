@@ -27,6 +27,7 @@ import com.l2jserver.gameserver.SevenSignsFestival;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.datatables.ItemTable;
+import com.l2jserver.gameserver.datatables.FakePcsTable;
 import com.l2jserver.gameserver.handler.BypassHandler;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
@@ -138,6 +139,7 @@ public class L2Npc extends L2Character
 	public boolean _spsrecharged = true;
 	protected boolean _isHideName = false;
 	private int _displayEffect = 0;
+    private FakePc _fakePc = null;
 	
 	//AI Recall
 	public int getSoulShot()
@@ -550,7 +552,9 @@ public class L2Npc extends L2Character
 			_log.severe("No template for Npc. Please check your datapack is setup correctly.");
 			return;
 		}
-		
+
+        _fakePc = FakePcsTable.getInstance().getFakePc(template.npcId);
+
 		// Set the name of the L2Character
 		setName(template.name);
 	}
@@ -1714,5 +1718,10 @@ public class L2Npc extends L2Character
 	public int getDisplayEffect()
 	{
 		return _displayEffect;
+	}
+
+    public FakePc getFakePc()
+	{
+		return _fakePc;
 	}
 }

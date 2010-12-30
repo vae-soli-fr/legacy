@@ -754,6 +754,7 @@ dimensional_rift.sql
 droplist.sql
 enchant_skill_groups.sql
 etcitem.sql
+fake_pcs.sql
 fish.sql
 fishing_skill_trees.sql
 fort.sql

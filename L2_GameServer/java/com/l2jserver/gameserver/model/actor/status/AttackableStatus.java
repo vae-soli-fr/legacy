@@ -14,8 +14,11 @@
  */
 package com.l2jserver.gameserver.model.actor.status;
 
+import java.util.Collection;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.network.serverpackets.AbstractNpcInfo;
 
 public class AttackableStatus extends NpcStatus
 {
@@ -52,10 +55,26 @@ public class AttackableStatus extends NpcStatus
 			// And the attacker's hit didn't kill the mob, clear the over-hit flag
 			getActiveChar().overhitEnabled(false);
 	}
+
+    @Override
+    public void setCurrentHp(double newHp, boolean broadcastPacket)
+	{
+		super.setCurrentHp(newHp, broadcastPacket);
+
+		if (getActiveChar().getFakePc() != null)
+		{
+			Collection<L2PcInstance> plrs = getActiveChar().getKnownList().getKnownPlayers().values();
+			for (L2PcInstance player : plrs)
+			{
+				if (player != null)
+					player.sendPacket(new AbstractNpcInfo.NpcInfo(getActiveChar(), player));
+			}
+		}
+	}
 	
 	@Override
 	public L2Attackable getActiveChar()
 	{
-		return (L2Attackable)super.getActiveChar();
+		return (L2Attackable) super.getActiveChar();
 	}
 }

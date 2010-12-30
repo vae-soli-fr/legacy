@@ -33,6 +33,7 @@ import com.l2jserver.gameserver.datatables.NpcTable;
 import com.l2jserver.gameserver.datatables.NpcWalkerRoutesTable;
 import com.l2jserver.gameserver.datatables.SkillTable;
 import com.l2jserver.gameserver.datatables.TeleportLocationTable;
+import com.l2jserver.gameserver.datatables.FakePcsTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.Manager;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
@@ -252,6 +253,11 @@ public class AdminAdmin implements IAdminCommandHandler
 					NpcTable.getInstance().reloadAllNpc();
 					QuestManager.getInstance().reloadAllQuests();
 					activeChar.sendMessage("All NPCs have been reloaded");
+				}
+                else if (type.startsWith("fakenpc"))
+				{
+					FakePcsTable.getInstance().reloadData();
+					activeChar.sendMessage("All Fake NPC have been reloaded");
 				}
 				else if (type.startsWith("htm"))
 				{
