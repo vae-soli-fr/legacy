@@ -2,6 +2,7 @@ package handlers.admincommandhandlers;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
+import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Summon;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
@@ -23,12 +24,17 @@ public class AdminNpcSay implements IAdminCommandHandler {
                     L2Npc npc = (L2Npc) activeChar.getTarget();
                     String vox = command.substring(9);
                     if (vox.startsWith("!")) {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.SHOUT, npc.getName(), vox.substring(1)));
+                        for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+                            player.sendPacket(new CreatureSay(npc.getObjectId(), Say2.SHOUT, npc.getName(), vox.substring(1)));
+                        }
+                    } else if (vox.startsWith("^")) {
+                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.BATTLEFIELD, npc.getName(), vox.substring(1)));
                     } else {
-                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.BATTLEFIELD, npc.getName(), vox));
+                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), vox));
                     }
+
                 } else {
-                    activeChar.sendMessage("Usage : //>> [!]texte roleplay");
+                    activeChar.sendMessage("Usage : //>> [!|^]texte roleplay");
                 }
             } else if (activeChar.getTarget() instanceof L2PcInstance) {
                 activeChar.sendMessage("Il est interdit de faire parler un joueur.");
