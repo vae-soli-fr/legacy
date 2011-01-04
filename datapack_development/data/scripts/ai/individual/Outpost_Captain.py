@@ -1,3 +1,4 @@
+# author theOne
 import sys
 from java.lang import System
 from com.l2jserver.gameserver.ai import CtrlIntention
@@ -20,7 +21,7 @@ MinionsLocs = {
 3: [4788, 244792, -1589],
 4: [5453, 243425, -1586],
 5: [5496, 243558, -1588]
-              }
+}
 
 
 class Hellbound_outpost (JQuest):

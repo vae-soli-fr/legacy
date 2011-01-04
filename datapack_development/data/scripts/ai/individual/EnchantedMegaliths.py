@@ -1,3 +1,4 @@
+# author theOne
 import sys
 from java.lang import System
 from com.l2jserver.gameserver.ai import CtrlIntention
@@ -6,7 +7,6 @@ from com.l2jserver.gameserver.model.quest import State
 from com.l2jserver.gameserver.model.quest import QuestState
 from com.l2jserver.gameserver.model.quest.jython import QuestJython as JQuest
 from com.l2jserver.util import Rnd
-
 
 #looks like a green heart of warding called Naia Failan
 Megalith = 18484
@@ -22,7 +22,7 @@ MegalithSpawnLocs = {
 3:[ -23224, 244524, -3133, 57472 ],
 4:[ -24709, 245186, -3133, 63974 ],
 5:[ -24394, 244379, -3133, 5923 ]
-                    }
+}
 
 HellinarkSpawn = [-24430, 244764, -3133]
 
@@ -56,7 +56,7 @@ class Hellbound_megaliths (JQuest):
                     self.SpawnedMobs[i].append(newMegalith)
 
     def onAdvEvent (self, event, npc, player) :
-        if event == "levelCheck":
+        if event == "levelCheckMeg":
           hellboundLevel = HellboundManager.getInstance().getLevel()
           if hellboundLevel > self.hellboundLevel and hellboundLevel == 6:
             self.hellboundLevel = 6
