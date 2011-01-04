@@ -253,8 +253,6 @@ public class HellboundManager
 			changeLevel(1);
 	}
 
-
-
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
