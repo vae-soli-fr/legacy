@@ -365,12 +365,12 @@
 		<ingredient id="9600" count="88" />
 		<ingredient id="9601" count="220" />
 		<ingredient id="9602" count="21" />
-		<production id="9497" count="1" />
+		<production id="9986" count="1" />
 	</item>
 	<item id="62">
 		<ingredient id="9600" count="42" />
 		<ingredient id="9601" count="110" />
 		<ingredient id="9602" count="11" />
-		<production id="10115" count="1" />
+		<production id="9987" count="1" />
 	</item>
 </list>
