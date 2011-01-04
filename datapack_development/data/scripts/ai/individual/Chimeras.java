@@ -100,6 +100,16 @@ public class Chimeras extends L2AttackableAIScript
 		return super.onSkillSee(npc, player, skill, targets, isPet);
 	}
 
+    /* by Melua */
+    private boolean contains(int[] tableau, int id)
+    {
+        for (int indice : tableau)
+        {
+            if (indice == id) return true;
+        }
+        return false;
+    }
+
 	public static void main(String[] args)
 	{
 		new Chimeras(-1, "Chimeras", "ai");
