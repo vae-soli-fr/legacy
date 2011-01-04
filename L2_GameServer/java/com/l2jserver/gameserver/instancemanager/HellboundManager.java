@@ -36,7 +36,8 @@ public class HellboundManager
 	private void init()
 	{
 		checkHellboundLevel();
-		_log.info("HellboundManager: Loaded ");
+		_log.info(getClass().getSimpleName()+": Current Level - "+_level);
+		_log.info(getClass().getSimpleName()+": Current Trust - "+_currentTrust);
 	}
 
 	public static final HellboundManager getInstance()
@@ -243,9 +244,16 @@ public class HellboundManager
 			changeLevel(_level);
 	}
 
-    public boolean isLocked() {
-    return false;
-    }
+	/**
+	 * Unlock hellbound zone
+	 */
+	public void unlock()
+	{
+		if (!checkIsOpen())
+			changeLevel(1);
+	}
+
+
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
