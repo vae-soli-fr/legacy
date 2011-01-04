@@ -1,3 +1,4 @@
+# author theOne
 import sys
 from java.lang import System
 from com.l2jserver.gameserver.datatables import SpawnTable
