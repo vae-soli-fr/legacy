@@ -133,6 +133,7 @@ import com.l2jserver.gameserver.taskmanager.AutoAnnounceTaskManager;
 import com.l2jserver.gameserver.taskmanager.KnownListUpdateTaskManager;
 import com.l2jserver.gameserver.taskmanager.TaskManager;
 import com.l2jserver.gameserver.util.DynamicExtension;
+import com.l2jserver.gameserver.vaesoli.CharAutoDelete;
 import com.l2jserver.gameserver.vaesoli.RaidBossSpeeches;
 import com.l2jserver.gameserver.vaesoli.VotesChecker;
 import com.l2jserver.status.Status;
@@ -283,9 +284,12 @@ public class GameServer
 		DimensionalRiftManager.getInstance();
 		EventDroplist.getInstance();
 
-        printSection("RaidBoss Speeches");
-        RaidBossSpeeches.getInstance();
-		
+                printSection("RaidBoss Speeches");
+                RaidBossSpeeches.getInstance();
+
+                printSection("Characters autodelete");
+                CharAutoDelete.clean();
+                
 		printSection("Siege");
 		SiegeManager.getInstance().getSieges();
 		FortSiegeManager.getInstance();

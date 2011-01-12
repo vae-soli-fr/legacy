@@ -15,9 +15,11 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import java.util.logging.Logger;
+import java.util.regex.*;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.cache.HtmCache;
+import com.l2jserver.gameserver.model.L2ItemInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.clientpackets.RequestBypassToServer;
 
@@ -210,6 +212,24 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 	{
 		_html = _html.replaceAll(pattern, value.replaceAll("\\$", "\\\\\\$"));
 	}
+
+        /**
+         * @author Melua
+         * remplace toutes les occurences de %itemId_***% dans le html
+         */
+        public void retrieveAllItemName()
+        {
+        Pattern pattern = Pattern.compile("%itemId_[1-9]+%");
+        Matcher matcher = pattern.matcher(_html);
+        while(matcher.find())
+            {
+            String sequence = matcher.group();
+            int itemId = Integer.parseInt(sequence.substring(8, sequence.length() - 1));
+            String itemName = new L2ItemInstance(-1, itemId).getItemName();
+            this.replace(sequence, itemName);
+            }
+        }
+        
 	
 	private final void buildBypassCache(L2PcInstance activeChar)
 	{

@@ -1333,6 +1333,8 @@ public class L2Npc extends L2Character
 		
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		html.replace("%festivalMins%", SevenSignsFestival.getInstance().getTimeToNextFestivalStr());
+                // Remplace tous les id d'item par leur nom
+                html.retrieveAllItemName();
 		player.sendPacket(html);
 		
 		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
