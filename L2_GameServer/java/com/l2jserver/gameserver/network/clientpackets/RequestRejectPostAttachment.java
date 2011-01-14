@@ -57,7 +57,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 		if (!activeChar.isInsideZone(ZONE_TOWN))
 		{
 			//activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
-			activeChar.sendMessage("Vous ne pouvez pas utiliser les mails en dehors des villes.");
+			activeChar.sendMessage("Vous ne pouvez pas utiliser les pièces jointes en dehors des villes.");
             return;
 		}
 		

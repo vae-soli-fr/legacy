@@ -14,7 +14,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_PEACE;
+import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_TOWN;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.instancemanager.MailManager;
@@ -67,7 +67,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 			return;
 		}
 		
-		if (!activeChar.isInsideZone(ZONE_PEACE))
+		if (!activeChar.isInsideZone(ZONE_TOWN))
 		{
 			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_CANCEL_NOT_IN_PEACE_ZONE));
 			return;

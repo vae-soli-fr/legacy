@@ -51,59 +51,59 @@
 	<zone id="10027" type="JailZone" shape="NPoly" minZ="-3053" maxZ="-2853" /> <!-- [16_10] gm_room_solo2 -->
 
 	<!-- Town Peace Zones -->
-	<zone id="10800" type="ArenaZone" shape="NPoly" minZ="-3966" maxZ="-3466" /> <!-- [17_25] talking_island_town_peace_zone1 -->
-	<zone id="10801" type="ArenaZone" shape="NPoly" minZ="-3820" maxZ="-3320" /> <!-- [17_25] talking_island_town_peace_zone2 -->
-	<zone id="10802" type="ArenaZone" shape="NPoly" minZ="-3789" maxZ="-3289" /> <!-- [17_25] talking_island_town_peace_zone3 -->
-	<zone id="10803" type="ArenaZone" shape="NPoly" minZ="-3846" maxZ="-3346" /> <!-- [17_25] talking_island_town_peace_zone4 -->
-	<zone id="10804" type="ArenaZone" shape="NPoly" minZ="-8507" maxZ="-1507" /> <!-- [20_18] darkelf_town_peace_zone -->
-	<zone id="10805" type="ArenaZone" shape="NPoly" minZ="-3511" maxZ="-2011" /> <!-- [21_19] elf_town_peace1 -->
-	<zone id="10806" type="ArenaZone" shape="NPoly" minZ="-3245" maxZ="-2745" /> <!-- [19_21] guldiocastle_town_peace1 -->
-	<zone id="10807" type="ArenaZone" shape="NPoly" minZ="-3156" maxZ="-2656" /> <!-- [19_21] guldiocastle_town_peace2 -->
-	<zone id="10808" type="ArenaZone" shape="NPoly" minZ="-3244" maxZ="-2744" /> <!-- [17_22] gludin_town_peace1 -->
-	<zone id="10809" type="ArenaZone" shape="NPoly" minZ="-3244" maxZ="-2744" /> <!-- [17_22] gludin_town_peace2 -->
-	<zone id="10810" type="ArenaZone" shape="NPoly" minZ="-3276" maxZ="-2776" /> <!-- [17_22] gludin_town_peace3 -->
-	<zone id="10811" type="ArenaZone" shape="NPoly" minZ="-3291" maxZ="-2791" /> <!-- [17_22] gludin_town_peace4 -->
-	<zone id="10812" type="ArenaZone" shape="NPoly" minZ="-3157" maxZ="-2157" /> <!-- [20_22] dion_town_peace1 -->
-	<zone id="10813" type="ArenaZone" shape="NPoly" minZ="-2802" maxZ="-2302" /> <!-- [20_22] dion_town_peace2 -->
-	<zone id="10814" type="ArenaZone" shape="NPoly" minZ="-2858" maxZ="-2358" /> <!-- [20_22] dion_town_peace3 -->
-	<zone id="10815" type="ArenaZone" shape="NPoly" minZ="-3152" maxZ="-2452" /> <!-- [20_22] dion_town_peace4 -->
-	<zone id="10816" type="ArenaZone" shape="NPoly" minZ="-3246" maxZ="-2546" /> <!-- [20_22] dion_town_peace5 -->
-	<zone id="10817" type="ArenaZone" shape="NPoly" minZ="-3957" maxZ="-3357" /> <!-- [20_23] floran_town_peace1 -->
-	<zone id="10818" type="ArenaZone" shape="NPoly" minZ="-3967" maxZ="-3367" /> <!-- [20_23] floran_town_peace2 -->
-	<zone id="10819" type="ArenaZone" shape="NPoly" minZ="-3956" maxZ="-3356" /> <!-- [20_23] floran_town_peace3 -->
-	<zone id="10820" type="ArenaZone" shape="NPoly" minZ="-3654" maxZ="-2654" /> <!-- [22_22] giran_town_peace1 -->
-	<zone id="10821" type="ArenaZone" shape="NPoly" minZ="-3598" maxZ="-1598" /> <!-- [22_22] giran_town_peace2 -->
-	<zone id="10822" type="ArenaZone" shape="NPoly" minZ="-3602" maxZ="-2402" /> <!-- [22_22] giran_town_peace3 -->
-	<zone id="10823" type="ArenaZone" shape="NPoly" minZ="-3636" maxZ="-3036" /> <!-- [22_22] giran_town_peace4 -->
-	<zone id="10824" type="ArenaZone" shape="NPoly" minZ="-3799" maxZ="-2399" /> <!-- [22_22] giran_town_peace5 -->
-	<zone id="10825" type="ArenaZone" shape="NPoly" minZ="-3872" maxZ="-1872" /> <!-- [22_22] giran_town_peace6 -->
-	<zone id="10826" type="ArenaZone" shape="NPoly" minZ="-3810" maxZ="-2110" /> <!-- [22_22] giran_town_peace7 -->
-	<zone id="10827" type="ArenaZone" shape="NPoly" minZ="-3538" maxZ="-3338" /> <!-- [22_22] giran_town_peace8 -->
-	<zone id="10828" type="ArenaZone" shape="NPoly" minZ="-3496" maxZ="-2996" /> <!-- [22_22] giran_town_peace9 -->
-	<zone id="10829" type="ArenaZone" shape="NPoly" minZ="-3599" maxZ="-2999" /> <!-- [22_22] giran_town_peace10 -->
-	<zone id="10830" type="ArenaZone" shape="NPoly" minZ="-3410" maxZ="-3210" /> <!-- [22_22] giran_town_peace11 -->
-	<zone id="10831" type="ArenaZone" shape="NPoly" minZ="-3464" maxZ="-3264" /> <!-- [22_22] giran_town_peace12 -->
-	<zone id="10832" type="ArenaZone" shape="NPoly" minZ="-397" maxZ="603" /> <!-- [18_14] orc_town_peace1 -->
-	<zone id="10833" type="ArenaZone" shape="NPoly" minZ="-460" maxZ="540" /> <!-- [18_14] orc_town_peace2 -->
-	<zone id="10834" type="ArenaZone" shape="NPoly" minZ="-1600" maxZ="-400" /> <!-- [23_12] dwarf_town_peace1 -->
-	<zone id="10835" type="ArenaZone" shape="NPoly" minZ="-1685" maxZ="-685" /> <!-- [23_12] dwarf_town_peace2 -->
-	<zone id="10836" type="ArenaZone" shape="NPoly" minZ="-1724" maxZ="-724" /> <!-- [23_12] dwarf_town_peace3 -->
-	<zone id="10837" type="ArenaZone" shape="NPoly" minZ="-1000" maxZ="-400" /> <!-- [23_12] dwarf_town_peace4 -->
-	<zone id="10838" type="ArenaZone" shape="NPoly" minZ="-1257" maxZ="-657" /> <!-- [23_12] dwarf_town_peace5 -->
-	<zone id="10839" type="ArenaZone" shape="NPoly" minZ="-1822" maxZ="-1022" /> <!-- [22_19] oren_town_peace1 -->
-	<zone id="10840" type="ArenaZone" shape="NPoly" minZ="-2749" maxZ="-1249" /> <!-- [23_20] hunter_town_peace1 -->
-	<zone id="10841" type="ArenaZone" shape="NPoly" minZ="-2532" maxZ="-1032" /> <!-- [24_18] aden_town_peace1 -->
-	<zone id="10842" type="ArenaZone" shape="NPoly" minZ="-2517" maxZ="-1017" /> <!-- [24_18] aden_town_peace2 -->
-	<zone id="10843" type="ArenaZone" shape="NPoly" minZ="-2215" maxZ="-715" /> <!-- [24_18] aden_town_peace3 -->
-	<zone id="10844" type="ArenaZone" shape="NPoly" minZ="-2101" maxZ="-601" /> <!-- [24_18] aden_town_peace4 -->
-	<zone id="10845" type="ArenaZone" shape="NPoly" minZ="-2456" maxZ="-956" /> <!-- [24_18] aden_town_peace5 -->
-	<zone id="10846" type="ArenaZone" shape="NPoly" minZ="-4287" maxZ="-3287" /> <!-- [23_24] heiness_peace1 -->
-	<zone id="10847" type="ArenaZone" shape="NPoly" minZ="-4128" maxZ="-3128" /> <!-- [23_24] heiness_peace2 -->
-	<zone id="10848" type="ArenaZone" shape="NPoly" minZ="-4096" maxZ="-3096" /> <!-- [23_24] heiness_peace3 -->
-	<zone id="10849" type="ArenaZone" shape="NPoly" minZ="-4928" maxZ="1072" /> <!-- [24_16] godad_peace1 -->
-	<zone id="10850" type="ArenaZone" shape="NPoly" minZ="-1516" maxZ="484" /> <!-- [21_16] rune_peace1 -->
-	<zone id="10851" type="ArenaZone" shape="NPoly" minZ="-7660" maxZ="7340" /> <!-- [21_16] rune_peace2 -->
-	<zone id="10852" type="ArenaZone" shape="NPoly" minZ="-3200" maxZ="2072" /> <!-- [22_13] schutt_peace1 -->
+	<!-- <zone id="10800" type="PeaceZone" shape="NPoly" minZ="-3966" maxZ="-3466" /> --> <!-- [17_25] talking_island_town_peace_zone1 -->
+	<!-- <zone id="10801" type="PeaceZone" shape="NPoly" minZ="-3820" maxZ="-3320" /> --> <!-- [17_25] talking_island_town_peace_zone2 -->
+	<!-- <zone id="10802" type="PeaceZone" shape="NPoly" minZ="-3789" maxZ="-3289" /> --> <!-- [17_25] talking_island_town_peace_zone3 -->
+	<!-- <zone id="10803" type="PeaceZone" shape="NPoly" minZ="-3846" maxZ="-3346" /> --> <!-- [17_25] talking_island_town_peace_zone4 -->
+	<!-- <zone id="10804" type="PeaceZone" shape="NPoly" minZ="-8507" maxZ="-1507" /> --> <!-- [20_18] darkelf_town_peace_zone -->
+	<!-- <zone id="10805" type="PeaceZone" shape="NPoly" minZ="-3511" maxZ="-2011" /> --> <!-- [21_19] elf_town_peace1 -->
+	<!-- <zone id="10806" type="PeaceZone" shape="NPoly" minZ="-3245" maxZ="-2745" /> --> <!-- [19_21] guldiocastle_town_peace1 -->
+	<!-- <zone id="10807" type="PeaceZone" shape="NPoly" minZ="-3156" maxZ="-2656" /> --> <!-- [19_21] guldiocastle_town_peace2 -->
+	<!-- <zone id="10808" type="PeaceZone" shape="NPoly" minZ="-3244" maxZ="-2744" /> --> <!-- [17_22] gludin_town_peace1 -->
+	<!-- <zone id="10809" type="PeaceZone" shape="NPoly" minZ="-3244" maxZ="-2744" /> --> <!-- [17_22] gludin_town_peace2 -->
+	<!-- <zone id="10810" type="PeaceZone" shape="NPoly" minZ="-3276" maxZ="-2776" /> --> <!-- [17_22] gludin_town_peace3 -->
+	<!-- <zone id="10811" type="PeaceZone" shape="NPoly" minZ="-3291" maxZ="-2791" /> --> <!-- [17_22] gludin_town_peace4 -->
+	<!-- <zone id="10812" type="PeaceZone" shape="NPoly" minZ="-3157" maxZ="-2157" /> --> <!-- [20_22] dion_town_peace1 -->
+	<!-- <zone id="10813" type="PeaceZone" shape="NPoly" minZ="-2802" maxZ="-2302" /> --> <!-- [20_22] dion_town_peace2 -->
+	<!-- <zone id="10814" type="PeaceZone" shape="NPoly" minZ="-2858" maxZ="-2358" /> --> <!-- [20_22] dion_town_peace3 -->
+	<!-- <zone id="10815" type="PeaceZone" shape="NPoly" minZ="-3152" maxZ="-2452" /> --> <!-- [20_22] dion_town_peace4 -->
+	<!-- <zone id="10816" type="PeaceZone" shape="NPoly" minZ="-3246" maxZ="-2546" /> --> <!-- [20_22] dion_town_peace5 -->
+	<!-- <zone id="10817" type="PeaceZone" shape="NPoly" minZ="-3957" maxZ="-3357" /> --> <!-- [20_23] floran_town_peace1 -->
+	<!-- <zone id="10818" type="PeaceZone" shape="NPoly" minZ="-3967" maxZ="-3367" /> --> <!-- [20_23] floran_town_peace2 -->
+	<!-- <zone id="10819" type="PeaceZone" shape="NPoly" minZ="-3956" maxZ="-3356" /> --> <!-- [20_23] floran_town_peace3 -->
+	<!-- <zone id="10820" type="PeaceZone" shape="NPoly" minZ="-3654" maxZ="-2654" /> --> <!-- [22_22] giran_town_peace1 -->
+	<!-- <zone id="10821" type="PeaceZone" shape="NPoly" minZ="-3598" maxZ="-1598" /> --> <!-- [22_22] giran_town_peace2 -->
+	<!-- <zone id="10822" type="PeaceZone" shape="NPoly" minZ="-3602" maxZ="-2402" /> --> <!-- [22_22] giran_town_peace3 -->
+	<!-- <zone id="10823" type="PeaceZone" shape="NPoly" minZ="-3636" maxZ="-3036" /> --> <!-- [22_22] giran_town_peace4 -->
+	<!-- <zone id="10824" type="PeaceZone" shape="NPoly" minZ="-3799" maxZ="-2399" /> --> <!-- [22_22] giran_town_peace5 -->
+	<!-- <zone id="10825" type="PeaceZone" shape="NPoly" minZ="-3872" maxZ="-1872" /> --> <!-- [22_22] giran_town_peace6 -->
+	<!-- <zone id="10826" type="PeaceZone" shape="NPoly" minZ="-3810" maxZ="-2110" /> --> <!-- [22_22] giran_town_peace7 -->
+	<!-- <zone id="10827" type="PeaceZone" shape="NPoly" minZ="-3538" maxZ="-3338" /> --> <!-- [22_22] giran_town_peace8 -->
+	<!-- <zone id="10828" type="PeaceZone" shape="NPoly" minZ="-3496" maxZ="-2996" /> --> <!-- [22_22] giran_town_peace9 -->
+	<!-- <zone id="10829" type="PeaceZone" shape="NPoly" minZ="-3599" maxZ="-2999" /> --> <!-- [22_22] giran_town_peace10 -->
+	<!-- <zone id="10830" type="PeaceZone" shape="NPoly" minZ="-3410" maxZ="-3210" /> --> <!-- [22_22] giran_town_peace11 -->
+	<!-- <zone id="10831" type="PeaceZone" shape="NPoly" minZ="-3464" maxZ="-3264" /> --> <!-- [22_22] giran_town_peace12 -->
+	<!-- <zone id="10832" type="PeaceZone" shape="NPoly" minZ="-397" maxZ="603" /> --> <!-- [18_14] orc_town_peace1 -->
+	<!-- <zone id="10833" type="PeaceZone" shape="NPoly" minZ="-460" maxZ="540" /> --> <!-- [18_14] orc_town_peace2 -->
+	<!-- <zone id="10834" type="PeaceZone" shape="NPoly" minZ="-1600" maxZ="-400" /> --> <!-- [23_12] dwarf_town_peace1 -->
+	<!-- <zone id="10835" type="PeaceZone" shape="NPoly" minZ="-1685" maxZ="-685" /> --> <!-- [23_12] dwarf_town_peace2 -->
+	<!-- <zone id="10836" type="PeaceZone" shape="NPoly" minZ="-1724" maxZ="-724" /> --> <!-- [23_12] dwarf_town_peace3 -->
+	<!-- <zone id="10837" type="PeaceZone" shape="NPoly" minZ="-1000" maxZ="-400" /> --> <!-- [23_12] dwarf_town_peace4 -->
+	<!-- <zone id="10838" type="PeaceZone" shape="NPoly" minZ="-1257" maxZ="-657" /> --> <!-- [23_12] dwarf_town_peace5 -->
+	<!-- <zone id="10839" type="PeaceZone" shape="NPoly" minZ="-1822" maxZ="-1022" /> --> <!-- [22_19] oren_town_peace1 -->
+	<!-- <zone id="10840" type="PeaceZone" shape="NPoly" minZ="-2749" maxZ="-1249" /> --> <!-- [23_20] hunter_town_peace1 -->
+	<!-- <zone id="10841" type="PeaceZone" shape="NPoly" minZ="-2532" maxZ="-1032" /> --> <!-- [24_18] aden_town_peace1 -->
+	<!-- <zone id="10842" type="PeaceZone" shape="NPoly" minZ="-2517" maxZ="-1017" /> --> <!-- [24_18] aden_town_peace2 -->
+	<!-- <zone id="10843" type="PeaceZone" shape="NPoly" minZ="-2215" maxZ="-715" /> --> <!-- [24_18] aden_town_peace3 -->
+	<!-- <zone id="10844" type="PeaceZone" shape="NPoly" minZ="-2101" maxZ="-601" /> --> <!-- [24_18] aden_town_peace4 -->
+	<!-- <zone id="10845" type="PeaceZone" shape="NPoly" minZ="-2456" maxZ="-956" /> --> <!-- [24_18] aden_town_peace5 -->
+	<!-- <zone id="10846" type="PeaceZone" shape="NPoly" minZ="-4287" maxZ="-3287" /> --> <!-- [23_24] heiness_peace1 -->
+	<!-- <zone id="10847" type="PeaceZone" shape="NPoly" minZ="-4128" maxZ="-3128" /> --> <!-- [23_24] heiness_peace2 -->
+	<!-- <zone id="10848" type="PeaceZone" shape="NPoly" minZ="-4096" maxZ="-3096" /> --> <!-- [23_24] heiness_peace3 -->
+	<!-- <zone id="10849" type="PeaceZone" shape="NPoly" minZ="-4928" maxZ="1072" /> --> <!-- [24_16] godad_peace1 -->
+	<!-- <zone id="10850" type="PeaceZone" shape="NPoly" minZ="-1516" maxZ="484" /> --> <!-- [21_16] rune_peace1 -->
+	<!-- <zone id="10851" type="PeaceZone" shape="NPoly" minZ="-7660" maxZ="7340" /> --> <!-- [21_16] rune_peace2 -->
+	<!-- <zone id="10852" type="PeaceZone" shape="NPoly" minZ="-3200" maxZ="2072" /> --> <!-- [22_13] schutt_peace1 -->
 
 	<!-- Town Zones -->
 	<zone id="11020" type="TownZone" shape="NPoly" minZ="-3800" maxZ="-3300"> <!-- Giran Castle Town -->

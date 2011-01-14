@@ -14,7 +14,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_PEACE;
+import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_TOWN;
 import static com.l2jserver.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 import static com.l2jserver.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
@@ -126,7 +126,7 @@ public final class RequestSendPost extends L2GameClientPacket
 			return;
 		}
 		
-		if (!activeChar.isInsideZone(ZONE_PEACE) && _items != null)
+		if (!activeChar.isInsideZone(ZONE_TOWN) && _items != null)
 		{
 			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_FORWARD_NOT_IN_PEACE_ZONE));
 			return;
