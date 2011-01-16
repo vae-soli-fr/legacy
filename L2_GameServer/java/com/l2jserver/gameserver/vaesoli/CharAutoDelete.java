@@ -21,7 +21,7 @@ public class CharAutoDelete {
         Connection con = null;
         try {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con.prepareStatement("SELECT account_name, charId, char_name, deletetime  FROM characters WHERE deletetime > 0");
+            PreparedStatement statement = con.prepareStatement("SELECT account_name, charId, char_name, clanid, deletetime  FROM characters WHERE deletetime > 0");
             ResultSet chardata = statement.executeQuery();
             while (chardata.next()) {
                 String account = chardata.getString("account_name");
@@ -40,6 +40,7 @@ public class CharAutoDelete {
             chardata.close();
             statement.close();
         } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             try {
                 if (con != null) {
