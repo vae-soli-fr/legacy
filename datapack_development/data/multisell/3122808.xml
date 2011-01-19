@@ -66,6 +66,9 @@
   </item>
   <!-- [Scroll Enchant weapon S-grade] for [glittering_event_medals] -->
   <item id="12">
+    <ingredient id="6393" count="1500" />
+    <production id="962" count="1" />
+  </item>
 
         <!-- Fox -->
 
