@@ -420,7 +420,11 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 	 */
 	private static final boolean validateClassId(ClassId oldCID, ClassId newCID)
 	{
-		if (newCID == null || newCID.getRace() == null)
+		// on interdit aux Warder de prendre Inspector
+        if (oldCID == ClassId.warder && newCID == ClassId.inspector)
+            return false;
+
+        if (newCID == null || newCID.getRace() == null)
 			return false;
 		
 		if (oldCID.equals(newCID.getParent()))
