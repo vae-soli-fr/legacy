@@ -1414,7 +1414,7 @@
 			</effect>
 		</enchant3for>
 		<cond>
-			<player class_id_restriction="54,55,117" />
+			<player class_id_restriction="53,54,55,117" />
 		</cond>
 	</skill>
 	<skill id="255" levels="15" name="Power Smash">
