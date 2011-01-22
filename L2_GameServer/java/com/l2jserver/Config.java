@@ -106,6 +106,7 @@ public final class Config
     public static boolean VAEMOD_PETSAY; // commande pour faire parler son pet
     public static boolean VAEMOD_NPCSAY; // commande admin pour faire parler les Npc
     public static boolean VAEMOD_RBJAIL = true; // bannir les joueur qui font plus de 3 RBs
+    public static boolean VAEMOD_MUTESEVENSIGNS; // désactiver les autochats des Seven Signs
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1210,6 +1211,7 @@ public final class Config
                     VAEMOD_SPEAKINGBOSS = Integer.parseInt(customSettings.getProperty("SpeakingMobChance", "0"));
                     VAEMOD_PETSAY = Boolean.parseBoolean(customSettings.getProperty("ActiverPetSay", "false"));
                     VAEMOD_NPCSAY = Boolean.parseBoolean(customSettings.getProperty("ActiverNpcSay", "false"));
+                    VAEMOD_MUTESEVENSIGNS = Boolean.parseBoolean(customSettings.getProperty("MuteSevenSigns", "false"));
 				}
 				catch (Exception e)
 				{

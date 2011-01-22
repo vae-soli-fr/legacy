@@ -19,6 +19,7 @@ public class CharAutoDelete {
 
     public static void clean() {
         Connection con = null;
+        int count = 0;
         try {
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement = con.prepareStatement("SELECT account_name, charId, char_name, clanid, deletetime  FROM characters WHERE deletetime > 0");
@@ -27,14 +28,16 @@ public class CharAutoDelete {
                 String account = chardata.getString("account_name");
                 int objectId = chardata.getInt("charId");
                 String name = chardata.getString("char_name");
+                int clanId = chardata.getInt("clanid");
                 long deletetime = chardata.getLong("deletetime");
                 if (System.currentTimeMillis() > deletetime) {
-                    L2Clan clan = ClanTable.getInstance().getClan(chardata.getInt("clanid"));
+                    L2Clan clan = ClanTable.getInstance().getClan(clanId);
                     if (clan != null) {
                         clan.removeClanMember(objectId, 0);
                     }
                     L2GameClient.deleteCharByObjId(objectId);
                     _log.info("Character " + name + " of account " + account + " has been deleted.");
+                    count++;
                 }
             }
             chardata.close();
@@ -50,5 +53,6 @@ public class CharAutoDelete {
                 e.printStackTrace();
             }
         }
+        _log.info("Deleted " + count + " characters from database.");
     }
 }

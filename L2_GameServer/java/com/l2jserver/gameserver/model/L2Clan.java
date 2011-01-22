@@ -462,7 +462,7 @@ public class L2Clan
 			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ? System.currentTimeMillis() + Config.ALT_CLAN_CREATE_DAYS * 86400000L : 0);
 		}
 		// notify CB server about the change
-		CommunityServerThread.getInstance().sendPacket(new WorldInfo(null, this, WorldInfo.TYPE_UPDATE_CLAN_DATA));
+		if (Config.ENABLE_COMMUNITY_BOARD) CommunityServerThread.getInstance().sendPacket(new WorldInfo(null, this, WorldInfo.TYPE_UPDATE_CLAN_DATA));
 	}
 	
 	public L2ClanMember[] getMembers()

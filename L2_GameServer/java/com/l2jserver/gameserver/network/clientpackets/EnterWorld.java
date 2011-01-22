@@ -404,7 +404,11 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			String serverNews = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/servnews.htm");
 			if (serverNews != null)
-				sendPacket(new NpcHtmlMessage(1, serverNews));
+            {
+                NpcHtmlMessage welcome = new NpcHtmlMessage(1, serverNews);
+                welcome.replace("%playername%", activeChar.getName());
+				sendPacket(welcome);
+            }
 		}
 		
 		if (Config.PETITIONING_ALLOWED)
