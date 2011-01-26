@@ -48,6 +48,10 @@ public class L2PcInstanceActionShift implements IActionHandler
 			if (ach != null)
 				ach.useAdminCommand("admin_character_info " + target.getName(), activeChar);
 		}
+        else if (target instanceof L2PcInstance) {
+		L2PcInstance player = (L2PcInstance) target;
+		if (!player.isDead()) player.showDesc(activeChar);
+		}
 		return true;
 	}
 	

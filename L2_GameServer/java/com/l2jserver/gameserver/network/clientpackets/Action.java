@@ -122,7 +122,9 @@ public final class Action extends L2GameClientPacket
 					obj.onAction(activeChar);
 					break;
 				case 1:
-                       if (!activeChar.isGM() && !((obj instanceof L2Npc) && Config.ALT_GAME_VIEWNPC))
+                    if (!activeChar.isGM() && obj instanceof L2PcInstance && !((L2PcInstance)obj).isDead())
+                        obj.onActionShift(activeChar);
+                    else if (!activeChar.isGM() && !((obj instanceof L2Npc) && Config.ALT_GAME_VIEWNPC))
 						obj.onAction(activeChar, false);
                     else
 						obj.onActionShift(activeChar);
