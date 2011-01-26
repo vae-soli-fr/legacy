@@ -13460,8 +13460,9 @@ public final class L2PcInstance extends L2Playable
 			sm.addPcName(this);
 			sm.addCharName(target);
 			sm.addNumber(damage);
-                        // affichage des dégats en plein écran
-                        if (this.isFsDamages()) this.sendPacket(new ExShowScreenMessage(String.valueOf(damage), 1000));
+            // affichage des dégats en plein écran
+            if (this.isFsDamages())
+                this.sendPacket(new ExShowScreenMessage(String.valueOf(damage), 1000));
 		}
 		
 		sendPacket(sm);

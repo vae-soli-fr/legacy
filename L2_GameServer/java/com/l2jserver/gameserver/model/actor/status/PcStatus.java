@@ -27,6 +27,7 @@ import com.l2jserver.gameserver.model.entity.Duel;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
+import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.skills.Formulas;
 import com.l2jserver.gameserver.skills.Stats;
@@ -151,7 +152,12 @@ public class PcStatus extends PlayableStatus
 				smsg.addString(getActiveChar().getName());
 				smsg.addCharName(attacker);
 				smsg.addNumber(fullValue);
-				getActiveChar().sendPacket(smsg);
+
+                // affichage des dégats en plein écran
+                if (getActiveChar().isFsDamages())
+                    getActiveChar().sendPacket(new ExShowScreenMessage(1, -1, 8, 0, 0, 0, 0, false, 1000, 0, "-" + String.valueOf(fullValue)));
+
+                getActiveChar().sendPacket(smsg);
 				
 				if (tDmg > 0)
 				{
