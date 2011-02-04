@@ -134,6 +134,7 @@ import com.l2jserver.gameserver.taskmanager.KnownListUpdateTaskManager;
 import com.l2jserver.gameserver.taskmanager.TaskManager;
 import com.l2jserver.gameserver.util.DynamicExtension;
 import com.l2jserver.gameserver.vaesoli.CharAutoDelete;
+import com.l2jserver.gameserver.vaesoli.OptimizeTables;
 import com.l2jserver.gameserver.vaesoli.RaidBossSpeeches;
 import com.l2jserver.gameserver.vaesoli.VotesChecker;
 import com.l2jserver.status.Status;
@@ -206,6 +207,10 @@ public class GameServer
 		
 		new File(Config.DATAPACK_ROOT, "data/crests").mkdirs();
 		new File("log/game").mkdirs();
+
+        // optimize the tables
+        printSection("Tables");
+        OptimizeTables.justDoIt();
 		
 		// load script engines
 		printSection("Engines");
