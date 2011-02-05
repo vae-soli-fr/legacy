@@ -32,6 +32,8 @@ import com.l2jserver.gameserver.templates.item.L2Item;
 public class Item
 {
 	public int id;
+
+    public int displayid;
 	
 	@SuppressWarnings({ "rawtypes" })
 	public Enum type;

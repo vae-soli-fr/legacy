@@ -29,6 +29,7 @@ import static com.l2jserver.gameserver.datatables.MultiSell.PAGE_SIZE;
 import com.l2jserver.gameserver.model.multisell.Entry;
 import com.l2jserver.gameserver.model.multisell.Ingredient;
 import com.l2jserver.gameserver.model.multisell.ListContainer;
+import com.l2jserver.gameserver.templates.item.L2Item;
 
 /**
  * This class ...
@@ -134,9 +135,19 @@ public final class MultiSellList extends L2GameServerPacket
 			
 			for(Ingredient ing : ent.getIngredients())
 			{
-				writeD(ing.getItemId());
-				writeH(ing.getTemplate() != null ? ing.getTemplate().getType2() : 65535);
-				writeQ(ing.getItemCount());
+                //writeD(ing.getItemId());
+                //writeH(ing.getTemplate() != null ? ing.getTemplate().getType2() : 65535);
+                
+                // custom for item_display_id
+                final int itemId = ing.getItemId();
+                final L2Item template = ing.getTemplate();
+                if (template == null) {
+                    writeD(itemId);
+                    writeH(65535); }
+                else {
+                    writeD(template.getItemDisplayId());
+                    writeH(template.getType2()); }
+                writeQ(ing.getItemCount());
 				if (ing.getItemInfo() != null)
 				{
 					writeH(ing.getItemInfo().getEnchantLevel()); // enchant level

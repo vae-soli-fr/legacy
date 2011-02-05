@@ -544,6 +544,15 @@ public final class L2ItemInstance extends L2Object
 	{
 		return _itemId;
 	}
+
+    /**
+	 * Returns the ID of the item to display
+	 * @return int
+	 */
+	public int getItemDisplayId()
+	{
+		return _item.getItemDisplayId();
+	}
 	
 	/**
 	 * Returns true if item is an EtcItem

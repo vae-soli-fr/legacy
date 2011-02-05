@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS `custom_etcitem` (
-  `item_id` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `item_id` mediumint(5) unsigned NOT NULL default '0',
+  `item_display_id` smallint(5) unsigned NOT NULL default '0',
   `name` varchar(100) NOT NULL DEFAULT '',
   `additionalname` varchar(100) NOT NULL DEFAULT '',
   `crystallizable` enum('true','false') NOT NULL DEFAULT 'false',

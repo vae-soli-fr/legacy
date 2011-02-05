@@ -977,12 +977,12 @@ public abstract class Inventory extends ItemContainer
 	{
 		L2ItemInstance item = _paperdoll[slot];
 		if (item != null)
-			return item.getItemId();
+			return item.getItemDisplayId();
 		else if (slot == PAPERDOLL_HAIR)
 		{
 			item = _paperdoll[PAPERDOLL_HAIRALL];
 			if (item != null)
-				return item.getItemId();
+				return item.getItemDisplayId();
 		}
 		return 0;
 	}

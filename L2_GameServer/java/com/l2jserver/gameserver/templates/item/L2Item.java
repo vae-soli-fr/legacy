@@ -145,6 +145,7 @@ public abstract class L2Item
 	};
 	
 	private final int _itemId;
+    private final int _itemDisplayId;
 	private final String _name;
 	private final int _type1; // needed for item list (inventory)
 	private final int _type2; // different lists for armor, weapon, etc
@@ -205,6 +206,7 @@ public abstract class L2Item
 	{
 		_type = type;
 		_itemId = set.getInteger("item_id");
+        _itemDisplayId = set.getInteger("item_display_id");
 		_name = set.getString("name");
 		_type1 = set.getInteger("type1"); // needed for item list (inventory)
 		_type2 = set.getInteger("type2"); // different lists for armor, weapon, etc
@@ -264,6 +266,15 @@ public abstract class L2Item
 	public final int getItemId()
 	{
 		return _itemId;
+	}
+
+    /**
+	 * Returns the ID of the item displayed
+	 * @return int
+	 */
+    public final int getItemDisplayId()
+	{
+		return _itemDisplayId;
 	}
 	
 	public abstract int getItemMask();

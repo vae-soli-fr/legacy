@@ -185,14 +185,14 @@ public class ItemTable
 		+ " onCast_skill_chance, onCrit_skill_id, onCrit_skill_lvl, onCrit_skill_chance, change_weaponId FROM weapon" };
 	
 	private static final String[] SQL_CUSTOM_ITEM_SELECTS = {
-		"SELECT item_id, name, crystallizable, item_type, weight, consume_type, material,"
+		"SELECT item_id, item_display_id, name, crystallizable, item_type, weight, consume_type, material,"
 		+ " crystal_type, duration, time, price, crystal_count, sellable, dropable, destroyable, tradeable, depositable, handler, skill FROM custom_etcitem",
 		
-		"SELECT item_id, name, bodypart, crystallizable, armor_type, weight,"
+		"SELECT item_id, item_display_id, name, bodypart, crystallizable, armor_type, weight,"
 		+ " material, crystal_type, avoid_modify, duration, time, p_def, m_def, mp_bonus,"
 		+ " price, crystal_count, sellable, dropable, destroyable, tradeable, depositable, enchant4_skill, skill FROM custom_armor",
 		
-		"SELECT item_id, name, bodypart, crystallizable, weight, soulshots, spiritshots,"
+		"SELECT item_id, item_display_id, name, bodypart, crystallizable, weight, soulshots, spiritshots,"
 		+ " material, crystal_type, p_dam, rnd_dam, weaponType, critical, hit_modify, avoid_modify,"
 		+ " shield_def, shield_def_rate, atk_speed, mp_consume, m_dam, duration, time, price, crystal_count,"
 		+ " sellable, dropable, destroyable, tradeable, depositable, skill,enchant4_skill_id,enchant4_skill_lvl, onCast_skill_id, onCast_skill_lvl,"
@@ -250,17 +250,17 @@ public class ItemTable
 				{
 					if (selectQuery.endsWith("etcitem"))
 					{
-						Item newItem = readItem(rset);
+						Item newItem = readItem(rset, false);
 						itemData.put(newItem.id, newItem);
 					}
 					else if (selectQuery.endsWith("armor"))
 					{
-						Item newItem = readArmor(rset);
+						Item newItem = readArmor(rset, false);
 						armorData.put(newItem.id, newItem);
 					}
 					else if (selectQuery.endsWith("weapon"))
 					{
-						Item newItem = readWeapon(rset);
+						Item newItem = readWeapon(rset, false);
 						weaponData.put(newItem.id, newItem);
 					}
 				}
@@ -293,7 +293,7 @@ public class ItemTable
 					{
 						if (selectQuery.endsWith("etcitem"))
 						{
-							Item newItem = readItem(rset);
+							Item newItem = readItem(rset, true);
 							
 							if (itemData.containsKey(newItem.id))
 								itemData.remove(newItem.id);
@@ -302,7 +302,7 @@ public class ItemTable
 						}
 						else if (selectQuery.endsWith("armor"))
 						{
-							Item newItem = readArmor(rset);
+							Item newItem = readArmor(rset, true);
 							
 							if (armorData.containsKey(newItem.id))
 								armorData.remove(newItem.id);
@@ -311,7 +311,7 @@ public class ItemTable
 						}
 						else if (selectQuery.endsWith("weapon"))
 						{
-							Item newItem = readWeapon(rset);
+							Item newItem = readWeapon(rset, true);
 							
 							if (weaponData.containsKey(newItem.id))
 								weaponData.remove(newItem.id);
@@ -378,15 +378,17 @@ public class ItemTable
 	 * @return Item : object created from the database record
 	 * @throws SQLException
 	 */
-	private Item readWeapon(ResultSet rset) throws SQLException
+	private Item readWeapon(ResultSet rset, boolean custom) throws SQLException
 	{
 		Item item = new Item();
 		item.set = new StatsSet();
 		item.type = _weaponTypes.get(rset.getString("weaponType"));
 		item.id = rset.getInt("item_id");
+        item.displayid = custom ? rset.getInt("item_display_id") : item.id;
 		item.name = rset.getString("name");
 		
 		item.set.set("item_id", item.id);
+        item.set.set("item_display_id", item.displayid);
 		item.set.set("name", item.name);
 		
 		// lets see if this is a shield
@@ -468,16 +470,18 @@ public class ItemTable
 	 * @return Item : object created from the database record
 	 * @throws SQLException
 	 */
-	private Item readArmor(ResultSet rset) throws SQLException
+	private Item readArmor(ResultSet rset, boolean custom) throws SQLException
 	{
 		Item item = new Item();
 		item.set = new StatsSet();
 		item.type = _armorTypes.get(rset.getString("armor_type"));
 		item.id = rset.getInt("item_id");
+        item.displayid = custom ? rset.getInt("item_display_id") : item.id;
 		item.name = rset.getString("name");
 		
 		item.set.set("item_id", item.id);
 		item.set.set("name", item.name);
+        item.set.set("item_display_id", item.displayid);
 		int bodypart = _slots.get(rset.getString("bodypart"));
 		item.set.set("bodypart", bodypart);
 		item.set.set("crystallizable", Boolean.valueOf(rset.getString("crystallizable")));
@@ -557,13 +561,15 @@ public class ItemTable
 	 * @return Item : object created from the database record
 	 * @throws SQLException
 	 */
-	private Item readItem(ResultSet rset) throws SQLException
+	private Item readItem(ResultSet rset, boolean custom) throws SQLException
 	{
 		Item item = new Item();
 		item.set = new StatsSet();
 		item.id = rset.getInt("item_id");
+        item.displayid = custom ? rset.getInt("item_display_id") : item.id;
 		
 		item.set.set("item_id", item.id);
+        item.set.set("item_display_id", item.displayid);
 		item.set.set("crystallizable", Boolean.valueOf(rset.getString("crystallizable")));
 		item.set.set("type1", L2Item.TYPE1_ITEM_QUESTITEM_ADENA);
 		item.set.set("type2", L2Item.TYPE2_OTHER);
