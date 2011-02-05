@@ -289,11 +289,11 @@ public class GameServer
 		DimensionalRiftManager.getInstance();
 		EventDroplist.getInstance();
 
-                printSection("RaidBoss Speeches");
-                RaidBossSpeeches.getInstance();
+        printSection("RaidBoss Speeches");
+        RaidBossSpeeches.getInstance();
 
-                printSection("Characters autodelete");
-                CharAutoDelete.clean();
+        printSection("Characters autodelete");
+        CharAutoDelete.clean();
                 
 		printSection("Siege");
 		SiegeManager.getInstance().getSieges();
@@ -302,9 +302,9 @@ public class GameServer
 		CastleManorManager.getInstance();
 		MercTicketManager.getInstance();
 		L2Manor.getInstance();
-		
-		printSection("Olympiad");
-		Olympiad.getInstance();
+
+        printSection("Olympiad");
+        Olympiad.getInstance();
 		Hero.getInstance();
 		
 		// Call to load caches
