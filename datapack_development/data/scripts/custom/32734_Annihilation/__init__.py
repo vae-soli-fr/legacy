@@ -1,23 +1,23 @@
-#made by Lotradas/Kirieh
+#made by Melua
 import sys
 from com.l2jserver.gameserver.model.quest import State
 from com.l2jserver.gameserver.model.quest import QuestState
 from com.l2jserver.gameserver.model.quest.jython import QuestJython as JQuest
 
-qn = "200742_GKkarma"
+qn = "32734_Annihilation"
 #NPC
-GK = 200742
+GK = 32734
 
 class Quest (JQuest) :
 
    def __init__(self,id,name,descr): JQuest.__init__(self,id,name,descr)
 
    def onTalk(self,npc,player):
-      if player.getKarma() > 5000 :
-         return "200742-2.htm"
+      if player.getLevel() < 80 :
+         return "32734-no.htm"
       else:
-         return "<html><body>Hors de ma vue, serviteur du bien.</body></html>"
+         return "32734-yes.htm"
 
-QUEST       = Quest(-1,qn,"GKkarma")
-QUEST.addStartNpc(200742)
-QUEST.addTalkId(200742)
+QUEST = Quest(-1,qn,"Annihilation")
+QUEST.addStartNpc(32734)
+QUEST.addTalkId(32734)
