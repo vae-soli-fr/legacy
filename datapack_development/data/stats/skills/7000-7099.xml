@@ -197,28 +197,15 @@
 	</skill>
 	<skill id="7029" levels="4" name="Super Haste">
 		<!-- GM Skill -->
-		<table name="#pAtkSpd"> 2 3 3 2 </table>
+		<table name="#mpConsume"> 0 0 0 0 </table>
 		<table name="#runSpd"> 2 3 4 1 </table>
-		<table name="#mAtkSpd"> 2 3 3 2 </table>
-		<table name="#pAtk"> 1 1 10000 1 </table>
-		<table name="#reuse"> 0.01 0.01 0.01 1 </table>
-		<table name="#amount"> 1 1 1 2 </table>
-		<set name="aggroPoints" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="OP_TOGGLE" />
 		<set name="skillType" val="CONT" />
 		<set name="target" val="TARGET_SELF" />
 		<for>
-			<effect name="Buff" count="0x7fffffff" time="144000" val="0" stackOrder="99" stackType="attack_time_down">
-				<mul order="0x30" stat="pAtkSpd" val="#pAtkSpd" />
+			<effect count="0x7fffffff" name="MpConsumePerLevel" time="3" val="0.2">
 				<mul order="0x30" stat="runSpd" val="#runSpd" />
-				<mul order="0x30" stat="mAtkSpd" val="#mAtkSpd" />
-				<mul order="0x30" stat="pAtk" val="#pAtk" />
-				<mul order="0x30" stat="pReuse" val="#reuse" />
-				<mul order="0x30" stat="mReuse" val="#reuse" />
-				<mul order="0x30" stat="regMp" val="#amount" />
-				<mul order="0x30" stat="regMp" val="#amount" />
-				<mul order="0x30" stat="maxMp" val="#amount" />
-				<mul order="0x30" stat="maxLoad" val="#amount" />
 			</effect>
 		</for>
 	</skill>
