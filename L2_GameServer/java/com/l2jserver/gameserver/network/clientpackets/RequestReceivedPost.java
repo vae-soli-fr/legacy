@@ -14,7 +14,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_PVP;
+import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_TOWN;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.instancemanager.MailManager;
@@ -52,7 +52,7 @@ public final class RequestReceivedPost extends L2GameClientPacket
 		if (msg == null)
 			return;
 		
-		if (!activeChar.isInsideZone(ZONE_PVP) && msg.hasAttachments())
+		if (!activeChar.isInsideZone(ZONE_TOWN) && msg.hasAttachments())
 		{
 			//activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
 			activeChar.sendMessage("Vous ne pouvez pas utiliser les pièces jointes en dehors des villes.");

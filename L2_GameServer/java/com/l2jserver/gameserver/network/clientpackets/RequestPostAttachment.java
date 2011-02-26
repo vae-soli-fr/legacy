@@ -14,7 +14,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_PVP;
+import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_TOWN;
 import static com.l2jserver.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 
 import com.l2jserver.Config;
@@ -68,7 +68,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 			return;
 		}
 		
-		if (!activeChar.isInsideZone(ZONE_PVP))
+		if (!activeChar.isInsideZone(ZONE_TOWN))
 		{
 			//activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_RECEIVE_NOT_IN_PEACE_ZONE));
 			activeChar.sendMessage("Vous ne pouvez pas recevoir de mail en dehors des villes.");
