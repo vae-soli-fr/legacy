@@ -67,7 +67,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 			return;
 		}
 		
-		if (!activeChar.isInsideZone(ZONE_PVP))
+		if (!activeChar.isInsideZone(ZONE_TOWN))
 		{
 			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_CANCEL_NOT_IN_PEACE_ZONE));
 			return;
