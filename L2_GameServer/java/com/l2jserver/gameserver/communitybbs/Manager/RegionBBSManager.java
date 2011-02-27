@@ -367,7 +367,15 @@ public class RegionBBSManager extends BaseBBSManager
 							+ "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>"
 							+ trClose
 							+ trOpen + tdOpen, String.valueOf(L2World.getInstance().getAllVisibleObjectsCount()), " Object count</td>" + trClose
-							+ trOpen + tdOpen, String.valueOf(getOnlineCount("gm")), " joueur(s) en ligne</td>" + trClose + "</table>");
+							+ trOpen + tdOpen, String.valueOf(getOnlineCount("gm")), " joueurs en ligne "
+                            + "(<font color=\"", Config.VAEMOD_CBCOLOR_HUMAN, "\">Humain</font>, "
+                            + "<font color=\"", Config.VAEMOD_CBCOLOR_ELF, "\">Elfe</font>, "
+                            + "<font color=\"", Config.VAEMOD_CBCOLOR_DARKELF, "\">Sombre</font>, "
+                            + "<font color=\"", Config.VAEMOD_CBCOLOR_DWARF, "\">Nain</font>, "
+                            + "<font color=\"", Config.VAEMOD_CBCOLOR_ORC, "\">Orc</font>, "
+                            + "<font color=\"", Config.VAEMOD_CBCOLOR_KAMAEL, "\">Kamael</font>, "
+                            + "<font color=\"LEVEL\">GM</font>)</td>"
+                            + trClose + "</table>");
 			
 			int cell = 0;
 			if (Config.BBS_SHOW_PLAYERLIST)
@@ -391,9 +399,31 @@ public class RegionBBSManager extends BaseBBSManager
                         {
                             StringUtil.append(htmlCode, "<font color=\"808080\">", player.getName(), "</font>");
                         }
-
                         else {
-                            htmlCode.append(player.getName());
+                                switch (player.getRace())
+                                {
+                                    case DarkElf:
+                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_DARKELF).append("\">").append(player.getName()).append("</font>");
+                                        break;
+                                    case Dwarf:
+                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_DWARF).append("\">").append(player.getName()).append("</font>");
+                                        break;
+                                    case Elf:
+                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_ELF).append("\">").append(player.getName()).append("</font>");
+                                        break;
+                                    case Human:
+                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_HUMAN).append("\">").append(player.getName()).append("</font>");
+                                        break;
+                                    case Kamael:
+                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_KAMAEL).append("\">").append(player.getName()).append("</font>");
+                                        break;
+                                    case Orc:
+                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_ORC).append("\">").append(player.getName()).append("</font>");
+                                        break;
+                                    default:
+                                        htmlCode.append(player.getName());
+                                        break;
+                                }
                         }
 
                         htmlCode.append("</a></td>");
@@ -460,7 +490,15 @@ public class RegionBBSManager extends BaseBBSManager
 					+ trOpen
 					+ "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>"
 					+ trClose
-					+ trOpen + tdOpen, String.valueOf(getOnlineCount("pl")), " joueur(s) en ligne</td>" + trClose + "</table>");
+					+ trOpen + tdOpen, String.valueOf(getOnlineCount("pl")), " joueur(s) en ligne "
+                    + "(<font color=\"", Config.VAEMOD_CBCOLOR_HUMAN, "\">Humain</font>, "
+                    + "<font color=\"", Config.VAEMOD_CBCOLOR_ELF, "\">Elfe</font>, "
+                    + "<font color=\"", Config.VAEMOD_CBCOLOR_DARKELF, "\">Sombre</font>, "
+                    + "<font color=\"", Config.VAEMOD_CBCOLOR_DWARF, "\">Nain</font>, "
+                    + "<font color=\"", Config.VAEMOD_CBCOLOR_ORC, "\">Orc</font>, "
+                    + "<font color=\"", Config.VAEMOD_CBCOLOR_KAMAEL, "\">Kamael</font>, "
+                    + "<font color=\"LEVEL\">GM</font>)</td>"
+                    + trClose + "</table>");
 			
 			if (Config.BBS_SHOW_PLAYERLIST)
 			{
@@ -487,7 +525,30 @@ public class RegionBBSManager extends BaseBBSManager
 					}
 					else
 					{
-						htmlCode.append(player.getName());
+                        switch (player.getRace())
+                        {
+                            case DarkElf:
+                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_DARKELF).append("\">").append(player.getName()).append("</font>");
+                                break;
+                            case Dwarf:
+                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_DWARF).append("\">").append(player.getName()).append("</font>");
+                                break;
+                            case Elf:
+                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_ELF).append("\">").append(player.getName()).append("</font>");
+                                break;
+                            case Human:
+                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_HUMAN).append("\">").append(player.getName()).append("</font>");
+                                break;
+                            case Kamael:
+                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_KAMAEL).append("\">").append(player.getName()).append("</font>");
+                                break;
+                            case Orc:
+                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_ORC).append("\">").append(player.getName()).append("</font>");
+                                break;
+                            default:
+                                htmlCode.append(player.getName());
+                                break;
+                        }
 					}
 					
 					htmlCode.append("</a></td>");

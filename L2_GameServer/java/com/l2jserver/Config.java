@@ -108,6 +108,12 @@ public final class Config
     public static boolean VAEMOD_RBJAIL = true; // bannir les joueur qui font plus de 3 RBs
     public static List<Integer> VAEMOD_RBLIST; // RB non pris en compte par la limitation
     public static boolean VAEMOD_MUTESEVENSIGNS; // désactiver les autochats des Seven Signs
+    public static String VAEMOD_CBCOLOR_DARKELF;
+    public static String VAEMOD_CBCOLOR_DWARF;
+    public static String VAEMOD_CBCOLOR_ELF;
+    public static String VAEMOD_CBCOLOR_HUMAN;
+    public static String VAEMOD_CBCOLOR_KAMAEL;
+    public static String VAEMOD_CBCOLOR_ORC;
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1213,6 +1219,12 @@ public final class Config
                     VAEMOD_PETSAY = Boolean.parseBoolean(customSettings.getProperty("ActiverPetSay", "false"));
                     VAEMOD_NPCSAY = Boolean.parseBoolean(customSettings.getProperty("ActiverNpcSay", "false"));
                     VAEMOD_MUTESEVENSIGNS = Boolean.parseBoolean(customSettings.getProperty("MuteSevenSigns", "false"));
+                    VAEMOD_CBCOLOR_DARKELF = customSettings.getProperty("CBcolorDarkElf", "FFFFFF");
+                    VAEMOD_CBCOLOR_DWARF = customSettings.getProperty("CBcolorDwarf", "FFFFFF");
+                    VAEMOD_CBCOLOR_ELF = customSettings.getProperty("CBcolorElf", "FFFFFF");
+                    VAEMOD_CBCOLOR_HUMAN = customSettings.getProperty("CBcolorHuman", "FFFFFF");
+                    VAEMOD_CBCOLOR_KAMAEL = customSettings.getProperty("CBcolorKamael", "FFFFFF");
+                    VAEMOD_CBCOLOR_ORC = customSettings.getProperty("CBcolorOrc", "FFFFFF");
                     String[] raidbosses = customSettings.getProperty("WhiteListRB").split(";");
 					for (String npcid : raidbosses) {
 						try	{
