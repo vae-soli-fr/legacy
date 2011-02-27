@@ -4,6 +4,7 @@ import com.l2jserver.Config;
 import java.util.logging.Logger;
 import javolution.util.FastMap;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
 import com.l2jserver.gameserver.util.GMAudit;
 
 /**
@@ -27,14 +28,15 @@ public class RaidBossLimiter
 		_list = new FastMap<String, Integer>();
 	}
 
-	public void addPoint(L2PcInstance player)
+	public void addPoint(L2PcInstance player, int NpcId)
 	{
-        if (!Config.VAEMOD_RBJAIL) return;
+        if (!Config.VAEMOD_RBJAIL || Config.VAEMOD_RBLIST.contains(NpcId)) return;
         if (_list.containsKey(player.getAccountName()))
         {
             int points = _list.get(player.getAccountName());
             _list.put(player.getAccountName(), ++points);
-            if (points > 3) autoBan(player);
+            if (points == 3) player.sendPacket(new ExShowScreenMessage(1, -1, 7, 0, 1, 0, 0, true, 15000, 0, "Attention ceci était votre dernier Raid Boss"));
+            else if (points > 3) autoBan(player);
         }
         else _list.put(player.getAccountName(), 1);
     }

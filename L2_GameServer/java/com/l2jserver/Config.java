@@ -106,6 +106,7 @@ public final class Config
     public static boolean VAEMOD_PETSAY; // commande pour faire parler son pet
     public static boolean VAEMOD_NPCSAY; // commande admin pour faire parler les Npc
     public static boolean VAEMOD_RBJAIL = true; // bannir les joueur qui font plus de 3 RBs
+    public static List<Integer> VAEMOD_RBLIST; // RB non pris en compte par la limitation
     public static boolean VAEMOD_MUTESEVENSIGNS; // désactiver les autochats des Seven Signs
 
     //--------------------------------------------------
@@ -1212,6 +1213,14 @@ public final class Config
                     VAEMOD_PETSAY = Boolean.parseBoolean(customSettings.getProperty("ActiverPetSay", "false"));
                     VAEMOD_NPCSAY = Boolean.parseBoolean(customSettings.getProperty("ActiverNpcSay", "false"));
                     VAEMOD_MUTESEVENSIGNS = Boolean.parseBoolean(customSettings.getProperty("MuteSevenSigns", "false"));
+                    String[] raidbosses = customSettings.getProperty("WhiteListRB").split(";");
+					for (String npcid : raidbosses) {
+						try	{
+							VAEMOD_RBLIST.add(Integer.parseInt(npcid.trim()));
+						} catch(NumberFormatException e) {
+							_log.info("Wrong npc id " + npcid + " for WhiteList. Skipped.");
+						}
+					}
 				}
 				catch (Exception e)
 				{
