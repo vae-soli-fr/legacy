@@ -366,7 +366,7 @@ public class RegionBBSManager extends BaseBBSManager
 							+ trOpen
 							+ "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>"
 							+ trClose
-							+ trOpen + tdOpen, String.valueOf(L2World.getInstance().getAllVisibleObjectsCount()), " Object count</td>" + trClose
+							+ trOpen + tdOpen, String.valueOf(L2World.getInstance().getAllVisibleObjectsCount()), " Objets instanciés</td>" + trClose
 							+ trOpen + tdOpen, String.valueOf(getOnlineCount("gm")), " joueurs en ligne "
                             + "(<font color=\"", Config.VAEMOD_CBCOLOR_HUMAN, "\">Humain</font>, "
                             + "<font color=\"", Config.VAEMOD_CBCOLOR_ELF, "\">Elfe</font>, "
@@ -374,7 +374,8 @@ public class RegionBBSManager extends BaseBBSManager
                             + "<font color=\"", Config.VAEMOD_CBCOLOR_DWARF, "\">Nain</font>, "
                             + "<font color=\"", Config.VAEMOD_CBCOLOR_ORC, "\">Orc</font>, "
                             + "<font color=\"", Config.VAEMOD_CBCOLOR_KAMAEL, "\">Kamael</font>, "
-                            + "<font color=\"LEVEL\">GM</font>)</td>"
+                            + "<font color=\"LEVEL\">GM</font>, "
+                            + "<font color=\"808080\">Offline</font>)</td>"
                             + trClose + "</table>");
 			
 			int cell = 0;
