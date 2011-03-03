@@ -105,7 +105,7 @@ public final class Config
     public static int VAEMOD_SPEAKINGBOSS; // chance pour les mobs de parler
     public static boolean VAEMOD_PETSAY; // commande pour faire parler son pet
     public static boolean VAEMOD_NPCSAY; // commande admin pour faire parler les Npc
-    public static boolean VAEMOD_RBJAIL = true; // bannir les joueur qui font plus de 3 RBs
+    public static boolean VAEMOD_RBJAIL; // bannir les joueur qui font plus de 3 RBs
     public static List<Integer> VAEMOD_RBLIST; // RB non pris en compte par la limitation
     public static boolean VAEMOD_MUTESEVENSIGNS; // désactiver les autochats des Seven Signs
     public static String VAEMOD_CBCOLOR_DARKELF;
@@ -114,6 +114,8 @@ public final class Config
     public static String VAEMOD_CBCOLOR_HUMAN;
     public static String VAEMOD_CBCOLOR_KAMAEL;
     public static String VAEMOD_CBCOLOR_ORC;
+    public static String VAEMOD_CBCOLOR_GM;
+    public static String VAEMOD_CBCOLOR_OFFLINE;
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1225,14 +1227,19 @@ public final class Config
                     VAEMOD_CBCOLOR_HUMAN = customSettings.getProperty("CBcolorHuman", "FFFFFF");
                     VAEMOD_CBCOLOR_KAMAEL = customSettings.getProperty("CBcolorKamael", "FFFFFF");
                     VAEMOD_CBCOLOR_ORC = customSettings.getProperty("CBcolorOrc", "FFFFFF");
+                    VAEMOD_CBCOLOR_GM = customSettings.getProperty("CBcolorGM", "FFFFFF");
+                    VAEMOD_CBCOLOR_OFFLINE = customSettings.getProperty("CBcolorOffline", "FFFFFF");
+                    VAEMOD_RBJAIL = Boolean.parseBoolean(customSettings.getProperty("RBjail", "false"));
+                    if (VAEMOD_RBJAIL) {
                     String[] raidbosses = customSettings.getProperty("WhiteListRB").split(";");
-					for (String npcid : raidbosses) {
-						try	{
-							VAEMOD_RBLIST.add(Integer.parseInt(npcid.trim()));
-						} catch(NumberFormatException e) {
-							_log.info("Wrong npc id " + npcid + " for WhiteList. Skipped.");
-						}
-					}
+                        for (String npcid : raidbosses) {
+                            try	{
+                                VAEMOD_RBLIST.add(Integer.parseInt(npcid.trim()));
+                            } catch(NumberFormatException e) {
+                                _log.info("Wrong npc id " + npcid + " for WhiteList. Skipped.");
+                            }
+                        }
+                    }
 				}
 				catch (Exception e)
 				{

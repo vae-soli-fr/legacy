@@ -28,6 +28,7 @@ public class RaidBossLimiter
 	private RaidBossLimiter()
 	{
 		_list = new FastMap<String, Integer>();
+        _done = new FastMap<String, String>();
 	}
 
 	public void addPoint(L2PcInstance player, int NpcId)

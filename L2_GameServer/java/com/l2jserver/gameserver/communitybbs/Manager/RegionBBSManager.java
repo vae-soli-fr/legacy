@@ -374,8 +374,8 @@ public class RegionBBSManager extends BaseBBSManager
                             + "<font color=\"", Config.VAEMOD_CBCOLOR_DWARF, "\">Nain</font>, "
                             + "<font color=\"", Config.VAEMOD_CBCOLOR_ORC, "\">Orc</font>, "
                             + "<font color=\"", Config.VAEMOD_CBCOLOR_KAMAEL, "\">Kamael</font>, "
-                            + "<font color=\"LEVEL\">GM</font>, "
-                            + "<font color=\"808080\">Offline</font>)</td>"
+                            + "<font color=\"", Config.VAEMOD_CBCOLOR_GM, "\">GM</font>, "
+                            + "<font color=\"", Config.VAEMOD_CBCOLOR_OFFLINE, "\">Offline</font>)</td>"
                             + trClose + "</table>");
 			
 			int cell = 0;
@@ -394,11 +394,11 @@ public class RegionBBSManager extends BaseBBSManager
                         StringUtil.append(htmlCode, "<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;", player.getName(), "\">");
 
                         if (player.isGM()) {
-                            StringUtil.append(htmlCode, "<font color=\"LEVEL\">", player.getName(), "</font>");
+                            StringUtil.append(htmlCode, "<font color=\"", Config.VAEMOD_CBCOLOR_GM, "\">", player.getName(), "</font>");
                         }
                         else if (player.isInOfflineMode())
                         {
-                            StringUtil.append(htmlCode, "<font color=\"808080\">", player.getName(), "</font>");
+                            StringUtil.append(htmlCode, "<font color=\"", Config.VAEMOD_CBCOLOR_OFFLINE, "\">", player.getName(), "</font>");
                         }
                         else {
                                 switch (player.getRace())
@@ -498,7 +498,7 @@ public class RegionBBSManager extends BaseBBSManager
                     + "<font color=\"", Config.VAEMOD_CBCOLOR_DWARF, "\">Nain</font>, "
                     + "<font color=\"", Config.VAEMOD_CBCOLOR_ORC, "\">Orc</font>, "
                     + "<font color=\"", Config.VAEMOD_CBCOLOR_KAMAEL, "\">Kamael</font>, "
-                    + "<font color=\"LEVEL\">GM</font>)</td>"
+                    + "<font color=\"", Config.VAEMOD_CBCOLOR_GM, "\">GM</font>)</td>"
                     + trClose + "</table>");
 			
 			if (Config.BBS_SHOW_PLAYERLIST)
@@ -522,7 +522,7 @@ public class RegionBBSManager extends BaseBBSManager
 					
 					if (player.isGM())
 					{
-						StringUtil.append(htmlCode, "<font color=\"LEVEL\">", player.getName(), "</font>");
+						StringUtil.append(htmlCode, "<font color=\"", Config.VAEMOD_CBCOLOR_GM, "\">", player.getName(), "</font>");
 					}
 					else
 					{
