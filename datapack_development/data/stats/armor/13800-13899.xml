@@ -76,7 +76,7 @@
 		<cond msgId="2453">
 			<and>
 				<player race="Kamael" /> <!-- Kamael exclusive cloak -->
-				<player cloakStatus="1" />
+				<player level ="61" />
 			</and>
 		</cond>
 		<for>
@@ -86,7 +86,7 @@
 	</item>
 	<item id="13890" name="Holy Spirit's Cloak">
 		<cond msgId="2453">
-			<player cloakStatus="1" />
+			<player level ="61" />
 		</cond>
 		<for>
 			<add order="0x10" stat="pDef" val="20" />
@@ -97,7 +97,7 @@
 		<cond msgId="2453">
 			<and>
 				<player class_id_restriction="93, 101, 108, 92, 102, 109" /> <!-- Dagger Master and Bow Master -->
-				<player cloakStatus="1" />
+				<player level ="61" />
 				<not>
 					<player race="Kamael" /> <!-- excluding Kamaels -->
 				</not>
@@ -112,7 +112,7 @@
 		<cond msgId="2453">
 			<and>
 				<player class_id_restriction="97, 105, 112, 98, 115, 116, 96, 104, 111, 94, 95, 103, 110" /> <!-- Healer, Enchanter, Summoner and Wizard -->
-				<player cloakStatus="1" />
+				<player level ="61" />
 				<not>
 					<player race="Kamael" /> <!-- excluding Kamaels -->
 				</not>
