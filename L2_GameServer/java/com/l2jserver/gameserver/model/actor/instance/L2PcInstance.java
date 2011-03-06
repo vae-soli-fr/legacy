@@ -7332,6 +7332,17 @@ public final class L2PcInstance extends L2Playable
 						player.setClanPrivileges(L2Clan.CP_ALL);
 						player.setPowerGrade(1);
 					}
+
+                    int pledgeClass = 0;
+					pledgeClass = player.getClan().getClanMember(objectId).calculatePledgeClass(player);
+
+					if (player.isNoble() && pledgeClass < 5)
+						pledgeClass = 5;
+
+					if (player.isHero() && pledgeClass < 8)
+						pledgeClass = 8;
+
+					player.setPledgeClass(pledgeClass);
 				}
 				else
 				{

@@ -193,8 +193,6 @@ public class EnterWorld extends L2GameClientPacket
 		if (Hero.getInstance().getHeroes() != null && Hero.getInstance().getHeroes().containsKey(activeChar.getObjectId()))
 			activeChar.setHero(true);
 		
-		setPledgeClass(activeChar);
-		
 		boolean showClanNotice = false;
 		
 		// Clan related checks are here
@@ -644,24 +642,7 @@ public class EnterWorld extends L2GameClientPacket
 	{
 		return _C__03_ENTERWORLD;
 	}
-	
-	private void setPledgeClass(L2PcInstance activeChar)
-	{
-		int pledgeClass = 0;
-		
-		// This null check may not be needed anymore since setPledgeClass is called from within a null check already. Please remove if we're certain it's ok to do so.
-		if (activeChar.getClan() != null)
-			pledgeClass = activeChar.getClan().getClanMember(activeChar.getObjectId()).calculatePledgeClass(activeChar);
-		
-		if (activeChar.isNoble() && pledgeClass < 5)
-			pledgeClass = 5;
-		
-		if (activeChar.isHero() && pledgeClass < 8)
-			pledgeClass = 8;
-		
-		activeChar.setPledgeClass(pledgeClass);
-	}
-	
+
 	@Override
 	protected boolean triggersOnActionRequest()
 	{
