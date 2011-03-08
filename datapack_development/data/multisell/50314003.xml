@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vendeur Armures Olympiades -->
+  <!-- recipes Dynasty de gants/bottes/sigil/bouclier -->
+<list>
+  <item id="1">
+    <ingredient id="66330" count="500"/>
+    <production id="9486" count="1"/>
+  </item>
+    <item id="2">
+    <ingredient id="66330" count="500"/>
+    <production id="9485" count="1"/>
+  </item>
+    <item id="3">
+    <ingredient id="66330" count="500"/>
+    <production id="9490" count="1"/>
+  </item>
+    <item id="4">
+    <ingredient id="66330" count="500"/>
+    <production id="9491" count="1"/>
+  </item>
+    <item id="5">
+    <ingredient id="66330" count="500"/>
+    <production id="9495" count="1"/>
+  </item>
+    <item id="6">
+    <ingredient id="66330" count="500"/>
+    <production id="9496" count="1"/>
+  </item>
+    <item id="7">
+    <ingredient id="66330" count="500"/>
+    <production id="9497" count="1"/>
+  </item>
+    <item id="8">
+    <ingredient id="66330" count="500"/>
+    <production id="10115" count="1"/>
+  </item>
+</list>

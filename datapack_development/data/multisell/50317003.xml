@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vendeur Arcaniste Olympiades -->
+  <!-- Talismans communs -->
+<list>
+  <item id="1">
+    <ingredient id="66330" count="150"/>
+    <production id="10417" count="1"/>
+  </item>
+   <item id="2">
+    <ingredient id="66330" count="50"/>
+    <production id="10416" count="1"/>
+  </item>
+   <item id="3">
+    <ingredient id="66330" count="50"/>
+    <production id="10424" count="1"/>
+  </item>
+   <item id="4">
+    <ingredient id="66330" count="50"/>
+    <production id="10423" count="1"/>
+  </item>
+   <item id="5">
+    <ingredient id="66330" count="50"/>
+    <production id="10519" count="1"/>
+  </item>
+   <item id="6">
+    <ingredient id="66330" count="50"/>
+    <production id="10419" count="1"/>
+  </item>
+   <item id="7">
+    <ingredient id="66330" count="50"/>
+    <production id="10421" count="1"/>
+  </item>
+   <item id="8">
+    <ingredient id="66330" count="50"/>
+    <production id="10422" count="1"/>
+  </item>
+   <item id="9">
+    <ingredient id="66330" count="50"/>
+    <production id="10418" count="1"/>
+  </item>
+   <item id="10">
+    <ingredient id="66330" count="50"/>
+    <production id="10420" count="1"/>
+  </item>
+   <item id="11">
+    <ingredient id="66330" count="50"/>
+    <production id="9920" count="1"/>
+  </item>
+   <item id="12">
+    <ingredient id="66330" count="50"/>
+    <production id="9919" count="1"/>
+  </item>
+   <item id="13">
+    <ingredient id="66330" count="50"/>
+    <production id="9924" count="1"/>
+  </item>
+</list>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vendeur Armures Olympiades -->
+  <!-- recipes Dynasty de casque/bas -->
+<list>
+  <item id="1">
+    <ingredient id="66330" count="600"/>
+    <production id="9483" count="1"/>
+  </item>
+    <item id="2">
+    <ingredient id="66330" count="600"/>
+    <production id="9484" count="1"/>
+  </item>
+    <item id="3">
+    <ingredient id="66330" count="600"/>
+    <production id="9488" count="1"/>
+  </item>
+    <item id="4">
+    <ingredient id="66330" count="600"/>
+    <production id="9489" count="1"/>
+  </item>
+    <item id="5">
+    <ingredient id="66330" count="600"/>
+    <production id="9493" count="1"/>
+  </item>
+    <item id="6">
+    <ingredient id="66330" count="600"/>
+    <production id="9494" count="1"/>
+  </item>
+</list>
