@@ -2,6 +2,7 @@
 # 2010-02-17 based on official Franz server
 
 import sys
+from com.l2jserver import Config
 from com.l2jserver.gameserver.model.quest				import State
 from com.l2jserver.gameserver.model.quest				import QuestState
 from com.l2jserver.gameserver.model.quest.jython	import QuestJython as JQuest
@@ -111,7 +112,7 @@ class Quest (JQuest) :
 		npcId = npc.getNpcId()
 		cond = st.getInt("cond")
 		if cond == 1 and npcId in MOBS :
-			if st.getRandom(100) < DROP_CHANCE :
+			if st.getRandom(100) < DROP_CHANCE * Config.RATE_QUEST_DROP :
 				st.giveItems(ANCIENT_PARCHMENT,1)
 				st.playSound("ItemSound.quest_itemget")
 		return

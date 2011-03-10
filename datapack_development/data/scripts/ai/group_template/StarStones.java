@@ -26,7 +26,7 @@ import com.l2jserver.util.Rnd;
 public class StarStones extends L2AttackableAIScript
 {
 	private static final int[] mobs = {18684, 18685, 18686, 18687, 18688, 18689, 18690, 18691, 18692};
-	private static final int RATE = 1;
+	private static final int RATE = 3;
 	
 	public StarStones(int questId, String name, String descr)
 	{
