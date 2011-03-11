@@ -91,7 +91,7 @@ public final class MultiSellList extends L2GameServerPacket
 			
 			for(Ingredient ing: ent.getProducts())
 			{
-				writeD(ing.getItemId());
+				writeD(ing.getTemplate().getItemDisplayId());
 				if (ing.getTemplate() != null)
 				{
 					writeD(ing.getTemplate().getBodyPart());
@@ -135,18 +135,8 @@ public final class MultiSellList extends L2GameServerPacket
 			
 			for(Ingredient ing : ent.getIngredients())
 			{
-                //writeD(ing.getItemId());
-                //writeH(ing.getTemplate() != null ? ing.getTemplate().getType2() : 65535);
-                
-                // custom for item_display_id
-                final int itemId = ing.getItemId();
-                final L2Item template = ing.getTemplate();
-                if (template == null) {
-                    writeD(itemId);
-                    writeH(65535); }
-                else {
-                    writeD(template.getItemDisplayId());
-                    writeH(template.getType2()); }
+                writeD(ing.getTemplate().getItemDisplayId());
+                writeH(ing.getTemplate() != null ? ing.getTemplate().getType2() : 65535);
                 writeQ(ing.getItemCount());
 				if (ing.getItemInfo() != null)
 				{
