@@ -116,6 +116,7 @@ public final class Config
     public static String VAEMOD_CBCOLOR_ORC;
     public static String VAEMOD_CBCOLOR_GM;
     public static String VAEMOD_CBCOLOR_OFFLINE;
+    public static boolean VAEMOD_CAMP;
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1229,6 +1230,7 @@ public final class Config
                     VAEMOD_CBCOLOR_ORC = customSettings.getProperty("CBcolorOrc", "FFFFFF");
                     VAEMOD_CBCOLOR_GM = customSettings.getProperty("CBcolorGM", "FFFFFF");
                     VAEMOD_CBCOLOR_OFFLINE = customSettings.getProperty("CBcolorOffline", "FFFFFF");
+                    VAEMOD_CAMP = Boolean.parseBoolean(customSettings.getProperty("ActiverCampement", "false"));
                     VAEMOD_RBJAIL = Boolean.parseBoolean(customSettings.getProperty("RBjail", "false"));
                     if (VAEMOD_RBJAIL) {
                     String[] raidbosses = customSettings.getProperty("WhiteListRB").split(";");

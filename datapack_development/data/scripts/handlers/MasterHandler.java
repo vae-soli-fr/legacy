@@ -254,6 +254,7 @@ import handlers.voicedcommandhandlers.PetSay;
 import handlers.admincommandhandlers.AdminNpcSay;
 import handlers.admincommandhandlers.AdminRBjail;
 import handlers.voicedcommandhandlers.HellboundVoiced;
+import handlers.voicedcommandhandlers.Camp;
 
 import java.util.logging.Logger;
 
@@ -576,6 +577,8 @@ public class MasterHandler
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new VotesReminder());
         if (Config.VAEMOD_PETSAY)
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new PetSay());
+        if (Config.VAEMOD_CAMP)
+            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Camp());
         _log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	
