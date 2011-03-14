@@ -85,13 +85,16 @@ public class Camp implements IVoicedCommandHandler {
                             if (activeChar.isInsideRadius(activeChar.getCamp1(), 500, true, false)) {
                                 if (activeChar.getCamp3() == null) {
                                     //spawn la tente
-                                    if (activeChar.isInsideRadius(activeChar.getCamp1(), 250, true, false)) {
-                                        activeChar.setCamp3(new L2TerrainObjectInstance(IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate(80590)));
-                                        activeChar.getCamp3().setHeading(Util.calculateHeadingFrom(activeChar, activeChar.getCamp1()));
-                                        activeChar.getCamp3().spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-                                        
+                                    if (!activeChar.isInsideRadius(activeChar.getCamp1(), 150, true, false)) {
+                                        if (activeChar.isInsideRadius(activeChar.getCamp1(), 250, true, false)) {
+                                            activeChar.setCamp3(new L2TerrainObjectInstance(IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate(80590)));
+                                            activeChar.getCamp3().setHeading(Util.calculateHeadingFrom(activeChar, activeChar.getCamp1()));
+                                            activeChar.getCamp3().spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
+                                        } else {
+                                            activeChar.sendMessage("La tente est trop loin du feu.");
+                                        }
                                     } else {
-                                        activeChar.sendMessage("La tente est trop loin du feu.");
+                                        activeChar.sendMessage("La tente est trop près du feu.");
                                     }
                                 }
                                 if (activeChar.getCamp4() != null) {
