@@ -376,7 +376,12 @@ public class L2Clan
 		return _members.get(objectID);
 	}
 	
-	public void removeClanMember(int objectId, long clanJoinExpiryTime)
+    public void removeClanMember(int objectId, long clanJoinExpiryTime)
+    {
+        removeClanMember(objectId, clanJoinExpiryTime, false);
+    }
+
+    public void removeClanMember(int objectId, long clanJoinExpiryTime, boolean isBooting)
 	{
 		L2ClanMember exMember = _members.remove(objectId);
 		if (exMember == null)
@@ -462,7 +467,7 @@ public class L2Clan
 			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ? System.currentTimeMillis() + Config.ALT_CLAN_CREATE_DAYS * 86400000L : 0);
 		}
 		// notify CB server about the change
-		if (Config.ENABLE_COMMUNITY_BOARD) CommunityServerThread.getInstance().sendPacket(new WorldInfo(null, this, WorldInfo.TYPE_UPDATE_CLAN_DATA));
+		if (Config.ENABLE_COMMUNITY_BOARD && !isBooting) CommunityServerThread.getInstance().sendPacket(new WorldInfo(null, this, WorldInfo.TYPE_UPDATE_CLAN_DATA));
 	}
 	
 	public L2ClanMember[] getMembers()

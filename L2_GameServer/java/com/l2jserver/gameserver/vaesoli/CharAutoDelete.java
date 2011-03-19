@@ -33,7 +33,7 @@ public class CharAutoDelete {
                 if (System.currentTimeMillis() > deletetime) {
                     L2Clan clan = ClanTable.getInstance().getClan(clanId);
                     if (clan != null) {
-                        clan.removeClanMember(objectId, 0);
+                        clan.removeClanMember(objectId, 0, true);
                     }
                     L2GameClient.deleteCharByObjId(objectId);
                     _log.info("Character " + name + " of account " + account + " has been deleted.");
