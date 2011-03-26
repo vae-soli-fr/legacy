@@ -833,7 +833,7 @@
 		</enchant2for>
 	</skill>
 	<skill id="529" levels="1" name="Song of Elemental" enchantGroup1="5" enchantGroup2="5">
-		<table name="#ench1Time"> 128 136 144 152 160 168 176 184 192 200 208 216 224 232 240 </table>
+		<table name="#ench1Time"> 368 376 384 392 400 408 416 424 432 440 448 456 464 472 480 </table>
 		<table name="#ench2mpConsume"> 52 50 48 46 45 43 41 39 38 36 34 32 31 29 27 </table>
 		<set name="mpConsume" val="54" />
 		<set name="nextDanceCost" val="27" />
@@ -847,7 +847,7 @@
 		<set name="aggroPoints" val="523" />
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<for>
-			<effect name="Buff" time="120" val="0">
+			<effect name="Buff" time="360" val="0">
 				<add order="0x40" stat="fireRes" val="30" />
 				<add order="0x40" stat="waterRes" val="30" />
 				<add order="0x40" stat="earthRes" val="30" />
@@ -864,7 +864,7 @@
 		</enchant1for>
 	</skill>
 	<skill id="530" levels="1" name="Dance of Alignment" enchantGroup1="5" enchantGroup2="5">
-		<table name="#ench1Time"> 128 136 144 152 160 168 176 184 192 200 208 216 224 232 240 </table>
+		<table name="#ench1Time"> 368 376 384 392 400 408 416 424 432 440 448 456 464 472 480 </table>
 		<table name="#ench2mpConsume"> 52 50 48 46 45 43 41 39 38 36 34 32 31 29 27 </table>
 		<set name="weaponsAllowed" val="512" /> <!-- Dual Sword -->
 		<set name="mpConsume" val="54" />
@@ -879,7 +879,7 @@
 		<set name="aggroPoints" val="523" />
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<for>
-			<effect name="Buff" time="120" val="0">
+			<effect name="Buff" time="360" val="0">
 				<add order="0x40" stat="darkRes" val="30" />
 				<add order="0x40" stat="holyRes" val="30" />
 			</effect>

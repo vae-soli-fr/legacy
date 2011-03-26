@@ -259,7 +259,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="aggroPoints" val="666" />
 		<for>
-			<effect name="Buff" time="120" val="0">
+			<effect name="Buff" time="360" val="0">
 				<sub order="0x40" stat="debuffVuln" val="30" />
 				<mul order="0x30" stat="gainHp" val="1.3" />
 				<!-- TODO: Provides an 80% chance of removing a party member's de-buffs. (When Used) -->
@@ -280,7 +280,7 @@
 		<set name="reuseDelay" val="240000" />
 		<set name="aggroPoints" val="523" />
 		<for>
-			<effect name="Buff" time="120" val="0">
+			<effect name="Buff" time="360" val="0">
 				<mul order="0x30" stat="mAtk" val="1.16" />
 				<mul order="0x30" stat="pAtk" val="1.08" />
 				<mul order="0x30" stat="mDef" val="0.84" />
