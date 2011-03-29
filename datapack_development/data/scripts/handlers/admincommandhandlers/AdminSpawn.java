@@ -172,12 +172,15 @@ public class AdminSpawn implements IAdminCommandHandler
 				int mobCount = 1;
 				if (st.hasMoreTokens())
 					mobCount = Integer.parseInt(st.nextToken());
+                if (mobCount <= 25) // limite de sécurité
+                {
 				if (st.hasMoreTokens())
 					respawnTime = Integer.parseInt(st.nextToken());
 				if (cmd.equalsIgnoreCase("admin_spawn_once"))
 					spawnMonster(activeChar, id, respawnTime, mobCount, false);
 				else
 					spawnMonster(activeChar, id, respawnTime, mobCount, true);
+                }
 			}
 			catch (Exception e)
 			{ // Case of wrong or missing monster data
