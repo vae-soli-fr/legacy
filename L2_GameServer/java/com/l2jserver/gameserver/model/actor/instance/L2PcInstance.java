@@ -403,10 +403,10 @@ public final class L2PcInstance extends L2Playable
     private String _rplanguage;
     private String _volume;
     private long _votetime = 0;
-    private L2TerrainObjectInstance _camp1 = null;
+    /*private L2TerrainObjectInstance _camp1 = null;
     private L2TerrainObjectInstance _camp2 = null;
     private L2TerrainObjectInstance _camp3 = null;
-    private L2TerrainObjectInstance _camp4 = null;
+    private L2TerrainObjectInstance _camp4 = null;*/
 
 	
 	private final ReentrantLock _subclassLock = new ReentrantLock();
@@ -15176,36 +15176,36 @@ public final class L2PcInstance extends L2Playable
    * @param obj L2TerrainObject
    * @author melua
    */
-    public void setCamp1(L2TerrainObjectInstance obj) {
-        _camp1 = obj;
+    /*public void setCamp1(L2TerrainObjectInstance obj) {
+    _camp1 = obj;
     }
     public void setCamp2(L2TerrainObjectInstance obj) {
-        _camp2 = obj;
+    _camp2 = obj;
     }
     public void setCamp3(L2TerrainObjectInstance obj) {
-        _camp3 = obj;
+    _camp3 = obj;
     }
     public void setCamp4(L2TerrainObjectInstance obj) {
-        _camp4 = obj;
-    }
+    _camp4 = obj;
+    }*/
 
   /**
    * Accesseurs pour la gestion des Camps
    * @return L2TerrainObject
    * @author melua
    */
-    public L2TerrainObjectInstance getCamp1() {
-        return _camp1;
+    /*public L2TerrainObjectInstance getCamp1() {
+    return _camp1;
     }
     public L2TerrainObjectInstance getCamp2() {
-        return _camp2;
+    return _camp2;
     }
     public L2TerrainObjectInstance getCamp3() {
-        return _camp3;
+    return _camp3;
     }
     public L2TerrainObjectInstance getCamp4() {
-        return _camp4;
-    }
+    return _camp4;
+    }*/
 
 
         public long getOfflineStartTime()
