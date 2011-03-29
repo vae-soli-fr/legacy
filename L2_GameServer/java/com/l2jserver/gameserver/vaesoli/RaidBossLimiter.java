@@ -33,7 +33,7 @@ public class RaidBossLimiter
 
 	public void addPoint(L2PcInstance player, int NpcId)
 	{
-        if (Config.VAEMOD_RBWHITELIST.contains(NpcId)) return;
+        if (!Config.VAEMOD_RBJAIL || Config.VAEMOD_RBWHITELIST.contains(NpcId)) return;
         if (_list.containsKey(player.getAccountName()) && _done.containsKey(player.getAccountName()))
         {
             int points = _list.get(player.getAccountName());
