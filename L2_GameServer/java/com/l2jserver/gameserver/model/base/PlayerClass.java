@@ -296,9 +296,9 @@ public enum PlayerClass
 				if (Config.MAX_SUBCLASS <= 3)
 				{
 					if (player.getAppearance().getSex())
-						subclasses.removeAll(EnumSet.of(femaleSoulbreaker));
-					else
 						subclasses.removeAll(EnumSet.of(maleSoulbreaker));
+					else
+						subclasses.removeAll(EnumSet.of(femaleSoulbreaker));
 				}
 				if (player.getTotalSubClasses() < 2)
 					subclasses.removeAll(EnumSet.of(inspector));
