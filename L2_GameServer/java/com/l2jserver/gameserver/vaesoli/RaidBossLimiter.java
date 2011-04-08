@@ -40,7 +40,11 @@ public class RaidBossLimiter
             String names = _done.get(player.getAccountName());
             _list.put(player.getAccountName(), ++points);
             _done.put(player.getAccountName(), names + ", " + NpcTable.getInstance().getTemplate(NpcId).getName());
-            if (points == 3) player.sendPacket(new ExShowScreenMessage(1, -1, 7, 0, 1, 0, 0, true, 15000, 0, "Attention ceci était votre dernier Raid Boss"));
+            if (points == 3) {
+                player.sendPacket(new ExShowScreenMessage(1, -1, 7, 0, 1, 0, 0, true, 15000, 0, "Attention ceci était votre dernier Raid Boss"));
+                player.sendMessage("Attention ceci était votre dernier Raid Boss.");
+            }
+
             else if (points > 3) autoBan(player);
         }
         else
