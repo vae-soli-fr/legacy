@@ -1,43 +1,57 @@
-/**
- * Mod Hellbound pour L2J
+/*
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+# Update by U3Games 17-03-2011
+# Special thanks to contributors users l2jserver
+# Imported: L2jTW by pmq, thx!
  */
 
 package com.l2jserver.gameserver.instancemanager;
 
-import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.datatables.NpcTable;
-import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.templates.chars.L2NpcTemplate;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-
+import com.l2jserver.L2DatabaseFactory;
+import com.l2jserver.gameserver.datatables.NpcTable;
+import com.l2jserver.gameserver.datatables.SpawnTable;
+import com.l2jserver.gameserver.model.L2Spawn;
+import com.l2jserver.gameserver.templates.chars.L2NpcTemplate;
 
 public class HellboundManager
 {
-	private boolean _isOpen = false;
+	private static final Logger _log = Logger.getLogger(HellboundManager.class.getName());
+
 	private boolean _megalithsCompleted = false;
 	private int _level = 0;
 	private int _currentTrust = 0;
-	private int _tempTrust = 0;
-	private int tempLevel = 0;
-	private static final Logger _log = Logger.getLogger(HellboundManager.class.getName());
-
+	
 	private HellboundManager()
 	{
-		_log.info("Initializing HellboundManager");
+		_log.info(getClass().getSimpleName() + ": Initializing");
 		init();
 	}
 
 	private void init()
 	{
 		checkHellboundLevel();
-		_log.info(getClass().getSimpleName()+": Current Level - "+_level);
-		_log.info(getClass().getSimpleName()+": Current Trust - "+_currentTrust);
+		_log.info(getClass().getSimpleName() + ": Current Level - " + _level);
+		_log.info(getClass().getSimpleName() + ": Current Trust - " + _currentTrust);
 	}
 
 	public static final HellboundManager getInstance()
@@ -55,9 +69,9 @@ public class HellboundManager
 		_megalithsCompleted = value;
 	}
 
-	public boolean checkIsOpen()
+	public boolean isLocked()
 	{
-		return _isOpen;
+		return _level > 0;
 	}
 
 	public int getLevel()
@@ -70,7 +84,7 @@ public class HellboundManager
 		return _currentTrust;
 	}
 
-	public L2Spawn addSpawn(int mobId, int xx, int yy, int zz, int headg, int respTime)
+	public L2Spawn addSpawn(int mobId, int x, int y, int z, int headg, int respTime)
 	{
 		L2NpcTemplate template1;
 		template1 = NpcTable.getInstance().getTemplate(mobId);
@@ -78,49 +92,44 @@ public class HellboundManager
 		try
 		{
 			spawn = new L2Spawn(template1);
+			spawn.setLocx(x);
+			spawn.setLocy(y);
+			spawn.setLocz(z);
+			spawn.setAmount(1);
+			spawn.setHeading(headg);
+			spawn.setRespawnDelay(respTime);
+			spawn.setInstanceId(0);
+			spawn.setOnKillDelay(0);
+			SpawnTable.getInstance().addNewSpawn(spawn, false);
+			spawn.init();
+			spawn.startRespawn();
+			if (respTime == 0)
+				spawn.stopRespawn();
 		}
-		catch (SecurityException e)
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
-		catch (ClassNotFoundException e)
-		{
-			e.printStackTrace();
-		}
-		catch (NoSuchMethodException e)
-		{
-			e.printStackTrace();
-		}
-		spawn.setLocx(xx);
-		spawn.setLocy(yy);
-		spawn.setLocz(zz);
-		spawn.setAmount(1);
-		spawn.setHeading(headg);
-		spawn.setRespawnDelay(respTime);
-		spawn.setInstanceId(0);
-		spawn.setOnKillDelay(0);
-		SpawnTable.getInstance().addNewSpawn(spawn, false);
-		spawn.init();
-		spawn.startRespawn();
-		if (respTime == 0)
-			spawn.stopRespawn();
 		return spawn;
 	}
 
-	public void increaseTrust(int points)
+	public synchronized void increaseTrust(int points)
 	{
+		if (!isLocked())
+			return;
 		_currentTrust += points;
+		if (_currentTrust < 0)
+			_currentTrust = 0;
 		updateTrust(_currentTrust);
 	}
 
 	public void updateTrust(int newTrust)
 	{
-		_currentTrust = newTrust;
 		Connection con = null;
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("UPDATE hellbound SET trustLevel=? WHERE name=8000");
+			PreparedStatement statement = con.prepareStatement("UPDATE hellbound SET trustLevel=?");
 			statement.setInt(1, _currentTrust);
 			statement.execute();
 			statement.close();
@@ -135,14 +144,7 @@ public class HellboundManager
 		}
 		finally
 		{
-			try
-			{
-				con.close();
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
-			}
+			L2DatabaseFactory.close(con);
 		}
 	}
 
@@ -153,7 +155,7 @@ public class HellboundManager
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("UPDATE hellbound SET zonesLevel=? WHERE name=8000");
+			PreparedStatement statement = con.prepareStatement("UPDATE hellbound SET zonesLevel=?");
 			statement.setInt(1, _level);
 			statement.execute();
 			statement.close();
@@ -168,19 +170,14 @@ public class HellboundManager
 		}
 		finally
 		{
-			try
-			{
-				con.close();
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
-			}
+			L2DatabaseFactory.close(con);
 		}
 	}
 
 	public void checkHellboundLevel()
 	{
+		int _tempTrust;
+		int tempLevel = 0;
 		Connection con = null;
 		try
 		{
@@ -195,13 +192,13 @@ public class HellboundManager
 				tempLevel = rset.getInt("zonesLevel");
 				// TODO: Fix it properly
 				_currentTrust = rset.getInt("trustLevel");
-				if (_tempTrust >= 0 && _currentTrust < 300000)
+				if ((_tempTrust > 0 && _currentTrust < 300000) || tempLevel > 0)
 					_level = 1;
 				if (_tempTrust >= 300000 && _currentTrust < 600000)
 					_level = 2;
 				if (_tempTrust >= 600000 && _currentTrust < 1000000)
 					_level = 3;
-				if (tempLevel == 4)
+				if (_tempTrust >= 1000000 && _currentTrust < 1030000)
 					_level = 4;
 				if (tempLevel == 5)
 					_level = 5;
@@ -231,14 +228,7 @@ public class HellboundManager
 		}
 		finally
 		{
-			try
-			{
-				con.close();
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
-			}
+			L2DatabaseFactory.close(con);
 		}
 		if (tempLevel != _level && tempLevel != 5)
 			changeLevel(_level);
@@ -249,7 +239,7 @@ public class HellboundManager
 	 */
 	public void unlock()
 	{
-		if (!checkIsOpen())
+		if (!isLocked())
 			changeLevel(1);
 	}
 

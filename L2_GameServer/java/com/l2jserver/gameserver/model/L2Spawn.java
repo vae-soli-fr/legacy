@@ -89,7 +89,15 @@ public class L2Spawn
 	private int _respawnMaxDelay;
 	
 	private int _instanceId = 0;
-	
+
+	//Update by U3Games 17-03-2011
+	//Special thanks to contributors users l2jserver
+	//Imported: L2jTW, thx!
+	//Start:
+	@SuppressWarnings("unused")
+	private int _onKillDelay = 5000;  // Add HB by pmq
+	//End
+
 	/** The generic constructor of L2NpcInstance managed by this L2Spawn */
 	private Constructor<?> _constructor;
 	
@@ -98,9 +106,6 @@ public class L2Spawn
 	
 	/** If true then spawn is custom */
 	private boolean _customSpawn;
-
-    /** Link to Hellbound ? */
-    private int _onKillDelay = 5000;
 	
 	private L2Npc _lastSpawn;
 	private static List<SpawnListener> _spawnListeners = new FastList<SpawnListener>();
@@ -659,14 +664,13 @@ public class L2Spawn
 		_instanceId = instanceId;
 	}
 
-    public int getOnKillDelay()
-    {
-    	return _onKillDelay;
-    }
-
-    public void setOnKillDelay(int delay)
-    {
-    	_onKillDelay = delay;
-    }
-
+	//Update by U3Games 17-03-2011
+	//Special thanks to contributors users l2jserver
+	//Imported: L2jTW. Add HB by pmq, thx! 
+	//Start:
+	public void setOnKillDelay(int delay)
+	{
+		this._onKillDelay = delay;
+	}
+	//End
 }
