@@ -12,15 +12,24 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
+/*
+# Update by U3Games 17-03-2011
+# Special thanks to contributors users l2jserver
+# Imported: L2jTW, thx!
+ */ 
+
 package ai.individual;
 
 import java.util.Calendar;
 
 import ai.group_template.L2AttackableAIScript;
 import com.l2jserver.gameserver.datatables.SpawnTable;
+import com.l2jserver.gameserver.instancemanager.HellboundManager;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 import com.l2jserver.util.Rnd;
 
 public class Shadai extends L2AttackableAIScript
@@ -69,11 +78,17 @@ public class Shadai extends L2AttackableAIScript
 	{
 		if (event.equalsIgnoreCase("shadai_spawn"))
 		{
-			if (Rnd.get(100) <= 40)
+			if (HellboundManager.getInstance().getLevel() >= 1 && Rnd.get(100) <= 33)
 			{
 				L2Npc shadaiSpawn = findTemplate(shadai);
 				if (shadaiSpawn == null)
-					addSpawn(shadai, 8962, 253278, -1932, 0, false, 3600000);
+				{
+					if (HellboundManager.getInstance().getLevel() < 9)
+						addSpawn(shadai, -5704, 256417, -3136, 0, false, 3600000);
+					else
+						addSpawn(shadai, 9041, 253010, -1938, 49909, false, 3600000);
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc.getNpcId(), "�ַ|�������ߪ����B��O�H�����I�u�O�n�_�A�u�O�n�_�I"));
+				}
 			}
 
 			shadaiSpawn();

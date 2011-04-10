@@ -258,12 +258,27 @@
 		<set name="hitTime" val="1080" />
 	</skill>
 	<skill id="5435" levels="1" name="Gust">
-		<!-- Instantly immobilized by gust. -->
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="hitTime" val="1080" />
-	</skill>
+        <!-- Instantly immobilized by gust. -->
+        <set name="castRange" val="300" />
+        <set name="skillRadius" val="300" />
+        <set name="effectRange" val="300" />
+        <set name="flyRadius" val="200" />
+        <set name="flyType" val="THROW_UP" />
+        <set name="hitTime" val="100" />
+        <set name="isDebuff" val="true" />
+        <set name="lvlDepend" val="2" />
+        <set name="magicLvl" val="85" />
+        <set name="mpConsume" val="1" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="power" val="100" />
+        <set name="saveVs" val="CON" />
+        <set name="skillType" val="PDAM" />
+        <set name="target" val="TARGET_AREA" />
+        <for>
+			<effect name="Stun" time="2" val="0" effectPower="80" effectType="STUN" stackOrder="1" stackType="stun" />
+			<effect name="ThrowUp" noicon="1" val="0" />
+        </for>
+    </skill>
 	<skill id="5436" levels="1" name="Increase Recovery Rate">
 		<!-- Condition causing target to increase recovery rate of HP and MP. -->
 		<set name="target" val="TARGET_NONE" />

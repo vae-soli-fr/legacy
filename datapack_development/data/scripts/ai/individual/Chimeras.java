@@ -11,9 +11,17 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
+/*
+# Update by U3Games 17-03-2011
+# Special thanks to contributors users l2jserver
+# Imported: L2jTW, thx!
+ */
+
 package ai.individual;
 
 import ai.group_template.L2AttackableAIScript;
+
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.instancemanager.HellboundManager;
 import com.l2jserver.gameserver.model.L2ItemInstance;
@@ -21,11 +29,13 @@ import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.L2Skill;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.util.Util;
 import com.l2jserver.util.Rnd;
 
 /**
  * @author theOne
  */
+
 public class Chimeras extends L2AttackableAIScript
 {
 	private static final int[] npcIds = {
@@ -82,7 +92,7 @@ public class Chimeras extends L2AttackableAIScript
 
 		if (HellboundManager.getInstance().getLevel() >= 7 && skill.getId() == 2359 && currentHp < maxHp * 0.1)
 		{
-			if (contains(npcIds, npc.getNpcId()))
+			if (Util.contains(npcIds, npc.getNpcId()))
 			{
 				if (Rnd.get(100) < 10)
 					dropItem(player, npc, 9681, 1);
@@ -99,16 +109,6 @@ public class Chimeras extends L2AttackableAIScript
 
 		return super.onSkillSee(npc, player, skill, targets, isPet);
 	}
-
-    /* by Melua */
-    private boolean contains(int[] tableau, int id)
-    {
-        for (int indice : tableau)
-        {
-            if (indice == id) return true;
-        }
-        return false;
-    }
 
 	public static void main(String[] args)
 	{

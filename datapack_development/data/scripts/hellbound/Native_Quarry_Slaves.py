@@ -1,27 +1,30 @@
+# Update by U3Games 17-03-2011
+# Special thanks to contributors users l2jserver
+# Imported: L2jTW, thx!
 # author theOne
 import sys
-from java.lang import System
-from com.l2jserver import L2DatabaseFactory
-from com.l2jserver.gameserver.ai import CtrlIntention
-from com.l2jserver.gameserver.datatables import ItemTable
-from com.l2jserver.gameserver.datatables import SpawnTable
-from com.l2jserver.gameserver.instancemanager import HellboundManager
-from com.l2jserver.gameserver.model.actor.instance import L2NpcInstance
-from com.l2jserver.gameserver.model import L2CharPosition
-from com.l2jserver.gameserver.model import L2World
-from com.l2jserver.gameserver.model import L2ItemInstance
-from com.l2jserver.gameserver.model.quest import State
-from com.l2jserver.gameserver.model.quest import QuestState
-from com.l2jserver.gameserver.model.quest.jython import QuestJython as JQuest
+from java.lang                                      import System
+from com.l2jserver                                  import L2DatabaseFactory
+from com.l2jserver.gameserver.ai                    import CtrlIntention
+from com.l2jserver.gameserver.datatables            import ItemTable
+from com.l2jserver.gameserver.datatables            import SpawnTable
+from com.l2jserver.gameserver.instancemanager       import HellboundManager
+from com.l2jserver.gameserver.model.actor.instance  import L2NpcInstance
+from com.l2jserver.gameserver.model                 import L2CharPosition
+from com.l2jserver.gameserver.model                 import L2World
+from com.l2jserver.gameserver.model                 import L2ItemInstance
+from com.l2jserver.gameserver.model.quest           import State
+from com.l2jserver.gameserver.model.quest           import QuestState
+from com.l2jserver.gameserver.model.quest.jython    import QuestJython as JQuest
 from com.l2jserver.gameserver.network.serverpackets import CreatureSay
-from com.l2jserver.util import Rnd
+from com.l2jserver.util                             import Rnd
 
-SlaveWalkTo = [-25451, 252291, -3252]
+SlaveWalkTo     = [-25451, 252291, -3252]
 
-NativeSlave = [22322, 22323]
-QuarrySlave = 32299
-SlaveMasters = [22320, 22321]
-QuarryMasters = [22344, 22345, 22346, 22347]
+QuarrySlave     = 32299
+NativeSlave     = [22322, 22323]
+SlaveMasters    = [22320, 22321]
+QuarryMasters   = [22344, 22345, 22346, 22347]
 
 QuarryDropItems = [1876, 1885, 9628]
 
@@ -82,183 +85,185 @@ QuarryMastersSpawns = {
 
 class Native_Quarry_Slaves (JQuest):
 
-    def __init__(self, id, name, descr):
-        JQuest.__init__(self, id, name, descr)
-        self.Slaves = {}
-        self.startQuestTimer("SpawnSlaves", 10000, None, None)
-        self.rescued = 0
-        try:
-            self.rescued = int(self.loadGlobalQuestVar("rescued_slaves"))
-        except:
-            pass
-        self.saveGlobalQuestVar("rescued_slaves", str(self.rescued))
-        if HellboundManager.getInstance().getLevel() > 5: return
-        for i in range(17):
-            master, xx, yy, zz, headg = QuarryMastersSpawns[i]
-            newMaster = HellboundManager.getInstance().addSpawn(master, xx, yy, zz, headg, 170)
-        for i in range(31):
-            xx, yy, zz, headg = QuarrySlavesSpawns[i]
-            newSlave = HellboundManager.getInstance().addSpawn(QuarrySlave, xx, yy, zz, headg, 170)
+	def __init__(self, id, name, descr):
+		JQuest.__init__(self, id, name, descr)
+		self.Slaves = {}
+		self.startQuestTimer("SpawnSlaves", 10000, None, None)
+		self.rescued = 0
+		try:
+			self.rescued = int(self.loadGlobalQuestVar("rescued_slaves"))
+		except:
+			pass
+		self.saveGlobalQuestVar("rescued_slaves", str(self.rescued))
+		if HellboundManager.getInstance().getLevel() > 5: return
+		for i in range(17):
+			master, xx, yy, zz, headg = QuarryMastersSpawns[i]
+			newMaster = HellboundManager.getInstance().addSpawn(master, xx, yy, zz, headg, 170)
+		for i in range(31):
+			xx, yy, zz, headg = QuarrySlavesSpawns[i]
+			newSlave = HellboundManager.getInstance().addSpawn(QuarrySlave, xx, yy, zz, headg, 170)
 
-    def onSpawn(self, npc):
-        npcId = npc.getNpcId()
-        objId = npc.getObjectId()
-        hellboundLevel = HellboundManager.getInstance().getLevel()
-        if npcId in SlaveMasters:
-            self.Slaves[objId] = []
-            self.Slaves[objId].append("noSlaves")
-            if int(hellboundLevel) >= 5:return
-            xx, yy, zz = npc.getX(), npc.getY(), npc.getZ()
-            self.Slaves[objId] = []
-            offsetX = xx + (50 - Rnd.get(100))
-            offsetY = yy + (50 - Rnd.get(100))
-            newSlave = self.addSpawn(NativeSlave[0], offsetX, offsetY, zz, 0, False, 0, 0)
-            newSlave1 = self.addSpawn(NativeSlave[1], offsetX + 20, offsetY + 10, zz, 0, False, 0, 0)
-            newSlave.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, npc)
-            newSlave1.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, npc)
-            self.Slaves[objId].append(newSlave)
-            self.Slaves[objId].append(newSlave1)
+	def onSpawn(self, npc):
+		npcId = npc.getNpcId()
+		objId = npc.getObjectId()
+		hellboundLevel = HellboundManager.getInstance().getLevel()
+		if npcId in SlaveMasters:
+			self.Slaves[objId] = []
+			self.Slaves[objId].append("noSlaves")
+			if int(hellboundLevel) >= 5:return
+			xx, yy, zz = npc.getX(), npc.getY(), npc.getZ()
+			self.Slaves[objId] = []
+			offsetX = xx + (50 - Rnd.get(100))
+			offsetY = yy + (50 - Rnd.get(100))
+			newSlave = self.addSpawn(NativeSlave[0], offsetX, offsetY, zz, 0, False, 0, 0)
+			newSlave1 = self.addSpawn(NativeSlave[1], offsetX + 20, offsetY + 10, zz, 0, False, 0, 0)
+			newSlave.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, npc)
+			newSlave1.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, npc)
+			self.Slaves[objId].append(newSlave)
+			self.Slaves[objId].append(newSlave1)
 
-    def onAdvEvent (self, event, npc, player) :
-        hellboundLevel = HellboundManager.getInstance().getLevel()
-        if npc:
-            npcId = npc.getNpcId()
-            npcObjId = npc.getObjectId()
-        if "Delete" in event and npc:
-            try:
-                npc.setIsInvul(0)
-                npc.deleteMe()
-            except:
-                pass
-        if "followCheck" in event and npc:
-            if npc.isDead(): return
-            newObjId = npc.getObjectId()
-            timerName = "followCheck" + str(newObjId)
-            self.startQuestTimer(timerName, 1000, npc, None)
-            xx, yy, zz, headg = npc.getX(), npc.getY(), npc.getZ(), npc.getHeading()
-            npc.getKnownList().removeAllKnownObjects()
-            npcKnownObjects = L2World.getInstance().getVisibleObjects(npc, 2000)
-            if npcKnownObjects > 0:
-              for i in npcKnownObjects:
-                npc.getKnownList().addKnownObject(i)
-            npcKnownPlayers = npc.getKnownList().getKnownPlayers().values()
-#            npcKnownObjects = npc.getKnownList().getKnownCharacers()
-#            npc.getTaget().sendMessage("X:"+str(xx)+" Y:"+str(yy))
-            if yy in range(249000, 249880) and xx in range(-6230, -5230):
-              try:
-                  chat = CreatureSay(npc.getObjectId(), 0, "Quarry Slave", "Thank you for saving me! Here is a small gift.")
-                  npc.broadcastPacket(chat)
-                  aa = Rnd.get(3)
-                  for i in range(aa):
-                      xx1 = xx + (35 - Rnd.get(70))
-                      yy1 = yy + (35 - Rnd.get(70))
-                      ditem = ItemTable.getInstance().createItem("Gift", QuarryDropItems[Rnd.get(len(QuarryDropItems))], 1, None, None)
-                      ditem.dropMe(npc, xx1, yy1, zz)
-              except:
-                  pass
-              try:
-                  npc.doDie(npc)
-                  npc.decayMe()
-              except:
-                  pass
-              HellboundManager.getInstance().increaseTrust(10)
-              self.rescued += 1
-              self.saveGlobalQuestVar("rescued_Slaves", str(self.rescued))
-              if self.rescued == 1000:
-                  HellboundManager.getInstance().changeLevel(6)
-                  self.rescued = 0
-                  self.saveGlobalQuestVar("rescued_Slaves", str(self.rescued))
-              return
-            minX = xx - 170
-            maxX = xx + 170
-            minY = yy - 170
-            maxY = yy + 170
-            for neighbor in npcKnownObjects:
-              if not neighbor in npcKnownPlayers:
-                if neighbor.getX() in range(minX, maxX):
-                  if neighbor.getY() in range(minY, maxY):
-                    try:
-                      if neighbor.getNpcId() in QuarryMasters:
-                        neighbor.setTarget(npc)
-                        neighbor.addDamageHate(npc, 0, 999)
-                        neighbor.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, npc)
-                        neighbor.setRunning()
-                        return
-                    except:
-                      pass
-        if event == "FollowMe":
-            npcSlave = player.getTarget()
-#            npcSlave.setIsFollowingMaster(1)
-            npcSlave.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player)
-            newObjId = npcSlave.getObjectId()
-            timerName = "followCheck" + str(newObjId)
-            self.startQuestTimer(timerName, 1000, npcSlave, None)
-        if event == "SpawnSlaves":
-            worldObjects = SpawnTable.getInstance().getSpawnTable().values()
-            for i in worldObjects:
-                if i.getNpcid() in SlaveMasters:
-                    curNpc = i.getLastSpawn()
-                    objId = curNpc.getObjectId()
-                    self.Slaves[objId] = []
-                    self.Slaves[objId].append("noSlaves")
-                    if int(hellboundLevel) >= 5: return
-                    xx, yy, zz = i.getLocx(), i.getLocy(), i.getLocz()
-                    self.Slaves[objId] = []
-                    offsetX = xx + (50 - Rnd.get(100))
-                    offsetY = yy + (50 - Rnd.get(100))
-                    newSlave = self.addSpawn(NativeSlave[0], offsetX, offsetY, zz, 0, False, 0, 0)
-                    newSlave1 = self.addSpawn(NativeSlave[1], offsetX + 20, offsetY + 10, zz, 0, False, 0, 0)
-                    newSlave.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, curNpc)
-                    newSlave1.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, curNpc)
-                    self.Slaves[objId].append(newSlave)
-                    self.Slaves[objId].append(newSlave1)
+	def onAdvEvent (self, event, npc, player) :
+		hellboundLevel = HellboundManager.getInstance().getLevel()
+		if npc:
+			npcId = npc.getNpcId()
+			npcObjId = npc.getObjectId()
+		if "Delete" in event and npc:
+			try:
+				npc.setIsInvul(0)
+				npc.deleteMe()
+			except:
+				pass
+		if "followCheck" in event and npc:
+			if npc.isDead(): return
+			newObjId = npc.getObjectId()
+			timerName = "followCheck" + str(newObjId)
+			self.startQuestTimer(timerName, 1000, npc, None)
+			xx, yy, zz, headg = npc.getX(), npc.getY(), npc.getZ(), npc.getHeading()
+			npc.getKnownList().removeAllKnownObjects()
+			npcKnownObjects = L2World.getInstance().getVisibleObjects(npc, 2000)
+			if npcKnownObjects > 0:
+				for i in npcKnownObjects:
+					npc.getKnownList().addKnownObject(i)
+			npcKnownPlayers = npc.getKnownList().getKnownPlayers().values()
+			#npcKnownObjects = npc.getKnownList().getKnownCharacers()
+			#npc.getTaget().sendMessage("X:"+str(xx)+" Y:"+str(yy))
+			if yy in range(249000, 249880) and xx in range(-6230, -5230):
+				try:
+					chat = CreatureSay(npc.getObjectId(), 0, "Quarry Slave", "Thank you for saving me! Here is a small gift.")
+					npc.broadcastPacket(chat)
+					aa = Rnd.get(3)
+					for i in range(aa):
+						xx1 = xx + (35 - Rnd.get(70))
+						yy1 = yy + (35 - Rnd.get(70))
+						ditem = ItemTable.getInstance().createItem("Gift", QuarryDropItems[Rnd.get(len(QuarryDropItems))], 1, None, None)
+						ditem.dropMe(npc, xx1, yy1, zz)
+				except:
+					pass
+				try:
+					npc.doDie(npc)
+					npc.decayMe()
+				except:
+					pass
+				HellboundManager.getInstance().increaseTrust(10)
+				self.rescued += 1
+				self.saveGlobalQuestVar("rescued_Slaves", str(self.rescued))
+				if self.rescued >= 1000:
+					HellboundManager.getInstance().changeLevel(6)
+					self.rescued = 0
+					self.saveGlobalQuestVar("rescued_Slaves", str(self.rescued))
+				return
+			minX = xx - 170
+			maxX = xx + 170
+			minY = yy - 170
+			maxY = yy + 170
+			for neighbor in npcKnownObjects:
+				if not neighbor in npcKnownPlayers:
+					if neighbor.getX() in range(minX, maxX):
+						if neighbor.getY() in range(minY, maxY):
+							try:
+								if neighbor.getNpcId() in QuarryMasters:
+									neighbor.setTarget(npc)
+									neighbor.addDamageHate(npc, 0, 999)
+									neighbor.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, npc)
+									neighbor.setRunning()
+									return
+							except:
+								pass
+		if event == "FollowMe":
+			npcSlave = player.getTarget()
+			#npcSlave.setIsFollowingMaster(1)
+			npcSlave.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player)
+			newObjId = npcSlave.getObjectId()
+			timerName = "followCheck" + str(newObjId)
+			self.startQuestTimer(timerName, 1000, npcSlave, None)
+		if event == "SpawnSlaves":
+			worldObjects = SpawnTable.getInstance().getSpawnTable().values()
+			for i in worldObjects:
+				if i.getNpcid() in SlaveMasters:
+					curNpc = i.getLastSpawn()
+					objId = curNpc.getObjectId()
+					self.Slaves[objId] = []
+					self.Slaves[objId].append("noSlaves")
+					if int(hellboundLevel) >= 5: return
+					xx, yy, zz = i.getLocx(), i.getLocy(), i.getLocz()
+					self.Slaves[objId] = []
+					offsetX = xx + (50 - Rnd.get(100))
+					offsetY = yy + (50 - Rnd.get(100))
+					newSlave = self.addSpawn(NativeSlave[0], offsetX, offsetY, zz, 0, False, 0, 0)
+					newSlave1 = self.addSpawn(NativeSlave[1], offsetX + 20, offsetY + 10, zz, 0, False, 0, 0)
+					newSlave.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, curNpc)
+					newSlave1.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, curNpc)
+					self.Slaves[objId].append(newSlave)
+					self.Slaves[objId].append(newSlave1)
 
-    def onKill(self, npc, player, isPet):
-        id = npc.getNpcId()
-        objId = npc.getObjectId()
-        xx, yy, zz = SlaveWalkTo
-        if id in SlaveMasters:
-          try:
-            if self.Slaves[objId][0] != "noSlaves":
-              for i in self.Slaves[objId]:
-                try:
-                  i.setIsInvul(1)
-                  i.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, L2CharPosition(xx, yy, zz, 3500))
-                  timerName = "Delete" + str(i.getObjectId())
-                  self.startQuestTimer(timerName, 3000, i, None)
-                except:
-                    pass
-              self.Slaves[objId] = []
-          except:
-            pass
-        if id == QuarrySlave:
-            HellboundManager.getInstance().increaseTrust(-10)
-            self.rescued -= 1
-            self.saveGlobalQuestVar("rescued_Slaves", str(self.rescued))
+	def onKill(self, npc, player, isPet):
+		id = npc.getNpcId()
+		objId = npc.getObjectId()
+		xx, yy, zz = SlaveWalkTo
+		if id in SlaveMasters:
+			try:
+				if self.Slaves[objId][0] != "noSlaves":
+					for i in self.Slaves[objId]:
+						try:
+							i.setIsInvul(1)
+							i.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, L2CharPosition(xx, yy, zz, 3500))
+							timerName = "Delete" + str(i.getObjectId())
+							self.startQuestTimer(timerName, 3000, i, None)
+						except:
+							pass
+					self.Slaves[objId] = []
+			except:
+				pass
+		if id == QuarrySlave:
+			HellboundManager.getInstance().increaseTrust(-10)
+			self.rescued -= 1
+			self.saveGlobalQuestVar("rescued_Slaves", str(self.rescued))
 
-    def onFirstTalk (self, npc, player):
-        st = player.getQuestState("Native_Quarry_Slaves")
-        hellboundLevel = HellboundManager.getInstance().getLevel()
-        if not st:
-            st = self.newQuestState(player)
-        npcId = npc.getNpcId()
-        if npcId == QuarrySlave:
-            if hellboundLevel != 5: return "<html><body>Quarry Slave:<br>Who are you ? Do not interrupting me from work.</body></html>"
-            else:
-                htmltext = "<html><body>Quarry Slave:<br>"
-                htmltext += "Ermm, are you here to rescue me?<br><br>"
-                htmltext += "<a action=\"bypass -h Quest Native_Quarry_Slaves FollowMe\">Yes, follow me quietly.</a><br1>"
-                htmltext += "</body></html>"
-        return htmltext
+	def onFirstTalk (self, npc, player):
+		st = player.getQuestState("Native_Quarry_Slaves")
+		hellboundLevel = HellboundManager.getInstance().getLevel()
+		if not st:
+			st = self.newQuestState(player)
+		npcId = npc.getNpcId()
+		if npcId == QuarrySlave:
+			if hellboundLevel != 5: return "<html><body>Quarry Slave:<br>Who are you ? Do not interrupting me from work.</body></html>"
+			else:
+				htmltext = "<html><body>Quarry Slave:<br>"
+				htmltext += "Ermm, are you here to rescue me?<br><br>"
+				htmltext += "<a action=\"bypass -h Quest Native_Quarry_Slaves FollowMe\">Yes, follow me quietly.</a><br1>"
+				htmltext += "</body></html>"
+		return htmltext
 
-QUEST = Native_Quarry_Slaves(-1, "Native_Quarry_Slaves", "instances")
+QUEST = Native_Quarry_Slaves(-1, "Native_Quarry_Slaves", "hellbound")
 
 for i in SlaveMasters :
-    QUEST.addKillId(i)
+	QUEST.addKillId(i)
+	
 for i in SlaveMasters :
-    QUEST.addAttackId(i)
+	QUEST.addAttackId(i)
+	
 for i in SlaveMasters :
-    QUEST.addSpawnId(i)
+	QUEST.addSpawnId(i)
 
 QUEST.addFirstTalkId(QuarrySlave)
 QUEST.addTalkId(QuarrySlave)

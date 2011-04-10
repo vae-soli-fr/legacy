@@ -540,16 +540,33 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<skill id="5256" levels="1" name="Announcement of Death">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="hitTime" val="1000" />
-	</skill>
-	<skill id="5257" levels="1" name="Death">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
+ 		<set name="magicLvl" val="95" />
+ 		<set name="isMagic" val="true" />
+ 		<set name="mpConsume" val="85" />
+		<set name="hitTime" val="10" />
+ 		<set name="coolTime" val="800" />
+ 		<set name="isDebuff" val="true" />
+ 		<set name="skillType" val="BLEED" />
+		<set name="power" val="10" />
+ 		<set name="ignoreResists" val="true" />
+ 		<set name="operateType" val="OP_ACTIVE" />
+ 		<set name="power" val="100" /> <!-- Base Land Rate -->
+ 		<set name="target" val="TARGET_ONE" />
+ 		<for>
+ 			<effect name="ChanceSkillTrigger" time="30" val="0" stackOrder="1" stackType="death_clack" triggeredId="5257" triggeredLevel="1" chanceType="ON_EXIT" abnormal="bleed" />
+ 		</for>
+ 	</skill>
+ 	<skill id="5257" levels="1" name="Death">
+ 		<!-- CT2.5 retail confirmed -->
+		<set name="magicLvl" val="99" />
+ 		<set name="isMagic" val="true" />
+ 		<set name="target" val="TARGET_SELF" />
+ 		<set name="skillType" val="BUFF" />
+ 		<set name="operateType" val="OP_ACTIVE" />
+		<for>
+			<effect count="1" name="InstantDeath" time="1" noicon="1" val="0"/>
+		</for>
+ 	</skill>
 	<skill id="5258" levels="12" name="Mana Burn">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

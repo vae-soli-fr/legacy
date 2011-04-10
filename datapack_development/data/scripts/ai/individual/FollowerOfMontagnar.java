@@ -12,6 +12,13 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
+/*
+# Update by U3Games 17-03-2011
+# Special thanks to contributors users l2jserver
+# Imported: L2jTW, thx!
+ */
+
 package ai.individual;
 
 import ai.group_template.L2AttackableAIScript;

@@ -79,11 +79,27 @@
 		<set name="hitTime" val="2400" />
 	</skill>
 	<skill id="5813" levels="1" name="Sand Ball">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="hitTime" val="1500" />
-	</skill>
+		<set name="baseCritRate" val="20" />
+		<set name="castRange" val="300" />
+		<set name="skillRadius" val="300" />
+		<set name="effectRange" val="300" />
+		<set name="flyRadius" val="400" />
+		<set name="flyType" val="THROW_UP" />
+		<set name="hitTime" val="100" />
+		<set name="isDebuff" val="true" />
+		<set name="lvlDepend" val="2" />
+		<set name="magicLvl" val="85" />
+		<set name="mpConsume" val="1" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="power" val="100" />
+		<set name="saveVs" val="CON" />
+		<set name="skillType" val="PDAM" />
+		<set name="target" val="TARGET_AREA" />
+			<for>
+				<effect name="Stun" time="3" val="0" effectPower="80" effectType="STUN" stackOrder="1" stackType="stun" />
+				<effect name="ThrowUp" noicon="1" val="0" />
+			</for>
+ 	</skill>
 	<skill id="5814" levels="3" name="Self-Destruction">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

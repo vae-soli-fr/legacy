@@ -1,16 +1,19 @@
+# Update by U3Games 17-03-2011
+# Special thanks to contributors users l2jserver
+# Imported: L2jTW, thx!
 # author theOne
 import sys
-from java.lang import System
-from com.l2jserver.gameserver.datatables import SpawnTable
-from com.l2jserver.gameserver.instancemanager import HellboundManager
-from com.l2jserver.gameserver.model.quest import State
-from com.l2jserver.gameserver.model.quest import QuestState
+from java.lang                                   import System
+from com.l2jserver.gameserver.datatables         import SpawnTable
+from com.l2jserver.gameserver.instancemanager    import HellboundManager
+from com.l2jserver.gameserver.model.quest        import State
+from com.l2jserver.gameserver.model.quest        import QuestState
 from com.l2jserver.gameserver.model.quest.jython import QuestJython as JQuest
-from com.l2jserver.util import Rnd
+from com.l2jserver.util                          import Rnd
 
 NativeCorpse = 32306
-Natives = 32362
-Insurgents = 32363
+Natives      = 32362
+Insurgents   = 32363
 NPCS = [32362, 32363]
 
 
@@ -34,66 +37,67 @@ CorpseLocs = {
 }
 
 def changeNativeSpawn(booleanValue, corpseList, self):
-    worldObjects = SpawnTable.getInstance().getSpawnTable().values()
-    if booleanValue == 0:
-      for i in worldObjects:
-        npcId = i.getNpcid()
-        corpses = []
-        if npcId in NPCS:
-            curNpc = i.getLastSpawn()
-            curNpc.deleteMe()
-      for n in range(16):
-            xx, yy, zz, head = CorpseLocs[n]
-            newCorpse = self.addSpawn(NativeCorpse, xx, yy, zz, head, False, 0)
-            corpses.append(newCorpse)
-      return corpses
-    if booleanValue == 1:
-      for i in worldObjects:
-        npcId = i.getNpcid()
-        if npcId in NPCS:
-            xx, yy, zz = i.getLocx(), i.getLocy(), i.getLocz()
-            heading = i.getHeading()
-            newNpc = self.addSpawn(npcId, xx, yy, zz, heading, False, 0)
-      for n in corpseList:
-        n.deleteMe()
-    return
+	worldObjects = SpawnTable.getInstance().getSpawnTable().values()
+	if booleanValue == 0:
+		for i in worldObjects:
+			npcId = i.getNpcid()
+			corpses = []
+			if npcId in NPCS:
+				curNpc = i.getLastSpawn()
+				curNpc.deleteMe()
+		for n in range(16):
+			xx, yy, zz, head = CorpseLocs[n]
+			newCorpse = self.addSpawn(NativeCorpse, xx, yy, zz, head, False, 0)
+			corpses.append(newCorpse)
+		return corpses
+	if booleanValue == 1:
+		for i in worldObjects:
+			npcId = i.getNpcid()
+			if npcId in NPCS:
+				xx, yy, zz = i.getLocx(), i.getLocy(), i.getLocz()
+				heading = i.getHeading()
+				newNpc = self.addSpawn(npcId, xx, yy, zz, heading, False, 0)
+		for n in corpseList:
+			n.deleteMe()
+		return
 
 class Native_Chat (JQuest):
 
-    def __init__(self, id, name, descr):
-        JQuest.__init__(self, id, name, descr)
-        hellboundLevel = HellboundManager.getInstance().getLevel()
-        self.hellboundLevel = hellboundLevel
-        self.corpses = []
-        # if the level of hellbound is below level 5, this replaces
-        # the natives with native corpses
-        if hellboundLevel < 5:
-            self.startQuestTimer("levelCheck", 30000, None, None)
-            self.corpses = changeNativeSpawn(0, None, self)
+	def __init__(self, id, name, descr):
+		JQuest.__init__(self, id, name, descr)
+		hellboundLevel = HellboundManager.getInstance().getLevel()
+		self.hellboundLevel = hellboundLevel
+		self.corpses = []
+		# if the level of hellbound is below level 5, this replaces
+		# the natives with native corpses
+		if hellboundLevel < 5:
+			self.startQuestTimer("levelCheck", 30000, None, None)
+			self.corpses = changeNativeSpawn(0, None, self)
 
-    def onAdvEvent (self, event, npc, player) :
-        if event == "levelCheck":
-            hellboundLevel = HellboundManager.getInstance().getLevel()
-            if hellboundLevel == 5 and self.hellboundLevel < hellboundLevel:
-                self.hellboundLevel = hellboundLevel
-                changeNativeSpawn(1, self.corpses, self)
-            else:
-                self.startQuestTimer("levelCheck", 30000, None, None)
+	def onAdvEvent (self, event, npc, player) :
+		if event == "levelCheck":
+			hellboundLevel = HellboundManager.getInstance().getLevel()
+			if not (hellboundLevel == 5 and self.hellboundLevel < hellboundLevel):
+				# Update by goncafa 31-03-2011
+				#self.hellboundLevel = hellboundLevel
+				#changeNativeSpawn(1, self.corpses, self)
+			#else:
+				self.startQuestTimer("levelCheck", 30000, None, None)
 
-    def onFirstTalk (self, npc, player):
-        npcId = npc.getNpcId()
-        hellboundLevel = HellboundManager.getInstance().getLevel()
-        if npcId == Insurgents:
-            if hellboundLevel <= 5: return "<html><body>Hellbound Resistance:<br>Our comrades hardly survived, now they suffer from the wounds and the food shortage. We need the help!</body></html>"
-            if hellboundLevel > 5: return "<html><body>Hellbound Resistance:<br>Thank you!<br>I fully understand my comrades' resentment of outsiders, but the fact remains that we are far too weak to confront the Steel Citadel head on without help. But if we can help defeat the Demons in any way, no matter how trivial, we will do it!</body></html>"
-        if npcId == Natives:
-            if hellboundLevel <= 5: return "<html><body>Hellbound Native:<br>Ah... food... give me something to eat...</body></html>"
-            if hellboundLevel > 5: return "<html><body>Hellbound Native:<br>Welcome!<br>Thanks to your efforts, we were able to get enough food from the Caravan in order to survive. Now, let's combine our strength and show those Steel Citadel bastards a thing or two!</body></html>"
-        return
+	def onFirstTalk (self, npc, player):
+		npcId = npc.getNpcId()
+		hellboundLevel = HellboundManager.getInstance().getLevel()
+		if npcId == Insurgents:
+			if hellboundLevel <= 5: return "<html><body>Hellbound Resistance:<br>Our comrades hardly survived, now they suffer from the wounds and the food shortage. We need the help!</body></html>"
+			if hellboundLevel > 5: return "<html><body>Hellbound Resistance:<br>Thank you!<br>I fully understand my comrades' resentment of outsiders, but the fact remains that we are far too weak to confront the Steel Citadel head on without help. But if we can help defeat the Demons in any way, no matter how trivial, we will do it!</body></html>"
+		if npcId == Natives:
+			if hellboundLevel <= 5: return "<html><body>Hellbound Native:<br>Ah... food... give me something to eat...</body></html>"
+			if hellboundLevel > 5: return "<html><body>Hellbound Native:<br>Welcome!<br>Thanks to your efforts, we were able to get enough food from the Caravan in order to survive. Now, let's combine our strength and show those Steel Citadel bastards a thing or two!</body></html>"
+		return
 
 QUEST = Native_Chat(-1, "Native_Chat", "instances")
 
 for i in NPCS:
-    QUEST.addTalkId(i)
-    QUEST.addFirstTalkId(i)
-    QUEST.addStartNpc(i)
+	QUEST.addTalkId(i)
+	QUEST.addFirstTalkId(i)
+	QUEST.addStartNpc(i)
