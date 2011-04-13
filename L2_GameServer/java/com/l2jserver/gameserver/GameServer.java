@@ -133,6 +133,7 @@ import com.l2jserver.gameserver.taskmanager.AutoAnnounceTaskManager;
 import com.l2jserver.gameserver.taskmanager.KnownListUpdateTaskManager;
 import com.l2jserver.gameserver.taskmanager.TaskManager;
 import com.l2jserver.gameserver.util.DynamicExtension;
+import com.l2jserver.gameserver.vaesoli.BgValidator;
 import com.l2jserver.gameserver.vaesoli.CharAutoDelete;
 import com.l2jserver.gameserver.vaesoli.OptimizeTables;
 import com.l2jserver.gameserver.vaesoli.RaidBossSpeeches;
@@ -294,6 +295,9 @@ public class GameServer
 
         printSection("Characters autodelete");
         CharAutoDelete.clean();
+
+        printSection("Auto Jail");
+        BgValidator.getInstance();
                 
 		printSection("Siege");
 		SiegeManager.getInstance().getSieges();

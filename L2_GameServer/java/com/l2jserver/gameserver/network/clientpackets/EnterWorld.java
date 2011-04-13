@@ -84,6 +84,7 @@ import com.l2jserver.gameserver.network.serverpackets.QuestList;
 import com.l2jserver.gameserver.network.serverpackets.ShortCutInit;
 import com.l2jserver.gameserver.network.serverpackets.SkillCoolTime;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import com.l2jserver.gameserver.vaesoli.BgValidator;
 import com.l2jserver.gameserver.vaesoli.RedEnterWorld;
 
 
@@ -502,6 +503,9 @@ public class EnterWorld extends L2GameClientPacket
         {
         RedEnterWorld.RedEffects(activeChar);
         }
+
+        // vérification des màj BG
+        BgValidator.getInstance().check(activeChar);
 
         // Introduction à Freya
 /*if (Config.VAEMOD_INTROFREYA && !IntroductionFreya.hasAlreadySeen(activeChar))
