@@ -78,7 +78,7 @@ public class BgValidator {
         boolean guilty2 = false;
         try {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement1 = con.prepareStatement("SELECT verified FROM character_subclasses WHERE charId = ?");
+            PreparedStatement statement1 = con.prepareStatement("SELECT level, verified FROM character_subclasses WHERE charId = ?");
             PreparedStatement statement2 = con.prepareStatement("SELECT skill_id, verified FROM character_skills WHERE charId = ?");
             statement1.setInt(1, player.getObjectId());
             statement2.setInt(1, player.getObjectId());
@@ -86,7 +86,7 @@ public class BgValidator {
             ResultSet rset2 = statement2.executeQuery();
 
             while (rset1.next()) {
-                if (rset1.getInt("verified") == 0) {
+                if (rset1.getInt("verified") == 0 && rset1.getInt("level") > 40) {
                     guilty1 = true;
                     continue;
                 }

@@ -7,7 +7,7 @@ do
 	[ -f log/stdout.log ] && mv log/stdout.log "log/`date +%Y-%m-%d_%H-%M-%S`_stdout.log"
 	#nice -n -2 java -Xms128m -Xmx128m -cp ./../libs/*:l2jlogin.jar com.l2jserver.loginserver.L2LoginServer > log/stdout.log 2>&1
 
-    # -server plus optimisé mais néccessite le JDK
+    # -server plus optimisé
     java -server -Dfile.encoding=UTF-8 -Xms128m -Xmx128m -cp ./../libs/*:l2jlogin.jar com.l2jserver.loginserver.L2LoginServer > log/stdout.log 2>&1
 	err=$?
 #	/etc/init.d/mysql restart
