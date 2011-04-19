@@ -480,7 +480,8 @@ public final class L2PcInstance extends L2Playable
 		CHAT(1, "chat banned"),
 		JAIL(2, "jailed"),
 		CHAR(3, "banned"),
-		ACC(4, "banned");
+		ACC(4, "banned"),
+        BG(5, "bg jailed");
 		
 		private final int punValue;
 		private final String punString;
@@ -12729,6 +12730,10 @@ public final class L2PcInstance extends L2Playable
 				_punishLevel = PunishLevel.ACC;
 				break;
 			}
+            case 5 :
+            {
+                _punishLevel = PunishLevel.BG;
+            }
 		}
 	}
 	
@@ -12755,7 +12760,8 @@ public final class L2PcInstance extends L2Playable
 						sendMessage("Your Chat ban has been lifted");
 						break;
 					}
-					case JAIL:
+                    case BG: // same thing
+					case JAIL: // Unjail Player
 					{
 						_punishLevel = state;
 						// Open a Html message to inform the player
@@ -12797,6 +12803,7 @@ public final class L2PcInstance extends L2Playable
 				break;
 				
 			}
+            case BG: // same thing
 			case JAIL: // Jail Player
 			{
 				_punishLevel = state;

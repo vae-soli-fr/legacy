@@ -124,10 +124,9 @@ public class BgValidator {
         }
         // mettre au préalable PunishTimer en non UNSIGNED dans la database
         if (isGuilty(activeChar)) {
-            activeChar.setPunishLevel(PunishLevel.JAIL, -1); // coupable
+            activeChar.setPunishLevel(PunishLevel.BG, 0);
         }
-        // mis en prison par ce script comme en atteste le -1 (0 pour infini)
-        else if (activeChar.getPunishTimer() == -1) {
+        else if (activeChar.getPunishLevel() == PunishLevel.BG) {
             activeChar.setPunishLevel(0);
         }
     }
