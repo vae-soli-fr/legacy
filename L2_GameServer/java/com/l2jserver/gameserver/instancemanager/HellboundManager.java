@@ -74,6 +74,12 @@ public class HellboundManager
 		return _level > 0;
 	}
 
+    @Deprecated
+    public boolean checkIsOpen()
+    {
+        return isLocked();
+    }
+
 	public int getLevel()
 	{
 		return _level;
