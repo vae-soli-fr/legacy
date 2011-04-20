@@ -296,7 +296,7 @@ public class GameServer
         printSection("Characters autodelete");
         CharAutoDelete.clean();
 
-        printSection("Auto Jail");
+        printSection("BackGrounds Check");
         BgValidator.getInstance();
                 
 		printSection("Siege");

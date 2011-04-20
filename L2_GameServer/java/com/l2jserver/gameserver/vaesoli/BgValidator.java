@@ -69,7 +69,7 @@ public class BgValidator {
         };
         _transforms = new TIntArrayList(skillId.length);
         _transforms.add(skillId);
-        _log.info(_transforms.size() + " skills de transformation à vérifier.");
+        _log.info("Loaded " + _transforms.size() + " transform skills to check.");
     }
 
     private boolean isGuilty(L2PcInstance player) {
@@ -125,9 +125,11 @@ public class BgValidator {
         // mettre au préalable PunishTimer en non UNSIGNED dans la database
         if (isGuilty(activeChar)) {
             activeChar.setPunishLevel(PunishLevel.BG, 0);
+            _log.info(("Check BG: " + activeChar.getName() + " of account " + activeChar.getAccountName() + " is JAIL"));
         }
         else if (activeChar.getPunishLevel() == PunishLevel.BG) {
-            activeChar.setPunishLevel(0);
+            activeChar.setPunishLevel(PunishLevel.NONE, 0);
+             _log.info(("Check BG: " + activeChar.getName() + " of account " + activeChar.getAccountName() + " is UNJAIL"));
         }
     }
 
