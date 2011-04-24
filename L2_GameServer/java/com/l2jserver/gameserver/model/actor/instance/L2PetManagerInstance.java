@@ -109,6 +109,15 @@ public class L2PetManagerInstance extends L2MerchantInstance
 				case 5:
 					ok = Evolve.doEvolve(player, this, 6649, 10312, 55);
 					break;
+                case 6: // Dragonflute of Wind => Dragon Bugle of Wind
+                    ok = Evolve.doEvolve(player, this, 3500, 4422, 55);
+                    break;
+                case 7: // Dragonflute of Star => Dragon Bugle of Star
+                    ok = Evolve.doEvolve(player, this, 3501, 4423, 55);
+                    break;
+                case 8: // Dragonflute of Twilight => Dragon Bugle of Twilight
+                    ok = Evolve.doEvolve(player, this, 3502, 4424, 55);
+                    break;
 			}
 			if (!ok)
 			{
