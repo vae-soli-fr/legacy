@@ -62,10 +62,10 @@ public class BgValidator {
             657, // Divine Transform Knight
             658, // Divine Transform Rogue
             659, // Divine Transform Wizard
-            661, // Divine Transform Healer
             660, // Divine Transform Summoner
+            661, // Divine Transform Healer
             662, // Divine Transform Enchanter
-            538 // Final Form
+            538  // Final Form
         };
         _transforms = new TIntArrayList(skillId.length);
         _transforms.add(skillId);
@@ -118,11 +118,9 @@ public class BgValidator {
     }
 
     public void check(L2PcInstance activeChar) {
-        // TODO: don't check if GM
-        if (!Config.VAEMOD_BGJAIL) {
+        if (activeChar.isGM() || !Config.VAEMOD_BGJAIL) {
             return;
         }
-        // mettre au préalable PunishTimer en non UNSIGNED dans la database
         if (isGuilty(activeChar)) {
             activeChar.setPunishLevel(PunishLevel.BG, 0);
             _log.info(("Check BG: " + activeChar.getName() + " of account " + activeChar.getAccountName() + " is JAIL"));
