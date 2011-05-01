@@ -10,8 +10,9 @@ import java.sql.ResultSet;
 import java.util.logging.Logger;
 
 /**
- *
  * @author Melua
+ * Cette classe supprime les personnages dont le compteur de delete est dépassé
+ * en effet d'ordinaire cela n'est delete qu'a la prochaine connexion (qui peut ne jamais venir)
  */
 public class CharAutoDelete {
 

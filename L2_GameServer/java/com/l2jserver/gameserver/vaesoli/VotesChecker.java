@@ -6,6 +6,13 @@ import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
 
+
+/**
+ *
+ * @author Melua
+ * Cette classe vérifie le timer de vote
+ */
+
 public class VotesChecker {
 
     public static long CURRENTTIME = 0;

@@ -11,7 +11,7 @@ import com.l2jserver.gameserver.util.GMAudit;
 /**
  * @author Melua
  * Mort aux GBs !
- *
+ * Cette classe jail au bout de plus de 3 RBs par compte
  */
 
 public class RaidBossLimiter

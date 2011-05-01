@@ -15,9 +15,8 @@ import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
 
 
 /**
- * Introduction AI
  * @author Melua
- *
+ * Affiche une cinématique (PAS DU TOUT IMPLANTE)
  */
 public class IntroductionFreya extends Quest
 {

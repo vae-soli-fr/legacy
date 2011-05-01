@@ -4,6 +4,7 @@ import javolution.text.TextBuilder;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import com.l2jserver.gameserver.vaesoli.DescriptionsWithImages;
 
 /**
  * @author Melua
@@ -26,12 +27,12 @@ public class Desc implements IVoicedCommandHandler {
                 if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)
                 {
                 L2PcInstance target = (L2PcInstance) activeChar.getTarget();
-                target.showDesc(activeChar);
+                DescriptionsWithImages.showDesc(target, activeChar);
                 }
                 else activeChar.sendMessage("Sélectionnez un joueur pour voir sa description.");
             } else {
                 if (option.equalsIgnoreCase("delete")) {
-                    activeChar.delDesc();
+                    DescriptionsWithImages.delDesc(activeChar);
                     activeChar.sendMessage("Votre description a été supprimée.");
 
                 } else if (option.equalsIgnoreCase("add")) {
@@ -44,9 +45,11 @@ public class Desc implements IVoicedCommandHandler {
                     replyMSG.append("</body></html>");
                     descWindow.setHtml(replyMSG.toString());
                     activeChar.sendPacket(descWindow);
-
+                } else if (option.equalsIgnoreCase("gen")) {
+                    DescriptionsWithImages.genDesc(activeChar);
+                    activeChar.sendMessage("Génération des images terminée.");
                 } else {
-                    activeChar.sendMessage("Usage: .desc [add|delete]");
+                    activeChar.sendMessage("Usage: .desc [add|delete|gen]");
                 }
             }
         }

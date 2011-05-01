@@ -12,7 +12,8 @@ import java.sql.ResultSet;
 
 /**
  * @author Melua
- * Mort aux GBs !
+ * Cette classe vérifie que les BG sont à jour et validés
+ * concernant les transfos, les subs, et bientôt les BG tout court.
  *
  */
 public class BgValidator {

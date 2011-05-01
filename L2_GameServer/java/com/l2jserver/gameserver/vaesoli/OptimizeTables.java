@@ -7,8 +7,8 @@ import java.sql.Statement;
 import java.util.logging.Logger;
 
 /**
- *
  * @author Melua
+ * Cette classe optimise la BDD à chaque reboot
  */
 public class OptimizeTables {
 

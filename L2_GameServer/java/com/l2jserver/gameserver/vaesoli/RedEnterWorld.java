@@ -12,8 +12,8 @@ import com.l2jserver.gameserver.network.serverpackets.SunSet;
 import com.l2jserver.gameserver.skills.AbnormalEffect;
 
 /**
- *
  * @author Melua
+ * cette classe permet de mettre l'effet redskyu dès la connexion du joueur
  */
 
 public class RedEnterWorld {
