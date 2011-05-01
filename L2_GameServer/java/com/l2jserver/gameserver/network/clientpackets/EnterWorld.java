@@ -30,6 +30,7 @@ import com.l2jserver.gameserver.datatables.AdminCommandAccessRights;
 import com.l2jserver.gameserver.datatables.GMSkillTable;
 import com.l2jserver.gameserver.datatables.MapRegionTable;
 import com.l2jserver.gameserver.datatables.SkillTable;
+import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.ClanHallManager;
 import com.l2jserver.gameserver.instancemanager.CoupleManager;
@@ -76,6 +77,7 @@ import com.l2jserver.gameserver.network.serverpackets.FriendList;
 import com.l2jserver.gameserver.network.serverpackets.HennaInfo;
 import com.l2jserver.gameserver.network.serverpackets.ItemList;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import com.l2jserver.gameserver.network.serverpackets.PledgeCrest;
 import com.l2jserver.gameserver.network.serverpackets.PledgeShowMemberListAll;
 import com.l2jserver.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
 import com.l2jserver.gameserver.network.serverpackets.PledgeSkillList;
@@ -86,6 +88,8 @@ import com.l2jserver.gameserver.network.serverpackets.SkillCoolTime;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.vaesoli.BgValidator;
 import com.l2jserver.gameserver.vaesoli.RedEnterWorld;
+import gov.nasa.worldwind.formats.dds.DDSConverter;
+import java.io.File;
 
 
 /**
@@ -401,13 +405,30 @@ public class EnterWorld extends L2GameClientPacket
 		}
 		else if (Config.SERVER_NEWS)
 		{
-			String serverNews = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/servnews.htm");
-			if (serverNews != null)
+            /*String serverNews = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/servnews.htm");
+            if (serverNews != null)
             {
-                NpcHtmlMessage welcome = new NpcHtmlMessage(1, serverNews);
-                welcome.replace("%playername%", activeChar.getName());
-				sendPacket(welcome);
+            NpcHtmlMessage welcome = new NpcHtmlMessage(1, serverNews);
+            welcome.replace("%playername%", activeChar.getName());
+            sendPacket(welcome);
+            }*/
+            int imgId = IdFactory.getInstance().getNextId();
+            try
+            {
+                File image = new File("data/images/welcome.jpg");
+                // convert common image (png, bmp, jpg, ...) to dds (DirectDraw Surface) - image has to have dimensions of power of 2 (2,4,8,16,32,64,...)
+                PledgeCrest packet = new PledgeCrest(imgId, DDSConverter.convertToDDS(image).array());
+                // send the dds as byte array to client through PledgeCrest packet - random id can be used (e.g. named imgId)
+                activeChar.sendPacket(packet);
             }
+            catch (Exception e)
+            {
+                _log.warning(e.getMessage());
+            }
+            NpcHtmlMessage html = new NpcHtmlMessage(5);
+            // in htm use <img src=\"Crest.crest_" + Config.SERVER_ID +"_" + imgId + "\" width=32 height=16> - use the image dimensions
+            html.setHtml("<html><body><center><img src=\"Crest.crest_" + Config.SERVER_ID + "_" + imgId + "\" width=256 height=64></center></body></html>");
+            activeChar.sendPacket(html);
 		}
 		
 		if (Config.PETITIONING_ALLOWED)
