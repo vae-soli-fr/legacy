@@ -43,6 +43,8 @@
 			<include name="mmocore.jar" />
 			<include name="trove-2.1.0.jar" />
 			<include name="netcon.jar" />
+            <include name="worldwind.jar" />
+            <include name="jogl.jar" />
 		</fileset>
 	</path>
 
