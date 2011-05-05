@@ -14,7 +14,7 @@ SOUL_CORE = 14881
 SOUL_PENDANT = 14848
 RAGNA_ORCS_AMULET = 14882
 
-DROP_CHANCE = 20
+DROP_CHANCE = 100
 
 MOBS = [22691,22692,22693,22694,22695,22696,22697,22698,22699,22700,22701,22702]
 
@@ -122,7 +122,7 @@ class Quest (JQuest) :
 				st.giveItems(SOUL_CORE,1)
 				st.playSound("ItemSound.quest_itemget")
 			elif rand < DROP_CHANCE :
-				st.giveItems(RAGNA_ORCS_AMULET,1)
+				st.giveItems(RAGNA_ORCS_AMULET,3)
 				st.playSound("ItemSound.quest_itemget")
 		return
 
