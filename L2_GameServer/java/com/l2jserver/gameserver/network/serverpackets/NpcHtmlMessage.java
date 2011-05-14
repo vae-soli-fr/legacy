@@ -14,11 +14,16 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
+import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.ImageIcon;
 import java.util.logging.Logger;
-import java.util.regex.*;
+import gov.nasa.worldwind.formats.dds.DDSConverter;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.cache.HtmCache;
+import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.model.L2ItemInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.clientpackets.RequestBypassToServer;
@@ -174,6 +179,45 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 	{
 		_validate = false;
 	}
+
+    /**
+     * @see NpcHtmlMessage#sendDDS(com.l2jserver.gameserver.model.actor.instance.L2PcInstance, boolean)
+     */
+    public void sendDDS(L2PcInstance client) {
+        sendDDS(client, false);
+    }
+
+    /**
+     * remplace les balises d'images et envoie les DDS au client
+     * cette méthode ne se charge pas de l'envoi du html
+     * @param client L2PcInstance qui recoit les DDS (le meme que le html)
+     * @param npc boolean emplacement des images à la racine du dossier
+     */
+    public void sendDDS(L2PcInstance client, boolean npc) {
+        if (_html == null) {
+            return;
+        }
+        Pattern pattern = Pattern.compile("<img_int>([a-zA-Z_0-9\\.]+)</img_int>");
+        Matcher matcher = pattern.matcher(_html);
+        while (matcher.find()) {
+            try {
+                String sequence = matcher.group(0);
+                String img_int = matcher.group(1);
+                int tempId = IdFactory.getInstance().getNextId();
+                File image = new File(Config.DATAPACK_ROOT + "/data/images/" + ((npc) ? "" : client.getName().toLowerCase()) + "/" + img_int);
+                ImageIcon info = new ImageIcon(Config.DATAPACK_ROOT + "/data/images" + ((npc) ? "" : "/" + client.getName().toLowerCase()) + "/" + img_int);
+                // convert common image (png, bmp, jpg, ...) to dds (DirectDraw Surface) - image has to have dimensions of power of 2 (2,4,8,16,32,64,...)
+                PledgeCrest crestImage = new PledgeCrest(tempId, DDSConverter.convertToDDS(image).array());
+                // in htm use <img src=\"Crest.crest_" + Config.SERVER_ID +"_" + imgId + "\" width=32 height=16> - use the image dimensions
+                this.replace(sequence, "<img src=\"Crest.crest_" + Config.SERVER_ID + "_" + tempId + "\" width=" + info.getIconWidth() + " height=" + info.getIconHeight() + ">");
+                // send the dds as byte array to client through PledgeCrest packet - random id can be used (e.g. named imgId)
+                client.sendPacket(crestImage);
+            } catch (Exception e) {
+                _log.warning(e.getMessage());
+            }
+        }
+    }
+
 	
 	@Override
 	public void runImpl()

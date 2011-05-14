@@ -405,30 +405,14 @@ public class EnterWorld extends L2GameClientPacket
 		}
 		else if (Config.SERVER_NEWS)
 		{
-            /*String serverNews = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/servnews.htm");
+            String serverNews = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/servnews.htm");
             if (serverNews != null)
             {
             NpcHtmlMessage welcome = new NpcHtmlMessage(1, serverNews);
             welcome.replace("%playername%", activeChar.getName());
+            welcome.sendDDS(activeChar, true);
             sendPacket(welcome);
-            }*/
-            int imgId = IdFactory.getInstance().getNextId();
-            try
-            {
-                File image = new File("data/images/welcome.jpg");
-                // convert common image (png, bmp, jpg, ...) to dds (DirectDraw Surface) - image has to have dimensions of power of 2 (2,4,8,16,32,64,...)
-                PledgeCrest packet = new PledgeCrest(imgId, DDSConverter.convertToDDS(image).array());
-                // send the dds as byte array to client through PledgeCrest packet - random id can be used (e.g. named imgId)
-                activeChar.sendPacket(packet);
             }
-            catch (Exception e)
-            {
-                _log.warning(e.getMessage());
-            }
-            NpcHtmlMessage html = new NpcHtmlMessage(5);
-            // in htm use <img src=\"Crest.crest_" + Config.SERVER_ID +"_" + imgId + "\" width=32 height=16> - use the image dimensions
-            html.setHtml("<html><body><center><img src=\"Crest.crest_" + Config.SERVER_ID + "_" + imgId + "\" width=256 height=64></center></body></html>");
-            activeChar.sendPacket(html);
 		}
 		
 		if (Config.PETITIONING_ALLOWED)

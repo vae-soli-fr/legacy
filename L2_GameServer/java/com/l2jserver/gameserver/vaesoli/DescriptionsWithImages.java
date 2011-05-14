@@ -5,11 +5,8 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.network.serverpackets.PledgeCrest;
-import gov.nasa.worldwind.formats.dds.DDSConverter;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
 import java.sql.Connection;
@@ -34,31 +31,9 @@ public class DescriptionsWithImages {
         {
         String description = getDesc(target);
         if (description != null)  {
-        Pattern pattern = Pattern.compile("<img_int>([0-9a-zA-Z]+)</img_int>");
-        Matcher matcher = pattern.matcher(description);
-        while(matcher.find())
-            {
-                try
-                {
-                String sequence = matcher.group(0);
-                String img_int = matcher.group(1);
-                int tempId = IdFactory.getInstance().getNextId();
-                File image = new File(Config.DATAPACK_ROOT + "/images/" + target.getName().toLowerCase() + "/" + img_int);
-                ImageIcon info = new ImageIcon("data/images/" + target.getName() + "/" + img_int);
-                PledgeCrest packet = new PledgeCrest(tempId, DDSConverter.convertToDDS(image).array());
-                description.replace(sequence, "<img src=\"Crest.crest_" + Config.SERVER_ID + "_" + tempId + "\" width=" + info.getIconWidth() + " height=" + info.getIconHeight() + ">");
-                // envoyer le DDS au client
-                viewer.sendPacket(packet);
-                }
-                catch (Exception e)
-                {
-                    _log.warning(e.getMessage());
-                }
-                viewer.sendMessage("1 image found...");
-        }
-        // finalement envoyer le html et le tour est joué !
         NpcHtmlMessage html = new NpcHtmlMessage(1);
         html.setHtml("<html><title>" + target.getName() + "</title><body>" + description + "</body></html>");
+        if (Config.VAEMOD_DESCWITHIMAGES) html.sendDDS(viewer);
         viewer.sendPacket(html);
         } else {
         viewer.sendMessage("Ce personnage ne possède pas de description.");

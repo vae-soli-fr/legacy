@@ -87,6 +87,7 @@ public final class Config
 	// Paramètres des customisations de Vae Soli
 	//--------------------------------------------------
     public static boolean VAEMOD_DESC; // mod description
+    public static boolean VAEMOD_DESCWITHIMAGES; // mod description with image
     public static boolean VAEMOD_REDSKY; // mod redsky
     public static boolean VAEMOD_SKYISRED = false; // mod redsky (false au reboot)
     public static boolean VAEMOD_RBJAIL = true; // bannir les joueurs qui font plus de 3 RBs
@@ -1206,6 +1207,7 @@ public final class Config
 					customSettings.load(is);
                     VAEMOD_ADMINMESSAGEAREA = customSettings.getProperty("AdminMessageArea", "OFF");
                     VAEMOD_DESC = Boolean.parseBoolean(customSettings.getProperty("ActiverDescriptions", "false"));
+                    VAEMOD_DESCWITHIMAGES = Boolean.parseBoolean(customSettings.getProperty("DescriptionsWithImages", "false"));
                     VAEMOD_FSDAMAGES = Boolean.parseBoolean(customSettings.getProperty("ActiverFSDamages", "false"));
                     VAEMOD_MOVIE = Boolean.parseBoolean(customSettings.getProperty("ActiverModMovie", "false"));
                     VAEMOD_REDSKY = Boolean.parseBoolean(customSettings.getProperty("ActiverModRedSky", "false"));

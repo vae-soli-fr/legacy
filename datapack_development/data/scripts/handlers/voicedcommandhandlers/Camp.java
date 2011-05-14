@@ -2,11 +2,15 @@ package handlers.voicedcommandhandlers;
 
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-/*import com.l2jserver.gameserver.datatables.NpcTable;
 import com.l2jserver.gameserver.idfactory.IdFactory;
+import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.actor.instance.L2TerrainObjectInstance;
+import com.l2jserver.gameserver.datatables.NpcTable;
+import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.util.Util;
-import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_TOWN;*/
+import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_TOWN;
+import com.l2jserver.gameserver.templates.chars.L2NpcTemplate;
 
 /**
  * @author Melua
@@ -20,7 +24,7 @@ public class Camp implements IVoicedCommandHandler {
 
     public boolean useVoicedCommand(String command, L2PcInstance activeChar, String option) {
         if (command.equalsIgnoreCase("camp")) {
-            /*if (!activeChar.isInsideZone(ZONE_TOWN)) {
+            if (!activeChar.isInsideZone(ZONE_TOWN)) {
             try {
             int val = Integer.parseInt(option);
             if (val >= 0 && val <= 6) {
@@ -151,7 +155,7 @@ public class Camp implements IVoicedCommandHandler {
             }
             } else {
             activeChar.sendMessage("Vous ne pouvez pas établir de campement en ville.");
-            }*/
+            }
         }
         return true;
 
@@ -159,5 +163,44 @@ public class Camp implements IVoicedCommandHandler {
 
     public String[] getVoicedCommandList() {
         return _voicedCommands;
+    }
+
+    private L2Npc handleSpawn(L2PcInstance activeChar, int monsterId, int calculated_heading) {
+        L2Npc npc = null;
+        L2NpcTemplate template = NpcTable.getInstance().getTemplate(monsterId);
+        try {
+            L2Spawn spawn = new L2Spawn(template);
+            spawn.setCustom(true);
+            spawn.setLocx(activeChar.getX());
+            spawn.setLocy(activeChar.getY());
+            spawn.setLocz(activeChar.getZ());
+            spawn.setAmount(1);
+            spawn.setHeading(calculated_heading);
+            spawn.setRespawnDelay(0);
+            if (activeChar.getInstanceId() > 0) {
+                spawn.setInstanceId(activeChar.getInstanceId());
+            } else {
+                spawn.setInstanceId(0);
+            }
+            SpawnTable.getInstance().addNewSpawn(spawn, false);
+            npc = spawn.doSpawn(true);
+            spawn.stopRespawn();
+
+
+        } catch (Exception e) {
+            //TODO: log
+        }
+        return npc;
+    }
+
+    private void handleDelete(L2Npc npc) {
+        if (npc != null) {
+            npc.deleteMe();
+            L2Spawn spawn = npc.getSpawn();
+            if (spawn != null) {
+                spawn.stopRespawn();
+                SpawnTable.getInstance().deleteSpawn(spawn, true);
+            }
+        }
     }
 }
