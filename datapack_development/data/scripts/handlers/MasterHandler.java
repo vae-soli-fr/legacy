@@ -255,6 +255,7 @@ import handlers.admincommandhandlers.AdminNpcSay;
 import handlers.admincommandhandlers.AdminRBjail;
 import handlers.voicedcommandhandlers.HellboundVoiced;
 import handlers.voicedcommandhandlers.Camp;
+import handlers.admincommandhandlers.AdminPenalty;
 
 import java.util.logging.Logger;
 
@@ -380,6 +381,8 @@ public class MasterHandler
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMessage());
         if (Config.VAEMOD_NPCSAY)
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminNpcSay());
+        if (Config.VAEMOD_PENALTY)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPenalty());
 		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + "  AdminCommandHandlers");
 	}
 	
