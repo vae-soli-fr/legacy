@@ -515,11 +515,6 @@ public class EnterWorld extends L2GameClientPacket
         // vérification des màj BG
         BgValidator.getInstance().check(activeChar);
 
-        // Introduction à Freya
-/*if (Config.VAEMOD_INTROFREYA && !IntroductionFreya.hasAlreadySeen(activeChar))
-        {
-        new IntroductionFreya(activeChar);
-        }*/
 	}
 	
 	/**

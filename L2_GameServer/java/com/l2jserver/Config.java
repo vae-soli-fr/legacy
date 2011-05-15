@@ -100,7 +100,6 @@ public final class Config
     public static boolean VAEMOD_RPTIME; // afficher l'heure roleplay
     public static boolean VAEMOD_FREECHATHERO; // chan hero pour tous
     public static boolean VAEMOD_PVPMANA; // désactiver les potions de mana en PvP
-    public static boolean VAEMOD_INTROFREYA; // afficher la cinématique Freya
     public static int VAEMOD_VOTESCHECK; // intervalle de vérification des votes
     public static int VAEMOD_VOTESDELAY; // intervalle minimal entre deux votes
     public static boolean VAEMOD_HIDEOFFLINE; // cacher les offlines dans le CB
@@ -1218,7 +1217,6 @@ public final class Config
                     VAEMOD_RPTIME = Boolean.parseBoolean(customSettings.getProperty("RPTime", "false"));
                     VAEMOD_FREECHATHERO = Boolean.parseBoolean(customSettings.getProperty("FreeChatHero", "false"));
                     VAEMOD_PVPMANA = Boolean.parseBoolean(customSettings.getProperty("NoManaPotionInPvP", "false"));
-                    VAEMOD_INTROFREYA = Boolean.parseBoolean(customSettings.getProperty("NoManaPotionInPvP", "false"));
                     VAEMOD_VOTESCHECK = Integer.parseInt(customSettings.getProperty("VotesCheckTimer", "10"));
                     VAEMOD_VOTESDELAY = Integer.parseInt(customSettings.getProperty("DelayBetweenVotes", "120"));
                     VAEMOD_HIDEOFFLINE = Boolean.parseBoolean(customSettings.getProperty("CacherOffline", "false"));
