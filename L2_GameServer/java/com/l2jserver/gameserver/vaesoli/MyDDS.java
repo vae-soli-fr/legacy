@@ -58,8 +58,12 @@ public class MyDDS {
         }
     }
 
+    /**
+     * télécharge les images et les sauvegarde
+     * remplace les balises d'images externes et enregistre la description parsée
+     * @param activeChar L2PcInstance dont la description est parsée
+     */
     public static void prepareDDS(L2PcInstance activeChar) {
-        //TODO: parser à la recherche de tags d'images externes (URL)
         String description = Descriptions.getDesc(activeChar);
         if (description != null) {
             Pattern pattern = Pattern.compile("<img_ext>(http://[0-9a-zA-Z]+(\\.png|\\.jpg|\\.bmp))</img_ext>");
@@ -93,6 +97,7 @@ public class MyDDS {
                     _log.warning(e.getMessage());
                 }
             }
+            Descriptions.setDesc(activeChar, description);
         }
     }
 }
