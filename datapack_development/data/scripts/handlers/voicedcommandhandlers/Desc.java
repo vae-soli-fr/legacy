@@ -1,5 +1,6 @@
 package handlers.voicedcommandhandlers;
 
+import com.l2jserver.Config;
 import javolution.text.TextBuilder;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -45,11 +46,12 @@ public class Desc implements IVoicedCommandHandler {
                     replyMSG.append("</body></html>");
                     descWindow.setHtml(replyMSG.toString());
                     activeChar.sendPacket(descWindow);
-                } else if (option.equalsIgnoreCase("gen")) {
+                } else if (Config.VAEMOD_DESCWITHIMAGES && option.equalsIgnoreCase("gen")) {
                     DescriptionsWithImages.genDesc(activeChar);
                     activeChar.sendMessage("Génération des images terminée.");
                 } else {
-                    activeChar.sendMessage("Usage: .desc [add|delete|gen]");
+                    if (Config.VAEMOD_DESCWITHIMAGES) activeChar.sendMessage("Usage: .desc [add|delete|gen]");
+                    else activeChar.sendMessage("Usage: .desc [add|delete]");
                 }
             }
         }

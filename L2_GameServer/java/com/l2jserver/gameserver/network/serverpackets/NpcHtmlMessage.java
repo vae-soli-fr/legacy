@@ -181,20 +181,13 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 	}
 
     /**
-     * @see NpcHtmlMessage#sendDDS(com.l2jserver.gameserver.model.actor.instance.L2PcInstance, boolean)
-     */
-    public void sendDDS(L2PcInstance client) {
-        sendDDS(client, false);
-    }
-
-    /**
      * remplace les balises d'images et envoie les DDS au client
      * cette méthode ne se charge pas de l'envoi du html
      * @param client L2PcInstance qui recoit les DDS (le meme que le html)
      * @param npc boolean emplacement des images à la racine du dossier
      */
     public void sendDDS(L2PcInstance client, boolean npc) {
-        if (_html == null) {
+        if (_html == null || !Config.VAEMOD_ALLOWDDS) {
             return;
         }
         Pattern pattern = Pattern.compile("<img_int>([a-zA-Z_0-9\\.]+)</img_int>");

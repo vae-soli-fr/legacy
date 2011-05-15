@@ -117,8 +117,9 @@ public final class Config
     public static String VAEMOD_CBCOLOR_ORC;
     public static String VAEMOD_CBCOLOR_GM;
     public static String VAEMOD_CBCOLOR_OFFLINE;
-    public static boolean VAEMOD_CAMP;
-    public static boolean VAEMOD_BGJAIL;
+    public static boolean VAEMOD_CAMP; // autoriser l'utilisation des campements
+    public static boolean VAEMOD_BGJAIL; // autojail validations de BG
+    public static boolean VAEMOD_ALLOWDDS; // autoriser les images server-side dans les HTML
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1235,6 +1236,7 @@ public final class Config
                     VAEMOD_CBCOLOR_OFFLINE = customSettings.getProperty("CBcolorOffline", "FFFFFF");
                     VAEMOD_CAMP = Boolean.parseBoolean(customSettings.getProperty("ActiverCampement", "false"));
                     VAEMOD_BGJAIL = Boolean.parseBoolean(customSettings.getProperty("AutoJailBgSubTransfo", "false"));
+                    VAEMOD_ALLOWDDS = Boolean.parseBoolean(customSettings.getProperty("AllowDDS", "false"));
                     String[] raidbosses = customSettings.getProperty("WhiteListRB", "0;0").split(";");
                     VAEMOD_RBWHITELIST = new TIntArrayList(raidbosses.length);
                     for (String npcid : raidbosses)

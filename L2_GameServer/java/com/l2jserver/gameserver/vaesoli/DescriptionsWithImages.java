@@ -33,7 +33,7 @@ public class DescriptionsWithImages {
         if (description != null)  {
         NpcHtmlMessage html = new NpcHtmlMessage(1);
         html.setHtml("<html><title>" + target.getName() + "</title><body>" + description + "</body></html>");
-        if (Config.VAEMOD_DESCWITHIMAGES) html.sendDDS(viewer);
+        if (Config.VAEMOD_DESCWITHIMAGES) html.sendDDS(viewer, false);
         viewer.sendPacket(html);
         } else {
         viewer.sendMessage("Ce personnage ne possède pas de description.");
