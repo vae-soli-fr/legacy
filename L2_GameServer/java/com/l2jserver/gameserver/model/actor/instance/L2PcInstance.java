@@ -257,6 +257,7 @@ import com.l2jserver.gameserver.templates.skills.L2SkillType;
 import com.l2jserver.gameserver.vaesoli.VotesChecker;
 import com.l2jserver.gameserver.util.FloodProtectors;
 import com.l2jserver.gameserver.util.Util;
+import com.l2jserver.gameserver.vaesoli.MyDDS;
 import com.l2jserver.util.Point3D;
 import com.l2jserver.util.Rnd;
 
@@ -4690,11 +4691,16 @@ public final class L2PcInstance extends L2Playable
 	}
 	
 	/**
-	 * Send a Server->Client packet StatusUpdate to the L2PcInstance.<BR><BR>
+	 * Send a Server->Client packet StatusUpdate to the L2PcInstance.
+     * Send DDS if packet is a NpcHtmlMessage<BR><BR>
 	 */
 	@Override
 	public void sendPacket(L2GameServerPacket packet)
 	{
+        if (packet instanceof NpcHtmlMessage)
+        {
+            MyDDS.sendDDS(this,(NpcHtmlMessage)packet);
+        }
 		if (_client != null)
 		{
 			_client.sendPacket(packet);

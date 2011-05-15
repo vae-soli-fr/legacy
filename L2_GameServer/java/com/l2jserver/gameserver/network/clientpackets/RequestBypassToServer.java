@@ -44,7 +44,7 @@ import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.GMAudit;
-import com.l2jserver.gameserver.vaesoli.DescriptionsWithImages;
+import com.l2jserver.gameserver.vaesoli.Descriptions;
 
 
 /**
@@ -115,7 +115,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
             else if (_command.startsWith("char_desc"))
             {
             String description = _command.substring(10);
-            DescriptionsWithImages.setDesc(activeChar, description);
+            Descriptions.setDesc(activeChar, description);
             activeChar.sendMessage("Votre description a été enregistrée.");
             }
 			else if (_command.equals("come_here") && ( activeChar.isGM()))
