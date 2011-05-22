@@ -478,11 +478,25 @@
 		</for>
 	</skill>
 	<skill id="928" levels="1" name="Duel Blow">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="magicLvl" val="81" />
-		<set name="operateType" val="OP_PASSIVE" />
+		<!-- Confirmed CT2.5 -->
+		<!-- High Five Skill -->
+		<set name="baseCritRate" val="20" />
+		<set name="blowChance" val="40" />
+		<set name="castRange" val="40" />
+		<set name="condition" val="16" /> <!-- Crit -->
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1800" />
+		<set name="lethal1" val="10" /> <!-- Half-Kill -->
+		<set name="magicLvl" val="81" />
+		<set name="mpConsume" val="77" />
+		<set name="nextActionAttack" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="overHit" val="true" />
+		<set name="power" val="7546" />
+		<set name="reuseDelay" val="4000" />
+		<set name="skillType" val="BLOW" />
+		<set name="target" val="TARGET_ONE" />
+		<set name="weaponsAllowed" val="262144"/> 
 	</skill>
 	<skill id="929" levels="1" name="Spirit of the Cat">
 		<set name="castRange" val="600" />
