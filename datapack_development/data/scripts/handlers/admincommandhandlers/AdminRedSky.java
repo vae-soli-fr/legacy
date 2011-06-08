@@ -12,7 +12,6 @@ import com.l2jserver.gameserver.network.serverpackets.SocialAction;
 import com.l2jserver.gameserver.network.serverpackets.SunRise;
 import com.l2jserver.gameserver.skills.AbnormalEffect;
 import com.l2jserver.gameserver.vaesoli.RedEnterWorld;
-import java.util.StringTokenizer;
 
 /**
  * @author Melua
@@ -23,8 +22,6 @@ public class AdminRedSky implements IAdminCommandHandler {
     private static final String[] ADMIN_COMMANDS = {"admin_redsky"};
 
     public boolean useAdminCommand(String command, L2PcInstance activeChar) {
-        StringTokenizer st = new StringTokenizer(command);
-        st.nextToken();
 
         if (command.startsWith("admin_redsky")) {
 
