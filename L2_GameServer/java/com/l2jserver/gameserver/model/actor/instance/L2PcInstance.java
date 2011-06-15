@@ -404,13 +404,8 @@ public final class L2PcInstance extends L2Playable
     private String _rplanguage;
     private String _volume;
     private long _votetime = 0;
-    private L2Npc _camp1 = null;
-    private L2Npc _camp2 = null;
-    private L2Npc _camp3 = null;
-    private L2Npc _camp4 = null;
 
-	
-	private final ReentrantLock _subclassLock = new ReentrantLock();
+    private final ReentrantLock _subclassLock = new ReentrantLock();
 	protected int _baseClass;
 	protected int _activeClass;
 	protected int _classIndex = 0;
@@ -15111,43 +15106,6 @@ public final class L2PcInstance extends L2Playable
         {
             return getClient() == null || getClient().isDetached();
         }
-
-  /**
-   * Mutateurs pour la gestion des Camps
-   * @param obj L2TerrainObject
-   * @author melua
-   */
-    public void setCamp1(L2TerrainObjectInstance obj) {
-    _camp1 = obj;
-    }
-    public void setCamp2(L2TerrainObjectInstance obj) {
-    _camp2 = obj;
-    }
-    public void setCamp3(L2TerrainObjectInstance obj) {
-    _camp3 = obj;
-    }
-    public void setCamp4(L2TerrainObjectInstance obj) {
-    _camp4 = obj;
-    }
-
-  /**
-   * Accesseurs pour la gestion des Camps
-   * @return L2TerrainObject
-   * @author melua
-   */
-    public L2Npc getCamp1() {
-    return _camp1;
-    }
-    public L2Npc getCamp2() {
-    return _camp2;
-    }
-    public L2Npc getCamp3() {
-    return _camp3;
-    }
-    public L2Npc getCamp4() {
-    return _camp4;
-    }
-
 
         public long getOfflineStartTime()
         {

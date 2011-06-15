@@ -1,4 +1,4 @@
-package custom.SubClassCertification;
+package scripts.custom.CertificationEx;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.L2ItemInstance;
@@ -25,21 +25,34 @@ public class Exchange extends Quest {
 
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+        
+        // doit être en main class
+        if (player.getClassIndex() != 0) {
+            return "main.htm";
+        }
 
-        if (event.startsWith("exchange")) {
+        // quelle deuxième page afficher
+        else if (event.startsWith("ask")) {
+            if (Util.contains(KNIGHTCLASSES, player.getClassId().getId()))
+                return "knightlist.htm";
+            else if (Util.contains(KNIGHTCLASSES, player.getClassId().getId()))
+                return "summonlist.htm";
+            else
+                return "defaultlist.htm";
+        }
 
-            if (player.getClassIndex() != 0) {
-                return "must_be_in_main.html";
-            }
+        // effectuer l'échange
+        else if (event.startsWith("exchange")) {
 
             StringTokenizer st = new StringTokenizer(event);
             int itemId = Integer.parseInt(st.nextToken());
             int rewardId = Integer.parseInt(st.nextToken());
 
+            // security check
             if (rewardId == 10282 && Util.contains(KNIGHTCLASSES, player.getClassId().getId())) {
-                return "tank.html";
+                return "knightlist.htm";
             } else if (rewardId == 10286 && Util.contains(SUMMONERCLASSES, player.getClassId().getId())) {
-                return "summoner.html";
+                return "summonlist.htm";
             }
 
             L2ItemInstance certItem, rewardItem;
@@ -60,9 +73,9 @@ public class Exchange extends Quest {
                             if (certId == itemId && Util.contains(SKILLITEMS, certId)) {
                                 qt.takeItems(57, 2000000);
                                 qt.takeItems(certId, 1);
-                                rewardItem = player.getInventory().addItem("Quest", rewardId, 1, player, player.getTarget());
+                                rewardItem = player.getInventory().addItem("CertificationExchange", rewardId, 1, player, player.getTarget());
                                 qt.saveGlobalQuestVar(qName, Integer.toString(rewardItem.getObjectId()));
-                                return "done.html";
+                                return "done.htm";
                             }
                         }
                     }
@@ -71,7 +84,7 @@ public class Exchange extends Quest {
 
             }
         }
-        return "error.html";
+        return "defaultlist.html";
 
     }
 
