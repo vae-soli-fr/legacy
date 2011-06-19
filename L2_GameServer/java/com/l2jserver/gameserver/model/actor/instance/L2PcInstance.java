@@ -4692,12 +4692,9 @@ public final class L2PcInstance extends L2Playable
 	@Override
 	public void sendPacket(L2GameServerPacket packet)
 	{
-        if (packet instanceof NpcHtmlMessage)
-        {
-            MyDDS.sendDDS(this,(NpcHtmlMessage)packet);
-        }
 		if (_client != null)
 		{
+            if (packet instanceof NpcHtmlMessage) MyDDS.sendDDS(this, (NpcHtmlMessage) packet);
 			_client.sendPacket(packet);
 		}
 	}
