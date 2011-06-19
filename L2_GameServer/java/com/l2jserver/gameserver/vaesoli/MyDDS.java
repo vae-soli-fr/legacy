@@ -35,7 +35,7 @@ public class MyDDS {
         if (packet.getHtml() == null || !Config.VAEMOD_ALLOWDDS) {
             return;
         }
-        boolean npc = (client.getTarget() instanceof L2Npc);
+        boolean root = (client.getTarget() == null || client.getTarget() instanceof L2Npc);
         String name = client.getName().toLowerCase();
         Pattern pattern = Pattern.compile("<img_int>([a-zA-Z_0-9\\.]+)</img_int>");
         Matcher matcher = pattern.matcher(packet.getHtml());
@@ -44,8 +44,8 @@ public class MyDDS {
                 String sequence = matcher.group(0);
                 String img_int = matcher.group(1);
                 int tempId = IdFactory.getInstance().getNextId();
-                File image = new File(Config.DATAPACK_ROOT + "/data/images" + ((npc) ? "" : "/" + name) + "/" + img_int);
-                ImageIcon info = new ImageIcon(Config.DATAPACK_ROOT + "/data/images" + ((npc) ? "" : "/" + name) + "/" + img_int);
+                File image = new File(Config.DATAPACK_ROOT + "/data/images" + ((root) ? "" : "/" + name) + "/" + img_int);
+                ImageIcon info = new ImageIcon(Config.DATAPACK_ROOT + "/data/images" + ((root) ? "" : "/" + name) + "/" + img_int);
                 // convert common image (png, bmp, jpg, ...) to dds (DirectDraw Surface) - image has to have dimensions of power of 2 (2,4,8,16,32,64,...)
                 PledgeCrest crestImage = new PledgeCrest(tempId, DDSConverter.convertToDDS(image).array());
                 // in htm use <img src=\"Crest.crest_" + Config.SERVER_ID +"_" + imgId + "\" width=32 height=16> - use the image dimensions
