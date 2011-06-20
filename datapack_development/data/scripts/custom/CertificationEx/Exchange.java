@@ -1,4 +1,4 @@
-package scripts.custom.CertificationEx;
+package custom.CertificationEx;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.L2ItemInstance;
