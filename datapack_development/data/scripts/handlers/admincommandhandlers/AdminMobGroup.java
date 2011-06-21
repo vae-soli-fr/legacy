@@ -330,7 +330,7 @@ public class AdminMobGroup implements IAdminCommandHandler
 		doAnimation(activeChar);
 		
 		if (topos)
-			group.spawnGroup(posx, posy, posz);
+			group.spawnGroup(activeChar, posx, posy, posz);
 		else
 			group.spawnGroup(activeChar);
 		
