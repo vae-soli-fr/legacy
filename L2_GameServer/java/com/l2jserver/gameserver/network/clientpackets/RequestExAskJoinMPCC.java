@@ -133,7 +133,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 	
 	private void askJoinMPCC(L2PcInstance requestor, L2PcInstance target)
 	{
-		boolean hasRight = false;
+		/*boolean hasRight = false;
 		if (requestor.getClan() != null && requestor.getClan().getLeaderId() == requestor.getObjectId()
 				&& requestor.getClan().getLevel() >= 5) // Clanleader of lvl5 Clan or higher
 			hasRight = true;
@@ -156,7 +156,8 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 		{
 			requestor.sendPacket(new SystemMessage(SystemMessageId.COMMAND_CHANNEL_ONLY_BY_LEVEL_5_CLAN_LEADER_PARTY_LEADER));
 			return;
-		}
+		}*/
+		
 		if (!target.isProcessingRequest())
 		{
 			requestor.onTransactionRequest(target);
