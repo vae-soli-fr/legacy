@@ -80,7 +80,7 @@ public class BgValidator {
         try {
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement1 = con.prepareStatement("SELECT level, verified FROM character_subclasses WHERE charId = ?");
-            PreparedStatement statement2 = con.prepareStatement("SELECT skill_id, verified FROM character_skills WHERE charId = ?");
+            PreparedStatement statement2 = con.prepareStatement("SELECT skill_id, SUM(verified) as verified FROM character_skills WHERE charId = ? GROUP BY skill_id");
             statement1.setInt(1, player.getObjectId());
             statement2.setInt(1, player.getObjectId());
             ResultSet rset1 = statement1.executeQuery();
