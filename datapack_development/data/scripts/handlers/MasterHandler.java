@@ -256,6 +256,7 @@ import handlers.admincommandhandlers.AdminRBjail;
 import handlers.voicedcommandhandlers.HellboundVoiced;
 import handlers.voicedcommandhandlers.Camp;
 import handlers.admincommandhandlers.AdminPenalty;
+import handlers.admincommandhandlers.AdminDebuff;
 
 import java.util.logging.Logger;
 
@@ -372,17 +373,18 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminUnblockIp());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminVitality());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminZone());
-        AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRBjail());
-        if (Config.VAEMOD_REDSKY)
-            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRedSky());
-        if (Config.VAEMOD_MOVIE)
-            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMovie());
-        if (!Config.VAEMOD_ADMINMESSAGEAREA.equalsIgnoreCase("OFF"))
-            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMessage());
-        if (Config.VAEMOD_NPCSAY)
-            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminNpcSay());
-        if (Config.VAEMOD_PENALTY)
-            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPenalty());
+                AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRBjail());
+                AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminDebuff());
+                if (Config.VAEMOD_REDSKY)
+                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRedSky());
+                if (Config.VAEMOD_MOVIE)
+                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMovie());
+                if (!Config.VAEMOD_ADMINMESSAGEAREA.equalsIgnoreCase("OFF"))
+                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMessage());
+                if (Config.VAEMOD_NPCSAY)
+                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminNpcSay());
+                if (Config.VAEMOD_PENALTY)
+                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPenalty());
 		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + "  AdminCommandHandlers");
 	}
 	

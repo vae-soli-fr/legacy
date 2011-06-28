@@ -827,7 +827,7 @@
 		<set name="isMagic" val="true" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Debuff" time="5" val="0" stackOrder="0.77" stackType="attack_time_up">
+			<effect name="Debuff" time="600" val="0" stackOrder="0.77" stackType="attack_time_up">
 				<mul order="0x30" stat="pAtkSpd" val="0.77" />
 			</effect>
 		</for>
@@ -842,7 +842,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Stun" time="5" val="0" stackOrder="1" stackType="Stun" />
+			<effect name="Stun" time="600" val="0" stackOrder="1" stackType="Stun" />
 		</for>
 	</skill>
 	<skill id="5169" levels="10" name="Hold">
@@ -857,7 +857,7 @@
 		<set name="isMagic" val="true" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Root" time="5" val="0" stackOrder="1" stackType="Root" />
+			<effect name="Root" time="600" val="0" stackOrder="1" stackType="Root" />
 		</for>
 	</skill>
 	<skill id="5170" levels="10" name="Sleep">
@@ -872,7 +872,7 @@
 		<set name="isMagic" val="true" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Sleep" time="5" val="0" stackOrder="1" stackType="sleep" />
+			<effect name="Sleep" time="600" val="0" stackOrder="1" stackType="sleep" />
 		</for>
 	</skill>
 	<skill id="5171" levels="10" name="Paralyze">
@@ -912,7 +912,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect count="5" name="Fear" time="2" val="0" />
+			<effect count="300" name="Fear" time="2" val="0" />
 		</for>
 	</skill>
 	<skill id="5174" levels="10" name="Poison">
@@ -928,7 +928,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="true" />
 		<for>
-			<effect count="10" name="DamOverTime" time="3" val="#dmg" abnormal="poison" />
+			<effect count="200" name="DamOverTime" time="3" val="#dmg" abnormal="poison" />
 		</for>
 	</skill>
 	<skill id="5175" levels="10" name="Bleed">
@@ -943,7 +943,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect count="7" name="DamOverTime" time="3" val="#dmg" abnormal="bleed">
+			<effect count="200" name="DamOverTime" time="3" val="#dmg" abnormal="bleed">
 				<mul order="0x30" stat="runSpd" val="0.8" />
 			</effect>
 		</for>
@@ -959,7 +959,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="true" />
 		<for>
-			<effect name="Mute" time="5" val="0" stackOrder="1" stackType="silence" />
+			<effect name="Mute" time="600" val="0" stackOrder="1" stackType="silence" />
 		</for>
 	</skill>
 	<skill id="5177" levels="10" name="Doom">
