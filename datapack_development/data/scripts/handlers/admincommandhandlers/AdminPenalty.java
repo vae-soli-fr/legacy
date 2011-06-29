@@ -27,7 +27,7 @@ public class AdminPenalty implements IAdminCommandHandler {
                 L2PcInstance player = (L2PcInstance) activeChar.getTarget();
                 player.stopSkillEffects(5660);
                 if (val == 0 && sendMessage) {
-                    player.sendPacket(new SystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED).addSkillName(7029));
+                    player.sendPacket(new SystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED).addSkillName(5660));
                 } else if ((val >= 1) && (val <= 5)) {
                     L2Skill deathPenaltySkill = SkillTable.getInstance().getInfo(5660, val);
                     deathPenaltySkill.getEffects(player, player);
