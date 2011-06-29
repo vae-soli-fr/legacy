@@ -381,8 +381,10 @@ public class AdminEditChar implements IAdminCommandHandler
 				{
 					return false;
 				}
+                                L2World.getInstance().removeFromAllPlayers(player);
 				player.setTitle(val);
 				player.sendMessage("Your title has been changed by a GM");
+                                L2World.getInstance().addToAllPlayers(player);
 				player.broadcastTitleInfo();
 			}
 			catch (StringIndexOutOfBoundsException e)
@@ -406,8 +408,10 @@ public class AdminEditChar implements IAdminCommandHandler
 					activeChar.sendMessage("Warning, player "+val+" already exists");
 					return false;
 				}
+                                L2World.getInstance().removeFromAllPlayers(player);
 				player.setName(val);
 				player.store();
+                                L2World.getInstance().addToAllPlayers(player);
 				CharNameTable.getInstance().addName(player);
 				
 				activeChar.sendMessage("Changed name to "+val);
