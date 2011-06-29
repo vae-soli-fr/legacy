@@ -254,7 +254,12 @@ public class AdminAdmin implements IAdminCommandHandler
 					QuestManager.getInstance().reloadAllQuests();
 					activeChar.sendMessage("All NPCs have been reloaded");
 				}
-                else if (type.startsWith("fakenpc"))
+                                else if (type.equals("custom"))
+				{
+					NpcTable.getInstance().reloadAllCustom();
+					activeChar.sendMessage("All Custom NPCs have been reloaded");
+				}
+                                else if (type.startsWith("fakenpc"))
 				{
 					FakePcsTable.getInstance().reloadData();
 					activeChar.sendMessage("All Fake NPC have been reloaded");
@@ -317,7 +322,7 @@ public class AdminAdmin implements IAdminCommandHandler
 			catch (Exception e)
 			{
 				activeChar.sendMessage("An error occured while reloading " + type + " !");
-				activeChar.sendMessage("Usage: //reload <multisell|teleport|skill|npc|htm|item|config|instancemanager|npcwalkers|access|quests>");
+				activeChar.sendMessage("Usage: //reload <multisell|teleport|skill|npc|custom|htm|item|config|instancemanager|npcwalkers|access|quests>");
 				_log.warning("An error occured while reloading " + type + ": " + e); //do not mask an exception here
 			}
 		}

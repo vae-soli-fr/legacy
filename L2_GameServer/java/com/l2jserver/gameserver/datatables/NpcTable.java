@@ -912,8 +912,147 @@ public class NpcTable
 	{
 		return null;
 	}
-	
-	@SuppressWarnings("synthetic-access")
+
+    public void reloadAllCustom()
+	{
+		restoreCustomData();
+	}
+        
+        private void restoreCustomData()
+	{
+		Connection con = null;
+		
+		try
+		{
+			if (Config.CUSTOM_NPC_TABLE) // reload certain NPCs
+			{
+				try
+				{
+                                        con = L2DatabaseFactory.getInstance().getConnection();
+					PreparedStatement statement;
+					statement = con.prepareStatement("SELECT "
+							+ L2DatabaseFactory.getInstance().safetyString(new String[] { "id", "idTemplate", "name", "serverSideName",
+									"title", "serverSideTitle", "class", "collision_radius", "collision_height", "level", "sex", "type",
+									"attackrange", "hp", "mp", "hpreg", "mpreg", "str", "con", "dex", "int", "wit", "men", "exp", "sp",
+									"patk", "pdef", "matk", "mdef", "atkspd", "aggro", "matkspd", "rhand", "lhand", "enchant", "walkspd",
+									"runspd", "dropHerbGroup" }) + " FROM custom_npc");
+					ResultSet npcdata = statement.executeQuery();
+					
+					fillNpcTable(npcdata, true);
+					npcdata.close();
+					statement.close();
+				}
+				catch (Exception e)
+				{
+					_log.log(Level.SEVERE, "NPCTable: Error creating custom NPC table.", e);
+				}
+			}
+
+                        if (Config.CUSTOM_NPC_SKILLS_TABLE)
+			{
+				try
+				{
+					PreparedStatement statement = con.prepareStatement("SELECT npcid, skillid, level FROM custom_npcskills");
+					ResultSet npcskills = statement.executeQuery();
+					L2NpcTemplate npcDat = null;
+					L2Skill npcSkill = null;
+					
+					while (npcskills.next())
+					{
+						int mobId = npcskills.getInt("npcid");
+						npcDat = _npcs.get(mobId);
+						
+						if (npcDat == null)
+						{
+							_log.warning("Custom NPCTable: Skill data for undefined NPC. npcId: " + mobId);
+							continue;
+						}
+						
+						int skillId = npcskills.getInt("skillid");
+						int level = npcskills.getInt("level");
+						
+						if (npcDat.race == null && skillId == 4416)
+						{
+							npcDat.setRace(level);
+							continue;
+						}
+						
+						npcSkill = SkillTable.getInstance().getInfo(skillId, level);
+						
+						if (npcSkill == null)
+							continue;
+						
+						npcDat.addSkill(npcSkill);
+					}
+					
+					npcskills.close();
+					statement.close();
+				}
+				catch (Exception e)
+				{
+					_log.log(Level.SEVERE, "Custom NPCTable: Error reading NPC skills table.", e);
+				}
+			}
+			
+			if (Config.CUSTOM_NPC_TABLE)
+			{
+				try
+				{
+					PreparedStatement statement = con.prepareStatement("SELECT " + L2DatabaseFactory.getInstance().safetyString(new String[] { "npc_id", "primary_attack", "skill_chance", "canMove", "soulshot", "spiritshot", "sschance", "spschance", "minrangeskill", "minrangechance", "maxrangeskill", "maxrangechance", "ischaos", "clan", "clan_range", "enemyClan", "enemyRange", "ai_type", "dodge" }) + " FROM custom_npcaidata ORDER BY npc_id");
+					ResultSet NpcAIDataTable = statement.executeQuery();
+					L2NpcAIData npcAIDat = null;
+					L2NpcTemplate npcDat = null;
+					int cont = 0;
+					while (NpcAIDataTable.next())
+					{
+						int npc_id = NpcAIDataTable.getInt("npc_id");
+						npcDat = _npcs.get(npc_id);
+						if (npcDat == null)
+						{
+							_log.severe("NPCTable: Custom AI Data Error with id : " + npc_id);
+							continue;
+						}
+						npcAIDat = new L2NpcAIData();
+						
+						npcAIDat.setPrimaryAttack(NpcAIDataTable.getInt("primary_attack"));
+						npcAIDat.setSkillChance(NpcAIDataTable.getInt("skill_chance"));
+						npcAIDat.setCanMove(NpcAIDataTable.getInt("canMove"));
+						npcAIDat.setSoulShot(NpcAIDataTable.getInt("soulshot"));
+						npcAIDat.setSpiritShot(NpcAIDataTable.getInt("spiritshot"));
+						npcAIDat.setSoulShotChance(NpcAIDataTable.getInt("sschance"));
+						npcAIDat.setSpiritShotChance(NpcAIDataTable.getInt("spschance"));
+						npcAIDat.setIsChaos(NpcAIDataTable.getInt("ischaos"));
+						npcAIDat.setShortRangeSkill(NpcAIDataTable.getInt("minrangeskill"));
+						npcAIDat.setShortRangeChance(NpcAIDataTable.getInt("minrangechance"));
+						npcAIDat.setLongRangeSkill(NpcAIDataTable.getInt("maxrangeskill"));
+						npcAIDat.setLongRangeChance(NpcAIDataTable.getInt("maxrangechance"));
+						npcAIDat.setClan(NpcAIDataTable.getString("clan"));
+						npcAIDat.setClanRange(NpcAIDataTable.getInt("clan_range"));
+						npcAIDat.setEnemyClan(NpcAIDataTable.getString("enemyClan"));
+						npcAIDat.setEnemyRange(NpcAIDataTable.getInt("enemyRange"));
+						npcAIDat.setDodge(NpcAIDataTable.getInt("dodge"));
+						npcAIDat.setAi(NpcAIDataTable.getString("ai_type"));
+						npcDat.setAIData(npcAIDat);
+						cont++;
+					}
+					
+					NpcAIDataTable.close();
+					statement.close();
+					_log.info("NPC AI Data Table: Loaded " + cont + " Custom AI Data.");
+				}
+				catch (Exception e)
+				{
+					_log.log(Level.SEVERE, "NPCTable: Error reading NPC Custom AI Data: " + e.getMessage(), e);
+				}
+			}
+                }
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+}
+        
+       	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
 		protected static final NpcTable _instance = new NpcTable();
