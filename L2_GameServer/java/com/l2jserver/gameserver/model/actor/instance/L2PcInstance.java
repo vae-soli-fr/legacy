@@ -257,6 +257,7 @@ import com.l2jserver.gameserver.templates.skills.L2SkillType;
 import com.l2jserver.gameserver.vaesoli.VotesChecker;
 import com.l2jserver.gameserver.util.FloodProtectors;
 import com.l2jserver.gameserver.util.Util;
+import com.l2jserver.gameserver.vaesoli.Camp;
 import com.l2jserver.gameserver.vaesoli.MyDDS;
 import com.l2jserver.util.Point3D;
 import com.l2jserver.util.Rnd;
@@ -397,13 +398,14 @@ public final class L2PcInstance extends L2Playable
 
     /**
      * ALL customs for Vae Soli in L2PcInstance
-     * keywords : Kirieh, Melua, Ariskan, mods
+     * keywords : Kirieh, Melua, Ariskan, mods, Saelil
      */
     private boolean _showFsDamages;
     private boolean _voting;
     private String _rplanguage;
     private String _volume;
     private long _votetime = 0;
+    private Camp _camp = new Camp();
 
     private final ReentrantLock _subclassLock = new ReentrantLock();
 	protected int _baseClass;
@@ -15112,6 +15114,15 @@ public final class L2PcInstance extends L2Playable
         public void setOfflineStartTime(long time)
         {
             _offlineShopStart = time;
+        }
+        
+        /*
+         * Just a grabber.
+         * @author Saelil
+         */
+        public void evolveCamp()
+        {
+            this._camp.evolve(this);
         }
 	
     /**
