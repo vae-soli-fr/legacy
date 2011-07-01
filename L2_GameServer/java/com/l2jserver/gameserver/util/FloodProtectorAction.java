@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.l2jserver.gameserver.GameTimeController;
+import com.l2jserver.gameserver.LoginServerThread;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.L2GameClient;
 import com.l2jserver.util.StringUtil;
@@ -86,6 +87,10 @@ public final class FloodProtectorAction
 	{
 		final int curTick = GameTimeController.getGameTicks();
 		
+                if(!command.contains("Character"))
+                    if(_client.getActiveChar().isGM())
+                        return true;
+                
 		if (curTick < _nextGameTick || _punishmentInProgress)
 		{
 			if (_config.LOG_FLOODING && !_logged && _log.isLoggable(Level.WARNING))
