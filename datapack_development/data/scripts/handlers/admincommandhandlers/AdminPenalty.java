@@ -22,7 +22,7 @@ public class AdminPenalty implements IAdminCommandHandler {
         if (command.startsWith("admin_penalty")) {
             try {
                 int val = Integer.parseInt(st.nextToken());
-                boolean sendMessage = activeChar.getFirstEffect(7029) != null;
+                boolean sendMessage = activeChar.getFirstEffect(5660) != null;
                 if (activeChar.getTarget() instanceof L2PcInstance) {
                 L2PcInstance player = (L2PcInstance) activeChar.getTarget();
                 player.stopSkillEffects(5660);

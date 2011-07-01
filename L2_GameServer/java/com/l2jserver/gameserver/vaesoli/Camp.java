@@ -150,12 +150,25 @@ public class Camp {
         }
     }
     
-   /*
+   /**
     * Remove camp elements.
     */
     private void removeNpc(int index)
     {
         this._npcs.get(index).deleteMe();
         SpawnTable.getInstance().deleteSpawn(this._spawns.get(index), false);
+    }
+    
+    /**
+     * Delete all elements.
+     */
+    public void clear()
+    {
+        for(L2Npc n : this._npcs)
+            n.deleteMe();
+        for(L2Spawn s : this._spawns)
+            SpawnTable.getInstance().deleteSpawn(s, false);
+        this._npcs.clear();
+        this._spawns.clear();
     }
 }

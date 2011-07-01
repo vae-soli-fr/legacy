@@ -75,7 +75,6 @@ public class AdminDebuff implements IAdminCommandHandler {
                                   effects.add(e);
                             }
                         }
-                        debuff.getEffects(player, player);
                     }
                 }
             }
