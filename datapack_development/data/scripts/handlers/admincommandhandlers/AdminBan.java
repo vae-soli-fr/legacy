@@ -93,11 +93,11 @@ public class AdminBan implements IAdminCommandHandler {
 			}
 		}
 		
-		if (targetPlayer != null && targetPlayer.equals(activeChar))
+		/*if (targetPlayer != null && targetPlayer.equals(activeChar))
 		{
 			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_USE_ON_YOURSELF));
 			return false;
-		}
+		}*/
 		
 		if (command.startsWith("admin_ban ") || command.equalsIgnoreCase("admin_ban"))
 		{
