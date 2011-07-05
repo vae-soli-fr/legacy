@@ -257,6 +257,7 @@ import handlers.voicedcommandhandlers.HellboundVoiced;
 import handlers.voicedcommandhandlers.Camp;
 import handlers.admincommandhandlers.AdminPenalty;
 import handlers.admincommandhandlers.AdminDebuff;
+import handlers.voicedcommandhandlers.Meteo;
 
 import java.util.logging.Logger;
 
@@ -269,6 +270,7 @@ import com.l2jserver.gameserver.handler.ItemHandler;
 import com.l2jserver.gameserver.handler.SkillHandler;
 import com.l2jserver.gameserver.handler.UserCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
+
 
 
 /**
@@ -584,6 +586,7 @@ public class MasterHandler
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new PetSay());
         if (Config.VAEMOD_CAMP)
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Camp());
+        VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Meteo());
         _log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	
