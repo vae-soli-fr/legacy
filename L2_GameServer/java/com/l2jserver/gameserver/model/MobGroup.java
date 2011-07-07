@@ -113,7 +113,7 @@ public final class MobGroup
 		return false;
 	}
 	
-	public void spawnGroup(int x, int y, int z)
+	public void spawnGroup(L2PcInstance activeChar, int x, int y, int z)
 	{
 		if (getActiveMobCount() > 0) // can't spawn mob if already done
 			return;
@@ -132,6 +132,10 @@ public final class MobGroup
 				spawn.setLocx(x + signX * randX);
 				spawn.setLocy(y + signY * randY);
 				spawn.setLocz(z);
+                if (activeChar.getInstanceId() > 0)
+					spawn.setInstanceId(activeChar.getInstanceId());
+				else
+					spawn.setInstanceId(0);
 				spawn.stopRespawn();
 				
 				SpawnTable.getInstance().addNewSpawn(spawn, false);
@@ -144,7 +148,7 @@ public final class MobGroup
 	
 	public void spawnGroup(L2PcInstance activeChar)
 	{
-		spawnGroup(activeChar.getX(), activeChar.getY(), activeChar.getZ());
+		spawnGroup(activeChar, activeChar.getX(), activeChar.getY(), activeChar.getZ());
 	}
 	
 	public void teleportGroup(L2PcInstance player)
