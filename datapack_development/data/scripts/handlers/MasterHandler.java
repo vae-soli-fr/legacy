@@ -258,6 +258,7 @@ import handlers.voicedcommandhandlers.Camp;
 import handlers.admincommandhandlers.AdminPenalty;
 import handlers.admincommandhandlers.AdminDebuff;
 import handlers.voicedcommandhandlers.Meteo;
+//import handlers.admincommandhandlers.AdminMonster;
 
 import java.util.logging.Logger;
 
@@ -375,18 +376,22 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminUnblockIp());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminVitality());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminZone());
-                AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRBjail());
-                AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminDebuff());
-                if (Config.VAEMOD_REDSKY)
-                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRedSky());
-                if (Config.VAEMOD_MOVIE)
-                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMovie());
-                if (!Config.VAEMOD_ADMINMESSAGEAREA.equalsIgnoreCase("OFF"))
-                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMessage());
-                if (Config.VAEMOD_NPCSAY)
-                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminNpcSay());
-                if (Config.VAEMOD_PENALTY)
-                    AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPenalty());
+        //if (Config.VAEMOD_ADMINMONSTER)
+        //  AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMonster());
+        if (Config.VAEMOD_ADMINRBJAIL)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRBjail());
+        if (Config.VAEMOD_ADMINDEBUFF)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminDebuff());
+        if (Config.VAEMOD_REDSKY)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRedSky());
+        if (Config.VAEMOD_MOVIE)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMovie());
+        if (!Config.VAEMOD_ADMINMESSAGEAREA.equalsIgnoreCase("OFF"))
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMessage());
+        if (Config.VAEMOD_NPCSAY)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminNpcSay());
+        if (Config.VAEMOD_PENALTY)
+            AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPenalty());
 		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + "  AdminCommandHandlers");
 	}
 	
@@ -586,7 +591,8 @@ public class MasterHandler
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new PetSay());
         if (Config.VAEMOD_CAMP)
             VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Camp());
-        VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Meteo());
+        if (Config.VAEMOD_METEO)
+            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Meteo());
         _log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	

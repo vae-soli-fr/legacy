@@ -120,6 +120,10 @@ public final class Config
     public static boolean VAEMOD_BGJAIL; // autojail validations de BG
     public static boolean VAEMOD_ALLOWDDS; // autoriser les images server-side dans les HTML
     public static boolean VAEMOD_PENALTY; // autoriser la siege penalty manuelle
+    public static boolean VAEMOD_METEO; // autoriser la meteo
+    public static boolean VAEMOD_ADMINDEBUFF; // autoriser la commande Debuff
+    public static boolean VAEMOD_ADMINRBJAIL; // autoriser la désactivation du jail RB
+    public static boolean VAEMOD_ADMINMONSTER; // autoriser la commande Monster
 
     //--------------------------------------------------
 	// L2J Variable Definitions
@@ -1237,6 +1241,10 @@ public final class Config
                     VAEMOD_BGJAIL = Boolean.parseBoolean(customSettings.getProperty("AutoJailBgSubTransfo", "false"));
                     VAEMOD_ALLOWDDS = Boolean.parseBoolean(customSettings.getProperty("AllowDDS", "false"));
                     VAEMOD_PENALTY = Boolean.parseBoolean(customSettings.getProperty("ManualSiegePenalty", "false"));
+                    VAEMOD_METEO = Boolean.parseBoolean(customSettings.getProperty("EnableMeteo", "false"));
+                    VAEMOD_ADMINDEBUFF = Boolean.parseBoolean(customSettings.getProperty("EnableAdminDebuff", "false"));
+                    VAEMOD_ADMINRBJAIL = Boolean.parseBoolean(customSettings.getProperty("EnableAdminRbJail", "false"));
+                    VAEMOD_ADMINMONSTER = Boolean.parseBoolean(customSettings.getProperty("EnableAdminMonster", "false"));
                     String[] raidbosses = customSettings.getProperty("WhiteListRB", "0;0").split(";");
                     VAEMOD_RBWHITELIST = new TIntArrayList(raidbosses.length);
                     for (String npcid : raidbosses)
