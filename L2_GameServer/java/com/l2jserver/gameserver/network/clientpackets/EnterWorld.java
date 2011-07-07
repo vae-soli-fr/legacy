@@ -88,8 +88,6 @@ import com.l2jserver.gameserver.network.serverpackets.SkillCoolTime;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.vaesoli.BgValidator;
 import com.l2jserver.gameserver.vaesoli.RedEnterWorld;
-import gov.nasa.worldwind.formats.dds.DDSConverter;
-import java.io.File;
 
 
 /**
