@@ -37,7 +37,7 @@ public class MyDDS {
         }
         boolean root = (client.getTarget() == null || client.getTarget() instanceof L2Npc);
         String name = client.getName().toLowerCase();
-        Pattern pattern = Pattern.compile("<img_int>([a-zA-Z_0-9\\.]+)</img_int>");
+        Pattern pattern = Pattern.compile("<img_int>([-_a-zA-Z0-9\\.]+)</img_int>");
         Matcher matcher = pattern.matcher(packet.getHtml());
         while (matcher.find()) {
             try {
