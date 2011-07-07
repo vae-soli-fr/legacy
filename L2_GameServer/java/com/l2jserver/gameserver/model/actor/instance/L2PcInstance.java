@@ -406,6 +406,8 @@ public final class L2PcInstance extends L2Playable
     private String _volume;
     private long _votetime = 0;
     private Camp _camp = new Camp();
+    private boolean _monster = false;
+    private boolean _guard = false;
 
     private final ReentrantLock _subclassLock = new ReentrantLock();
 	protected int _baseClass;
@@ -15132,6 +15134,32 @@ public final class L2PcInstance extends L2Playable
         public void evolveCamp()
         {
             this._camp.evolve(this);
+        }
+        
+        public boolean isGuard() 
+        {
+            return _guard;
+        }
+        
+        public void beGuard()
+        {
+            if(_guard)
+                _guard = false;
+            else
+                _guard = true;
+        }
+        
+        public boolean isMonster() 
+        {
+            return _monster;
+        }
+        
+        public void beMonster()
+        {
+            if(_monster)
+                _monster = false;
+            else
+                _monster = true;
         }
 	
     /**

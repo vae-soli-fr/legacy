@@ -25,6 +25,7 @@ import com.l2jserver.gameserver.handler.VoicedCommandHandler;
 import com.l2jserver.gameserver.model.BlockList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
+import java.util.Random;
 
 
 /**
@@ -96,6 +97,12 @@ public class ChatAll implements IChatHandler
 					//	player.sendPacket(cs);
                     if (player != null && !BlockList.isBlocked(player, activeChar))
                     {
+                        if(activeChar.isMonster() && player.isGuard())
+                            cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(), randomize(text));
+                        else if(activeChar.isGuard() && player.isMonster())
+                            cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(), randomize(text));
+                        else
+                            cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(), text);
                         if (activeChar.isInsideRadius(player, 1250, false, true) && (activeChar.getRPvolume().equals("") || isRPaction))
                             player.sendPacket(cs);
                         else if(activeChar.isInsideRadius(player, 100, false, true) && activeChar.getRPvolume().equals(" *chuchote* ") && !isRPaction)
@@ -105,7 +112,7 @@ public class ChatAll implements IChatHandler
                     }
                 }
             }
-			
+			cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(), text);
 			activeChar.sendPacket(cs);
         }
     }
@@ -118,4 +125,13 @@ public class ChatAll implements IChatHandler
 	{
 		return COMMAND_IDS;
 	}
+        
+        private String randomize(String text) {
+        Random rnd = new Random();
+        String content = "abcdefghijklmnopqrstuvwxyz ";
+        StringBuilder sb = new StringBuilder(text.length());
+        for(int i = 0; i < text.length(); i++)
+            sb.append(content.charAt(rnd.nextInt(content.length())));
+        return sb.toString();
+    }
 }

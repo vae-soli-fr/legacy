@@ -36,7 +36,7 @@ public class ChatParty implements IChatHandler
 	 */
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
-		if (activeChar.isInParty())
+		if (activeChar.isInParty() && !activeChar.isMonster() && !activeChar.isGuard())
 		{
 			CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);
 			activeChar.getParty().broadcastCSToPartyMembers(cs, activeChar);

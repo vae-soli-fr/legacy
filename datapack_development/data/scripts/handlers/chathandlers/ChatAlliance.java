@@ -31,7 +31,7 @@ public class ChatAlliance implements IChatHandler
 	 */
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
-		if (activeChar.getClan() != null)
+		if (activeChar.getClan() != null && !activeChar.isMonster() && !activeChar.isGuard())
 		{
 			CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);
 			activeChar.getClan().broadcastToOnlineAllyMembers(cs);

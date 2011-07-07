@@ -54,7 +54,7 @@ public class ChatTell implements IChatHandler
 		}
 		
 		// Return if no target is set
-		if (target == null)
+		if (target == null || activeChar.isMonster() || activeChar.isGuard())
 			return;
 		
 		CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);
