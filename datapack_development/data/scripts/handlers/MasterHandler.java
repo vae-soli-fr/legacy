@@ -258,7 +258,7 @@ import handlers.voicedcommandhandlers.Camp;
 import handlers.admincommandhandlers.AdminPenalty;
 import handlers.admincommandhandlers.AdminDebuff;
 import handlers.voicedcommandhandlers.Meteo;
-//import handlers.admincommandhandlers.AdminMonster;
+import handlers.admincommandhandlers.AdminMonster;
 
 import java.util.logging.Logger;
 
@@ -376,8 +376,8 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminUnblockIp());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminVitality());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminZone());
-        //if (Config.VAEMOD_ADMINMONSTER)
-        //  AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMonster());
+        if (Config.VAEMOD_ADMINMONSTER)
+          AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMonster());
         if (Config.VAEMOD_ADMINRBJAIL)
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminRBjail());
         if (Config.VAEMOD_ADMINDEBUFF)

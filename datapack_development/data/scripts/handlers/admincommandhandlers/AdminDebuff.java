@@ -50,10 +50,10 @@ public class AdminDebuff implements IAdminCommandHandler {
                 else
                     return false;
                 
-                boolean sendMessage = activeChar.getFirstEffect(skillId) != null;
                 if (activeChar.getTarget() instanceof L2PcInstance) 
                 {
                     L2PcInstance player = (L2PcInstance) activeChar.getTarget();
+                    boolean sendMessage = player.getFirstEffect(skillId) != null;
                     player.stopSkillEffects(skillId);
                     if (sendMessage) 
                         player.sendPacket(new SystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED).addSkillName(skillId));
