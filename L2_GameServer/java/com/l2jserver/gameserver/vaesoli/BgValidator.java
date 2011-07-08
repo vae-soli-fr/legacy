@@ -2,9 +2,11 @@ package com.l2jserver.gameserver.vaesoli;
 
 import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
+import com.l2jserver.gameserver.cache.HtmCache;
 import java.util.logging.Logger;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance.PunishLevel;
+import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import gnu.trove.TIntArrayList;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -66,7 +68,7 @@ public class BgValidator {
             660, // Divine Transform Summoner
             661, // Divine Transform Healer
             662, // Divine Transform Enchanter
-            538  // Final Form
+            538 // Final Form
         };
         _transforms = new TIntArrayList(skillId.length);
         _transforms.add(skillId);
@@ -99,7 +101,7 @@ public class BgValidator {
                     continue;
                 }
             }
-            
+
             rset1.close();
             rset2.close();
             statement1.close();
@@ -122,13 +124,26 @@ public class BgValidator {
         if (activeChar.isGM() || !Config.VAEMOD_BGJAIL) {
             return;
         }
-        if (isGuilty(activeChar)) {
+        if (isGuilty(activeChar) && activeChar.getPunishLevel() == PunishLevel.BG)
+        {
+            // Just open a Html message to inform the player
+            NpcHtmlMessage htmlMsg = new NpcHtmlMessage(0);
+            String jailInfos = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/jail_in.htm");
+            if (jailInfos != null) {
+                htmlMsg.setHtml(jailInfos);
+            } else {
+                htmlMsg.setHtml("<html><body>You have been put in jail by an admin.</body></html>");
+            }
+            activeChar.sendPacket(htmlMsg);
+            _log.info(("Check BG: " + activeChar.getName() + " of account " + activeChar.getAccountName() + " is JAIL"));
+        } else if (isGuilty(activeChar) && activeChar.getPunishLevel() != PunishLevel.BG) {
+            // Jail the player
             activeChar.setPunishLevel(PunishLevel.BG, 0);
             _log.info(("Check BG: " + activeChar.getName() + " of account " + activeChar.getAccountName() + " is JAIL"));
-        }
-        else if (activeChar.getPunishLevel() == PunishLevel.BG) {
+        } else if (!isGuilty(activeChar) && activeChar.getPunishLevel() == PunishLevel.BG) {
+            // Unjail the player
             activeChar.setPunishLevel(PunishLevel.NONE, 0);
-             _log.info(("Check BG: " + activeChar.getName() + " of account " + activeChar.getAccountName() + " is UNJAIL"));
+            _log.info(("Check BG: " + activeChar.getName() + " of account " + activeChar.getAccountName() + " is UNJAIL"));
         }
     }
 
