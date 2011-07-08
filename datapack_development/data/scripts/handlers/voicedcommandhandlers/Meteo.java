@@ -53,7 +53,7 @@ public class Meteo implements IVoicedCommandHandler {
                         int sky = rset.getInt("sky");
 
                         if (town.equalsIgnoreCase(location)) {
-                            bulletin += "<tr><td><img src='l2ui_work.MinimapWnd.TargetPos' width=32 height=32></td>";
+                            bulletin += "<tr><td><img src=\"l2ui.MinimapWnd.TargetPos\" width=32 height=32></td>";
                         } else {
                             bulletin += "<tr><td></td>";
                         }
