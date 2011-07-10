@@ -248,12 +248,14 @@ public class AdminAdmin implements IAdminCommandHandler
 					SkillTable.getInstance().reload();
 					activeChar.sendMessage("All Skills have been reloaded");
 				}
+				/*
 				else if (type.equals("npc"))
 				{
 					NpcTable.getInstance().reloadAllNpc();
 					QuestManager.getInstance().reloadAllQuests();
 					activeChar.sendMessage("All NPCs have been reloaded");
 				}
+				*/
                                 else if (type.equals("custom"))
 				{
 					NpcTable.getInstance().reloadAllCustom();
