@@ -124,6 +124,11 @@
 				</tokenfilter>
 			</filterchain>
 		</concat>
+        <copy todir="${build}">
+			<fileset dir="${build.dist.game}/config">
+				<include name="l2jdp-version.properties" />
+			</fileset>
+		</copy>
 	</target>
 
 	<target name="clean" description="Deletes the whole build space and existing packages.">

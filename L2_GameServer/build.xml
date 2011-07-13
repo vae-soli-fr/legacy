@@ -261,6 +261,11 @@
 				</tokenfilter>
 			</filterchain>
 		</concat>
+        <copy todir="${build}">
+			<fileset dir="${build.dist.game}/config">
+				<include name="l2j-version.properties" />
+			</fileset>
+		</copy>
 	</target>
 
 	<target name="clean" description="Remove the output directories">
