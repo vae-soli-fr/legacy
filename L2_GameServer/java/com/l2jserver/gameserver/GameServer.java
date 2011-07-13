@@ -189,11 +189,11 @@ public class GameServer
 		
 		if (Config.SERVER_VERSION != null)
 		{
-			_log.info("L2J Server Version:    " + Config.SERVER_VERSION);
+			_log.info("Vae Soli Server Revision:    " + Config.SERVER_VERSION);
 		}
 		if (Config.DATAPACK_VERSION != null)
 		{
-			_log.info("L2J Datapack Version:  " + Config.DATAPACK_VERSION);
+			_log.info("Vae Soli Datapack Revision:  " + Config.DATAPACK_VERSION);
 		}
 		
 		_idFactory = IdFactory.getInstance();
