@@ -259,6 +259,7 @@ import handlers.admincommandhandlers.AdminPenalty;
 import handlers.admincommandhandlers.AdminDebuff;
 import handlers.voicedcommandhandlers.Meteo;
 import handlers.admincommandhandlers.AdminMonster;
+import handlers.admincommandhandlers.AdminScene;
 
 import java.util.logging.Logger;
 
@@ -392,6 +393,8 @@ public class MasterHandler
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminNpcSay());
         if (Config.VAEMOD_PENALTY)
             AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPenalty());
+        if (true)
+          AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminScene());
 		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + "  AdminCommandHandlers");
 	}
 	
