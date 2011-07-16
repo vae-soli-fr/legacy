@@ -12,20 +12,20 @@ import java.util.StringTokenizer;
 /**
  * @author Melua
  */
-public class Exchange extends Quest {
+public class CertificationEx extends Quest {
 
     private static final int[] SKILLITEMS = {10280, 10281, 10282, 10283, 10284, 10285, 10286, 10287, 10288, 10289, 10290, 10291, 10292, 10293, 10294, 10612};
     private static final String[] QUESTVARSITEMS = {"EmergentAbility65-", "EmergentAbility70-", "ClassAbility75-", "ClassAbility80-"};
     private static final int[] KNIGHTCLASSES = {5, 90, 6, 91, 20, 99, 33, 106};
     private static final int[] SUMMONERCLASSES = {14, 96, 28, 104, 41, 111};
 
-    public Exchange(int id, String name, String descr) {
+    public CertificationEx(int id, String name, String descr) {
         super(id, name, descr);
     }
 
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
-        
+
         // doit être en main class
         if (player.getClassIndex() != 0) {
             return "main.htm";
@@ -42,7 +42,7 @@ public class Exchange extends Quest {
         }
 
         // effectuer l'échange
-        else if (event.startsWith("exchange")) {
+        else if (event.startsWith("change")) {
 
             StringTokenizer st = new StringTokenizer(event);
             int itemId = Integer.parseInt(st.nextToken());
@@ -56,7 +56,7 @@ public class Exchange extends Quest {
             }
 
             L2ItemInstance certItem, rewardItem;
-            QuestState qt = player.getQuestState(Exchange.class.getSimpleName());
+            QuestState qt = player.getQuestState(CertificationEx.class.getSimpleName());
             String qName, qValue;
             int objectId, certId;
             for (int i = QUESTVARSITEMS.length; --i >= 0;) {
@@ -73,7 +73,7 @@ public class Exchange extends Quest {
                             if (certId == itemId && Util.contains(SKILLITEMS, certId)) {
                                 qt.takeItems(57, 2000000);
                                 qt.takeItems(certId, 1);
-                                rewardItem = player.getInventory().addItem("CertificationExchange", rewardId, 1, player, player.getTarget());
+                                rewardItem = player.getInventory().addItem("CertificationEx", rewardId, 1, player, player.getTarget());
                                 qt.saveGlobalQuestVar(qName, Integer.toString(rewardItem.getObjectId()));
                                 return "done.htm";
                             }
@@ -89,6 +89,6 @@ public class Exchange extends Quest {
     }
 
     public static final void main(String[] args) {
-        new Exchange(-1, Exchange.class.getSimpleName(), "custom");
+        new CertificationEx(-1, "CertificationEx", "custom");
     }
 }
