@@ -32,12 +32,14 @@ public class CertificationEx extends Quest {
 
     public CertificationEx(int id, String name, String descr) {
         super(id, name, descr);
-        addStartNpc(_npc);
-        addTalkId(_npc);
+        addFirstTalkId(_npc); // means that once you double-click on the NPC, it will run the onFirsTalk part of the quest.
+        addStartNpc(_npc); // will run the onTalk part.
+        addTalkId(_npc); // will run the onEvent and onAdvEvent parts.
+
     }
 
     @Override
-    public String onTalk(L2Npc npc, L2PcInstance player) {
+    public String onFirstTalk(L2Npc npc, L2PcInstance player) {
         return "main.htm";
     }
 
