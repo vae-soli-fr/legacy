@@ -16,6 +16,8 @@ package handlers.admincommandhandlers;
 
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.L2WorldRegion;
 import java.util.StringTokenizer;
 
 public class AdminScene implements IAdminCommandHandler {
@@ -31,7 +33,13 @@ public class AdminScene implements IAdminCommandHandler {
         if (actualCommand.equalsIgnoreCase("admin_scene")) {
             try {
                 int id = Integer.parseInt(st.nextToken());
-                activeChar.showQuestMovie(id);
+                L2WorldRegion region = L2World.getInstance().getRegion(activeChar.getX(), activeChar.getY());
+                for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+                    if (region == L2World.getInstance().getRegion(player.getX(), player.getY()) && (player.getInstanceId() == activeChar.getInstanceId())) {
+                        player.showQuestMovie(id);
+                    }
+                }
+
             } catch (NumberFormatException e) {
             }
         }
