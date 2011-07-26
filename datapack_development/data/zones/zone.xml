@@ -50,60 +50,879 @@
 	<zone id="10026" type="JailZone" shape="NPoly" minZ="-3049" maxZ="-2849" /> <!-- [16_10] gm_room_solo1 -->
 	<zone id="10027" type="JailZone" shape="NPoly" minZ="-3053" maxZ="-2853" /> <!-- [16_10] gm_room_solo2 -->
 
-	<!-- Town Peace Zones -->
-	<zone id="10800" type="PeaceZone" shape="NPoly" minZ="-3966" maxZ="-3466" /> <!-- [17_25] talking_island_town_peace_zone1 -->
-	<zone id="10801" type="PeaceZone" shape="NPoly" minZ="-3820" maxZ="-3320" /> <!-- [17_25] talking_island_town_peace_zone2 -->
-	<zone id="10802" type="PeaceZone" shape="NPoly" minZ="-3789" maxZ="-3289" /> <!-- [17_25] talking_island_town_peace_zone3 -->
-	<zone id="10803" type="PeaceZone" shape="NPoly" minZ="-3846" maxZ="-3346" /> <!-- [17_25] talking_island_town_peace_zone4 -->
-	<zone id="10804" type="PeaceZone" shape="NPoly" minZ="-8507" maxZ="-1507" /> <!-- [20_18] darkelf_town_peace_zone -->
-	<zone id="10805" type="PeaceZone" shape="NPoly" minZ="-3511" maxZ="-2011" /> <!-- [21_19] elf_town_peace1 -->
-	<zone id="10806" type="PeaceZone" shape="NPoly" minZ="-3245" maxZ="-2745" /> <!-- [19_21] guldiocastle_town_peace1 -->
-	<zone id="10807" type="PeaceZone" shape="NPoly" minZ="-3156" maxZ="-2656" /> <!-- [19_21] guldiocastle_town_peace2 -->
-	<zone id="10808" type="PeaceZone" shape="NPoly" minZ="-3244" maxZ="-2744" /> <!-- [17_22] gludin_town_peace1 -->
-	<zone id="10809" type="PeaceZone" shape="NPoly" minZ="-3244" maxZ="-2744" /> <!-- [17_22] gludin_town_peace2 -->
-	<zone id="10810" type="PeaceZone" shape="NPoly" minZ="-3276" maxZ="-2776" /> <!-- [17_22] gludin_town_peace3 -->
-	<zone id="10811" type="PeaceZone" shape="NPoly" minZ="-3291" maxZ="-2791" /> <!-- [17_22] gludin_town_peace4 -->
-	<zone id="10812" type="PeaceZone" shape="NPoly" minZ="-3157" maxZ="-2157" /> <!-- [20_22] dion_town_peace1 -->
-	<zone id="10813" type="PeaceZone" shape="NPoly" minZ="-2802" maxZ="-2302" /> <!-- [20_22] dion_town_peace2 -->
-	<zone id="10814" type="PeaceZone" shape="NPoly" minZ="-2858" maxZ="-2358" /> <!-- [20_22] dion_town_peace3 -->
-	<zone id="10815" type="PeaceZone" shape="NPoly" minZ="-3152" maxZ="-2452" /> <!-- [20_22] dion_town_peace4 -->
-	<zone id="10816" type="PeaceZone" shape="NPoly" minZ="-3246" maxZ="-2546" /> <!-- [20_22] dion_town_peace5 -->
-	<zone id="10817" type="PeaceZone" shape="NPoly" minZ="-3957" maxZ="-3357" /> <!-- [20_23] floran_town_peace1 -->
-	<zone id="10818" type="PeaceZone" shape="NPoly" minZ="-3967" maxZ="-3367" /> <!-- [20_23] floran_town_peace2 -->
-	<zone id="10819" type="PeaceZone" shape="NPoly" minZ="-3956" maxZ="-3356" /> <!-- [20_23] floran_town_peace3 -->
-	<zone id="10820" type="PeaceZone" shape="NPoly" minZ="-3654" maxZ="-2654" /> <!-- [22_22] giran_town_peace1 -->
-	<zone id="10821" type="PeaceZone" shape="NPoly" minZ="-3598" maxZ="-1598" /> <!-- [22_22] giran_town_peace2 -->
-	<zone id="10822" type="PeaceZone" shape="NPoly" minZ="-3602" maxZ="-2402" /> <!-- [22_22] giran_town_peace3 -->
-	<zone id="10823" type="PeaceZone" shape="NPoly" minZ="-3636" maxZ="-3036" /> <!-- [22_22] giran_town_peace4 -->
-	<zone id="10824" type="PeaceZone" shape="NPoly" minZ="-3799" maxZ="-2399" /> <!-- [22_22] giran_town_peace5 -->
-	<zone id="10825" type="PeaceZone" shape="NPoly" minZ="-3872" maxZ="-1872" /> <!-- [22_22] giran_town_peace6 -->
-	<zone id="10826" type="PeaceZone" shape="NPoly" minZ="-3810" maxZ="-2110" /> <!-- [22_22] giran_town_peace7 -->
-	<zone id="10827" type="PeaceZone" shape="NPoly" minZ="-3538" maxZ="-3338" /> <!-- [22_22] giran_town_peace8 -->
-	<zone id="10828" type="PeaceZone" shape="NPoly" minZ="-3496" maxZ="-2996" /> <!-- [22_22] giran_town_peace9 -->
-	<zone id="10829" type="PeaceZone" shape="NPoly" minZ="-3599" maxZ="-2999" /> <!-- [22_22] giran_town_peace10 -->
-	<zone id="10830" type="PeaceZone" shape="NPoly" minZ="-3410" maxZ="-3210" /> <!-- [22_22] giran_town_peace11 -->
-	<zone id="10831" type="PeaceZone" shape="NPoly" minZ="-3464" maxZ="-3264" /> <!-- [22_22] giran_town_peace12 -->
-	<zone id="10832" type="PeaceZone" shape="NPoly" minZ="-397" maxZ="603" /> <!-- [18_14] orc_town_peace1 -->
-	<zone id="10833" type="PeaceZone" shape="NPoly" minZ="-460" maxZ="540" /> <!-- [18_14] orc_town_peace2 -->
-	<zone id="10834" type="PeaceZone" shape="NPoly" minZ="-1600" maxZ="-400" /> <!-- [23_12] dwarf_town_peace1 -->
-	<zone id="10835" type="PeaceZone" shape="NPoly" minZ="-1685" maxZ="-685" /> <!-- [23_12] dwarf_town_peace2 -->
-	<zone id="10836" type="PeaceZone" shape="NPoly" minZ="-1724" maxZ="-724" /> <!-- [23_12] dwarf_town_peace3 -->
-	<zone id="10837" type="PeaceZone" shape="NPoly" minZ="-1000" maxZ="-400" /> <!-- [23_12] dwarf_town_peace4 -->
-	<zone id="10838" type="PeaceZone" shape="NPoly" minZ="-1257" maxZ="-657" /> <!-- [23_12] dwarf_town_peace5 -->
-	<zone id="10839" type="PeaceZone" shape="NPoly" minZ="-1822" maxZ="-1022" /> <!-- [22_19] oren_town_peace1 -->
-	<zone id="10840" type="PeaceZone" shape="NPoly" minZ="-2749" maxZ="-1249" /> <!-- [23_20] hunter_town_peace1 -->
-	<zone id="10841" type="PeaceZone" shape="NPoly" minZ="-2532" maxZ="-1032" /> <!-- [24_18] aden_town_peace1 -->
-	<zone id="10842" type="PeaceZone" shape="NPoly" minZ="-2517" maxZ="-1017" /> <!-- [24_18] aden_town_peace2 -->
-	<zone id="10843" type="PeaceZone" shape="NPoly" minZ="-2215" maxZ="-715" /> <!-- [24_18] aden_town_peace3 -->
-	<zone id="10844" type="PeaceZone" shape="NPoly" minZ="-2101" maxZ="-601" /> <!-- [24_18] aden_town_peace4 -->
-	<zone id="10845" type="PeaceZone" shape="NPoly" minZ="-2456" maxZ="-956" /> <!-- [24_18] aden_town_peace5 -->
-	<zone id="10846" type="PeaceZone" shape="NPoly" minZ="-4287" maxZ="-3287" /> <!-- [23_24] heiness_peace1 -->
-	<zone id="10847" type="PeaceZone" shape="NPoly" minZ="-4128" maxZ="-3128" /> <!-- [23_24] heiness_peace2 -->
-	<zone id="10848" type="PeaceZone" shape="NPoly" minZ="-4096" maxZ="-3096" /> <!-- [23_24] heiness_peace3 -->
-	<zone id="10849" type="PeaceZone" shape="NPoly" minZ="-4928" maxZ="1072" /> <!-- [24_16] godad_peace1 -->
-	<zone id="10850" type="PeaceZone" shape="NPoly" minZ="-1516" maxZ="484" /> <!-- [21_16] rune_peace1 -->
-	<zone id="10851" type="PeaceZone" shape="NPoly" minZ="-7660" maxZ="7340" /> <!-- [21_16] rune_peace2 -->
-	<zone id="10852" type="PeaceZone" shape="NPoly" minZ="-3200" maxZ="2072" /> <!-- [22_13] schutt_peace1 -->
+	<!-- Town Arena Zones (ex Peace Zones) -->
+	<zone id="10800" type="ArenaZone" shape="NPoly" minZ="-3966" maxZ="-3466"> <!-- [17_25] talking_island_town_peace_zone1 -->
+		<spawn X="-79411" Y="240677" Z="-3450" />
+		<spawn X="-80480" Y="242640" Z="-3690" />
+		<spawn X="-80336" Y="244656" Z="-3680" />
+		<spawn X="-82464" Y="247248" Z="-3570" />
+		<spawn X="-89522" Y="241696" Z="-3530" />
+		<spawn X="-87056" Y="237952" Z="-3580" />
+		<spawn X="-89536" Y="240336" Z="-3560" />
+		<spawn X="-88208" Y="241360" Z="-3560" />
+		<spawn X="-85328" Y="238080" Z="-3660" />
+		<spawn X="-89760" Y="237408" Z="-3660" />
+		<spawn X="-92976" Y="240560" Z="-3380" />
+		<spawn X="-94448" Y="240944" Z="-3300" />
+		<spawn X="-93552" Y="245296" Z="-3530" />
+		<spawn X="-91584" Y="238480" Z="-3650" />
+		<spawn X="-88720" Y="238976" Z="-3650" />
+		<spawn X="-91760" Y="243664" Z="-3440" />
+		<spawn X="-81680" Y="249696" Z="-3630" />
+		<spawn X="-83808" Y="251264" Z="-3630" />
+		<spawn X="-83328" Y="238304" Z="-3700" />
+		<spawn X="-91296" Y="236272" Z="-3690" />
+	</zone>
+
+	<zone id="10801" type="ArenaZone" shape="NPoly" minZ="-3820" maxZ="-3320"> <!-- [17_25] talking_island_town_peace_zone2 -->
+		<spawn X="-79411" Y="240677" Z="-3450" />
+		<spawn X="-80480" Y="242640" Z="-3690" />
+		<spawn X="-80336" Y="244656" Z="-3680" />
+		<spawn X="-82464" Y="247248" Z="-3570" />
+		<spawn X="-89522" Y="241696" Z="-3530" />
+		<spawn X="-87056" Y="237952" Z="-3580" />
+		<spawn X="-89536" Y="240336" Z="-3560" />
+		<spawn X="-88208" Y="241360" Z="-3560" />
+		<spawn X="-85328" Y="238080" Z="-3660" />
+		<spawn X="-89760" Y="237408" Z="-3660" />
+		<spawn X="-92976" Y="240560" Z="-3380" />
+		<spawn X="-94448" Y="240944" Z="-3300" />
+		<spawn X="-93552" Y="245296" Z="-3530" />
+		<spawn X="-91584" Y="238480" Z="-3650" />
+		<spawn X="-88720" Y="238976" Z="-3650" />
+		<spawn X="-91760" Y="243664" Z="-3440" />
+		<spawn X="-81680" Y="249696" Z="-3630" />
+		<spawn X="-83808" Y="251264" Z="-3630" />
+		<spawn X="-83328" Y="238304" Z="-3700" />
+		<spawn X="-91296" Y="236272" Z="-3690" />
+	</zone>
+
+	<zone id="10802" type="ArenaZone" shape="NPoly" minZ="-3789" maxZ="-3289"> <!-- [17_25] talking_island_town_peace_zone3 -->
+		<spawn X="-79411" Y="240677" Z="-3450" />
+		<spawn X="-80480" Y="242640" Z="-3690" />
+		<spawn X="-80336" Y="244656" Z="-3680" />
+		<spawn X="-82464" Y="247248" Z="-3570" />
+		<spawn X="-89522" Y="241696" Z="-3530" />
+		<spawn X="-87056" Y="237952" Z="-3580" />
+		<spawn X="-89536" Y="240336" Z="-3560" />
+		<spawn X="-88208" Y="241360" Z="-3560" />
+		<spawn X="-85328" Y="238080" Z="-3660" />
+		<spawn X="-89760" Y="237408" Z="-3660" />
+		<spawn X="-92976" Y="240560" Z="-3380" />
+		<spawn X="-94448" Y="240944" Z="-3300" />
+		<spawn X="-93552" Y="245296" Z="-3530" />
+		<spawn X="-91584" Y="238480" Z="-3650" />
+		<spawn X="-88720" Y="238976" Z="-3650" />
+		<spawn X="-91760" Y="243664" Z="-3440" />
+		<spawn X="-81680" Y="249696" Z="-3630" />
+		<spawn X="-83808" Y="251264" Z="-3630" />
+		<spawn X="-83328" Y="238304" Z="-3700" />
+		<spawn X="-91296" Y="236272" Z="-3690" />
+	</zone>
+
+	<zone id="10803" type="ArenaZone" shape="NPoly" minZ="-3846" maxZ="-3346"> <!-- [17_25] talking_island_town_peace_zone4 -->
+		<spawn X="-79411" Y="240677" Z="-3450" />
+		<spawn X="-80480" Y="242640" Z="-3690" />
+		<spawn X="-80336" Y="244656" Z="-3680" />
+		<spawn X="-82464" Y="247248" Z="-3570" />
+		<spawn X="-89522" Y="241696" Z="-3530" />
+		<spawn X="-87056" Y="237952" Z="-3580" />
+		<spawn X="-89536" Y="240336" Z="-3560" />
+		<spawn X="-88208" Y="241360" Z="-3560" />
+		<spawn X="-85328" Y="238080" Z="-3660" />
+		<spawn X="-89760" Y="237408" Z="-3660" />
+		<spawn X="-92976" Y="240560" Z="-3380" />
+		<spawn X="-94448" Y="240944" Z="-3300" />
+		<spawn X="-93552" Y="245296" Z="-3530" />
+		<spawn X="-91584" Y="238480" Z="-3650" />
+		<spawn X="-88720" Y="238976" Z="-3650" />
+		<spawn X="-91760" Y="243664" Z="-3440" />
+		<spawn X="-81680" Y="249696" Z="-3630" />
+		<spawn X="-83808" Y="251264" Z="-3630" />
+		<spawn X="-83328" Y="238304" Z="-3700" />
+		<spawn X="-91296" Y="236272" Z="-3690" />
+	</zone>
+
+	<zone id="10804" type="ArenaZone" shape="NPoly" minZ="-8507" maxZ="-1507"> <!-- [20_18] darkelf_town_peace_zone -->
+		<spawn X="3040" Y="24240" Z="-3700" />
+		<spawn X="1184" Y="21856" Z="-3240" />
+		<spawn X="3760" Y="25136" Z="-3700" />
+		<spawn X="672" Y="20096" Z="-3350" />
+		<spawn X="1248" Y="14512" Z="-3180" />
+		<spawn X="-8176" Y="23120" Z="-3450" />
+		<spawn X="-10208" Y="25408" Z="-3560" />
+		<spawn X="-11456" Y="23936" Z="-3700" />
+		<spawn X="-9632" Y="22624" Z="-3650" />
+		<spawn X="-5776" Y="22080" Z="-3510" />
+		<spawn X="2224" Y="11936" Z="-3050" />
+		<spawn X="1744" Y="8640" Z="-3250" />
+		<spawn X="2784" Y="7872" Z="-3110" />
+		<spawn X="3216" Y="10128" Z="-2980" />
+		<spawn X="3584" Y="6976" Z="-3020" />
+		<spawn X="-10768" Y="21952" Z="-3600" />
+		<spawn X="-11360" Y="22688" Z="-3600" />
+		<spawn X="-12784" Y="23232" Z="-3630" />
+		<spawn X="-13632" Y="21872" Z="-3620" />
+		<spawn X="-11984" Y="21232" Z="-3600" />
+	</zone>
+
+	<zone id="10805" type="ArenaZone" shape="NPoly" minZ="-3511" maxZ="-2011"> <!-- [21_19] elf_town_peace1 -->
+		<spawn X="40720" Y="56064" Z="-3580" />
+		<spawn X="39760" Y="55040" Z="-3410" />
+		<spawn X="43152" Y="55920" Z="-3620" />
+		<spawn X="44192" Y="56960" Z="-3580" />
+		<spawn X="39328" Y="56256" Z="-3580" />
+		<spawn X="40448" Y="57744" Z="-3600" />
+		<spawn X="38080" Y="52048" Z="-3500" />
+		<spawn X="38784" Y="51824" Z="-3470" />
+		<spawn X="37088" Y="51248" Z="-3400" />
+		<spawn X="37952" Y="49680" Z="-3480" />
+		<spawn X="38848" Y="47072" Z="-3580" />
+		<spawn X="36688" Y="49856" Z="-3440" />
+		<spawn X="36096" Y="46544" Z="-3680" />
+		<spawn X="37200" Y="45232" Z="-3600" />
+		<spawn X="50128" Y="55472" Z="-3410" />
+		<spawn X="51856" Y="54432" Z="-3320" />
+		<spawn X="53136" Y="54592" Z="-3420" />
+		<spawn X="51824" Y="58624" Z="-3400" />
+		<spawn X="51232" Y="59216" Z="-3320" />
+		<spawn X="49808" Y="56240" Z="-3430" />
+	</zone>
+
+	<zone id="10806" type="ArenaZone" shape="NPoly" minZ="-3245" maxZ="-2745"> <!-- [19_21] guldiocastle_town_peace1 -->
+		<spawn X="-17280" Y="125392" Z="-3120" />
+		<spawn X="-16128" Y="126944" Z="-3120" />
+		<spawn X="-14464" Y="128288" Z="-3250" />
+		<spawn X="-13040" Y="128768" Z="-3350" />
+		<spawn X="-15600" Y="127904" Z="-3150" />
+		<spawn X="-16128" Y="128592" Z="-3230" />
+		<spawn X="-15632" Y="129456" Z="-3400" />
+		<spawn X="-16960" Y="127696" Z="-3200" />
+		<spawn X="-17632" Y="126320" Z="-3150" />
+		<spawn X="-18704" Y="124960" Z="-3100" />
+		<spawn X="-17760" Y="121888" Z="-3140" />
+		<spawn X="-17472" Y="122752" Z="-3100" />
+		<spawn X="-18720" Y="124080" Z="-3130" />
+		<spawn X="-19008" Y="122432" Z="-3200" />
+		<spawn X="-20048" Y="122432" Z="-3280" />
+		<spawn X="-19008" Y="126160" Z="-3250" />
+		<spawn X="-18480" Y="127184" Z="-3300" />
+		<spawn X="-19664" Y="125440" Z="-3180" />
+		<spawn X="-20176" Y="124512" Z="-3350" />
+		<spawn X="-19040" Y="121632" Z="-3200" />
+	</zone>
+
+	<zone id="10807" type="ArenaZone" shape="NPoly" minZ="-3156" maxZ="-2656"> <!-- [19_21] guldiocastle_town_peace2 -->
+		<spawn X="-17280" Y="125392" Z="-3120" />
+		<spawn X="-16128" Y="126944" Z="-3120" />
+		<spawn X="-14464" Y="128288" Z="-3250" />
+		<spawn X="-13040" Y="128768" Z="-3350" />
+		<spawn X="-15600" Y="127904" Z="-3150" />
+		<spawn X="-16128" Y="128592" Z="-3230" />
+		<spawn X="-15632" Y="129456" Z="-3400" />
+		<spawn X="-16960" Y="127696" Z="-3200" />
+		<spawn X="-17632" Y="126320" Z="-3150" />
+		<spawn X="-18704" Y="124960" Z="-3100" />
+		<spawn X="-17760" Y="121888" Z="-3140" />
+		<spawn X="-17472" Y="122752" Z="-3100" />
+		<spawn X="-18720" Y="124080" Z="-3130" />
+		<spawn X="-19008" Y="122432" Z="-3200" />
+		<spawn X="-20048" Y="122432" Z="-3280" />
+		<spawn X="-19008" Y="126160" Z="-3250" />
+		<spawn X="-18480" Y="127184" Z="-3300" />
+		<spawn X="-19664" Y="125440" Z="-3180" />
+		<spawn X="-20176" Y="124512" Z="-3350" />
+		<spawn X="-19040" Y="121632" Z="-3200" />
+	</zone>
+
+	<zone id="10808" type="ArenaZone" shape="NPoly" minZ="-3244" maxZ="-2744"> <!-- [17_22] gludin_town_peace1 -->
+		<spawn X="-81616" Y="157104" Z="-3150" />
+		<spawn X="-80688" Y="157216" Z="-3150" />
+		<spawn X="-79568" Y="156960" Z="-3150" />
+		<spawn X="-78800" Y="157744" Z="-3150" />
+		<spawn X="-80448" Y="157968" Z="-3130" />
+		<spawn X="-81712" Y="159536" Z="-3230" />
+		<spawn X="-79744" Y="160592" Z="-3330" />
+		<spawn X="-79584" Y="159408" Z="-3180" />
+		<spawn X="-74016" Y="150656" Z="-2800" />
+		<spawn X="-72720" Y="149632" Z="-2780" />
+		<spawn X="-75904" Y="162000" Z="-3300" />
+		<spawn X="-75488" Y="161472" Z="-3250" />
+		<spawn X="-74688" Y="160736" Z="-3200" />
+		<spawn X="-74352" Y="161488" Z="-3250" />
+		<spawn X="-76656" Y="160768" Z="-3280" />
+		<spawn X="-77472" Y="160960" Z="-3470" />
+		<spawn X="-77776" Y="158752" Z="-3270" />
+		<spawn X="-80448" Y="161488" Z="-3420" />
+		<spawn X="-75440" Y="162672" Z="-3350" />
+		<spawn X="-81760" Y="161248" Z="-3200" />
+	</zone>
+
+	<zone id="10809" type="ArenaZone" shape="NPoly" minZ="-3244" maxZ="-2744"> <!-- [17_22] gludin_town_peace2 -->
+		<spawn X="-81616" Y="157104" Z="-3150" />
+		<spawn X="-80688" Y="157216" Z="-3150" />
+		<spawn X="-79568" Y="156960" Z="-3150" />
+		<spawn X="-78800" Y="157744" Z="-3150" />
+		<spawn X="-80448" Y="157968" Z="-3130" />
+		<spawn X="-81712" Y="159536" Z="-3230" />
+		<spawn X="-79744" Y="160592" Z="-3330" />
+		<spawn X="-79584" Y="159408" Z="-3180" />
+		<spawn X="-74016" Y="150656" Z="-2800" />
+		<spawn X="-72720" Y="149632" Z="-2780" />
+		<spawn X="-75904" Y="162000" Z="-3300" />
+		<spawn X="-75488" Y="161472" Z="-3250" />
+		<spawn X="-74688" Y="160736" Z="-3200" />
+		<spawn X="-74352" Y="161488" Z="-3250" />
+		<spawn X="-76656" Y="160768" Z="-3280" />
+		<spawn X="-77472" Y="160960" Z="-3470" />
+		<spawn X="-77776" Y="158752" Z="-3270" />
+		<spawn X="-80448" Y="161488" Z="-3420" />
+		<spawn X="-75440" Y="162672" Z="-3350" />
+		<spawn X="-81760" Y="161248" Z="-3200" />
+	</zone>
+
+	<zone id="10810" type="ArenaZone" shape="NPoly" minZ="-3276" maxZ="-2776"> <!-- [17_22] gludin_town_peace3 -->
+		<spawn X="-81616" Y="157104" Z="-3150" />
+		<spawn X="-80688" Y="157216" Z="-3150" />
+		<spawn X="-79568" Y="156960" Z="-3150" />
+		<spawn X="-78800" Y="157744" Z="-3150" />
+		<spawn X="-80448" Y="157968" Z="-3130" />
+		<spawn X="-81712" Y="159536" Z="-3230" />
+		<spawn X="-79744" Y="160592" Z="-3330" />
+		<spawn X="-79584" Y="159408" Z="-3180" />
+		<spawn X="-74016" Y="150656" Z="-2800" />
+		<spawn X="-72720" Y="149632" Z="-2780" />
+		<spawn X="-75904" Y="162000" Z="-3300" />
+		<spawn X="-75488" Y="161472" Z="-3250" />
+		<spawn X="-74688" Y="160736" Z="-3200" />
+		<spawn X="-74352" Y="161488" Z="-3250" />
+		<spawn X="-76656" Y="160768" Z="-3280" />
+		<spawn X="-77472" Y="160960" Z="-3470" />
+		<spawn X="-77776" Y="158752" Z="-3270" />
+		<spawn X="-80448" Y="161488" Z="-3420" />
+		<spawn X="-75440" Y="162672" Z="-3350" />
+		<spawn X="-81760" Y="161248" Z="-3200" />
+	</zone>
+
+	<zone id="10811" type="ArenaZone" shape="NPoly" minZ="-3291" maxZ="-2791"> <!-- [17_22] gludin_town_peace4 -->
+		<spawn X="-81616" Y="157104" Z="-3150" />
+		<spawn X="-80688" Y="157216" Z="-3150" />
+		<spawn X="-79568" Y="156960" Z="-3150" />
+		<spawn X="-78800" Y="157744" Z="-3150" />
+		<spawn X="-80448" Y="157968" Z="-3130" />
+		<spawn X="-81712" Y="159536" Z="-3230" />
+		<spawn X="-79744" Y="160592" Z="-3330" />
+		<spawn X="-79584" Y="159408" Z="-3180" />
+		<spawn X="-74016" Y="150656" Z="-2800" />
+		<spawn X="-72720" Y="149632" Z="-2780" />
+		<spawn X="-75904" Y="162000" Z="-3300" />
+		<spawn X="-75488" Y="161472" Z="-3250" />
+		<spawn X="-74688" Y="160736" Z="-3200" />
+		<spawn X="-74352" Y="161488" Z="-3250" />
+		<spawn X="-76656" Y="160768" Z="-3280" />
+		<spawn X="-77472" Y="160960" Z="-3470" />
+		<spawn X="-77776" Y="158752" Z="-3270" />
+		<spawn X="-80448" Y="161488" Z="-3420" />
+		<spawn X="-75440" Y="162672" Z="-3350" />
+		<spawn X="-81760" Y="161248" Z="-3200" />
+	</zone>
+
+	<zone id="10812" type="ArenaZone" shape="NPoly" minZ="-3157" maxZ="-2157"> <!-- [20_22] dion_town_peace1 -->
+		<spawn X="17555" Y="170393" Z="-3400" />
+		<spawn X="17699" Y="170153" Z="-3400" />
+		<spawn X="17315" Y="170041" Z="-3400" />
+		<spawn X="17283" Y="170329" Z="-3400" />
+		<spawn X="17536" Y="170505" Z="-3400" />
+		<spawn X="17299" Y="170341" Z="-3400" />
+		<spawn X="17085" Y="170170" Z="-3400" />
+		<spawn X="17421" Y="169993" Z="-3400" />
+		<spawn X="17820" Y="170054" Z="-3400" />
+		<spawn X="18054" Y="170263" Z="-3400" />
+		<spawn X="17931" Y="170381" Z="-3400" />
+	</zone>
+
+	<zone id="10813" type="ArenaZone" shape="NPoly" minZ="-2802" maxZ="-2302"> <!-- [20_22] dion_town_peace2 -->
+		<spawn X="17555" Y="170393" Z="-3400" />
+		<spawn X="17699" Y="170153" Z="-3400" />
+		<spawn X="17315" Y="170041" Z="-3400" />
+		<spawn X="17283" Y="170329" Z="-3400" />
+		<spawn X="17536" Y="170505" Z="-3400" />
+		<spawn X="17299" Y="170341" Z="-3400" />
+		<spawn X="17085" Y="170170" Z="-3400" />
+		<spawn X="17421" Y="169993" Z="-3400" />
+		<spawn X="17820" Y="170054" Z="-3400" />
+		<spawn X="18054" Y="170263" Z="-3400" />
+		<spawn X="17931" Y="170381" Z="-3400" />
+	</zone>
+
+	<zone id="10814" type="ArenaZone" shape="NPoly" minZ="-2858" maxZ="-2358"> <!-- [20_22] dion_town_peace3 -->
+		<spawn X="17555" Y="170393" Z="-3400" />
+		<spawn X="17699" Y="170153" Z="-3400" />
+		<spawn X="17315" Y="170041" Z="-3400" />
+		<spawn X="17283" Y="170329" Z="-3400" />
+		<spawn X="17536" Y="170505" Z="-3400" />
+		<spawn X="17299" Y="170341" Z="-3400" />
+		<spawn X="17085" Y="170170" Z="-3400" />
+		<spawn X="17421" Y="169993" Z="-3400" />
+		<spawn X="17820" Y="170054" Z="-3400" />
+		<spawn X="18054" Y="170263" Z="-3400" />
+		<spawn X="17931" Y="170381" Z="-3400" />
+	</zone>
+
+	<zone id="10815" type="ArenaZone" shape="NPoly" minZ="-3152" maxZ="-2452"> <!-- [20_22] dion_town_peace4 -->
+		<spawn X="17555" Y="170393" Z="-3400" />
+		<spawn X="17699" Y="170153" Z="-3400" />
+		<spawn X="17315" Y="170041" Z="-3400" />
+		<spawn X="17283" Y="170329" Z="-3400" />
+		<spawn X="17536" Y="170505" Z="-3400" />
+		<spawn X="17299" Y="170341" Z="-3400" />
+		<spawn X="17085" Y="170170" Z="-3400" />
+		<spawn X="17421" Y="169993" Z="-3400" />
+		<spawn X="17820" Y="170054" Z="-3400" />
+		<spawn X="18054" Y="170263" Z="-3400" />
+		<spawn X="17931" Y="170381" Z="-3400" />
+	</zone>
+
+	<zone id="10816" type="ArenaZone" shape="NPoly" minZ="-3246" maxZ="-2546"> <!-- [20_22] dion_town_peace5 -->
+		<spawn X="17555" Y="170393" Z="-3400" />
+		<spawn X="17699" Y="170153" Z="-3400" />
+		<spawn X="17315" Y="170041" Z="-3400" />
+		<spawn X="17283" Y="170329" Z="-3400" />
+		<spawn X="17536" Y="170505" Z="-3400" />
+		<spawn X="17299" Y="170341" Z="-3400" />
+		<spawn X="17085" Y="170170" Z="-3400" />
+		<spawn X="17421" Y="169993" Z="-3400" />
+		<spawn X="17820" Y="170054" Z="-3400" />
+		<spawn X="18054" Y="170263" Z="-3400" />
+		<spawn X="17931" Y="170381" Z="-3400" />
+	</zone>
+
+	<zone id="10817" type="ArenaZone" shape="NPoly" minZ="-3957" maxZ="-3357"> <!-- [20_23] floran_town_peace1 -->
+		<spawn X="17555" Y="170393" Z="-3451" />
+		<spawn X="17699" Y="170153" Z="-3451" />
+		<spawn X="17315" Y="170041" Z="-3451" />
+		<spawn X="17283" Y="170329" Z="-3451" />
+		<spawn X="17536" Y="170505" Z="-3451" />
+		<spawn X="17299" Y="170341" Z="-3451" />
+		<spawn X="17085" Y="170170" Z="-3451" />
+		<spawn X="17421" Y="169993" Z="-3451" />
+		<spawn X="17820" Y="170054" Z="-3451" />
+		<spawn X="18054" Y="170263" Z="-3451" />
+		<spawn X="17931" Y="170381" Z="-3451" />
+	</zone>
+
+	<zone id="10818" type="ArenaZone" shape="NPoly" minZ="-3967" maxZ="-3367"> <!-- [20_23] floran_town_peace2 -->
+		<spawn X="17555" Y="170393" Z="-3451" />
+		<spawn X="17699" Y="170153" Z="-3451" />
+		<spawn X="17315" Y="170041" Z="-3451" />
+		<spawn X="17283" Y="170329" Z="-3451" />
+		<spawn X="17536" Y="170505" Z="-3451" />
+		<spawn X="17299" Y="170341" Z="-3451" />
+		<spawn X="17085" Y="170170" Z="-3451" />
+		<spawn X="17421" Y="169993" Z="-3451" />
+		<spawn X="17820" Y="170054" Z="-3451" />
+		<spawn X="18054" Y="170263" Z="-3451" />
+		<spawn X="17931" Y="170381" Z="-3451" />
+	</zone>
+
+	<zone id="10819" type="ArenaZone" shape="NPoly" minZ="-3956" maxZ="-3356"> <!-- [20_23] floran_town_peace3 -->
+		<spawn X="17555" Y="170393" Z="-3451" />
+		<spawn X="17699" Y="170153" Z="-3451" />
+		<spawn X="17315" Y="170041" Z="-3451" />
+		<spawn X="17283" Y="170329" Z="-3451" />
+		<spawn X="17536" Y="170505" Z="-3451" />
+		<spawn X="17299" Y="170341" Z="-3451" />
+		<spawn X="17085" Y="170170" Z="-3451" />
+		<spawn X="17421" Y="169993" Z="-3451" />
+		<spawn X="17820" Y="170054" Z="-3451" />
+		<spawn X="18054" Y="170263" Z="-3451" />
+		<spawn X="17931" Y="170381" Z="-3451" />
+	</zone>
+
+	<zone id="10820" type="ArenaZone" shape="NPoly" minZ="-3654" maxZ="-2654"> <!-- [22_22] giran_town_peace1 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10821" type="ArenaZone" shape="NPoly" minZ="-3598" maxZ="-1598"> <!-- [22_22] giran_town_peace2 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10822" type="ArenaZone" shape="NPoly" minZ="-3602" maxZ="-2402"> <!-- [22_22] giran_town_peace3 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10823" type="ArenaZone" shape="NPoly" minZ="-3636" maxZ="-3036"> <!-- [22_22] giran_town_peace4 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10824" type="ArenaZone" shape="NPoly" minZ="-3799" maxZ="-2399"> <!-- [22_22] giran_town_peace5 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10825" type="ArenaZone" shape="NPoly" minZ="-3872" maxZ="-1872"> <!-- [22_22] giran_town_peace6 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10826" type="ArenaZone" shape="NPoly" minZ="-3810" maxZ="-2110"> <!-- [22_22] giran_town_peace7 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10827" type="ArenaZone" shape="NPoly" minZ="-3538" maxZ="-3338"> <!-- [22_22] giran_town_peace8 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10828" type="ArenaZone" shape="NPoly" minZ="-3496" maxZ="-2996"> <!-- [22_22] giran_town_peace9 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10829" type="ArenaZone" shape="NPoly" minZ="-3599" maxZ="-2999"> <!-- [22_22] giran_town_peace10 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10830" type="ArenaZone" shape="NPoly" minZ="-3410" maxZ="-3210"> <!-- [22_22] giran_town_peace11 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10831" type="ArenaZone" shape="NPoly" minZ="-3464" maxZ="-3264"> <!-- [22_22] giran_town_peace12 -->
+		<spawn X="74450" Y="144238" Z="-3730" />
+		<spawn X="74209" Y="142395" Z="-3730" />
+		<spawn X="77279" Y="145045" Z="-3630" />
+		<spawn X="74809" Y="146119" Z="-3600" />
+		<spawn X="75006" Y="143520" Z="-3700" />
+		<spawn X="81347" Y="140579" Z="-3520" />
+		<spawn X="79543" Y="142050" Z="-3500" />
+		<spawn X="86223" Y="140993" Z="-3400" />
+		<spawn X="78692" Y="154573" Z="-3450" />
+		<spawn X="77870" Y="156209" Z="-3430" />
+		<spawn X="79832" Y="154009" Z="-3500" />
+		<spawn X="75501" Y="147178" Z="-3530" />
+	</zone>
+
+	<zone id="10832" type="ArenaZone" shape="NPoly" minZ="-397" maxZ="603"> <!-- [18_14] orc_town_peace1 -->
+		<spawn X="-43552" Y="-121488" Z="-233" />
+		<spawn X="-42560" Y="-121344" Z="-188" />
+		<spawn X="-41536" Y="-122960" Z="-308" />
+		<spawn X="-40464" Y="-122752" Z="-364" />
+		<spawn X="-45568" Y="-107296" Z="-516" />
+		<spawn X="-46512" Y="-106032" Z="-700" />
+		<spawn X="-44304" Y="-105888" Z="-1156" />
+		<spawn X="-43728" Y="-106688" Z="-1304" />
+		<spawn X="-40000" Y="-109200" Z="-1736" />
+		<spawn X="-39792" Y="-110832" Z="-1860" />
+		<spawn X="-39136" Y="-112688" Z="-1844" />
+		<spawn X="-37888" Y="-112608" Z="-1772" />
+	</zone>
+
+	<zone id="10833" type="ArenaZone" shape="NPoly" minZ="-460" maxZ="540"> <!-- [18_14] orc_town_peace2 -->
+		<spawn X="-43552" Y="-121488" Z="-233" />
+		<spawn X="-42560" Y="-121344" Z="-188" />
+		<spawn X="-41536" Y="-122960" Z="-308" />
+		<spawn X="-40464" Y="-122752" Z="-364" />
+		<spawn X="-45568" Y="-107296" Z="-516" />
+		<spawn X="-46512" Y="-106032" Z="-700" />
+		<spawn X="-44304" Y="-105888" Z="-1156" />
+		<spawn X="-43728" Y="-106688" Z="-1304" />
+		<spawn X="-40000" Y="-109200" Z="-1736" />
+		<spawn X="-39792" Y="-110832" Z="-1860" />
+		<spawn X="-39136" Y="-112688" Z="-1844" />
+		<spawn X="-37888" Y="-112608" Z="-1772" />
+	</zone>
+
+	<zone id="10834" type="ArenaZone" shape="NPoly" minZ="-1600" maxZ="-400"> <!-- [23_12] dwarf_town_peace1 -->
+		<spawn X="118160" Y="-179328" Z="-1578" />
+		<spawn X="119024" Y="-180208" Z="-2180" />
+		<spawn X="119728" Y="-180912" Z="-2649" />
+		<spawn X="119776" Y="-181968" Z="-2948" />
+		<spawn X="119392" Y="-183968" Z="-3125" />
+		<spawn X="119520" Y="-184928" Z="-3196" />
+		<spawn X="119568" Y="-186016" Z="-3220" />
+		<spawn X="119984" Y="-187312" Z="-3260" />
+		<spawn X="119632" Y="-188352" Z="-3260" />
+		<spawn X="119264" Y="-188736" Z="-3203" />
+		<spawn X="118656" Y="-187760" Z="-2828" />
+	</zone>
+
+	<zone id="10835" type="ArenaZone" shape="NPoly" minZ="-1685" maxZ="-685"> <!-- [23_12] dwarf_town_peace2 -->
+		<spawn X="118160" Y="-179328" Z="-1578" />
+		<spawn X="119024" Y="-180208" Z="-2180" />
+		<spawn X="119728" Y="-180912" Z="-2649" />
+		<spawn X="119776" Y="-181968" Z="-2948" />
+		<spawn X="119392" Y="-183968" Z="-3125" />
+		<spawn X="119520" Y="-184928" Z="-3196" />
+		<spawn X="119568" Y="-186016" Z="-3220" />
+		<spawn X="119984" Y="-187312" Z="-3260" />
+		<spawn X="119632" Y="-188352" Z="-3260" />
+		<spawn X="119264" Y="-188736" Z="-3203" />
+		<spawn X="118656" Y="-187760" Z="-2828" />
+	</zone>
+
+	<zone id="10836" type="ArenaZone" shape="NPoly" minZ="-1724" maxZ="-724"> <!-- [23_12] dwarf_town_peace3 -->
+		<spawn X="118160" Y="-179328" Z="-1578" />
+		<spawn X="119024" Y="-180208" Z="-2180" />
+		<spawn X="119728" Y="-180912" Z="-2649" />
+		<spawn X="119776" Y="-181968" Z="-2948" />
+		<spawn X="119392" Y="-183968" Z="-3125" />
+		<spawn X="119520" Y="-184928" Z="-3196" />
+		<spawn X="119568" Y="-186016" Z="-3220" />
+		<spawn X="119984" Y="-187312" Z="-3260" />
+		<spawn X="119632" Y="-188352" Z="-3260" />
+		<spawn X="119264" Y="-188736" Z="-3203" />
+		<spawn X="118656" Y="-187760" Z="-2828" />
+	</zone>
+
+	<zone id="10837" type="ArenaZone" shape="NPoly" minZ="-1000" maxZ="-400"> <!-- [23_12] dwarf_town_peace4 -->
+		<spawn X="118160" Y="-179328" Z="-1578" />
+		<spawn X="119024" Y="-180208" Z="-2180" />
+		<spawn X="119728" Y="-180912" Z="-2649" />
+		<spawn X="119776" Y="-181968" Z="-2948" />
+		<spawn X="119392" Y="-183968" Z="-3125" />
+		<spawn X="119520" Y="-184928" Z="-3196" />
+		<spawn X="119568" Y="-186016" Z="-3220" />
+		<spawn X="119984" Y="-187312" Z="-3260" />
+		<spawn X="119632" Y="-188352" Z="-3260" />
+		<spawn X="119264" Y="-188736" Z="-3203" />
+		<spawn X="118656" Y="-187760" Z="-2828" />
+	</zone>
+
+	<zone id="10838" type="ArenaZone" shape="NPoly" minZ="-1257" maxZ="-657"> <!-- [23_12] dwarf_town_peace5 -->
+		<spawn X="118160" Y="-179328" Z="-1578" />
+		<spawn X="119024" Y="-180208" Z="-2180" />
+		<spawn X="119728" Y="-180912" Z="-2649" />
+		<spawn X="119776" Y="-181968" Z="-2948" />
+		<spawn X="119392" Y="-183968" Z="-3125" />
+		<spawn X="119520" Y="-184928" Z="-3196" />
+		<spawn X="119568" Y="-186016" Z="-3220" />
+		<spawn X="119984" Y="-187312" Z="-3260" />
+		<spawn X="119632" Y="-188352" Z="-3260" />
+		<spawn X="119264" Y="-188736" Z="-3203" />
+		<spawn X="118656" Y="-187760" Z="-2828" />
+	</zone>
+
+	<zone id="10839" type="ArenaZone" shape="NPoly" minZ="-1822" maxZ="-1022"> <!-- [22_19] oren_town_peace1 -->
+		<spawn X="76576" Y="50151" Z="-3200" />
+		<spawn X="77310" Y="50317" Z="-3160" />
+		<spawn X="77250" Y="51285" Z="-3160" />
+		<spawn X="78811" Y="51106" Z="-3160" />
+		<spawn X="75755" Y="51372" Z="-3250" />
+		<spawn X="75613" Y="52504" Z="-3200" />
+		<spawn X="74459" Y="52441" Z="-3260" />
+		<spawn X="74467" Y="53354" Z="-3200" />
+		<spawn X="73600" Y="53918" Z="-3170" />
+		<spawn X="71102" Y="57875" Z="-3330" />
+		<spawn X="70052" Y="59300" Z="-3580" />
+		<spawn X="70420" Y="57480" Z="-3480" />
+		<spawn X="75474" Y="60125" Z="-2730" />
+		<spawn X="74880" Y="60818" Z="-2820" />
+		<spawn X="88011" Y="56589" Z="-3560" />
+		<spawn X="91239" Y="53120" Z="-3430" />
+		<spawn X="81785" Y="46306" Z="-3160" />
+		<spawn X="80708" Y="44609" Z="-3120" />
+		<spawn X="70139" Y="55885" Z="-3550" />
+		<spawn X="80236" Y="45675" Z="-3150" />
+	</zone>
+
+	<zone id="10840" type="ArenaZone" shape="NPoly" minZ="-2749" maxZ="-1249"> <!-- [23_20] hunter_town_peace1 -->
+		<spawn X="122098" Y="70373" Z="-2864" />
+		<spawn X="118674" Y="71218" Z="-2743" />
+		<spawn X="118040" Y="67175" Z="-2905" />
+		<spawn X="119300" Y="70660" Z="-2850" />
+		<spawn X="118851" Y="70566" Z="-2800" />
+		<spawn X="112655" Y="70976" Z="-3122" />
+		<spawn X="119712" Y="66376" Z="-2960" />
+		<spawn X="107511" Y="82890" Z="-2515" />
+		<spawn X="105702" Y="82773" Z="-2803" />
+		<spawn X="104257" Y="82194" Z="-2581" />
+		<spawn X="104474" Y="81109" Z="-2651" />
+	</zone>
+
+	<zone id="10841" type="ArenaZone" shape="NPoly" minZ="-2532" maxZ="-1032"> <!-- [24_18] aden_town_peace1 -->
+		<spawn X="136398" Y="28901" Z="-3582" />
+		<spawn X="137292" Y="28485" Z="-3290" />
+		<spawn X="155925" Y="28554" Z="-3164" />
+		<spawn X="157608" Y="23866" Z="-3760" />
+		<spawn X="157463" Y="28770" Z="-3371" />
+		<spawn X="159348" Y="28561" Z="-3400" />
+		<spawn X="160236" Y="14119" Z="-3892" />
+		<spawn X="156764" Y="13774" Z="-3960" />
+		<spawn X="161426" Y="23055" Z="-3670" />
+		<spawn X="136380" Y="21899" Z="-3647" />
+		<spawn X="137708" Y="15640" Z="-3800" />
+		<spawn X="136629" Y="28127" Z="-3258" />
+	</zone>
+
+	<zone id="10842" type="ArenaZone" shape="NPoly" minZ="-2517" maxZ="-1017"> <!-- [24_18] aden_town_peace2 -->
+		<spawn X="136398" Y="28901" Z="-3582" />
+		<spawn X="137292" Y="28485" Z="-3290" />
+		<spawn X="155925" Y="28554" Z="-3164" />
+		<spawn X="157608" Y="23866" Z="-3760" />
+		<spawn X="157463" Y="28770" Z="-3371" />
+		<spawn X="159348" Y="28561" Z="-3400" />
+		<spawn X="160236" Y="14119" Z="-3892" />
+		<spawn X="156764" Y="13774" Z="-3960" />
+		<spawn X="161426" Y="23055" Z="-3670" />
+		<spawn X="136380" Y="21899" Z="-3647" />
+		<spawn X="137708" Y="15640" Z="-3800" />
+		<spawn X="136629" Y="28127" Z="-3258" />
+	</zone>
+
+	<zone id="10843" type="ArenaZone" shape="NPoly" minZ="-2215" maxZ="-715"> <!-- [24_18] aden_town_peace3 -->
+		<spawn X="136398" Y="28901" Z="-3582" />
+		<spawn X="137292" Y="28485" Z="-3290" />
+		<spawn X="155925" Y="28554" Z="-3164" />
+		<spawn X="157608" Y="23866" Z="-3760" />
+		<spawn X="157463" Y="28770" Z="-3371" />
+		<spawn X="159348" Y="28561" Z="-3400" />
+		<spawn X="160236" Y="14119" Z="-3892" />
+		<spawn X="156764" Y="13774" Z="-3960" />
+		<spawn X="161426" Y="23055" Z="-3670" />
+		<spawn X="136380" Y="21899" Z="-3647" />
+		<spawn X="137708" Y="15640" Z="-3800" />
+		<spawn X="136629" Y="28127" Z="-3258" />
+	</zone>
+
+	<zone id="10844" type="ArenaZone" shape="NPoly" minZ="-2101" maxZ="-601"> <!-- [24_18] aden_town_peace4 -->
+		<spawn X="136398" Y="28901" Z="-3582" />
+		<spawn X="137292" Y="28485" Z="-3290" />
+		<spawn X="155925" Y="28554" Z="-3164" />
+		<spawn X="157608" Y="23866" Z="-3760" />
+		<spawn X="157463" Y="28770" Z="-3371" />
+		<spawn X="159348" Y="28561" Z="-3400" />
+		<spawn X="160236" Y="14119" Z="-3892" />
+		<spawn X="156764" Y="13774" Z="-3960" />
+		<spawn X="161426" Y="23055" Z="-3670" />
+		<spawn X="136380" Y="21899" Z="-3647" />
+		<spawn X="137708" Y="15640" Z="-3800" />
+		<spawn X="136629" Y="28127" Z="-3258" />
+	</zone>
+
+	<zone id="10845" type="ArenaZone" shape="NPoly" minZ="-2456" maxZ="-956"> <!-- [24_18] aden_town_peace5 -->
+		<spawn X="136398" Y="28901" Z="-3582" />
+		<spawn X="137292" Y="28485" Z="-3290" />
+		<spawn X="155925" Y="28554" Z="-3164" />
+		<spawn X="157608" Y="23866" Z="-3760" />
+		<spawn X="157463" Y="28770" Z="-3371" />
+		<spawn X="159348" Y="28561" Z="-3400" />
+		<spawn X="160236" Y="14119" Z="-3892" />
+		<spawn X="156764" Y="13774" Z="-3960" />
+		<spawn X="161426" Y="23055" Z="-3670" />
+		<spawn X="136380" Y="21899" Z="-3647" />
+		<spawn X="137708" Y="15640" Z="-3800" />
+		<spawn X="136629" Y="28127" Z="-3258" />
+	</zone>
+
+	<zone id="10846" type="ArenaZone" shape="NPoly" minZ="-4287" maxZ="-3287"> <!-- [23_24] heiness_peace1 -->
+		<spawn X="117872" Y="225536" Z="-3200" />
+		<spawn X="118064" Y="225648" Z="-3200" />
+		<spawn X="101696" Y="221808" Z="-3520" />
+		<spawn X="101552" Y="221568" Z="-3520" />
+		<spawn X="100784" Y="218272" Z="-3420" />
+		<spawn X="100928" Y="218560" Z="-3420" />
+	</zone>
+
+	<zone id="10847" type="ArenaZone" shape="NPoly" minZ="-4128" maxZ="-3128"> <!-- [23_24] heiness_peace2 -->
+		<spawn X="117872" Y="225536" Z="-3200" />
+		<spawn X="118064" Y="225648" Z="-3200" />
+		<spawn X="101696" Y="221808" Z="-3520" />
+		<spawn X="101552" Y="221568" Z="-3520" />
+		<spawn X="100784" Y="218272" Z="-3420" />
+		<spawn X="100928" Y="218560" Z="-3420" />
+	</zone>
+
+	<zone id="10848" type="ArenaZone" shape="NPoly" minZ="-4096" maxZ="-3096"> <!-- [23_24] heiness_peace3 -->
+		<spawn X="117872" Y="225536" Z="-3200" />
+		<spawn X="118064" Y="225648" Z="-3200" />
+		<spawn X="101696" Y="221808" Z="-3520" />
+		<spawn X="101552" Y="221568" Z="-3520" />
+		<spawn X="100784" Y="218272" Z="-3420" />
+		<spawn X="100928" Y="218560" Z="-3420" />
+	</zone>
+
+	<zone id="10849" type="ArenaZone" shape="NPoly" minZ="-4928" maxZ="1072"> <!-- [24_16] godad_peace1 -->
+		<spawn X="142656" Y="-55008" Z="-3024" />
+		<spawn X="142832" Y="-55680" Z="-3462" />
+		<spawn X="143152" Y="-56368" Z="-3456" />
+		<spawn X="145344" Y="-59472" Z="-3344" />
+		<spawn X="145872" Y="-59744" Z="-3328" />
+		<spawn X="150304" Y="-59800" Z="-3504" />
+		<spawn X="152080" Y="-56576" Z="-3415" />
+		<spawn X="142880" Y="-56992" Z="-3418" />
+		<spawn X="144544" Y="-58976" Z="-3440" />
+		<spawn X="146688" Y="-60048" Z="-3447" />
+		<spawn X="146000" Y="-60704" Z="-3450" />
+		<spawn X="145248" Y="-60064" Z="-3440" />
+		<spawn X="144368" Y="-59616" Z="-3512" />
+		<spawn X="143536" Y="-57456" Z="-3424" />
+		<spawn X="150576" Y="-59024" Z="-3488" />
+		<spawn X="149680" Y="-59600" Z="-3440" />
+		<spawn X="149360" Y="-60576" Z="-3520" />
+	</zone>
+
+	<zone id="10850" type="ArenaZone" shape="NPoly" minZ="-1516" maxZ="484"> <!-- [21_16] rune_peace1 -->
+		<spawn X="42640" Y="-54496" Z="-2310" />
+		<spawn X="38304" Y="-55440" Z="-1136" />
+		<spawn X="40192" Y="-57600" Z="-2343" />
+		<spawn X="38400" Y="-56832" Z="-992" />
+		<spawn X="35632" Y="-54800" Z="-1744" />
+		<spawn X="37152" Y="-56272" Z="-272" />
+		<spawn X="43936" Y="-56480" Z="-3627" />
+		<spawn X="39440" Y="-60080" Z="-2870" />
+		<spawn X="41376" Y="-55376" Z="-1488" />
+		<spawn X="41920" Y="-57760" Z="-2392" />
+		<spawn X="42496" Y="-58192" Z="-3264" />
+		<spawn X="40784" Y="-59888" Z="-2600" />
+	</zone>
+
+	<zone id="10851" type="ArenaZone" shape="NPoly" minZ="-7660" maxZ="7340"> <!-- [21_16] rune_peace2 -->
+		<spawn X="42640" Y="-54496" Z="-2310" />
+		<spawn X="38304" Y="-55440" Z="-1136" />
+		<spawn X="40192" Y="-57600" Z="-2343" />
+		<spawn X="38400" Y="-56832" Z="-992" />
+		<spawn X="35632" Y="-54800" Z="-1744" />
+		<spawn X="37152" Y="-56272" Z="-272" />
+		<spawn X="43936" Y="-56480" Z="-3627" />
+		<spawn X="39440" Y="-60080" Z="-2870" />
+		<spawn X="41376" Y="-55376" Z="-1488" />
+		<spawn X="41920" Y="-57760" Z="-2392" />
+		<spawn X="42496" Y="-58192" Z="-3264" />
+		<spawn X="40784" Y="-59888" Z="-2600" />
+	</zone>
+
+	<zone id="10852" type="ArenaZone" shape="NPoly" minZ="-3200" maxZ="2072"> <!-- [22_13] schutt_peace1 -->
+		<spawn X="42640" Y="-54496" Z="-2310" />
+		<spawn X="38304" Y="-55440" Z="-1136" />
+		<spawn X="40192" Y="-57600" Z="-2343" />
+		<spawn X="38400" Y="-56832" Z="-992" />
+		<spawn X="35632" Y="-54800" Z="-1744" />
+		<spawn X="37152" Y="-56272" Z="-272" />
+		<spawn X="43936" Y="-56480" Z="-3627" />
+		<spawn X="39440" Y="-60080" Z="-2870" />
+		<spawn X="41376" Y="-55376" Z="-1488" />
+		<spawn X="41920" Y="-57760" Z="-2392" />
+		<spawn X="42496" Y="-58192" Z="-3264" />
+		<spawn X="40784" Y="-59888" Z="-2600" />
+	</zone>
+
 
 	<!-- Town Zones -->
 	<zone id="11020" type="TownZone" shape="NPoly" minZ="-3800" maxZ="-3300"> <!-- Giran Castle Town -->
