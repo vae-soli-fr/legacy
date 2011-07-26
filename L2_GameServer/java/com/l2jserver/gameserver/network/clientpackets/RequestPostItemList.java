@@ -18,9 +18,7 @@ import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_TOWN;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExReplyPostItemList;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author Migi, DS
