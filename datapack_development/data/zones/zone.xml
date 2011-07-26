@@ -3098,7 +3098,7 @@
 	<zone id="40000" type="PeaceZone" shape="NPoly" minZ="-4300" maxZ="-3300" />
 	<!-- Primeval Isle (Town Zone) -->
 	<zone id="40001" type="ArenaZone" shape="Cuboid" minZ="-4300" maxZ="2700">
-		<stat name="townId" val="19" />
+		<!-- <stat name="townId" val="19" /> unknown parameter -->
 		<spawn X="10468" Y="-24569" Z="-3645" />
 	</zone>
 
@@ -3125,7 +3125,7 @@
 	<zone id="40104" type="WaterZone" shape="NPoly" minZ="-2280" maxZ="-2130" />
 	<!-- Hellbound (Town Zone) -->
 	<zone id="40105" type="ArenaZone" shape="NPoly" minZ="-30000" maxZ="30000">
-		<stat name="townId" val="21" />
+		<!-- <stat name="townId" val="21" /> unknown parameter -->
 		<spawn X="-16341" Y="209285" Z="-3665" />
 	</zone>
 
