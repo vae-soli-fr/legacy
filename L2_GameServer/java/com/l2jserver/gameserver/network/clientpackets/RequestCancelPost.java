@@ -69,8 +69,9 @@ public final class RequestCancelPost extends L2GameClientPacket
 		
 		if (!activeChar.isInsideZone(ZONE_TOWN))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_CANCEL_NOT_IN_PEACE_ZONE));
-			return;
+			//activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_CANCEL_NOT_IN_PEACE_ZONE));
+			activeChar.sendMessage("Vous ne pouvez pas annuler en dehors des villes.");
+            return;
 		}
 		
 		if (activeChar.getActiveTradeList() != null)
