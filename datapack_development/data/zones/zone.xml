@@ -50,6 +50,22 @@
 	<zone id="10026" type="JailZone" shape="NPoly" minZ="-3049" maxZ="-2849" /> <!-- [16_10] gm_room_solo1 -->
 	<zone id="10027" type="JailZone" shape="NPoly" minZ="-3053" maxZ="-2853" /> <!-- [16_10] gm_room_solo2 -->
 
+    <!-- Temple Peace Zones (new Peace Zones) -->
+    <zone id="55501" type="PeaceZone" shape="Cuboid" minZ="800" maxZ="1100" /> <!-- Rune Temple of Einhasad -->
+    <zone id="55502" type="PeaceZone" shape="Cuboid" minZ="-2850" maxZ="-2550" /> <!-- Goddard Temple of Einhasad -->
+    <zone id="55503" type="PeaceZone" shape="Cuboid" minZ="-3500" maxZ="-3200" /> <!-- Giran Temple of Einhasad -->
+    <zone id="55504" type="PeaceZone" shape="Cuboid" minZ="-2050" maxZ="-1750" /> <!-- Aden Temple of Einhasad -->
+    <zone id="55505" type="PeaceZone" shape="Cuboid" minZ="-1400" maxZ="-1100" /> <!-- Schuttgart Temple of Einhasad -->
+    <zone id="55506" type="PeaceZone" shape="Cuboid" minZ="-1550" maxZ="-1250" /> <!-- Oren Temple of Einhasad -->
+    <zone id="55507" type="PeaceZone" shape="Cuboid" minZ="-3100" maxZ="-2800" /> <!-- Gludio Temple of Einhasad -->
+    <zone id="55508" type="PeaceZone" shape="Cuboid" minZ="-2800" maxZ="-2500" /> <!-- Dion Temple of Einhasad -->
+    <zone id="55509" type="PeaceZone" shape="Cuboid" minZ="-3100" maxZ="-2800" /> <!-- Gludin Temple of Einhasad -->
+    <zone id="55510" type="PeaceZone" shape="Cuboid" minZ="-3550" maxZ="-3250" /> <!-- Heine Temple of Einhasad -->
+    <zone id="55511" type="PeaceZone" shape="Cuboid" minZ="-3850" maxZ="-3550" /> <!-- Talking Island Temple of Einhasad -->
+    <zone id="55512" type="PeaceZone" shape="Cuboid" minZ="-2900" maxZ="-2600" /> <!-- Elven Temple of Eva -->
+    <zone id="55513" type="PeaceZone" shape="Cuboid" minZ="-4350" maxZ="-4050" /> <!-- Dark Elven Temple of Shilen -->
+    <zone id="55514" type="PeaceZone" shape="Cuboid" minZ="-750" maxZ="-450" /> <!-- Dwarf Temple of Maphr -->
+
 	<!-- Town Arena Zones (ex Peace Zones) -->
 	<zone id="10800" type="ArenaZone" shape="NPoly" minZ="-3966" maxZ="-3466"> <!-- [17_25] talking_island_town_peace_zone1 -->
 		<spawn X="-79411" Y="240677" Z="-3450" />
