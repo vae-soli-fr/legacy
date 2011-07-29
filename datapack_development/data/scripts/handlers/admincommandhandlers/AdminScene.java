@@ -18,6 +18,7 @@ import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.L2WorldRegion;
+import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
 public class AdminScene implements IAdminCommandHandler {
@@ -39,8 +40,9 @@ public class AdminScene implements IAdminCommandHandler {
                         player.showQuestMovie(id);
                     }
                 }
-
-            } catch (NumberFormatException e) {
+            } catch (NoSuchElementException e) {
+                //Case of empty
+                AdminHelpPage.showHelpPage(activeChar, "scene.htm");
             }
         }
         return true;
