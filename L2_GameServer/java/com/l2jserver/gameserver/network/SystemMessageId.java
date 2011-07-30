@@ -14249,7 +14249,25 @@ public enum SystemMessageId
 	 * Message: You cannot cancel sent mail since the recipient received it.
 	 */
 	YOU_CANT_CANCEL_RECEIVED_MAIL(3030),
-	
+
+ 	/**
+	 * ID: 3033<br>
+	 * Message: By using the invisible skill, sneak into the Dawn's document storage!
+	 */
+	SNEAK_INTO_DAWNS_DOCUMENT_STORAGE(3033),
+
+	/**
+	 * ID: 3037<br>
+	 * Message: Male guards can detect the concealment but the female guards cannot.
+	 */
+	MALE_GUARDS_CAN_DETECT_FEMALES_DONT(3037),
+
+	/**
+	 * ID: 3038<br>
+	 * Message: Female guards notice the disguises from far away better than the male guards do, so beware.
+	 */
+	FEMALE_GUARDS_NOTICE_BETTER_THANT_MALE(3038),
+
 	/**
 	 * ID: 3059<br>
 	 * Message: $s1 did not receive it during the waiting time, so it was returned automatically.
