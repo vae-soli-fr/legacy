@@ -43,6 +43,9 @@ public class AdminScene implements IAdminCommandHandler {
             } catch (NoSuchElementException e) {
                 //Case of empty
                 AdminHelpPage.showHelpPage(activeChar, "scene.htm");
+            } catch (NumberFormatException e) {
+                //Not a number
+                AdminHelpPage.showHelpPage(activeChar, "scene.htm");
             }
         }
         return true;
