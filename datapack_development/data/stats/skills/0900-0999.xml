@@ -954,12 +954,22 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="963" levels="1" name="Guard's Ambush">
-		<!-- Hides the user. Movement speed is decreased by 30%, and the effect is canceled if any action other than movement is initiated. -->
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
+    <skill id="963" levels="1" name="Guard's Ambush">
+    <!-- Confirmed CT2.5 -->
+	        <set name="mpInitialConsume" val="5" />
+	        <set name="mpConsume" val="19" />
+	        <set name="target" val="TARGET_SELF" />
+	        <set name="reuseDelay" val="15000" />
+	        <set name="staticReuse" val="true" />
+	        <set name="skillType" val="BUFF" />
+	        <set name="operateType" val="OP_ACTIVE" />
+	        <set name="aggroPoints" val="679" />
+	        <for>
+	            <effect name="SilentMove" time="20" abnormal="stealth" val="0" abnormalLvl="1" abnormalType="stealth">
+	                <mul order="0x30" stat="runSpd" val="0.7" />
+	            </effect>
+	        </for>
+	    </skill>
 	<skill id="964" levels="1" name="Children of Shilen">
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="skillType" val="BUFF" />
