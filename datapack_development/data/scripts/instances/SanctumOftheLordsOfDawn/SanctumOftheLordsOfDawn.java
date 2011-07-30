@@ -588,19 +588,12 @@ public class SanctumOftheLordsOfDawn extends Quest
 		switch (npc.getNpcId())
 		{
 			case LIGHTOFDAWN:
-				if (!player.isTransformed())
-				{
-					return "32575-01.htm";
-				}
-				else if (player.getTransformation().getId() != 6204)
-				{
 					teleCoord tele = new teleCoord();
 					tele.x = -76156;
 					tele.y = 213409;
 					tele.z = -7120;
 					enterInstance(player, "SanctumoftheLordsofDawn.xml", tele);
-					return "32575-02.htm";
-				}
+                    break;
 			case DEVICE:
 				InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 				if (tmpworld instanceof HSWorld)
@@ -621,8 +614,8 @@ public class SanctumOftheLordsOfDawn extends Quest
 					{
 						openDoor(SECOND_DOOR_A, world.instanceId);
                         openDoor(SECOND_DOOR_B, world.instanceId);
-						player.sendPacket(new SystemMessage(SystemMessageId.SNEAK_INTO_DAWNS_DOCUMENT_STORAGE));
 						player.sendPacket(new SystemMessage(SystemMessageId.MALE_GUARDS_CAN_DETECT_FEMALES_DONT));
+                        player.sendPacket(new SystemMessage(SystemMessageId.FEMALE_GUARDS_NOTICE_BETTER_THANT_MALE));
 						world.doorst++;
 						npc.deleteMe();
 						player.showQuestMovie(11);
@@ -631,22 +624,32 @@ public class SanctumOftheLordsOfDawn extends Quest
 					}
 				}
 			case PWDEVICE:
-				return "32577-01.htm";
+				InstanceWorld tmpyworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
+				if (tmpyworld instanceof HSWorld)
+				{
+                        HSWorld world = (HSWorld) tmpyworld;
+						openDoor(THIRST_DOOR_A, world.instanceId);
+                        openDoor(THIRST_DOOR_B, world.instanceId);
+						player.sendPacket(new SystemMessage(SystemMessageId.MALE_GUARDS_CAN_DETECT_FEMALES_DONT));
+                        player.sendPacket(new SystemMessage(SystemMessageId.FEMALE_GUARDS_NOTICE_BETTER_THANT_MALE));
+						world.doorst++;
+						npc.deleteMe();
+						player.showQuestMovie(11);
+						startQuestTimer("circle", 30000, npc, null);
+						return "32578-03.htm";
+				}
 			case DARKNESSOFDAWN:
 				InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 				world.allowed.remove(world.allowed.indexOf(player.getObjectId()));
-				teleCoord tele = new teleCoord();
-				tele.instanceId = 0;
-				tele.x = -12585;
-				tele.y = 122305;
-				tele.z = -2989;
-				exitInstance(player, tele);
-				return "32579-01.htm";
-			case SHELF:
-				return "32580-01.htm";
+				teleCoord coord = new teleCoord();
+				coord.instanceId = 0;
+				coord.x = -12585;
+				coord.y = 122305;
+				coord.z = -2989;
+				exitInstance(player, coord);
 		}
 		
-		return "";
+		return null;
 	}
 	
 	@Override
