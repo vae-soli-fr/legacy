@@ -2203,7 +2203,7 @@
 			<reward1 val="1864" />   <!-- Stem -->
 			<reward2 val="1878" />   <!-- Braided Hemp -->
 			<alternative val="0" />
-			<level val="10" />
+			<level val="75" />
 			<limit_seed val="7200" />
 			<limit_crops val="8000" />
 		</crop>
@@ -2213,7 +2213,7 @@
 			<reward1 val="1864" />   <!-- Stem -->
 			<reward2 val="1878" />   <!-- Braided Hemp -->
 			<alternative val="1" />
-			<level val="10" />
+			<level val="75" />
 			<limit_seed val="20000" />
 			<limit_crops val="2000" />
 		</crop>
@@ -2223,7 +2223,7 @@
 			<reward1 val="1865" />   <!-- Varnish -->
 			<reward2 val="1879" />   <!-- Cokes -->
 			<alternative val="0" />
-			<level val="13" />
+			<level val="75" />
 			<limit_seed val="7200" />
 			<limit_crops val="8000" />
 		</crop>
@@ -2233,7 +2233,7 @@
 			<reward1 val="1865" />   <!-- Varnish -->
 			<reward2 val="1879" />   <!-- Cokes -->
 			<alternative val="1" />
-			<level val="13" />
+			<level val="75" />
 			<limit_seed val="20000" />
 			<limit_crops val="2000" />
 		</crop>
@@ -2243,7 +2243,7 @@
 			<reward1 val="1866" />   <!-- Suede -->
 			<reward2 val="1874" />   <!-- Oriharukon Ore -->
 			<alternative val="0" />
-			<level val="16" />
+			<level val="75" />
 			<limit_seed val="7200" />
 			<limit_crops val="8000" />
 		</crop>
@@ -2253,7 +2253,7 @@
 			<reward1 val="1866" />   <!-- Suede -->
 			<reward2 val="1874" />   <!-- Oriharukon Ore -->
 			<alternative val="1" />
-			<level val="16" />
+			<level val="75" />
 			<limit_seed val="20000" />
 			<limit_crops val="2000" />
 		</crop>
@@ -2263,7 +2263,7 @@
 			<reward1 val="1867" />   <!-- Animal Skin -->
 			<reward2 val="1894" />   <!-- Crafted Leather -->
 			<alternative val="0" />
-			<level val="19" />
+			<level val="75" />
 			<limit_seed val="3600" />
 			<limit_crops val="4000" />
 		</crop>
@@ -2273,7 +2273,7 @@
 			<reward1 val="1867" />   <!-- Animal Skin -->
 			<reward2 val="1894" />   <!-- Crafted Leather -->
 			<alternative val="1" />
-			<level val="19" />
+			<level val="75" />
 			<limit_seed val="10000" />
 			<limit_crops val="1000" />
 		</crop>
@@ -2283,7 +2283,7 @@
 			<reward1 val="1868" />   <!-- Thread -->
 			<reward2 val="1876" />   <!-- Mithril Ore -->
 			<alternative val="0" />
-			<level val="22" />
+			<level val="75" />
 			<limit_seed val="1800" />
 			<limit_crops val="2000" />
 		</crop>
@@ -2293,7 +2293,7 @@
 			<reward1 val="1868" />   <!-- Thread -->
 			<reward2 val="1876" />   <!-- Mithril Ore -->
 			<alternative val="1" />
-			<level val="22" />
+			<level val="75" />
 			<limit_seed val="5000" />
 			<limit_crops val="500" />
 		</crop>
@@ -2303,7 +2303,7 @@
 			<reward1 val="1869" />   <!-- Iron Ore -->
 			<reward2 val="1895" />   <!-- Metallic Fiber -->
 			<alternative val="0" />
-			<level val="25" />
+			<level val="75" />
 			<limit_seed val="1201" />
 			<limit_crops val="1334" />
 		</crop>
@@ -2313,7 +2313,7 @@
 			<reward1 val="1869" />   <!-- Iron Ore -->
 			<reward2 val="1895" />   <!-- Metallic Fiber -->
 			<alternative val="1" />
-			<level val="25" />
+			<level val="75" />
 			<limit_seed val="3330" />
 			<limit_crops val="333" />
 		</crop>
@@ -2323,7 +2323,7 @@
 			<reward1 val="1870" />   <!-- Coal -->
 			<reward2 val="1877" />   <!-- Adamantite Nugget -->
 			<alternative val="0" />
-			<level val="28" />
+			<level val="75" />
 			<limit_seed val="1800" />
 			<limit_crops val="2000" />
 		</crop>
@@ -2333,7 +2333,7 @@
 			<reward1 val="1870" />   <!-- Coal -->
 			<reward2 val="1877" />   <!-- Adamantite Nugget -->
 			<alternative val="1" />
-			<level val="28" />
+			<level val="75" />
 			<limit_seed val="5000" />
 			<limit_crops val="500" />
 		</crop>
@@ -2343,7 +2343,7 @@
 			<reward1 val="1871" />   <!-- Charcoal -->
 			<reward2 val="4042" />   <!-- Enria -->
 			<alternative val="0" />
-			<level val="31" />
+			<level val="75" />
 			<limit_seed val="1800" />
 			<limit_crops val="2000" />
 		</crop>
@@ -2353,7 +2353,7 @@
 			<reward1 val="1871" />   <!-- Charcoal -->
 			<reward2 val="4042" />   <!-- Enria -->
 			<alternative val="1" />
-			<level val="31" />
+			<level val="75" />
 			<limit_seed val="5000" />
 			<limit_crops val="500" />
 		</crop>
@@ -2363,7 +2363,7 @@
 			<reward1 val="1872" />   <!-- Animal Bone -->
 			<reward2 val="1880" />   <!-- Steel -->
 			<alternative val="0" />
-			<level val="34" />
+			<level val="75" />
 			<limit_seed val="1440" />
 			<limit_crops val="1600" />
 		</crop>
@@ -2373,7 +2373,7 @@
 			<reward1 val="1872" />   <!-- Animal Bone -->
 			<reward2 val="1880" />   <!-- Steel -->
 			<alternative val="1" />
-			<level val="34" />
+			<level val="75" />
 			<limit_seed val="4000" />
 			<limit_crops val="400" />
 		</crop>
@@ -2383,7 +2383,7 @@
 			<reward1 val="1873" />   <!-- Silver Nugget -->
 			<reward2 val="4044" />   <!-- Thons -->
 			<alternative val="0" />
-			<level val="37" />
+			<level val="75" />
 			<limit_seed val="720" />
 			<limit_crops val="800" />
 		</crop>
@@ -2393,7 +2393,7 @@
 			<reward1 val="1873" />   <!-- Silver Nugget -->
 			<reward2 val="4044" />   <!-- Thons -->
 			<alternative val="1" />
-			<level val="37" />
+			<level val="75" />
 			<limit_seed val="2000" />
 			<limit_crops val="200" />
 		</crop>
@@ -2403,7 +2403,7 @@
 			<reward1 val="1864" />   <!-- Stem -->
 			<reward2 val="5549" />   <!-- Metallic Thread -->
 			<alternative val="0" />
-			<level val="40" />
+			<level val="75" />
 			<limit_seed val="720" />
 			<limit_crops val="800" />
 		</crop>
@@ -2413,7 +2413,7 @@
 			<reward1 val="1864" />   <!-- Stem -->
 			<reward2 val="5549" />   <!-- Metallic Thread -->
 			<alternative val="1" />
-			<level val="40" />
+			<level val="75" />
 			<limit_seed val="2000" />
 			<limit_crops val="200" />
 		</crop>
@@ -2423,7 +2423,7 @@
 			<reward1 val="1865" />   <!-- Varnish -->
 			<reward2 val="4039" />   <!-- Mold Glue -->
 			<alternative val="0" />
-			<level val="43" />
+			<level val="75" />
 			<limit_seed val="720" />
 			<limit_crops val="800" />
 		</crop>
@@ -2433,7 +2433,7 @@
 			<reward1 val="1865" />   <!-- Varnish -->
 			<reward2 val="4039" />   <!-- Mold Glue -->
 			<alternative val="1" />
-			<level val="43" />
+			<level val="75" />
 			<limit_seed val="2000" />
 			<limit_crops val="200" />
 		</crop>
@@ -2443,7 +2443,7 @@
 			<reward1 val="1866" />   <!-- Suede -->
 			<reward2 val="1885" />   <!-- High Grade Suede -->
 			<alternative val="0" />
-			<level val="46" />
+			<level val="75" />
 			<limit_seed val="720" />
 			<limit_crops val="800" />
 		</crop>
@@ -2453,7 +2453,7 @@
 			<reward1 val="1866" />   <!-- Suede -->
 			<reward2 val="1885" />   <!-- High Grade Suede -->
 			<alternative val="1" />
-			<level val="46" />
+			<level val="75" />
 			<limit_seed val="2000" />
 			<limit_crops val="200" />
 		</crop>
@@ -2463,7 +2463,7 @@
 			<reward1 val="1867" />   <!-- Animal Skin -->
 			<reward2 val="4043" />   <!-- Asofe -->
 			<alternative val="0" />
-			<level val="49" />
+			<level val="75" />
 			<limit_seed val="900" />
 			<limit_crops val="1000" />
 		</crop>
@@ -2473,7 +2473,7 @@
 			<reward1 val="1867" />   <!-- Animal Skin -->
 			<reward2 val="4043" />   <!-- Asofe -->
 			<alternative val="1" />
-			<level val="49" />
+			<level val="75" />
 			<limit_seed val="2500" />
 			<limit_crops val="250" />
 		</crop>
@@ -2483,7 +2483,7 @@
 			<reward1 val="1868" />   <!-- Thread -->
 			<reward2 val="1884" />   <!-- Cord -->
 			<alternative val="0" />
-			<level val="50" />
+			<level val="75" />
 			<limit_seed val="720" />
 			<limit_crops val="800" />
 		</crop>
@@ -2493,7 +2493,7 @@
 			<reward1 val="1868" />   <!-- Thread -->
 			<reward2 val="1884" />   <!-- Cord -->
 			<alternative val="1" />
-			<level val="50" />
+			<level val="75" />
 			<limit_seed val="2000" />
 			<limit_crops val="200" />
 		</crop>
@@ -2503,7 +2503,7 @@
 			<reward1 val="1869" />   <!-- Iron Ore -->
 			<reward2 val="4041" />   <!-- Mold Hardener -->
 			<alternative val="0" />
-			<level val="52" />
+			<level val="75" />
 			<limit_seed val="900" />
 			<limit_crops val="1000" />
 		</crop>
@@ -2513,7 +2513,7 @@
 			<reward1 val="1869" />   <!-- Iron Ore -->
 			<reward2 val="4041" />   <!-- Mold Hardener -->
 			<alternative val="1" />
-			<level val="52" />
+			<level val="75" />
 			<limit_seed val="2500" />
 			<limit_crops val="250" />
 		</crop>
@@ -2523,7 +2523,7 @@
 			<reward1 val="1870" />   <!-- Coal -->
 			<reward2 val="1882" />   <!-- Leather -->
 			<alternative val="0" />
-			<level val="55" />
+			<level val="75" />
 			<limit_seed val="720" />
 			<limit_crops val="800" />
 		</crop>
@@ -2533,7 +2533,7 @@
 			<reward1 val="1870" />   <!-- Coal -->
 			<reward2 val="1882" />   <!-- Leather -->
 			<alternative val="1" />
-			<level val="55" />
+			<level val="75" />
 			<limit_seed val="2000" />
 			<limit_crops val="200" />
 		</crop>
@@ -2543,7 +2543,7 @@
 			<reward1 val="1871" />   <!-- Charcoal -->
 			<reward2 val="4040" />   <!-- Mold Lubricant -->
 			<alternative val="0" />
-			<level val="58" />
+			<level val="75" />
 			<limit_seed val="720" />
 			<limit_crops val="800" />
 		</crop>
@@ -2553,7 +2553,7 @@
 			<reward1 val="1871" />   <!-- Charcoal -->
 			<reward2 val="4040" />   <!-- Mold Lubricant -->
 			<alternative val="1" />
-			<level val="58" />
+			<level val="75" />
 			<limit_seed val="2000" />
 			<limit_crops val="200" />
 		</crop>
