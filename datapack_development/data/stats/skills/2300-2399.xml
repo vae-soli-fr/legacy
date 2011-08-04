@@ -470,7 +470,7 @@
 			<player flyMounted="False" />
 		</cond>
 		<for>
-			<effect name="Buff" time="3600" val="0" />
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="2" abnormalType="hot_ground" />
 		</for>
 	</skill>
 	<skill id="2342" levels="1" name="Ballista Bomb">

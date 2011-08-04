@@ -620,13 +620,14 @@
 		<set name="hitTime" val="5000" />
 	</skill>
 	<skill id="5399" levels="1" name="Heat of Desert">
+		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
 		<set name="isDebuff" val="true" />
 		<set name="lvlDepend" val="1" />
-		<set name="magicLvl" val="85" /> <!-- Guess -->
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="saveVs" val="WIT" />
-		<set name="power" val="100" /> <!-- Base Land Rate --> <!-- Guess -->
+		<set name="saveVs" val="MEN" />
+		<set name="power" val="10" /> <!-- Base Land Rate -->
 		<set name="skillType" val="DOT" />
 		<set name="target" val="TARGET_ONE" />
 		<cond>
@@ -638,7 +639,8 @@
 			</and>
 		</cond>
 		<for>
-			<effect count="2" name="DamOverTime" time="3" val="220" />
+			<!-- 75 HP * 1 during 5 seconds -->
+			<effect count="5" name="DamOverTime" val="75" abnormalLvl="1" abnormalType="hot_ground" />
 		</for>
 	</skill>
 </list>
