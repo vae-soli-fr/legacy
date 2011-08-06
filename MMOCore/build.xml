@@ -32,9 +32,10 @@
                encoding="UTF-8"
                optimize="off"
                debug="on"
-               source="1.5"
-               target="1.5"
-               nowarn="off">
+               source="1.7"
+               target="1.7"
+               nowarn="off"
+               includeantruntime="false">
             <src path="${src}"/>
             <classpath refid="classpath"/>   
         </javac>

@@ -33,6 +33,7 @@ public class L2PeaceZone extends L2ZoneType
 	protected void onEnter(L2Character character)
 	{
 		character.setInsideZone(L2Character.ZONE_PEACE, true);
+                character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
 	}
 	
 	@Override
