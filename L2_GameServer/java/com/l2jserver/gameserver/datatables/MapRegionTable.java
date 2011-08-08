@@ -473,8 +473,14 @@ public class MapRegionTable
 			
 			// Checking if in arena
 			L2ArenaZone arena = ZoneManager.getInstance().getArena(player);
-			if (arena != null)
-				return arena.getSpawnLoc();
+			if (arena != null) {
+                                castle = CastleManager.getInstance().getCastle(player);
+                                if (player.getClan() != null && castle.getOwnerId() == player.getClanId()) {
+                                       return arena.getClanSpawnLoc();
+                                } else {
+                                       return arena.getSpawnLoc();
+                                }
+                        }
 			
 			//Checking if needed to be respawned in "far" town from the castle;
 			castle = CastleManager.getInstance().getCastle(player);
