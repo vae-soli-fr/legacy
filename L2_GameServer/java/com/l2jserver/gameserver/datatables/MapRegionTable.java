@@ -474,8 +474,7 @@ public class MapRegionTable
 			// Checking if in arena
 			L2ArenaZone arena = ZoneManager.getInstance().getArena(player);
 			if (arena != null) {
-                                castle = CastleManager.getInstance().getCastle(player);
-                                if (player.getClan() != null && castle.getOwnerId() == player.getClanId()) {
+                                if (player.getClan() != null && CastleManager.getInstance().getCastleById(getAreaCastle(activeChar)).getOwnerId() == player.getClanId()) {
                                        return arena.getClanSpawnLoc();
                                 } else {
                                        return arena.getSpawnLoc();
