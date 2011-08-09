@@ -31,6 +31,7 @@ import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.instancemanager.TerritoryWarManager;
 import com.l2jserver.gameserver.instancemanager.TownManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
+import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -474,10 +475,15 @@ public class MapRegionTable
 			// Checking if in arena
 			L2ArenaZone arena = ZoneManager.getInstance().getArena(player);
 			if (arena != null) {
-                                if (player.getClan() != null && CastleManager.getInstance().getCastleById(getAreaCastle(activeChar)).getOwnerId() == player.getClanId()) {
-                                       return arena.getClanSpawnLoc();
+                                
+                            L2Clan clanOwner = ClanTable.getInstance().getClan(CastleManager.getInstance().getCastleById(getAreaCastle(activeChar)).getOwnerId());
+                                
+                                if (player.getClan() != null && player.getClan() == clanOwner) {
+                                       return arena.getClanSpawnLoc(); // pour les clantés
+                                } else if (player.getAllyId() == clanOwner.getAllyId()) {
+                                       return arena.getClanSpawnLoc(); // pour les alliés
                                 } else {
-                                       return arena.getSpawnLoc();
+                                       return arena.getSpawnLoc(); // pour les autres
                                 }
                         }
 			
