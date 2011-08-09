@@ -4689,11 +4689,9 @@
 	<zone id="30100" type="ScriptZone" shape="NPoly" minZ="-10735" maxZ="-10720" />
 
 	<!-- Primeval Isle Zones (vertices, min Z & Max Z are estimated) -->
-	<!-- Primeval Isle (Peace Zone) -->
-	<zone id="40000" type="PeaceZone" shape="NPoly" minZ="-4300" maxZ="-3300" />
 	<!-- Primeval Isle (Town Zone) -->
-	<zone id="40001" type="ArenaZone" shape="Cuboid" minZ="-4300" maxZ="2700">
-		<!-- <stat name="townId" val="19" /> unknown parameter -->
+	<zone id="40001" type="TownZone" shape="Cuboid" minZ="-4300" maxZ="2700">
+		<stat name="townId" val="19" />
 		<spawn X="10468" Y="-24569" Z="-3645" />
 	</zone>
 
