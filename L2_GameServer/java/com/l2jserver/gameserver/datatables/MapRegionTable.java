@@ -480,7 +480,7 @@ public class MapRegionTable
                                 
                                 if (player.getClan() != null && player.getClan() == clanOwner) {
                                        return arena.getClanSpawnLoc(); // pour les clantés
-                                } else if (player.getAllyId() == clanOwner.getAllyId()) {
+                                } else if (player.getAllyId() != 0 && player.getAllyId() == clanOwner.getAllyId()) {
                                        return arena.getClanSpawnLoc(); // pour les alliés
                                 } else {
                                        return arena.getSpawnLoc(); // pour les autres

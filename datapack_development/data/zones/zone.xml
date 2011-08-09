@@ -54,6 +54,8 @@
     <zone id="77700" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750" /> <!-- OUT -->
     <zone id="77701" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750" /> <!-- OUT -->
     <zone id="77702" type="ScriptZone" shape="Cuboid" minZ="750" maxZ="1050" /> <!-- IN -->
+    <zone id="77703" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750" /> <!-- UP -->
+    <zone id="77704" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750" /> <!-- DOWN -->
 
     <!-- Temple Peace Zones (new Peace Zones) -->
     <zone id="55501" type="PeaceZone" shape="Cuboid" minZ="800" maxZ="1100" /> <!-- Rune Temple of Einhasad -->

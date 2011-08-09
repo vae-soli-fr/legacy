@@ -28,6 +28,8 @@ public class PrefectureRune extends Quest
 		addEnterZoneId(77700);
                 addEnterZoneId(77701);
                 addEnterZoneId(77702);
+                addEnterZoneId(77703);
+                addEnterZoneId(77704);
 	}
 	
 	@Override
@@ -35,13 +37,22 @@ public class PrefectureRune extends Quest
 	{
 		if (zone.getId() == 77700 || zone.getId() == 77701)
 		{
-			character.teleToLocation(39221, -48241, 896);
+			character.teleToLocation(39221, -48241, 896); // Rune CH
 		}
                 else if (zone.getId() == 77702)
                 {
-                        character.teleToLocation(-114972, 44933, 516);
-                }                    
-		return super.onEnterZone(character, zone);
+                        character.teleToLocation(-114972, 44933, 518); // Kamael Village WH
+                }
+                else if (zone.getId() == 77703)
+                {
+                        character.teleToLocation(-114684, 44933, 552); // WH up
+                }
+                else if (zone.getId() == 77704)
+                {
+                        character.teleToLocation(-114780, 45168, 518); // WH down
+                }
+                
+            return super.onEnterZone(character, zone);
 	}
 	
 	public static void main(String[] args)
