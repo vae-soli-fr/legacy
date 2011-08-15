@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Boutique heine Gloves 2-->
+<list>
+  <item id="1">
+    <ingredient id="12046" count="1"/>
+    <production id="57" count="980"/>
+  </item>
+</list>
