@@ -40,8 +40,10 @@ public class AccessLevels
 	public static L2AccessLevel _masterAccessLevel = new L2AccessLevel(_masterAccessLevelNum, "Master Access", Config.MASTERACCESS_NAME_COLOR, Config.MASTERACCESS_TITLE_COLOR, null, true, true, true, true, true, true, true, true);
 	/** Reserved user access level<br> */
 	public static final int _userAccessLevelNum = 0;
-	/** The user access level which can do no administrative tasks<br> */
-	public static L2AccessLevel _userAccessLevel = new L2AccessLevel(_userAccessLevelNum, "User", -1, -1, null, false, false, false, true, false, true, true, true);
+	/** The user access level which can do no administrative tasks
+         *  on Vae Soli we have allowed Peace Attack for users
+         */
+	public static L2AccessLevel _userAccessLevel = new L2AccessLevel(_userAccessLevelNum, "User", -1, -1, null, false, true, false, true, false, true, true, true);
 	/** FastMap of access levels defined in database<br> */
 	private TIntObjectHashMap<L2AccessLevel> _accessLevels;
 	
