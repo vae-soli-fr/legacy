@@ -14,7 +14,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_TOWN;
+import static com.l2jserver.gameserver.model.actor.L2Character.ZONE_PEACE;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.instancemanager.MailManager;
@@ -54,11 +54,10 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("rejectattach"))
 			return;
 		
-		if (!activeChar.isInsideZone(ZONE_TOWN))
+		if (!activeChar.isInsideZone(ZONE_PEACE))
 		{
-			//activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
-			activeChar.sendMessage("Vous ne pouvez pas utiliser les pièces jointes en dehors des villes.");
-            return;
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
+                        return;
 		}
 		
 		Message msg = MailManager.getInstance().getMessage(_msgId);
