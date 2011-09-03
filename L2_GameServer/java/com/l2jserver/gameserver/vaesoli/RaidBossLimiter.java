@@ -28,29 +28,32 @@ public class RaidBossLimiter
 	private RaidBossLimiter()
 	{
 		_list = new FastMap<String, Integer>();
-        _done = new FastMap<String, String>();
+                _done = new FastMap<String, String>();
 	}
 
-	public void addPoint(L2PcInstance player, int NpcId)
+	public void addPoint(L2PcInstance player, String raidboss)
 	{
-        if (!Config.VAEMOD_RBJAIL || Config.VAEMOD_RBWHITELIST.contains(NpcId)) return;
-        if (_list.containsKey(player.getAccountName()) && _done.containsKey(player.getAccountName()))
+        if (!Config.VAEMOD_RBJAIL || player.getInstanceId() != 0) return;
+        if (_list.containsKey(player.getAccountName())
+                && _done.containsKey(player.getAccountName()))
         {
             int points = _list.get(player.getAccountName());
             String names = _done.get(player.getAccountName());
             _list.put(player.getAccountName(), ++points);
-            _done.put(player.getAccountName(), names + ", " + NpcTable.getInstance().getTemplate(NpcId).getName());
-            if (points == 3) {
+            _done.put(player.getAccountName(), names + ", " + raidboss);
+            if (points == 3)
+            {
                 player.sendPacket(new ExShowScreenMessage(1, -1, 7, 0, 1, 0, 0, true, 15000, 0, "Attention ceci était votre dernier Raid Boss"));
+                player.sendMessage("---------------------------------------------");
                 player.sendMessage("Attention ceci était votre dernier Raid Boss.");
+                player.sendMessage("---------------------------------------------");
             }
-
             else if (points > 3) autoBan(player);
         }
         else
         {
             _list.put(player.getAccountName(), 1);
-            _done.put(player.getAccountName(), NpcTable.getInstance().getTemplate(NpcId).getName());
+            _done.put(player.getAccountName(), raidboss);
         }
     }
 

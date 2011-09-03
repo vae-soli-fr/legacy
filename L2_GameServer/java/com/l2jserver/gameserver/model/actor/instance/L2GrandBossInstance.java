@@ -87,7 +87,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 				for (L2PcInstance member : player.getParty().getPartyMembers())
 				{
 					RaidBossPointsManager.getInstance().addPoints(member, getNpcId(), (getLevel() / 2) + Rnd.get(-5, 5));
-					RaidBossLimiter.getInstance().addPoint(member, getNpcId());
+					RaidBossLimiter.getInstance().addPoint(member, getName());
                     if(member.isNoble())
 						Hero.getInstance().setRBkilled(member.getObjectId(), getNpcId());
 				}
@@ -95,7 +95,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 			else
 			{
 				RaidBossPointsManager.getInstance().addPoints(player, getNpcId(), (getLevel() / 2) + Rnd.get(-5, 5));
-				RaidBossLimiter.getInstance().addPoint(player, getNpcId());
+				RaidBossLimiter.getInstance().addPoint(player, getName());
                 if(player.isNoble())
 					Hero.getInstance().setRBkilled(player.getObjectId(), getNpcId());
 			}
