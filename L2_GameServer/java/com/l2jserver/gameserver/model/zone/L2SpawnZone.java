@@ -31,7 +31,6 @@ public abstract class L2SpawnZone extends L2ZoneType
 {
 	private List<Location> _spawnLocs = null;
 	private List<Location> _chaoticSpawnLocs = null;
-        private List<Location> _clanSpawnLocs = null;
 	
 	public L2SpawnZone(int id)
 	{
@@ -54,14 +53,6 @@ public abstract class L2SpawnZone extends L2ZoneType
 		_chaoticSpawnLocs.add(new Location(x, y, z));
 	}
         
-        public final void addClanSpawn(int x, int y, int z)
-	{
-		if (_clanSpawnLocs == null)
-			_clanSpawnLocs = new FastList<Location>();
-		
-		_clanSpawnLocs.add(new Location(x, y, z));
-	}
-	
 	public Location getSpawnLoc()
 	{
 		if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
@@ -78,11 +69,4 @@ public abstract class L2SpawnZone extends L2ZoneType
 			return getSpawnLoc();
 	}
         
-        public Location getClanSpawnLoc()
-	{
-		if (_clanSpawnLocs != null)
-			return _clanSpawnLocs.get(Rnd.get(_clanSpawnLocs.size()));
-		else
-			return getSpawnLoc();
-	}
 }

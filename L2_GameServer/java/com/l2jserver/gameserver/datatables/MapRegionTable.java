@@ -43,6 +43,7 @@ import com.l2jserver.gameserver.model.entity.Fort;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.model.zone.type.L2ArenaZone;
 import com.l2jserver.gameserver.model.zone.type.L2ClanHallZone;
+import com.l2jserver.gameserver.model.zone.type.L2TownZone;
 
 
 /**
@@ -455,6 +456,19 @@ public class MapRegionTable
 					}
 				}
 			}
+                        
+                        // Player is in town
+                        L2TownZone town = ZoneManager.getInstance().getZone(player, L2TownZone.class);
+                        if (town != null) {
+                            L2Clan clanOwner = ClanTable.getInstance().getClan(CastleManager.getInstance().getCastleById(getAreaCastle(activeChar)).getOwnerId());
+
+                            if (player.getClan() != null && player.getClan() == clanOwner
+                                    || player.getAllyId() != 0 && player.getAllyId() == clanOwner.getAllyId()) {
+                                return town.getSpawnLoc();
+                            } else {
+                                return town.getChaoticSpawnLoc();
+                            }
+                        }
 			
 			//Karma player land out of city
 			if (player.getKarma() > 0)
@@ -474,18 +488,8 @@ public class MapRegionTable
 			
 			// Checking if in arena
 			L2ArenaZone arena = ZoneManager.getInstance().getArena(player);
-			if (arena != null) {
-                                
-                            L2Clan clanOwner = ClanTable.getInstance().getClan(CastleManager.getInstance().getCastleById(getAreaCastle(activeChar)).getOwnerId());
-                                
-                                if (player.getClan() != null && player.getClan() == clanOwner) {
-                                       return arena.getClanSpawnLoc(); // pour les clantés
-                                } else if (player.getAllyId() != 0 && player.getAllyId() == clanOwner.getAllyId()) {
-                                       return arena.getClanSpawnLoc(); // pour les alliés
-                                } else {
-                                       return arena.getSpawnLoc(); // pour les autres
-                                }
-                        }
+			if (arena != null)
+				return arena.getSpawnLoc();
 			
 			//Checking if needed to be respawned in "far" town from the castle;
 			castle = CastleManager.getInstance().getCastle(player);

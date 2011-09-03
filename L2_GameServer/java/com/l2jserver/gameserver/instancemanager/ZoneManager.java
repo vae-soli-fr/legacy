@@ -357,11 +357,8 @@ public class ZoneManager
 										int spawnY = Integer.parseInt(attrs.getNamedItem("Y").getNodeValue());
 										int spawnZ = Integer.parseInt(attrs.getNamedItem("Z").getNodeValue());
 										
-										Node isClan = attrs.getNamedItem("isClan");
                                                                                 Node isChaotic = attrs.getNamedItem("isChaotic");
-                                                                                if (isClan != null && Boolean.parseBoolean(isClan.getNodeValue()))
-                                                                                        ((L2SpawnZone) temp).addClanSpawn(spawnX, spawnY, spawnZ);
-                                                                                else if (isChaotic != null && Boolean.parseBoolean(isChaotic.getNodeValue()))
+                                                                                if (isChaotic != null && Boolean.parseBoolean(isChaotic.getNodeValue()))
 											((L2SpawnZone) temp).addChaoticSpawn(spawnX, spawnY, spawnZ);
 										else
 											((L2SpawnZone) temp).addSpawn(spawnX, spawnY, spawnZ);
