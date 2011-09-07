@@ -45,7 +45,8 @@ public class SanctumOftheLordsOfDawn extends Quest
 	{
 		public long[] storeTime = { 0, 0 }; // 0: instance start, 1: finish time
 		
-		private L2Npc
+                @SuppressWarnings("unused")
+		public L2Npc
                 STATIC_NPC_0, STATIC_NPC_1, STATIC_NPC_2, STATIC_NPC_3, STATIC_NPC_4, STATIC_NPC_5, STATIC_NPC_7, STATIC_NPC_8, STATIC_NPC_9,
                 STATIC_NPC_11, STATIC_NPC_12, STATIC_NPC_13, STATIC_NPC_14, STATIC_NPC_15, STATIC_NPC_16, STATIC_NPC_17, STATIC_NPC_18, STATIC_NPC_19, STATIC_NPC_20,
                 STATIC_NPC_21, STATIC_NPC_22, STATIC_NPC_23, STATIC_NPC_24, STATIC_NPC_25, STATIC_NPC_26, STATIC_NPC_27, STATIC_NPC_28,

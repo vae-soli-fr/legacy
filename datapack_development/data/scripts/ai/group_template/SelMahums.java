@@ -14,8 +14,6 @@
  */
 package ai.group_template;
 
-import ai.group_template.L2AttackableAIScript;
-
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.datatables.SpawnTable;
@@ -88,7 +86,7 @@ public class SelMahums extends L2AttackableAIScript
 			addSpawnId(i);
 	
 		//Send event to monsters, that was spawned through SpawnTable at server start (it is impossible to track first spawn)
-    for (L2Spawn npcSpawn : SpawnTable.getInstance().getSpawnTable())
+    for (L2Spawn npcSpawn : SpawnTable.getInstance().getSpawnTable().values())
     {
       if (Util.contains(MAHUM_CHIEFS, npcSpawn.getNpcid()) || Util.contains(MAHUM_SOLDIERS, npcSpawn.getNpcid()))
           onSpawn(npcSpawn.getLastSpawn());
@@ -108,7 +106,7 @@ public class SelMahums extends L2AttackableAIScript
 					int idx = Rnd.get(6);
 					if (idx <= CHIEF_SOCIAL_ACTIONS.length - 1)
 					{
-						npc.broadcastPacket(new SocialAction(npc, CHIEF_SOCIAL_ACTIONS[idx]));
+						npc.broadcastPacket(new SocialAction(npc.getObjectId(), CHIEF_SOCIAL_ACTIONS[idx]));
 
 						L2ZoneType zone = getZone(npc);
 					
@@ -118,7 +116,7 @@ public class SelMahums extends L2AttackableAIScript
 							if (ch != null && !ch.isDead() && ch instanceof L2MonsterInstance && !((L2MonsterInstance) ch).isBusy() && 
 									Util.contains(MAHUM_SOLDIERS, ((L2MonsterInstance) ch).getNpcId()) && ch.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE && 
 									ch.getX() == ((L2MonsterInstance) ch).getSpawn().getLocx() && ch.getY() == ((L2MonsterInstance) ch).getSpawn().getLocy())
-								ch.broadcastPacket(new SocialAction(ch, SOLDIER_SOCIAL_ACTIONS[idx]));
+								ch.broadcastPacket(new SocialAction(ch.getObjectId(), SOLDIER_SOCIAL_ACTIONS[idx]));
 						}
 					}
 				}	
