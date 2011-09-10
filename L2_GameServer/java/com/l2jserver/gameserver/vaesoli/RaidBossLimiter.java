@@ -18,7 +18,7 @@ public class RaidBossLimiter
 {
 	private final static Logger _log = Logger.getLogger(RaidBossLimiter.class.getName());
 	private FastMap<String, Integer> _list; // liste des points par compte
-    private FastMap<String, String> _done; // liste des noms des RB par compte
+        private FastMap<String, String> _done; // liste des noms des RB par compte
 
 	public static final RaidBossLimiter getInstance()
 	{

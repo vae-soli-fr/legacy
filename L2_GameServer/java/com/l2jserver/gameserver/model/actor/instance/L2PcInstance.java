@@ -404,7 +404,7 @@ public final class L2PcInstance extends L2Playable
     private boolean _voting;
     private String _rplanguage;
     private String _volume;
-    private long _votetime = 0;
+    private long _lastVote = 0;
     private Camp _camp = new Camp();
     private boolean _monster = false;
     private boolean _guard = false;
@@ -7434,7 +7434,7 @@ public final class L2PcInstance extends L2Playable
                 player.setVoting(rset.getInt("voting") == 1);
                 player.setRPlanguage("");
                 player.setRPvolume("");
-                player.setVoteTime();
+                player.initLastVote();
 				
 				// Retrieve the name and ID of the other characters assigned to this account.
 				PreparedStatement stmt = con.prepareStatement("SELECT charId, char_name FROM characters WHERE account_name=? AND charId<>?");
@@ -15069,54 +15069,42 @@ public final class L2PcInstance extends L2Playable
         {
             return _volume;
         }
+        
+        /**
+         * Initialise le dernier vote
+         */
+        
+        private void initLastVote()
+        {
+            // le votetime etant initialisé à 0 il va forcement mettre a jour cet attribut
+            VotesChecker.hasVoted(this); 
+        }
 
     /**
      * Règlage du temps de vote
-     *
      */
-       private void setVoteTime()
+       public void setLastVote(long timestamp)
         {
-        this.hasVoted(); // le votetime etant initialisé à 0 il va forcement mettre a jour cet attribut
+            _lastVote = timestamp;    
         }
+     
+    /** 
+      * Dernier vote
+      */
+       public long getLastVote()
+       {
+           return _lastVote;
+       }
 
-    /**
-     * Etat du vote
-     * @return vrai(true) si le joueur à voté ou faux(false) dans le cas contraire
-     * @author melua
-     */
-
-        public boolean hasVoted()
-        {
-        if ( VotesChecker.CURRENTTIME < _votetime) return true;
-        else {
-        Connection con = null;
-        long newtime = 0;
-        try
-        { con = L2DatabaseFactory.getInstance().getConnection();
-        PreparedStatement statement = con.prepareStatement("SELECT next FROM votes WHERE account = ?");
-        statement.setString(1, this.getAccountName());
-        ResultSet rset = statement.executeQuery();
-        while (rset.next()) newtime = rset.getLong("next");
-        rset.close();
-        statement.close();
-        }
-        catch (Exception e) { }
-        finally { try { if (con != null) con.close(); } catch (Exception e) { e.printStackTrace(); } }
-        _votetime = newtime;
-        if (VotesChecker.CURRENTTIME < _votetime) return true;
-        else return false;
-        }
-        }
-
-  /** Etat de l'offline
-    * @return vrai(true) si le PJ est offline ou faux(false) dans le cas contraire
-    * @author melua
-    */
+      /** Etat de l'offline
+        * @return vrai(true) si le PJ est offline ou faux(false) dans le cas contraire
+        * @author melua
+        */
         public boolean isInOfflineMode()
         {
             return getClient() == null || getClient().isDetached();
         }
-
+     
         public long getOfflineStartTime()
         {
             return _offlineShopStart;

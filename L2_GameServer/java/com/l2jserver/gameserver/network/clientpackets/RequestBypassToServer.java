@@ -45,6 +45,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.GMAudit;
 import com.l2jserver.gameserver.vaesoli.Descriptions;
+import com.l2jserver.gameserver.vaesoli.VotesReward;
 
 
 /**
@@ -117,6 +118,11 @@ public final class RequestBypassToServer extends L2GameClientPacket
             String description = _command.substring(10);
             Descriptions.setDesc(activeChar, description);
             activeChar.sendMessage("Votre description a été enregistrée.");
+            }
+            else if (_command.startsWith("get_reward"))
+            {
+            int rewardId = Integer.parseInt(_command.substring(11));
+            VotesReward.giveReward(activeChar, rewardId);          
             }
 			else if (_command.equals("come_here") && ( activeChar.isGM()))
 			{

@@ -19,7 +19,7 @@ public class VotesReminder implements IVoicedCommandHandler {
             if (option != null) {
                 if (option.equalsIgnoreCase("on")) {
                     activeChar.setVoting(true);
-                    activeChar.sendMessage("Vous allez être averti pour les votes, le serveur vérifiera toutes les " + Config.VAEMOD_VOTESCHECK + " minutes si vous n'avez pas voté depuis plus de " + Config.VAEMOD_VOTESDELAY + " minutes. Utilisez un des liens de vote du forum pour comptabiliser votre vote. Merci de votre participation.");
+                    activeChar.sendMessage("Vous allez être averti pour les votes, le serveur vérifiera toutes les " + Config.VAEMOD_VOTESCHECK + " minutes si vous n'avez pas voté depuis plus de 120 minutes. Utilisez un des liens de vote du forum pour comptabiliser votre vote. Merci de votre participation.");
 
                 } else if (option.equalsIgnoreCase("off")) {
                     activeChar.setVoting(false);

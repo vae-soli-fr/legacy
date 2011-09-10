@@ -52,7 +52,7 @@
 		</fileset>
 	</path>
 
-    <target name="sonar" depends="compile" description="Analyse project">
+    <target name="sonar" depends="compile" description="Analyse project. Require 300+ minutes to run !!">
         <property name="sonar.sources" value="${src}" />
         <property name="sonar.libraries" value="${lib}" />
         <property name="sonar.binaries" value="${build.classes}" />
