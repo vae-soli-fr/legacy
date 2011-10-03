@@ -65,10 +65,8 @@
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/3">
             <compilation-unit>
                 <package-root>dist</package-root>
-                <source-level>1.7</source-level>
-            </compilation-unit>
-            <compilation-unit>
                 <package-root>misc</package-root>
+                <classpath mode="compile">../L2J_Server/java</classpath>
                 <source-level>1.7</source-level>
             </compilation-unit>
         </java-data>
