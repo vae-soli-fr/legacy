@@ -126,7 +126,7 @@
             <compilation-unit>
                 <package-root>javaTest</package-root>
                 <unit-tests/>
-                <classpath mode="compile">lib/bsh-2.0b5.jar;lib/bsh-engine.jar;lib/c3p0-0.9.2-pre1.jar;lib/ecj-3.6.1.jar;lib/java-engine.jar;lib/javolution-5.5.1.jar;lib/jogl.jar;lib/junit-4.9b3.jar;lib/jython-engine.jar;lib/jython.jar;lib/mchange-commons-0.2.jar;lib/mmocore.jar;lib/mysql-connector-java-5.1.13-bin.jar;lib/netcon.jar;lib/trove-2.1.0.jar;lib/worldwind.jar;java</classpath>
+                <classpath mode="compile">lib/bsh-2.0b5.jar;lib/bsh-engine.jar;lib/c3p0-0.9.2-pre1.jar;lib/ecj-3.7.1.jar;lib/java-engine-1.7.jar;lib/javolution-5.5.1.jar;lib/jna.jar;lib/junit-4.10.jar;lib/jython-engine-2.2.1.jar;lib/jython.jar;lib/mail.jar;lib/mailapi.jar;lib/mchange-commons-0.2.jar;lib/mmocore.jar;lib/mysql-connector-java-5.1.17-bin.jar;lib/netcon.jar;lib/smtp.jar;lib/trove-2.1.0.jar;java</classpath>
                 <source-level>1.7</source-level>
             </compilation-unit>
         </java-data>
