@@ -99,7 +99,7 @@
                 <package-root>data</package-root>
                 <package-root>sql</package-root>
                 <package-root>tools</package-root>
-                <classpath mode="compile">../L2J_Server/lib/bsh-2.0b5.jar;../L2J_Server/lib/bsh-engine.jar;../L2J_Server/lib/c3p0-0.9.2-pre1.jar;../L2J_Server/lib/ecj-3.7.1.jar;../L2J_Server/lib/java-engine-1.7.jar;../L2J_Server/lib/javolution-5.5.1.jar;../L2J_Server/lib/jna.jar;../L2J_Server/lib/jython-engine-2.2.1.jar;../L2J_Server/lib/jython.jar;../L2J_Server/lib/mail.jar;../L2J_Server/lib/mailapi.jar;../L2J_Server/lib/mchange-commons-0.2.jar;../L2J_Server/lib/mmocore.jar;../L2J_Server/lib/mysql-connector-java-5.1.17-bin.jar;../L2J_Server/lib/netcon.jar;../L2J_Server/lib/smtp.jar;../L2J_Server/lib/trove-2.1.0.jar;../L2J_Server/java</classpath>
+                <classpath mode="compile">../L2J_Server/lib/bsh-2.0b5.jar;../L2J_Server/lib/bsh-engine.jar;../L2J_Server/lib/c3p0-0.9.2-pre1.jar;../L2J_Server/lib/ecj-3.7.1.jar;../L2J_Server/lib/java-engine-1.7.jar;../L2J_Server/lib/javolution-5.5.1.jar;../L2J_Server/lib/jna.jar;../L2J_Server/lib/jython-engine-2.2.1.jar;../L2J_Server/lib/jython.jar;../L2J_Server/lib/mail.jar;../L2J_Server/lib/mailapi.jar;../L2J_Server/lib/mchange-commons-0.2.jar;../L2J_Server/lib/mysql-connector-java-5.1.17-bin.jar;../L2J_Server/lib/netcon.jar;../L2J_Server/lib/smtp.jar;../L2J_Server/lib/trove-2.1.0.jar;../L2J_Server/java;../MMOCore/build/dist/mmocore.jar</classpath>
                 <source-level>1.7</source-level>
             </compilation-unit>
         </java-data>
