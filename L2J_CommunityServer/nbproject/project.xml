@@ -77,7 +77,7 @@
                 <package-root>dist</package-root>
                 <package-root>java</package-root>
                 <package-root>lib</package-root>
-                <classpath mode="compile">lib/c3p0-0.9.2-pre1.jar;lib/javolution-5.5.1.jar;lib/mchange-commons-0.2.jar;lib/mysql-connector-java-5.1.17-bin.jar</classpath>
+                <classpath mode="compile">lib/c3p0-0.9.2-pre1.jar;lib/javolution-5.5.1.jar;lib/mchange-commons-0.2.jar;lib/mysql-connector-java-5.1.18-bin.jar</classpath>
                 <source-level>1.7</source-level>
             </compilation-unit>
         </java-data>
