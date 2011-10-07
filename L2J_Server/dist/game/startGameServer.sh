@@ -5,5 +5,5 @@ then
    echo "Ce script doit être lancé avec l'utilisateur VaeSoli !" 1>&2
    exit 1
 else
-   ./HighFive_loop.sh &
+   ./GameHi5_loop.sh &
 fi
