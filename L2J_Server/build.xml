@@ -145,6 +145,8 @@
 		<copy todir="${build.dist}">
 			<fileset dir="dist" />
 		</copy>
+                <mkdir dir="${build.dist.game}/log" />
+                <mkdir dir="${build.dist.login}/log" />
 		<concat destfile="${build.dist.doc}/L2J_Server_CHANGELOG.txt">${l2j.changelog}</concat>
 		<copy todir="${build.dist.game}">
 			<fileset dir="misc" />

@@ -52,6 +52,7 @@
 		<copy todir="${build.dist}">
 			<fileset dir="dist" />
 		</copy>
+                <mkdir dir="${build.dist.community}/log" />
 		<concat destfile="${build.dist.community}/config/l2jcs-version.properties">version=${l2j.version}${line.separator}builddate=${build.tstamp}</concat>
 		<concat destfile="${build.dist.doc}/L2J_CommunityServer_CHANGELOG.txt">${l2j.changelog}</concat>
 		<copy todir="${build.dist.libs}">
