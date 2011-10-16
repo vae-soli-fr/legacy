@@ -56,6 +56,10 @@
 	<zone id="77702" type="ScriptZone" shape="Cuboid" minZ="750" maxZ="1050" /> <!-- IN -->
 	<zone id="77703" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750" /> <!-- UP -->
 	<zone id="77704" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750" /> <!-- DOWN -->
+        
+        <!-- Clan Hall Sssiks -->
+        <zone id="88800" type="ScriptZone" shape="Cuboid" minZ="-4800" maxZ="-4400" /> <!-- IN -->
+	<zone id="88801" type="ScriptZone" shape="Cuboid" minZ="700" maxZ="1100" /> <!-- OUT -->
 
 	<!-- Town Peace Zones -->
 	<zone id="10800" type="PeaceZone" shape="NPoly" minZ="-3966" maxZ="-3466" /> <!-- [17_25] talking_island_town_peace_zone1 -->
