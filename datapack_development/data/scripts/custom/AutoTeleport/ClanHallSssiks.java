@@ -46,6 +46,6 @@ public class ClanHallSssiks extends Quest
 	
 	public static void main(String[] args)
 	{
-		new PrefectureRune(-1,"ClanHallSssiks","custom");
+		new ClanHallSssiks(-1,"ClanHallSssiks","custom");
 	}
 }
