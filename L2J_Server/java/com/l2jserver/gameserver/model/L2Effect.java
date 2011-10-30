@@ -89,24 +89,24 @@ public abstract class L2Effect implements IChanceSkillTrigger
 	private int _periodStartTicks;
 	private int _periodFirstTime;
 	
-	private EffectTemplate _template;
+	private final EffectTemplate _template;
 	
 	// function templates
 	private final FuncTemplate[] _funcTemplates;
 	
 	//initial count
-	private int _totalCount;
+	private final int _totalCount;
 	// counter
 	private int _count;
 	
 	// abnormal effect mask
-	private AbnormalEffect _abnormalEffect;
+	private final AbnormalEffect _abnormalEffect;
 	// special effect mask
-	private AbnormalEffect[] _specialEffect;
+	private final AbnormalEffect[] _specialEffect;
 	// event effect mask
-	private AbnormalEffect _eventEffect;
+	private final AbnormalEffect _eventEffect;
 	// show icon
-	private boolean _icon;
+	private final boolean _icon;
 	// is self effect?
 	private boolean _isSelfEffect = false;
 	// is passive effect?
@@ -116,6 +116,7 @@ public abstract class L2Effect implements IChanceSkillTrigger
 	
 	private final class EffectTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			try
@@ -579,14 +580,14 @@ public abstract class L2Effect implements IChanceSkillTrigger
 		if (_totalCount > 1)
 		{
 			if (sk.isPotion())
-				mi.addEffect(sk.getId(), getLevel(), sk.getBuffDuration() - (getTaskTime() * 1000));
+				mi.addEffect(sk.getDisplayId(), getLevel(), sk.getBuffDuration() - (getTaskTime() * 1000));
 			else
-				mi.addEffect(sk.getId(), getLevel(), -1);
+				mi.addEffect(sk.getDisplayId(), getLevel(), -1);
 		}
 		else if (future != null)
-			mi.addEffect(sk.getId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
+			mi.addEffect(sk.getDisplayId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
 		else if (_abnormalTime == -1)
-			mi.addEffect(sk.getId(), getLevel(), _abnormalTime);
+			mi.addEffect(sk.getDisplayId(), getLevel(), _abnormalTime);
 	}
 	
 	public final void addPartySpelledIcon(PartySpelled ps)
@@ -597,9 +598,9 @@ public abstract class L2Effect implements IChanceSkillTrigger
 		final ScheduledFuture<?> future = _currentFuture;
 		final L2Skill sk = getSkill();
 		if (future != null)
-			ps.addPartySpelledEffect(sk.getId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
+			ps.addPartySpelledEffect(sk.getDisplayId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
 		else if (_abnormalTime == -1)
-			ps.addPartySpelledEffect(sk.getId(), getLevel(), _abnormalTime);
+			ps.addPartySpelledEffect(sk.getDisplayId(), getLevel(), _abnormalTime);
 	}
 	
 	public final void addOlympiadSpelledIcon(ExOlympiadSpelledInfo os)
@@ -610,9 +611,9 @@ public abstract class L2Effect implements IChanceSkillTrigger
 		final ScheduledFuture<?> future = _currentFuture;
 		final L2Skill sk = getSkill();
 		if (future != null)
-			os.addEffect(sk.getId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
+			os.addEffect(sk.getDisplayId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
 		else if (_abnormalTime == -1)
-			os.addEffect(sk.getId(), getLevel(), _abnormalTime);
+			os.addEffect(sk.getDisplayId(), getLevel(), _abnormalTime);
 	}
 	
 	public int getLevel()
@@ -685,13 +686,50 @@ public abstract class L2Effect implements IChanceSkillTrigger
 		return false;
 	}
 	
-	public void decreaseForce() { }
-	public void increaseEffect() { }
-	public int getForceEffect() { return 0; }
-	public boolean isBuffEffect() { return false; }
-	public boolean isDebuffEffect() { return false; }
-	public boolean triggersChanceSkill() { return false; }	
-	public int getTriggeredChanceId() { return 0; }
-	public int getTriggeredChanceLevel() { return 0; }
-	public ChanceCondition getTriggeredChanceCondition() { return null; }
+	public void decreaseForce()
+	{
+	}
+	
+	public void increaseEffect()
+	{
+	}
+	
+	public int getForceEffect()
+	{
+		return 0;
+	}
+	
+	public boolean isBuffEffect()
+	{
+		return false;
+	}
+	
+	public boolean isDebuffEffect()
+	{
+		return false;
+	}
+	
+	@Override
+	public boolean triggersChanceSkill()
+	{
+		return false;
+	}
+	
+	@Override
+	public int getTriggeredChanceId()
+	{
+		return 0;
+	}
+	
+	@Override
+	public int getTriggeredChanceLevel()
+	{
+		return 0;
+	}
+	
+	@Override
+	public ChanceCondition getTriggeredChanceCondition()
+	{
+		return null;
+	}
 }
