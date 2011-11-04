@@ -1,4 +1,4 @@
----- ITEM: OK
+-- ITEM: OK
 ALTER TABLE `items` 
 MODIFY COLUMN `loc` varchar(10)  NULL DEFAULT NULL ,
 ADD COLUMN `time_of_use` int(11)  NULL DEFAULT NULL ,
@@ -10,17 +10,17 @@ ADD INDEX `time_of_use`(`time_of_use`),
 DROP INDEX `key_owner_id`,
 ADD INDEX `owner_id`(`owner_id`);
 
----- SEVEN SIGNS FESTIVAL: OK
+-- SEVEN SIGNS FESTIVAL: OK
 ALTER TABLE `seven_signs_festival` 
 MODIFY COLUMN `date` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
 
----- MESSAGES: OK
+-- MESSAGES: OK
 ALTER TABLE `messages` 
 CHANGE `isNews` `isReturned` enum('true','false')  NOT NULL DEFAULT 'false' ,
 MODIFY COLUMN `expiration` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 CHANGE `isFourStars` `sendBySystem` tinyint(1)  NOT NULL DEFAULT '0' ;
 
----- CLAN DATA: OK
+-- CLAN DATA: OK
 ALTER TABLE `clan_data` 
 MODIFY COLUMN `char_penalty_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `ally_name` varchar(45)  NULL DEFAULT NULL ,
@@ -28,11 +28,11 @@ MODIFY COLUMN `dissolving_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0'
 MODIFY COLUMN `clan_name` varchar(45)  NULL DEFAULT NULL ,
 MODIFY COLUMN `ally_penalty_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
 
----- SEVEN SIGNS STATUS: OK
+-- SEVEN SIGNS STATUS: OK
 ALTER TABLE `seven_signs_status` 
 MODIFY COLUMN `date` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
 
----- PETS: OK
+-- PETS: OK
 ALTER TABLE `pets` 
 MODIFY COLUMN `curHp` int(9) unsigned  NULL DEFAULT '0' ,
 MODIFY COLUMN `level` smallint(2) unsigned  NOT NULL,
@@ -43,55 +43,56 @@ MODIFY COLUMN `sp` int(10) unsigned  NULL DEFAULT '0' ,
 MODIFY COLUMN `exp` bigint(20) unsigned  NULL DEFAULT '0' ,
 MODIFY COLUMN `curMp` int(9) unsigned  NULL DEFAULT '0' ,
 MODIFY COLUMN `item_obj_id` int(10) unsigned  NOT NULL,
-DROP COLUMN `armor`, ---- ?
-DROP COLUMN `jewel`, ---- ?
-DROP COLUMN `weapon`; ---- ?
+DROP COLUMN `armor`, -- ?
+DROP COLUMN `jewel`, -- ?
+DROP COLUMN `weapon`; -- ?
 
----- CHARACTER SKILLS: OK
-ALTER TABLE `character_skills` 
----- DROP COLUMN `verified`;
+-- CHARACTER SKILLS: OK
+-- ALTER TABLE `character_skills` 
+-- DROP COLUMN `verified`;
 
----- CASTLE FUNCTIONS: OK
+-- CASTLE FUNCTIONS: OK
 ALTER TABLE `castle_functions` 
 MODIFY COLUMN `endTime` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
 
----- CASTLE: OK
+-- CASTLE: OK
 ALTER TABLE `castle` 
 MODIFY COLUMN `siegeDate` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 ADD COLUMN `bloodAlliance` int(3)  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `regTimeEnd` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
 
----- CUSTOM NPCSKILLS: OK
-ALTER TABLE `custom_npcskills` 
-MODIFY COLUMN `npcid` smallint(5) unsigned  NOT NULL DEFAULT '0' ;
+-- CUSTOM NPCSKILLS: OK
+-- ALTER TABLE `custom_npcskills` 
+-- MODIFY COLUMN `npcid` smallint(5) unsigned  NOT NULL DEFAULT '0' ;
 
----- CUSTOM SPAWNLIST: 
+-- CUSTOM SPAWNLIST: 
 ALTER TABLE `custom_spawnlist` 
 MODIFY COLUMN `npc_templateid` mediumint(7) unsigned  NOT NULL DEFAULT '0' ,
 DROP COLUMN `id`,
 DROP INDEX `key_npc_templateid`,
 DROP PRIMARY KEY;
 
----- CLAN HALL FUNCTIONS: OK
+-- CLAN HALL FUNCTIONS: OK
 ALTER TABLE `clanhall_functions` 
 MODIFY COLUMN `endTime` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
 
----- CLAN HALL: OK
+-- CLAN HALL: OK
 ALTER TABLE `clanhall` 
 MODIFY COLUMN `paidUntil` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `ownerId` int(11)  NOT NULL DEFAULT '0' ,
 ADD INDEX `ownerId`(`ownerId`);
 
----- CLAN SKILLS: OK
+-- CLAN SKILLS: OK
 ALTER TABLE `clan_skills` 
 MODIFY COLUMN `sub_pledge_id` int(11)  NOT NULL DEFAULT '-2' ,
-ADD PRIMARY KEY (`sub_pledge_id`);
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`clan_id`,`skill_id`,`sub_pledge_id`);
 
----- CHARACTER MACROSES: OK
+-- CHARACTER MACROSES: OK
 ALTER TABLE `character_macroses` 
 MODIFY COLUMN `commands` varchar(500)  NULL DEFAULT NULL ;
 
----- CUSTOM NPCAIDATA: OK
+-- CUSTOM NPCAIDATA: OK
 ALTER TABLE `custom_npcaidata` 
 CHANGE `clan_range` `clanRange` smallint(4) unsigned  NULL DEFAULT '0' ,
 CHANGE `spiritshot` `spiritShot` smallint(4) unsigned  NULL DEFAULT '0' ,
@@ -114,20 +115,20 @@ CHANGE `npc_id` `npcId` mediumint(7) unsigned  NOT NULL,
 DROP PRIMARY KEY,
 ADD PRIMARY KEY (`npcId`);
 
----- CUSTOM MERCHANT BUYLISTS: OK
+-- CUSTOM MERCHANT BUYLISTS: OK
 ALTER TABLE `custom_merchant_buylists` 
 MODIFY COLUMN `savetimer` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
 
------ CHARACTER SUBCLASSES: OK
-ALTER TABLE `character_subclasses` 
----- DROP COLUMN `verified`;
+-- CHARACTER SUBCLASSES: OK
+-- ALTER TABLE `character_subclasses` 
+-- DROP COLUMN `verified`;
 
----- CLAN SUBPLEDGES: OK
+-- CLAN SUBPLEDGES: OK
 ALTER TABLE `clan_subpledges` 
 MODIFY COLUMN `leader_id` int(11)  NOT NULL DEFAULT '0' ,
 ADD INDEX `leader_id`(`leader_id`);
 
----- CUSTOM NPC: OK
+-- CUSTOM NPC: OK
 ALTER TABLE `custom_npc` 
 ADD COLUMN `targetable` tinyint(1)  NOT NULL DEFAULT '1' ,
 MODIFY COLUMN `patk` decimal(12,5)  NULL DEFAULT NULL ,
@@ -144,39 +145,39 @@ MODIFY COLUMN `sex` enum('etc','female','male')  NOT NULL DEFAULT 'etc' ,
 MODIFY COLUMN `walkspd` decimal(10,5)  NOT NULL DEFAULT '60.00000' ,
 MODIFY COLUMN `hp` decimal(30,15)  NULL DEFAULT NULL ;
 
----- CUSTOM DROPLIST: OK
-ALTER TABLE `custom_droplist` 
-MODIFY COLUMN `mobId` smallint(5) unsigned  NOT NULL DEFAULT '0' ;
+-- CUSTOM DROPLIST: OK
+-- ALTER TABLE `custom_droplist` 
+-- MODIFY COLUMN `mobId` smallint(5) unsigned  NOT NULL DEFAULT '0' ;
 
----- CLAN WARS: OK
+-- CLAN WARS: OK
 ALTER TABLE `clan_wars` 
 MODIFY COLUMN `clan1` varchar(35)  NOT NULL DEFAULT '' ,
 MODIFY COLUMN `clan2` varchar(35)  NOT NULL DEFAULT '' ,
 ADD INDEX `clan1`(`clan1`),
 ADD INDEX `clan2`(`clan2`);
 
----- CHARACTERS: OK
+-- CHARACTERS: OK
 ALTER TABLE `characters` 
 MODIFY COLUMN `account_name` varchar(45)  NULL DEFAULT NULL ,
 MODIFY COLUMN `online` tinyint(3) unsigned  NULL DEFAULT NULL ,
 MODIFY COLUMN `language` varchar(2)  NULL DEFAULT NULL ,
 MODIFY COLUMN `title` varchar(16)  NULL DEFAULT NULL ,
-MODIFY COLUMN `title_color` mediumint(7) UNSIGNED NOT NULL default '16777079' AFTER `title`;
+MODIFY COLUMN `title_color` mediumint(8) UNSIGNED NOT NULL default '16777079' AFTER `title`,
 MODIFY COLUMN `lastAccess` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `clan_join_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `deletetime` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `clan_create_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `char_name` varchar(35)  NOT NULL,
 CHANGE `createTime` `createDate` date  NOT NULL DEFAULT '0000-00-00' ,
----- DROP COLUMN `voting`,
+-- DROP COLUMN `voting`,
 DROP COLUMN `last_recom_date`,
----- DROP COLUMN `showFsDamages`,
+-- DROP COLUMN `showFsDamages`,
 DROP COLUMN `rec_left`,
 DROP COLUMN `rec_have`,
----- DROP COLUMN `verified`,
+-- DROP COLUMN `verified`,
 ADD INDEX `account_name`(`account_name`),
 ADD INDEX `online`(`online`),
 ADD INDEX `char_name`(`char_name`);
 
----- CUSTOM ETCITEM: OK
+-- CUSTOM ETCITEM: OK
 DROP TABLE `custom_etcitem`
