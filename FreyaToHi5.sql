@@ -183,9 +183,6 @@ ADD INDEX `online`(`online`),
 ADD INDEX `char_name`(`char_name`),
 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
--- CUSTOM ETCITEM: OK
-DROP TABLE `custom_etcitem`;
-
 -- change Engine
 ALTER TABLE `castle`
 ENGINE=InnoDB;
