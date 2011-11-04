@@ -12702,7 +12702,7 @@ public final class L2PcInstance extends L2Playable
 	 */
 	public boolean isInJail()
 	{
-		return _punishLevel == PunishLevel.JAIL;
+		return (_punishLevel == PunishLevel.JAIL || _punishLevel == PunishLevel.BG);
 	}
 	
 	/**

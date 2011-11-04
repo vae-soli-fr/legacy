@@ -38,6 +38,12 @@ public class SocialAction extends L2GameServerPacket
 		_charObjId = cha.getObjectId();
 		_actionId = actionId;
 	}
+        
+        public SocialAction(int objectId, int actionId)
+	{
+		_charObjId = objectId;
+		_actionId = actionId;
+	}
 	
 	@Override
 	protected final void writeImpl()
