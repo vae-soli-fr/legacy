@@ -23,6 +23,7 @@ import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.MyTargetSelected;
 import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
+import com.l2jserver.gameserver.vaesoli.Descriptions;
 
 public class L2PcInstanceActionShift implements IActionHandler
 {
@@ -48,6 +49,10 @@ public class L2PcInstanceActionShift implements IActionHandler
 			if (ach != null)
 				ach.useAdminCommand("admin_character_info " + target.getName(), activeChar);
 		}
+                else if (target instanceof L2PcInstance) {
+		L2PcInstance player = (L2PcInstance) target;
+		if (!player.isDead()) Descriptions.showDesc(player, activeChar);
+                }
 		return true;
 	}
 	

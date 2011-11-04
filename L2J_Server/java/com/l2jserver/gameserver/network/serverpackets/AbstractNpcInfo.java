@@ -181,8 +181,12 @@ public abstract class AbstractNpcInfo extends L2GameServerPacket
 			writeD(0x00); //pvp flag
 			writeD(0x00); // karma
 			
-			writeD(_npc.getAbnormalEffect()); // C2
-			writeD(_clanId); //clan id
+			//writeD(_npc.getAbnormalEffect()); // C2
+			int abnormal = _npc.getAbnormalEffect();
+                        if (_npc.isChampion()) abnormal |= AbnormalEffect.VITALITY.getMask();
+                        else abnormal &= ~AbnormalEffect.VITALITY.getMask();
+                        writeD(abnormal); // C2
+                        writeD(_clanId); //clan id
 			writeD(_clanCrest); //crest id
 			writeD(_allyId); // ally id
 			writeD(_allyCrest); // all crest

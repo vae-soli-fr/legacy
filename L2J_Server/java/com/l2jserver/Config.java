@@ -84,7 +84,46 @@ public final class Config
 	public static final String SECURITY_CONFIG_FILE = "./config/security.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/email.properties";
 	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
-	
+        public static final String CUSTOM_FILE = "./config/custom.properties";
+
+        //--------------------------------------------------
+	// Paramètres des customisations de Vae Soli
+	//--------------------------------------------------
+        public static boolean VAEMOD_DESC; // mod description
+        public static boolean VAEMOD_DESCWITHIMAGES; // mod description with image
+        public static boolean VAEMOD_RBJAIL = true; // bannir les joueurs qui font plus de 3 RBs
+        public static boolean VAEMOD_MOVIE; // mod movie
+        public static String VAEMOD_ADMINMESSAGEAREA; // mod adminmessage
+        public static boolean VAEMOD_TITLE; // mod titre
+        public static boolean VAEMOD_FSDAMAGES; // mod Damages en plein écran
+        public static boolean VAEMOD_RPLANG; // mod langues en roleplay
+        public static boolean VAEMOD_CHATVOLUME; // mod chatvolume
+        public static boolean VAEMOD_RPTIME; // afficher l'heure roleplay
+        public static boolean VAEMOD_FREECHATHERO; // chan hero pour tous
+        public static boolean VAEMOD_PVPMANA; // désactiver les potions de mana en PvP
+        public static int VAEMOD_VOTESCHECK; // intervalle de vérification des votes
+        public static boolean VAEMOD_HIDEOFFLINE; // cacher les offlines dans le CB
+        public static int VAEMOD_SPEAKINGBOSS; // chance pour les mobs de parler
+        public static boolean VAEMOD_PETSAY; // commande pour faire parler son pet
+        public static boolean VAEMOD_NPCSAY; // commande admin pour faire parler les Npc
+        public static boolean VAEMOD_MUTESEVENSIGNS; // désactiver les autochats des Seven Signs
+        public static String VAEMOD_CBCOLOR_DARKELF;
+        public static String VAEMOD_CBCOLOR_DWARF;
+        public static String VAEMOD_CBCOLOR_ELF;
+        public static String VAEMOD_CBCOLOR_HUMAN;
+        public static String VAEMOD_CBCOLOR_KAMAEL;
+        public static String VAEMOD_CBCOLOR_ORC;
+        public static String VAEMOD_CBCOLOR_GM;
+        public static String VAEMOD_CBCOLOR_OFFLINE;
+        public static boolean VAEMOD_CAMP; // autoriser l'utilisation des campements
+        public static boolean VAEMOD_BGJAIL; // autojail validations de BG
+        public static boolean VAEMOD_ALLOWDDS; // autoriser les images server-side dans les HTML
+        public static boolean VAEMOD_PENALTY; // autoriser la siege penalty manuelle
+        public static boolean VAEMOD_METEO; // autoriser la meteo
+        public static boolean VAEMOD_ADMINDEBUFF; // autoriser la commande Debuff
+        public static boolean VAEMOD_ADMINRBJAIL; // autoriser la désactivation du jail RB
+        public static boolean VAEMOD_ADMINMONSTER; // autoriser la commande Monster
+        public static boolean VAEMOD_SCENE; // autoriser les scènes
 	
 	//--------------------------------------------------
 	// L2J Variable Definitions
@@ -1251,6 +1290,52 @@ public final class Config
 					throw new Error("Failed to Load "+IP_CONFIG_FILE+" File.");
 				}
 				
+                                // Chargement des paramètres de customisation de Vae Soli
+				try
+				{
+					L2Properties customSettings = new L2Properties();
+					is = new FileInputStream(new File(CUSTOM_FILE));
+					customSettings.load(is);
+                                        VAEMOD_ADMINMESSAGEAREA = customSettings.getProperty("AdminMessageArea", "OFF");
+                                        VAEMOD_DESC = Boolean.parseBoolean(customSettings.getProperty("ActiverDescriptions", "false"));
+                                        VAEMOD_DESCWITHIMAGES = Boolean.parseBoolean(customSettings.getProperty("DescriptionsWithImages", "false"));
+                                        VAEMOD_FSDAMAGES = Boolean.parseBoolean(customSettings.getProperty("ActiverFSDamages", "false"));
+                                        VAEMOD_MOVIE = Boolean.parseBoolean(customSettings.getProperty("ActiverModMovie", "false"));
+                                        VAEMOD_TITLE = Boolean.parseBoolean(customSettings.getProperty("ActiverModTitre", "false"));
+                                        VAEMOD_RPLANG = Boolean.parseBoolean(customSettings.getProperty("LangageRP", "false"));
+                                        VAEMOD_CHATVOLUME = Boolean.parseBoolean(customSettings.getProperty("ChatVolume", "false"));
+                                        VAEMOD_RPTIME = Boolean.parseBoolean(customSettings.getProperty("RPTime", "false"));
+                                        VAEMOD_FREECHATHERO = Boolean.parseBoolean(customSettings.getProperty("FreeChatHero", "false"));
+                                        VAEMOD_PVPMANA = Boolean.parseBoolean(customSettings.getProperty("NoManaPotionInPvP", "false"));
+                                        VAEMOD_VOTESCHECK = Integer.parseInt(customSettings.getProperty("VotesCheckTimer", "10"));
+                                        VAEMOD_HIDEOFFLINE = Boolean.parseBoolean(customSettings.getProperty("CacherOffline", "false"));
+                                        VAEMOD_SPEAKINGBOSS = Integer.parseInt(customSettings.getProperty("SpeakingMobChance", "0"));
+                                        VAEMOD_PETSAY = Boolean.parseBoolean(customSettings.getProperty("ActiverPetSay", "false"));
+                                        VAEMOD_NPCSAY = Boolean.parseBoolean(customSettings.getProperty("ActiverNpcSay", "false"));
+                                        VAEMOD_MUTESEVENSIGNS = Boolean.parseBoolean(customSettings.getProperty("MuteSevenSigns", "false"));
+                                        VAEMOD_CBCOLOR_DARKELF = customSettings.getProperty("CBcolorDarkElf", "FFFFFF");
+                                        VAEMOD_CBCOLOR_DWARF = customSettings.getProperty("CBcolorDwarf", "FFFFFF");
+                                        VAEMOD_CBCOLOR_ELF = customSettings.getProperty("CBcolorElf", "FFFFFF");
+                                        VAEMOD_CBCOLOR_HUMAN = customSettings.getProperty("CBcolorHuman", "FFFFFF");
+                                        VAEMOD_CBCOLOR_KAMAEL = customSettings.getProperty("CBcolorKamael", "FFFFFF");
+                                        VAEMOD_CBCOLOR_ORC = customSettings.getProperty("CBcolorOrc", "FFFFFF");
+                                        VAEMOD_CBCOLOR_GM = customSettings.getProperty("CBcolorGM", "FFFFFF");
+                                        VAEMOD_CBCOLOR_OFFLINE = customSettings.getProperty("CBcolorOffline", "FFFFFF");
+                                        VAEMOD_CAMP = Boolean.parseBoolean(customSettings.getProperty("ActiverCampement", "false"));
+                                        VAEMOD_BGJAIL = Boolean.parseBoolean(customSettings.getProperty("AutoJailBgSubTransfo", "false"));
+                                        VAEMOD_ALLOWDDS = Boolean.parseBoolean(customSettings.getProperty("AllowDDS", "false"));
+                                        VAEMOD_PENALTY = Boolean.parseBoolean(customSettings.getProperty("ManualSiegePenalty", "false"));
+                                        VAEMOD_METEO = Boolean.parseBoolean(customSettings.getProperty("EnableMeteo", "false"));
+                                        VAEMOD_ADMINDEBUFF = Boolean.parseBoolean(customSettings.getProperty("EnableAdminDebuff", "false"));
+                                        VAEMOD_ADMINRBJAIL = Boolean.parseBoolean(customSettings.getProperty("EnableAdminRbJail", "false"));
+                                        VAEMOD_ADMINMONSTER = Boolean.parseBoolean(customSettings.getProperty("EnableAdminMonster", "false"));
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+					throw new Error("Failed to Load " + CUSTOM_FILE + " File.");
+				}
+                                
 				// Load Community Properties file (if exists)
 				try
 				{

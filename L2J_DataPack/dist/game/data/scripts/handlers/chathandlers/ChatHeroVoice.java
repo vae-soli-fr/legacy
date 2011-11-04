@@ -44,7 +44,7 @@ public class ChatHeroVoice implements IChatHandler
 	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
-		if (activeChar.isHero() || activeChar.isGM())
+		if (Config.VAEMOD_FREECHATHERO || activeChar.isHero() || activeChar.isGM())
 		{
 			if (activeChar.isChatBanned() && Util.contains(Config.BAN_CHAT_CHANNELS, type))
 			{

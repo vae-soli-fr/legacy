@@ -51,7 +51,8 @@ public class ChatAll implements IChatHandler
 	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String params, String text)
 	{
-		boolean vcd_used = false;
+		boolean vcd_used= false;
+                boolean is_action= false;
 		if (text.startsWith("."))
 		{
 			StringTokenizer st = new StringTokenizer(text);
@@ -90,6 +91,11 @@ public class ChatAll implements IChatHandler
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED));
 				return;
 			}
+                        
+                        if(!text.startsWith(" *"))
+                            text = activeChar.getRPvolume() + activeChar.getRPlanguage() + text;
+                        else
+                            is_action=true;
 			
 			/**
 			 * Match the character "." literally (Exactly 1 time)
@@ -103,8 +109,15 @@ public class ChatAll implements IChatHandler
 				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
 				for (L2PcInstance player : plrs)
 				{
-					if (player != null && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
-						player.sendPacket(cs);
+					if (player != null && !BlockList.isBlocked(player, activeChar))
+                                        {
+                                            if(activeChar.isInsideRadius(player, 1250, false, true) && (activeChar.getRPvolume().equals("") || is_action))
+                                                player.sendPacket(cs);
+                                            else if(activeChar.isInsideRadius(player, 100, false, true) && activeChar.getRPvolume().equals(" *chuchote* ") && !is_action)
+                                                player.sendPacket(cs);
+                                            else if(activeChar.isInsideRadius(player, 2900, false, true) && activeChar.getRPvolume().equals(" *crie* ") && !is_action)
+                                                player.sendPacket(cs);
+                                        }
 				}
 				
 				activeChar.sendPacket(cs);

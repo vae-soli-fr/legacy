@@ -298,6 +298,24 @@ import com.l2jserver.gameserver.handler.SkillHandler;
 import com.l2jserver.gameserver.handler.TargetHandler;
 import com.l2jserver.gameserver.handler.UserCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
+import handlers.admincommandhandlers.AdminDebuff;
+import handlers.admincommandhandlers.AdminMessage;
+import handlers.admincommandhandlers.AdminMonster;
+import handlers.admincommandhandlers.AdminMovie;
+import handlers.admincommandhandlers.AdminNpcSay;
+import handlers.admincommandhandlers.AdminPenalty;
+import handlers.admincommandhandlers.AdminRBjail;
+import handlers.admincommandhandlers.AdminScene;
+import handlers.voicedcommandhandlers.Camp;
+import handlers.voicedcommandhandlers.ChatVolume;
+import handlers.voicedcommandhandlers.Damages;
+import handlers.voicedcommandhandlers.Desc;
+import handlers.voicedcommandhandlers.Language;
+import handlers.voicedcommandhandlers.Meteo;
+import handlers.voicedcommandhandlers.PetSay;
+import handlers.voicedcommandhandlers.RPTime;
+import handlers.voicedcommandhandlers.Title;
+import handlers.voicedcommandhandlers.VotesReminder;
 
 /**
  * @author  nBd
@@ -414,6 +432,22 @@ public class MasterHandler
 		ADMIN.registerAdminCommandHandler(new AdminUnblockIp());
 		ADMIN.registerAdminCommandHandler(new AdminVitality());
 		ADMIN.registerAdminCommandHandler(new AdminZone());
+                if (Config.VAEMOD_ADMINMONSTER)
+                        ADMIN.registerAdminCommandHandler(new AdminMonster());
+                if (Config.VAEMOD_ADMINRBJAIL)
+                        ADMIN.registerAdminCommandHandler(new AdminRBjail());
+                if (Config.VAEMOD_ADMINDEBUFF)
+                        ADMIN.registerAdminCommandHandler(new AdminDebuff());
+                if (Config.VAEMOD_MOVIE)
+                        ADMIN.registerAdminCommandHandler(new AdminMovie());
+                if (!Config.VAEMOD_ADMINMESSAGEAREA.equalsIgnoreCase("OFF"))
+                        ADMIN.registerAdminCommandHandler(new AdminMessage());
+                if (Config.VAEMOD_NPCSAY)
+                        ADMIN.registerAdminCommandHandler(new AdminNpcSay());
+                if (Config.VAEMOD_PENALTY)
+                        ADMIN.registerAdminCommandHandler(new AdminPenalty());
+                if (Config.VAEMOD_SCENE)
+                        ADMIN.registerAdminCommandHandler(new AdminScene());
 		_log.log(Level.INFO, "Loaded " + ADMIN.size() + " AdminCommandHandlers");
 	}
 	
@@ -603,6 +637,26 @@ public class MasterHandler
 			VOICE.registerVoicedCommandHandler(new Debug());
 		if (Config.L2JMOD_ALLOW_CHANGE_PASSWORD)
 			VOICE.registerVoicedCommandHandler(new ChangePassword());
+                if (Config.VAEMOD_DESC)
+                        VOICE.registerVoicedCommandHandler(new Desc());
+                if (Config.VAEMOD_FSDAMAGES)
+                        VOICE.registerVoicedCommandHandler(new Damages());
+                if (Config.VAEMOD_TITLE)
+                        VOICE.registerVoicedCommandHandler(new Title());
+                if (Config.VAEMOD_RPLANG)
+                        VOICE.registerVoicedCommandHandler(new Language());
+                if (Config.VAEMOD_CHATVOLUME)
+                        VOICE.registerVoicedCommandHandler(new ChatVolume());
+                if (Config.VAEMOD_RPTIME)
+                        VOICE.registerVoicedCommandHandler(new RPTime());
+                if (Config.VAEMOD_VOTESCHECK > 0)
+                        VOICE.registerVoicedCommandHandler(new VotesReminder());
+                if (Config.VAEMOD_PETSAY)
+                        VOICE.registerVoicedCommandHandler(new PetSay());
+                if (Config.VAEMOD_CAMP)
+                        VOICE.registerVoicedCommandHandler(new Camp());
+                if (Config.VAEMOD_METEO)
+                        VOICE.registerVoicedCommandHandler(new Meteo());
 		_log.log(Level.INFO, "Loaded " + VOICE.size() + " VoicedHandlers");
 	}
 	

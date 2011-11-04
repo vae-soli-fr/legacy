@@ -197,6 +197,7 @@ import com.l2jserver.gameserver.network.serverpackets.ExGetOnAirShip;
 import com.l2jserver.gameserver.network.serverpackets.ExOlympiadMode;
 import com.l2jserver.gameserver.network.serverpackets.ExPrivateStoreSetWholeMsg;
 import com.l2jserver.gameserver.network.serverpackets.ExSetCompassZoneCode;
+import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
 import com.l2jserver.gameserver.network.serverpackets.ExSpawnEmitter;
 import com.l2jserver.gameserver.network.serverpackets.ExStartScenePlayer;
 import com.l2jserver.gameserver.network.serverpackets.ExStorageMaxCount;
@@ -272,6 +273,8 @@ import com.l2jserver.gameserver.util.L2TIntObjectHashMap;
 import com.l2jserver.gameserver.util.PlayerEventStatus;
 import com.l2jserver.gameserver.util.Point3D;
 import com.l2jserver.gameserver.util.Util;
+import com.l2jserver.gameserver.vaesoli.Camp;
+import com.l2jserver.gameserver.vaesoli.VotesChecker;
 import com.l2jserver.util.Rnd;
 
 /**
@@ -296,8 +299,8 @@ public final class L2PcInstance extends L2Playable
 	
 	// Character Character SQL String Definitions:
 	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,karma,fame,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,accesslevel,online,isin7sdungeon,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,createDate) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,karma=?,fame=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,punish_level=?,punish_timer=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,varka_ketra_ally=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=? WHERE charId=?";
-	private static final String RESTORE_CHARACTER = "SELECT account_name, charId, char_name, level, maxHp, curHp, maxCp, curCp, maxMp, curMp, face, hairStyle, hairColor, sex, heading, x, y, z, exp, expBeforeDeath, sp, karma, fame, pvpkills, pkkills, clanid, race, classid, deletetime, cancraft, title, title_color, accesslevel, online, char_slot, lastAccess, clan_privs, wantspeace, base_class, onlinetime, isin7sdungeon, punish_level, punish_timer, newbie, nobless, power_grade, subpledge, lvl_joined_academy, apprentice, sponsor, varka_ketra_ally,clan_join_expiry_time,clan_create_expiry_time,death_penalty_level,bookmarkslot,vitality_points,createDate,language FROM characters WHERE charId=?";
+	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,karma=?,fame=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,punish_level=?,punish_timer=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,varka_ketra_ally=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=?,showFsDamages=?,voting=? WHERE charId=?";
+	private static final String RESTORE_CHARACTER = "SELECT account_name, charId, char_name, level, maxHp, curHp, maxCp, curCp, maxMp, curMp, face, hairStyle, hairColor, sex, heading, x, y, z, exp, expBeforeDeath, sp, karma, fame, pvpkills, pkkills, clanid, race, classid, deletetime, cancraft, title, title_color, accesslevel, online, char_slot, lastAccess, clan_privs, wantspeace, base_class, onlinetime, isin7sdungeon, punish_level, punish_timer, newbie, nobless, power_grade, subpledge, lvl_joined_academy, apprentice, sponsor, varka_ketra_ally,clan_join_expiry_time,clan_create_expiry_time,death_penalty_level,bookmarkslot,vitality_points,createDate,language,showFsDamages,voting FROM characters WHERE charId=?";
 	
 	// Character Teleport Bookmark:
 	private static final String INSERT_TP_BOOKMARK = "INSERT INTO character_tpbookmark (charId,Id,x,y,z,icon,tag,name) values (?,?,?,?,?,?,?,?)";
@@ -387,6 +390,19 @@ public final class L2PcInstance extends L2Playable
 	private long _onlineBeginTime;
 	private long _lastAccess;
 	private long _uptime;
+        
+        /**
+         * ALL customs for Vae Soli in L2PcInstance
+         * keywords : Kirieh, Melua, Ariskan, mods, Saelil
+         */
+        private boolean _showFsDamages;
+        private boolean _voting;
+        private String _rplanguage;
+        private String _volume;
+        private long _lastVote = 0;
+        private Camp _camp = new Camp();
+        private boolean _monster = false;
+        private boolean _guard = false;
 	
 	private final ReentrantLock _subclassLock = new ReentrantLock();
 	protected int _baseClass;
@@ -462,7 +478,8 @@ public final class L2PcInstance extends L2Playable
 		CHAT(1, "chat banned"),
 		JAIL(2, "jailed"),
 		CHAR(3, "banned"),
-		ACC(4, "banned");
+		ACC(4, "banned"),
+                BG(5, "bg jailed");
 		
 		private final int punValue;
 		private final String punString;
@@ -7250,6 +7267,13 @@ public final class L2PcInstance extends L2Playable
 				
 				// Language
 				player.setLang(rset.getString("language"));
+                                
+                                // ALL customs for Vae Soli in L2PcInstance
+                                player.setShowFsDamages(rset.getInt("showFsDamages") == 1);
+                                player.setVoting(rset.getInt("voting") == 1);
+                                player.setRPlanguage("");
+                                player.setRPvolume("");
+                                player.initLastVote();
 				
 				// Retrieve the name and ID of the other characters assigned to this account.
 				PreparedStatement stmt = con.prepareStatement("SELECT charId, char_name FROM characters WHERE account_name=? AND charId<>?");
@@ -7698,7 +7722,9 @@ public final class L2PcInstance extends L2Playable
 			statement.setInt(50, getBookMarkSlot());
 			statement.setInt(51, getVitalityPoints());
 			statement.setString(52, getLang());
-			statement.setInt(53, getObjectId());
+                        statement.setInt(53, isFsDamages() ? 1 : 0);
+                        statement.setInt(54, isVoting() ? 1 : 0);
+			statement.setInt(55, getObjectId());
 			
 			statement.execute();
 			statement.close();
@@ -12505,6 +12531,11 @@ public final class L2PcInstance extends L2Playable
 				_punishLevel = PunishLevel.ACC;
 				break;
 			}
+                        case 5 :
+			{
+				_punishLevel = PunishLevel.BG;
+				break;
+			}
 		}
 	}
 	
@@ -12531,6 +12562,7 @@ public final class L2PcInstance extends L2Playable
 						sendMessage("Your Chat ban has been lifted");
 						break;
 					}
+                                        case BG: // same thing
 					case JAIL:
 					{
 						_punishLevel = state;
@@ -12573,6 +12605,7 @@ public final class L2PcInstance extends L2Playable
 				break;
 				
 			}
+                        case BG: // same thing
 			case JAIL: // Jail Player
 			{
 				_punishLevel = state;
@@ -13225,6 +13258,9 @@ public final class L2PcInstance extends L2Playable
 			sm.addPcName(this);
 			sm.addCharName(target);
 			sm.addNumber(damage);
+                        // affichage des dégats en plein écran
+                        if (this.isFsDamages())
+                        this.sendPacket(new ExShowScreenMessage(String.valueOf(damage), 1000));
 		}
 		
 		sendPacket(sm);
@@ -14751,6 +14787,156 @@ public final class L2PcInstance extends L2Playable
 		
 		return result;
 	}
+        
+        /**
+         * Option d'affichage des dégats en plein écran
+         * @param true si les dégats doivent être affichés
+         * @param false si les dégats ne doivent pas êtres affichés
+         * @author Melua
+         */
+            public void setShowFsDamages(boolean showFsDamages)
+            {
+                _showFsDamages = showFsDamages;
+            }
+
+        /**
+         * Option de rappel de vote en plein écran
+         * @param true si les rappels doivent être affichés
+         * @param false si les rappels ne doivent pas êtres affichés
+         * @author Melua
+         */
+            public void setVoting(boolean vote)
+            {
+                _voting = vote;
+            }
+
+        /**
+         * Etat des rappels de vote
+         * @return vrai(true) si le joueur vote ou faux(false) dans le cas contraire
+         * @author Melua
+         */
+            public boolean isVoting()
+            {
+                return _voting;
+            }
+
+        /**
+         * Etat de l'affichage des dégats en plein écran
+         * @return vrai(true) si les dégats sont affichés ou faux(false) dans le cas contraire
+         * @author Melua
+         */
+            public boolean isFsDamages()
+            {
+                return _showFsDamages;
+            }
+        
+        /**
+         * Règlage la langue utilisée en RolePlay
+         *
+         */
+            public void setRPlanguage(String langue)
+            {
+                _rplanguage = langue;
+            }
+     
+        /**
+         * Etat de la langue utilisée en RP
+         * @return la langue utilisée
+         */
+            public String getRPlanguage()
+            {
+                return _rplanguage;
+            }
+
+        /**
+         * Règlage du volume utilisé en RP
+         *
+         */
+            public void setRPvolume(String vol)
+            {
+                _volume = vol;
+            }
+
+        /**
+         * Etat de la langue utilisée en RP
+         * @return la langue utilisée
+         */
+            public String getRPvolume()
+            {
+                return _volume;
+            }
+        
+        /**
+         * Initialise le dernier vote
+         */
+        
+        private void initLastVote()
+        {
+            // le votetime etant initialisé à 0 il va forcement mettre a jour cet attribut
+            VotesChecker.hasVoted(this); 
+        }
+
+        /**
+         * Règlage du temps de vote
+         */
+           public void setLastVote(long timestamp)
+            {
+                _lastVote = timestamp;    
+            }
+     
+        /** 
+          * Dernier vote
+          */
+           public long getLastVote()
+           {
+               return _lastVote;
+           }
+
+      /** Etat de l'offline
+        * @return vrai(true) si le PJ est offline ou faux(false) dans le cas contraire
+        * @author melua
+        */
+        public boolean isInOfflineMode()
+        {
+            return getClient() == null || getClient().isDetached();
+        }
+        
+        /*
+         * @author Saelil
+         */
+        public void evolveCamp()
+        {
+            this._camp.evolve(this);
+        }
+        
+        public boolean isGuard() 
+        {
+            return _guard;
+        }
+        
+        public void beGuard()
+        {
+            if(_guard)
+                _guard = false;
+            else
+                _guard = true;
+        }
+        
+        public boolean isMonster() 
+        {
+            return _monster;
+        }
+        
+        public void beMonster()
+        {
+            if(_monster)
+                _monster = false;
+            else
+                _monster = true;
+        }
+        
+        
+        
 	
 	public long getOfflineStartTime()
 	{
