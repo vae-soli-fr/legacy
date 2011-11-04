@@ -8,11 +8,12 @@ DROP INDEX `key_item_id`,
 ADD INDEX `item_id`(`item_id`),
 ADD INDEX `time_of_use`(`time_of_use`),
 DROP INDEX `key_owner_id`,
-ADD INDEX `owner_id`(`owner_id`);
+ADD INDEX `owner_id`(`owner_id`),
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
--- SEVEN SIGNS FESTIVAL: OK
-ALTER TABLE `seven_signs_festival` 
-MODIFY COLUMN `date` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
+-- ITEM ELEMENTALS: OK
+ALTER TABLE `item_elementals`
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 -- MESSAGES: OK
 ALTER TABLE `messages` 
@@ -26,7 +27,8 @@ MODIFY COLUMN `char_penalty_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '
 MODIFY COLUMN `ally_name` varchar(45)  NULL DEFAULT NULL ,
 MODIFY COLUMN `dissolving_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `clan_name` varchar(45)  NULL DEFAULT NULL ,
-MODIFY COLUMN `ally_penalty_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
+MODIFY COLUMN `ally_penalty_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 -- SEVEN SIGNS STATUS: OK
 ALTER TABLE `seven_signs_status` 
@@ -48,7 +50,8 @@ DROP COLUMN `jewel`, -- ?
 DROP COLUMN `weapon`; -- ?
 
 -- CHARACTER SKILLS: OK
--- ALTER TABLE `character_skills` 
+ALTER TABLE `character_skills`
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 -- DROP COLUMN `verified`;
 
 -- CASTLE FUNCTIONS: OK
@@ -72,15 +75,15 @@ DROP COLUMN `id`,
 DROP INDEX `key_npc_templateid`,
 DROP PRIMARY KEY;
 
--- CLAN HALL FUNCTIONS: OK
-ALTER TABLE `clanhall_functions` 
-MODIFY COLUMN `endTime` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
-
 -- CLAN HALL: OK
 ALTER TABLE `clanhall` 
 MODIFY COLUMN `paidUntil` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `ownerId` int(11)  NOT NULL DEFAULT '0' ,
 ADD INDEX `ownerId`(`ownerId`);
+
+-- CLAN HALL FUNCTIONS: OK
+ALTER TABLE `clanhall_functions` 
+MODIFY COLUMN `endTime` bigint(13) unsigned  NOT NULL DEFAULT '0' ;
 
 -- CLAN SKILLS: OK
 ALTER TABLE `clan_skills` 
@@ -177,7 +180,84 @@ DROP COLUMN `rec_have`,
 -- DROP COLUMN `verified`,
 ADD INDEX `account_name`(`account_name`),
 ADD INDEX `online`(`online`),
-ADD INDEX `char_name`(`char_name`);
+ADD INDEX `char_name`(`char_name`),
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 -- CUSTOM ETCITEM: OK
-DROP TABLE `custom_etcitem`
+DROP TABLE `custom_etcitem`;
+
+-- change Engine
+ALTER TABLE `castle`
+ENGINE=InnoDB;
+ALTER TABLE `castle_functions`
+ENGINE=InnoDB;
+ALTER TABLE `castle_manor_procure`
+ENGINE=InnoDB;
+ALTER TABLE `castle_manor_production`
+ENGINE=InnoDB;
+ALTER TABLE `characters`
+ENGINE=InnoDB;
+ALTER TABLE `character_friends`
+ENGINE=InnoDB;
+ALTER TABLE `character_hennas`
+ENGINE=InnoDB;
+ALTER TABLE `character_macroses`
+ENGINE=InnoDB;
+ALTER TABLE `character_quests`
+ENGINE=InnoDB;
+ALTER TABLE `character_quest_global_data`
+ENGINE=InnoDB;
+ALTER TABLE `character_recipebook`
+ENGINE=InnoDB;
+ALTER TABLE `character_recipeshoplist`
+ENGINE=InnoDB;
+ALTER TABLE `character_shortcuts`
+ENGINE=InnoDB;
+ALTER TABLE `character_skills`
+ENGINE=InnoDB;
+ALTER TABLE `character_subclasses`
+ENGINE=InnoDB;
+ALTER TABLE `clanhall_functions`
+ENGINE=InnoDB;
+ALTER TABLE `clan_data`
+ENGINE=InnoDB;
+ALTER TABLE `clanhall`
+ENGINE=InnoDB;
+ALTER TABLE `clan_privs`
+ENGINE=InnoDB;
+ALTER TABLE `clan_skills`
+ENGINE=InnoDB;
+ALTER TABLE `clan_subpledges`
+ENGINE=InnoDB;
+ALTER TABLE `clan_wars`
+ENGINE=InnoDB;
+ALTER TABLE `custom_droplist`
+ENGINE=InnoDB;
+ALTER TABLE `custom_merchant_buylists`
+ENGINE=InnoDB;
+ALTER TABLE `custom_merchant_shopids`
+ENGINE=InnoDB;
+ALTER TABLE `custom_npc`
+ENGINE=InnoDB;
+ALTER TABLE `custom_npcskills`
+ENGINE=InnoDB;
+ALTER TABLE `custom_spawnlist`
+ENGINE=InnoDB;
+ALTER TABLE `custom_teleport`
+ENGINE=InnoDB;
+ALTER TABLE `items`
+ENGINE=InnoDB;
+ALTER TABLE `item_attributes`
+ENGINE=InnoDB;
+ALTER TABLE `item_elementals`
+ENGINE=InnoDB;
+ALTER TABLE `messages`
+ENGINE=InnoDB;
+ALTER TABLE `mods_wedding`
+ENGINE=InnoDB;
+ALTER TABLE `pets`
+ENGINE=InnoDB;
+ALTER TABLE `seven_signs`
+ENGINE=InnoDB;
+ALTER TABLE `seven_signs_status`
+ENGINE=InnoDB;
