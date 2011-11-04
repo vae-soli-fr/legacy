@@ -171,7 +171,7 @@ MODIFY COLUMN `clan_join_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0' 
 MODIFY COLUMN `deletetime` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `clan_create_expiry_time` bigint(13) unsigned  NOT NULL DEFAULT '0' ,
 MODIFY COLUMN `char_name` varchar(35)  NOT NULL,
-CHANGE `createTime` `createDate` date  NOT NULL DEFAULT '0000-00-00' ,
+CHANGE `createTime` `createDate` date  NOT NULL DEFAULT '2007-06-10' ,
 -- DROP COLUMN `voting`,
 DROP COLUMN `last_recom_date`,
 -- DROP COLUMN `showFsDamages`,
