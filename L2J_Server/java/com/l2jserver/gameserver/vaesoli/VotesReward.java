@@ -87,7 +87,7 @@ public class VotesReward {
         try {
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement = con.prepareStatement("UPDATE accounts_digest SET votes = ? WHERE lastIP = ?");
-            statement.setInt(1, retrievePoints(player));
+            statement.setInt(1, retrievePoints(player) - pts);
             statement.setString(2, retrieveIp(player));
             statement.executeQuery();
             statement.close();
