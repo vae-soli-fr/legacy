@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<item id="55000" type="EtcItem" name="Olympiad Coins">
+		<set name="icon" val="icon.etc_coins_silver_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="cloth" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+
+	<item id="55001" type="EtcItem" name="Keltir Whistle">
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+</list>
