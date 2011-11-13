@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
 	<item id="55000" type="EtcItem" name="Olympiad Coins">
+		<set name="displayId" val="1167" />
 		<set name="icon" val="icon.etc_coins_silver_i00" />
 		<set name="immediate_effect" val="1" />
 		<set name="material" val="cloth" />
