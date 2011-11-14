@@ -26,10 +26,10 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 public class PrivateStoreManageListBuy extends L2GameServerPacket
 {
 	private static final String _S__D0_PRIVATESELLLISTBUY = "[S] bd PrivateStoreManageListBuy";
-	private int _objId;
-	private long _playerAdena;
-	private L2ItemInstance[] _itemList;
-	private TradeList.TradeItem[] _buyList;
+	private final int _objId;
+	private final long _playerAdena;
+	private final L2ItemInstance[] _itemList;
+	private final TradeList.TradeItem[] _buyList;
 	
 	public PrivateStoreManageListBuy(L2PcInstance player)
 	{
@@ -52,7 +52,7 @@ public class PrivateStoreManageListBuy extends L2GameServerPacket
 		for (L2ItemInstance item : _itemList)
 		{
 			writeD(item.getObjectId());
-			writeD(item.getItem().getItemId());
+			writeD(item.getItem().getDisplayId());
 			writeD(item.getLocationSlot());
 			writeQ(item.getCount());
 			writeH(item.getItem().getType2());
