@@ -34,6 +34,11 @@ public class ManaPotion extends ItemSkills
 			playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 			return;
 		}
+                else if (Config.VAEMOD_PVPMANA && (playable.getActingPlayer()).getPvpFlag() == 1)
+                {
+                        playable.sendMessage("Can't use mana potion in pvp.");
+                        return;
+                }
 		super.useItem(playable, item, forceUse);
 	}
 }

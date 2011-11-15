@@ -281,7 +281,8 @@ public abstract class L2Character extends L2Object
 			case ZONE_PVP:
 				if (instance != null && instance.isPvPInstance())
 					return true;
-				return _zones[ZONE_PVP] > 0 && _zones[ZONE_PEACE] == 0;
+				//return _zones[ZONE_PVP] > 0 && _zones[ZONE_PEACE] == 0;
+                                break;
 			case ZONE_PEACE:
 				if (instance != null && instance.isPvPInstance())
 					return false;
