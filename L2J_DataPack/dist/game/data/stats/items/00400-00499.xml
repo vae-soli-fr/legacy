@@ -1650,7 +1650,10 @@
 		<set name="weight" val="4200" />
 		<set name="price" val="28400" />
 		<for>
-			<add order="0x10" stat="pDef" val="53" />
+			<!-- +5% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.05" />
+			<mul order="0x30" stat="pveBowDmg" val="1.05" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.05" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1667,7 +1670,8 @@
 		<set name="price" val="117000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="73" />
+			<!-- +5% M.dam en PvE -->
+			<mul order="0x30" stat="pveMagicalDmg" val="1.05" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1684,7 +1688,10 @@
 		<set name="price" val="117000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="73" />
+			<!-- +5% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.05" />
+			<mul order="0x30" stat="pveBowDmg" val="1.05" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.05" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1701,7 +1708,8 @@
 		<set name="price" val="2671000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="139" />
+			<!-- +10% M.dam en PvE -->
+			<mul order="0x30" stat="pveMagicalDmg" val="1.1" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1718,7 +1726,10 @@
 		<set name="price" val="825000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="110" />
+			<!-- +10% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.1" />
+			<mul order="0x30" stat="pveBowDmg" val="1.1" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.1" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1735,7 +1746,7 @@
 		<set name="price" val="2671000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="132" />
+			<!-- rien -->
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1752,7 +1763,10 @@
 		<set name="price" val="4064000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="146" />
+			<!-- +20% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.2" />
+			<mul order="0x30" stat="pveBowDmg" val="1.2" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.2" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1769,7 +1783,8 @@
 		<set name="price" val="76900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="65" />
+			<!-- +5% M.dam en PvE -->
+			<mul order="0x30" stat="pveMagicalDmg" val="1.05" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1786,7 +1801,10 @@
 		<set name="price" val="1197000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="117" />
+			<!-- +10% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.1" />
+			<mul order="0x30" stat="pveBowDmg" val="1.1" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.1" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1803,7 +1821,10 @@
 		<set name="price" val="1857000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="125" />
+			<!-- +125 P.dam en PvE -->
+			<add order="0x40" stat="pvePhysDmg" val="125" />
+			<add order="0x40" stat="pveBowDmg" val="125" />
+			<add order="0x40" stat="pveBowSkillsDmg" val="125" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1820,7 +1841,8 @@
 		<set name="price" val="1197000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="124" />
+			<!-- +10% M.dam en PvE -->
+			<mul order="0x30" stat="pveMagicalDmg" val="1.1" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1837,7 +1859,8 @@
 		<set name="price" val="1857000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add order="0x10" stat="pDef" val="131" />
+			<!-- +125 M.dam en PvE -->
+			<add order="0x40" stat="pveMagicalDmg" val="125" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
