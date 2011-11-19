@@ -223,8 +223,8 @@
 		<set name="price" val="4064000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +20% M.dam en PvE -->
-			<mul order="0x30" stat="pveMagicalDmg" val="1.2" />
+			<!-- +15% M.dam en PvE -->
+			<mul order="0x30" stat="pveMagicalDmg" val="1.15" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>

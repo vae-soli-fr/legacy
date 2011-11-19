@@ -1650,10 +1650,10 @@
 		<set name="weight" val="4200" />
 		<set name="price" val="28400" />
 		<for>
-			<!-- +5% P.dam en PvE -->
-			<mul order="0x30" stat="pvePhysDmg" val="1.05" />
-			<mul order="0x30" stat="pveBowDmg" val="1.05" />
-			<mul order="0x30" stat="pveBowSkillsDmg" val="1.05" />
+			<!-- +3% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.03" />
+			<mul order="0x30" stat="pveBowDmg" val="1.03" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.03" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1670,8 +1670,8 @@
 		<set name="price" val="117000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +5% M.dam en PvE -->
-			<mul order="0x30" stat="pveMagicalDmg" val="1.05" />
+			<!-- +6% M.dam en PvE -->
+			<mul order="0x30" stat="pveMagicalDmg" val="1.06" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1688,10 +1688,10 @@
 		<set name="price" val="117000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +5% P.dam en PvE -->
-			<mul order="0x30" stat="pvePhysDmg" val="1.05" />
-			<mul order="0x30" stat="pveBowDmg" val="1.05" />
-			<mul order="0x30" stat="pveBowSkillsDmg" val="1.05" />
+			<!-- +6% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.06" />
+			<mul order="0x30" stat="pveBowDmg" val="1.06" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.06" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1708,8 +1708,11 @@
 		<set name="price" val="2671000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +10% M.dam en PvE -->
-			<mul order="0x30" stat="pveMagicalDmg" val="1.1" />
+			<!-- +8% P.dam +8% M.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.08" />
+			<mul order="0x30" stat="pveBowDmg" val="1.08" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.08" />
+			<mul order="0x30" stat="pveMagicalDmg" val="1.08" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1726,10 +1729,11 @@
 		<set name="price" val="825000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +10% P.dam en PvE -->
-			<mul order="0x30" stat="pvePhysDmg" val="1.1" />
-			<mul order="0x30" stat="pveBowDmg" val="1.1" />
-			<mul order="0x30" stat="pveBowSkillsDmg" val="1.1" />
+			<!-- +7% P.dam +7% M.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.07" />
+			<mul order="0x30" stat="pveBowDmg" val="1.07" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.07" />
+			<mul order="0x30" stat="pveMagicalDmg" val="1.07" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1746,7 +1750,11 @@
 		<set name="price" val="2671000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- rien -->
+			<!-- +12% P.dam +12% M.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.12" />
+			<mul order="0x30" stat="pveBowDmg" val="1.12" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.12" />
+			<mul order="0x30" stat="pveMagicalDmg" val="1.12" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1763,10 +1771,10 @@
 		<set name="price" val="4064000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +20% P.dam en PvE -->
-			<mul order="0x30" stat="pvePhysDmg" val="1.2" />
-			<mul order="0x30" stat="pveBowDmg" val="1.2" />
-			<mul order="0x30" stat="pveBowSkillsDmg" val="1.2" />
+			<!-- +15% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.15" />
+			<mul order="0x30" stat="pveBowDmg" val="1.15" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.15" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1776,15 +1784,13 @@
 		<set name="armor_type" val="light" />
 		<set name="bodypart" val="underwear" />
 		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="181" />
-		<set name="crystal_type" val="d" />
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="4150" />
 		<set name="price" val="76900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +5% M.dam en PvE -->
-			<mul order="0x30" stat="pveMagicalDmg" val="1.05" />
+			<!-- +3% M.dam en PvE -->
+			<mul order="0x30" stat="pveMagicalDmg" val="1.03" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1801,10 +1807,10 @@
 		<set name="price" val="1197000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +10% P.dam en PvE -->
-			<mul order="0x30" stat="pvePhysDmg" val="1.1" />
-			<mul order="0x30" stat="pveBowDmg" val="1.1" />
-			<mul order="0x30" stat="pveBowSkillsDmg" val="1.1" />
+			<!-- +9% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.09" />
+			<mul order="0x30" stat="pveBowDmg" val="1.09" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.09" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1821,10 +1827,10 @@
 		<set name="price" val="1857000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +125 P.dam en PvE -->
-			<add order="0x40" stat="pvePhysDmg" val="125" />
-			<add order="0x40" stat="pveBowDmg" val="125" />
-			<add order="0x40" stat="pveBowSkillsDmg" val="125" />
+			<!-- +11% P.dam en PvE -->
+			<mul order="0x30" stat="pvePhysDmg" val="1.11" />
+			<mul order="0x30" stat="pveBowDmg" val="1.11" />
+			<mul order="0x30" stat="pveBowSkillsDmg" val="1.11" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1841,8 +1847,8 @@
 		<set name="price" val="1197000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +10% M.dam en PvE -->
-			<mul order="0x30" stat="pveMagicalDmg" val="1.1" />
+			<!-- +9% M.dam en PvE -->
+			<mul order="0x30" stat="pveMagicalDmg" val="1.09" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1859,8 +1865,8 @@
 		<set name="price" val="1857000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<!-- +125 M.dam en PvE -->
-			<add order="0x40" stat="pveMagicalDmg" val="125" />
+			<!-- +11% M.dam en PvE -->
+			<mul order="0x30" stat="pveMagicalDmg" val="1.11" />
 			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
