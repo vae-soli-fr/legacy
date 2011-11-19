@@ -1652,9 +1652,9 @@
 		<for>
 			<!-- +3% P.dam en PvE -->
 			<mul order="0x30" stat="pvePhysDmg" val="1.03" />
+			<mul order="0x30" stat="pvePhysSkillsDmg" val="1.03" />
 			<mul order="0x30" stat="pveBowDmg" val="1.03" />
 			<mul order="0x30" stat="pveBowSkillsDmg" val="1.03" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="486" type="Armor" name="Tattoo of Fire">
@@ -1668,11 +1668,9 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="4050" />
 		<set name="price" val="117000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +6% M.dam en PvE -->
 			<mul order="0x30" stat="pveMagicalDmg" val="1.06" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="487" type="Armor" name="Tattoo of Resolve">
@@ -1686,13 +1684,12 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="4000" />
 		<set name="price" val="117000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +6% P.dam en PvE -->
 			<mul order="0x30" stat="pvePhysDmg" val="1.06" />
+			<mul order="0x30" stat="pvePhysSkillsDmg" val="1.06" />
 			<mul order="0x30" stat="pveBowDmg" val="1.06" />
 			<mul order="0x30" stat="pveBowSkillsDmg" val="1.06" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="488" type="Armor" name="Tattoo of Flame">
@@ -1706,14 +1703,13 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="800" />
 		<set name="price" val="2671000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +8% P.dam +8% M.dam en PvE -->
 			<mul order="0x30" stat="pvePhysDmg" val="1.08" />
+			<mul order="0x30" stat="pvePhysSkillsDmg" val="1.08" />
 			<mul order="0x30" stat="pveBowDmg" val="1.08" />
 			<mul order="0x30" stat="pveBowSkillsDmg" val="1.08" />
 			<mul order="0x30" stat="pveMagicalDmg" val="1.08" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="489" type="Armor" name="Tattoo of Bravery">
@@ -1727,14 +1723,13 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="4100" />
 		<set name="price" val="825000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +7% P.dam +7% M.dam en PvE -->
 			<mul order="0x30" stat="pvePhysDmg" val="1.07" />
+			<mul order="0x30" stat="pvePhysSkillsDmg" val="1.07" />
 			<mul order="0x30" stat="pveBowDmg" val="1.07" />
 			<mul order="0x30" stat="pveBowSkillsDmg" val="1.07" />
 			<mul order="0x30" stat="pveMagicalDmg" val="1.07" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="490" type="Armor" name="Tattoo of Blood">
@@ -1748,14 +1743,13 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="3800" />
 		<set name="price" val="2671000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +12% P.dam +12% M.dam en PvE -->
 			<mul order="0x30" stat="pvePhysDmg" val="1.12" />
+			<mul order="0x30" stat="pvePhysSkillsDmg" val="1.12" />
 			<mul order="0x30" stat="pveBowDmg" val="1.12" />
 			<mul order="0x30" stat="pveBowSkillsDmg" val="1.12" />
 			<mul order="0x30" stat="pveMagicalDmg" val="1.12" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="491" type="Armor" name="Tattoo of Absolute">
@@ -1769,13 +1763,12 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="800" />
 		<set name="price" val="4064000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +15% P.dam en PvE -->
 			<mul order="0x30" stat="pvePhysDmg" val="1.15" />
+			<mul order="0x30" stat="pvePhysSkillsDmg" val="1.15" />
 			<mul order="0x30" stat="pveBowDmg" val="1.15" />
 			<mul order="0x30" stat="pveBowSkillsDmg" val="1.15" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="492" type="Armor" name="Tattoo of Soul">
@@ -1787,11 +1780,9 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="4150" />
 		<set name="price" val="76900" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +3% M.dam en PvE -->
 			<mul order="0x30" stat="pveMagicalDmg" val="1.03" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="493" type="Armor" name="Tattoo of Avadon">
@@ -1805,13 +1796,12 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="4000" />
 		<set name="price" val="1197000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +9% P.dam en PvE -->
 			<mul order="0x30" stat="pvePhysDmg" val="1.09" />
+			<mul order="0x30" stat="pvePhysSkillsDmg" val="1.09" />
 			<mul order="0x30" stat="pveBowDmg" val="1.09" />
 			<mul order="0x30" stat="pveBowSkillsDmg" val="1.09" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="494" type="Armor" name="Tattoo of Doom">
@@ -1825,13 +1815,12 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="4100" />
 		<set name="price" val="1857000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +11% P.dam en PvE -->
 			<mul order="0x30" stat="pvePhysDmg" val="1.11" />
+			<mul order="0x30" stat="pvePhysSkillsDmg" val="1.11" />
 			<mul order="0x30" stat="pveBowDmg" val="1.11" />
 			<mul order="0x30" stat="pveBowSkillsDmg" val="1.11" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="495" type="Armor" name="Tattoo of Pledge">
@@ -1845,11 +1834,9 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="4000" />
 		<set name="price" val="1197000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +9% M.dam en PvE -->
 			<mul order="0x30" stat="pveMagicalDmg" val="1.09" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="496" type="Armor" name="Tattoo of Divine">
@@ -1863,11 +1850,9 @@
 		<set name="material" val="dyestuff" />
 		<set name="weight" val="4100" />
 		<set name="price" val="1857000" />
-		<set name="enchant_enabled" val="1" />
 		<for>
 			<!-- +11% M.dam en PvE -->
 			<mul order="0x30" stat="pveMagicalDmg" val="1.11" />
-			<enchant order="0x0C" stat="pDef" val="0" />
 		</for>
 	</item>
 	<item id="497" type="Armor" name="Chain Helmet">
