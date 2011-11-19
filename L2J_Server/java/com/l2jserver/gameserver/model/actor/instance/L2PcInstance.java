@@ -274,6 +274,7 @@ import com.l2jserver.gameserver.util.PlayerEventStatus;
 import com.l2jserver.gameserver.util.Point3D;
 import com.l2jserver.gameserver.util.Util;
 import com.l2jserver.gameserver.vaesoli.Camp;
+import com.l2jserver.gameserver.vaesoli.MyDDS;
 import com.l2jserver.gameserver.vaesoli.VotesChecker;
 import com.l2jserver.util.Rnd;
 
@@ -4568,6 +4569,7 @@ public final class L2PcInstance extends L2Playable
 	{
 		if (_client != null)
 		{
+                        if (packet instanceof NpcHtmlMessage) MyDDS.sendDDS(this, (NpcHtmlMessage) packet);
 			_client.sendPacket(packet);
 		}
 	}
