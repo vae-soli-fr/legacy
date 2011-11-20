@@ -285,8 +285,10 @@ public class SevenSigns
 					if (!AutoSpawnHandler.getInstance().getAutoSpawnInstance(spawnInst.getObjectId(), true).isSpawnActive())
 						AutoSpawnHandler.getInstance().setSpawnActive(spawnInst, true);
 				
-				if (!AutoChatHandler.getInstance().getAutoChatInstance(PREACHER_NPC_ID, false).isActive()
-						&& !AutoChatHandler.getInstance().getAutoChatInstance(ORATOR_NPC_ID, false).isActive())
+				if (Config.VAEMOD_MUTESEVENSIGNS)
+                                        AutoChatHandler.getInstance().setAutoChatActive(false);
+                                else if (!AutoChatHandler.getInstance().getAutoChatInstance(PREACHER_NPC_ID, false).isActive()
+				&& !AutoChatHandler.getInstance().getAutoChatInstance(ORATOR_NPC_ID, false).isActive())
 					AutoChatHandler.getInstance().setAutoChatActive(true);
 			}
 			else
