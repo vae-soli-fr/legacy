@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vendeur Armures Olympiades -->
+  <!-- set complet de recipes Robe Dyna -->
+<list>
+  <item id="1">
+    <ingredient id="66330" count="2000"/>
+    <production id="50316" count="1"/>
+  </item>
+</list>

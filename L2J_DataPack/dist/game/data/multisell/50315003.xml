@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vendeur bijoux Olympiades -->
+  <!-- Territory Earrings -->
+<list>
+  <item id="1">
+    <ingredient id="66330" count="1500"/>
+    <production id="14801" count="1"/>
+  </item>
+   <item id="2">
+    <ingredient id="66330" count="1500"/>
+    <production id="14802" count="1"/>
+  </item>
+   <item id="3">
+    <ingredient id="66330" count="1500"/>
+    <production id="14803" count="1"/>
+  </item>
+   <item id="4">
+    <ingredient id="66330" count="1500"/>
+    <production id="14804" count="1"/>
+  </item>
+   <item id="5">
+    <ingredient id="66330" count="1500"/>
+    <production id="14805" count="1"/>
+  </item>
+   <item id="6">
+    <ingredient id="66330" count="1500"/>
+    <production id="14806" count="1"/>
+  </item>
+   <item id="7">
+    <ingredient id="66330" count="1500"/>
+    <production id="14807" count="1"/>
+  </item>
+   <item id="8">
+    <ingredient id="66330" count="1500"/>
+    <production id="14808" count="1"/>
+  </item>
+   <item id="9">
+    <ingredient id="66330" count="1500"/>
+    <production id="14809" count="1"/>
+  </item>
+</list>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vendeur Armures Olympiades -->
+  <!-- Recipes + parts armes Interlude -->
+<list>
+  <item id="1">
+    <ingredient id="66330" count="600"/>
+    <production id="8694" count="1"/>
+	<production id="8714" count="15"/>
+  </item>
+    <item id="2">
+    <ingredient id="66330" count="600"/>
+    <production id="8696" count="1"/>
+	<production id="8715" count="15"/>
+  </item>
+    <item id="3">
+    <ingredient id="66330" count="600"/>
+    <production id="8708" count="1"/>
+	<production id="8721" count="15"/>
+  </item>
+    <item id="4">
+    <ingredient id="66330" count="600"/>
+    <production id="8710" count="1"/>
+	<production id="8722" count="15"/>
+  </item>
+    <item id="5">
+    <ingredient id="66330" count="600"/>
+    <production id="8698" count="1"/>
+	<production id="8716" count="15"/>
+  </item>
+    <item id="6">
+    <ingredient id="66330" count="600"/>
+    <production id="8702" count="1"/>
+	<production id="8718" count="15"/>
+  </item>
+    <item id="7">
+    <ingredient id="66330" count="600"/>
+    <production id="8690" count="1"/>
+	<production id="8712" count="15"/>
+  </item>
+    <item id="8">
+    <ingredient id="66330" count="600"/>
+    <production id="8704" count="1"/>
+	<production id="8719" count="15"/>
+  </item>
+    <item id="9">
+    <ingredient id="66330" count="600"/>
+    <production id="8692" count="1"/>
+	<production id="8713" count="15"/>
+  </item>
+    <item id="10">
+    <ingredient id="66330" count="600"/>
+    <production id="8706" count="1"/>
+	<production id="8720" count="15"/>
+  </item>
+    <item id="11">
+    <ingredient id="66330" count="600"/>
+    <production id="8700" count="1"/>
+	<production id="8717" count="15"/>
+  </item>
+</list>
