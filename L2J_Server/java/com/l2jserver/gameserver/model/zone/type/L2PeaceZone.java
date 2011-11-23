@@ -35,7 +35,6 @@ public class L2PeaceZone extends L2ZoneType
 	protected void onEnter(L2Character character)
 	{
 		character.setInsideZone(L2Character.ZONE_PEACE, true);
-                character.setInsideZone(L2Character.ZONE_PVP, true);
 		if (character instanceof L2PcInstance && ((L2PcInstance)character).isCombatFlagEquipped()
 				&& TerritoryWarManager.getInstance().isTWInProgress())
 			TerritoryWarManager.getInstance().dropCombatFlag(((L2PcInstance)character), false, true);
@@ -45,7 +44,6 @@ public class L2PeaceZone extends L2ZoneType
 	protected void onExit(L2Character character)
 	{
 		character.setInsideZone(L2Character.ZONE_PEACE, false);
-                character.setInsideZone(L2Character.ZONE_PVP, false);
 	}
 	
 	@Override
