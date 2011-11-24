@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list applyTaxes="false" xmlns="http://www.l2jfree.com"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.l2jfree.com ../templates/exchange.xsd">
+
+	<item id="1">
+		<ingredient id="7609" count="130000"/>
+		<production id="8564" count="1"/>
+	</item>
+	<item id="2">
+		<ingredient id="7609" count="150000"/>
+		<production id="20021" count="1"/>
+	</item>
+	<item id="3">
+		<ingredient id="7609" count="100000"/>
+		<production id="8913" count="1"/>
+	</item>
+	<item id="4">
+		<ingredient id="7609" count="130000"/>
+		<production id="8559" count="1"/>
+	</item>
+	<item id="5">
+		<ingredient id="7609" count="100000"/>
+		<production id="8916" count="1"/>
+	</item>
+	<item id="6">
+		<ingredient id="7609" count="100000"/>
+		<production id="20016" count="1"/>
+	</item>
+	<item id="7">
+		<ingredient id="7609" count="130000"/>
+		<production id="8566" count="1"/>
+	</item>
+	<item id="8">
+		<ingredient id="7609" count="120000"/>
+		<production id="7846" count="1"/>
+	</item>
+	<item id="9">
+		<ingredient id="7609" count="130000"/>
+		<production id="8918" count="1"/>
+	</item>
+	<item id="10">
+		<ingredient id="7609" count="150000"/>
+		<production id="12839" count="1"/>
+	</item>
+	<item id="11">
+		<ingredient id="7609" count="100000"/>
+		<production id="7847" count="1"/>
+	</item>
+	<item id="12">
+		<ingredient id="7609" count="130000"/>
+		<production id="9160" count="1"/>
+	</item>	
+	<item id="13">
+		<ingredient id="7609" count="130000"/>
+		<production id="8565" count="1"/>
+	</item>
+	<item id="14">
+		<ingredient id="7609" count="160000"/>
+		<production id="20022" count="1"/>
+	</item>
+	<item id="15">
+		<ingredient id="7609" count="80000"/>
+		<production id="8923" count="1"/>
+	</item>	
+	<item id="16">
+		<ingredient id="7609" count="100000"/>
+		<production id="12767" count="1"/>
+	</item>
+	<item id="17">
+		<ingredient id="7609" count="100000"/>
+		<production id="9159" count="1"/>
+	</item>
+	<item id="18">
+		<ingredient id="7609" count="100000"/>
+		<production id="8912" count="1"/>
+	</item>	
+	<item id="19">
+		<ingredient id="7609" count="130000"/>
+		<production id="8563" count="1"/>
+	</item>
+	<item id="20">
+		<ingredient id="7609" count="130000"/>
+		<production id="8950" count="1"/>
+	</item>	
+	<item id="21">
+		<ingredient id="7609" count="80000"/>
+		<production id="8949" count="1"/>
+	</item>
+	<item id="22">
+		<ingredient id="7609" count="80000"/>
+		<production id="8948" count="1"/>
+	</item>
+	<item id="23">
+		<ingredient id="7609" count="80000"/>
+		<production id="8947" count="1"/>
+	</item>	
+</list>
