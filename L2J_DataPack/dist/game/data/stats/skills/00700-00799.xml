@@ -1271,7 +1271,7 @@
 		</for>
 	</skill>
 	<skill id="764" levels="1" name="Song of Wind Storm" enchantGroup1="5" enchantGroup2="5">
-		<table name="#ench1Time"> 128 136 144 152 160 168 176 184 192 200 208 216 224 232 240 </table>
+		<table name="#ench1Time"> 368 376 384 392 400 408 416 424 432 440 448 456 464 472 480 </table>
 		<table name="#ench2MpConsume"> 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 </table>
 		<set name="mpConsume" val="60" />
 		<set name="nextDanceCost" val="30" />
@@ -1286,7 +1286,7 @@
 		<set name="aggroPoints" val="666" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="song_of_windstorm">
+			<effect name="Buff" abnormalTime="360" val="0" abnormalLvl="1" abnormalType="song_of_windstorm">
 				<mul order="0x30" stat="bowWpnVuln" val="0.9" />
 				<mul order="0x30" stat="crossbowWpnVuln" val="0.95" />
 			</effect>
