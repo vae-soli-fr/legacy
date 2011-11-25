@@ -3,11 +3,11 @@
   <!-- Essences Dyna -->
 <list>
   <item id="1">
-    <ingredient id="66330" count="800"/>
+    <ingredient id="55000" count="800"/>
     <production id="9451" count="1"/>
   </item>
    <item id="2">
-    <ingredient id="66330" count="2000"/>
+    <ingredient id="55000" count="2000"/>
     <production id="10413" count="1"/>
   </item>
 </list>

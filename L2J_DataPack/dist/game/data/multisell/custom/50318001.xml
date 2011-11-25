@@ -3,7 +3,7 @@
   <!-- Horse -->
 <list>
   <item id="1">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="20029" count="1"/>
   </item>
 </list>

@@ -3,51 +3,51 @@
   <!-- Talismans haute qualite -->
 <list>
   <item id="1">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="9956" count="1"/>
   </item>
    <item id="2">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="9959" count="1"/>
   </item>
    <item id="3">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="9957" count="1"/>
   </item>
    <item id="4">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="9958" count="1"/>
   </item>
    <item id="5">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="9955" count="1"/>
   </item>
    <item id="6">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="9923" count="1"/>
   </item>
    <item id="7">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="14810" count="1"/>
   </item>
    <item id="8">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="14811" count="1"/>
   </item>
    <item id="9">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="14813" count="1"/>
   </item>
    <item id="10">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="9932" count="1"/>
   </item>
    <item id="11">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="14604" count="1"/>
   </item>
    <item id="12">
-    <ingredient id="66330" count="500"/>
+    <ingredient id="55000" count="500"/>
     <production id="10518" count="1"/>
   </item>
 </list>

@@ -3,7 +3,7 @@
   <!-- set complet de recipes Heavy Dyna -->
 <list>
   <item id="1">
-    <ingredient id="66330" count="2000"/>
+    <ingredient id="55000" count="2000"/>
     <production id="50314" count="1"/>
   </item>
 </list>

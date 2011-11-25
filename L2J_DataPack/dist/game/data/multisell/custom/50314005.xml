@@ -3,15 +3,15 @@
   <!-- recipes Dynasty haut -->
 <list>
   <item id="1">
-    <ingredient id="66330" count="700"/>
+    <ingredient id="55000" count="700"/>
     <production id="9482" count="1"/>
   </item>
    <item id="2">
-    <ingredient id="66330" count="700"/>
+    <ingredient id="55000" count="700"/>
     <production id="9487" count="1"/>
   </item>
    <item id="3">
-    <ingredient id="66330" count="700"/>
+    <ingredient id="55000" count="700"/>
     <production id="9492" count="1"/>
   </item>
 </list>

@@ -3,11 +3,11 @@
   <!-- Scrolls Enchant -->
 <list>
   <item id="1">
-    <ingredient id="66330" count="150"/>
+    <ingredient id="55000" count="150"/>
     <production id="960" count="1"/>
   </item>
    <item id="2">
-    <ingredient id="66330" count="300"/>
+    <ingredient id="55000" count="300"/>
     <production id="959" count="1"/>
   </item>
 </list>

@@ -3,119 +3,119 @@
   <!-- Qualite superieure -->
 <list>
   <item id="1">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="20021" count="1"/>
   </item>
    <item id="2">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="13504" count="1"/>
   </item>
    <item id="3">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="13501" count="1"/>
   </item>
    <item id="4">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="12839" count="1"/>
   </item>
    <item id="5">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="10250" count="1"/>
   </item>
    <item id="6">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9415" count="1"/>
   </item>
    <item id="7">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9414" count="1"/>
   </item>
    <item id="8">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9410" count="1"/>
   </item>
    <item id="9">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9413" count="1"/>
   </item>
    <item id="10">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9409" count="1"/>
   </item>
    <item id="11">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9411" count="1"/>
   </item>
    <item id="12">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9412" count="1"/>
   </item>
    <item id="13">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9393" count="1"/>
   </item>
    <item id="14">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9392" count="1"/>
   </item>
    <item id="15">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9391" count="1"/>
   </item>
    <item id="16">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9208" count="1"/>
   </item>
    <item id="17">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8919" count="1"/>
   </item>
    <item id="18">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9396" count="1"/>
   </item>
    <item id="19">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9395" count="1"/>
   </item>
    <item id="20">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="9394" count="1"/>
   </item>
    <item id="21">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8911" count="1"/>
   </item>
    <item id="22">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8916" count="1"/>
   </item>
    <item id="23">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8661" count="1"/>
   </item>
    <item id="24">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8569" count="1"/>
   </item>
    <item id="25">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8564" count="1"/>
   </item>
    <item id="26">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8563" count="1"/>
   </item>
    <item id="27">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8188" count="1"/>
   </item>
    <item id="28">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8558" count="1"/>
   </item>
    <item id="29">
-    <ingredient id="66330" count="1500"/>
+    <ingredient id="55000" count="1500"/>
     <production id="8565" count="1"/>
   </item>
 </list>
