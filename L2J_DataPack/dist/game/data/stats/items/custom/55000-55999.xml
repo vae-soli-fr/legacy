@@ -11,7 +11,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-
+	
 	<item id="55001" type="EtcItem" name="Keltir Whistle">
 		<set name="icon" val="icon.pet_controler_i00" />
 		<set name="default_action" val="skill_maintain" />
@@ -28,5 +28,47 @@
 		<cond msgId="113" addName="1">
 			<player flyMounted="False" />
 		</cond>
+	</item>
+	
+	<item id="550314" type="EtcItem" name="Pack de recettes Dynasty Heavy">
+		<set name="displayId" val="17074" />
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="wood" />
+		<set name="weight" val="1" />
+		<set name="is_depositable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="9486,1,9482,1,9483,1,9485,1,9484,1,9497,1,100" />
+	</item>
+
+	<item id="550315" type="EtcItem" name="Pack de recettes Dynasty Light">
+		<set name="displayId" val="17074" />
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="wood" />
+		<set name="weight" val="1" />
+		<set name="is_depositable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="9491,1,9490,1,9489,1,9488,1,9487,1,100" />
+	</item>
+
+	<item id="550316" type="EtcItem" name="Pack de recettes Dynasty Robe">
+		<set name="displayId" val="17074" />
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="wood" />
+		<set name="weight" val="1" />
+		<set name="is_depositable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="9496,1,9493,1,9492,1,9495,1,9494,1,10115,1,100" />
 	</item>
 </list>
