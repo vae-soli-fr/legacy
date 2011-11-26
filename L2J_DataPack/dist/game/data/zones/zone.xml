@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zones.xsd">
+	<!-- Prefecture de Rune -->
+	<zone id="77700" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750">
+		<node X="-115192" Y="45245" />
+		<node X="-115124" Y="45166" />
+	</zone>
+	<zone id="77701" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750">
+		<node X="-115188" Y="44702" />
+		<node X="-115128" Y="44621" />
+	</zone>
+	<zone id="77702" type="ScriptZone" shape="Cuboid" minZ="750" maxZ="1050">
+		<node X="39333" Y="-48205" />
+		<node X="39393" Y="-48287" />
+	</zone>
+	<zone id="77703" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750">
+		<node X="-114672" Y="45177" />
+		<node X="-114646" Y="45127" />
+	</zone>
+	<zone id="77704" type="ScriptZone" shape="Cuboid" minZ="350" maxZ="750">
+		<node X="-114652" Y="45092" />
+		<node X="-114688" Y="45060" />
+	</zone>
+
+    <!-- Clan Hall Sssiks -->
+    <zone id="88800" type="ScriptZone" shape="Cuboid" minZ="-4800" maxZ="-4400">
+		<node X="10296" Y="16554" />
+		<node X="10400" Y="16577" />
+	</zone>
+	<zone id="88801" type="ScriptZone" shape="Cuboid" minZ="700" maxZ="1100">
+		<node X="38562" Y="-46316" />
+		<node X="38683" Y="-46248" />
+	</zone>
+
 	<!-- Monster Race Track -->
 	<zone name="dion_monster_race1" type="DerbyTrackZone" shape="NPoly" minZ="-3652" maxZ="-3452"> <!-- [20_23] -->
 		<node X="11714" Y="181568" />
