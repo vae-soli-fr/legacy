@@ -387,20 +387,23 @@ public class EnterWorld extends L2GameClientPacket
 		
 		sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WELCOME_TO_LINEAGE));
 		
-		activeChar.sendMessage(getText("VGhpcyBzZXJ2ZXIgdXNlcyBMMkosIGEgcHJvamVjdCBmb3VuZGVkIGJ5IEwyQ2hlZg==\n"));
-		activeChar.sendMessage(getText("YW5kIGRldmVsb3BlZCBieSB0aGUgTDJKIERldiBUZWFtIGF0IGwyanNlcnZlci5jb20=\n"));
-		
-		if (Config.DISPLAY_SERVER_VERSION)
+                /**
+                 * Dummy english L2J license
+                 * activeChar.sendMessage(getText("VGhpcyBzZXJ2ZXIgdXNlcyBMMkosIGEgcHJvamVjdCBmb3VuZGVkIGJ5IEwyQ2hlZg==\n"));
+                 * activeChar.sendMessage(getText("YW5kIGRldmVsb3BlZCBieSB0aGUgTDJKIERldiBUZWFtIGF0IGwyanNlcnZlci5jb20=\n"));
+                 * activeChar.sendMessage(getText("Q29weXJpZ2h0IDIwMDQtMjAxMQ==\n"));
+                 */
+
+                activeChar.sendMessage("Le serveur utilise L2J, un projet fondé par L2Chef");
+                activeChar.sendMessage("développé par l'équipe L2J puis adapté pour Vae Soli");	
+                activeChar.sendMessage("©2004-2012 l2jserver.com  ©2007-2012 vae-soli.fr");
+
+		if (Config.DISPLAY_SERVER_VERSION && Config.SERVER_VERSION != null && Config.DATAPACK_VERSION != null)
 		{
-			if (Config.SERVER_VERSION != null)
-				activeChar.sendMessage(getText("TDJKIFNlcnZlciBWZXJzaW9uOg==")+" "+Config.SERVER_VERSION);
-			
-			if (Config.DATAPACK_VERSION != null)
-				activeChar.sendMessage(getText("TDJKIERhdGFwYWNrIFZlcnNpb246")+" "+Config.DATAPACK_VERSION);
+                    activeChar.sendMessage("Core rev" + Config.SERVER_VERSION + "  Datapack rev" + Config.DATAPACK_VERSION);
 		}
-		activeChar.sendMessage(getText("Q29weXJpZ2h0IDIwMDQtMjAxMQ==\n"));
 		
-		SevenSigns.getInstance().sendCurrentPeriodMsg(activeChar);
+		//SevenSigns.getInstance().sendCurrentPeriodMsg(activeChar);
 		Announcements.getInstance().showAnnouncements(activeChar);
 		
 		if (showClanNotice)
