@@ -59,11 +59,11 @@ public class RaidBossSpeeches {
                     map.put(cle, line);
                     cle++;
                 }
-                _log.log(Level.INFO, "{0}: Loaded {1} phrases.", new Object[]{this.path, this.map.size()});
+                _log.info(this.path + " : Loaded " + this.map.size() + " phrases.");
             } catch (FileNotFoundException e) {
-                _log.log(Level.WARNING, "{0} is missing !", this.path);
+                _log.warning(this.path + " is missing !");
             } catch (IOException e) {
-                _log.log(Level.WARNING, "Error while loading file " + e.getMessage(), e);
+                _log.warning("Error while loading file " + e.getMessage());
             } finally {
                 try {
                     lnr.close();
@@ -112,7 +112,7 @@ public class RaidBossSpeeches {
                 count++;
             }
         }
-        _log.log(Level.INFO, "Loaded {0} speech files.", count);
+        _log.info("Loaded " + count + " speech files.");
     }
 
     private boolean probability() {

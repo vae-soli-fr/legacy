@@ -30,7 +30,7 @@
 		</cond>
 	</item>
 	
-	<item id="550314" type="EtcItem" name="Pack de recettes Dynasty Heavy">
+	<item id="55314" type="EtcItem" name="Pack de recettes Dynasty Heavy">
 		<set name="displayId" val="17074" />
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="default_action" val="capsule" />
@@ -41,10 +41,10 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="9486,1,9482,1,9483,1,9485,1,9484,1,9497,1,100" />
+		<set name="capsuled_items" val="9486,1,1,100;9482,1,1,100;9483,1,1,100;9485,1,1,100;9484,1,1,100;9497,1,1,100" />
 	</item>
 
-	<item id="550315" type="EtcItem" name="Pack de recettes Dynasty Light">
+	<item id="55315" type="EtcItem" name="Pack de recettes Dynasty Light">
 		<set name="displayId" val="17074" />
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="default_action" val="capsule" />
@@ -55,10 +55,10 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="9491,1,9490,1,9489,1,9488,1,9487,1,100" />
+		<set name="capsuled_items" val="9491,1,1,100;9490,1,1,100;9489,1,1,100;9488,1,1,100;9487,1,1,100" />
 	</item>
 
-	<item id="550316" type="EtcItem" name="Pack de recettes Dynasty Robe">
+	<item id="55316" type="EtcItem" name="Pack de recettes Dynasty Robe">
 		<set name="displayId" val="17074" />
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="default_action" val="capsule" />
@@ -69,6 +69,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="9496,1,9493,1,9492,1,9495,1,9494,1,10115,1,100" />
+		<set name="capsuled_items" val="9496,1,1,100;9493,1,1,100;9492,1,1,100;9495,1,1,100;9494,1,1,100;10115,1,1,100" />
 	</item>
 </list>

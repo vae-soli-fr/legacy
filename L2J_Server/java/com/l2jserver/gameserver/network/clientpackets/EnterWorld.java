@@ -87,6 +87,7 @@ import com.l2jserver.gameserver.network.serverpackets.QuestList;
 import com.l2jserver.gameserver.network.serverpackets.ShortCutInit;
 import com.l2jserver.gameserver.network.serverpackets.SkillCoolTime;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import com.l2jserver.gameserver.vaesoli.BgValidator;
 import com.l2jserver.util.Base64;
 
 /**
@@ -517,6 +518,9 @@ public class EnterWorld extends L2GameClientPacket
 		
 		if(!activeChar.getPremiumItemList().isEmpty())
 			activeChar.sendPacket(new ExNotifyPremiumItem());
+                
+                // vérification des màj BG
+                BgValidator.getInstance().check(activeChar);
 	}
 	
 	/**

@@ -63,7 +63,7 @@ public class RaidBossLimiter
         if (player.isFlyingMounted()) player.untransform();
         player.setPunishLevel(L2PcInstance.PunishLevel.JAIL, 1440);
         player.sendMessage("Les RBs sont limités à 3 par jour par joueur (après reboot). Vous avez dépassé le quota autorisé.");
-        _log.log(Level.INFO, "Le personnage {0} du compte {1} est banni 24h par le RaidBossLimiter", new Object[]{player.getName(), player.getAccountName()});
+        _log.info("Le personnage " + player.getName() + " du compte " + player.getAccountName() + " est banni 24h par le RaidBossLimiter");
         if (Config.GMAUDIT) GMAudit.auditGMAction("RaidBossLimiter", "jail 24h", player.getName() + " (" + player.getAccountName() + ")", _done.get(player.getAccountName()));
     }
 

@@ -306,7 +306,7 @@ public class RegionBBSManager extends BaseBBSManager
 				if (!page.contains(player))
 				{
 					page.add(player);
-					if (!player.getAppearance().getInvisible())
+					if (!player.getAppearance().getInvisible() && !(Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
 						_onlineCount++;
 					_onlineCountGm++;
 				}
@@ -327,7 +327,7 @@ public class RegionBBSManager extends BaseBBSManager
 			if (temp.add(player))
 			{
 				_onlinePlayers.put(page, temp);
-				if (!player.getAppearance().getInvisible())
+				if (!player.getAppearance().getInvisible() && !(Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
 					_onlineCount++;
 				_onlineCountGm++;
 			}
@@ -347,22 +347,31 @@ public class RegionBBSManager extends BaseBBSManager
 		{
 			FastMap<String, String> communityPage = new FastMap<String, String>();
 			htmlCode.setLength(0);
-			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Server Restarted: ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
-					+ trClose + "</table>" + "<table>" + trOpen + tdOpen + "XP Rate: x", String.valueOf(Config.RATE_XP), tdClose
-					+ colSpacer + tdOpen + "Party XP Rate: x", String.valueOf(Config.RATE_XP * Config.RATE_PARTY_XP), tdClose + colSpacer
+			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Serveur redémarré le ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
+					+ trClose + "</table>" + "<table>" + trOpen + tdOpen + "XP x", String.valueOf(Config.RATE_XP), tdClose
+					+ colSpacer + tdOpen + "Party XP x", String.valueOf(Config.RATE_XP * Config.RATE_PARTY_XP), tdClose + colSpacer
 					+ tdOpen + "XP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_XP), tdClose + trClose + trOpen + tdOpen
-					+ "SP Rate: x", String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen + "Party SP Rate: x", String.valueOf(Config.RATE_SP
+					+ "SP x", String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen + "Party SP x", String.valueOf(Config.RATE_SP
 							* Config.RATE_PARTY_SP), tdClose + colSpacer + tdOpen + "SP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_SP), tdClose
-							+ trClose + trOpen + tdOpen + "Drop Rate: ", String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen
-							+ "Spoil Rate: ", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena Rate: ", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
+							+ trClose + trOpen + tdOpen + "Drop x", String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen
+							+ "Spoil x", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena x", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
 							+ trClose
 							+ "</table>"
 							+ "<table>"
 							+ trOpen
 							+ "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>"
 							+ trClose
-							+ trOpen + tdOpen, String.valueOf(L2World.getInstance().getAllVisibleObjectsCount()), " Object count</td>" + trClose
-							+ trOpen + tdOpen, String.valueOf(getOnlineCount("gm")), " Player(s) Online</td>" + trClose + "</table>");
+							+ trOpen + tdOpen, String.valueOf(L2World.getInstance().getAllVisibleObjectsCount()), " Objets instanciés</td>" + trClose
+							+ trOpen + tdOpen, String.valueOf(getOnlineCount("gm")), " joueurs en ligne "
+                                                        + "(<font color=\"", Config.VAEMOD_CBCOLOR_HUMAN, "\">Humain</font>, "
+                                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_ELF, "\">Elfe</font>, "
+                                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_DARKELF, "\">Sombre</font>, "
+                                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_DWARF, "\">Nain</font>, "
+                                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_ORC, "\">Orc</font>, "
+                                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_KAMAEL, "\">Kamael</font>, "
+                                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_GM, "\">GM</font>, "
+                                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_OFFLINE, "\">Offline</font>)</td>"
+                                                        + trClose + "</table>");
 			
 			int cell = 0;
 			if (Config.BBS_SHOW_PLAYERLIST)
@@ -380,14 +389,39 @@ public class RegionBBSManager extends BaseBBSManager
 					
 					StringUtil.append(htmlCode, "<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;", player.getName(), "\">");
 					
-					if (player.isGM())
+                        if (player.isGM()) {
+                            StringUtil.append(htmlCode, "<font color=\"", Config.VAEMOD_CBCOLOR_GM, "\">", player.getName(), "</font>");
+                        }
+                        else if (player.isInOfflineMode())
 					{
-						StringUtil.append(htmlCode, "<font color=\"LEVEL\">", player.getName(), "</font>");
+                            StringUtil.append(htmlCode, "<font color=\"", Config.VAEMOD_CBCOLOR_OFFLINE, "\">", player.getName(), "</font>");
 					}
-					else
+                        else {
+                                switch (player.getRace())
 					{
-						htmlCode.append(player.getName());
-					}
+                                            case DarkElf:
+                                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_DARKELF).append("\">").append(player.getName()).append("</font>");
+                                                break;
+                                            case Dwarf:
+                                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_DWARF).append("\">").append(player.getName()).append("</font>");
+                                                break;
+                                            case Elf:
+                                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_ELF).append("\">").append(player.getName()).append("</font>");
+                                                break;
+                                            case Human:
+                                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_HUMAN).append("\">").append(player.getName()).append("</font>");
+                                                break;
+                                            case Kamael:
+                                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_KAMAEL).append("\">").append(player.getName()).append("</font>");
+                                                break;
+                                            case Orc:
+                                                htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_ORC).append("\">").append(player.getName()).append("</font>");
+                                                break;
+                                            default:
+                                                htmlCode.append(player.getName());
+                                                break;
+                                        }
+                            }
 					
 					htmlCode.append("</a></td>");
 					
@@ -439,20 +473,28 @@ public class RegionBBSManager extends BaseBBSManager
 			communityPage.put("gm", htmlCode.toString());
 			
 			htmlCode.setLength(0);
-			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Server Restarted: ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
-					+ trClose + "</table>" + "<table>" + trOpen + tdOpen + "XP Rate: ", String.valueOf(Config.RATE_XP), tdClose + colSpacer
-					+ tdOpen + "Party XP Rate: ", String.valueOf(Config.RATE_PARTY_XP), tdClose + colSpacer + tdOpen + "XP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_XP), tdClose
-					+ trClose + trOpen + tdOpen + "SP Rate: ", String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen
-					+ "Party SP Rate: ", String.valueOf(Config.RATE_PARTY_SP), tdClose + colSpacer + tdOpen + "SP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_SP), tdClose
-					+ trClose + trOpen + tdOpen + "Drop Rate: ", String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen
-					+ "Spoil Rate: ", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena Rate: ", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
+			StringUtil.append(htmlCode, "<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Serveur redémarré le ", String.valueOf(GameServer.dateTimeServerStarted.getTime()), tdClose
+					+ trClose + "</table>" + "<table>" + trOpen + tdOpen + "XP x", String.valueOf(Config.RATE_XP), tdClose + colSpacer
+					+ tdOpen + "Party XP x", String.valueOf(Config.RATE_PARTY_XP), tdClose + colSpacer + tdOpen + "XP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_XP), tdClose
+					+ trClose + trOpen + tdOpen + "SP x", String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen
+					+ "Party SP x", String.valueOf(Config.RATE_PARTY_SP), tdClose + colSpacer + tdOpen + "SP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_SP), tdClose
+					+ trClose + trOpen + tdOpen + "Drop x", String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen
+					+ "Spoil x", String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena x", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)), tdClose
 					+ trClose
 					+ "</table>"
 					+ "<table>"
 					+ trOpen
 					+ "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>"
 					+ trClose
-					+ trOpen + tdOpen, String.valueOf(getOnlineCount("pl")), " Player(s) Online</td>" + trClose + "</table>");
+					+ trOpen + tdOpen, String.valueOf(getOnlineCount("pl")), " joueur(s) en ligne "
+                                        + "(<font color=\"", Config.VAEMOD_CBCOLOR_HUMAN, "\">Humain</font>, "
+                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_ELF, "\">Elfe</font>, "
+                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_DARKELF, "\">Sombre</font>, "
+                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_DWARF, "\">Nain</font>, "
+                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_ORC, "\">Orc</font>, "
+                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_KAMAEL, "\">Kamael</font>, "
+                                        + "<font color=\"", Config.VAEMOD_CBCOLOR_GM, "\">GM</font>)</td>"
+                                        + trClose + "</table>");
 			
 			if (Config.BBS_SHOW_PLAYERLIST)
 			{
@@ -461,7 +503,7 @@ public class RegionBBSManager extends BaseBBSManager
 				cell = 0;
 				for (L2PcInstance player : getOnlinePlayers(page))
 				{
-					if ((player == null) || (player.getAppearance().getInvisible()))
+					if ((player == null) || (player.getAppearance().getInvisible()) || (Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
 						continue; // Go to next
 					
 					cell++;
@@ -475,12 +517,35 @@ public class RegionBBSManager extends BaseBBSManager
 					
 					if (player.isGM())
 					{
-						StringUtil.append(htmlCode, "<font color=\"LEVEL\">", player.getName(), "</font>");
+						StringUtil.append(htmlCode, "<font color=\"", Config.VAEMOD_CBCOLOR_GM, "\">", player.getName(), "</font>");
 					}
-					else
-					{
-						htmlCode.append(player.getName());
-					}
+                                            else
+                                            {
+                                                switch (player.getRace())
+                                                {
+                                                    case DarkElf:
+                                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_DARKELF).append("\">").append(player.getName()).append("</font>");
+                                                        break;
+                                                    case Dwarf:
+                                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_DWARF).append("\">").append(player.getName()).append("</font>");
+                                                        break;
+                                                    case Elf:
+                                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_ELF).append("\">").append(player.getName()).append("</font>");
+                                                        break;
+                                                    case Human:
+                                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_HUMAN).append("\">").append(player.getName()).append("</font>");
+                                                        break;
+                                                    case Kamael:
+                                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_KAMAEL).append("\">").append(player.getName()).append("</font>");
+                                                        break;
+                                                    case Orc:
+                                                        htmlCode.append("<font color=\"").append(Config.VAEMOD_CBCOLOR_ORC).append("\">").append(player.getName()).append("</font>");
+                                                        break;
+                                                    default:
+                                                                        htmlCode.append(player.getName());
+                                                        break;
+                                                 }
+                                            }
 					
 					htmlCode.append("</a></td>");
 					

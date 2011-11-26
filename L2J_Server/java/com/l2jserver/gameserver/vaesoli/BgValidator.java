@@ -73,7 +73,7 @@ public class BgValidator {
         };
         _transforms = new TIntArrayList(skillId.length);
         _transforms.add(skillId);
-        _log.log(Level.INFO, "Loaded {0} transform skills to check.", _transforms.size());
+        _log.info("Loaded " + _transforms.size() + " transform skills to check.");
     }
 
     private boolean isGuilty(L2PcInstance player) {

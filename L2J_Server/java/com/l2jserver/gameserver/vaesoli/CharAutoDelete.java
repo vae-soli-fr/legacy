@@ -38,7 +38,7 @@ public class CharAutoDelete {
                         clan.removeClanMember(objectId, 0);
                     }
                     L2GameClient.deleteCharByObjId(objectId);
-                    _log.log(Level.INFO, "Character {0} of account {1} has been deleted.", new Object[]{name, account});
+                    _log.info("Character " + name + " of account " + account + " has been deleted.");
                     count++;
                 }
             }
@@ -53,6 +53,6 @@ public class CharAutoDelete {
             } catch (Exception e) {
             }
         }
-        _log.log(Level.INFO, "Deleted {0} characters from database.", count);
+        _log.info("Deleted " + count + " characters from database.");
     }
 }
