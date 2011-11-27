@@ -85,30 +85,37 @@
 		<route id="2" X="-82091" Y="245028" Z="-3720" delay="0" run="false" />
 		<route id="3" X="-82381" Y="244911" Z="-3720" delay="0" run="false" />
 		<route id="4" X="-82935" Y="244481" Z="-3728" delay="0" run="false" />
-		<route id="5" npcStringId="1010205" X="-83980" Y="242776" Z="-3728" delay="10" run="false" />
+		<!-- npcStringId="1010205" -->
+		<route id="5" X="-83980" Y="242776" Z="-3728" delay="10" run="false" />
 		<route id="6" X="-85966" Y="241371" Z="-3728" delay="0" run="false" />
-		<route id="7" npcStringId="1010206" X="-86079" Y="240868" Z="-3720" delay="5" run="false" />
+		<!-- npcStringId="1010206" -->
+		<route id="7" X="-86079" Y="240868" Z="-3720" delay="5" run="false" />
 		<route id="8" X="-86076" Y="240392" Z="-3712" delay="0" run="false" />
 		<route id="9" X="-86519" Y="240706" Z="-3704" delay="0" run="false" />
-		<route id="10" npcStringId="1010207" X="-86343" Y="241130" Z="-3728" delay="60" run="false" />
+		<!-- npcStringId="1010207" -->
+		<route id="10" X="-86343" Y="241130" Z="-3728" delay="60" run="false" />
 	</walker>
 	<walker npcId="31356">
 		<route id="0" X="-81926" Y="243894" Z="-3712" delay="3" run="true" />
 		<route id="1" X="-82134" Y="243600" Z="-3728" delay="0" run="true" />
 		<route id="2" X="-83182" Y="243723" Z="-3728" delay="0" run="true" />
-		<route id="3" npcStringId="1010202" X="-84486" Y="243236" Z="-3728" delay="5" run="true" />
+		<!-- npcStringId="1010202" -->
+		<route id="3" X="-84486" Y="243236" Z="-3728" delay="5" run="true" />
 		<route id="4" X="-85205" Y="243187" Z="-3728" delay="0" run="true" />
 		<route id="5" X="-86152" Y="242898" Z="-3728" delay="0" run="true" />
 		<route id="6" X="-86288" Y="242962" Z="-3720" delay="0" run="true" />
-		<route id="7" npcStringId="1010203" X="-86352" Y="243207" Z="-3720" delay="5" run="true" />
+		<!-- npcStringId="1010203" -->
+		<route id="7" X="-86352" Y="243207" Z="-3720" delay="5" run="true" />
 		<route id="8" X="-86501" Y="242762" Z="-3720" delay="0" run="true" />
 		<route id="9" X="-86500" Y="242615" Z="-3728" delay="0" run="true" />
 		<route id="10" X="-86123" Y="241606" Z="-3728" delay="0" run="true" />
 		<route id="11" X="-85207" Y="240698" Z="-3728" delay="0" run="true" />
-		<route id="12" npcStringId="1010204" X="-84066" Y="241285" Z="-3728" delay="5" run="true" />
+		<!-- npcStringId="1010204" -->
+		<route id="12" X="-84066" Y="241285" Z="-3728" delay="5" run="true" />
 		<route id="13" X="-83215" Y="241170" Z="-3728" delay="0" run="true" />
 		<route id="14" X="-82364" Y="242944" Z="-3720" delay="0" run="true" />
-		<route id="15" npcStringId="1010201" X="-81674" Y="243391" Z="-3712" delay="60" run="true" />
+		<!-- npcStringId="1010201" -->
+		<route id="15" X="-81674" Y="243391" Z="-3712" delay="60" run="true" />
 		<route id="16" X="-81926" Y="243894" Z="-3712" delay="0" run="true" />
 	</walker>
 	<walker npcId="31364">
