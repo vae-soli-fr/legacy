@@ -108,7 +108,7 @@ public class CertificationEx extends Quest {
                             StatusUpdate su = new StatusUpdate(player);
                             su.addAttribute(StatusUpdate.CUR_LOAD, player.getCurrentLoad());
                             player.sendPacket(su);
-                            player.sendPacket(new SystemMessage(SystemMessageId.EARNED_ITEM).addItemName(rewardItem));
+                            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1).addItemName(rewardItem));
                             return null;
                         }
                     }
