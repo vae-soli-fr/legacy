@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="skills.xsd">
 	<skill id="6600" levels="28" name="NPC earth attack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -125,7 +125,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectRange" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="Debuff" val="true" />
+		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff" abnormalTime="10" val="0" effectPower="30" abnormalLvl="3" abnormalType="speed_down">
 				<mul order="0x30" stat="runSpd" val="0.5" />
@@ -149,7 +149,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectRange" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="Debuff" val="true" />
+		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff" abnormalTime="10" val="0" effectPower="30" abnormalLvl="4" abnormalType="speed_down">
 				<mul order="0x30" stat="runSpd" val="0.1" />
