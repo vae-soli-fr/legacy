@@ -13,6 +13,26 @@
 	</item>
 	
 	<item id="55001" type="EtcItem" name="Keltir Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55002" type="EtcItem" name="Renard Whistle">
+		<set name="displayId" val="13305" />
 		<set name="icon" val="icon.pet_controler_i00" />
 		<set name="default_action" val="skill_maintain" />
 		<set name="etcitem_type" val="pet_collar" />
@@ -30,6 +50,291 @@
 		</cond>
 	</item>
 	
+	<item id="55003" type="EtcItem" name="Lapin Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+	
+	<item id="55004" type="EtcItem" name="Elpy Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55005" type="EtcItem" name="Larve Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55006" type="EtcItem" name="Salamandre Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55007" type="EtcItem" name="Crapaud Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55008" type="EtcItem" name="Licorne Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55009" type="EtcItem" name="Mandragore Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55010" type="EtcItem" name="Abeille Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55011" type="EtcItem" name="Chauve Souris Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+	
+	<item id="55012" type="EtcItem" name="Panthere Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+	
+	<item id="55013" type="EtcItem" name="Cougar Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+	
+	<item id="55014" type="EtcItem" name="Bete Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+	
+	<item id="55015" type="EtcItem" name="Phoenix Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55016" type="EtcItem" name="Onyx Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
+	<item id="55017" type="EtcItem" name="Spectre Whistle">
+		<set name="displayId" val="13305" />
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="material" val="leather" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="False" />
+		</cond>
+	</item>
+
 	<item id="55314" type="EtcItem" name="Pack de recettes Dynasty Heavy">
 		<set name="displayId" val="17074" />
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
