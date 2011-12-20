@@ -78202,7 +78202,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78219,7 +78219,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78245,7 +78245,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78262,7 +78262,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78288,7 +78288,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78305,7 +78305,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78331,7 +78331,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78348,7 +78348,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78374,7 +78374,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78391,7 +78391,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78417,7 +78417,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78434,7 +78434,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78460,7 +78460,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78477,7 +78477,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78503,7 +78503,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78520,7 +78520,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78546,7 +78546,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78563,7 +78563,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78589,7 +78589,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78606,7 +78606,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78632,7 +78632,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78649,7 +78649,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78675,7 +78675,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78692,7 +78692,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78718,7 +78718,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78735,7 +78735,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78761,7 +78761,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78778,7 +78778,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78804,7 +78804,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78821,7 +78821,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78847,7 +78847,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78864,7 +78864,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78890,7 +78890,7 @@
 			<stat level="70">
 				<set name="max_meal" val="11403" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="45" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
@@ -78907,7 +78907,7 @@
 			<stat level="71">
 				<set name="max_meal" val="11745" />
 				<set name="exp" val="0" />
-				<set name="get_exp_type" val="0" />
+				<set name="get_exp_type" val="100" />
 				<set name="consume_meal_in_battle" val="46" />
 				<set name="consume_meal_in_normal" val="8" />
 				<set name="org_pattack" val="0.0" />
