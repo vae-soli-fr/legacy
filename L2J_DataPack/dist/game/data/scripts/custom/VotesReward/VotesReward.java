@@ -84,11 +84,12 @@ public class VotesReward extends Quest {
         int votes = 0;
         try {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con.prepareStatement("SELECT votes FROM account_digest WHERE login = ?");
-            statement.setString(1, player.getAccountName());
+            PreparedStatement statement = con.prepareStatement("SELECT votes FROM account_digest WHERE lastIP = ? ORDER BY votes ASC");
+            statement.setString(1, retrieveIp(player));
             ResultSet rset = statement.executeQuery();
 
             while (rset.next()) {
+                // get the max for this IP
                 votes = rset.getInt("votes");
             }
             rset.close();
