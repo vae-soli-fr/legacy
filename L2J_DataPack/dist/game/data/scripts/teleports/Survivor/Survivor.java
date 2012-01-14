@@ -36,9 +36,10 @@ public class Survivor extends Quest
 		
 		if (!event.isEmpty())
 		{
-			if (player.getLevel() < 75)
+			/* if (player.getLevel() < 75)
 				event = "32632-3.htm";
-			else if (st.getQuestItemsCount(57) >= 150000)
+			else  */
+			if (st.getQuestItemsCount(57) >= 150000)
 			{
 				st.takeItems(57,150000);
 		        player.teleToLocation(-149406, 255247, -80);
