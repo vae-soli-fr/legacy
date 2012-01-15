@@ -308,7 +308,8 @@ public class RegionBBSManager extends BaseBBSManager
 					page.add(player);
 					if (!player.getAppearance().getInvisible() && !(Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
 						_onlineCount++;
-					_onlineCountGm++;
+                                        if (!(Config.VAEMOD_HIDEOFFLINE && player.isInOfflineMode()))
+                                                _onlineCountGm++;
 				}
 				added = true;
 				break;
