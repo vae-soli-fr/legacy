@@ -1,5 +1,6 @@
 package custom.VotesReward;
 
+import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.model.L2ItemInstance;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -10,6 +11,7 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import com.l2jserver.gameserver.util.GMAudit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -146,6 +148,7 @@ public class VotesReward extends Quest {
             su.addAttribute(StatusUpdate.CUR_LOAD, player.getCurrentLoad());
             player.sendPacket(su);
             player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1).addItemName(rewardItem));
+            if (Config.GMAUDIT) GMAudit.auditGMAction("VotesReward", "Has bought a pet for " + _rewards.get(rewardId) + " points", player.getName() + " (" + player.getAccountName() + ")", rewardItem.getItemName());
         } else {
             player.sendMessage("Vous n'avez pas assez de votes !");
             show(player);
