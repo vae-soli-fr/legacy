@@ -127,6 +127,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 			getMinionList().spawnMinions();
 		
 		_maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable() {
+			@Override
 			public void run()
 			{
 				checkAndReturnToSpawn();
@@ -195,9 +196,6 @@ public class L2RaidBossInstance extends L2MonsterInstance
 		_useRaidCurse = val;
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.l2jserver.gameserver.model.actor.L2Character#giveRaidCurse()
-	 */
 	@Override
 	public boolean giveRaidCurse()
 	{
@@ -211,7 +209,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
             if (now - _lastSocialBroadcast > _minimalSocialInterval)
             {
                     _lastSocialBroadcast = now;
-                    broadcastPacket(new SocialAction(this, animationId));
+                    broadcastPacket(new SocialAction(getObjectId(), animationId));
                     RaidBossSpeeches.getInstance().roleplaying(this);
             }
         }

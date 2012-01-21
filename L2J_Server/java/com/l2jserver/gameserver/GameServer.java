@@ -46,6 +46,7 @@ import com.l2jserver.gameserver.datatables.ClanTable;
 import com.l2jserver.gameserver.datatables.DoorTable;
 import com.l2jserver.gameserver.datatables.EnchantGroupsTable;
 import com.l2jserver.gameserver.datatables.EnchantHPBonusData;
+import com.l2jserver.gameserver.datatables.EnchantItemTable;
 import com.l2jserver.gameserver.datatables.EventDroplist;
 import com.l2jserver.gameserver.datatables.ExperienceTable;
 import com.l2jserver.gameserver.datatables.FishTable;
@@ -108,6 +109,7 @@ import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.instancemanager.TerritoryWarManager;
 import com.l2jserver.gameserver.instancemanager.TransformationManager;
+import com.l2jserver.gameserver.instancemanager.WalkingManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.AutoChatHandler;
 import com.l2jserver.gameserver.model.AutoSpawnHandler;
@@ -226,6 +228,7 @@ public class GameServer
 		
 		printSection("Items");
 		ItemTable.getInstance();
+		EnchantItemTable.getInstance();
 		SummonItemsData.getInstance();
 		EnchantHPBonusData.getInstance();
 		MerchantPriceConfigTable.getInstance().loadInstances();
@@ -247,7 +250,7 @@ public class GameServer
 		PetDataTable.getInstance();
 		CharSummonTable.getInstance().init();
 		
-		printSection("Clans");
+		printSection("Clans"); 
 		ClanTable.getInstance();
 		CHSiegeManager.getInstance();
 		ClanHallManager.getInstance();
@@ -262,6 +265,7 @@ public class GameServer
 		HerbDropTable.getInstance();
 		NpcTable.getInstance();
 		NpcWalkerRoutesTable.getInstance();
+		WalkingManager.getInstance();
 		ZoneManager.getInstance();
 		DoorTable.getInstance();
 		StaticObjects.getInstance();
@@ -270,6 +274,7 @@ public class GameServer
 		FortManager.getInstance().loadInstances();
 		NpcBufferTable.getInstance();
 		SpawnTable.getInstance();
+		HellboundManager.getInstance();
 		RaidBossSpawnManager.getInstance();
 		DayNightSpawnManager.getInstance().trim().notifyChangeMode();
 		GrandBossManager.getInstance().initZones();
@@ -386,7 +391,6 @@ public class GameServer
 		MerchantPriceConfigTable.getInstance().updateReferences();
 		CastleManager.getInstance().activateInstances();
 		FortManager.getInstance().activateInstances();
-		HellboundManager.getInstance();
 		
 		if (Config.ALLOW_MAIL)
 			MailManager.getInstance();

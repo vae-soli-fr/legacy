@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance.PunishLevel;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import gnu.trove.TIntArrayList;
+import gnu.trove.list.array.TIntArrayList;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

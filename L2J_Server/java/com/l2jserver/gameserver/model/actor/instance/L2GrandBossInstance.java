@@ -118,9 +118,6 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 		_useRaidCurse = val;
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.l2jserver.gameserver.model.actor.L2Character#giveRaidCurse()
-	 */
 	@Override
 	public boolean giveRaidCurse()
 	{
@@ -134,7 +131,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
             if (now - _lastSocialBroadcast > _minimalSocialInterval)
             {
                     _lastSocialBroadcast = now;
-                    broadcastPacket(new SocialAction(this, animationId));
+                    broadcastPacket(new SocialAction(getObjectId(), animationId));
                     RaidBossSpeeches.getInstance().roleplaying(this);
             }
         }

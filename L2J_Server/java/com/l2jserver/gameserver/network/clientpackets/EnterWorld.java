@@ -44,7 +44,6 @@ import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.instancemanager.TerritoryWarManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ItemInstance;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -58,6 +57,7 @@ import com.l2jserver.gameserver.model.entity.Siege;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.entity.clanhall.AuctionableHall;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
+import com.l2jserver.gameserver.model.item.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -211,7 +211,7 @@ public class EnterWorld extends L2GameClientPacket
 			if (clanHall != null)
 			{
 				if (!clanHall.getPaid())
-					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW));
+					activeChar.sendPacket(SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
 			}
 			
 			for (Siege siege : SiegeManager.getInstance().getSieges())
@@ -259,6 +259,7 @@ public class EnterWorld extends L2GameClientPacket
 				{
 					activeChar.setSiegeState((byte)1);
 					activeChar.setSiegeSide(hall.getId());
+					activeChar.setIsInHideoutSiege(true);
 				}
 			}
 			
@@ -312,7 +313,7 @@ public class EnterWorld extends L2GameClientPacket
 		activeChar.broadcastUserInfo();
 		
 		// Send Macro List
-		activeChar.getMacroses().sendUpdate();
+		activeChar.getMacros().sendUpdate();
 		
 		// Send Item List
 		sendPacket(new ItemList(activeChar, false));
@@ -352,6 +353,8 @@ public class EnterWorld extends L2GameClientPacket
 		
 		activeChar.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
 		
+		activeChar.getInventory().applyItemSkills();
+		
 		if (L2Event.isParticipant(activeChar))
 			L2Event.restorePlayerEventStatus(activeChar);
 		
@@ -385,7 +388,7 @@ public class EnterWorld extends L2GameClientPacket
 				obj.sendPacket(sm);
 		}
 		
-		sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WELCOME_TO_LINEAGE));
+		activeChar.sendPacket(SystemMessageId.WELCOME_TO_LINEAGE);
 		
                 /**
                  * Dummy english L2J license
@@ -465,7 +468,7 @@ public class EnterWorld extends L2GameClientPacket
 			DimensionalRiftManager.getInstance().teleportToWaitingRoom(activeChar);
 		
 		if (activeChar.getClanJoinExpiryTime() > System.currentTimeMillis())
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBERSHIP_TERMINATED));
+			activeChar.sendPacket(SystemMessageId.CLAN_MEMBERSHIP_TERMINATED);
 		
 		// remove combat flag before teleporting
 		if (activeChar.getInventory().getItemByItemId(9819) != null)
@@ -509,7 +512,7 @@ public class EnterWorld extends L2GameClientPacket
 		int birthday = activeChar.checkBirthDay();
 		if (birthday == 0)
 		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_BIRTHDAY_GIFT_HAS_ARRIVED));
+			activeChar.sendPacket(SystemMessageId.YOUR_BIRTHDAY_GIFT_HAS_ARRIVED);
 			// activeChar.sendPacket(new ExBirthdayPopup()); Removed in H5?
 		}
 		else if (birthday != -1)

@@ -19,13 +19,15 @@ import java.util.logging.Logger;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.GameTimeController;
+import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.ai.L2SummonAI;
+import com.l2jserver.gameserver.ai.NextAction;
+import com.l2jserver.gameserver.ai.NextAction.NextActionCallback;
 import com.l2jserver.gameserver.datatables.PetDataTable;
 import com.l2jserver.gameserver.datatables.SkillTable;
 import com.l2jserver.gameserver.datatables.SummonSkillsTable;
 import com.l2jserver.gameserver.instancemanager.AirShipManager;
-import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.TerritoryWarManager;
 import com.l2jserver.gameserver.model.L2CharPosition;
 import com.l2jserver.gameserver.model.L2ManufactureList;
@@ -76,8 +78,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		
+		final L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 			return;
 		
@@ -110,8 +111,8 @@ public final class RequestActionUse extends L2GameClientPacket
 			}
 		}
 		
-		L2Summon pet = activeChar.getPet();
-		L2Object target = activeChar.getTarget();
+		final L2Summon pet = activeChar.getPet();
+		final L2Object target = activeChar.getTarget();
 		
 		if (Config.DEBUG)
 			_log.info("Requested Action ID: " + String.valueOf(_actionId));
@@ -119,23 +120,26 @@ public final class RequestActionUse extends L2GameClientPacket
 		switch (_actionId)
 		{
 			case 0: // Sit/Stand
-				if (activeChar.getMountType() != 0)
-					break;
-				
-				if (target != null && !activeChar.isSitting() && target instanceof L2StaticObjectInstance && ((L2StaticObjectInstance) target).getType() == 1 && CastleManager.getInstance().getCastle(target) != null
-						&& activeChar.isInsideRadius(target, L2StaticObjectInstance.INTERACTION_DISTANCE, false, false))
+				if (activeChar.isSitting() || !activeChar.isMoving())
 				{
-					final ChairSit cs = new ChairSit(activeChar, ((L2StaticObjectInstance) target).getStaticObjectId());
-					activeChar.sendPacket(cs);
-					activeChar.sitDown();
-					activeChar.broadcastPacket(cs);
-					break;
+					useSit(activeChar, target);
 				}
-				
-				if (activeChar.isSitting())
-					activeChar.standUp();
 				else
-					activeChar.sitDown();
+				{
+					// Sit when arrive using next action.
+					// Creating next action class.
+					final NextAction nextAction = new NextAction(CtrlEvent.EVT_ARRIVED, CtrlIntention.AI_INTENTION_MOVE_TO, new NextActionCallback()
+					{
+						@Override
+						public void doWork()
+						{
+							useSit(activeChar, target);
+						}
+					});
+					
+					// Binding next action to AI.
+					activeChar.getAI().setNextAction(nextAction);
+				}
 				
 				if (Config.DEBUG)
 					_log.fine("new wait type: " + (activeChar.isSitting() ? "SITTING" : "STANDING"));
@@ -148,7 +152,7 @@ public final class RequestActionUse extends L2GameClientPacket
 					activeChar.setRunning();
 				
 				if (Config.DEBUG)
-					_log.fine("new move type: " + (activeChar.isRunning() ? "RUNNING" : "WALKIN"));
+					_log.fine("New move type: " + (activeChar.isRunning() ? "RUNNING" : "WALKING"));
 				break;
 			case 10: // Private Store - Sell
 				activeChar.tryOpenPrivateSellStore(false);
@@ -181,7 +185,7 @@ public final class RequestActionUse extends L2GameClientPacket
 					
 					if (activeChar.isInOlympiadMode() && !activeChar.isOlympiadStart())
 					{
-						// if L2PcInstance is in Olympia and the match isn't already start, send a Server->Client packet ActionFailed
+						// If L2PcInstance is in Olympiad and the match isn't already start, send a Server->Client packet ActionFailed
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 						return;
 					}
@@ -213,7 +217,7 @@ public final class RequestActionUse extends L2GameClientPacket
 					
 					if (pet.isLockedTarget())
 					{
-						pet.getOwner().sendPacket(SystemMessageId.FAILED_CHANGE_TARGET);
+						pet.sendPacket(SystemMessageId.FAILED_CHANGE_TARGET);
 						return;
 					}
 					
@@ -763,10 +767,49 @@ public final class RequestActionUse extends L2GameClientPacket
 		}
 	}
 	
-	/*
+	/**
+	 * @param activeChar the player trying to sit.
+	 * @param target the target to sit, throne, bench or chair.
+	 * @return {@code true} if the player can sit, {@code false} otherwise.
+	 */
+	private boolean useSit(L2PcInstance activeChar, L2Object target)
+	{
+		if (activeChar.getMountType() != 0)
+		{
+			return false;
+		}
+		
+		if ((target != null) && !activeChar.isSitting() && (target instanceof L2StaticObjectInstance) && (((L2StaticObjectInstance) target).getType() == 1) && activeChar.isInsideRadius(target, L2StaticObjectInstance.INTERACTION_DISTANCE, false, false))
+		{
+			final ChairSit cs = new ChairSit(activeChar, ((L2StaticObjectInstance) target).getStaticObjectId());
+			activeChar.sendPacket(cs);
+			activeChar.sitDown();
+			activeChar.broadcastPacket(cs);
+			return false;
+		}
+		
+		if (activeChar.isSitting())
+		{
+			activeChar.standUp();
+		}
+		else
+		{
+			activeChar.sitDown();
+		}
+		
+		if (Config.DEBUG)
+		{
+			_log.fine("New wait type: " + (activeChar.isSitting() ? "SITTING" : "STANDING"));
+		}
+		return true;
+	}
+	
+	/**
 	 * Cast a skill for active pet/servitor.
 	 * Target is specified as a parameter but can be
 	 * overwrited or ignored depending on skill type.
+	 * @param skillId 
+	 * @param target 
 	 */
 	private void useSkill(int skillId, L2Object target)
 	{
@@ -848,7 +891,7 @@ public final class RequestActionUse extends L2GameClientPacket
 		
 		if (activeChar.canMakeSocialAction())
 		{
-			activeChar.broadcastPacket(new SocialAction(activeChar, id));
+			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), id));
 		}
 	}
 	
@@ -1069,7 +1112,7 @@ public final class RequestActionUse extends L2GameClientPacket
 		//Probably is: The request cannot be completed because the target does not meet location requirements.
 		if (activeChar.isAllSkillsDisabled() || player.isAllSkillsDisabled())
 		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.COUPLE_ACTION_CANCELED));
+			activeChar.sendPacket(SystemMessageId.COUPLE_ACTION_CANCELED);
 			return;
 		}
 		
