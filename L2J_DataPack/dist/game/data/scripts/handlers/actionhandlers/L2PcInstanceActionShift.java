@@ -27,6 +27,7 @@ import com.l2jserver.gameserver.vaesoli.Descriptions;
 
 public class L2PcInstanceActionShift implements IActionHandler
 {
+	@Override
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
 	{
 		if (activeChar.isGM())
@@ -45,7 +46,7 @@ public class L2PcInstanceActionShift implements IActionHandler
 			if (activeChar != target)
 				activeChar.sendPacket(new ValidateLocation((L2Character)target));
 			
-			IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler("admin_character_info");
+			IAdminCommandHandler ach = AdminCommandHandler.getInstance().getHandler("admin_character_info");
 			if (ach != null)
 				ach.useAdminCommand("admin_character_info " + target.getName(), activeChar);
 		}
@@ -56,6 +57,7 @@ public class L2PcInstanceActionShift implements IActionHandler
 		return true;
 	}
 	
+	@Override
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.L2PcInstance;
