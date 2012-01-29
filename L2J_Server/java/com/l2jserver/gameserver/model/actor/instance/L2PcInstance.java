@@ -6639,7 +6639,7 @@ public final class L2PcInstance extends L2Playable
 		L2ItemInstance wpn = getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 		if (wpn == null)
 		{
-			return false;
+			return true; // no weapon found
 		}
 		else if (wpn.getWeaponItem().isForceEquip())
 		{
