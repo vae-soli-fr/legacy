@@ -132,6 +132,7 @@ import com.l2jserver.gameserver.taskmanager.KnownListUpdateTaskManager;
 import com.l2jserver.gameserver.taskmanager.TaskManager;
 import com.l2jserver.gameserver.vaesoli.BgValidator;
 import com.l2jserver.gameserver.vaesoli.CharAutoDelete;
+import com.l2jserver.gameserver.vaesoli.RaidBossSpeeches;
 import com.l2jserver.status.Status;
 import com.l2jserver.util.DeadLockDetector;
 import com.l2jserver.util.IPv4Filter;
@@ -281,6 +282,9 @@ public class GameServer
 		FourSepulchersManager.getInstance().init();
 		DimensionalRiftManager.getInstance();
 		EventDroplist.getInstance();
+                
+                printSection("RaidBoss Speeches");
+                RaidBossSpeeches.getInstance();
                 
                 printSection("Characters autodelete");
                 CharAutoDelete.clean();
