@@ -31,7 +31,7 @@ import com.l2jserver.gameserver.network.serverpackets.SocialAction;
 import com.l2jserver.gameserver.util.Util;
 import com.l2jserver.util.Rnd;
 
-import gnu.trove.TIntHashSet;
+import gnu.trove.set.hash.TIntHashSet;
 import java.util.List;
 import javolution.util.FastList;
 
@@ -86,7 +86,7 @@ public class SelMahums extends L2AttackableAIScript
 			addSpawnId(i);
 	
 		//Send event to monsters, that was spawned through SpawnTable at server start (it is impossible to track first spawn)
-    for (L2Spawn npcSpawn : SpawnTable.getInstance().getSpawnTable().values())
+    for (L2Spawn npcSpawn : SpawnTable.getInstance().getSpawnTable())
     {
       if (Util.contains(MAHUM_CHIEFS, npcSpawn.getNpcid()) || Util.contains(MAHUM_SOLDIERS, npcSpawn.getNpcid()))
           onSpawn(npcSpawn.getLastSpawn());
@@ -202,7 +202,7 @@ public class SelMahums extends L2AttackableAIScript
 			npc.disableCoreAI(false);
 			npc.setBusy(false);
 			npc.setIsNoRndWalk(true);
-			npc.setRandomAnimationEnabled(false);
+			//npc.setRandomAnimationEnabled(false);
 			_spawns.add(npc.getSpawn());
 		}
 
