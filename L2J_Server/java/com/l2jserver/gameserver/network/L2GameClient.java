@@ -771,6 +771,12 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 							getActiveChar().getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
 							getActiveChar().broadcastUserInfo();
 						}
+                                                
+                                                // If the L2PcInstance has Camp, unspawn it
+                                                if (getActiveChar().getCamp() != null)
+                                                {
+                                                        getActiveChar().getCamp().clear();
+                                                }
 						
 						if (getActiveChar().getOfflineStartTime() == 0)
 						{

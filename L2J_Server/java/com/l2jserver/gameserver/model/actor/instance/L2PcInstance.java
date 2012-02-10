@@ -15064,14 +15064,11 @@ public final class L2PcInstance extends L2Playable
             return getClient() == null || getClient().isDetached();
         }
         
-        /*
-         * @author Saelil
-         */
-        public void evolveCamp()
+        public Camp getCamp()
         {
-            this._camp.evolve(this);
+            return _camp;
         }
-        
+               
         public boolean isGuard() 
         {
             return _guard;

@@ -25,9 +25,9 @@ public class Camp {
     
     public Camp()
     {
-        this._state = State.EMPTY;
-        this._spawns = new ArrayList<>();
-        this._npcs = new ArrayList<>();
+        _state = State.EMPTY;
+        _spawns = new ArrayList<>();
+        _npcs = new ArrayList<>();
     }
     
     public State getState()
@@ -46,46 +46,46 @@ public class Camp {
         switch(_state)
         {
             case EMPTY:
-                this.addSpawn(activeChar, 80927);
+                addSpawn(activeChar, 80927);
                 activeChar.sendMessage("Vous disposez du bois sec au sol.");
-                this._state = State.TIMBER;
+                _state = State.TIMBER;
                 break;
             case TIMBER:
-                this.addSpawn(activeChar, 80930);
+                addSpawn(activeChar, 80930);
                 activeChar.sendMessage("Vous allumez un feu.");
-                this._state = State.FIRE;
+                _state = State.FIRE;
                 break;
             case FIRE:
-                this.addSpawn(activeChar, 80933);
+                addSpawn(activeChar, 80933);
                 activeChar.sendMessage("Vous faites cuire le repas.");
-                this._state = State.FOOD;
+                _state = State.FOOD;
                 break;
             case FOOD:
-                this.addSpawn(activeChar, 80590);
+                addSpawn(activeChar, 80590);
                 activeChar.sendMessage("Vous montez une tente pour vous abriter.");
-                this._state = State.TENT;
+                _state = State.TENT;
                 break;    
             case TENT:
-                this.removeNpc(3);
+                removeNpc(3);
                 activeChar.sendMessage("Vous démontez la tente.");
-                this._state = State.PACKED;
+                _state = State.PACKED;
                 break;
             case PACKED:
-                this.removeNpc(2);
+                removeNpc(2);
                 activeChar.sendMessage("Vous rangez les ustensiles de cuisine.");
-                this._state = State.EATEN;
+                _state = State.EATEN;
                 break;
             case EATEN:
-                this.removeNpc(1);
+                removeNpc(1);
                 activeChar.sendMessage("Vous étouffez le feu.");
-                this._state = State.EXTINCT;
+                _state = State.EXTINCT;
                 break;    
             case EXTINCT:
-                this.removeNpc(0);
-                this._npcs.clear();
-                this._spawns.clear();
+                removeNpc(0);
+                _npcs.clear();
+                _spawns.clear();
                 activeChar.sendMessage("Vous dispersez les morceaux de bois calcinés.");
-                this._state = State.EMPTY;
+                _state = State.EMPTY;
                 break;   
         }
     }
@@ -103,14 +103,14 @@ public class Camp {
         {
             L2Spawn spawn = new L2Spawn(template);
             
-            if(this._spawns.isEmpty())
+            if(_spawns.isEmpty())
             {
                 x = activeChar.getX();
                 y = activeChar.getY();
                 z = activeChar.getZ();
                 head = activeChar.getHeading();
             }
-            else if(this._spawns.size() > 2 && activeChar.isInsideRadius(this._npcs.get(0), 500, true, false))
+            else if(_spawns.size() > 2 && activeChar.isInsideRadius(_npcs.get(0), 500, true, false))
             {
                 x = activeChar.getX();
                 y = activeChar.getY();
@@ -119,10 +119,10 @@ public class Camp {
             }
             else
             {
-                x = this._spawns.get(0).getLocx();
-                y = this._spawns.get(0).getLocy();
-                z = this._spawns.get(0).getLocz();
-                head = this._spawns.get(0).getHeading();
+                x = _spawns.get(0).getLocx();
+                y = _spawns.get(0).getLocy();
+                z = _spawns.get(0).getLocz();
+                head = _spawns.get(0).getHeading();
             }
             
             spawn.setLocx(x);
@@ -140,8 +140,8 @@ public class Camp {
             SpawnTable.getInstance().addNewSpawn(spawn, false);
             spawn.init();
             spawn.stopRespawn();
-            this._spawns.add(spawn);
-            this._npcs.add(spawn.getLastSpawn());
+            _spawns.add(spawn);
+            _npcs.add(spawn.getLastSpawn());
         }
         catch (SecurityException | ClassNotFoundException | NoSuchMethodException e)
         {
@@ -154,8 +154,8 @@ public class Camp {
     */
     private void removeNpc(int index)
     {
-        this._npcs.get(index).deleteMe();
-        SpawnTable.getInstance().deleteSpawn(this._spawns.get(index), false);
+        _npcs.get(index).deleteMe();
+        SpawnTable.getInstance().deleteSpawn(_spawns.get(index), false);
     }
     
     /**
@@ -163,11 +163,11 @@ public class Camp {
      */
     public void clear()
     {
-        for(L2Npc n : this._npcs)
+        for(L2Npc n : _npcs)
             n.deleteMe();
-        for(L2Spawn s : this._spawns)
+        for(L2Spawn s : _spawns)
             SpawnTable.getInstance().deleteSpawn(s, false);
-        this._npcs.clear();
-        this._spawns.clear();
+        _npcs.clear();
+        _spawns.clear();
     }
 }
