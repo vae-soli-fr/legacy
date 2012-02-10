@@ -30,46 +30,38 @@ public class BgValidator {
 
     private BgValidator() {
         int skillId[] = {
-            541, // Transform Grail Apostle
-            542, // Transform Grail Apostle
-            543, // Transform Grail Apostle
-            544, // Transform Unicorn
-            545, // Transform Unicorn
-            546, // Transform Unicorn
-            547, // Transform Lilim Knight
-            548, // Transform Lilim Knight
-            549, // Transform Lilim Knight
-            550, // Transform Golem Guardian
-            551, // Transform Golem Guardian
-            552, // Transform Golem Guardian
-            553, // Transform Inferno Drake
-            554, // Transform Inferno Drake
-            555, // Transform Inferno Drake
-            556, // Transform Dragon Bomber
-            557, // Transform Dragon Bomber
-            558, // Transform Dragon Bomber
-            617, // Transform Onyx Beast
-            618, // Transform Death Blader
-            663, // Transform Zaken
-            664, // Transform Anakim
+            
+            /*
+             * Dispo sans BG pour certaines races uniquement
+             */
+            550, 551, 552, // Transform Golem Guardian (nains)
+            544, 545, 546, // Transform Unicorn (elfes)
+            553, 554, 555, // Transform Inferno Drake (sombres)
+            670, // Transform Heretic (démons et vampires)            
+            673, // Transform Ol Mahum (orcs)
+            
+            /*
+             * Dispo sur BG uniquement
+             */
+            538, // Final Form
             665, // Transform Benom
             666, // Transform Gordon
-            667, // Transform Ranku
-            668, // Transform Kiyachi
             669, // Transform Demon Prince
-            670, // Transform Heretic
+            556, 557, 558, // Transform Dragon Bomber
             671, // Transform Vale Master
-            672, // Transform Saber Tooth Tiger
-            673, // Transform Ol Mahum
-            674, // Transform Doll Blader
-            656, // Divine Transform Warrior
-            657, // Divine Transform Knight
-            658, // Divine Transform Rogue
-            659, // Divine Transform Wizard
-            660, // Divine Transform Summoner
-            661, // Divine Transform Healer
-            662, // Divine Transform Enchanter
-            538 // Final Form
+            674, // Transform Doll Blader          
+            541, 542, 543, // Transform Grail Apostle
+            618, // Transform Death Blader          
+            547, 548, 549, // Transform Lilim Knight
+            
+            /*
+             * Interdites
+             */
+            663, // Transform Zaken
+            664, // Transform Anakim
+            668, // Transform Kiyachi
+            667 // Transform Ranku
+
         };
         _transforms = new TIntArrayList(skillId.length);
         _transforms.add(skillId);
