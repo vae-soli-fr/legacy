@@ -931,7 +931,7 @@ public class L2PetInstance extends L2Summon
 			statement.setInt(2, getStat().getLevel());
 			statement.setDouble(3, getStatus().getCurrentHp());
 			statement.setDouble(4, getStatus().getCurrentMp());
-			statement.setLong(5, getStat().getExp());
+			statement.setLong(5, (getStat().getExp() < 0) ? 0 : getStat().getExp());
 			statement.setInt(6, getStat().getSp());
 			statement.setInt(7, getCurrentFed());
 			statement.setInt(8, getOwner().getObjectId());
