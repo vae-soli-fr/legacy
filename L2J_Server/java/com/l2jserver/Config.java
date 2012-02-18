@@ -1334,6 +1334,7 @@ public final class Config
                                         VAEMOD_ADMINDEBUFF = Boolean.parseBoolean(customSettings.getProperty("EnableAdminDebuff", "false"));
                                         VAEMOD_ADMINRBJAIL = Boolean.parseBoolean(customSettings.getProperty("EnableAdminRbJail", "false"));
                                         VAEMOD_ADMINMONSTER = Boolean.parseBoolean(customSettings.getProperty("EnableAdminMonster", "false"));
+                                        VAEMOD_SCENE = Boolean.parseBoolean(customSettings.getProperty("ActiverScene", "false"));
 				}
 				catch (Exception e)
 				{
@@ -2644,7 +2645,7 @@ public final class Config
 					
 					OFFLINE_TRADE_ENABLE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineTradeEnable", "false"));
 					OFFLINE_CRAFT_ENABLE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineCraftEnable", "false"));
-					OFFLINE_MODE_IN_PEACE_ZONE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineModeInPaceZone", "False"));
+					OFFLINE_MODE_IN_PEACE_ZONE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineModeInPeaceZone", "False"));
 					OFFLINE_MODE_NO_DAMAGE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineModeNoDamage", "False"));
 					OFFLINE_SET_NAME_COLOR = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineSetNameColor", "false"));
 					OFFLINE_NAME_COLOR = Integer.decode("0x" + L2JModSettings.getProperty("OfflineNameColor", "808080"));
