@@ -40,4 +40,22 @@ public final class L2TerrainObjectInstance extends L2Npc
 		else
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
+        
+        @Override
+	public boolean isTargetable()
+	{
+		return false;
+	}
+
+        @Override        
+        public boolean hasRandomAnimation()
+	{
+		return false;
+	}
+        
+	@Override
+	public boolean isMovementDisabled()
+	{
+		return true;
+	}
 }

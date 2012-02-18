@@ -44,8 +44,8 @@ public class L2NpcAIData
 	private int _switchRangeChance;
 	private AIType _aiType = AIType.FIGHTER;
 	private int _aggroRange;
-	private boolean _showName = true;
-	private boolean _targetable = true;
+	private boolean _showName;
+	private boolean _targetable;
 	
 	public void setPrimarySkillId(int primarySkillId)
 	{
