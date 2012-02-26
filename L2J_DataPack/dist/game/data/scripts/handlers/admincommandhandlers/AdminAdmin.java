@@ -267,6 +267,11 @@ public class AdminAdmin implements IAdminCommandHandler
 					QuestManager.getInstance().reloadAllQuests();
 					activeChar.sendMessage("All NPCs have been reloaded");
 				}
+                                else if (type.equals("custom"))
+				{
+					NpcTable.getInstance().reloadAllCustom();
+					activeChar.sendMessage("All Custom NPCs have been reloaded");
+				}
 				else if (type.startsWith("htm"))
 				{
 					HtmCache.getInstance().reload();

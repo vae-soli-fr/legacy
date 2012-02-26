@@ -69,6 +69,15 @@ public class NpcTable
 		loadNpcsAI(0);
 		loadNpcsElement(0);
 	}
+
+	private void restoreCustomData()
+	{
+		loadNpcs(0, true);
+		loadNpcsSkills(0, true);
+		loadNpcsDrop(0, true);
+		loadNpcsAI(0, true);
+		loadNpcsElement(0, true);
+	}
 	
 	/**
 	 * @param NpcData
@@ -223,6 +232,11 @@ public class NpcTable
 	public void reloadAllNpc()
 	{
 		restoreNpcData();
+	}
+
+        public void reloadAllCustom()
+	{
+		restoreCustomData();
 	}
 	
 	/**
@@ -408,34 +422,39 @@ public class NpcTable
 	 * @param id of the NPC to load.
 	 */
 	public void loadNpcs(int id)
+        {
+            loadNpcs(id, false);
+        }
+
+	public void loadNpcs(int id, boolean custom_only)
 	{
 		Connection con = null;
 		try
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = null;
-			if (id > 0)
-			{
-				statement = con.prepareStatement("SELECT * FROM npc WHERE id = ?");
-				statement.setInt(1, id);
-			}
-			else
-			{
-				statement = con.prepareStatement("SELECT * FROM npc ORDER BY id");
-			}
-			ResultSet rset = statement.executeQuery();
-			
-			int cont = 0;
-			int cCont = 0;
-			
-			while (rset.next())
-			{
-				fillNpcTable(rset);
-				cont++;
-			}
-			
-			rset.close();
-			statement.close();
+                    int cont = 0;
+                    int cCont = 0;
+                    con = L2DatabaseFactory.getInstance().getConnection();
+                    PreparedStatement statement = null;
+                    ResultSet rset = null;
+
+                        if (!custom_only)
+                        {
+                            if (id > 0) {
+                                statement = con.prepareStatement("SELECT * FROM npc WHERE id = ?");
+                                statement.setInt(1, id);
+                            } else {
+                                statement = con.prepareStatement("SELECT * FROM npc ORDER BY id");
+                            }
+                            rset = statement.executeQuery();
+
+                            while (rset.next()) {
+                                fillNpcTable(rset);
+                                cont++;
+                            }
+
+                            rset.close();
+                            statement.close();
+                        }
 			
 			if (Config.CUSTOM_NPC_TABLE)
 			{
@@ -478,60 +497,66 @@ public class NpcTable
 	 */
 	public void loadNpcsSkills(int id)
 	{
+            loadNpcsSkills(id, false);
+        }
+
+	public void loadNpcsSkills(int id, boolean custom_only)
+	{
 		Connection con = null;
 		try
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = null;
-			if (id > 0)
-			{
-				statement = con.prepareStatement("SELECT * FROM npcskills WHERE npcid = ?");
-				statement.setInt(1, id);
-			}
-			else
-			{
-				statement = con.prepareStatement("SELECT * FROM npcskills ORDER BY npcid");
-			}
-			
-			ResultSet rset = statement.executeQuery();
-			
-			int cont = 0;
-			int cCont = 0;
-			
-			L2NpcTemplate npcDat = null;
-			L2Skill npcSkill = null;
-			
-			while (rset.next())
-			{
-				int mobId = rset.getInt("npcid");
-				npcDat = _npcs.get(mobId);
-				
-				if (npcDat == null)
-				{
-					_log.warning("NPCTable: Skill data for undefined NPC. npcId: " + mobId);
-					continue;
-				}
-				
-				int skillId = rset.getInt("skillid");
-				int level = rset.getInt("level");
-				
-				if (skillId == L2Skill.SKILL_NPC_RACE)
-				{
-					npcDat.setRace(level);
-					continue;
-				}
-				
-				npcSkill = SkillTable.getInstance().getInfo(skillId, level);
-				if (npcSkill == null)
-				{
-					continue;
-				}
-				cont++;
-				npcDat.addSkill(npcSkill);
-			}
-			
-			rset.close();
-			statement.close();
+                    int cont = 0;
+                    int cCont = 0;
+                    con = L2DatabaseFactory.getInstance().getConnection();
+                    PreparedStatement statement = null;
+                    ResultSet rset = null;
+                    L2NpcTemplate npcDat = null;
+                    L2Skill npcSkill = null;
+                    
+                        if (!custom_only)
+                        {
+                            if (id > 0) {
+                                statement = con.prepareStatement("SELECT * FROM npcskills WHERE npcid = ?");
+                                statement.setInt(1, id);
+                            } else {
+                                statement = con.prepareStatement("SELECT * FROM npcskills ORDER BY npcid");
+                            }
+
+                            rset = statement.executeQuery();
+
+
+
+                            npcDat = null;
+                            npcSkill = null;
+
+                            while (rset.next()) {
+                                int mobId = rset.getInt("npcid");
+                                npcDat = _npcs.get(mobId);
+
+                                if (npcDat == null) {
+                                    _log.warning("NPCTable: Skill data for undefined NPC. npcId: " + mobId);
+                                    continue;
+                                }
+
+                                int skillId = rset.getInt("skillid");
+                                int level = rset.getInt("level");
+
+                                if (skillId == L2Skill.SKILL_NPC_RACE) {
+                                    npcDat.setRace(level);
+                                    continue;
+                                }
+
+                                npcSkill = SkillTable.getInstance().getInfo(skillId, level);
+                                if (npcSkill == null) {
+                                    continue;
+                                }
+                                cont++;
+                                npcDat.addSkill(npcSkill);
+                            }
+
+                            rset.close();
+                            statement.close();
+                        }
 			
 			if (Config.CUSTOM_NPC_SKILLS_TABLE)
 			{
@@ -599,58 +624,62 @@ public class NpcTable
 	 */
 	public void loadNpcsDrop(int id)
 	{
+            loadNpcsDrop(id, false);
+        }
+        
+	public void loadNpcsDrop(int id, boolean custom_only)
+	{
 		Connection con = null;
 		try
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = null;
-			
-			if (id > 0)
-			{
-				statement = con.prepareStatement("SELECT * FROM droplist WHERE mobId = ? ORDER BY mobId, chance DESC");
-				statement.setInt(1, id);
-			}
-			else
-			{
-				statement = con.prepareStatement("SELECT * FROM droplist ORDER BY mobId, chance DESC");
-			}
-			
-			ResultSet rset = statement.executeQuery();
-			L2DropData dropDat = null;
-			L2NpcTemplate npcDat = null;
-			
-			int cont = 0;
-			int cCont = 0;
-			
-			while (rset.next())
-			{
-				int mobId = rset.getInt("mobId");
-				npcDat = _npcs.get(mobId);
-				if (npcDat == null)
-				{
-					_log.warning("NPCTable: Drop data for undefined NPC. npcId: " + mobId);
-					continue;
-				}
-				dropDat = new L2DropData();
-				
-				dropDat.setItemId(rset.getInt("itemId"));
-				dropDat.setMinDrop(rset.getInt("min"));
-				dropDat.setMaxDrop(rset.getInt("max"));
-				dropDat.setChance(rset.getInt("chance"));
-				
-				int category = rset.getInt("category");
-				
-				if (ItemTable.getInstance().getTemplate(dropDat.getItemId()) == null)
-				{
-					_log.warning("Drop data for undefined item template! NpcId: " + mobId + " itemId: " + dropDat.getItemId());
-					continue;
-				}
-				cont++;
-				npcDat.addDropData(dropDat, category);
-			}
-			
-			rset.close();
-			statement.close();
+                    int cont = 0;
+                    int cCont = 0;
+                    con = L2DatabaseFactory.getInstance().getConnection();
+                    PreparedStatement statement = null;
+                    ResultSet rset = null;
+                    L2NpcTemplate npcDat = null;
+                    L2DropData dropDat = null;
+                    
+                        if (!custom_only)
+                        {
+                            if (id > 0) {
+                                statement = con.prepareStatement("SELECT * FROM droplist WHERE mobId = ? ORDER BY mobId, chance DESC");
+                                statement.setInt(1, id);
+                            } else {
+                                statement = con.prepareStatement("SELECT * FROM droplist ORDER BY mobId, chance DESC");
+                            }
+
+                            rset = statement.executeQuery();
+                            dropDat = null;
+                            npcDat = null;
+
+                            while (rset.next()) {
+                                int mobId = rset.getInt("mobId");
+                                npcDat = _npcs.get(mobId);
+                                if (npcDat == null) {
+                                    _log.warning("NPCTable: Drop data for undefined NPC. npcId: " + mobId);
+                                    continue;
+                                }
+                                dropDat = new L2DropData();
+
+                                dropDat.setItemId(rset.getInt("itemId"));
+                                dropDat.setMinDrop(rset.getInt("min"));
+                                dropDat.setMaxDrop(rset.getInt("max"));
+                                dropDat.setChance(rset.getInt("chance"));
+
+                                int category = rset.getInt("category");
+
+                                if (ItemTable.getInstance().getTemplate(dropDat.getItemId()) == null) {
+                                    _log.warning("Drop data for undefined item template! NpcId: " + mobId + " itemId: " + dropDat.getItemId());
+                                    continue;
+                                }
+                                cont++;
+                                npcDat.addDropData(dropDat, category);
+                            }
+
+                            rset.close();
+                            statement.close();
+                        }
 			
 			if (Config.CUSTOM_DROPLIST_TABLE)
 			{
@@ -709,7 +738,7 @@ public class NpcTable
 	/**
 	 * Id equals to zero or lesser means all.
 	 * @param id of the NPC to load it's skill learn list.
-	 */
+	 */       
 	private void loadNpcsSkillLearn(int id)
 	{
 		Connection con = null;
@@ -827,70 +856,75 @@ public class NpcTable
 	 */
 	public void loadNpcsAI(int id)
 	{
+            loadNpcsAI(id, false);
+        }
+        
+	public void loadNpcsAI(int id, boolean custom_only)
+	{
 		Connection con = null;
 		try
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = null;
-			
-			if (id > 0)
-			{
-				statement = con.prepareStatement("SELECT * FROM npcaidata WHERE npcId = ?");
-				statement.setInt(1, id);
-			}
-			else
-			{
-				statement = con.prepareStatement("SELECT * FROM npcaidata ORDER BY npcId");
-			}
-			
-			ResultSet rset = statement.executeQuery();
-			
-			L2NpcAIData npcAIDat = null;
-			L2NpcTemplate npcDat = null;
-			
-			int cont = 0;
-			int cCont = 0;
-			
-			while (rset.next())
-			{
-				int npc_id = rset.getInt("npcId");
-				npcDat = _npcs.get(npc_id);
-				if (npcDat == null)
-				{
-					_log.severe("NPCTable: AI Data Error with id : " + npc_id);
-					continue;
-				}
-				npcAIDat = new L2NpcAIData();
-				
-				npcAIDat.setPrimarySkillId(rset.getInt("primarySkillId"));
-				npcAIDat.setMinSkillChance(rset.getInt("minSkillChance"));
-				npcAIDat.setMaxSkillChance(rset.getInt("maxSkillChance"));
-				npcAIDat.setAggro(rset.getInt("aggro"));
-				npcAIDat.setCanMove(rset.getInt("canMove"));
-				npcAIDat.setShowName(rset.getBoolean("showName"));
-				npcAIDat.setTargetable(rset.getBoolean("targetable"));
-				npcAIDat.setSoulShot(rset.getInt("soulshot"));
-				npcAIDat.setSpiritShot(rset.getInt("spiritshot"));
-				npcAIDat.setSoulShotChance(rset.getInt("ssChance"));
-				npcAIDat.setSpiritShotChance(rset.getInt("spsChance"));
-				npcAIDat.setIsChaos(rset.getInt("isChaos"));
-				npcAIDat.setShortRangeSkill(rset.getInt("minRangeSkill"));
-				npcAIDat.setShortRangeChance(rset.getInt("minRangeChance"));
-				npcAIDat.setLongRangeSkill(rset.getInt("maxRangeSkill"));
-				npcAIDat.setLongRangeChance(rset.getInt("maxRangeChance"));
-				npcAIDat.setClan(rset.getString("clan"));
-				npcAIDat.setClanRange(rset.getInt("clanRange"));
-				npcAIDat.setEnemyClan(rset.getString("enemyClan"));
-				npcAIDat.setEnemyRange(rset.getInt("enemyRange"));
-				npcAIDat.setDodge(rset.getInt("dodge"));
-				npcAIDat.setAi(rset.getString("aiType"));
-				
-				npcDat.setAIData(npcAIDat);
-				cont++;
-			}
-			
-			rset.close();
-			statement.close();
+                    int cont = 0;
+                    int cCont = 0;
+                    con = L2DatabaseFactory.getInstance().getConnection();
+                    PreparedStatement statement = null;
+                    ResultSet rset = null;
+                    L2NpcTemplate npcDat = null;
+                    L2NpcAIData npcAIDat = null;
+
+                        if (!custom_only)
+                        {
+                            if (id > 0) {
+                                statement = con.prepareStatement("SELECT * FROM npcaidata WHERE npcId = ?");
+                                statement.setInt(1, id);
+                            } else {
+                                statement = con.prepareStatement("SELECT * FROM npcaidata ORDER BY npcId");
+                            }
+
+                            rset = statement.executeQuery();
+
+                            npcAIDat = null;
+                            npcDat = null;
+
+                            while (rset.next()) {
+                                int npc_id = rset.getInt("npcId");
+                                npcDat = _npcs.get(npc_id);
+                                if (npcDat == null) {
+                                    _log.severe("NPCTable: AI Data Error with id : " + npc_id);
+                                    continue;
+                                }
+                                npcAIDat = new L2NpcAIData();
+
+                                npcAIDat.setPrimarySkillId(rset.getInt("primarySkillId"));
+                                npcAIDat.setMinSkillChance(rset.getInt("minSkillChance"));
+                                npcAIDat.setMaxSkillChance(rset.getInt("maxSkillChance"));
+                                npcAIDat.setAggro(rset.getInt("aggro"));
+                                npcAIDat.setCanMove(rset.getInt("canMove"));
+                                npcAIDat.setShowName(rset.getBoolean("showName"));
+                                npcAIDat.setTargetable(rset.getBoolean("targetable"));
+                                npcAIDat.setSoulShot(rset.getInt("soulshot"));
+                                npcAIDat.setSpiritShot(rset.getInt("spiritshot"));
+                                npcAIDat.setSoulShotChance(rset.getInt("ssChance"));
+                                npcAIDat.setSpiritShotChance(rset.getInt("spsChance"));
+                                npcAIDat.setIsChaos(rset.getInt("isChaos"));
+                                npcAIDat.setShortRangeSkill(rset.getInt("minRangeSkill"));
+                                npcAIDat.setShortRangeChance(rset.getInt("minRangeChance"));
+                                npcAIDat.setLongRangeSkill(rset.getInt("maxRangeSkill"));
+                                npcAIDat.setLongRangeChance(rset.getInt("maxRangeChance"));
+                                npcAIDat.setClan(rset.getString("clan"));
+                                npcAIDat.setClanRange(rset.getInt("clanRange"));
+                                npcAIDat.setEnemyClan(rset.getString("enemyClan"));
+                                npcAIDat.setEnemyRange(rset.getInt("enemyRange"));
+                                npcAIDat.setDodge(rset.getInt("dodge"));
+                                npcAIDat.setAi(rset.getString("aiType"));
+
+                                npcDat.setAIData(npcAIDat);
+                                cont++;
+                            }
+
+                            rset.close();
+                            statement.close();
+                        }
 			
 			if (Config.CUSTOM_NPC_TABLE)
 			{
@@ -966,71 +1000,75 @@ public class NpcTable
 	 */
 	public void loadNpcsElement(int id)
 	{
+            loadNpcsElement(id, false);
+        }
+        
+	public void loadNpcsElement(int id, boolean custom_only)
+	{
 		Connection con = null;
 		try
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = null;
-			if (id > 0)
-			{
-				statement = con.prepareStatement("SELECT * FROM npc_elementals WHERE npc_id = ?");
-				statement.setInt(1, id);
-			}
-			else
-			{
-				statement = con.prepareStatement("SELECT * FROM npc_elementals ORDER BY npc_id");
-			}
-			
-			ResultSet rset = statement.executeQuery();
-			L2NpcTemplate npcDat = null;
-			
-			int cont = 0;
-			int cCount = 0;
-			
-			while (rset.next())
-			{
-				int npc_id = rset.getInt("npc_id");
-				npcDat = _npcs.get(npc_id);
-				if (npcDat == null)
-				{
-					_log.severe("NPCElementals: Elementals Error with id : " + npc_id);
-					continue;
-				}
-				switch (rset.getByte("elemAtkType"))
-				{
-					case Elementals.FIRE:
-						npcDat.setBaseFire(rset.getInt("elemAtkValue"));
-						break;
-					case Elementals.WATER:
-						npcDat.setBaseWater(rset.getInt("elemAtkValue"));
-						break;
-					case Elementals.EARTH:
-						npcDat.setBaseEarth(rset.getInt("elemAtkValue"));
-						break;
-					case Elementals.WIND:
-						npcDat.setBaseWind(rset.getInt("elemAtkValue"));
-						break;
-					case Elementals.HOLY:
-						npcDat.setBaseHoly(rset.getInt("elemAtkValue"));
-						break;
-					case Elementals.DARK:
-						npcDat.setBaseDark(rset.getInt("elemAtkValue"));
-						break;
-					default:
-						_log.severe("NPCElementals: Elementals Error with id : " + npc_id + "; unknown elementType: " + rset.getByte("elemAtkType"));
-						continue;
-				}
-				npcDat.setBaseFireRes(rset.getInt("fireDefValue"));
-				npcDat.setBaseWaterRes(rset.getInt("waterDefValue"));
-				npcDat.setBaseEarthRes(rset.getInt("earthDefValue"));
-				npcDat.setBaseWindRes(rset.getInt("windDefValue"));
-				npcDat.setBaseHolyRes(rset.getInt("holyDefValue"));
-				npcDat.setBaseDarkRes(rset.getInt("darkDefValue"));
-				cont++;
-			}
-			
-			rset.close();
-			statement.close();
+                    int cont = 0;
+                    int cCount = 0;
+                    con = L2DatabaseFactory.getInstance().getConnection();
+                    PreparedStatement statement = null;
+                    ResultSet rset = null;
+                    L2NpcTemplate npcDat = null;
+
+                        if (!custom_only)
+                        {
+                            if (id > 0) {
+                                statement = con.prepareStatement("SELECT * FROM npc_elementals WHERE npc_id = ?");
+                                statement.setInt(1, id);
+                            } else {
+                                statement = con.prepareStatement("SELECT * FROM npc_elementals ORDER BY npc_id");
+                            }
+
+                            rset = statement.executeQuery();
+                            npcDat = null;
+
+                            while (rset.next()) {
+                                int npc_id = rset.getInt("npc_id");
+                                npcDat = _npcs.get(npc_id);
+                                if (npcDat == null) {
+                                    _log.severe("NPCElementals: Elementals Error with id : " + npc_id);
+                                    continue;
+                                }
+                                switch (rset.getByte("elemAtkType")) {
+                                    case Elementals.FIRE:
+                                        npcDat.setBaseFire(rset.getInt("elemAtkValue"));
+                                        break;
+                                    case Elementals.WATER:
+                                        npcDat.setBaseWater(rset.getInt("elemAtkValue"));
+                                        break;
+                                    case Elementals.EARTH:
+                                        npcDat.setBaseEarth(rset.getInt("elemAtkValue"));
+                                        break;
+                                    case Elementals.WIND:
+                                        npcDat.setBaseWind(rset.getInt("elemAtkValue"));
+                                        break;
+                                    case Elementals.HOLY:
+                                        npcDat.setBaseHoly(rset.getInt("elemAtkValue"));
+                                        break;
+                                    case Elementals.DARK:
+                                        npcDat.setBaseDark(rset.getInt("elemAtkValue"));
+                                        break;
+                                    default:
+                                        _log.severe("NPCElementals: Elementals Error with id : " + npc_id + "; unknown elementType: " + rset.getByte("elemAtkType"));
+                                        continue;
+                                }
+                                npcDat.setBaseFireRes(rset.getInt("fireDefValue"));
+                                npcDat.setBaseWaterRes(rset.getInt("waterDefValue"));
+                                npcDat.setBaseEarthRes(rset.getInt("earthDefValue"));
+                                npcDat.setBaseWindRes(rset.getInt("windDefValue"));
+                                npcDat.setBaseHolyRes(rset.getInt("holyDefValue"));
+                                npcDat.setBaseDarkRes(rset.getInt("darkDefValue"));
+                                cont++;
+                            }
+
+                            rset.close();
+                            statement.close();
+                        }
 			
 			if (Config.CUSTOM_NPC_TABLE)
 			{
