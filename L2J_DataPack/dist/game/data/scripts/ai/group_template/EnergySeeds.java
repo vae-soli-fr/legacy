@@ -47,7 +47,7 @@ public class EnergySeeds extends L2AttackableAIScript
 	private static final String qn = "EnergySeeds";
 	private static final String HOWTOOPPOSEEVIL = "Q692_HowtoOpposeEvil";
 	private static final int HOWTOOPPOSEEVIL_CHANCE = 60;
-	private static final int RATE = 1;
+	private static final int RATE = 3;
 	private static final int RESPAWN = 480000;
 	private static final int RANDOM_RESPAWN_OFFSET = 180000;
 	private static Map<Integer, ESSpawn> _spawns = new FastMap<Integer, ESSpawn>();

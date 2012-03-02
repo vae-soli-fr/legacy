@@ -39,7 +39,7 @@ public class StarStones extends L2AttackableAIScript
 	};
 	//@formatter:on
 	
-	private static final int RATE = 1;
+	private static final int RATE = 3;
 	
 	public StarStones(int questId, String name, String descr)
 	{

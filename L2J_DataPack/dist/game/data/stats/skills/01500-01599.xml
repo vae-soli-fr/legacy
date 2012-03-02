@@ -1244,10 +1244,10 @@
 		<set name="mpInitialConsume" val="38" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="30" />
-		<set name="reuseDelay" val="5000" />
+		<set name="reuseDelay" val="30000" />
 		<set name="skillRadius" val="900" />
 		<set name="skillType" val="CHAIN_HEAL" />
-		<set name="target" val="TARGET_ALLY" /> <!-- FIXME: Appears to be only for TARGET_ALLY_MEMBER_AREA + (10 targets around him), not ALL ALLY MEMBERS -->
+		<set name="target" val="TARGET_PARTY" /> <!-- FIXME: Appears to be only for TARGET_ALLY_MEMBER_AREA + (10 targets around him), not ALL ALLY MEMBERS -->
 	</skill>
 	<skill id="1554" levels="1" name="Aura Blast">
 		<!-- H5 Skill -->
