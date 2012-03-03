@@ -125,6 +125,9 @@ public final class Config
         public static boolean VAEMOD_ADMINRBJAIL; // autoriser la désactivation du jail RB
         public static boolean VAEMOD_ADMINMONSTER; // autoriser la commande Monster
         public static boolean VAEMOD_SCENE; // autoriser les scènes
+        public static int VAEMOD_STRIDERS_RUNSPEED;
+        public static int VAEMOD_RED_STRIDERS_RUNSPEED;
+        public static int VAEMOD_WOLVES_RUNSPEED;
 	
 	//--------------------------------------------------
 	// L2J Variable Definitions
@@ -1335,6 +1338,9 @@ public final class Config
                                         VAEMOD_ADMINRBJAIL = Boolean.parseBoolean(customSettings.getProperty("EnableAdminRbJail", "false"));
                                         VAEMOD_ADMINMONSTER = Boolean.parseBoolean(customSettings.getProperty("EnableAdminMonster", "false"));
                                         VAEMOD_SCENE = Boolean.parseBoolean(customSettings.getProperty("ActiverScene", "false"));
+                                        VAEMOD_STRIDERS_RUNSPEED = Integer.parseInt(customSettings.getProperty("StridersRunSpeed", "250"));
+                                        VAEMOD_RED_STRIDERS_RUNSPEED = Integer.parseInt(customSettings.getProperty("RedStridersRunSpeed", "300"));
+                                        VAEMOD_WOLVES_RUNSPEED = Integer.parseInt(customSettings.getProperty("WolvesRunSpeed", "350"));
 				}
 				catch (Exception e)
 				{
