@@ -281,7 +281,7 @@
 		<set name="material" val="silver" />
 		<set name="weight" val="150" />
 		<set name="price" val="3000000" />
-		<set name="is_tradable" val="false" />
+		<set name="is_tradable" val="true" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="3267-1" />
