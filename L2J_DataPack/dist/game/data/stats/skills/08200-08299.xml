@@ -820,7 +820,9 @@
 			<player olympiad="false" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform">
+				<set order="0x08" stat="runSpd" val="350" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="8248" levels="1" name="Cancel Gatekeeper Transformation">
