@@ -425,15 +425,14 @@ public class PcStat extends PlayableStat
                         case 12526: // Strider of Wind
 			case 12527: // Strider of Star
 			case 12528: // Strider of Twilight
-                                baseRunSpd = Config.VAEMOD_STRIDERS_RUNSPEED; break;
-			case 16038: // Red strider of Wind
+                        case 16038: // Red strider of Wind
 			case 16039: // Red strider of Star
 			case 16040: // Red strider of Twilight
-			case 16068: // Guardian Strider
-				baseRunSpd = Config.VAEMOD_RED_STRIDERS_RUNSPEED; break;
+                                baseRunSpd = Config.VAEMOD_STRIDERS_RUNSPEED; break;
 			case 16037: // Great Snow Wolf
 			case 16041: // Fenrir Wolf
 			case 16042: // White Fenrir Wolf
+                        case 16068: // Guardian Strider
 				baseRunSpd = Config.VAEMOD_WOLVES_RUNSPEED; break;
                     }
                     val = (int) Math.round(calcStat(Stats.RUN_SPEED, baseRunSpd, null, null));              

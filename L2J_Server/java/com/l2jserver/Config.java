@@ -126,7 +126,6 @@ public final class Config
         public static boolean VAEMOD_ADMINMONSTER; // autoriser la commande Monster
         public static boolean VAEMOD_SCENE; // autoriser les scènes
         public static int VAEMOD_STRIDERS_RUNSPEED;
-        public static int VAEMOD_RED_STRIDERS_RUNSPEED;
         public static int VAEMOD_WOLVES_RUNSPEED;
 	
 	//--------------------------------------------------
@@ -1339,8 +1338,7 @@ public final class Config
                                         VAEMOD_ADMINMONSTER = Boolean.parseBoolean(customSettings.getProperty("EnableAdminMonster", "false"));
                                         VAEMOD_SCENE = Boolean.parseBoolean(customSettings.getProperty("ActiverScene", "false"));
                                         VAEMOD_STRIDERS_RUNSPEED = Integer.parseInt(customSettings.getProperty("StridersRunSpeed", "250"));
-                                        VAEMOD_RED_STRIDERS_RUNSPEED = Integer.parseInt(customSettings.getProperty("RedStridersRunSpeed", "275"));
-                                        VAEMOD_WOLVES_RUNSPEED = Integer.parseInt(customSettings.getProperty("WolvesRunSpeed", "300"));
+                                        VAEMOD_WOLVES_RUNSPEED = Integer.parseInt(customSettings.getProperty("WolvesRunSpeed", "260"));
 				}
 				catch (Exception e)
 				{
