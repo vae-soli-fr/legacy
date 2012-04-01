@@ -403,6 +403,16 @@ public class L2Clan
 	 * @param clanJoinExpiryTime time penalty to join a clan.
 	 */
 	public void removeClanMember(int objectId, long clanJoinExpiryTime)
+        {
+            removeClanMember(objectId, clanJoinExpiryTime, false);
+        }
+        
+        /**
+	 * @param objectId the object Id of the member that will be removed.
+	 * @param clanJoinExpiryTime time penalty to join a clan.
+         * @param isBooting if you call the method from gameserver start.
+	 */
+        public void removeClanMember(int objectId, long clanJoinExpiryTime, boolean isBooting)
 	{
 		final L2ClanMember exMember = _members.remove(objectId);
 		if (exMember == null)
@@ -491,6 +501,7 @@ public class L2Clan
 			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ? System.currentTimeMillis() + Config.ALT_CLAN_CREATE_DAYS * 86400000L : 0);
 		}
 		// notify CB server about the change
+                if (Config.ENABLE_COMMUNITY_BOARD && !isBooting)
 		CommunityServerThread.getInstance().sendPacket(new WorldInfo(null, this, WorldInfo.TYPE_UPDATE_CLAN_DATA));
 	}
 	

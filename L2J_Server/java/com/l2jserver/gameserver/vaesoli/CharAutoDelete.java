@@ -24,27 +24,28 @@ public class CharAutoDelete {
         int count = 0;
         try {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con.prepareStatement("SELECT account_name, charId, char_name, clanid, deletetime  FROM characters WHERE deletetime > 0");
+            PreparedStatement statement = con.prepareStatement("SELECT account_name, charId, char_name, clanid, deletetime  FROM characters WHERE deletetime > 0 ORDER BY  account_name");
             ResultSet chardata = statement.executeQuery();
             while (chardata.next()) {
-                String account = chardata.getString("account_name");
                 int objectId = chardata.getInt("charId");
-                String name = chardata.getString("char_name");
-                int clanId = chardata.getInt("clanid");
+                // See if the char must be deleted
                 long deletetime = chardata.getLong("deletetime");
-                if (System.currentTimeMillis() > deletetime) {
-                    L2Clan clan = ClanTable.getInstance().getClan(clanId);
-                    if (clan != null) {
-                        clan.removeClanMember(objectId, 0);
+                if (deletetime > 0) {
+                    if (System.currentTimeMillis() > deletetime) {
+                        L2Clan clan = ClanTable.getInstance().getClan(chardata.getInt("clanid"));
+                        if (clan != null) {
+                            clan.removeClanMember(objectId, 0, true);
+                        }
+                        L2GameClient.deleteCharByObjId(objectId);
+                        _log.info("Character " + chardata.getString("char_name") + " of account " + chardata.getString("account_name") + " has been deleted.");
+                        count++;
                     }
-                    L2GameClient.deleteCharByObjId(objectId);
-                    _log.info("Character " + name + " of account " + account + " has been deleted.");
-                    count++;
                 }
             }
             chardata.close();
             statement.close();
         } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             try {
                 if (con != null) {
