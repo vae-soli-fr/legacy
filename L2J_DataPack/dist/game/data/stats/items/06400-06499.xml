@@ -73,8 +73,8 @@
 	<item id="6408" type="Armor" name="Formal Wear">
 		<set name="icon" val="icon.armor_t2000_ul_i00" />
 		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="alldress" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="onepiece" />
 		<set name="immediate_effect" val="1" />
 		<set name="material" val="cloth" />
 		<set name="weight" val="1000" />
