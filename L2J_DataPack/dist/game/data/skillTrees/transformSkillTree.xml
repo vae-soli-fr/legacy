@@ -4,22 +4,28 @@
 		<!-- Confirmed CT2.5 -->
 		<skill skillName="Transform Onyx Beast" skillIdLvl="617,1" getLevel="50" itemsIdCount="9648,1" />
 		<skill skillName="Transform Death Blader" skillIdLvl="618,1" getLevel="55" itemsIdCount="9649,1" preRequisiteSkillIdLvl="617,1" />
-		<skill skillName="Transform Grail Apostle" skillIdLvl="541,1" getLevel="60" itemsIdCount="9650,1" race="0" preRequisiteSkillIdLvl="617,1" />
+		<!--<skill skillName="Transform Grail Apostle" skillIdLvl="541,1" getLevel="60" itemsIdCount="9650,1" race="0" preRequisiteSkillIdLvl="617,1" />-->
+		<skill skillName="Transform Grail Apostle" skillIdLvl="541,1" getLevel="60" itemsIdCount="9650,1" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Grail Apostle" skillIdLvl="542,1" getLevel="60" itemsIdCount="9650,1" race="1;2;3;4" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Grail Apostle" skillIdLvl="543,1" getLevel="60" itemsIdCount="9650,1" race="5" preRequisiteSkillIdLvl="617,1" />
-		<skill skillName="Transform Unicorn" skillIdLvl="544,1" getLevel="60" itemsIdCount="9651,1" race="1" preRequisiteSkillIdLvl="617,1" />
+		<!--<skill skillName="Transform Unicorn" skillIdLvl="544,1" getLevel="60" itemsIdCount="9651,1" race="1" preRequisiteSkillIdLvl="617,1" />-->
+		<skill skillName="Transform Unicorn" skillIdLvl="544,1" getLevel="60" itemsIdCount="9651,1" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Unicorn" skillIdLvl="545,1" getLevel="60" itemsIdCount="9651,1" race="0;5;3;4" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Unicorn" skillIdLvl="546,1" getLevel="60" itemsIdCount="9651,1" race="2" preRequisiteSkillIdLvl="617,1" />
-		<skill skillName="Transform Lilim Knight" skillIdLvl="547,1" getLevel="60" itemsIdCount="9652,1" race="2" preRequisiteSkillIdLvl="617,1" />
+		<!--<skill skillName="Transform Lilim Knight" skillIdLvl="547,1" getLevel="60" itemsIdCount="9652,1" race="2" preRequisiteSkillIdLvl="617,1" />-->
+		<skill skillName="Transform Lilim Knight" skillIdLvl="547,1" getLevel="60" itemsIdCount="9652,1" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Lilim Knight" skillIdLvl="548,1" getLevel="60" itemsIdCount="9652,1" race="0;5;3;4" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Lilim Knight" skillIdLvl="549,1" getLevel="60" itemsIdCount="9652,1" race="1" preRequisiteSkillIdLvl="617,1" />
-		<skill skillName="Transform Golem Guardian" skillIdLvl="550,1" getLevel="60" itemsIdCount="9653,1" race="4" preRequisiteSkillIdLvl="617,1" />
+		<!--<skill skillName="Transform Golem Guardian" skillIdLvl="550,1" getLevel="60" itemsIdCount="9653,1" race="4" preRequisiteSkillIdLvl="617,1" />-->
+		<skill skillName="Transform Golem Guardian" skillIdLvl="550,1" getLevel="60" itemsIdCount="9653,1" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Golem Guardian" skillIdLvl="551,1" getLevel="60" itemsIdCount="9653,1" race="0;1;2;5" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Golem Guardian" skillIdLvl="552,1" getLevel="60" itemsIdCount="9653,1" race="3" preRequisiteSkillIdLvl="617,1" />
-		<skill skillName="Transform Inferno Drake" skillIdLvl="553,1" getLevel="60" itemsIdCount="9654,1" race="3" preRequisiteSkillIdLvl="617,1" />
+		<!--<skill skillName="Transform Inferno Drake" skillIdLvl="553,1" getLevel="60" itemsIdCount="9654,1" race="3" preRequisiteSkillIdLvl="617,1" />-->
+		<skill skillName="Transform Inferno Drake" skillIdLvl="553,1" getLevel="60" itemsIdCount="9654,1" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Inferno Drake" skillIdLvl="554,1" getLevel="60" itemsIdCount="9654,1" race="0;1;2;5" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Inferno Drake" skillIdLvl="555,1" getLevel="60" itemsIdCount="9654,1" race="4" preRequisiteSkillIdLvl="617,1" />
-		<skill skillName="Transform Dragon Bomber" skillIdLvl="556,1" getLevel="60" itemsIdCount="9655,1" race="5" preRequisiteSkillIdLvl="617,1" />
+		<!--<skill skillName="Transform Dragon Bomber" skillIdLvl="556,1" getLevel="60" itemsIdCount="9655,1" race="5" preRequisiteSkillIdLvl="617,1" />-->
+		<skill skillName="Transform Dragon Bomber" skillIdLvl="556,1" getLevel="60" itemsIdCount="9655,1" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Dragon Bomber" skillIdLvl="557,1" getLevel="60" itemsIdCount="9655,1" race="1;2;3;4" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Dragon Bomber" skillIdLvl="558,1" getLevel="60" itemsIdCount="9655,1" race="0" preRequisiteSkillIdLvl="617,1" />
 		<skill skillName="Transform Heretic" skillIdLvl="670,1" getLevel="70" itemsIdCount="10302,1" preRequisiteSkillIdLvl="617,1" />
