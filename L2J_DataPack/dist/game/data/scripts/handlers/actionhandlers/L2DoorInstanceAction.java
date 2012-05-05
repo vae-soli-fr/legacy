@@ -14,6 +14,7 @@
  */
 package handlers.actionhandlers;
 
+import com.l2jserver.Config;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.handler.IActionHandler;
 import com.l2jserver.gameserver.model.L2Object;
@@ -69,9 +70,8 @@ public class L2DoorInstanceAction implements IActionHandler
 				if (Math.abs(activeChar.getZ() - target.getZ()) < 400) // this max heigth difference might need some tweaking
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 			}
-			else if (activeChar.getClan() != null
-					&& door.getClanHall() != null
-					&& activeChar.getClanId() == door.getClanHall().getOwnerId())
+			else if (door.getClanHall() != null
+                                    && (Config.VAEMOD_FREEDOORS || (activeChar.getClan() != null && activeChar.getClanId() == door.getClanHall().getOwnerId())))
 			{
 				if (!door.isInsideRadius(activeChar, L2Npc.INTERACTION_DISTANCE, false, false))
 				{

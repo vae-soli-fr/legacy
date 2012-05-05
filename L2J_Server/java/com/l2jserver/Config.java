@@ -127,6 +127,7 @@ public final class Config
         public static boolean VAEMOD_SCENE; // autoriser les scènes
         public static int VAEMOD_STRIDERS_RUNSPEED;
         public static int VAEMOD_WOLVES_RUNSPEED;
+        public static boolean VAEMOD_FREEDOORS; // autoriser tous les utilisateurs à ouvrir les portes
 	
 	//--------------------------------------------------
 	// L2J Variable Definitions
@@ -1339,6 +1340,7 @@ public final class Config
                                         VAEMOD_SCENE = Boolean.parseBoolean(customSettings.getProperty("ActiverScene", "false"));
                                         VAEMOD_STRIDERS_RUNSPEED = Integer.parseInt(customSettings.getProperty("StridersRunSpeed", "250"));
                                         VAEMOD_WOLVES_RUNSPEED = Integer.parseInt(customSettings.getProperty("WolvesRunSpeed", "260"));
+                                        VAEMOD_FREEDOORS = Boolean.parseBoolean(customSettings.getProperty("FreeDoors", "false"));
 				}
 				catch (Exception e)
 				{
