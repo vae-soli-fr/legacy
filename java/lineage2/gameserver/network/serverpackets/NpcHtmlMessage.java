@@ -106,6 +106,11 @@ public class NpcHtmlMessage extends L2GameServerPacket
 		_html = text;
 		return this;
 	}
+	
+	public String getHtml()
+	{
+		return _html;
+	}
 
 	public final NpcHtmlMessage setFile(String file)
 	{

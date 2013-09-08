@@ -21,5 +21,6 @@
 	<classpathentry kind="lib" path="dist/libs/mesp-1.02.jar"/>
 	<classpathentry kind="lib" path="dist/libs/org.napile.primitive.jar"/>
 	<classpathentry kind="lib" path="dist/libs/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="lib" path="dist/libs/worldwind.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

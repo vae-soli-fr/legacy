@@ -17,7 +17,7 @@ import lineage2.gameserver.utils.AdminFunctions;
 import lineage2.gameserver.utils.Location;
 
 /**
- * @author Melua Cette classe verifie que les BG sont a  jour et valides
+ * @author Melua Cette classe vÃ©rifie que les BG sont Ã  jour et validÃ©s
  *         concernant les transfos, les subs, et bientot les BG tout court.
  * 
  */
@@ -26,9 +26,9 @@ public class BgManager {
 	private static final Logger _log = LoggerFactory.getLogger(BgManager.class);
 	private static BgManager _instance;
 	private final TIntArrayList _transforms; // liste des skills de transfo
-	private final static String JAIL_IN = "<html><title>Prison</title><body><br>Vous avez été mis en prison :<br>Vérifiez que vos BG sont à jours concernant<br1>les subs et les transformations !!<br>Faites votre mise à jour et contactez gentillement un Conseiller ;)</body></html>";
-	private final static String JAIL_OUT = "<html><title>Prison</title><body><br>Vous êtes libre.<br>Votre temps est écoulé ou vos<br1>mises à jours BG ont été validés.<br>Bravo.</body></html>";
-	private final static String JAIL_PERIOD = "604800";
+	private final static String JAIL_IN = "<html><title>Prison</title><body><br>Vous avez Ã©tÃ© mis en prison :<br>VÃ©rifiez que vos BG sont Ã  jours concernant<br1>les subs et les transformations !!<br>Faites votre mise Ã  jour et contactez gentillement un Conseiller ;)</body></html>";
+	private final static String JAIL_OUT = "<html><title>Prison</title><body><br>Vous Ãªtes libre.<br>Vos mises Ã  jours BG ont Ã©tÃ© validÃ©es.<br>Bravo.</body></html>";
+	private final static int JAIL_PERIOD = 604800;
 	private final static String JAILED_VAR = "BgJailed";
 	private final static String JAILEDFROM_VAR = "BgJailedFrom";
 
@@ -138,7 +138,7 @@ public class BgManager {
 				activeChar.setVar(JAILEDFROM_VAR, activeChar.getX() + ";" + activeChar.getY() + ";" + activeChar.getZ() + ";" + activeChar.getReflectionId(),
 						-1);
 				activeChar.setVar(JAILED_VAR, JAIL_PERIOD, -1);
-				activeChar.startUnjailTask(activeChar, Integer.parseInt(JAIL_PERIOD));
+				activeChar.startUnjailTask(activeChar, JAIL_PERIOD);
 				activeChar.teleToLocation(Location.findPointToStay(activeChar, AdminFunctions.JAIL_SPAWN, 50, 200), ReflectionManager.JAIL);
 				if (activeChar.isInStoreMode()) {
 					activeChar.setPrivateStoreType(Player.STORE_PRIVATE_NONE);

@@ -320,6 +320,9 @@ import org.napile.primitive.maps.impl.CHashIntObjectMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
+import lineage2.gameserver.vaesoli.MyDDS;
+
 /**
  * @author Mobius
  * @version $Revision: 1.0 $
@@ -4185,6 +4188,10 @@ public final class Player extends Playable implements PlayerGroup
 		if (isPacketIgnored(p.packet(this)))
 		{
 			return;
+		}
+		if (p instanceof NpcHtmlMessage)
+		{
+			MyDDS.sendDDS(this, (NpcHtmlMessage) p);
 		}
 		_connection.sendPacket(p.packet(this));
 	}
