@@ -94,6 +94,7 @@ import lineage2.gameserver.taskmanager.ItemsAutoDestroy;
 import lineage2.gameserver.taskmanager.TaskManager;
 import lineage2.gameserver.taskmanager.tasks.RestoreOfflineTraders;
 import lineage2.gameserver.utils.Strings;
+import lineage2.gameserver.vaesoli.BgManager;
 import net.sf.ehcache.CacheManager;
 
 import org.slf4j.Logger;
@@ -282,6 +283,8 @@ public class GameServer
 		UserCommandHandler.getInstance().log();
 		VoicedCommandHandler.getInstance().log();
 		TaskManager.getInstance();
+		_log.info("=[Customs]=========================================");
+		BgManager.getInstance();
 		_log.info("=[Events]=========================================");
 		ResidenceHolder.getInstance().callInit();
 		EventHolder.getInstance().callInit();

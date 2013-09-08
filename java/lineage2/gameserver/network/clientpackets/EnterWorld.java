@@ -104,6 +104,8 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import lineage2.gameserver.vaesoli.BgManager;
+
 /**
  * @author Mobius
  * @version $Revision: 1.0 $
@@ -508,6 +510,9 @@ public class EnterWorld extends L2GameClientPacket
 				AwakingManager.getInstance().checkAwakenPlayerSkills(activeChar);
 			}
 		}
+		
+		// vérification des màj BG
+        BgManager.getInstance().check(activeChar);
 	}
 	
 	/**
