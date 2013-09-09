@@ -511,7 +511,7 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 		
-		// vÈrification des m‡j BG
+		// v√©rification des m√†j BG
         BgManager.getInstance().check(activeChar);
 	}
 	

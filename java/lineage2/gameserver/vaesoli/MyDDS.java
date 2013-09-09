@@ -2,7 +2,7 @@ package lineage2.gameserver.vaesoli;
 
 import lineage2.gameserver.Config;
 import lineage2.gameserver.idfactory.IdFactory;
-import lineage2.gameserver.model.Creature;
+import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
 import lineage2.gameserver.network.serverpackets.PledgeCrest;
@@ -38,7 +38,7 @@ public class MyDDS {
 		if (packet.getHtml() == null) {
 			return;
 		}
-		boolean root = (client.getTarget() == null || client.getTarget() instanceof Creature);
+		boolean root = (client.getTarget() == null || client.getTarget() instanceof NpcInstance);
 		String name = client.getName().toLowerCase();
 		Pattern pattern = Pattern.compile("<img_int>([-_a-zA-Z0-9\\.]+)</img_int>");
 		Matcher matcher = pattern.matcher(packet.getHtml());
