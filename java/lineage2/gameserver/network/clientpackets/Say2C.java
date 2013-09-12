@@ -38,7 +38,6 @@ import lineage2.gameserver.utils.Log;
 import lineage2.gameserver.utils.MapUtils;
 import lineage2.gameserver.utils.Strings;
 import lineage2.gameserver.utils.Util;
-
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -354,6 +353,8 @@ public class Say2C extends L2GameClientPacket
 				if (activeChar.isCursedWeaponEquipped())
 				{
 					cs = new Say2(activeChar.getObjectId(), _type, activeChar.getTransformationName(), _text);
+				} else {
+					cs = new Say2(activeChar.getObjectId(), _type, activeChar.getName(), activeChar.getRpVolume().toString() + activeChar.getRpLanguage().toString() + _text);
 				}
 				List<Player> list = null;
 				if (activeChar.isInObserverMode() && (activeChar.getObserverRegion() != null) && (activeChar.getOlympiadObserveGame() != null))
@@ -374,7 +375,19 @@ public class Say2C extends L2GameClientPacket
 				}
 				else
 				{
-					list = World.getAroundPlayers(activeChar);
+					switch(activeChar.getRpVolume())
+					{
+						case WHISPER:
+							list = World.getAroundPlayers(activeChar, 100, 100);
+							break;
+						case SHOUT:
+							list = World.getAroundPlayers(activeChar, 2900, 1000);
+							break;
+						default:
+						case DEFAULT:
+							list = World.getAroundPlayers(activeChar);
+							break;
+					}
 				}
 				if (list != null)
 				{
@@ -385,6 +398,8 @@ public class Say2C extends L2GameClientPacket
 							continue;
 						}
 						player.sendPacket(cs);
+						int rp = _text.split(" ", 15).length * player.getLevel();
+						player.addExpAndSp(rp, rp/10, 0, 0, true, false);
 					}
 				}
 				activeChar.sendPacket(cs);
