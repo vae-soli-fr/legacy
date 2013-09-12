@@ -26,8 +26,8 @@ public class MyDDS {
 	private static final Logger _log = Logger.getLogger(MyDDS.class.getName());
 
 	/**
-	 * remplace les balises d'images et envoie les DDS au client
-	 * cette methode ne se charge pas de l'envoi du html
+	 * remplace les balises d'images et envoie les DDS au client cette methode
+	 * ne se charge pas de l'envoi du html
 	 * 
 	 * @param client
 	 *            Player qui reçoit les DDS (le même que le html)
@@ -71,46 +71,41 @@ public class MyDDS {
 	 * télécharge les images et les sauvegarde remplace les balises d'images
 	 * externes et enregistre la description parsée
 	 * 
-	 * @param activeChar
-	 *            Player dont la description est parsée
 	 */
-	public static void prepareDDS(Player activeChar) {
-		String description = Descriptions.getDesc(activeChar);
-		if (description != null) {
-			Pattern pattern = Pattern.compile("<img_ext>(http://[0-9a-zA-Z]+(\\.png|\\.jpg|\\.bmp))</img_ext>");
-			Matcher matcher = pattern.matcher(description);
-			while (matcher.find()) {
-				try {
-					int imgId = IdFactory.getInstance().getNextId();
-					String sequence = matcher.group(0);
-					String img_ext = matcher.group(1);
-					String extension = matcher.group(2);
-					// vérifier la taille (puissance de 2)
-					ImageIcon info = new ImageIcon(img_ext); // URL
-					if ((info.getIconHeight() > 0 && (info.getIconHeight() & (info.getIconHeight() - 1)) == 0)
-							&& (info.getIconWidth() > 0 && (info.getIconWidth() & (info.getIconWidth() - 1)) == 0)) {
+	public static String prepareDDS(Player player, String description) {
+		Pattern pattern = Pattern.compile("<img_ext>(http://[0-9a-zA-Z]+(\\.png|\\.jpg|\\.bmp))</img_ext>");
+		Matcher matcher = pattern.matcher(description);
+		while (matcher.find()) {
+			try {
+				int imgId = IdFactory.getInstance().getNextId();
+				String sequence = matcher.group(0);
+				String img_ext = matcher.group(1);
+				String extension = matcher.group(2);
+				// vérifier la taille (puissance de 2)
+				ImageIcon info = new ImageIcon(img_ext); // URL
+				if ((info.getIconHeight() > 0 && (info.getIconHeight() & (info.getIconHeight() - 1)) == 0)
+						&& (info.getIconWidth() > 0 && (info.getIconWidth() & (info.getIconWidth() - 1)) == 0)) {
 
-						// télécharger avec l'URL trouvée
-						BufferedInputStream in = new BufferedInputStream(new URL(img_ext).openStream());
-						FileOutputStream fos = new FileOutputStream(Config.DATAPACK_ROOT + "/data/images/" + activeChar.getName().toLowerCase() + "/" + imgId
-								+ extension);
-						BufferedOutputStream bout = new BufferedOutputStream(fos, 1024);
-						byte[] data = new byte[1024];
-						int x = 0;
-						while ((x = in.read(data, 0, 1024)) >= 0) {
-							bout.write(data, 0, x);
-						}
-						bout.close();
-						in.close();
-
-						// remplacer la desc
-						description.replace(sequence, "<img_int>" + imgId + extension + "</img_int>");
+					// télécharger avec l'URL trouvée
+					BufferedInputStream in = new BufferedInputStream(new URL(img_ext).openStream());
+					FileOutputStream fos = new FileOutputStream(Config.DATAPACK_ROOT + "/data/images/" + player.getName().toLowerCase() + "/" + imgId
+							+ extension);
+					BufferedOutputStream bout = new BufferedOutputStream(fos, 1024);
+					byte[] data = new byte[1024];
+					int x = 0;
+					while ((x = in.read(data, 0, 1024)) >= 0) {
+						bout.write(data, 0, x);
 					}
-				} catch (Exception e) {
-					_log.warning(e.getMessage());
+					bout.close();
+					in.close();
+
+					// remplacer la desc
+					description.replace(sequence, "<img_int>" + imgId + extension + "</img_int>");
 				}
+			} catch (Exception e) {
+				_log.warning(e.getMessage());
 			}
-			Descriptions.setDesc(activeChar, description);
 		}
+		return description;
 	}
 }

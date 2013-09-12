@@ -26,6 +26,7 @@ import lineage2.gameserver.handler.voicecommands.impl.Repair;
 import lineage2.gameserver.handler.voicecommands.impl.ServerInfo;
 import lineage2.gameserver.handler.voicecommands.impl.Wedding;
 import lineage2.gameserver.handler.voicecommands.impl.WhoAmI;
+import lineage2.gameserver.vaesoli.VoicedCommands;
 
 /**
  * @author Mobius
@@ -67,6 +68,7 @@ public class VoicedCommandHandler extends AbstractHolder
 		registerVoicedCommandHandler(new WhoAmI());
 		registerVoicedCommandHandler(new Online());
 		registerVoicedCommandHandler(new Password());
+		registerVoicedCommandHandler(new VoicedCommands());
 	}
 	
 	/**

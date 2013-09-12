@@ -31,7 +31,7 @@ public class Descriptions {
 		}
 	}
 
-	public static String getDesc(Player target) // BY NAME
+	private static String getDesc(Player target) // BY NAME
 	{
 		return target.getVar(DESC_VAR);
 	}

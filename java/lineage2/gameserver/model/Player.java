@@ -321,7 +321,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
+import lineage2.gameserver.vaesoli.Camp;
 import lineage2.gameserver.vaesoli.MyDDS;
+import lineage2.gameserver.vaesoli.RpLanguage;
+import lineage2.gameserver.vaesoli.RpVolume;
 
 /**
  * @author Mobius
@@ -1038,6 +1041,18 @@ public final class Player extends Playable implements PlayerGroup
 	 * Field _summonList.
 	 */
 	private final SummonList _summonList = new SummonList(this);
+	/**
+	 * Field _camp.
+	 */
+	private final Camp _camp = new Camp();
+	/**
+	 * Field _rplanguage.
+	 */
+	private RpLanguage _rplanguage = RpLanguage.COMMON;
+	/**
+	 * Field _rpvolume.
+	 */
+	private RpVolume _rpvolume = RpVolume.DEFAULT;
 	
 	/**
 	 * Constructor for Player.
@@ -14797,6 +14812,26 @@ public final class Player extends Playable implements PlayerGroup
 	public ItemInstance getAppearanceExtractItem()
 	{
 		return _enchantSupportItem;
+	}
+
+	public Camp getCamp() {
+		return _camp;
+	}
+
+	public RpLanguage getRpLanguage() {
+		return _rplanguage;
+	}
+
+	public void setRpLanguage(RpLanguage language) {
+		_rplanguage = language;
+	}
+
+	public RpVolume getRpVolume() {
+		return _rpvolume;
+	}
+
+	public void setRpVolume(RpVolume volume) {
+		_rpvolume = volume;
 	}
 
 }
