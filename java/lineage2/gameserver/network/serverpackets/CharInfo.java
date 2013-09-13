@@ -13,6 +13,7 @@ import lineage2.gameserver.model.items.PcInventory;
 import lineage2.gameserver.model.matching.MatchingRoom;
 import lineage2.gameserver.model.pledge.Alliance;
 import lineage2.gameserver.model.pledge.Clan;
+import lineage2.gameserver.skills.AbnormalEffect;
 import lineage2.gameserver.skills.effects.EffectCubic;
 import lineage2.gameserver.utils.Location;
 import org.slf4j.Logger;
@@ -54,6 +55,8 @@ public class CharInfo extends L2GameServerPacket
 
 	public CharInfo(Creature cha)
 	{
+		boolean gmSeeInvis = false;
+		
 		if (cha == null)
 		{
 			System.out.println("CharInfo: cha is null!");
@@ -62,7 +65,13 @@ public class CharInfo extends L2GameServerPacket
 		}
 
 		if (cha.isInvisible())
-			return;
+		{
+			Player tmp = getClient().getActiveChar();
+			if (tmp != null && tmp.getPlayerAccess().GodMode)
+				gmSeeInvis = true;
+			else
+				return;
+		}
 
 		if (cha.isDeleted())
 			return;
@@ -108,7 +117,7 @@ public class CharInfo extends L2GameServerPacket
 			}
 			else
 			{
-				_title = player.getTitle();
+				_title = gmSeeInvis ? "Invisible" : player.getTitle();
 				_title_color = player.getTitleColor();
 			}
 
@@ -214,6 +223,12 @@ public class CharInfo extends L2GameServerPacket
 		curMP = (int) player.getCurrentMp();
 		maxMP = player.getMaxMp();
 		_aveList = player.getAveList();
+		
+		if (gmSeeInvis)
+		{
+			_aveList.add((player.getAbnormalEffect() | AbnormalEffect.STEALTH.getMask()));
+		}
+		
 		inv = player.getInventory();
 	}
 
