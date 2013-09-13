@@ -78,6 +78,10 @@ public class Say2C extends L2GameClientPacket
 	 * Field _target.
 	 */
 	private String _target;
+	/**
+	 * Field THREE_LETTER_WORD_PATTERN.
+	 */
+	private static final Pattern THREE_LETTER_WORD_PATTERN = Pattern.compile("[A-ZÀ-ÿa-z]{3,}");
 	
 	/**
 	 * Method readImpl.
@@ -398,8 +402,11 @@ public class Say2C extends L2GameClientPacket
 							continue;
 						}
 						player.sendPacket(cs);
-						int rp = _text.split(" ", 15).length * player.getLevel();
-						player.addExpAndSp(rp, rp/10, 0, 0, true, false);
+						int rolepex = 0;
+						Matcher matcher = THREE_LETTER_WORD_PATTERN.matcher(_text);
+						while (matcher.find()) rolepex++;
+						rolepex *= player.getLevel();
+						player.addExpAndSp(rolepex, Math.round(rolepex/10), 0, 0, true, false);
 					}
 				}
 				activeChar.sendPacket(cs);
