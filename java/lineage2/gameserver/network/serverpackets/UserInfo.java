@@ -16,6 +16,7 @@ import lineage2.gameserver.model.items.PcInventory;
 import lineage2.gameserver.model.matching.MatchingRoom;
 import lineage2.gameserver.model.pledge.Alliance;
 import lineage2.gameserver.model.pledge.Clan;
+import lineage2.gameserver.skills.AbnormalEffect;
 import lineage2.gameserver.skills.effects.EffectCubic;
 import lineage2.gameserver.utils.Location;
 
@@ -79,8 +80,6 @@ public class UserInfo extends L2GameServerPacket
 			title = player.getTitle();
 		}
 
-		if (player.getPlayerAccess().GodMode && player.isInvisible())
-			title += "[I]";
 		if (player.isPolymorphed())
 			if (NpcHolder.getInstance().getTemplate(player.getPolyId()) != null)
 				title += " - " + NpcHolder.getInstance().getTemplate(player.getPolyId()).name;
@@ -187,6 +186,13 @@ public class UserInfo extends L2GameServerPacket
 		pvp_kills = player.getPvpKills();
 		cubics = player.getCubics().toArray(new EffectCubic[player.getCubics().size()]);
 		_aveList = player.getAveList();
+		
+		if (player.getPlayerAccess().GodMode && player.isInvisible())
+		{
+			title = "Invisible";
+			_aveList.add((player.getAbnormalEffect() | AbnormalEffect.STEALTH.getMask()));
+		}		
+		
 		ClanPrivs = player.getClanPrivileges();
 		rec_left = player.getRecomLeft(); // c2 recommendations remaining
 		rec_have = player.getRecomHave(); // c2 recommendations received
