@@ -42,6 +42,7 @@ public class CharInfo extends L2GameServerPacket
 	private int curHP, maxHP, curMP, maxMP, curCP;
 	private FastList<Integer> _aveList;
 	private PcInventory inv;
+	private boolean _gmSeeInvis = false;
 
 	public CharInfo(Player cha)
 	{
@@ -54,9 +55,7 @@ public class CharInfo extends L2GameServerPacket
 	}
 
 	public CharInfo(Creature cha)
-	{
-		boolean gmSeeInvis = false;
-		
+	{	
 		if (cha == null)
 		{
 			System.out.println("CharInfo: cha is null!");
@@ -68,7 +67,7 @@ public class CharInfo extends L2GameServerPacket
 		{
 			Player tmp = getClient().getActiveChar();
 			if (tmp != null && tmp.getPlayerAccess().GodMode)
-				gmSeeInvis = true;
+				_gmSeeInvis = true;
 			else
 				return;
 		}
@@ -117,7 +116,7 @@ public class CharInfo extends L2GameServerPacket
 			}
 			else
 			{
-				_title = gmSeeInvis ? "Invisible" : player.getTitle();
+				_title = _gmSeeInvis ? "Invisible" : player.getTitle();
 				_title_color = player.getTitleColor();
 			}
 
@@ -222,13 +221,7 @@ public class CharInfo extends L2GameServerPacket
 		maxHP = player.getMaxHp();
 		curMP = (int) player.getCurrentMp();
 		maxMP = player.getMaxMp();
-		_aveList = player.getAveList();
-		
-		if (gmSeeInvis)
-		{
-			_aveList.add((player.getAbnormalEffect() | AbnormalEffect.STEALTH.getMask()));
-		}
-		
+		_aveList = player.getAveList();	
 		inv = player.getInventory();
 	}
 
@@ -372,7 +365,12 @@ public class CharInfo extends L2GameServerPacket
 		writeD(0x00);
 		writeC(0x00);
 
-		if (_aveList != null)
+		if (_gmSeeInvis)
+		{
+			writeD(1);
+			writeD(AbnormalEffect.STEALTH.getId());
+		}
+		else if (_aveList != null)
 		{
 			writeD(_aveList.size());
 			for (int i : _aveList)

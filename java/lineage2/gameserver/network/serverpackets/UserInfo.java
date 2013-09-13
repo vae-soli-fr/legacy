@@ -50,6 +50,7 @@ public class UserInfo extends L2GameServerPacket
 	private TeamType _team;
 	private final FastList<Integer> _aveList;
 	private PcInventory inv;
+	private boolean _invisible;
 
 	public UserInfo(Player player)
 	{
@@ -79,7 +80,11 @@ public class UserInfo extends L2GameServerPacket
 			cw_level = 0;
 			title = player.getTitle();
 		}
-
+		if (player.getPlayerAccess().GodMode && player.isInvisible())
+		{
+			title = "Invisible";
+			_invisible = true;
+		}
 		if (player.isPolymorphed())
 			if (NpcHolder.getInstance().getTemplate(player.getPolyId()) != null)
 				title += " - " + NpcHolder.getInstance().getTemplate(player.getPolyId()).name;
@@ -185,14 +190,7 @@ public class UserInfo extends L2GameServerPacket
 		pk_kills = player.getPkKills();
 		pvp_kills = player.getPvpKills();
 		cubics = player.getCubics().toArray(new EffectCubic[player.getCubics().size()]);
-		_aveList = player.getAveList();
-		
-		if (player.getPlayerAccess().GodMode && player.isInvisible())
-		{
-			title = "Invisible";
-			_aveList.add((player.getAbnormalEffect() | AbnormalEffect.STEALTH.getMask()));
-		}		
-		
+		_aveList = player.getAveList();	
 		ClanPrivs = player.getClanPrivileges();
 		rec_left = player.getRecomLeft(); // c2 recommendations remaining
 		rec_have = player.getRecomHave(); // c2 recommendations received
@@ -399,7 +397,12 @@ public class UserInfo extends L2GameServerPacket
 		writeC(_partySubstitute);
 		writeD(0x00);// Unknown GOD
 
-		if (_aveList != null)
+		if (_invisible)
+		{
+			writeD(1);
+			writeD(AbnormalEffect.STEALTH.getId());
+		}
+		else if (_aveList != null)
 		{
 			writeD(_aveList.size());
 			for (int i : _aveList)
