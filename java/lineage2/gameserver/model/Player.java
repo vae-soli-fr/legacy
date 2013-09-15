@@ -4048,7 +4048,7 @@ public final class Player extends Playable implements PlayerGroup
 	public void broadcastUserInfo()
 	{
 		sendUserInfo();
-		if (!isVisible() || isInvisible())
+		if (!isVisible()) //|| isInvisible())
 		{
 			return;
 		}

@@ -80,11 +80,9 @@ public class UserInfo extends L2GameServerPacket
 			cw_level = 0;
 			title = player.getTitle();
 		}
+
 		if (player.getPlayerAccess().GodMode && player.isInvisible())
-		{
-			title = "Invisible";
 			_invisible = true;
-		}
 		if (player.isPolymorphed())
 			if (NpcHolder.getInstance().getTemplate(player.getPolyId()) != null)
 				title += " - " + NpcHolder.getInstance().getTemplate(player.getPolyId()).name;
@@ -190,7 +188,7 @@ public class UserInfo extends L2GameServerPacket
 		pk_kills = player.getPkKills();
 		pvp_kills = player.getPvpKills();
 		cubics = player.getCubics().toArray(new EffectCubic[player.getCubics().size()]);
-		_aveList = player.getAveList();	
+		_aveList = player.getAveList();
 		ClanPrivs = player.getClanPrivileges();
 		rec_left = player.getRecomLeft(); // c2 recommendations remaining
 		rec_have = player.getRecomHave(); // c2 recommendations received
@@ -329,7 +327,7 @@ public class UserInfo extends L2GameServerPacket
 		writeD(hair_color);
 		writeD(face);
 		writeD(gm_commands);
-		writeS(title);
+		writeS(_invisible ? "Invisible" : title);
 		writeD(clan_id);
 		writeD(clan_crest_id);
 		writeD(ally_id);

@@ -16,6 +16,7 @@ import lineage2.gameserver.model.pledge.Clan;
 import lineage2.gameserver.skills.AbnormalEffect;
 import lineage2.gameserver.skills.effects.EffectCubic;
 import lineage2.gameserver.utils.Location;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,7 +43,7 @@ public class CharInfo extends L2GameServerPacket
 	private int curHP, maxHP, curMP, maxMP, curCP;
 	private FastList<Integer> _aveList;
 	private PcInventory inv;
-	private boolean _gmSeeInvis = false;
+	private boolean _invisible;
 
 	public CharInfo(Player cha)
 	{
@@ -55,7 +56,7 @@ public class CharInfo extends L2GameServerPacket
 	}
 
 	public CharInfo(Creature cha)
-	{	
+	{
 		if (cha == null)
 		{
 			System.out.println("CharInfo: cha is null!");
@@ -64,13 +65,7 @@ public class CharInfo extends L2GameServerPacket
 		}
 
 		if (cha.isInvisible())
-		{
-			Player tmp = getClient().getActiveChar();
-			if (tmp != null && tmp.getPlayerAccess().GodMode)
-				_gmSeeInvis = true;
-			else
-				return;
-		}
+			_invisible = true;
 
 		if (cha.isDeleted())
 			return;
@@ -116,7 +111,7 @@ public class CharInfo extends L2GameServerPacket
 			}
 			else
 			{
-				_title = _gmSeeInvis ? "Invisible" : player.getTitle();
+				_title = player.getTitle();
 				_title_color = player.getTitleColor();
 			}
 
@@ -221,7 +216,7 @@ public class CharInfo extends L2GameServerPacket
 		maxHP = player.getMaxHp();
 		curMP = (int) player.getCurrentMp();
 		maxMP = player.getMaxMp();
-		_aveList = player.getAveList();	
+		_aveList = player.getAveList();
 		inv = player.getInventory();
 	}
 
@@ -243,6 +238,11 @@ public class CharInfo extends L2GameServerPacket
 		if (activeChar.getObjectId() == _objId)
 		{
 			_log.error("You cant send CharInfo about his character to active user!!!");
+			return;
+		}
+		
+		if (_invisible && !activeChar.getPlayerAccess().GodMode)
+		{
 			return;
 		}
 
@@ -304,7 +304,7 @@ public class CharInfo extends L2GameServerPacket
 		writeD(hair_style);
 		writeD(hair_color);
 		writeD(face);
-		writeS(_title);
+		writeS(_invisible ? "Invisible" : _title);
 		writeD(clan_id);
 		writeD(clan_crest_id);
 		writeD(ally_id);
@@ -365,7 +365,7 @@ public class CharInfo extends L2GameServerPacket
 		writeD(0x00);
 		writeC(0x00);
 
-		if (_gmSeeInvis)
+		if (_invisible)
 		{
 			writeD(1);
 			writeD(AbnormalEffect.STEALTH.getId());
