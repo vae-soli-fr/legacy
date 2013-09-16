@@ -48,6 +48,8 @@ public class ChatAll implements IChatHandler
 	
 	private static final Pattern THREE_LETTER_WORD_PATTERN = Pattern.compile("[A-ZÀ-ÿa-z]{3,}");
 	
+	private static final Pattern EX_ITEM_LINK_PATTERN = Pattern.compile("[\b]\tType=[0-9]+[\\s]+\tID=([0-9]+)[\\s]+\tColor=[0-9]+[\\s]+\tUnderline=[0-9]+[\\s]+\tTitle=\u001B(.[^\u001B]*)[^\b]");
+	
 	/**
 	 * Handle chat type 'all'
 	 * @see com.l2jserver.gameserver.handler.IChatHandler#handleChat(int, com.l2jserver.gameserver.model.actor.instance.L2PcInstance, java.lang.String, java.lang.String)
@@ -123,6 +125,9 @@ public class ChatAll implements IChatHandler
                             player.sendPacket(cs);
                         
                         if (text.startsWith("(") && text.endsWith(")"))
+                        	continue;
+                        
+                        if (EX_ITEM_LINK_PATTERN.matcher(text).find())
                         	continue;
                         
 						int rolepex = 0;
