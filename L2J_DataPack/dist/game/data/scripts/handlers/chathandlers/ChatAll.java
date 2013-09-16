@@ -17,6 +17,8 @@ package handlers.chathandlers;
 import java.util.Collection;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IChatHandler;
@@ -26,6 +28,7 @@ import com.l2jserver.gameserver.model.BlockList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
+import com.l2jserver.gameserver.skills.Stats;
 import com.l2jserver.gameserver.util.Util;
 
 
@@ -43,6 +46,8 @@ public class ChatAll implements IChatHandler
 	
 	private static Logger _log = Logger.getLogger(ChatAll.class.getName());
 	
+	private static final Pattern THREE_LETTER_WORD_PATTERN = Pattern.compile("[A-ZÀ-ÿa-z]{3,}");
+	
 	/**
 	 * Handle chat type 'all'
 	 * @see com.l2jserver.gameserver.handler.IChatHandler#handleChat(int, com.l2jserver.gameserver.model.actor.instance.L2PcInstance, java.lang.String, java.lang.String)
@@ -51,7 +56,7 @@ public class ChatAll implements IChatHandler
 	public void handleChat(int type, L2PcInstance activeChar, String params, String text)
 	{
 		boolean vcd_used= false;
-                boolean is_action= false;
+
 		if (text.startsWith("."))
 		{
 			StringTokenizer st = new StringTokenizer(text);
@@ -90,12 +95,7 @@ public class ChatAll implements IChatHandler
 				activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 				return;
 			}
-			
-                        if(!text.startsWith(" *"))
-                            text = activeChar.getRPvolume() + activeChar.getRPlanguage() + text;
-                        else
-                            is_action=true;
-			
+		
 			/**
 			 * Match the character "." literally (Exactly 1 time)
 			 * Match any character that is NOT a . character. Between one and unlimited times as possible, giving back as needed (greedy)
@@ -103,20 +103,35 @@ public class ChatAll implements IChatHandler
 			if (text.matches("\\.{1}[^\\.]+"))
 				activeChar.sendPacket(SystemMessageId.INCORRECT_SYNTAX);
 			else
-			{			
-				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(), text);
+			{	
+                boolean is_action = false;
+	            if(text.startsWith(" *")) is_action = true;
+	            
+				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(),
+											is_action ? text : activeChar.getRPvolume() + activeChar.getRPlanguage() + text);
+				
 				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
 				for (L2PcInstance player : plrs)
 				{
 					if (player != null && !BlockList.isBlocked(player, activeChar))
-                                        {
-                                            if(activeChar.isInsideRadius(player, 1250, false, true) && (activeChar.getRPvolume().equals("") || is_action))
-                                                player.sendPacket(cs);
-                                            else if(activeChar.isInsideRadius(player, 100, false, true) && activeChar.getRPvolume().equals(" *chuchote* ") && !is_action)
-                                                player.sendPacket(cs);
-                                            else if(activeChar.isInsideRadius(player, 2900, false, true) && activeChar.getRPvolume().equals(" *crie* ") && !is_action)
-                                                player.sendPacket(cs);
-                                        }
+                    {
+                        if(activeChar.isInsideRadius(player, 1250, false, true) && (activeChar.getRPvolume().equals("") || is_action))
+                            player.sendPacket(cs);
+                        else if(activeChar.isInsideRadius(player, 100, false, true) && activeChar.getRPvolume().equals(" *chuchote* ") && !is_action)
+                            player.sendPacket(cs);
+                        else if(activeChar.isInsideRadius(player, 2900, false, true) && activeChar.getRPvolume().equals(" *crie* ") && !is_action)
+                            player.sendPacket(cs);
+                        
+                        if (text.startsWith("(") && text.endsWith(")"))
+                        	continue;
+                        
+						int rolepex = 0;
+						Matcher matcher = THREE_LETTER_WORD_PATTERN.matcher(text);
+						while (matcher.find()) rolepex++;
+						rolepex *= player.getLevel();
+						if (rolepex > 0)
+							player.addExpAndSp(Math.round(rolepex * Config.RATE_XP), Math.round(rolepex/10 * Config.RATE_SP));
+                    }
 				}
 				
 				activeChar.sendPacket(cs);
