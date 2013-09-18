@@ -115,14 +115,19 @@ public class ChatAll implements IChatHandler
 				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
 				for (L2PcInstance player : plrs)
 				{
-					if (player != null && !BlockList.isBlocked(player, activeChar))
+					if (player != null && !player.isInOfflineMode() && !BlockList.isBlocked(player, activeChar))
                     {
-                        if(activeChar.isInsideRadius(player, 1250, false, true) && (activeChar.getRPvolume().equals("") || is_action))
+                        if((activeChar.getRPvolume().equals("") || is_action) && activeChar.isInsideRadius(player, 1250, false, true))
                             player.sendPacket(cs);
-                        else if(activeChar.isInsideRadius(player, 100, false, true) && activeChar.getRPvolume().equals(" *chuchote* ") && !is_action)
+                        
+                        else if(activeChar.getRPvolume().equals(" *chuchote* ") && activeChar.isInsideRadius(player, 100, false, true) && !is_action)
                             player.sendPacket(cs);
-                        else if(activeChar.isInsideRadius(player, 2900, false, true) && activeChar.getRPvolume().equals(" *crie* ") && !is_action)
+
+                        else if(activeChar.getRPvolume().equals(" *crie* ") && activeChar.isInsideRadius(player, 2900, false, true) && !is_action)
                             player.sendPacket(cs);
+                        
+                        else
+                        	continue;                         
                         
                         if (text.startsWith("(") && text.endsWith(")"))
                         	continue;
