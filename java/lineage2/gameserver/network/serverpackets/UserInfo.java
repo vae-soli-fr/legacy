@@ -16,6 +16,7 @@ import lineage2.gameserver.model.items.PcInventory;
 import lineage2.gameserver.model.matching.MatchingRoom;
 import lineage2.gameserver.model.pledge.Alliance;
 import lineage2.gameserver.model.pledge.Clan;
+import lineage2.gameserver.skills.AbnormalEffect;
 import lineage2.gameserver.skills.effects.EffectCubic;
 import lineage2.gameserver.utils.Location;
 
@@ -42,7 +43,7 @@ public class UserInfo extends L2GameServerPacket
 	private EffectCubic[] cubics;
 	private Element attackElement;
 	private int attackElementValue;
-	private boolean isFlying, _allowMap;
+	private boolean isFlying, isInvisible, _allowMap;
 	private int talismans;
 	private boolean openCloak;
 	private double _expPercent;
@@ -80,7 +81,7 @@ public class UserInfo extends L2GameServerPacket
 		}
 
 		if (player.getPlayerAccess().GodMode && player.isInvisible())
-			title += "[I]";
+			isInvisible = true;
 		if (player.isPolymorphed())
 			if (NpcHolder.getInstance().getTemplate(player.getPolyId()) != null)
 				title += " - " + NpcHolder.getInstance().getTemplate(player.getPolyId()).name;
@@ -325,7 +326,7 @@ public class UserInfo extends L2GameServerPacket
 		writeD(hair_color);
 		writeD(face);
 		writeD(gm_commands);
-		writeS(title);
+		writeS(isInvisible ? "[Invisible]" : title);
 		writeD(clan_id);
 		writeD(clan_crest_id);
 		writeD(ally_id);
@@ -393,7 +394,12 @@ public class UserInfo extends L2GameServerPacket
 		writeC(_partySubstitute);
 		writeD(0x00);// Unknown GOD
 
-		if (_aveList != null)
+		if (isInvisible)
+		{
+			writeD(1);
+			writeD(AbnormalEffect.STEALTH.getId());
+		}
+		else if (_aveList != null)
 		{
 			writeD(_aveList.size());
 			for (int i : _aveList)
