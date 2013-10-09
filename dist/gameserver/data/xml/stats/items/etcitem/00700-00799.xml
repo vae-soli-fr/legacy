@@ -300,9 +300,9 @@
 		<set name="type" value="POTION"/>
 		<set name="ex_type" value="POTION"/>
 		<set name="weight" value="180"/>
-		<skills>
+		<!--<skills>
 			<skill id="90001" level="1"/>
-		</skills>
+		</skills>-->
 		<cond msgId="1508">
 			<not>
 				<player olympiad="true"/>
