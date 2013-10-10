@@ -16,6 +16,7 @@ public class Nursery extends Reflection
 	private int Creature5 = 23037;
 	private int reward;
 	NpcInstance tuy;
+	@SuppressWarnings("unused")
 	private DeathListener _deathListener = new DeathListener();
 
 	@Override
@@ -33,6 +34,7 @@ public class Nursery extends Reflection
 			{
 				if(self.getNpcId() == Creature1 || self.getNpcId() == Creature2 || self.getNpcId() == Creature3 || self.getNpcId() == Creature4 || self.getNpcId() == Creature5)
 				{
+					@SuppressWarnings("unused")
 					int count = reward + Rnd.get(15);
 				}
 			}
