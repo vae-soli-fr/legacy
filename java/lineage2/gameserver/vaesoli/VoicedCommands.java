@@ -119,7 +119,7 @@ public class VoicedCommands implements IVoicedCommandHandler {
 		if (pet != null) {
 			if (phrase != null) {
 				if (pet.getName() != null) {
-					pet.broadcastPacket(new Say2(pet.getNpcId(), ChatType.ALL, pet.getName(), phrase));
+					pet.broadcastPacket(new Say2(pet.getNpcId(), ChatType.ALL, "[" + pet.getName() + "]", phrase));
 				} else {
 					player.sendMessage("Votre animal ne possède pas de nom.");
 				}
