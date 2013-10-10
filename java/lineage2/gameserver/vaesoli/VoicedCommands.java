@@ -1,4 +1,4 @@
-package handler.voicecommands;
+package lineage2.gameserver.vaesoli;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,11 +15,8 @@ import lineage2.gameserver.model.Summon;
 import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
 import lineage2.gameserver.network.serverpackets.Say2;
 import lineage2.gameserver.network.serverpackets.components.ChatType;
-import lineage2.gameserver.vaesoli.Descriptions;
-import lineage2.gameserver.vaesoli.RpLanguage;
-import lineage2.gameserver.vaesoli.RpVolume;
 
-public class VaeSoli implements IVoicedCommandHandler {
+public class VoicedCommands implements IVoicedCommandHandler {
 
     private static final String[] _voicedCommands = {
         "camp",
