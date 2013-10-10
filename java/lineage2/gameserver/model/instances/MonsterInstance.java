@@ -49,6 +49,7 @@ import lineage2.gameserver.model.reward.RewardList;
 import lineage2.gameserver.model.reward.RewardType;
 import lineage2.gameserver.network.serverpackets.SocialAction;
 import lineage2.gameserver.network.serverpackets.SystemMessage;
+import lineage2.gameserver.skills.AbnormalEffect;
 import lineage2.gameserver.stats.Stats;
 import lineage2.gameserver.tables.SkillTable;
 import lineage2.gameserver.templates.npc.Faction;
@@ -292,6 +293,7 @@ public class MonsterInstance extends NpcInstance
 		else
 		{
 			addSkill(SkillTable.getInstance().getInfo(4407, level));
+			addToAveList(AbnormalEffect.S_60.getId());
 			_isChampion = level;
 		}
 	}

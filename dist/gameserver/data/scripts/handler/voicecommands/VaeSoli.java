@@ -1,4 +1,4 @@
-package lineage2.gameserver.vaesoli;
+package handler.voicecommands;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,8 +15,11 @@ import lineage2.gameserver.model.Summon;
 import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
 import lineage2.gameserver.network.serverpackets.Say2;
 import lineage2.gameserver.network.serverpackets.components.ChatType;
+import lineage2.gameserver.vaesoli.Descriptions;
+import lineage2.gameserver.vaesoli.RpLanguage;
+import lineage2.gameserver.vaesoli.RpVolume;
 
-public class VoicedCommands implements IVoicedCommandHandler {
+public class VaeSoli implements IVoicedCommandHandler {
 
     private static final String[] _voicedCommands = {
         "camp",
@@ -115,11 +118,11 @@ public class VoicedCommands implements IVoicedCommandHandler {
 	}
 
 	private void petsays(Player player, String phrase) {
-		Summon[] pets = player.getPets().toArray(new Summon[player.getPets().size()]);
-		if (pets.length != 0) {
+		Summon pet = player.getSummonList().getPet();
+		if (pet != null) {
 			if (phrase != null) {
-				if (pets[0].getName() != null) {
-					pets[0].broadcastPacket(new Say2(pets[0].getNpcId(), ChatType.ALL, pets[0].getName(), phrase));
+				if (pet.getName() != null) {
+					pet.broadcastPacket(new Say2(pet.getNpcId(), ChatType.ALL, pet.getName(), phrase));
 				} else {
 					player.sendMessage("Votre animal ne possède pas de nom.");
 				}
