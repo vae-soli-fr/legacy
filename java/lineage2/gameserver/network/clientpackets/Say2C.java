@@ -467,33 +467,25 @@ public class Say2C extends L2GameClientPacket
 				}
 				break;
 			case HERO_VOICE:
-				boolean PremiumHeroChat = false;
-				if (Config.PREMIUM_HEROCHAT && (activeChar.getNetConnection().getBonus() > 1))
-				{
-					long endtime = activeChar.getNetConnection().getBonusExpire();
-					if (endtime >= 0)
-					{
-						PremiumHeroChat = true;
+				/*
+				 * boolean PremiumHeroChat = false; if (Config.PREMIUM_HEROCHAT &&
+				 * (activeChar.getNetConnection().getBonus() > 1)) { long endtime =
+				 * activeChar.getNetConnection().getBonusExpire(); if (endtime >= 0)
+				 * { PremiumHeroChat = true; } } if (activeChar.isHero() ||
+				 * activeChar.getPlayerAccess().CanAnnounce || PremiumHeroChat) { if
+				 * (!activeChar.getPlayerAccess().CanAnnounce) {
+				 */
+				if (!activeChar.antiFlood.canHero(_text)) {
+					activeChar.sendMessage("Hero chat is allowed once per 10 seconds.");
+					return;
+				}
+				/* } */
+				for (Player player : GameObjectsStorage.getAllPlayersForIterate()) {
+					if (!player.isInBlockList(activeChar) && !player.isBlockAll()) {
+						player.sendPacket(cs);
 					}
 				}
-				if (activeChar.isHero() || activeChar.getPlayerAccess().CanAnnounce || PremiumHeroChat)
-				{
-					if (!activeChar.getPlayerAccess().CanAnnounce)
-					{
-						if (!activeChar.antiFlood.canHero(_text))
-						{
-							activeChar.sendMessage("Hero chat is allowed once per 10 seconds.");
-							return;
-						}
-					}
-					for (Player player : GameObjectsStorage.getAllPlayersForIterate())
-					{
-						if (!player.isInBlockList(activeChar) && !player.isBlockAll())
-						{
-							player.sendPacket(cs);
-						}
-					}
-				}
+				/* } */
 				break;
 			case PETITION_PLAYER:
 			case PETITION_GM:
