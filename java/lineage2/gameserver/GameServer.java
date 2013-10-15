@@ -15,6 +15,7 @@ package lineage2.gameserver;
 import java.io.File;
 import java.net.InetAddress;
 import java.net.ServerSocket;
+import java.util.Calendar;
 
 import lineage2.commons.lang.StatsUtils;
 import lineage2.commons.listener.Listener;
@@ -173,6 +174,7 @@ public class GameServer
 	 * Field _serverStarted.
 	 */
 	private final int _serverStarted;
+	public final Calendar dateTimeServerStarted = Calendar.getInstance();
 	
 	/**
 	 * Method getSelectorThreads.
