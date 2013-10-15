@@ -110,7 +110,7 @@ public class VoicedCommands implements IVoicedCommandHandler {
             "Tombefeuille",
             "Souffleglace"};
         String[] days = {"Lunem", "Marka", "Metri", "Jeriel", "Verdel", "Sumbra"};
-        String message = days[(int) dayow] + ", le " + (int) day + " " + months[(int) month] + " de l'an " + (int) year;
+        String message = days[dayow] + ", le " + day + " " + months[month] + " de l'an " + year;
         player.sendMessage(message);
 	}
 
