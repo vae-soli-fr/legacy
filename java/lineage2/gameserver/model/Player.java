@@ -226,6 +226,7 @@ import lineage2.gameserver.network.serverpackets.LeaveWorld;
 import lineage2.gameserver.network.serverpackets.MagicSkillLaunched;
 import lineage2.gameserver.network.serverpackets.MagicSkillUse;
 import lineage2.gameserver.network.serverpackets.MyTargetSelected;
+import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
 import lineage2.gameserver.network.serverpackets.NpcInfoPoly;
 import lineage2.gameserver.network.serverpackets.ObserverEnd;
 import lineage2.gameserver.network.serverpackets.ObserverStart;
@@ -309,6 +310,11 @@ import lineage2.gameserver.utils.SiegeUtils;
 import lineage2.gameserver.utils.SqlBatch;
 import lineage2.gameserver.utils.Strings;
 import lineage2.gameserver.utils.TeleportUtils;
+import lineage2.gameserver.vaesoli.Camp;
+import lineage2.gameserver.vaesoli.CommunityManager;
+import lineage2.gameserver.vaesoli.MyDDS;
+import lineage2.gameserver.vaesoli.RpLanguage;
+import lineage2.gameserver.vaesoli.RpVolume;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -319,12 +325,6 @@ import org.napile.primitive.maps.IntObjectMap;
 import org.napile.primitive.maps.impl.CHashIntObjectMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
-import lineage2.gameserver.vaesoli.Camp;
-import lineage2.gameserver.vaesoli.MyDDS;
-import lineage2.gameserver.vaesoli.RpLanguage;
-import lineage2.gameserver.vaesoli.RpVolume;
 
 /**
  * @author Mobius
@@ -1511,6 +1511,14 @@ public final class Player extends Playable implements PlayerGroup
 		try
 		{
 			store(false);
+		}
+		catch (Throwable t)
+		{
+			_log.error("", t);
+		}
+		try
+		{
+			CommunityManager.getInstance().refreshCommunityBoard();
 		}
 		catch (Throwable t)
 		{

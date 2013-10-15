@@ -99,12 +99,12 @@ import lineage2.gameserver.templates.item.ItemTemplate;
 import lineage2.gameserver.utils.GameStats;
 import lineage2.gameserver.utils.ItemFunctions;
 import lineage2.gameserver.utils.TradeHelper;
+import lineage2.gameserver.vaesoli.BgManager;
+import lineage2.gameserver.vaesoli.CommunityManager;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import lineage2.gameserver.vaesoli.BgManager;
 
 /**
  * @author Mobius
@@ -510,6 +510,9 @@ public class EnterWorld extends L2GameClientPacket
 				AwakingManager.getInstance().checkAwakenPlayerSkills(activeChar);
 			}
 		}
+		
+		// màj community
+		CommunityManager.getInstance().refreshCommunityBoard();
 		
 		// vérification des màj BG
         BgManager.getInstance().check(activeChar);
