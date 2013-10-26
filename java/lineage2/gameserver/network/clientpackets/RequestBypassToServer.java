@@ -35,6 +35,7 @@ import lineage2.gameserver.network.GameClient;
 import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
 import lineage2.gameserver.network.serverpackets.SystemMessage;
 import lineage2.gameserver.scripts.Scripts;
+import lineage2.gameserver.vaesoli.CommunityManager;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -242,6 +243,10 @@ public class RequestBypassToServer extends L2GameClientPacket
 					String campaignName = p.substring(0, idx);
 					DynamicQuestController.getInstance().processDialogEvent(campaignName, p.substring(idx).trim(), activeChar);
 				}
+			}
+			else if (bp.bypass.equals("_bbshome"))
+			{
+				CommunityManager.getInstance().showOldCommunity(activeChar);
 			}
 			else if (bp.handler != null)
 			{

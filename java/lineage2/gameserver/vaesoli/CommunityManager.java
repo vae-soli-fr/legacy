@@ -14,8 +14,10 @@
  */
 package lineage2.gameserver.vaesoli;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Locale;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
@@ -101,10 +103,11 @@ public class CommunityManager {
 		final String trClose = "</tr>";
 		final String trOpen = "<tr>";
 		final String colSpacer = "<td FIXWIDTH=15></td>";
+		final SimpleDateFormat formater = new SimpleDateFormat("EEEE dd MMMM 'à' HH:mm", Locale.FRANCE);
 
 		htmlCode.setLength(0);
-		htmlCode.append("<html><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Serveur redémarré le "
-				+ String.valueOf(GameServer.getInstance().dateTimeServerStarted.getTime()) + tdClose + trClose + "</table>" + "<table>" + trOpen + tdOpen
+		htmlCode.append("<html><title>Communauté</title><body><br>" + "Serveur redémarré " + formater.format(GameServer.getInstance().dateTimeServerStarted.getTime())
+				+ "<table>" + trOpen + tdOpen
 				+ "XP x" + String.valueOf(Config.RATE_XP) + tdClose + colSpacer + tdOpen + "SP x" + String.valueOf(Config.RATE_SP) + tdClose + trClose + trOpen
 				+ tdOpen + "Drop x" + String.valueOf(Config.RATE_DROP_ITEMS) + tdClose + colSpacer + tdOpen + "Spoil x"
 				+ String.valueOf(Config.RATE_DROP_SPOIL) + tdClose + colSpacer + tdOpen + "Adena x" + String.valueOf(Config.RATE_DROP_ADENA) + tdClose
@@ -176,8 +179,8 @@ public class CommunityManager {
 		_communityPages.put("gm", htmlCode.toString());
 
 		htmlCode.setLength(0);
-		htmlCode.append("<html><title>Communauté</title><body><br>" + "<table>" + trOpen + "<td align=left valign=top>Serveur redémarré le "
-				+ String.valueOf(GameServer.getInstance().dateTimeServerStarted.getTime()) + tdClose + trClose + "</table>" + "<table>" + trOpen + tdOpen
+		htmlCode.append("<html><title>Communauté</title><body><br>" + "Serveur redémarré " + formater.format(GameServer.getInstance().dateTimeServerStarted.getTime())
+				+ "<table>" + trOpen + tdOpen
 				+ "XP x" + String.valueOf(Config.RATE_XP) + tdClose + colSpacer + tdOpen + "SP x" + String.valueOf(Config.RATE_SP) + tdClose + trClose + trOpen
 				+ tdOpen + "Drop x" + String.valueOf(Config.RATE_DROP_ITEMS) + tdClose + colSpacer + tdOpen + "Spoil x"
 				+ String.valueOf(Config.RATE_DROP_SPOIL) + tdClose + colSpacer + tdOpen + "Adena x" + String.valueOf(Config.RATE_DROP_ADENA) + tdClose

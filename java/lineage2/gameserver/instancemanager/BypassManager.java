@@ -73,6 +73,10 @@ public class BypassManager
 			case '1':
 				return BypassType.ENCODED_BBS;
 			default:
+				if (bypass.equals("_bbshome"))
+				{
+					return BypassType.SIMPLE_BBS;
+				}
 				if (Strings.matches(bypass, "^(_mrsl|_diary|_match|manor_menu_select|_match|_olympiad).*", Pattern.DOTALL))
 				{
 					return BypassType.SIMPLE;
