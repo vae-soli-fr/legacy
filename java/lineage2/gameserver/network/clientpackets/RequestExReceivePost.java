@@ -92,11 +92,11 @@ public class RequestExReceivePost extends L2GameClientPacket
 			try
 			{
 				ItemInstance[] items;
-			  /*if ((mail.getAttachments().size() > 0) && !activeChar.isInPeaceZone())
+				if ((mail.getAttachments().size() > 0) && !activeChar.isInPeaceZone())
 				{
 					activeChar.sendPacket(Msg.YOU_CANNOT_RECEIVE_IN_A_NON_PEACE_ZONE_LOCATION);
 					return;
-				}*/
+				}
 				synchronized (mail.getAttachments())
 				{
 					if (mail.getAttachments().isEmpty())

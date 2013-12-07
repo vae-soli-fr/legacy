@@ -176,11 +176,11 @@ public class RequestExSendPost extends L2GameClientPacket
 			activeChar.sendPacket(Msg.YOU_CANNOT_SEND_A_MAIL_TO_YOURSELF);
 			return;
 		}
-	  /*if ((_count > 0) && !activeChar.isInPeaceZone())
+		if ((_count > 0) && !activeChar.isInPeaceZone())
 		{
 			activeChar.sendPacket(Msg.YOU_CANNOT_FORWARD_IN_A_NON_PEACE_ZONE_LOCATION);
 			return;
-		}*/
+		}
 		if (activeChar.isFishing())
 		{
 			activeChar.sendPacket(Msg.YOU_CANNOT_DO_THAT_WHILE_FISHING);

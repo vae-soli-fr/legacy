@@ -71,11 +71,11 @@ public class RequestExRejectPost extends L2GameClientPacket
 			activeChar.sendPacket(Msg.YOU_CANNOT_CANCEL_DURING_AN_ITEM_ENHANCEMENT_OR_ATTRIBUTE_ENHANCEMENT);
 			return;
 		}
-	  /*if (!activeChar.isInPeaceZone())
+		if (!activeChar.isInPeaceZone())
 		{
 			activeChar.sendPacket(Msg.YOU_CANNOT_CANCEL_IN_A_NON_PEACE_ZONE_LOCATION);
 			return;
-		}*/
+		}
 		if (activeChar.isFishing())
 		{
 			activeChar.sendPacket(Msg.YOU_CANNOT_DO_THAT_WHILE_FISHING);
