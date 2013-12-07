@@ -17,6 +17,7 @@ import lineage2.gameserver.data.xml.holder.ResidenceHolder;
 import lineage2.gameserver.listener.actor.player.OnAnswerListener;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.model.entity.residence.Residence;
+import lineage2.gameserver.model.entity.residence.ResidenceType;
 import lineage2.gameserver.model.instances.DoorInstance;
 import lineage2.gameserver.model.pledge.Clan;
 import lineage2.gameserver.network.serverpackets.ConfirmDlg;
@@ -46,7 +47,7 @@ public class ResidenceDoor extends DoorAI
 	{
 		final DoorInstance door = getActor();
 		final Residence residence = ResidenceHolder.getInstance().getResidence(door.getTemplate().getAIParams().getInteger("residence_id"));
-		if ((residence.getOwner() != null) && (player.getClan() != null) && (player.getClan().equals(residence.getOwner())) && ((player.getClanPrivileges() & Clan.CP_CS_ENTRY_EXIT) == Clan.CP_CS_ENTRY_EXIT))
+		if (residence.getType() == ResidenceType.ClanHall || (residence.getOwner() != null) && (player.getClan() != null) && (player.getClan().equals(residence.getOwner())) && ((player.getClanPrivileges() & Clan.CP_CS_ENTRY_EXIT) == Clan.CP_CS_ENTRY_EXIT))
 		{
 			final SystemMsg msg = door.isOpen() ? SystemMsg.WOULD_YOU_LIKE_TO_CLOSE_THE_GATE : SystemMsg.WOULD_YOU_LIKE_TO_OPEN_THE_GATE;
 			player.ask(new ConfirmDlg(msg, 0), new OnAnswerListener()
