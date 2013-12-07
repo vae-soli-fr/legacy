@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # exit codes of GameServer:
 #  0 normal shutdown
@@ -12,7 +12,8 @@ while :; do
 			mv -f "updater/lineage2-version.ini" "config/lineage2-version.ini"
 			fi
 	fi
-	java -server -Dfile.encoding=UTF-8 -Xmx8G -cp config/xml:../libs/*: lineage2.gameserver.GameServer > log/stdout.log 2>&1
+	# -server plus optimisé
+	java -server -Djava.net.preferIPv4Stack=true -Dfile.encoding=UTF-8 -Xms8192m -Xmx8192M -cp config/xml:../libs/*: lineage2.gameserver.GameServer > log/stdout.log 2>&1
 	[ $? -ne 2 ] && break
 	sleep 30;
 done
