@@ -12,6 +12,7 @@
  */
 package handler.items;
 
+import lineage2.gameserver.cache.Msg;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.model.Skill;
 import lineage2.gameserver.model.items.ItemInstance;
@@ -52,7 +53,7 @@ public class ManaPotion extends SimpleItemHandler
 	protected boolean useItemImpl(Player player, ItemInstance item, boolean ctrl) {
 		if (player.getPvpFlag() == 1)
 		{
-			player.sendMessage("Can't use mana potion in pvp.");
+			player.sendPacket(Msg.CANT_USE_MANA_POTION_IN_PVP);
 			return false;
 		}
 		final Skill skill = SkillTable.getInstance().getInfo(90001, 1);
