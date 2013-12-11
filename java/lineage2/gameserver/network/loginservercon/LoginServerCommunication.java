@@ -660,4 +660,29 @@ public class LoginServerCommunication extends Thread
 			readLock.unlock();
 		}
 	}
+	
+	/**
+	 * Check if the current client ip address is already used by an authed client
+	 * @return boolean
+	 */
+	public GameClient getMultisession(GameClient client)
+	{
+		readLock.lock();
+		try
+		{
+			for (GameClient authed : authedClients.values())
+			{
+				if (authed.getIpAddr().equals(client.getIpAddr()))
+				{
+					return authed;
+				}
+			}
+		} 
+		finally
+		{
+			readLock.unlock();
+		}
+
+		return null;
+	}
 }
