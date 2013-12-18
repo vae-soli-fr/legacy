@@ -672,7 +672,7 @@ public class LoginServerCommunication extends Thread
 		{
 			for (GameClient authed : authedClients.values())
 			{
-				if (authed.getIpAddr().equals(client.getIpAddr()))
+				if (client.getIpAddr().equals(authed.getIpAddr()) && !Config.MULTISESSION_ALLOW.contains(client.getLogin()) && !Config.MULTISESSION_ALLOW.contains(authed.getLogin()))
 				{
 					return authed;
 				}

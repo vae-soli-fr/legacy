@@ -804,6 +804,7 @@ public class Config
 	public static int SAFE_ENCHANT_LVL;
 	public static boolean REMOVE_UNKNOWN_QUEST;
 	public static boolean ALLOW_MENTOR_BUFFS_IN_OFFLINE_MODE;
+	public static List<String> MULTISESSION_ALLOW = new ArrayList<String>();
 	
 	/**
 	 * Method loadServerConfig.
@@ -1029,6 +1030,10 @@ public class Config
 		RWHO_ONLINE_INCREMENT = Integer.parseInt(serverSettings.getProperty("RemoteOnlineIncrement", "0"));
 		RWHO_PRIV_STORE_FACTOR = Float.parseFloat(serverSettings.getProperty("RemotePrivStoreFactor", "0"));
 		RWHO_FORCE_INC = Integer.parseInt(serverSettings.getProperty("RemoteWhoForceInc", "0"));
+		for (String accountname : serverSettings.getProperty("AllowMultisession", ArrayUtils.EMPTY_STRING_ARRAY))
+		{
+			MULTISESSION_ALLOW.add(accountname.toLowerCase());
+		}
 	}
 	
 	/**
