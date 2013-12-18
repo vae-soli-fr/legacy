@@ -49,6 +49,7 @@ import lineage2.gameserver.model.reward.RewardList;
 import lineage2.gameserver.model.reward.RewardType;
 import lineage2.gameserver.network.serverpackets.SocialAction;
 import lineage2.gameserver.network.serverpackets.SystemMessage;
+import lineage2.gameserver.skills.AbnormalEffect;
 import lineage2.gameserver.stats.Stats;
 import lineage2.gameserver.tables.SkillTable;
 import lineage2.gameserver.templates.npc.Faction;
@@ -293,6 +294,7 @@ public class MonsterInstance extends NpcInstance
 		{
 			addSkill(SkillTable.getInstance().getInfo(4407, level));
 			_isChampion = level;
+			addToAveList(level == 1 ? AbnormalEffect.VITALITY.getId() : AbnormalEffect.S_ROLLINGTHUNDER.getId());
 		}
 	}
 	
@@ -312,7 +314,7 @@ public class MonsterInstance extends NpcInstance
 	@Override
 	public TeamType getTeam()
 	{
-		return getChampion() == 2 ? TeamType.RED : getChampion() == 1 ? TeamType.BLUE : TeamType.NONE;
+		return TeamType.NONE; //getChampion() == 2 ? TeamType.RED : getChampion() == 1 ? TeamType.BLUE : TeamType.NONE;
 	}
 	
 	/**
