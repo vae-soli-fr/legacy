@@ -2478,6 +2478,15 @@ public abstract class Creature extends GameObject
 	}
 	
 	/**
+	 * Method getChampion.
+	 * @return integer
+	 */
+	public int getChampion()
+	{
+		return 0;
+	}
+	
+	/**
 	 * Method getAveList.
 	 * @return FastList<Integer>
 	 */

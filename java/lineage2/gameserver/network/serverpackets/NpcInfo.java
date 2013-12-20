@@ -53,7 +53,11 @@ public class NpcInfo extends L2GameServerPacket
 					if (_title.isEmpty())
 						_title = "Lv " + cha.getLevel();
 					else
-						_title = "Lv " + cha.getLevel() + "|" + _title;
+						_title = "Lv " + cha.getLevel() + " " + _title;
+			if(cha.getChampion() > 0)
+			{
+				_title = ((cha.getChampion() == 1) ? "Champion " : "Anomaly ") + _title;
+			}
 		}
 
 		_HP = (int) cha.getCurrentHp();

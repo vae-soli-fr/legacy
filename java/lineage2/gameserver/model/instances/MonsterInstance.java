@@ -247,6 +247,7 @@ public class MonsterInstance extends NpcInstance
 	 * Method getChampion.
 	 * @return int
 	 */
+	@Override
 	public int getChampion()
 	{
 		return _isChampion;
