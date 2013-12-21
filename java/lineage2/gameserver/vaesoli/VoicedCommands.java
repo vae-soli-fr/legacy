@@ -12,7 +12,9 @@ import lineage2.gameserver.database.DatabaseFactory;
 import lineage2.gameserver.handler.voicecommands.IVoicedCommandHandler;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.model.Summon;
+import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
+import lineage2.gameserver.network.serverpackets.NpcSay;
 import lineage2.gameserver.network.serverpackets.Say2;
 import lineage2.gameserver.network.serverpackets.components.ChatType;
 
@@ -28,7 +30,7 @@ public class VoicedCommands implements IVoicedCommandHandler {
     	"nain",
     	"orc",
     	"kamael",
-    	"meteo",
+    	//"meteo",
     	">>",
     	"time",
     	"titre"
@@ -118,13 +120,10 @@ public class VoicedCommands implements IVoicedCommandHandler {
 		Summon pet = player.getSummonList().getPet();
 		if (pet != null) {
 			if (phrase != null) {
-				if (pet.getName() != null) {
-					pet.broadcastPacket(new Say2(pet.getNpcId(), ChatType.ALL, "[" + pet.getName() + "]", phrase));
-				} else {
-					player.sendMessage("Votre animal ne possède pas de nom.");
-				}
+				pet.broadcastPacket(new NpcSay(new NpcInstance(pet.getObjectId(), pet.getTemplate()), ChatType.NPC_SAY, phrase));
+				pet.broadcastPacket(new Say2(pet.getNpcId(), ChatType.ALL, "[" + pet.getName() + "]", phrase));
 			} else {
-				player.sendMessage("Usage : .>> texte roleplay");
+				player.sendMessage("USAGE : .>> texte roleplay");
 			}
 		} else {
 			player.sendMessage("Vous n'avez pas d'animal de compagnie.");
@@ -226,7 +225,7 @@ public class VoicedCommands implements IVoicedCommandHandler {
 				player.sendMessage("Sélectionnez un joueur pour voir sa description.");
 			break;
 		default:
-			player.sendMessage("Usage: .desc [delete]");
+			player.sendMessage("USAGE: .desc [delete]");
 		}
 	}
     

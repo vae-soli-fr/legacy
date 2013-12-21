@@ -69,6 +69,7 @@ import lineage2.gameserver.handler.admincommands.impl.AdminZone;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.utils.Log;
+import lineage2.gameserver.vaesoli.AdminCommand;
 
 /**
  * @author Mobius
@@ -149,6 +150,8 @@ public class AdminCommandHandler extends AbstractHolder
 		registerAdminCommandHandler(new AdminTeleport());
 		registerAdminCommandHandler(new AdminZone());
 		registerAdminCommandHandler(new AdminKill());
+		// Vae Soli
+		registerAdminCommandHandler(new AdminCommand());
 	}
 	
 	/**

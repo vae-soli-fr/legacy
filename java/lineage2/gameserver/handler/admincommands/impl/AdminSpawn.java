@@ -406,7 +406,7 @@ public class AdminSpawn implements IAdminCommandHandler
 		{
 			SimpleSpawner spawn = new SimpleSpawner(template);
 			spawn.setLoc(target.getLoc());
-			spawn.setAmount(mobCount);
+			spawn.setAmount(mobCount > 50 ? 1 : mobCount); // watchdog
 			spawn.setHeading(activeChar.getHeading());
 			spawn.setRespawnDelay(respawnTime);
 			spawn.setReflection(activeChar.getReflection());

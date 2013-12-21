@@ -68,6 +68,7 @@ public class VoicedCommandHandler extends AbstractHolder
 		registerVoicedCommandHandler(new WhoAmI());
 		registerVoicedCommandHandler(new Online());
 		registerVoicedCommandHandler(new Password());
+		// Vae Soli
 		registerVoicedCommandHandler(new VoicedCommands());
 	}
 	
