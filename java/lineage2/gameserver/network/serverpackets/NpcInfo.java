@@ -49,14 +49,14 @@ public class NpcInfo extends L2GameServerPacket
 		{
 			_title = cha.getTitle();
 			if (Config.SERVER_SIDE_NPC_TITLE_ETC)
+			{
 				if (cha.isMonster())
 					if (_title.isEmpty())
-						_title = "Lv " + cha.getLevel();
+						_title = "Lv " + cha.getLevel() + (cha.isAggressive() ? "*" : "");
 					else
-						_title = "Lv " + cha.getLevel() + " " + _title;
-			if(cha.getChampion() > 0)
-			{
-				_title = ((cha.getChampion() == 1) ? "Champion " : "Anomaly ") + _title;
+						_title = "Lv " + cha.getLevel() + (cha.isAggressive() ? "*" : "") + " " + _title;
+				if(cha.getChampion() > 0)
+					_title = ((cha.getChampion() == 1) ? "Champion " : "Anomaly ") + _title;
 			}
 		}
 
