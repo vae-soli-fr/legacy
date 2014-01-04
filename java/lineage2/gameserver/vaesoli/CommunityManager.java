@@ -99,7 +99,7 @@ public class CommunityManager {
 	private void writeCommunityPages() {
 		final StringBuilder htmlCode = new StringBuilder(2000);
 		final String tdClose = "</td>";
-		final String tdOpen = "<td align=left valign=top>";
+		final String tdOpen = "<td align=left valign=top fixwidth=70>";
 		final String trClose = "</tr>";
 		final String trOpen = "<tr>";
 		final String colSpacer = "<td FIXWIDTH=15></td>";
@@ -108,11 +108,11 @@ public class CommunityManager {
 		htmlCode.setLength(0);
 		htmlCode.append("<html><title>Communauté</title><body><br>" + "Serveur redémarré " + formater.format(GameServer.getInstance().dateTimeServerStarted.getTime())
 				+ "<table>" + trOpen + tdOpen
-				+ "XP x" + String.valueOf(Config.RATE_XP) + tdClose + colSpacer + tdOpen + "SP x" + String.valueOf(Config.RATE_SP) + tdClose + trClose + trOpen
+				+ "XP x" + String.valueOf(Config.RATE_XP) + tdClose + colSpacer + tdOpen + "SP x" + String.valueOf(Config.RATE_SP) + tdClose + colSpacer + tdOpen
+				+ String.valueOf(GameObjectsStorage.getAllObjectsCount()) + " obj." + tdClose + trClose + trOpen
 				+ tdOpen + "Drop x" + String.valueOf(Config.RATE_DROP_ITEMS) + tdClose + colSpacer + tdOpen + "Spoil x"
 				+ String.valueOf(Config.RATE_DROP_SPOIL) + tdClose + colSpacer + tdOpen + "Adena x" + String.valueOf(Config.RATE_DROP_ADENA) + tdClose
 				+ trClose + "</table>" + "<table>" + trOpen + "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>" + trClose + trOpen + tdOpen
-				+ String.valueOf(GameObjectsStorage.getAllObjectsCount()) + " Objets instanciés</td>" + trClose + trOpen + tdOpen
 				+ String.valueOf(getOnlineCount("gm")) + " joueurs en ligne " + "<br1>(<font color=\"" + CBCOLOR_HUMAN + "\">Humain</font>, " + "<font color=\""
 				+ CBCOLOR_ELF + "\">Elfe</font>, " + "<font color=\"" + CBCOLOR_DARKELF + "\">Sombre</font>, " + "<font color=\"" + CBCOLOR_DWARF
 				+ "\">Nain</font>, " + "<font color=\"" + CBCOLOR_ORC + "\">Orc</font>, " + "<font color=\"" + CBCOLOR_KAMAEL + "\">Kamael</font>, "
@@ -128,7 +128,7 @@ public class CommunityManager {
 				htmlCode.append(trOpen);
 			}
 
-			htmlCode.append("<td align=left valign=top FIXWIDTH=110>");
+			htmlCode.append("<td align=left valign=top fixwidth=70>");
 
 			if (player.isGM()) {
 				htmlCode.append("<font color=\"" + CBCOLOR_GM + "\">" + player.getName() + "</font>");
@@ -203,7 +203,7 @@ public class CommunityManager {
 				htmlCode.append(trOpen);
 			}
 
-			htmlCode.append("<td align=left valign=top FIXWIDTH=110>");
+			htmlCode.append("<td align=left valign=top FIXWIDTH=50>");
 
 			if (player.isGM()) {
 				htmlCode.append("<font color=\"" + CBCOLOR_GM + "\">" + player.getName() + "</font>");

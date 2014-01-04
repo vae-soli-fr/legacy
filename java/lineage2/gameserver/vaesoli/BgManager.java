@@ -40,34 +40,12 @@ public class BgManager {
 
 	private BgManager() {
 		int skillId[] = {
-
-		/*
-		 * Dispo sans BG pour certaines races uniquement
-		 */
-		550, 551, 552, // Transform Golem Guardian (nains)
-		544, 545, 546, // Transform Unicorn (elfes)
-		553, 554, 555, // Transform Inferno Drake (sombres)
-		670, // Transform Heretic (demons et vampires)
-		673, // Transform Ol Mahum (orcs)
-
-		/*
-		 * Dispo sur BG uniquement
-		 */
-		538, // Final Form
-		665, // Transform Benom
-		666, // Transform Gordon
-		669, // Transform Demon Prince
-		556, 557, 558, // Transform Dragon Bomber
-		671, // Transform Vale Master
-		674, // Transform Doll Blader
-		541, 542, 543, // Transform Grail Apostle
-		618, // Transform Death Blader
-		547, 548, 549, // Transform Lilim Knight
-
 		/*
 		 * Interdites
 		 */
 		663, // Transform Zaken
+		665, // Transform Benom
+		666, // Transform Gordon
 		664, // Transform Anakim
 		668, // Transform Kiyachi
 		667 // Transform Ranku
