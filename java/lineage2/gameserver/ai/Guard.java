@@ -77,7 +77,7 @@ public class Guard extends Fighter
 			}
 			if (target.isMonster())
 			{
-				if (!((MonsterInstance) target).isAggressive())
+				if (!((MonsterInstance) target).isInCombat()) //!((MonsterInstance) target).isAggressive()
 				{
 					return false;
 				}
