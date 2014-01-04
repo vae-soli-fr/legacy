@@ -389,7 +389,7 @@ public class Say2C extends L2GameClientPacket
 							break;
 						default:
 						case DEFAULT:
-							list = World.getAroundPlayers(activeChar);
+							list = World.getAroundPlayers(activeChar, 1250, 500);
 							break;
 					}
 				}
@@ -397,10 +397,14 @@ public class Say2C extends L2GameClientPacket
 				{
 					for (Player player : list)
 					{
-						if ((player == activeChar) || (player.getReflection() != activeChar.getReflection()) || player.isBlockAll() || player.isInBlockList(activeChar))
+						if ((player == activeChar) || (player.getReflection() != activeChar.getReflection())
+								|| player.isBlockAll() || player.isInBlockList(activeChar)
+									|| _text.startsWith("(") && _text.endsWith(")")
+										|| EX_ITEM_LINK_PATTERN.matcher(_text).find())
 						{
 							continue;
 						}
+                    
 						player.sendPacket(cs);
 						int rolepex = 0;
 						Matcher matcher = THREE_LETTER_WORD_PATTERN.matcher(_text);
