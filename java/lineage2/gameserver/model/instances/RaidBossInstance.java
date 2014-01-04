@@ -40,6 +40,7 @@ import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.network.serverpackets.SystemMessage;
 import lineage2.gameserver.tables.SkillTable;
 import lineage2.gameserver.templates.npc.NpcTemplate;
+import lineage2.gameserver.vaesoli.RaidLimiter;
 
 /**
  * @author Mobius
@@ -172,6 +173,7 @@ public class RaidBossInstance extends MonsterInstance
 			{
 				for (Player member : player.getParty().getPartyMembers())
 				{
+					RaidLimiter.getInstance().addPoint(member, getName());
 					if (member.isNoble())
 					{
 						Hero.getInstance().addHeroDiary(member.getObjectId(), HeroDiary.ACTION_RAID_KILLED, getNpcId());
@@ -181,6 +183,7 @@ public class RaidBossInstance extends MonsterInstance
 			}
 			else
 			{
+				RaidLimiter.getInstance().addPoint(player, getName());
 				if (player.isNoble())
 				{
 					Hero.getInstance().addHeroDiary(player.getObjectId(), HeroDiary.ACTION_RAID_KILLED, getNpcId());

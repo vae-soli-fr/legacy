@@ -96,6 +96,7 @@ import lineage2.gameserver.taskmanager.TaskManager;
 import lineage2.gameserver.taskmanager.tasks.RestoreOfflineTraders;
 import lineage2.gameserver.utils.Strings;
 import lineage2.gameserver.vaesoli.BgManager;
+import lineage2.gameserver.vaesoli.RaidLimiter;
 import net.sf.ehcache.CacheManager;
 
 import org.slf4j.Logger;
@@ -287,6 +288,7 @@ public class GameServer
 		TaskManager.getInstance();
 		_log.info("=[Customs]=========================================");
 		BgManager.getInstance();
+		RaidLimiter.getInstance();
 		_log.info("=[Events]=========================================");
 		ResidenceHolder.getInstance().callInit();
 		EventHolder.getInstance().callInit();

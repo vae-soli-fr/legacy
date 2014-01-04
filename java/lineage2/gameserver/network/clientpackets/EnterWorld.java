@@ -498,6 +498,8 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			activeChar.setVar("startMovie", "1", -1);
 			activeChar.sendPacket(new ExShowUsmVideo(ExShowUsmVideo.GD1_INTRO));
+			activeChar.teleToLocation(210664, 15192, -3728); // teleport to old Althena
+			activeChar.setTransformation(101); // transform into native
 		}
 		if ((activeChar.getLevel() > 84) && !activeChar.isAwaking())
 		{
@@ -511,10 +513,10 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 		
-		// màj community
+		// update community table
 		CommunityManager.getInstance().refreshCommunityBoard();
 		
-		// vérification des màj BG
+		// check for validated background
         BgManager.getInstance().check(activeChar);
 	}
 	
