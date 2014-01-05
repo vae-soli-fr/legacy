@@ -25,9 +25,9 @@ public class BgManager {
 
 	private static final Logger _log = LoggerFactory.getLogger(BgManager.class);
 	private static BgManager _instance;
-	private final TIntArrayList _transforms; // liste des skills de transfo
-	private final static String JAIL_IN = "<html><title>Prison</title><body><br>Vous avez été mis en prison :<br>Vérifiez que vos BG sont à jours concernant<br1>les subs et les transformations !!<br>Faites votre mise à jour et contactez gentillement un Conseiller ;)</body></html>";
-	private final static String JAIL_OUT = "<html><title>Prison</title><body><br>Vous êtes libre.<br>Vos mises à jours BG ont été validées.<br>Bravo.</body></html>";
+	private final TIntArrayList _transforms;
+	private final static String JAIL_IN = "<html><title>Prison</title><body><br>Vous avez été mis en prison :<br>Vérifiez que votre BG est à jour !!<br>Faites votre mise à jour et contactez gentillement un Conseiller ;)</body></html>";
+	private final static String JAIL_OUT = "<html><title>Prison</title><body><br>Vous êtes libre.<br>Votre mise à jour BG a été validée.<br>Bravo.</body></html>";
 	private final static int JAIL_PERIOD = 604800;
 	private final static String JAILED_VAR = "BgJailed";
 	private final static String JAILEDFROM_VAR = "BgJailedFrom";
@@ -61,9 +61,8 @@ public class BgManager {
 		boolean guilty2 = false;
 		try {
 			con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement1 = con.prepareStatement("SELECT level, verified FROM character_subclasses WHERE charId = ?");
-			PreparedStatement statement2 = con
-					.prepareStatement("SELECT skill_id, SUM(verified) as verified FROM character_skills WHERE charId = ? GROUP BY skill_id");
+			PreparedStatement statement1 = con.prepareStatement("SELECT level, verified FROM characters WHERE obj_Id = ?");
+			PreparedStatement statement2 = con.prepareStatement("SELECT skill_id FROM character_skills WHERE char_obj_id = ? GROUP BY skill_id");
 			statement1.setInt(1, player.getObjectId());
 			statement2.setInt(1, player.getObjectId());
 			ResultSet rset1 = statement1.executeQuery();
@@ -77,7 +76,7 @@ public class BgManager {
 			}
 
 			while (rset2.next()) {
-				if (_transforms.contains(rset2.getInt("skill_id")) && rset2.getInt("verified") == 0) {
+				if (_transforms.contains(rset2.getInt("skill_id"))) {
 					guilty2 = true;
 					continue;
 				}
