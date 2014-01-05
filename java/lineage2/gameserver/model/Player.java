@@ -13416,20 +13416,26 @@ public final class Player extends Playable implements PlayerGroup
 		{
 			getMenteeMentorList().notify(true);
 
-			if (getClassId().getId() > 138 && getLevel() > 85)
+			if (getClassId().getId() > 138 && getLevel() >= 85)
 			{
 				Mentoring.applyMentorBuffs(this);
 				for (MenteeMentor mentee : getMenteeMentorList().getList().values())
 				{
 					Player menteePlayer = World.getPlayer(mentee.getName());
-					Mentoring.applyMenteeBuffs(menteePlayer);
+					if (menteePlayer != null)
+					{
+						Mentoring.applyMenteeBuffs(menteePlayer);
+					}
 				}
 			}
 			else
 			{
 				Mentoring.applyMenteeBuffs(this);
 				Player mentorPlayer = World.getPlayer(getMenteeMentorList().getMentor());
-				Mentoring.applyMentorBuffs(mentorPlayer);
+				if (mentorPlayer != null)
+				{
+					Mentoring.applyMentorBuffs(mentorPlayer);
+				}
 			}
 		}
 	}
@@ -13443,18 +13449,24 @@ public final class Player extends Playable implements PlayerGroup
 		{
 			getMenteeMentorList().notify(false);
 
-			if (getClassId().getId() > 138 && getLevel() > 85)
+			if (getClassId().getId() > 138 && getLevel() >= 85)
 			{
 				for (MenteeMentor mentee : getMenteeMentorList().getList().values())
 				{
 					Player menteePlayer = World.getPlayer(mentee.getName());
-					Mentoring.cancelMenteeBuffs(menteePlayer);
+					if (menteePlayer != null)
+					{
+						Mentoring.cancelMenteeBuffs(menteePlayer);
+					}
 				}
 			}
 			else
 			{
 				Player mentorPlayer = World.getPlayer(getMenteeMentorList().getMentor());
-				Mentoring.cancelMentorBuffs(mentorPlayer);
+				if (mentorPlayer != null)
+				{
+					Mentoring.cancelMentorBuffs(mentorPlayer);
+				}
 			}
 		}
 	}
