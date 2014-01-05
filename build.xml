@@ -80,10 +80,9 @@
 		<exec dir="${basedir}" executable="svnversion" outputproperty="build.revision" failifexecutionfails="false">
 			<arg line="-n ${src.gameserver}" />
 		</exec>
-		<concat destfile="${build}/dist/gameserver/config/lineage2-version.ini">
-			version=1
-			builddate=${build.tstamp}
-		</concat>
+		<concat destfile="${build}/dist/gameserver/config/lineage2-version.ini">version=3
+revision=${build.revision}
+builddate=${build.tstamp}</concat>
 		<jar destfile="${build}/lineage2-gameserver.jar">
 			<fileset dir="${build.classes}" />
 			<manifest>
