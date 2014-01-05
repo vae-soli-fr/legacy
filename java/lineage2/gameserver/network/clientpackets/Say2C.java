@@ -397,15 +397,18 @@ public class Say2C extends L2GameClientPacket
 				{
 					for (Player player : list)
 					{
-						if ((player == activeChar) || (player.getReflection() != activeChar.getReflection())
-								|| player.isBlockAll() || player.isInBlockList(activeChar)
-									|| _text.startsWith("(") && _text.endsWith(")")
-										|| EX_ITEM_LINK_PATTERN.matcher(_text).find())
+						if ((player == activeChar) || (player.getReflection() != activeChar.getReflection()) || player.isBlockAll() || player.isInBlockList(activeChar))
 						{
 							continue;
 						}
                     
 						player.sendPacket(cs);
+						
+						if (_text.startsWith("(") && _text.endsWith(")") || EX_ITEM_LINK_PATTERN.matcher(_text).find())
+						{
+							continue;
+						}
+							
 						int rolepex = 0;
 						Matcher matcher = THREE_LETTER_WORD_PATTERN.matcher(_text);
 						while (matcher.find()) rolepex++;

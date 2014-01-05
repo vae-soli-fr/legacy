@@ -16,8 +16,6 @@ import lineage2.gameserver.Config;
 import lineage2.gameserver.handler.bbs.CommunityBoardManager;
 import lineage2.gameserver.handler.bbs.ICommunityBoardHandler;
 import lineage2.gameserver.model.Player;
-import lineage2.gameserver.network.serverpackets.SystemMessage2;
-import lineage2.gameserver.network.serverpackets.components.SystemMsg;
 import lineage2.gameserver.vaesoli.CommunityManager;
 
 /**
