@@ -203,7 +203,7 @@ public class CommunityManager {
 				htmlCode.append(trOpen);
 			}
 
-			htmlCode.append("<td align=left valign=top FIXWIDTH=50>");
+			htmlCode.append("<td align=left valign=top FIXWIDTH=70>");
 
 			if (player.isGM()) {
 				htmlCode.append("<font color=\"" + CBCOLOR_GM + "\">" + player.getName() + "</font>");
