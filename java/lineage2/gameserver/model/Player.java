@@ -2811,6 +2811,10 @@ public final class Player extends Playable implements PlayerGroup
 		{
 			return SystemMsg.THIS_TERRITORY_CAN_NOT_CHANGE_CLASS;
 		}
+		if (getReflectionId() != 0)
+		{
+			return SystemMsg.THIS_TERRITORY_CAN_NOT_CHANGE_CLASS;
+		}
 		return null;
 	}
 	
