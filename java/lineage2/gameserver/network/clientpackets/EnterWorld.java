@@ -210,6 +210,16 @@ public class EnterWorld extends L2GameClientPacket
 			activeChar.sendPacket(new ExCastleState(castle));
 		}
 		activeChar.sendPacket(SystemMsg.WELCOME_TO_THE_WORLD_OF_LINEAGE_II);
+		
+        activeChar.sendMessage("Le serveur utilise un fork de L2J, fondé par L2Chef,");
+        activeChar.sendMessage("développé initialement par l'équipe L2J puis Vae Soli");	
+        activeChar.sendMessage("©2004-2012 l2jserver.com  ©2012-2014 vae-soli.fr");
+        
+		if (Config.BUILD_RELEASE != null && Config.BUILD_REVISION != null && Config.BUILD_DATE != null)
+		{
+			activeChar.sendMessage("Release " + Config.BUILD_RELEASE + "  révision " + Config.BUILD_REVISION + "  compilée le " + Config.BUILD_DATE);
+		}
+		
 		Announcements.getInstance().showAnnouncements(activeChar);
 		if (first)
 		{
