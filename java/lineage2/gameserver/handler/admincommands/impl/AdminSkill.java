@@ -12,6 +12,7 @@
  */
 package lineage2.gameserver.handler.admincommands.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -96,7 +97,11 @@ public class AdminSkill implements IAdminCommandHandler
 		/**
 		 * Field admin_buff.
 		 */
-		admin_buff
+		admin_buff,
+		/**
+		 * Field admin_callskill.
+		 */
+		admin_callskill
 	}
 	
 	/**
@@ -170,10 +175,46 @@ public class AdminSkill implements IAdminCommandHandler
 				}
 				activeChar.sendSkillList();
 				break;
+			case admin_callskill:
+				adminCallSkill(activeChar, wordList);
+				break;
 		}
 		return true;
 	}
 	
+	/**
+	 * Method adminCallSkill.
+	 * @param activeChar
+	 * @param wordList
+	 */
+	private void adminCallSkill(Player activeChar, String[] wordList) {
+		GameObject target = activeChar.getTarget();
+		Player player;
+		if ((target != null) && target.isPlayer() && ((activeChar == target) || activeChar.getPlayerAccess().CanEditCharAll)) {
+			player = (Player) target;
+		} else {
+			activeChar.sendPacket(Msg.INVALID_TARGET);
+			return;
+		}
+		if (player.getTransformation() != 0)
+		{
+			activeChar.sendMessage("Target already transformed.");
+			return;
+		}
+		if (wordList.length == 3) {
+			int id = Integer.parseInt(wordList[1]);
+			int level = Integer.parseInt(wordList[2]);
+			Skill skill = SkillTable.getInstance().getInfo(id, level);
+			if (skill != null) {
+				List<Creature> targets = new ArrayList<>(1);
+				targets.add(player);
+				player.callSkill(skill, targets, true);
+			} else {
+				activeChar.sendMessage("Error: there is no such skill.");
+			}
+		}
+	}
+
 	/**
 	 * Method debug_stats.
 	 * @param activeChar Player

@@ -410,16 +410,7 @@ public class AdminEffects implements IAdminCommandHandler
 				}
 				break;
 			case admin_transform:
-				try
-				{
-					val = Integer.parseInt(wordList[1]);
-				}
-				catch (Exception e)
-				{
-					activeChar.sendMessage("USAGE: //transform transform_id");
-					return false;
-				}
-				activeChar.setTransformation(val);
+				adminTransform(activeChar, wordList);
 				break;
 			case admin_showmovie:
 				if (wordList.length < 2)
@@ -445,6 +436,33 @@ public class AdminEffects implements IAdminCommandHandler
 		return true;
 	}
 	
+	private void adminTransform(Player activeChar, String[] wordList) {
+		GameObject target = activeChar.getTarget();
+		Player player;
+		if ((target != null) && target.isPlayer() && ((activeChar == target) || activeChar.getPlayerAccess().CanEditCharAll)) {
+			player = (Player) target;
+		} else {
+			activeChar.sendPacket(Msg.INVALID_TARGET);
+			return;
+		}
+		if (wordList.length == 2) {
+			int transformationId = Integer.parseInt(wordList[1]);
+			player.setTransformationTemplate(0);
+			player.setTransformation(transformationId);
+		}
+		else if (wordList.length == 3)
+		{
+			int transformationId = Integer.parseInt(wordList[1]);
+			int templateId = Integer.parseInt(wordList[2]);
+			player.setTransformationTemplate(templateId);
+			player.setTransformation(transformationId);
+		}
+		else
+		{
+			activeChar.sendMessage("USAGE: //transform transform_id [template_id]");
+		}
+	}
+
 	/**
 	 * Method handleInvul.
 	 * @param activeChar Player
