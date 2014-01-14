@@ -327,7 +327,7 @@ public class GameServer
 		{
 			Class.forName(GarbageCollector.class.getName());
 		}
-		Shutdown.getInstance().schedule(Config.RESTART_AT_TIME, Shutdown.RESTART);
+		Shutdown.getInstance().schedule(Config.RESTART_AT_TIME, Shutdown.AUTORESTART);
 		_log.info("GameServer Started");
 		_log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
 		GamePacketHandler gph = new GamePacketHandler();

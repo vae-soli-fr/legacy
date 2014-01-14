@@ -12,6 +12,7 @@
  */
 package lineage2.gameserver;
 
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -53,6 +54,10 @@ public class Shutdown extends Thread
 	 * Field RESTART. (value is 2)
 	 */
 	public static final int RESTART = 2;
+	/**
+	 * Field AUTORESTART. (value is 3)
+	 */
+	public static final int AUTORESTART = 3;
 	/**
 	 * Field NONE. (value is -1)
 	 */
@@ -131,6 +136,9 @@ public class Shutdown extends Thread
 						case SHUTDOWN:
 							Runtime.getRuntime().exit(SHUTDOWN);
 							break;
+						case AUTORESTART:
+							File updatedJar = new File("updater/lineage2-gameserver.jar");
+							if (!updatedJar.exists()) break;
 						case RESTART:
 							Runtime.getRuntime().exit(RESTART);
 							break;
