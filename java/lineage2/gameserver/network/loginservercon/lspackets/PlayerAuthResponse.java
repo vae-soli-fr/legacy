@@ -135,22 +135,7 @@ public class PlayerAuthResponse extends ReceivablePacket
 			{
 				client.setSecondaryAuth(new SecondaryPasswordAuth(client, _2ndPassword, _2ndWrongAttempts, _2ndUnbanTime));
 			}
-			GameClient ipClient = LoginServerCommunication.getInstance().getMultisession(client);
 			GameClient oldClient = LoginServerCommunication.getInstance().addAuthedClient(client);
-			if (ipClient != null)
-			{
-				ipClient.setAuthed(false);
-				Player activeChar = ipClient.getActiveChar();
-				if (activeChar != null)
-				{
-					activeChar.sendPacket(Msg.ANOTHER_PERSON_HAS_LOGGED_IN_WITH_THE_SAME_ACCOUNT);
-					activeChar.logout();
-				}
-				else
-				{
-					ipClient.close(ServerClose.STATIC);
-				}
-			}
 			if (oldClient != null)
 			{
 				oldClient.setAuthed(false);
