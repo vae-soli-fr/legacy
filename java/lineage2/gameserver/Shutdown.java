@@ -138,7 +138,11 @@ public class Shutdown extends Thread
 							break;
 						case AUTORESTART:
 							File updatedJar = new File("updater/lineage2-gameserver.jar");
-							if (!updatedJar.exists()) break;
+							if (!updatedJar.exists())
+							{
+								Shutdown.getInstance().cancel();
+								break;
+							}			
 						case RESTART:
 							Runtime.getRuntime().exit(RESTART);
 							break;

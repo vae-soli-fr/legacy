@@ -41,6 +41,7 @@ import lineage2.gameserver.taskmanager.tasks.SoIStageUpdater;
 import lineage2.gameserver.taskmanager.tasks.TaskRecom;
 import lineage2.gameserver.taskmanager.tasks.TaskVitalitySystem;
 import lineage2.gameserver.taskmanager.tasks.WorldStatisticUpdate;
+import lineage2.gameserver.vaesoli.RaidLimiter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -262,6 +263,7 @@ public final class TaskManager
 		registerTask(new SoIStageUpdater());
 		registerTask(new TaskVitalitySystem());
 		registerTask(new WorldStatisticUpdate());
+		registerTask(RaidLimiter.getInstance());
 	}
 	
 	/**

@@ -8,6 +8,9 @@ import lineage2.gameserver.model.Player;
 import lineage2.gameserver.network.serverpackets.ExShowScreenMessage;
 import lineage2.gameserver.network.serverpackets.ExShowScreenMessage.ScreenMessageAlign;
 import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
+import lineage2.gameserver.taskmanager.Task;
+import lineage2.gameserver.taskmanager.TaskManager;
+import lineage2.gameserver.taskmanager.TaskTypes;
 import lineage2.gameserver.utils.AdminFunctions;
 import lineage2.gameserver.utils.Location;
 
@@ -16,12 +19,33 @@ import lineage2.gameserver.utils.Location;
  *         compte
  */
 
-public class RaidLimiter {
+public class RaidLimiter extends Task {
 	private final static int period = 86400;
 	private final static String JAIL_IN = "<html><title>Prison</title><body>Les RBs sont limités à 3 par jour et par compte, après reboot.<br1>Vous avez dépassé le quota autorisé, vous êtes en prison pour 24h.</body></html>";
 	private final static Logger _log = Logger.getLogger(RaidLimiter.class.getName());
 	private FastMap<String, Integer> _list; // liste des points par compte
 	private FastMap<String, String> _done; // liste des noms des RB par compte
+	private static final String NAME = "raid_limiter_reset";
+	
+	@Override
+	public void initializate()
+	{
+		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "1", "07:50:00", "");
+	}
+
+	@Override
+	public String getName()
+	{
+		return NAME;
+	}
+
+	@Override
+	public void onTimeElapsed(TaskManager.ExecutedTask task)
+	{
+		_log.info("Raid limiter task: launched.");
+		RaidLimiter.getInstance().reset();
+		_log.info("Raid limiter task: completed.");
+	}
 
 	public static RaidLimiter getInstance() {
 		return SingletonHolder._instance;
@@ -61,6 +85,11 @@ public class RaidLimiter {
 		htmlMsg.setHtml(JAIL_IN);
 		player.sendPacket(htmlMsg);
 		_log.info("RaidBoss Limiter: character " + player.getName() + " of account " + player.getAccountName() + " is jailed for 24 hours.");
+	}
+	
+	private void reset() {
+		_list.clear();
+		_done.clear();
 	}
 
 	@SuppressWarnings("synthetic-access")
