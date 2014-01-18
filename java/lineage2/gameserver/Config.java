@@ -808,6 +808,7 @@ public class Config
 	public static String BUILD_RELEASE;
 	public static String BUILD_REVISION;
 	public static String BUILD_DATE;
+	public static double EXP_REQUIRED_ABOVE_85_MUL;
 	
 	/**
 	 * Method loadVersionConfig.
@@ -1044,6 +1045,7 @@ public class Config
 		RWHO_ONLINE_INCREMENT = Integer.parseInt(serverSettings.getProperty("RemoteOnlineIncrement", "0"));
 		RWHO_PRIV_STORE_FACTOR = Float.parseFloat(serverSettings.getProperty("RemotePrivStoreFactor", "0"));
 		RWHO_FORCE_INC = Integer.parseInt(serverSettings.getProperty("RemoteWhoForceInc", "0"));
+		EXP_REQUIRED_ABOVE_85_MUL = serverSettings.getProperty("ExperienceRequiredAboveLevel85", 1.);
 	}
 	
 	/**

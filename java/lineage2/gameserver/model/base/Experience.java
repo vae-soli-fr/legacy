@@ -111,21 +111,21 @@ public class Experience
 		3478378664L, // level 82->83
 		4211039578L, // level 83->84
 		5078544041L, // level 84->85
-		Math.round(10985069426L*1.5), // level 85->86
-		Math.round(19192594397L*1.5), // level 86->87
-		Math.round(33533938399L*1.5), // level 87->88
-		Math.round(43503026615L*1.5), // level 88->89
-		Math.round(61895085913L*1.5), // level 89->90
-		Math.round(84465260437L*1.5), // level 90->91
-		Math.round(112359133751L*1.5), // level 91->92
-		Math.round(146853833970L*1.5), // level 92->93
-		Math.round(189558054903L*1.5), // level 93->94
-		Math.round(242517343994L*1.5), // level 94->95
-		Math.round(343490462139L*1.5), // level 95->96
-		Math.round(538901012155L*1.5), // level 96->97
-		Math.round(923857608218L*1.5), // level 97->98
-		Math.round(1701666675991L*1.5), // level 98->99
-		Math.round(1801666675991L*1.5) // level 99->100
+		Math.round(10985069426L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 85->86
+		Math.round(19192594397L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 86->87
+		Math.round(33533938399L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 87->88
+		Math.round(43503026615L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 88->89
+		Math.round(61895085913L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 89->90
+		Math.round(84465260437L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 90->91
+		Math.round(112359133751L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 91->92
+		Math.round(146853833970L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 92->93
+		Math.round(189558054903L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 93->94
+		Math.round(242517343994L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 94->95
+		Math.round(343490462139L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 95->96
+		Math.round(538901012155L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 96->97
+		Math.round(923857608218L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 97->98
+		Math.round(1701666675991L*Config.EXP_REQUIRED_ABOVE_85_MUL), // level 98->99
+		Math.round(1801666675991L*Config.EXP_REQUIRED_ABOVE_85_MUL) // level 99->100
 	};
 	
 	/**

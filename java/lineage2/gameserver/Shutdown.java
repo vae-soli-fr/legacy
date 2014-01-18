@@ -141,6 +141,7 @@ public class Shutdown extends Thread
 							if (!updatedJar.exists())
 							{
 								Shutdown.getInstance().cancel();
+								schedule(86400, Shutdown.AUTORESTART);
 								break;
 							}			
 						case RESTART:
