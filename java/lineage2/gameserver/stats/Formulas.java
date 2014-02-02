@@ -1141,7 +1141,15 @@ public class Formulas
 		{
 			return;
 		}
-		if (((activeChar.getSkillLevel(331) > 0) && (activeChar.calcStat(Stats.SKILL_MASTERY, activeChar.getINT(), null, skill) >= Rnd.get(1000))) || (((activeChar.getSkillLevel(330) > 0) || (activeChar.getSkillLevel(10501) > 0)) && (activeChar.calcStat(Stats.SKILL_MASTERY, activeChar.getSTR(), null, skill) >= Rnd.get(1000))))
+		if (
+			// STR based
+			(((activeChar.getSkillLevel(330) > 0) || (activeChar.getSkillLevel(10001) > 0) || (activeChar.getSkillLevel(10251) > 0) || (activeChar.getSkillLevel(10501) > 0) || (activeChar.getSkillLevel(10751) > 0) || (activeChar.getSkillLevel(11501) > 0))
+				&& (activeChar.calcStat(Stats.SKILL_MASTERY, activeChar.getSTR(), null, skill) >= Rnd.get(1000)))
+			||
+			// INT based
+			(((activeChar.getSkillLevel(331) > 0) || (activeChar.getSkillLevel(11001) > 0) || (activeChar.getSkillLevel(11251) > 0)	|| (activeChar.getSkillLevel(11751) > 0))
+				&& (activeChar.calcStat(Stats.SKILL_MASTERY, activeChar.getINT(), null, skill) >= Rnd.get(1000)))
+			)
 		{
 			int masteryLevel;
 			Skill.SkillType type = skill.getSkillType();
