@@ -54,8 +54,9 @@
 		</javac>
 	</target>
 	<target name="commons-jar" depends="compile-commons">
-		<exec dir="${basedir}" executable="svnversion" outputproperty="build.revision" failifexecutionfails="false">
-			<arg line="-n ${src.commons}" />
+		<exec dir="${basedir}" executable="cmd" outputproperty="build.revision" failifexecutionfails="false">
+			<arg value="/c" />
+			<arg value="git log -1 --pretty=format:%h" />
 		</exec>
 
 		<jar destfile="${build}/lineage2-commons.jar">
@@ -77,8 +78,9 @@
 	</target>
 
 	<target name="gameserver-jar" depends="compile-gameserver">
-		<exec dir="${basedir}" executable="svnversion" outputproperty="build.revision" failifexecutionfails="false">
-			<arg line="-n ${src.gameserver}" />
+		<exec dir="${basedir}" executable="cmd" outputproperty="build.revision" failifexecutionfails="false">
+			<arg value="/c" />
+			<arg value="git log -1 --pretty=format:%h" />
 		</exec>
 		<concat destfile="${build}/dist/gameserver/config/lineage2-version.ini">version=3
 revision=${build.revision}
@@ -131,8 +133,9 @@ builddate=${build.tstamp}</concat>
 		</javac>
 	</target>
 	<target name="authserver-jar" depends="compile-authserver">
-		<exec dir="${basedir}" executable="svnversion" outputproperty="build.revision" failifexecutionfails="false">
-			<arg line="-n ${src.authserver}" />
+		<exec dir="${basedir}" executable="cmd" outputproperty="build.revision" failifexecutionfails="false">
+			<arg value="/c" />
+			<arg value="git log -1 --pretty=format:%h" />
 		</exec>
 		<jar destfile="${build}/lineage2-loginserver.jar">
 			<fileset dir="${build.classes}" />
