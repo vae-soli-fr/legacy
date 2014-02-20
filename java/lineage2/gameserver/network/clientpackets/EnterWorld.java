@@ -16,6 +16,7 @@ import java.util.Calendar;
 
 import lineage2.gameserver.Announcements;
 import lineage2.gameserver.Config;
+import lineage2.gameserver.GameServer;
 import lineage2.gameserver.dao.MailDAO;
 import lineage2.gameserver.data.StringHolder;
 import lineage2.gameserver.data.xml.holder.ResidenceHolder;
@@ -204,7 +205,7 @@ public class EnterWorld extends L2GameClientPacket
         activeChar.sendPacket(new ShortCutInit(activeChar), new SkillList(activeChar), new SkillCoolTime(activeChar));
 		activeChar.sendPacket(new SkillCoolTime(activeChar));
 		//activeChar.sendPacket(new ExCastleState(_castle));
-        activeChar.sendPacket(new ExVitalityEffectInfo(activeChar));
+        
 		for(Castle castle : ResidenceHolder.getInstance().getResidenceList(Castle.class))
 		{
 			activeChar.sendPacket(new ExCastleState(castle));
@@ -215,12 +216,15 @@ public class EnterWorld extends L2GameClientPacket
         activeChar.sendMessage("développé initialement par l'équipe L2J puis Vae Soli");	
         activeChar.sendMessage("©2004-2012 l2jserver.com  ©2012-2014 vae-soli.fr");
         
-		if (Config.BUILD_RELEASE != null && Config.BUILD_REVISION != null && Config.BUILD_DATE != null)
-		{
-			activeChar.sendMessage("Release " + Config.BUILD_RELEASE + "  révision " + Config.BUILD_REVISION + "  compilée le " + Config.BUILD_DATE);
-		}
+        activeChar.sendMessage("===================================");
+        activeChar.sendMessage("Revision: ..................... " + GameServer.getInstance().getVersion().getRevisionNumber());
+        activeChar.sendMessage("Build date: .................. " + GameServer.getInstance().getVersion().getBuildDate());
+        activeChar.sendMessage("Compiler version: ...... " + GameServer.getInstance().getVersion().getBuildJdk());
+        activeChar.sendMessage("===================================");
 		
-		Announcements.getInstance().showAnnouncements(activeChar);
+        activeChar.sendPacket(new ExVitalityEffectInfo(activeChar));
+        Announcements.getInstance().showAnnouncements(activeChar);
+				
 		if (first)
 		{
 			activeChar.getListeners().onEnter();

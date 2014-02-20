@@ -182,6 +182,7 @@ public class L2TopManager
 		String nick = "";
 		try
 		{
+			@SuppressWarnings("resource")
 			BufferedReader in = new BufferedReader(new FileReader(sms ? voteSms : voteWeb));
 			String line = in.readLine();
 			while (line != null)

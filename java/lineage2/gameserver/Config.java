@@ -77,7 +77,6 @@ public class Config
 	public static final String GM_PERSONAL_ACCESS_FILE = "config/xml/GMAccess.xml";
 	public static final String GM_ACCESS_FILES_DIR = "config/xml/GMAccess.d/";
 	public static final String COMMUNITY_CONFIGURATION_FILE = "config/CommunityBoard.ini";
-	public static final String BUILD_VERSION_FILE = "config/lineage2-version.ini";
 	public static int HTM_CACHE_MODE;
 	public static int[] PORTS_GAME;
 	public static String GAMESERVER_HOSTNAME;
@@ -805,21 +804,7 @@ public class Config
 	public static int SAFE_ENCHANT_LVL;
 	public static boolean REMOVE_UNKNOWN_QUEST;
 	public static boolean ALLOW_MENTOR_BUFFS_IN_OFFLINE_MODE;
-	public static String BUILD_RELEASE;
-	public static String BUILD_REVISION;
-	public static String BUILD_DATE;
 	public static double EXP_REQUIRED_ABOVE_85_MUL;
-	
-	/**
-	 * Method loadVersionConfig.
-	 */
-	public static void loadBuildConfig()
-	{
-		ExProperties buildSettings = load(BUILD_VERSION_FILE);
-		BUILD_RELEASE = buildSettings.getProperty("version");
-		BUILD_REVISION = buildSettings.getProperty("revision");
-		BUILD_DATE = buildSettings.getProperty("builddate");
-	}
 	
 	/**
 	 * Method loadServerConfig.
@@ -1957,7 +1942,6 @@ public class Config
 	 */
 	public static void load()
 	{
-		loadBuildConfig();
 		loadServerConfig();
 		loadTelnetConfig();
 		loadResidenceConfig();

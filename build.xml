@@ -82,8 +82,7 @@
 			<arg value="/c" />
 			<arg value="git log -1 --pretty=format:%h" />
 		</exec>
-		<concat destfile="${build}/dist/gameserver/config/lineage2-version.ini">version=3
-revision=${build.revision}
+		<concat destfile="${build}/dist/gameserver/config/lineage2-version.ini">revision=${build.revision}
 builddate=${build.tstamp}</concat>
 		<jar destfile="${build}/lineage2-gameserver.jar">
 			<fileset dir="${build.classes}" />
