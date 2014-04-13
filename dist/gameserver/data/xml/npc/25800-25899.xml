@@ -105,7 +105,7 @@
 		<set name="baseShldRate" value="0"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseWalkSpd" value="1"/>
-		<set name="collision_height" value="190.0"/>
+		<set name="collision_height" value="200.0"/>
 		<set name="collision_radius" value="90.0"/>
 		<set name="level" value="22"/>
 		<set name="rewardExp" value="0"/>
@@ -178,10 +178,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Monster"/>
         <skills>
-            <skill id="4416" level="13"/>
-            <!-- Fairies -->
-            <skill id="5463" level="1"/>
-            <!-- Water Attack -->
+            <skill id="4416" level="13"/>		<!-- Fairies -->
+            <skill id="5463" level="1"/>		<!-- Water Attack -->
         </skills>
 		<rewardlist type="RATED_GROUPED">
 			<group chance="70.0">
@@ -247,10 +245,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="3"/>
-            <!-- Beast -->
-            <skill id="5464" level="1"/>
-            <!-- Wind Attack -->
+            <skill id="4416" level="3"/>		<!-- Beast -->
+            <skill id="5464" level="1"/>		<!-- Wind Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -297,10 +293,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="3"/>
-            <!-- Beast -->
-            <skill id="5464" level="1"/>
-            <!-- Wind Attack -->
+            <skill id="4416" level="3"/>		<!-- Beast -->
+            <skill id="5464" level="1"/>		<!-- Wind Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -347,10 +341,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="3"/>
-            <!-- Beast -->
-            <skill id="5464" level="1"/>
-            <!-- Wind Attack -->
+            <skill id="4416" level="3"/>		<!-- Beast -->
+            <skill id="5464" level="1"/>		<!-- Wind Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -397,10 +389,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="3"/>
-            <!-- Beast -->
-            <skill id="5464" level="1"/>
-            <!-- Wind Attack -->
+            <skill id="4416" level="3"/>		<!-- Beast -->
+            <skill id="5464" level="1"/>		<!-- Wind Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -447,10 +437,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="3"/>
-            <!-- Beast -->
-            <skill id="5464" level="1"/>
-            <!-- Wind Attack -->
+            <skill id="4416" level="3"/>		<!-- Beast -->
+            <skill id="5464" level="1"/>		<!-- Wind Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -497,10 +485,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="3"/>
-            <!-- Beast -->
-            <skill id="5464" level="1"/>
-            <!-- Wind Attack -->
+            <skill id="4416" level="3"/>		<!-- Beast -->
+            <skill id="5464" level="1"/>		<!-- Wind Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -537,8 +523,8 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="80"/>
-        <set name="collision_height" value="60.72"/>
-        <set name="collision_radius" value="31.68"/>
+        <set name="collision_height" value="61.0"/>
+        <set name="collision_radius" value="31.0"/>
         <set name="level" value="59"/>
         <set name="rewardExp" value="433095"/>
         <set name="rewardRp" value="0"/>
@@ -547,10 +533,8 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="14758" level="1"/>
-            <!-- Raid Boss (Lv. 59) -->
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
+            <skill id="14758" level="1"/>		<!-- Raid Boss (Lv. 59) -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -587,7 +571,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="80"/>
-        <set name="collision_height" value="25.0"/>
+        <set name="collision_height" value="26.0"/>
         <set name="collision_radius" value="11.0"/>
         <set name="level" value="58"/>
         <set name="rewardExp" value="0"/>
@@ -597,8 +581,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -635,8 +618,8 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="80"/>
-        <set name="collision_height" value="60.72"/>
-        <set name="collision_radius" value="31.68"/>
+        <set name="collision_height" value="64.0"/>
+        <set name="collision_radius" value="31.0"/>
         <set name="level" value="62"/>
         <set name="rewardExp" value="433606"/>
         <set name="rewardRp" value="0"/>
@@ -645,10 +628,8 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="14759" level="1"/>
-            <!-- Raid Boss (Lv. 62) -->
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
+            <skill id="14759" level="1"/>		<!-- Raid Boss (Lv. 62) -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -685,8 +666,8 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="80"/>
-        <set name="collision_height" value="60.72"/>
-        <set name="collision_radius" value="31.68"/>
+        <set name="collision_height" value="64.0"/>
+        <set name="collision_radius" value="31.0"/>
         <set name="level" value="62"/>
         <set name="rewardExp" value="433606"/>
         <set name="rewardRp" value="0"/>
@@ -695,10 +676,8 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="14759" level="1"/>
-            <!-- Raid Boss (Lv. 62) -->
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
+            <skill id="14759" level="1"/>		<!-- Raid Boss (Lv. 62) -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -745,12 +724,9 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="14760" level="1"/>
-            <!-- Raid Boss (Lv. 66) -->
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="4414" level="3"/>
-            <!-- Light Armor Type -->
+            <skill id="14760" level="1"/>		<!-- Raid Boss (Lv. 66) -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="4414" level="3"/>		<!-- Light Armor Type -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -787,7 +763,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="40.0"/>
+        <set name="collision_height" value="42.0"/>
         <set name="collision_radius" value="14.0"/>
         <set name="level" value="65"/>
         <set name="rewardExp" value="0"/>
@@ -797,8 +773,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -835,7 +810,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="48.0"/>
+        <set name="collision_height" value="50.0"/>
         <set name="collision_radius" value="19.0"/>
         <set name="level" value="70"/>
         <set name="rewardExp" value="502954"/>
@@ -845,10 +820,8 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="14761" level="1"/>
-            <!-- Raid Boss (Lv. 70) -->
-            <skill id="4416" level="8"/>
-            <!-- Angels -->
+            <skill id="14761" level="1"/>		<!-- Raid Boss (Lv. 70) -->
+            <skill id="4416" level="8"/>		<!-- Angels -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -895,10 +868,8 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="14762" level="1"/>
-            <!-- Raid Boss (Lv. 72) -->
-            <skill id="4416" level="8"/>
-            <!-- Angels -->
+            <skill id="14762" level="1"/>		<!-- Raid Boss (Lv. 72) -->
+            <skill id="4416" level="8"/>		<!-- Angels -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -945,10 +916,8 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="14762" level="1"/>
-            <!-- Raid Boss (Lv. 72) -->
-            <skill id="4416" level="8"/>
-            <!-- Angels -->
+            <skill id="14762" level="1"/>		<!-- Raid Boss (Lv. 72) -->
+            <skill id="4416" level="8"/>		<!-- Angels -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -985,7 +954,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="40"/>
-        <set name="collision_height" value="44.0"/>
+        <set name="collision_height" value="45.0"/>
         <set name="collision_radius" value="18.0"/>
         <set name="level" value="75"/>
         <set name="rewardExp" value="540998"/>
@@ -995,10 +964,8 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="14763" level="1"/>
-            <!-- Raid Boss (Lv. 75) -->
-            <skill id="4416" level="8"/>
-            <!-- Angels -->
+            <skill id="14763" level="1"/>		<!-- Raid Boss (Lv. 75) -->
+            <skill id="4416" level="8"/>		<!-- Angels -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1035,8 +1002,8 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="65"/>
         <set name="baseWalkSpd" value="50"/>
-        <set name="collision_height" value="46.5"/>
-        <set name="collision_radius" value="13.0"/>
+        <set name="collision_height" value="39.0"/>
+        <set name="collision_radius" value="11.0"/>
         <set name="level" value="75"/>
         <set name="rewardExp" value="0"/>
         <set name="rewardRp" value="0"/>
@@ -1045,8 +1012,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="8"/>
-            <!-- Angels -->
+            <skill id="4416" level="8"/>		<!-- Angels -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1083,7 +1049,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="50"/>
-        <set name="collision_height" value="49.0"/>
+        <set name="collision_height" value="50.0"/>
         <set name="collision_radius" value="24.0"/>
         <set name="level" value="75"/>
         <set name="rewardExp" value="540998"/>
@@ -1093,10 +1059,8 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="14764" level="1"/>
-            <!-- Raid Boss (Lv. 75) -->
-            <skill id="4416" level="8"/>
-            <!-- Angels -->
+            <skill id="14764" level="1"/>		<!-- Raid Boss (Lv. 75) -->
+            <skill id="4416" level="8"/>		<!-- Angels -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1143,8 +1107,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="8"/>
-            <!-- Angels -->
+            <skill id="4416" level="8"/>		<!-- Angels -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1181,7 +1144,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="32.5"/>
+        <set name="collision_height" value="40.0"/>
         <set name="collision_radius" value="14.0"/>
         <set name="level" value="95"/>
         <set name="rewardExp" value="0"/>
@@ -1191,10 +1154,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1231,7 +1192,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="32.5"/>
+        <set name="collision_height" value="40.0"/>
         <set name="collision_radius" value="14.0"/>
         <set name="level" value="95"/>
         <set name="rewardExp" value="0"/>
@@ -1241,10 +1202,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1281,7 +1240,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="80"/>
-        <set name="collision_height" value="77.0"/>
+        <set name="collision_height" value="80.0"/>
         <set name="collision_radius" value="30.0"/>
         <set name="level" value="97"/>
         <set name="rewardExp" value="0"/>
@@ -1291,14 +1250,10 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14728" level="1"/>
-            <!-- Raid Boss (Lv. 97) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5462" level="1"/>
-            <!-- Fire Attack -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14728" level="1"/>		<!-- Raid Boss (Lv. 97) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5462" level="1"/>		<!-- Fire Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1345,14 +1300,10 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14728" level="1"/>
-            <!-- Raid Boss (Lv. 97) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5462" level="1"/>
-            <!-- Fire Attack -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14728" level="1"/>		<!-- Raid Boss (Lv. 97) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5462" level="1"/>		<!-- Fire Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1389,7 +1340,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="41.0"/>
+        <set name="collision_height" value="42.0"/>
         <set name="collision_radius" value="28.0"/>
         <set name="level" value="95"/>
         <set name="rewardExp" value="0"/>
@@ -1399,10 +1350,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5462" level="1"/>
-            <!-- Fire Attack -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5462" level="1"/>		<!-- Fire Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1449,8 +1398,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="2"/>
-            <!-- Magic Creatures -->
+            <skill id="4416" level="2"/>		<!-- Magic Creatures -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1497,8 +1445,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="2"/>
-            <!-- Magic Creatures -->
+            <skill id="4416" level="2"/>		<!-- Magic Creatures -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1535,7 +1482,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="133.5"/>
+        <set name="collision_height" value="170.0"/>
         <set name="collision_radius" value="86.0"/>
         <set name="level" value="45"/>
         <set name="rewardExp" value="0"/>
@@ -1545,8 +1492,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="2"/>
-            <!-- Magic Creatures -->
+            <skill id="4416" level="2"/>		<!-- Magic Creatures -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1593,8 +1539,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="2"/>
-            <!-- Magic Creatures -->
+            <skill id="4416" level="2"/>		<!-- Magic Creatures -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1641,8 +1586,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1689,8 +1633,7 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="14"/>
-            <!-- Humans -->
+            <skill id="4416" level="14"/>		<!-- Humans -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1727,7 +1670,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="45"/>
-        <set name="collision_height" value="51.0"/>
+        <set name="collision_height" value="52.0"/>
         <set name="collision_radius" value="18.0"/>
         <set name="level" value="97"/>
         <set name="rewardExp" value="8697466"/>
@@ -1737,10 +1680,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1787,10 +1728,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1837,10 +1776,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1877,7 +1814,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="56.0"/>
+        <set name="collision_height" value="57.0"/>
         <set name="collision_radius" value="11.0"/>
         <set name="level" value="97"/>
         <set name="rewardExp" value="8697466"/>
@@ -1887,10 +1824,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5463" level="1"/>
-            <!-- Water Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5463" level="1"/>		<!-- Water Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1927,7 +1862,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="37.5"/>
+        <set name="collision_height" value="52.0"/>
         <set name="collision_radius" value="10.0"/>
         <set name="level" value="92"/>
         <set name="rewardExp" value="79392320"/>
@@ -1937,24 +1872,15 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14729" level="1"/>
-            <!-- Raid Boss (Lv. 92) -->
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14729" level="1"/>		<!-- Raid Boss (Lv. 92) -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1965,7 +1891,7 @@
             <defence attribute="unholy" value="20"/>
         </attributes>
     </npc>
-	<npc id="25838" name="Mukshu the Coward " title="Raid Boss">
+	<npc id="25838" name="Mukshu the Coward" title="Raid Boss">
         <set name="aggroRange" value="0"/>
         <set name="ai_type" value="Fighter"/>
         <set name="baseAtkRange" value="40"/>
@@ -1991,7 +1917,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="16.0"/>
+        <set name="collision_height" value="26.0"/>
         <set name="collision_radius" value="11.0"/>
         <set name="level" value="93"/>
         <set name="rewardExp" value="102761651"/>
@@ -2001,24 +1927,15 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14733" level="1"/>
-            <!-- Raid Boss (Lv. 93) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14733" level="1"/>		<!-- Raid Boss (Lv. 93) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2055,7 +1972,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="51.0"/>
+        <set name="collision_height" value="78.0"/>
         <set name="collision_radius" value="24.0"/>
         <set name="level" value="96"/>
         <set name="rewardExp" value="201707520"/>
@@ -2065,14 +1982,10 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14734" level="1"/>
-            <!-- Raid Boss (Lv. 96) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14734" level="1"/>		<!-- Raid Boss (Lv. 96) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2109,7 +2022,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="32.5"/>
+        <set name="collision_height" value="50.0"/>
         <set name="collision_radius" value="15.0"/>
         <set name="level" value="94"/>
         <set name="rewardExp" value="116034352"/>
@@ -2119,26 +2032,16 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14730" level="1"/>
-            <!-- Raid Boss (Lv. 94) -->
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4414" level="3"/>
-            <!-- Light Armor Type -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14730" level="1"/>		<!-- Raid Boss (Lv. 94) -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4414" level="3"/>		<!-- Light Armor Type -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2175,7 +2078,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="40.0"/>
+        <set name="collision_height" value="62.0"/>
         <set name="collision_radius" value="21.0"/>
         <set name="level" value="95"/>
         <set name="rewardExp" value="186239900"/>
@@ -2185,26 +2088,16 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14731" level="1"/>
-            <!-- Raid Boss (Lv. 95)-->
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4414" level="1"/>
-            <!-- Heavy Armor Type -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14731" level="1"/>		<!-- Raid Boss (Lv. 95)-->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4414" level="1"/>		<!-- Heavy Armor Type -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2241,7 +2134,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="23.5"/>
+        <set name="collision_height" value="34.0"/>
         <set name="collision_radius" value="20.0"/>
         <set name="level" value="95"/>
         <set name="rewardExp" value="0"/>
@@ -2251,10 +2144,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Monster"/>
         <skills>
-            <skill id="4416" level="3"/>
-            <!-- Beast -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="3"/>		<!-- Beast -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2291,7 +2182,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="63.0"/>
+        <set name="collision_height" value="100.0"/>
         <set name="collision_radius" value="18.0"/>
         <set name="level" value="96"/>
         <set name="rewardExp" value="224759808"/>
@@ -2301,24 +2192,15 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14732" level="1"/>
-            <!-- Raid Boss (Lv. 96) -->
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5462" level="1"/>
-            <!-- Fire Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14732" level="1"/>		<!-- Raid Boss (Lv. 96) -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5462" level="1"/>		<!-- Fire Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2355,8 +2237,8 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="48.0"/>
-        <set name="collision_radius" value="14.5"/>
+        <set name="collision_height" value="100.0"/>
+        <set name="collision_radius" value="15.0"/>
         <set name="level" value="96"/>
         <set name="rewardExp" value="224759808"/>
         <set name="rewardRp" value="0"/>
@@ -2365,24 +2247,15 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14732" level="1"/>
-            <!-- Raid Boss (Lv. 96) -->
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5462" level="1"/>
-            <!-- Fire Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14732" level="1"/>		<!-- Raid Boss (Lv. 96) -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5462" level="1"/>		<!-- Fire Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2419,7 +2292,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="49.9"/>
+        <set name="collision_height" value="95.0"/>
         <set name="collision_radius" value="25.0"/>
         <set name="level" value="96"/>
         <set name="rewardExp" value="224759808"/>
@@ -2429,14 +2302,10 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14732" level="1"/>
-            <!-- Raid Boss (Lv. 96) -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14732" level="1"/>		<!-- Raid Boss (Lv. 96) -->
             <skill id="4416" level="10"/>
-            <!-- Драконы -->
-            <skill id="5462" level="1"/>
-            <!-- Fire Attack -->
+            <skill id="5462" level="1"/>		<!-- Fire Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2473,7 +2342,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="80"/>
-        <set name="collision_height" value="35.0"/>
+        <set name="collision_height" value="48.0"/>
         <set name="collision_radius" value="15.0"/>
         <set name="level" value="96"/>
         <set name="rewardExp" value="328495104"/>
@@ -2483,24 +2352,15 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14735" level="1"/>
-            <!-- Raid Boss (Lv. 96) -->
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5464" level="1"/>
-            <!-- Wind Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14735" level="1"/>		<!-- Raid Boss (Lv. 96) -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5464" level="1"/>		<!-- Wind Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2537,7 +2397,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="60.5"/>
+        <set name="collision_height" value="62.0"/>
         <set name="collision_radius" value="50.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="0"/>
@@ -2547,10 +2407,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2587,7 +2445,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="60.5"/>
+        <set name="collision_height" value="65.0"/>
         <set name="collision_radius" value="50.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="0"/>
@@ -2597,10 +2455,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2637,7 +2493,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="60.5"/>
+        <set name="collision_height" value="62.0"/>
         <set name="collision_radius" value="50.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="0"/>
@@ -2647,10 +2503,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2687,7 +2541,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="60.5"/>
+        <set name="collision_height" value="62.0"/>
         <set name="collision_radius" value="50.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="0"/>
@@ -2697,10 +2551,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2737,7 +2589,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="60.5"/>
+        <set name="collision_height" value="62.0"/>
         <set name="collision_radius" value="50.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="0"/>
@@ -2747,10 +2599,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2787,7 +2637,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="60.5"/>
+        <set name="collision_height" value="62.0"/>
         <set name="collision_radius" value="50.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="0"/>
@@ -2797,10 +2647,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2837,7 +2685,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="60.5"/>
+        <set name="collision_height" value="62.0"/>
         <set name="collision_radius" value="50.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="0"/>
@@ -2847,10 +2695,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2887,7 +2733,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="60.5"/>
+        <set name="collision_height" value="62.0"/>
         <set name="collision_radius" value="50.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="0"/>
@@ -2897,10 +2743,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -2947,24 +2791,15 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14713" level="1"/>
-            <!-- Raid Boss (Lv. 97) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14713" level="1"/>		<!-- Raid Boss (Lv. 97) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3011,24 +2846,15 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!--  Raid Boss  -->
-            <skill id="14712" level="1"/>
-            <!--  Raidboss Level 96  -->
-            <skill id="4416" level="6"/>
-            <!--  Humanoids  -->
-            <skill id="5467" level="1"/>
-            <!--  Dark Attacks  -->
-            <skill id="4435" level="5"/>
-            <!--  Greater Stun Resistance  -->
-            <skill id="4438" level="5"/>
-            <!--  Greater Sleep Resistance  -->
-            <skill id="4440" level="5"/>
-            <!--  Greater Paralysis Resistance  -->
-            <skill id="4441" level="5"/>
-            <!--  Greater Mental Attack Resistance  -->
-            <skill id="4439" level="5"/>
-            <!--  Greater Hold Resistance  -->
+            <skill id="4494" level="1"/>		<!--  Raid Boss  -->
+            <skill id="14712" level="1"/>		<!--  Raidboss Level 96  -->
+            <skill id="4416" level="6"/>		<!--  Humanoids  -->
+            <skill id="5467" level="1"/>		<!--  Dark Attacks  -->
+            <skill id="4435" level="5"/>		<!--  Greater Stun Resistance  -->
+            <skill id="4438" level="5"/>		<!--  Greater Sleep Resistance  -->
+            <skill id="4440" level="5"/>		<!--  Greater Paralysis Resistance  -->
+            <skill id="4441" level="5"/>		<!--  Greater Mental Attack Resistance  -->
+            <skill id="4439" level="5"/>		<!--  Greater Hold Resistance  -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3075,10 +2901,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3125,10 +2949,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3165,7 +2987,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="50"/>
-        <set name="collision_height" value="60.0"/>
+        <set name="collision_height" value="61.0"/>
         <set name="collision_radius" value="50.0"/>
         <set name="level" value="97"/>
         <set name="rewardExp" value="458933384"/>
@@ -3175,18 +2997,13 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <minions>
-            <minion npc_id="25861" count="4"/>
-            <!-- Flynt's Servant -->
+            <minion npc_id="25861" count="4"/>		<!-- Flynt's Servant -->
         </minions>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14710" level="1"/>
-            <!-- Raid Boss (Lv. 97) -->
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14710" level="1"/>		<!-- Raid Boss (Lv. 97) -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3223,8 +3040,8 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="40.48"/>
-        <set name="collision_radius" value="21.12"/>
+        <set name="collision_height" value="42.0"/>
+        <set name="collision_radius" value="21.0"/>
         <set name="level" value="96"/>
         <set name="rewardExp" value="0"/>
         <set name="rewardRp" value="0"/>
@@ -3233,22 +3050,14 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3285,8 +3094,8 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="46"/>
-        <set name="collision_height" value="40.48"/>
-        <set name="collision_radius" value="21.12"/>
+        <set name="collision_height" value="42.0"/>
+        <set name="collision_radius" value="21.0"/>
         <set name="level" value="96"/>
         <set name="rewardExp" value="0"/>
         <set name="rewardRp" value="0"/>
@@ -3295,22 +3104,14 @@
         <set name="texture" value=""/>
         <set name="type" value="Minion"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3347,7 +3148,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="50"/>
-        <set name="collision_height" value="78.0"/>
+        <set name="collision_height" value="79.0"/>
         <set name="collision_radius" value="44.0"/>
         <set name="level" value="97"/>
         <set name="rewardExp" value="458933384"/>
@@ -3357,20 +3158,14 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <minions>
-            <minion npc_id="25863" count="1"/>
-            <!-- Harp's Guard -->
-            <minion npc_id="25864" count="1"/>
-            <!-- Harp's Aide -->
+            <minion npc_id="25863" count="1"/>		<!-- Harp's Guard -->
+            <minion npc_id="25864" count="1"/>		<!-- Harp's Aide -->
         </minions>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14711" level="1"/>
-            <!-- Raid Boss (Lv. 97) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14711" level="1"/>		<!-- Raid Boss (Lv. 97) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
 		<rewardlist type="RATED_GROUPED">
 			<group chance="67.058">
@@ -3418,7 +3213,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="45"/>
-        <set name="collision_height" value="27.5"/>
+        <set name="collision_height" value="28.0"/>
         <set name="collision_radius" value="18.0"/>
         <set name="level" value="96"/>
         <set name="rewardExp" value="0"/>
@@ -3428,22 +3223,14 @@
         <set name="texture" value=""/>
         <set name="type" value="Minion"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3490,22 +3277,14 @@
         <set name="texture" value=""/>
         <set name="type" value="Minion"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3542,7 +3321,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="76.5"/>
+        <set name="collision_height" value="54.0"/>
         <set name="collision_radius" value="13.0"/>
         <set name="level" value="93"/>
         <set name="rewardExp" value="0"/>
@@ -3552,10 +3331,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Minion"/>
         <skills>
-            <skill id="4416" level="5"/>
-            <!-- Plants -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4416" level="5"/>		<!-- Plants -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
 		<attributes>
 			<defence attribute="fire" value="167"/>
@@ -3605,14 +3382,10 @@
             <minion npc_id="25865" count="2"/>
         </minions>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14723" level="1"/>
-            <!-- Raid Boss (Lv. 94) -->
-            <skill id="4416" level="5"/>
-            <!-- Plants -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14723" level="1"/>		<!-- Raid Boss (Lv. 94) -->
+            <skill id="4416" level="5"/>		<!-- Plants -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
         </skills>
 		<attributes>
 			<defence attribute="fire" value="187"/>
@@ -3670,26 +3443,16 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14722" level="1"/>
-            <!-- Raid Boss (Lv. 98) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14722" level="1"/>		<!-- Raid Boss (Lv. 98) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3736,26 +3499,16 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14722" level="1"/>
-            <!-- Raid Boss (Lv. 98) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14722" level="1"/>		<!-- Raid Boss (Lv. 98) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3802,26 +3555,16 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14722" level="1"/>
-            <!-- Raid Boss (Lv. 98) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5465" level="1"/>
-            <!-- Earth Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14722" level="1"/>		<!-- Raid Boss (Lv. 98) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5465" level="1"/>		<!-- Earth Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3868,14 +3611,10 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14724" level="1"/>
-            <!-- Raid Boss (Lv. 43) -->
-            <skill id="4416" level="7"/>
-            <!-- Spirits -->
-            <skill id="4414" level="3"/>
-            <!-- Light Armor Type -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14724" level="1"/>		<!-- Raid Boss (Lv. 43) -->
+            <skill id="4416" level="7"/>		<!-- Spirits -->
+            <skill id="4414" level="3"/>		<!-- Light Armor Type -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3912,7 +3651,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="45"/>
-        <set name="collision_height" value="39.0"/>
+        <set name="collision_height" value="40.0"/>
         <set name="collision_radius" value="17.0"/>
         <set name="level" value="43"/>
         <set name="rewardExp" value="520530"/>
@@ -3922,12 +3661,9 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14725" level="1"/>
-            <!-- Raid Boss (Lv. 43) -->
-            <skill id="4416" level="11"/>
-            <!-- Giants -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14725" level="1"/>		<!-- Raid Boss (Lv. 43) -->
+            <skill id="4416" level="11"/>		<!-- Giants -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -3964,7 +3700,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="55.0"/>
+        <set name="collision_height" value="56.0"/>
         <set name="collision_radius" value="13.0"/>
         <set name="level" value="94"/>
         <set name="rewardExp" value="0"/>
@@ -3974,10 +3710,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4014,7 +3748,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="60.0"/>
+        <set name="collision_height" value="62.0"/>
         <set name="collision_radius" value="25.0"/>
         <set name="level" value="94"/>
         <set name="rewardExp" value="0"/>
@@ -4024,10 +3758,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4064,7 +3796,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="35.5"/>
+        <set name="collision_height" value="36.0"/>
         <set name="collision_radius" value="10.0"/>
         <set name="level" value="85"/>
         <set name="rewardExp" value="0"/>
@@ -4074,10 +3806,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4114,7 +3844,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="80"/>
-        <set name="collision_height" value="33.5"/>
+        <set name="collision_height" value="70.0"/>
         <set name="collision_radius" value="11.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="159805184"/>
@@ -4124,21 +3854,14 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
 		<minions>
-		<!-- Arbitor of Darkness - Raid Fighter -->
-            <minion npc_id="25878" count="2"/>
+            <minion npc_id="25878" count="2"/>		<!-- Arbitor of Darkness - Raid Fighter -->
         </minions>
         <skills>
-		<!-- Active -->
 			<skill id="14702" level="1"/>
-		<!-- Passive -->
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14720" level="1"/>
-            <!-- Raid Boss (Lv. 88) -->
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4494" level="1"/>	<!-- Raid Boss -->
+            <skill id="14720" level="1"/>	<!-- Raid Boss (Lv. 88) -->
+            <skill id="4416" level="1"/>	<!-- Undead -->
+            <skill id="5467" level="1"/>	<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4185,24 +3908,15 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14713" level="1"/>
-            <!-- Raid Boss (Lv. 97) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
-            <skill id="4435" level="5"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4438" level="5"/>
-            <!-- Greater Sleep Resistance -->
-            <skill id="4440" level="5"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="5"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4439" level="5"/>
-            <!-- Greater Hold Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14713" level="1"/>		<!-- Raid Boss (Lv. 97) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
+            <skill id="4435" level="5"/>		<!-- Greater Stun Resistance -->
+            <skill id="4438" level="5"/>		<!-- Greater Sleep Resistance -->
+            <skill id="4440" level="5"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="5"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4439" level="5"/>		<!-- Greater Hold Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4249,24 +3963,15 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!--  Raid Boss  -->
-            <skill id="14712" level="1"/>
-            <!--  Raidboss Level 96  -->
-            <skill id="4416" level="6"/>
-            <!--  Humanoids  -->
-            <skill id="5467" level="1"/>
-            <!--  Dark Attacks  -->
-            <skill id="4435" level="5"/>
-            <!--  Greater Stun Resistance  -->
-            <skill id="4438" level="5"/>
-            <!--  Greater Sleep Resistance  -->
-            <skill id="4440" level="5"/>
-            <!--  Greater Paralysis Resistance  -->
-            <skill id="4441" level="5"/>
-            <!--  Greater Mental Attack Resistance  -->
-            <skill id="4439" level="5"/>
-            <!--  Greater Hold Resistance  -->
+            <skill id="4494" level="1"/>		<!--  Raid Boss  -->
+            <skill id="14712" level="1"/>		<!--  Raidboss Level 96  -->
+            <skill id="4416" level="6"/>		<!--  Humanoids  -->
+            <skill id="5467" level="1"/>		<!--  Dark Attacks  -->
+            <skill id="4435" level="5"/>		<!--  Greater Stun Resistance  -->
+            <skill id="4438" level="5"/>		<!--  Greater Sleep Resistance  -->
+            <skill id="4440" level="5"/>		<!--  Greater Paralysis Resistance  -->
+            <skill id="4441" level="5"/>		<!--  Greater Mental Attack Resistance  -->
+            <skill id="4439" level="5"/>		<!--  Greater Hold Resistance  -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4313,10 +4018,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Minion"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4353,7 +4056,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="33.5"/>
+        <set name="collision_height" value="75.0"/>
         <set name="collision_radius" value="11.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="159805184"/>
@@ -4363,10 +4066,8 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="4416" level="1"/>
-            <!-- Undead -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="1"/>		<!-- Undead -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4413,12 +4114,9 @@
         <set name="texture" value=""/>
         <set name="type" value="Npc"/>
         <skills>
-            <skill id="14749" level="1"/>
-            <!-- Raid Boss (Lv. 97) -->
-            <skill id="4416" level="6"/>
-            <!-- Humanoids -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="14749" level="1"/>		<!-- Raid Boss (Lv. 97) -->
+            <skill id="4416" level="6"/>		<!-- Humanoids -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4455,7 +4153,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="30"/>
-        <set name="collision_height" value="55.0"/>
+        <set name="collision_height" value="56.0"/>
         <set name="collision_radius" value="13.0"/>
         <set name="level" value="98"/>
         <set name="rewardExp" value="234222352"/>
@@ -4465,28 +4163,17 @@
         <set name="texture" value=""/>
         <set name="type" value="RaidBoss"/>
         <skills>
-            <skill id="4494" level="1"/>
-            <!-- Raid Boss -->
-            <skill id="14714" level="1"/>
-            <!-- Raid Boss (Lv. 98) -->
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5463" level="1"/>
-            <!-- Water Attack -->
-            <skill id="4440" level="3"/>
-            <!-- Greater Paralysis Resistance -->
-            <skill id="4441" level="3"/>
-            <!-- Greater Mental Attack Resistance -->
-            <skill id="4438" level="3"/>
-            <!-- Greater Sleep Resistance -->
+            <skill id="4494" level="1"/>		<!-- Raid Boss -->
+            <skill id="14714" level="1"/>		<!-- Raid Boss (Lv. 98) -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5463" level="1"/>		<!-- Water Attack -->
+            <skill id="4440" level="3"/>		<!-- Greater Paralysis Resistance -->
+            <skill id="4441" level="3"/>		<!-- Greater Mental Attack Resistance -->
+            <skill id="4438" level="3"/>		<!-- Greater Sleep Resistance -->
             <skill id="4437" level="3"/>
-            <!-- Высокая Устойчивость к Кровопускающим Атакам -->
             <skill id="4436" level="3"/>
-            <!-- Высокая Устойчивость к Отравляющим Атакам -->
-            <skill id="4435" level="3"/>
-            <!-- Greater Stun Resistance -->
-            <skill id="4439" level="3"/>
-            <!-- Greater Hold Resistance -->
+            <skill id="4435" level="3"/>		<!-- Greater Stun Resistance -->
+            <skill id="4439" level="3"/>		<!-- Greater Hold Resistance -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4524,7 +4211,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="50"/>
-        <set name="collision_height" value="54.0"/>
+        <set name="collision_height" value="56.0"/>
         <set name="collision_radius" value="30.0"/>
         <set name="level" value="88"/>
         <set name="rewardExp" value="886192384"/>
@@ -4533,10 +4220,8 @@
         <set name="shots" value="NONE"/>
         <set name="texture" value=""/>
         <skills>
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5467" level="1"/>
-            <!-- Dark Attack -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5467" level="1"/>		<!-- Dark Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4554,7 +4239,6 @@
 				<reward item_id="19510" min="1" max="1" chance="7.2"/>
 				<reward item_id="19509" min="1" max="1" chance="5.9"/>
 				<reward item_id="19508" min="1" max="1" chance="5.4"/>
-				<!-- <reward item_id="23232" min="1" max="1" chance="2.4"/> -->
 				<reward item_id="18106" min="1" max="1" chance="1.8"/>
 				<reward item_id="18107" min="1" max="1" chance="1.7"/>
 				<reward item_id="18104" min="1" max="1" chance="1.7"/>
@@ -4605,10 +4289,8 @@
         <set name="shots" value="NONE"/>
         <set name="texture" value=""/>
         <skills>
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5462" level="1"/>
-            <!-- Fire Attack -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5462" level="1"/>		<!-- Fire Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4626,7 +4308,6 @@
 				<reward item_id="19509" min="1" max="1" chance="7.1"/>
 				<reward item_id="19508" min="1" max="1" chance="6.9"/>
 				<reward item_id="19510" min="1" max="1" chance="6.5"/>
-				<!-- <reward item_id="23232" min="1" max="1" chance="1.9"/> -->
 				<reward item_id="18144" min="1" max="1" chance="1.3"/>
 				<reward item_id="18141" min="1" max="1" chance="1.0"/>
 				<reward item_id="18138" min="1" max="1" chance="0.8"/>
@@ -4668,7 +4349,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="70"/>
         <set name="baseWalkSpd" value="50"/>
-        <set name="collision_height" value="65.5"/>
+        <set name="collision_height" value="66.0"/>
         <set name="collision_radius" value="25.0"/>
         <set name="level" value="98"/>
         <set name="rewardExp" value="1099043344"/>
@@ -4677,10 +4358,8 @@
         <set name="shots" value="NONE"/>
         <set name="texture" value=""/>
         <skills>
-            <skill id="4416" level="9"/>
-            <!-- Demons -->
-            <skill id="5464" level="1"/>
-            <!-- Wind Attack -->
+            <skill id="4416" level="9"/>		<!-- Demons -->
+            <skill id="5464" level="1"/>		<!-- Wind Attack -->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -4696,7 +4375,6 @@
 				<reward item_id="19306" min="3" max="9" chance="17.2"/>
 				<reward item_id="19307" min="2" max="6" chance="9.8"/>
 				<reward item_id="19447" min="1" max="1" chance="3.1"/>
-				<!-- <reward item_id="23232" min="1" max="1" chance="2.7"/> -->
 				<reward item_id="19513" min="1" max="1" chance="0.3"/>
 				<reward item_id="19512" min="1" max="1" chance="0.2"/>
 				<reward item_id="19511" min="1" max="1" chance="0.2"/>
@@ -4706,11 +4384,55 @@
 			</group>
 		</rewardlist>
     </npc>
+	<npc id="25885" name="Guillotine of Death" title="">
+		<set name="type" value="RaidBoss"/>
+		<set name="aggroRange" value="300"/>
+		<set name="ai_type" value="Fighter"/>
+        <set name="baseAtkRange" value="40"/>
+        <set name="baseCON" value="57"/>
+        <set name="baseCritRate" value="40"/>
+        <set name="baseDEX" value="73"/>
+        <set name="baseHpMax" value="3497549"/>
+        <set name="baseHpRate" value="1.0"/>
+        <set name="baseHpReg" value="20"/>
+        <set name="baseINT" value="76"/>
+        <set name="baseMAtk" value="6601"/>
+        <set name="baseMAtkSpd" value="333"/>
+        <set name="baseMDef" value="2334"/>
+        <set name="baseMEN" value="80"/>
+        <set name="baseMpMax" value="4768"/>
+        <set name="baseMpReg" value="7"/>
+        <set name="basePAtk" value="18411"/>
+        <set name="basePAtkSpd" value="253"/>
+        <set name="basePDef" value="3707"/>
+        <set name="baseRunSpd" value="186"/>
+        <set name="baseSTR" value="60"/>
+        <set name="baseShldDef" value="0"/>
+        <set name="baseShldRate" value="0"/>
+        <set name="baseWIT" value="70"/>
+        <set name="baseWalkSpd" value="50"/>
+        <set name="collision_height" value="65.0"/>
+        <set name="collision_radius" value="23.0"/>
+        <set name="level" value="93"/>
+        <set name="rewardExp" value="989756964"/>
+        <set name="rewardRp" value="0"/>
+        <set name="rewardSp" value="20140736"/>
+        <set name="shots" value="NONE"/>
+        <set name="texture" value=""/>
+        <attributes>
+            <defence attribute="fire" value="20"/>
+            <defence attribute="water" value="20"/>
+            <defence attribute="wind" value="20"/>
+            <defence attribute="earth" value="20"/>
+            <defence attribute="holy" value="20"/>
+            <defence attribute="unholy" value="20"/>
+        </attributes>
+    </npc>
 	<npc id="25886" name="Houpon the Warden Overseer" title="Raid Boss">
 		<set name="aggroRange" value="0"/>
 		<set name="ai_type" value="Ranger"/>
 		<set name="collision_radius" value="20.0"/>
-		<set name="collision_height" value="52.0"/>
+		<set name="collision_height" value="53.0"/>
 		<set name="level" value="97"/>
 		<set name="type" value="RaidBoss"/>
 		<set name="baseAtkRange" value="40"/>
@@ -4830,7 +4552,7 @@
 		<set name="aggroRange" value="0"/>
 		<set name="ai_type" value="Fighter"/>
 		<set name="collision_radius" value="24.0"/>
-		<set name="collision_height" value="45.0"/>
+		<set name="collision_height" value="60.0"/>
 		<set name="level" value="97"/>
 		<set name="type" value="RaidBoss"/>
 		<set name="baseAtkRange" value="40"/>
@@ -4947,7 +4669,6 @@
 		</rewardlist>
 	</npc>
 	<npc id="25888" name="Execution Grounds Watchman Guillotine" title="Raid Boss">
-		<!--Base character specific-->
 		<set name="baseSTR" value="98"/>
 		<set name="baseCON" value="87"/>
 		<set name="baseDEX" value="83"/>
@@ -4977,9 +4698,155 @@
 		<set name="baseMaccuracyRate" value="0"/>
 		<set name="baseMCritRate" value="50.0"/>
 		<set name="collision_radius" value="20.0"/>
-		<set name="collision_height" value="58.0"/>
-		<!--Npc specific-->
+		<set name="collision_height" value="57.0"/>
 		<set name="type" value="RaidBoss"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
+	</npc>
+	<npc id="25889" name="Revenant of Sir Calibus" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="12.0"/>
+		<set name="collision_height" value="30.0"/>
+		<set name="type" value="Npc"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
+	</npc>
+	<npc id="25890" name="Soul Collector Acheron" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="18.0"/>
+		<set name="collision_height" value="63.0"/>
+		<set name="type" value="Npc"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
+	</npc>
+	<npc id="25891" name="Evil Spirit Tempest" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="21.0"/>
+		<set name="collision_height" value="54.0"/>
+		<set name="type" value="Npc"/>
 		<set name="ai_type" value="Fighter"/>
 		<set name="level" value="97"/>
 		<set name="baseHpRate" value="1.0"/>
@@ -5000,8 +4867,8 @@
 	<npc id="25892" name="Guillotine of Death" title="Raid Boss">
 		<set name="aggroRange" value="0"/>
 		<set name="ai_type" value="Fighter"/>
-		<set name="collision_radius" value="24.0"/>
-		<set name="collision_height" value="81.0"/>
+		<set name="collision_radius" value="40.0"/>
+		<set name="collision_height" value="82.0"/>
 		<set name="level" value="97"/>
 		<set name="type" value="RaidBoss"/>
 		<set name="baseAtkRange" value="40"/>
@@ -5109,5 +4976,348 @@
 				<reward item_id="19447" min="1" max="1" chance="8.796"/>
 			</group>
 		</rewardlist>
+	</npc>
+	<npc id="25893" name="Strain" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="13.0"/>
+		<set name="collision_height" value="40.0"/>
+		<set name="type" value="Npc"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
+	</npc>
+	<npc id="25894" name="Enraged Master Kinen" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="15.0"/>
+		<set name="collision_height" value="50.0"/>
+		<set name="type" value="Npc"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
+	</npc>
+	<npc id="25895" name="Weak Minion" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="13.0"/>
+		<set name="collision_height" value="50.0"/>
+		<set name="type" value="Npc"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
+	</npc>
+	<npc id="25896" name="Magic Minion" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="13.0"/>
+		<set name="collision_height" value="50.0"/>
+		<set name="type" value="Npc"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
+	</npc>
+	<npc id="25897" name="Magic Minion" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="13.0"/>
+		<set name="collision_height" value="40.0"/>
+		<set name="type" value="Npc"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
+	</npc>
+	<npc id="25898" name="Cyclone" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="13.0"/>
+		<set name="collision_height" value="50.0"/>
+		<set name="type" value="Npc"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
+	</npc>
+	<npc id="25899" name="For Falling" title="">
+		<set name="baseSTR" value="98"/>
+		<set name="baseCON" value="87"/>
+		<set name="baseDEX" value="83"/>
+		<set name="baseINT" value="11"/>
+		<set name="baseWIT" value="115"/>
+		<set name="baseMEN" value="5"/>
+		<set name="baseHpMax" value="1484202.0"/>
+		<set name="baseMpMax" value="22800.0"/>
+		<set name="baseHpReg" value="8.5"/>
+		<set name="baseMpReg" value="3.0"/>
+		<set name="basePAtk" value="20986"/>
+		<set name="basePDef" value="4075"/>
+		<set name="baseMAtk" value="7798"/>
+		<set name="baseMDef" value="2492"/>
+		<set name="basePAtkSpd" value="266"/>
+		<set name="baseMAtkSpd" value="398"/>
+		<set name="baseShldDef" value="0"/>
+		<set name="baseAtkRange" value="40"/>
+		<set name="baseShldRate" value="0"/>
+		<set name="baseCritRate" value="4"/>
+		<set name="baseWalkSpd" value="55"/>
+		<set name="baseRunSpd" value="150"/>
+		<set name="rndDam" value="30"/>
+		<set name="baseEvasionRate" value="0"/>
+		<set name="baseAccuracyRate" value="0"/>
+		<set name="baseMevasionRate" value="0"/>
+		<set name="baseMaccuracyRate" value="0"/>
+		<set name="baseMCritRate" value="50.0"/>
+		<set name="collision_radius" value="13.0"/>
+		<set name="collision_height" value="50.0"/>
+		<set name="type" value="Npc"/>
+		<set name="ai_type" value="Fighter"/>
+		<set name="level" value="97"/>
+		<set name="baseHpRate" value="1.0"/>
+		<set name="rewardExp" value="458933384"/>
+		<set name="rewardSp" value="10242960"/>
+		<set name="rewardRp" value="0"/>
+		<set name="aggroRange" value="0"/>
+		<set name="shots" value="NONE"/>
+		<attributes>
+			<defence attribute="fire" value="200"/>
+			<defence attribute="water" value="200"/>
+			<defence attribute="wind" value="200"/>
+			<defence attribute="earth" value="200"/>
+			<defence attribute="holy" value="200"/>
+			<defence attribute="unholy" value="200"/>
+		</attributes>
 	</npc>
 </list>

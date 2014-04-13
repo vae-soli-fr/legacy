@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE list SYSTEM "item.dtd">
+<list>
+	<etcitem id="35295" name="Bottle of Tauti's Soul">
+		<set name="weight" value="60"/>
+		<set name="icon" value=""/>
+		<set name="type" value="OTHER"/>
+		<set name="destroyable" value="true"/>
+		<set name="dropable" value="false"/>
+		<set name="sellable" value="false"/>
+		<set name="tradeable" value="false"/>
+		<set name="stackable" value="true"/>
+	</etcitem>
+</list>

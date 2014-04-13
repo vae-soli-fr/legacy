@@ -551,7 +551,8 @@
 	<etcitem id="34949" name="Letter Collector's Gift (8th Anniversary)" add_name="Event">
 	<!-- When Letter Collector's Gift is used, it increases Atk. Spd. by 10%, Casting Spd. by 10%, Spd. by 10, and Max HP and Max MP by 10% for 2 hours. The appearance of the equipped weapon and armor change to a nostalgic style. Cooldown is 30 min. It will be deleted during maintenance on 6/6/2012. -->
 		<set name="icon" value="icon.shield_bread_i02"/>
-		<set name="type" value="OTHER"/>
+		<set name="type" value="SCROLL"/>
+		<set name="class" value="CONSUMABLE"/>
 		<set name="weight" value="5"/>
 		<set name="destroyable" value="false"/>
 		<set name="dropable" value="false"/>
@@ -561,6 +562,9 @@
 		<set name="sellable" value="false"/>
 		<set name="tradeable" value="false"/>
 		<set name="stackable" value="true"/>
+		<skills>
+			<skill id="9438" level="1"/>
+		</skills>
 	</etcitem>
 	<etcitem id="34950" name="Lv4 Giant Dye Pack" add_name="Event">
 	<!-- When opened, you can acquire 1 of the following Lv4 Giant Dyes: STR, DEX, CON, INT, WIT, or MEN. Can be exchanged, dropped, or destroyed. -->
