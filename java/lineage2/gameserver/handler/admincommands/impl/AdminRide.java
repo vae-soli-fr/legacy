@@ -14,6 +14,7 @@ package lineage2.gameserver.handler.admincommands.impl;
 
 import lineage2.gameserver.handler.admincommands.IAdminCommandHandler;
 import lineage2.gameserver.model.Player;
+import lineage2.gameserver.scripts.Functions;
 import lineage2.gameserver.tables.PetDataTable;
 
 /**
@@ -89,7 +90,6 @@ public class AdminRide implements IAdminCommandHandler
 				activeChar.setMount(Integer.parseInt(wordList[1]), 0, 85);
 				break;
 			case admin_ride_wyvern:
-			case admin_wr:
 				if (activeChar.isMounted() || (activeChar.getSummonList().getPet() != null))
 				{
 					activeChar.sendMessage("Already Have a Pet or Mounted.");
@@ -97,8 +97,20 @@ public class AdminRide implements IAdminCommandHandler
 				}
 				activeChar.setMount(PetDataTable.WYVERN_ID, 0, 85);
 				break;
+			case admin_wr:
+				if ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer())
+				{
+					Functions.sendDebugMessage(activeChar, "Target should be set and be a player instance");
+					return false;
+				}
+				if (activeChar.getTarget().getPlayer().isMounted() || (activeChar.getTarget().getPlayer().getSummonList().getPet() != null))
+				{
+					activeChar.sendMessage("Already Have a Pet or Mounted.");
+					return false;
+				}
+				activeChar.getTarget().getPlayer().setMount(PetDataTable.WYVERN_ID, 0, 85);
+				break;
 			case admin_ride_strider:
-			case admin_sr:
 				if (activeChar.isMounted() || (activeChar.getSummonList().getPet() != null))
 				{
 					activeChar.sendMessage("Already Have a Pet or Mounted.");
@@ -106,9 +118,29 @@ public class AdminRide implements IAdminCommandHandler
 				}
 				activeChar.setMount(PetDataTable.STRIDER_WIND_ID, 0, 85);
 				break;
+			case admin_sr:
+				if ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer())
+				{
+					Functions.sendDebugMessage(activeChar, "Target should be set and be a player instance");
+					return false;
+				}
+				if (activeChar.getTarget().getPlayer().isMounted() || (activeChar.getTarget().getPlayer().getSummonList().getPet() != null))
+				{
+					activeChar.sendMessage("Already Have a Pet or Mounted.");
+					return false;
+				}
+				activeChar.getTarget().getPlayer().setMount(PetDataTable.STRIDER_WIND_ID, 0, 85);
+				break;
 			case admin_unride:
-			case admin_ur:
 				activeChar.setMount(0, 0, 0);
+				break;
+			case admin_ur:
+				if ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer())
+				{
+					Functions.sendDebugMessage(activeChar, "Target should be set and be a player instance");
+					return false;
+				}
+				activeChar.getTarget().getPlayer().setMount(0, 0, 0);
 				break;
 		}
 		return true;
