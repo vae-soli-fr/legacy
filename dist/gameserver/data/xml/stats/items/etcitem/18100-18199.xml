@@ -7,7 +7,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12012" level="1"/>
@@ -20,7 +19,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12013" level="1"/>
@@ -33,7 +31,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12014" level="1"/>
@@ -46,7 +43,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12015" level="1"/>
@@ -59,7 +55,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12016" level="1"/>
@@ -72,7 +67,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12017" level="1"/>
@@ -85,7 +79,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12018" level="1"/>
@@ -98,7 +91,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12019" level="1"/>
@@ -111,7 +103,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12020" level="1"/>
@@ -124,7 +115,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12021" level="1"/>
@@ -137,7 +127,6 @@
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
-		<set name="price" value="3142000"/>
 		<set name="type" value="OTHER"/>
 		<skills>
 			<skill id="12022" level="1"/>
@@ -151,7 +140,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="3770400"/>
 		<skills>
 			<skill id="12023" level="1"/>
 		</skills>
@@ -164,7 +152,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="3770400"/>
 		<skills>
 			<skill id="12024" level="1"/>
 		</skills>
@@ -177,7 +164,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="3770400"/>
 		<skills>
 			<skill id="12025" level="1"/>
 		</skills>
@@ -190,7 +176,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="615500"/>
 		<skills>
 			<skill id="12026" level="1"/>
 		</skills>
@@ -203,7 +188,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1641500"/>
 		<skills>
 			<skill id="12027" level="1"/>
 		</skills>
@@ -216,7 +200,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1026000"/>
 		<skills>
 			<skill id="12028" level="1"/>
 		</skills>
@@ -229,7 +212,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="410000"/>
 		<skills>
 			<skill id="12029" level="1"/>
 		</skills>
@@ -242,7 +224,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="410000"/>
 		<skills>
 			<skill id="12030" level="1"/>
 		</skills>
@@ -255,7 +236,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="430500"/>
 		<skills>
 			<skill id="12031" level="1"/>
 		</skills>
@@ -268,7 +248,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="615500"/>
 		<skills>
 			<skill id="12032" level="1"/>
 		</skills>
@@ -281,7 +260,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1641500"/>
 		<skills>
 			<skill id="12033" level="1"/>
 		</skills>
@@ -294,7 +272,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1026000"/>
 		<skills>
 			<skill id="12034" level="1"/>
 		</skills>
@@ -307,7 +284,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="410000"/>
 		<skills>
 			<skill id="12035" level="1"/>
 		</skills>
@@ -320,7 +296,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="410000"/>
 		<skills>
 			<skill id="12036" level="1"/>
 		</skills>
@@ -333,7 +308,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="615500"/>
 		<skills>
 			<skill id="12037" level="1"/>
 		</skills>
@@ -346,7 +320,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1641500"/>
 		<skills>
 			<skill id="12038" level="1"/>
 		</skills>
@@ -359,7 +332,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1026000"/>
 		<skills>
 			<skill id="12039" level="1"/>
 		</skills>
@@ -372,7 +344,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="410000"/>
 		<skills>
 			<skill id="12040" level="1"/>
 		</skills>
@@ -385,7 +356,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="410000"/>
 		<skills>
 			<skill id="12041" level="1"/>
 		</skills>
@@ -398,7 +368,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="430500"/>
 		<skills>
 			<skill id="12042" level="1"/>
 		</skills>
@@ -411,7 +380,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="427500"/>
 		<skills>
 			<skill id="12043" level="1"/>
 		</skills>
@@ -424,7 +392,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="320500"/>
 		<skills>
 			<skill id="12044" level="1"/>
 		</skills>
@@ -437,7 +404,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="213500"/>
 		<skills>
 			<skill id="12045" level="1"/>
 		</skills>
@@ -450,7 +416,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12046" level="1"/>
 		</skills>
@@ -463,7 +428,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12047" level="1"/>
 		</skills>
@@ -476,7 +440,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12048" level="1"/>
 		</skills>
@@ -489,7 +452,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12049" level="1"/>
 		</skills>
@@ -502,7 +464,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12050" level="1"/>
 		</skills>
@@ -515,7 +476,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12051" level="1"/>
 		</skills>
@@ -528,7 +488,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12052" level="1"/>
 		</skills>
@@ -541,7 +500,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12053" level="1"/>
 		</skills>
@@ -554,7 +512,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12054" level="1"/>
 		</skills>
@@ -567,7 +524,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12055" level="1"/>
 		</skills>
@@ -580,7 +536,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="7609500"/>
 		<skills>
 			<skill id="12056" level="1"/>
 		</skills>
@@ -593,7 +548,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="9131400"/>
 		<skills>
 			<skill id="12057" level="1"/>
 		</skills>
@@ -606,7 +560,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="9131400"/>
 		<skills>
 			<skill id="12058" level="1"/>
 		</skills>
@@ -619,7 +572,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="9131400"/>
 		<skills>
 			<skill id="12059" level="1"/>
 		</skills>
@@ -632,7 +584,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1490500"/>
 		<skills>
 			<skill id="12060" level="1"/>
 		</skills>
@@ -645,7 +596,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="3975500"/>
 		<skills>
 			<skill id="12061" level="1"/>
 		</skills>
@@ -658,7 +608,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="2484500"/>
 		<skills>
 			<skill id="12062" level="1"/>
 		</skills>
@@ -671,7 +620,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="993500"/>
 		<skills>
 			<skill id="12063" level="1"/>
 		</skills>
@@ -684,7 +632,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="993500"/>
 		<skills>
 			<skill id="12064" level="1"/>
 		</skills>
@@ -697,7 +644,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1043500"/>
 		<skills>
 			<skill id="12065" level="1"/>
 		</skills>
@@ -710,7 +656,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1490500"/>
 		<skills>
 			<skill id="12066" level="1"/>
 		</skills>
@@ -723,7 +668,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="3975500"/>
 		<skills>
 			<skill id="12067" level="1"/>
 		</skills>
@@ -736,7 +680,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="2484500"/>
 		<skills>
 			<skill id="12068" level="1"/>
 		</skills>
@@ -749,7 +692,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="993500"/>
 		<skills>
 			<skill id="12069" level="1"/>
 		</skills>
@@ -762,7 +704,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="993500"/>
 		<skills>
 			<skill id="12070" level="1"/>
 		</skills>
@@ -775,7 +716,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1490500"/>
 		<skills>
 			<skill id="12071" level="1"/>
 		</skills>
@@ -788,7 +728,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="3975500"/>
 		<skills>
 			<skill id="12072" level="1"/>
 		</skills>
@@ -801,7 +740,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="2484500"/>
 		<skills>
 			<skill id="12073" level="1"/>
 		</skills>
@@ -814,7 +752,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="993500"/>
 		<skills>
 			<skill id="12074" level="1"/>
 		</skills>
@@ -827,7 +764,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="993500"/>
 		<skills>
 			<skill id="12075" level="1"/>
 		</skills>
@@ -840,7 +776,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1043500"/>
 		<skills>
 			<skill id="12076" level="1"/>
 		</skills>
@@ -853,7 +788,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="1035000"/>
 		<skills>
 			<skill id="12077" level="1"/>
 		</skills>
@@ -866,7 +800,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="776500"/>
 		<skills>
 			<skill id="12078" level="1"/>
 		</skills>
@@ -879,7 +812,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="517500"/>
 		<skills>
 			<skill id="12079" level="1"/>
 		</skills>
@@ -892,7 +824,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12080" level="1"/>
 		</skills>
@@ -905,7 +836,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12081" level="1"/>
 		</skills>
@@ -918,7 +848,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12082" level="1"/>
 		</skills>
@@ -931,7 +860,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12083" level="1"/>
 		</skills>
@@ -944,7 +872,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12084" level="1"/>
 		</skills>
@@ -957,7 +884,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12085" level="1"/>
 		</skills>
@@ -970,7 +896,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12086" level="1"/>
 		</skills>
@@ -983,7 +908,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12087" level="1"/>
 		</skills>
@@ -996,7 +920,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12088" level="1"/>
 		</skills>
@@ -1009,7 +932,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12089" level="1"/>
 		</skills>
@@ -1022,7 +944,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="16414000"/>
 		<skills>
 			<skill id="12090" level="1"/>
 		</skills>
@@ -1035,7 +956,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="19696800"/>
 		<skills>
 			<skill id="12091" level="1"/>
 		</skills>
@@ -1048,7 +968,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="19696800"/>
 		<skills>
 			<skill id="12092" level="1"/>
 		</skills>
@@ -1061,7 +980,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="19696800"/>
 		<skills>
 			<skill id="12093" level="1"/>
 		</skills>
@@ -1074,7 +992,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="3215500"/>
 		<skills>
 			<skill id="12094" level="1"/>
 		</skills>
@@ -1087,7 +1004,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="8575500"/>
 		<skills>
 			<skill id="12095" level="1"/>
 		</skills>
@@ -1100,7 +1016,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="5359500"/>
 		<skills>
 			<skill id="12096" level="1"/>
 		</skills>
@@ -1113,7 +1028,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="2143500"/>
 		<skills>
 			<skill id="12097" level="1"/>
 		</skills>
@@ -1126,7 +1040,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="2143500"/>
 		<skills>
 			<skill id="12098" level="1"/>
 		</skills>
@@ -1139,7 +1052,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="2251000"/>
 		<skills>
 			<skill id="12099" level="1"/>
 		</skills>
@@ -1152,7 +1064,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="3215500"/>
 		<skills>
 			<skill id="12100" level="1"/>
 		</skills>
@@ -1165,7 +1076,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="8575500"/>
 		<skills>
 			<skill id="12101" level="1"/>
 		</skills>
@@ -1178,7 +1088,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="5359500"/>
 		<skills>
 			<skill id="12102" level="1"/>
 		</skills>
@@ -1191,7 +1100,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="2143500"/>
 		<skills>
 			<skill id="12103" level="1"/>
 		</skills>
@@ -1204,7 +1112,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="2143500"/>
 		<skills>
 			<skill id="12104" level="1"/>
 		</skills>
@@ -1217,7 +1124,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="3215500"/>
 		<skills>
 			<skill id="12105" level="1"/>
 		</skills>
@@ -1230,7 +1136,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="8575500"/>
 		<skills>
 			<skill id="12106" level="1"/>
 		</skills>
@@ -1243,7 +1148,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="5359500"/>
 		<skills>
 			<skill id="12107" level="1"/>
 		</skills>
@@ -1256,7 +1160,6 @@
 		<set name="crystal_type" value="NONE"/>
 		<set name="stackable" value="false"/>
 		<set name="type" value="OTHER"/>
-		<set name="price" value="2143500"/>
 		<skills>
 			<skill id="12108" level="1"/>
 		</skills>

@@ -106,7 +106,7 @@ public class DevnoSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class DevnoSubAI extends DefaultAI
 				ns = NpcString.ONE_DAY_A_STATUE_OF_YOU_COULD_BE_MADE;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

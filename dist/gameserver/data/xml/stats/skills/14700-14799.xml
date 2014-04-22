@@ -685,7 +685,7 @@
 		<set name="relationSkillsId" val="1002;1251;1310;971;1519;1086"/>
 		<for>
 			<effect name="Buff" time="3600" val="0" stackOrder="14" stackType="vampRage;pAtkSpeedUp;mAtkSpeedUp">
-				<add order="0x40" stat="absorbDam" val="9"/>
+				<add order="0x40" stat="absorbDam" val="2"/>
 				<mul order="0x30" stat="pAtkSpd" val="1.37"/>
 				<mul order="0x30" stat="mAtkSpd" val="1.34"/>
 			</effect>

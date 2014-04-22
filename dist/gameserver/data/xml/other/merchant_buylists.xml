@@ -263,6 +263,11 @@
         <item id="734" name="Haste Potion"/>
         <item id="735" name="Potion of Alacrity"/>
         <item id="6035" name="Magic Haste Potion"/>
+        <item id="728" name="Mana Potion"/>
+		<item id="8618" name="Ancient Book: Divine Inspiration (Modern Language Version)"/>
+		<item id="8619" name="Ancient Book: Divine Inspiration (Original Language Version)"/>
+		<item id="8620" name="Ancient Book: Divine Inspiration (Manuscript)"/>
+		<item id="8621" name="Ancient Book: Divine Inspiration (Original Version)"/>
         <item id="736" name="Scroll of Escape"/>
         <item id="737" name="Scroll of Resurrection"/>
         <item id="3031" name="Spirit Ore"/>

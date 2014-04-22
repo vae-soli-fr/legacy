@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "npc.dtd">
+<list>
+	<spawn count="40" respawn="41" respawn_random="0" period_of_day="none">
+        <territory>
+            <add x="85512" y="147592" zmin="-3600"  zmax="-3408"/>
+            <add x="85512" y="147592" zmin="-3600"  zmax="-3408"/>
+            <add x="80504" y="143944" zmin="-3600"  zmax="-3408"/>
+            <add x="77400" y="148632" zmin="-3600"  zmax="-3408"/>
+			<add x="81512" y="152376" zmin="-3600"  zmax="-3408"/>
+			<add x="83624" y="149512" zmin="-3600"  zmax="-3408"/>
+        </territory>
+        <npc id="20145"/>
+        <!--invasion Giran 1 -->
+    </spawn>
+		<spawn count="40" respawn="41" respawn_random="0" period_of_day="none">
+        <territory>
+              <add x="85512" y="147592" zmin="-3600"  zmax="-3408"/>
+            <add x="85512" y="147592" zmin="-3600"  zmax="-3408"/>
+            <add x="80504" y="143944" zmin="-3600"  zmax="-3408"/>
+            <add x="77400" y="148632" zmin="-3600"  zmax="-3408"/>
+			<add x="81512" y="152376" zmin="-3600"  zmax="-3408"/>
+			<add x="83624" y="149512" zmin="-3600"  zmax="-3408"/>
+        </territory>
+        <npc id="20248"/>
+        <!--invasion Giran 2-->
+    </spawn>
+		<spawn count="40" respawn="41" respawn_random="0" period_of_day="none">
+        <territory>
+             <add x="85512" y="147592" zmin="-3600"  zmax="-3408"/>
+            <add x="85512" y="147592" zmin="-3600"  zmax="-3408"/>
+            <add x="80504" y="143944" zmin="-3600"  zmax="-3408"/>
+            <add x="77400" y="148632" zmin="-3600"  zmax="-3408"/>
+			<add x="81512" y="152376" zmin="-3600"  zmax="-3408"/>
+			<add x="83624" y="149512" zmin="-3600"  zmax="-3408"/>
+        </territory>
+        <npc id="20158"/>
+        <!--invasion Giran 3-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="83688" y="14800" z="-3408" h="16384"/>
+        <npc id="30121"/>
+        <!--Jeronin-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="83688" y="149096" z="-3408" h="16384"/>
+        <npc id="30122"/>
+        <!--Bane-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="83688" y="148250" z="-3408" h="49152"/>
+        <npc id="30123"/>
+        <!--Vesa-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="83688" y="148584" z="-3408" h="49152"/>
+        <npc id="30124"/>
+        <!--Zerome-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="83688" y="148168" z="-3408" h="49152"/>
+        <npc id="30125"/>
+        <!--Belton-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="86912" y="148802" z="-3392" h="40960"/>
+        <npc id="30116"/>
+        <!--Dustin-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="86472" y="148848" z="-3392" h="49152"/>
+        <npc id="30117"/>
+        <!--Primos-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="86485" y="148384" z="-3392" h="16384"/>
+        <npc id="30118"/>
+        <!--Pupina-->
+    </spawn>
+	    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="81296" y="149728" z="-3469" h="49152"/>
+        <npc id="30753"/>
+        <!--Gabrielle-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="85828" y="148894" z="-3392" h="49152"/>
+        <npc id="30119"/>
+        <!--Isabellin-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="87058" y="148634" z="-3392" h="32768"/>
+        <npc id="30120"/>
+        <!--Maximilian-->
+    </spawn>
+		  <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="84104" y="148040" z="-3408" h="16384"/>
+        <npc id="30080"/>
+        <!--Clarissa-->
+    </spawn>
+</list>

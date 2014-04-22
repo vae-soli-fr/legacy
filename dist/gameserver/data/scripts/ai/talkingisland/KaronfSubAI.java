@@ -106,7 +106,7 @@ public class KaronfSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class KaronfSubAI extends DefaultAI
 				ns = NpcString.WHEN_YOU_GO_TO_THE_MUSEUM_SPEAK_TO_PANTHEON;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

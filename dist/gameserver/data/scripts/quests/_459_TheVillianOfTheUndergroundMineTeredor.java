@@ -78,6 +78,7 @@ public class _459_TheVillianOfTheUndergroundMineTeredor extends Quest implements
 				case STARTED:
 					if(st.getCond() == 1)
 					{
+						//htmltext = "30535-05.htm";
 						htmltext = "30535-05.htm";
 						break;
 					}

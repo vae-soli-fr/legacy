@@ -106,7 +106,7 @@ public class SorosSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class SorosSubAI extends DefaultAI
 				ns = NpcString.SOMETHING_LIKE_THAT_COMES_OUT_OF_THE_RUINS;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

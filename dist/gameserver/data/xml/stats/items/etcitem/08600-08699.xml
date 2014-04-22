@@ -191,6 +191,7 @@
 	</etcitem>
 	<etcitem id="8618" name="Ancient Book: Divine Inspiration (Modern Language Version)">
 	<!-- Restores forgotten abilities. The book was re-published after being translated into a the modern language. (Can only be used by characters level 52 or above.) -->
+		<set name="price" value="500000"/>
 		<set name="class" value="SPELLBOOKS"/>
 		<set name="crystal_type" value="NONE"/>
 		<set name="icon" value="icon.etc_add_buffslot_i00"/>

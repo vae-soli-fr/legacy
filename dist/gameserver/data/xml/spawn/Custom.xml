@@ -1,0 +1,1519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+
+<list>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122624" z="-5840" h="50" />
+		<npc id="100013" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122584" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122544" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122504" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122464" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122424" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122384" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122344" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122304" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122264" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122224" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<!--spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122144" z="-5840" h="50" />
+		<npc id="100012" />
+	</spawn-->
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122104" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122624" z="-5840" h="360500" />
+		<npc id="100013" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122584" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122544" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122504" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122464" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122424" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122384" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122344" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122304" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122264" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122224" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<!--spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122144" z="-5840" h="360500" />
+		<npc id="100012" />
+	</spawn-->
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122104" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+
+
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122624" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122584" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122544" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122504" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122464" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122424" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122384" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122344" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122304" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122264" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122264" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122224" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<!--spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122144" z="-5840" h="-100" />
+		<npc id="100012" />
+	</spawn-->
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122104" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122624" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122584" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122544" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122504" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122464" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122424" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122384" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122344" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122304" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122264" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122224" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<!--spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122144" z="-5840" h="360500" />
+		<npc id="100012" />
+	</spawn-->
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122104" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122107" y="-122070" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122067" y="-122070" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122027" y="-122070" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121987" y="-122070" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121947" y="-122070" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121907" y="-122070" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121867" y="-122070" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121827" y="-122070" z="-5840" h="180250" />
+		<npc id="100013" /><!--Bibliotheque-->
+	</spawn>
+
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122107" y="-122072" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122067" y="-122072" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122027" y="-122072" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121987" y="-122072" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121947" y="-122072" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121907" y="-122072" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121867" y="-122072" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121827" y="-122072" z="-5840" h="540600" />
+		<npc id="100013" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122437" y="-121780" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122477" y="-121780" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122517" y="-121780" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121780" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121780" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121780" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122677" y="-121780" z="-5840" h="180250" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122717" y="-121780" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122437" y="-121782" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122477" y="-121782" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122517" y="-121782" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121782" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121782" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121782" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122677" y="-121782" z="-5840" h="540600" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121782" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+
+
+
+<!-- 2 -->
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122624" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122584" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122544" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122504" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122464" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122424" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122384" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122344" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122304" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122264" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122224" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122144" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122104" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122624" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122584" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122544" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122504" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122464" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122424" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122384" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122344" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122304" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122264" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122224" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122144" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122104" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+
+
+
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122624" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122584" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122544" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122504" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122464" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122424" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122384" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122344" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122304" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122264" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122264" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122224" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122144" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122104" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122624" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122584" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122544" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122504" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122464" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122424" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122384" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122344" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122304" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122264" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122224" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122144" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122104" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122107" y="-122070" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122067" y="-122070" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122027" y="-122070" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121987" y="-122070" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121947" y="-122070" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121907" y="-122070" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121867" y="-122070" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121827" y="-122070" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122107" y="-122072" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122067" y="-122072" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122027" y="-122072" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121987" y="-122072" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121947" y="-122072" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121907" y="-122072" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121867" y="-122072" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121827" y="-122072" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122437" y="-121780" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122477" y="-121780" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122517" y="-121780" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121780" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121780" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121780" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122677" y="-121780" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121780" z="-5840" h="180250" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122437" y="-121782" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122477" y="-121782" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122517" y="-121782" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121782" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121782" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121782" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122677" y="-121782" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121782" z="-5840" h="540600" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+
+<!-- 3 -->
+
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122624" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122584" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122544" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122504" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122464" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122424" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122384" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122344" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122304" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122264" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122224" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122144" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122104" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122624" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122584" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122544" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122504" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122464" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122424" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122384" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122344" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122304" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122264" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122224" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122144" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122104" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+
+
+
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122624" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122584" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122544" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122504" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122464" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122424" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122384" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122344" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122304" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122264" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122264" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122224" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122144" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122104" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122624" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122584" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122544" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122504" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122464" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122424" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122384" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122344" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122304" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122264" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122224" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122144" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122104" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122107" y="-122070" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122067" y="-122070" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122027" y="-122070" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121987" y="-122070" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121947" y="-122070" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121907" y="-122070" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121867" y="-122070" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121827" y="-122070" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122107" y="-122072" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122067" y="-122072" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122027" y="-122072" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121987" y="-122072" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121947" y="-122072" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121907" y="-122072" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121867" y="-122072" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121827" y="-122072" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122437" y="-121780" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122477" y="-121780" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122517" y="-121780" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121780" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121780" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121780" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122677" y="-121780" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121780" z="-5840" h="180250" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122437" y="-121782" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122477" y="-121782" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122517" y="-121782" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121782" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121782" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121782" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122677" y="-121782" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121782" z="-5840" h="540600" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+
+<!-- 3 -->
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122624" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122584" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122544" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122504" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122464" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122424" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122384" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122344" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122304" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122264" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122224" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122144" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122104" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122624" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122584" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122544" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122504" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122464" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122424" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122384" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122344" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122304" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122264" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122224" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122144" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122104" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+
+
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122624" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122584" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122544" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122504" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122464" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122424" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122384" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122344" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122304" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122264" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122264" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122224" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122144" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122104" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122624" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122584" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122544" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122504" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122464" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122424" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122384" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122344" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122304" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122264" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122224" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122144" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122104" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122107" y="-122070" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122067" y="-122070" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122027" y="-122070" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121987" y="-122070" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121947" y="-122070" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121907" y="-122070" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121867" y="-122070" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121827" y="-122070" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122107" y="-122072" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122067" y="-122072" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122027" y="-122072" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121987" y="-122072" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-121947" y="-122072" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121907" y="-122072" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121867" y="-122072" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none"> 
+		<point x="-121827" y="-122072" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122437" y="-121780" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122477" y="-121780" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122517" y="-121780" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121780" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121780" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121780" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122677" y="-121780" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121780" z="-5840" h="180250" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122437" y="-121782" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122477" y="-121782" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122517" y="-121782" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121782" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121782" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121782" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122677" y="-121782" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122637" y="-121782" z="-5840" h="540600" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122184" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122184" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122184" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122184" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122118" y="-122184" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122120" y="-122184" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122184" z="-5840" h="50" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122184" z="-5840" h="360500" />
+		<npc id="100014" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122184" z="-5840" h="50" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122184" z="-5840" h="360500" />
+		<npc id="100015" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122184" z="-5840" h="50" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122184" z="-5840" h="360500" />
+		<npc id="100016" /><!--Bibliotheque-->
+	</spawn>
+
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121782" z="-5840" h="540600" />
+		<npc id="100013" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122597" y="-121780" z="-5840" h="180250" />
+		<npc id="100013" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121782" z="-5840" h="540600" />
+		<npc id="100013" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122557" y="-121780" z="-5840" h="180250" />
+		<npc id="100013" /><!--Bibliotheque-->
+	</spawn>
+
+
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122964" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122964" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122924" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122924" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122884" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122884" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122426" y="-122844" z="-5840" h="50" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+	<spawn count="1" respawn="99" respawn_random="0" period_of_day="none">
+		<point x="-122424" y="-122844" z="-5840" h="360500" />
+		<npc id="100012" /><!--Bibliotheque-->
+	</spawn>
+
+
+
+</list>

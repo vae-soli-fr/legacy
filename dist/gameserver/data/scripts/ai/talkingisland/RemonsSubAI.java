@@ -106,7 +106,7 @@ public class RemonsSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(7))
 		{
 			case 1:
@@ -131,7 +131,7 @@ public class RemonsSubAI extends DefaultAI
 				ns = NpcString.PERHAPS_EVEN_THE_VILLAGE_BECOMES_DANGEROUS;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

@@ -670,7 +670,7 @@
 		<set name="hitTime" val="1390"/>
 		<set name="mpConsume2" val="#mpConsume2"/>		
 		<set name="relationSkillsId" val="1403;"/> 
-		<set name="target" val="TARGET_SELF"/>
+		<set name="target" val="TARGET_PARTY_ONE"/>
 		<set name="skillType" val="CALL"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="party" val="true"/>

@@ -797,7 +797,7 @@
 		<enchant3 levels="10" name="Recycle" enchRoute="9"/>
 		<for>
 			<effect name="Buff" time="#time" val="0" stackOrder="#stackLevel" stackType="vampRage;pAtkSpeedUp;mAtkSpeedUp">
-				<add order="0x40" stat="absorbDam" val="9"/><!-- Should be chance triggered on normal attack, not 100% chance. -->
+				<add order="0x40" stat="absorbDam" val="9" chance="50"/><!-- Should be chance triggered on normal attack, not 100% chance. -->
 				<mul order="0x30" stat="pAtkSpd" val="#vuln1"/>
 				<mul order="0x30" stat="mAtkSpd" val="#vuln2"/>
 			</effect>

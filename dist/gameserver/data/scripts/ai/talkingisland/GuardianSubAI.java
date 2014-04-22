@@ -106,7 +106,7 @@ public class GuardianSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(1))
 		{
 			case 1:
@@ -116,7 +116,7 @@ public class GuardianSubAI extends DefaultAI
 				ns = NpcString.INFORMATION_IS_COLLECTED_IN_THE_MUSEUM_WHERE_CAN_LEARN_ABOUT_THE_HEROES;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

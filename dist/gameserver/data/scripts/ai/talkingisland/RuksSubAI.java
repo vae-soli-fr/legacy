@@ -106,7 +106,7 @@ public class RuksSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class RuksSubAI extends DefaultAI
 				ns = NpcString.WE_NEED_TO_FIND_HER_WEAKNESS;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

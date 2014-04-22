@@ -791,39 +791,14 @@
         <!--Recipe Merchant Lyann-->
     </spawn>
     <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
-        <point x="-15160" y="124616" z="-3140" h="36285"/>
-        <npc id="32875"/>
-        <!--Recipe Merchant Tahoo-->
-    </spawn>
-    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
-        <point x="19640" y="143096" z="-3053" h="13000"/>
-        <npc id="32876"/>
-        <!--Recipe Merchant Desian-->
-    </spawn>
-    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
         <point x="77464" y="148264" z="-3621" h="58000"/>
         <npc id="32877"/>
         <!--Recipe Merchant Plani-->
     </spawn>
     <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
-        <point x="107848" y="218984" z="-3684" h="43208"/>
-        <npc id="32878"/>
-        <!--Recipe Merchant Sparky-->
-    </spawn>
-    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
         <point x="83752" y="55544" z="-1537" h="45056"/>
         <npc id="32879"/>
         <!--Recipe Merchant Drawin-->
-    </spawn>
-    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
-        <point x="150904" y="28328" z="-2273" h="15242"/>
-        <npc id="32880"/>
-        <!--Recipe Merchant Dolphren-->
-    </spawn>
-    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
-        <point x="146744" y="-58936" z="-2999" h="12000"/>
-        <npc id="32881"/>
-        <!--Recipe Merchant Denver-->
     </spawn>
     <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
         <point x="88248" y="-139608" z="-1559" h="45000"/>

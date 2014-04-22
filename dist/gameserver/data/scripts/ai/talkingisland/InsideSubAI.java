@@ -106,7 +106,7 @@ public class InsideSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class InsideSubAI extends DefaultAI
 				ns = NpcString.KIDS_THESE_DAYS;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

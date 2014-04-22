@@ -942,7 +942,7 @@
 		<set name="operateType" val="OP_TOGGLE"/>
 		<for>
 			<effect count="0x7fffffff" name="LDManaDamOverTime" time="3" val="1.5">
-				<mul order="0x30" stat="skillMastery" val="1.1"/>
+				<mul order="0x30" stat="skillMastery" val="2"/>
 			</effect>
 		</for>
 	</skill>

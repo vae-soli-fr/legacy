@@ -208,11 +208,12 @@
         <enchant1 levels="10" name="Power">
             <table name="#vul">808 841 875 910 946 983 1022 1062 1104 1147</table>
         </enchant1>
-        <for><!-- TODO: Need to add 1000% chance of Skill Mastery -->
+        <for>
             <add order="0x10" stat="STR" val="2"/>
             <add order="0x40" stat="accCombat" val="8"/>
             <mul order="0x30" stat="rCrit" val="1.25"/>
             <add order="0x40" stat="cAtkStatic" val="#vul"/>
+	     <mul order="0x30" stat="skillMastery" val="6"/>
         </for>
     </skill>
     <skill id="10757" levels="4" name="Siege Fire Stance">
@@ -949,7 +950,7 @@
         <table name="#mEvas">60 70 80 90</table>
         <table name="#pSkillEvasion">1.8 1.85 1.9 1.95</table>
         <table name="#mpConsume2">74 76 78 80</table>
-        <table name="#rSpd">30</table>
+        <table name="#rSpd">0</table>
         <table name="#stunPow">0</table>
         <set name="reuseDelay" val="900000"/>
         <set name="hitTime" val="1000"/>

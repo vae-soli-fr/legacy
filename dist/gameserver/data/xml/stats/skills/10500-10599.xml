@@ -152,9 +152,10 @@
             <table name="#magicLevel">90 91 92 93 94 95 96 97 98 99</table>
         </enchant1>
         <for>
-            <add order="0x40" stat="STR" val="2"/>
-			<add order="0x40" stat="cAtkStatic" val="#cAtkStatic"/>
-			<mul order="0x30" stat="rCrit" val="1.6"/>
+		<add order="0x40" stat="STR" val="2"/>
+		<add order="0x40" stat="cAtkStatic" val="#cAtkStatic"/>
+		<mul order="0x30" stat="rCrit" val="1.6"/>
+		<mul order="0x30" stat="skillMastery" val="6"/>
         </for>
     </skill>
     <skill id="10506" levels="1" name="Superior Spirit Mastery">

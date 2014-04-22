@@ -106,7 +106,7 @@ public class AlladaSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(7))
 		{
 			case 1:
@@ -131,7 +131,7 @@ public class AlladaSubAI extends DefaultAI
 				ns = NpcString.A_BLACK_MOON_NOW_DO_YOU_UNDERSTAND_THAT_HE_HAS_OPENED_HIS_EYES;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

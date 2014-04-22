@@ -86,7 +86,7 @@
 			<add order="0x40" stat="STR" val="3"/>
 			<sub order="0x40" stat="CON" val="2"/>
 			<mul order="0x30" stat="pAtk" val="1.0659"/>
-			<add order="0x40" stat="baseCrit" val="12.74"/>
+			<add order="0x40" stat="cAtkStatic" val="127"/>
 			<add order="0x40" stat="maxHp" val="550"/>
 			<add order="0x40" stat="magicResist" val="2"/>
 			<add order="0x40" stat="absorbDam" val="3"/>
@@ -113,7 +113,7 @@
 			<sub order="0x40" stat="CON" val="2"/>
 			<mul order="0x30" stat="pAtk" val="1.0659"/>
 			<mul order="0x30" stat="pAtkSpd" val="1.06"/>
-			<add order="0x40" stat="baseCrit" val="17.05"/>
+			<add order="0x40" stat="cAtkStatic" val="171"/>
 			<mul order="0x30" stat="runSpd" val="1.03"/>
 			<add order="0x40" stat="paralyzeResist" val="50"/>
 			<add order="0x40" stat="defenceFire" val="5"/>

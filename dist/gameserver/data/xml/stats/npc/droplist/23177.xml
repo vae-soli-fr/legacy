@@ -5,6 +5,7 @@
 	<droplist>
 		<category id="1" chance="70.000">
 			<item id="57" min="1139" max="2662" chance="100.00000" />		<!-- Адена -->
+			<item id="30423" min="1" max="1" chance="9.00901" />		<!-- Рецепт - Заряд Души Ранг R -->
 		</category>
 		<category id="2" chance="12.915">
 			<item id="18121" min="1" max="1" chance="0.58072" />		<!-- Неопознанные Сапоги Бессмертия -->
@@ -12,7 +13,6 @@
 		</category>
 		<category id="3" chance="0.333">
 			<item id="19311" min="1" max="1" chance="90.09009" />		<!-- Рактолелиум -->
-			<item id="30423" min="1" max="1" chance="9.00901" />		<!-- Рецепт - Заряд Души Ранг R -->
 			<item id="17526" min="1" max="1" chance="0.90090" />		<!-- Свиток: Модифицировать Оружие (R) -->
 		</category>
 	</droplist>

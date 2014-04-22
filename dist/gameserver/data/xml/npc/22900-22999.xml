@@ -558,12 +558,12 @@
 		<rewardlist type="RATED_GROUPED">
 			<group chance="70.0">
 				<reward item_id="57" min="1662" max="3880" chance="100.0"/>
+				<reward item_id="30425" min="1" max="1" chance="9.15385"/>
 			</group>
 			<group chance="0.075">
 				<reward item_id="18166" min="1" max="1" chance="100.0"/>
 			</group>
 			<group chance="0.078">
-				<reward item_id="30425" min="1" max="1" chance="96.15385"/>
 				<reward item_id="17526" min="1" max="1" chance="3.84615"/>
 			</group>
 		</rewardlist>
@@ -2003,18 +2003,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2298"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1086669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="105966"/>
-		<set name="basePAtk" value="2593"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="644"/>
-		<set name="baseMAtk" value="1202"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="572"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -2069,18 +2069,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2298"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1086669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="105966"/>
-		<set name="basePAtk" value="2593"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="644"/>
-		<set name="baseMAtk" value="1202"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="572"/>
 		<set name="basePAtkSpd" value="799"/>
 		<set name="baseCritRate" value="4"/>
@@ -2132,18 +2132,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2298"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1086669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="105966"/>
-		<set name="basePAtk" value="2593"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="644"/>
-		<set name="baseMAtk" value="1202"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="572"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -2199,18 +2199,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2298"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1086669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="105966"/>
-		<set name="basePAtk" value="2593"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="644"/>
-		<set name="baseMAtk" value="1202"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="572"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -2264,18 +2264,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2298"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1086669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="105966"/>
-		<set name="basePAtk" value="2593"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="644"/>
-		<set name="baseMAtk" value="1202"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="572"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -2332,18 +2332,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2298"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1086669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="105966"/>
-		<set name="basePAtk" value="2593"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="644"/>
-		<set name="baseMAtk" value="1202"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="572"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -2402,18 +2402,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2298"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1086669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="105966"/>
-		<set name="basePAtk" value="2593"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="644"/>
-		<set name="baseMAtk" value="1202"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="572"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -2470,18 +2470,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2298"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1086669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="105966"/>
-		<set name="basePAtk" value="2593"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="644"/>
-		<set name="baseMAtk" value="1202"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="572"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -2539,18 +2539,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2343"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2496302"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="49090"/>
-		<set name="basePAtk" value="2714"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="655"/>
-		<set name="baseMAtk" value="1258"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="582"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -2605,18 +2605,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2343"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2448753"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="48155"/>
-		<set name="basePAtk" value="2714"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="655"/>
-		<set name="baseMAtk" value="1258"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="582"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -2667,18 +2667,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2343"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="4505930"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="88610"/>
-		<set name="basePAtk" value="2714"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="655"/>
-		<set name="baseMAtk" value="1258"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="582"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -2734,18 +2734,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2343"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="3787107"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="74474"/>
-		<set name="basePAtk" value="2714"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="655"/>
-		<set name="baseMAtk" value="1258"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="582"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -2801,18 +2801,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2343"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2694887"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="52995"/>
-		<set name="basePAtk" value="2714"/>
+		<set name="basePAtk" value="10000"/>
 		<set name="basePDef" value="655"/>
-		<set name="baseMAtk" value="1258"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="582"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -2869,18 +2869,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2343"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2908856"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="57203"/>
-		<set name="basePAtk" value="2714"/>
+		<set name="basePAtk" value="11000"/>
 		<set name="basePDef" value="655"/>
-		<set name="baseMAtk" value="1258"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="582"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -2938,18 +2938,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2343"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2496302"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="49090"/>
-		<set name="basePAtk" value="2714"/>
+		<set name="basePAtk" value="10714"/>
 		<set name="basePDef" value="655"/>
-		<set name="baseMAtk" value="1258"/>
+		<set name="baseMAtk" value="4258"/>
 		<set name="baseMDef" value="582"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -3005,18 +3005,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2343"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2908856"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="57203"/>
-		<set name="basePAtk" value="2714"/>
+		<set name="basePAtk" value="10714"/>
 		<set name="basePDef" value="655"/>
-		<set name="baseMAtk" value="1258"/>
+		<set name="baseMAtk" value="4258"/>
 		<set name="baseMDef" value="582"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -3074,18 +3074,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2483"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2860086"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="58226"/>
-		<set name="basePAtk" value="3113"/>
+		<set name="basePAtk" value="13113"/>
 		<set name="basePDef" value="689"/>
-		<set name="baseMAtk" value="1443"/>
+		<set name="baseMAtk" value="4443"/>
 		<set name="baseMDef" value="612"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -3140,18 +3140,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2483"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1272377"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="127545"/>
-		<set name="basePAtk" value="3113"/>
+		<set name="basePAtk" value="13113"/>
 		<set name="basePDef" value="689"/>
-		<set name="baseMAtk" value="1443"/>
+		<set name="baseMAtk" value="4443"/>
 		<set name="baseMDef" value="612"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -3206,18 +3206,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2532"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2998019"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="61654"/>
-		<set name="basePAtk" value="3258"/>
+		<set name="basePAtk" value="13258"/>
 		<set name="basePDef" value="701"/>
-		<set name="baseMAtk" value="1511"/>
+		<set name="baseMAtk" value="5511"/>
 		<set name="baseMDef" value="623"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -3270,18 +3270,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="6962413"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="144917"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="13410"/>
 		<set name="basePDef" value="713"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="5581"/>
 		<set name="baseMDef" value="633"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -3304,6 +3304,7 @@
 		<rewardlist type="RATED_GROUPED">
 			<group chance="70.0">
 				<reward item_id="57" min="27530" max="64215" chance="100.0"/>
+				<reward item_id="30425" min="1" max="1" chance="1.9836"/>
 			</group>
 			<group chance="10.99">
 				<reward item_id="18145" min="1" max="1" chance="2.72975"/>
@@ -3312,7 +3313,6 @@
 			<group chance="37.81">
 				<reward item_id="19310" min="1" max="1" chance="96.0328"/>
 				<reward item_id="19355" min="1" max="1" chance="1.9836"/>
-				<reward item_id="30425" min="1" max="1" chance="1.9836"/>
 			</group>
 		</rewardlist>
 		<rewardlist type="SWEEP">
@@ -3333,18 +3333,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2483"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2783562"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="56668"/>
-		<set name="basePAtk" value="3113"/>
+		<set name="basePAtk" value="13113"/>
 		<set name="basePDef" value="689"/>
-		<set name="baseMAtk" value="1443"/>
+		<set name="baseMAtk" value="5443"/>
 		<set name="baseMDef" value="612"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -3401,18 +3401,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="2791192"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="58096"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="13410"/>
 		<set name="basePDef" value="713"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="5581"/>
 		<set name="baseMDef" value="633"/>
 		<set name="basePAtkSpd" value="359"/>
 		<set name="baseCritRate" value="4"/>
@@ -3465,18 +3465,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="6286669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="625966"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="13410"/>
 		<set name="basePDef" value="713"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="5581"/>
 		<set name="baseMDef" value="633"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="baseCritRate" value="4"/>
@@ -3531,18 +3531,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2684"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="7694482"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="163070"/>
-		<set name="basePAtk" value="3735"/>
+		<set name="basePAtk" value="13735"/>
 		<set name="basePDef" value="737"/>
-		<set name="baseMAtk" value="1732"/>
+		<set name="baseMAtk" value="5732"/>
 		<set name="baseMDef" value="655"/>
 		<set name="basePAtkSpd" value="429"/>
 		<set name="baseCritRate" value="4"/>
@@ -3595,18 +3595,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2684"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="7328078"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="155305"/>
-		<set name="basePAtk" value="3735"/>
+		<set name="basePAtk" value="13735"/>
 		<set name="basePDef" value="737"/>
-		<set name="baseMAtk" value="1732"/>
+		<set name="baseMAtk" value="5732"/>
 		<set name="baseMDef" value="655"/>
 		<set name="basePAtkSpd" value="449"/>
 		<set name="baseCritRate" value="4"/>
@@ -3658,18 +3658,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="6786669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="655966"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="13569"/>
 		<set name="basePDef" value="725"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="5655"/>
 		<set name="baseMDef" value="644"/>
 		<set name="basePAtkSpd" value="499"/>
 		<set name="baseCritRate" value="4"/>
@@ -3722,18 +3722,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="6786669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="655966"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="13569"/>
 		<set name="basePDef" value="725"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="5655"/>
 		<set name="baseMDef" value="644"/>
 		<set name="basePAtkSpd" value="399"/>
 		<set name="baseCritRate" value="4"/>
@@ -3786,18 +3786,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2684"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="7694482"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="163070"/>
-		<set name="basePAtk" value="3735"/>
+		<set name="basePAtk" value="13735"/>
 		<set name="basePDef" value="737"/>
-		<set name="baseMAtk" value="1732"/>
+		<set name="baseMAtk" value="5732"/>
 		<set name="baseMDef" value="655"/>
 		<set name="basePAtkSpd" value="449"/>
 		<set name="baseCritRate" value="4"/>
@@ -3850,18 +3850,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="593977"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="12363"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="13410"/>
 		<set name="basePDef" value="713"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="5581"/>
 		<set name="baseMDef" value="633"/>
 		<set name="basePAtkSpd" value="449"/>
 		<set name="baseCritRate" value="4"/>
@@ -3916,18 +3916,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2684"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="7328078"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="155305"/>
-		<set name="basePAtk" value="3735"/>
+		<set name="basePAtk" value="13735"/>
 		<set name="basePDef" value="737"/>
-		<set name="baseMAtk" value="1732"/>
+		<set name="baseMAtk" value="5732"/>
 		<set name="baseMDef" value="655"/>
 		<set name="basePAtkSpd" value="499"/>
 		<set name="baseCritRate" value="4"/>
@@ -3980,18 +3980,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="6286669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="625966"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="13410"/>
 		<set name="basePDef" value="713"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="5581"/>
 		<set name="baseMDef" value="633"/>
 		<set name="basePAtkSpd" value="449"/>
 		<set name="baseCritRate" value="4"/>
@@ -4047,9 +4047,9 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
@@ -4119,9 +4119,9 @@
 		<set name="rewardExp" value="6786669"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="655966"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="13569"/>
 		<set name="basePDef" value="725"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="5655"/>
 		<set name="baseMDef" value="644"/>
 		<set name="basePAtkSpd" value="449"/>
 		<set name="baseCritRate" value="4"/>
@@ -4173,18 +4173,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="7140519"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="150020"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="13569"/>
 		<set name="basePDef" value="725"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="5655"/>
 		<set name="baseMDef" value="644"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -4237,18 +4237,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="548674"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="11420"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="13410"/>
 		<set name="basePDef" value="713"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="5581"/>
 		<set name="baseMDef" value="633"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -4296,18 +4296,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="548674"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="11420"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="13410"/>
 		<set name="basePDef" value="713"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="5581"/>
 		<set name="baseMDef" value="633"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -4354,18 +4354,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="576359"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="11996"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="13410"/>
 		<set name="basePDef" value="713"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="5581"/>
 		<set name="baseMDef" value="633"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -4416,18 +4416,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2684"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1364255"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="28912"/>
-		<set name="basePAtk" value="3735"/>
+		<set name="basePAtk" value="13735"/>
 		<set name="basePDef" value="737"/>
-		<set name="baseMAtk" value="1732"/>
+		<set name="baseMAtk" value="5732"/>
 		<set name="baseMDef" value="655"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -4478,18 +4478,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1202857"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="25271"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="13569"/>
 		<set name="basePDef" value="725"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="5655"/>
 		<set name="baseMDef" value="644"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -4538,18 +4538,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1202857"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="25271"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="13569"/>
 		<set name="basePDef" value="725"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="5655"/>
 		<set name="baseMDef" value="644"/>
 		<set name="basePAtkSpd" value="299"/>
 		<set name="baseCritRate" value="4"/>
@@ -4603,16 +4603,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="19710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="8663"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -4649,16 +4649,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="19710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -4695,16 +4695,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="19710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -4741,16 +4741,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -4787,16 +4787,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -4834,16 +4834,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -4881,16 +4881,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -4927,16 +4927,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -4972,18 +4972,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2684"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1173524"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="24870"/>
-		<set name="basePAtk" value="3735"/>
+		<set name="basePAtk" value="13735"/>
 		<set name="basePDef" value="737"/>
-		<set name="baseMAtk" value="1732"/>
+		<set name="baseMAtk" value="8732"/>
 		<set name="baseMDef" value="655"/>
 		<set name="basePAtkSpd" value="230"/>
 		<set name="baseCritRate" value="4"/>
@@ -5035,18 +5035,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2684"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1173524"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="24870"/>
-		<set name="basePAtk" value="3735"/>
+		<set name="basePAtk" value="16735"/>
 		<set name="basePDef" value="737"/>
-		<set name="baseMAtk" value="1732"/>
+		<set name="baseMAtk" value="8732"/>
 		<set name="baseMDef" value="655"/>
 		<set name="basePAtkSpd" value="230"/>
 		<set name="baseCritRate" value="4"/>
@@ -5094,18 +5094,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2737"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="1295121"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="27724"/>
-		<set name="basePAtk" value="3908"/>
+		<set name="basePAtk" value="13908"/>
 		<set name="basePDef" value="750"/>
-		<set name="baseMAtk" value="1812"/>
+		<set name="baseMAtk" value="7812"/>
 		<set name="baseMDef" value="666"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -5158,16 +5158,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="4000"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -5203,18 +5203,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="67309"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="1414"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="13569"/>
 		<set name="basePDef" value="725"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="6000"/>
 		<set name="baseMDef" value="644"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -5299,18 +5299,18 @@
 		<set name="baseHpReg" value="13"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="baseSTR" value="40"/>
+		<set name="baseSTR" value="80"/>
 		<set name="baseCON" value="43"/>
-		<set name="baseDEX" value="30"/>
+		<set name="baseDEX" value="60"/>
 		<set name="baseINT" value="21"/>
 		<set name="baseWIT" value="70"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="13410"/>
 		<set name="basePDef" value="713"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="8581"/>
 		<set name="baseMDef" value="633"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -5347,16 +5347,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -5393,16 +5393,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -5439,16 +5439,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -5486,16 +5486,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>
@@ -5533,16 +5533,16 @@
 		<set name="baseMpReg" value="3.0"/>
 		<set name="baseSTR" value="78"/>
 		<set name="baseCON" value="75"/>
-		<set name="baseDEX" value="41"/>
+		<set name="baseDEX" value="82"/>
 		<set name="baseINT" value="42"/>
 		<set name="baseWIT" value="78"/>
 		<set name="baseMEN" value="20"/>
 		<set name="rewardExp" value="0"/>
 		<set name="rewardRp" value="0"/>
 		<set name="rewardSp" value="0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePDef" value="341"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMDef" value="250"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="baseCritRate" value="4"/>

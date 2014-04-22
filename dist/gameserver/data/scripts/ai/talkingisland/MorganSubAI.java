@@ -106,7 +106,7 @@ public class MorganSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class MorganSubAI extends DefaultAI
 				ns = NpcString.BELOW_LEVEL_75_BE_SURE_TO_RECEIVE_NEWBIE_BUFFS;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

@@ -106,7 +106,7 @@ public class EleveSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class EleveSubAI extends DefaultAI
 				ns = NpcString.DON_T_KNOW_WHAT_TO_DO_LOOK_AT_THE_MAP;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

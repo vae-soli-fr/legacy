@@ -344,6 +344,7 @@
 		<table name="#magicLevel">85 86 88 90 92 94 96 98</table>
 		<table name="#mpConsume2">80 83 85 88 91 94 97 100</table>
 		<table name="#reuseDelay">5000</table>
+
 		<table name="#element">none</table>
 		<table name="#elementPower">0</table>
 		<table name="#powerPvP">0</table>
@@ -502,7 +503,7 @@
 			<table name="#magicLevel">90 91 92 93 94 95 96 97 98 99</table>
 		</enchant9>
 		<for>
-			<effect count="1" name="Stun" stackOrder="5" stackType="Stun" time="5" val="0"/>
+			<effect count="1" name="Stun" stackOrder="-1" stackType="Stun" time="5" val="0"/>
 		</for>
 	</skill>
 	<skill id="10012" levels="7" name="Shield Wave">
@@ -585,7 +586,7 @@
 			<table name="#magicLevel">90 91 92 93 94 95 96 97 98 99</table>
 		</enchant9>
 		<for>
-			<effect name="Stun" time="9" stackType="Stun" stackOrder="5"/>
+			<effect name="Stun" time="9" stackType="Stun" stackOrder="-1"/>
 		</for>
 	</skill>
 	<skill id="10013" levels="8" name="Gust Blade">
@@ -982,9 +983,8 @@
 		<table name="#mpConsume2">20 21 23 24</table>
 		<table name="#magicLevel">85 90 95 99</table>
 		<table name="#reuseDelay">60000</table>
-		<table name="#ref">10 15 20 100</table>
+		<table name="#ref">10 15 20 25</table>
 		<table name="#time">10</table>
-		<table name="#power">10 15 20 25</table>
 		<set name="weaponsAllowed" val="2"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
@@ -1011,10 +1011,8 @@
 		</enchant3>
 		<for>
 			<effect name="Buff" time="#time" val="0" stackOrder="3" stackType="dmg_shield">
-			    <add order="0x40" stat="reflectDam" val="#power"/>
+				<add order="0x40" stat="reflectDam" val="#ref"/>
 				<add order="0x40" stat="reflectAndBlockMSkillDam" val="50"/>
-				<add order="0x40" stat="reflectPhysicDebuff" val="50"/>
-				<add order="0x40" stat="reflectMagicDebuff" val="50"/>
 			</effect>
 		</for>
 	</skill>
@@ -1129,9 +1127,6 @@
 			<table name="#reuseDelay">582000 564000 546000 528000 510000 492000 474000 456000 438000 420000</table>
 			<table name="#elementPower">20 23 26 30 33 36 40 43 46 50</table>
 		</enchant9>
-		<for>
-			<effect name="KnockDown" abnormalTime="1" val="0" abnormalLvl="1" effectPower="85" effectType="KNOCK_DOWN" abnormalVisualEffect="sknockdown" />
-		</for>
 	</skill>
 	<skill id="10024" levels="1" name="Party Rescue">
 	<!-- Drags all party members to oneself, and for 15 seconds receives 90% of the damage inflicted to all party members. Additionally, all damage received is capped at 10. -->
@@ -1660,9 +1655,9 @@
 		<set name="reuseDelay" val="30000"/>
 		<set name="coolTime" val="300"/>
 		<set name="hitTime" val="2200"/>
-		<set name="target" val="TARGET_SELF"/>
+		<set name="target" val="TARGET_ONE"/>
 		<set name="operateType" val="OP_ACTIVE"/>
-		<set name="skillType" val="BUFF"/>
+		<set name="skillType" val="HEAL"/>
 		<for>
 			<effect count="1" name="HealPercent" time="0" val="#heal"/>
 		</for>
@@ -1959,11 +1954,10 @@
 	</skill>
 	<skill id="10056" levels="8" name="Cubic Protection">
 	<!-- none -->
-	<!--TODO-->
 		<table name="#time">0 3 6 6 6 6 6 6</table>
 		<table name="#magicLevel">85 87 89 90 92 94 97 99</table>
-		<table name="#mDef">0 0 0 500 500 500 500 500</table>
-		<table name="#pDef">0 0 500 500 500 500 500 500</table>
+		<table name="#mDef">0 0 0 0 500 500 500 500</table>
+		<table name="#pDef">0 0 0 500 500 500 500 500</table>
 		<set name="magicType" val="MAGIC"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="castRange" val="600"/>
@@ -1983,10 +1977,10 @@
 				<def name="negateCount" val="10"/>
 			</effect>
 			<effect count="1" name="Buff" stackType="CubicProtection" time="#time" val="0">
-				<add order="0x40" stat="cancelResist" val="100"/>
 				<add order="0x40" stat="mDef" val="#mDef"/>
 				<add order="0x40" stat="pDef" val="#pDef"/>
 			</effect>
+			<effect count="1" name="DebuffImmunity" time="#time" val="0"/>
 		</for>
 	</skill>
 	<skill id="10057" levels="1" name="Cubic Curse">

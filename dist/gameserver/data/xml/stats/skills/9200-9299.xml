@@ -11,7 +11,7 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
 			<effect name="Buff" time="1800" val="0" stackOrder="11" stackType="vampRage;pAtkSpeedUp;mAtkSpeedUp">
-				<add order="0x40" stat="absorbDam" val="9"/><!-- Should be chance triggered on normal attack, not 100% chance. -->
+				<add order="0x40" stat="absorbDam" val="3"/><!-- Should be chance triggered on normal attack, not 100% chance. -->
 				<mul order="0x30" stat="pAtkSpd" val="1.34"/>
 				<mul order="0x30" stat="mAtkSpd" val="1.31"/>
 			</effect>
@@ -257,7 +257,7 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
 			<effect name="Buff" time="1800" val="0" stackOrder="11" stackType="vampRage;pAtkSpeedUp;mAtkSpeedUp">
-				<add order="0x40" stat="absorbDam" val="9"/><!-- Should be chance triggered on normal attack, not 100% chance. -->
+				<add order="0x40" stat="absorbDam" val="3"/><!-- Should be chance triggered on normal attack, not 100% chance. -->
 				<mul order="0x30" stat="pAtkSpd" val="1.34"/>
 				<mul order="0x30" stat="mAtkSpd" val="1.31"/>
 			</effect>
@@ -411,7 +411,7 @@
             <effect count="0x7fffffff" name="Mentoring" time="99999999" val="0" stackOrder="11" stackType="vampRage;pAtkSpeedUp;mAtkSpeedUp">
                 <mul order="0x30" stat="pAtkSpd" val="1.34"/>
 				<mul order="0x30" stat="mAtkSpd" val="1.31"/>
-				<add order="0x40" stat="absorbDam" val="9"/>
+				<add order="0x40" stat="absorbDam" val="3"/>
             </effect>
         </for>
     </skill>
@@ -485,6 +485,7 @@
         <for>
 			<effect count="0x7fffffff" name="Mentoring" time="99999999" val="0">
 				<add order="0x40" stat="ExpMultiplier" val="#power"/>
+				<add order="0x40" stat="SpMultiplier" val="#power"/>
 			</effect>	
         </for>
     </skill>
@@ -502,6 +503,7 @@
         <for>
 			<effect count="0x7fffffff" name="Mentoring" time="99999999" val="0">
 				<add order="0x40" stat="ExpMultiplier" val="#power"/>
+				<add order="0x40" stat="SpMultiplier" val="#power"/>
 			</effect>
         </for>
     </skill>

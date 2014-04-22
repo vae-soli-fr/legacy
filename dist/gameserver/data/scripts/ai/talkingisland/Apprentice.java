@@ -53,8 +53,8 @@ public class Apprentice extends DefaultAI
 		final NpcInstance actor = getActor();
 		if (actor != null)
 		{
-			final NpcString ns = NpcString.RIDING_KOOKARU;
-			Functions.npcSay(actor, ns);
+			/*final NpcString ns = NpcString.RIDING_KOOKARU;
+			Functions.npcSay(actor, ns);*/
 		}
 		return false;
 	}

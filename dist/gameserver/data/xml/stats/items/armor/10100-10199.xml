@@ -139,7 +139,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="88,114"/>
+			<player classId="88,114,140"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -160,7 +160,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="89,113,117,118,131,132,133"/>
+			<player classId="89,113,117,118,131,132,133,140"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -280,7 +280,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="98,115,116,136"/>
+			<player classId="98,115,116,136,144"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>

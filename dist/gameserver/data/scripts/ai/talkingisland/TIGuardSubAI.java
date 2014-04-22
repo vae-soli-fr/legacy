@@ -74,7 +74,7 @@ public class TIGuardSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -96,7 +96,7 @@ public class TIGuardSubAI extends DefaultAI
 				ns = NpcString.SOMETHING_LIKE_THAT_COMES_OUT_OF_THE_RUINS;
 		}
 		
-		Functions.npcSay(actor, ns, new String[0]);
+		Functions.npcSay(actor, ns, new String[0]);*/
 	}
 	
 	private void startMoveTask()

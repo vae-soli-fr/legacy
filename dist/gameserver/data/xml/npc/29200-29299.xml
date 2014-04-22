@@ -38,7 +38,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="12"/>
+            <!--Жуки-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -86,7 +88,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="1"/>
+            <!--Нежить-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -134,7 +138,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="1"/>
+            <!--Нежить-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -182,7 +188,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="1"/>
+            <!--Нежить-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -219,7 +227,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="30.0"/>
+        <set name="collision_height" value="5.0"/>
         <set name="collision_radius" value="17.0"/>
         <set name="level" value="99"/>
         <set name="rewardExp" value="0"/>
@@ -230,7 +238,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="12"/>
+            <!--Жуки-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -278,11 +288,17 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="12"/>
+            <!--Жуки-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
             <skill id="4435" level="5"/>
+            <!--Высокая Устойчивость к Оглушающим Атакам-->
             <skill id="4438" level="5"/>
+            <!--Высокая Устойчивость к Усыпляющим Атакам-->
             <skill id="4441" level="5"/>
+            <!--Высокая Устойчивость к Ментальным Атакам-->
             <skill id="4439" level="5"/>
+            <!--Высокая Устойчивость к Удерживающим Атакам-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -319,7 +335,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="64.0"/>
+        <set name="collision_height" value="55.0"/>
         <set name="collision_radius" value="42.0"/>
         <set name="level" value="99"/>
         <set name="rewardExp" value="0"/>
@@ -330,7 +346,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="2"/>
+            <!--Магические Создания-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -367,7 +385,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="55.0"/>
+        <set name="collision_height" value="54.5"/>
         <set name="collision_radius" value="19.0"/>
         <set name="level" value="99"/>
         <set name="rewardExp" value="0"/>
@@ -378,7 +396,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="12"/>
+            <!--Жуки-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -415,7 +435,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="55.0"/>
+        <set name="collision_height" value="54.5"/>
         <set name="collision_radius" value="19.0"/>
         <set name="level" value="99"/>
         <set name="rewardExp" value="0"/>
@@ -426,7 +446,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="12"/>
+            <!--Жуки-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -474,8 +496,11 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="6"/>
+            <!--Гуманоиды-->
             <skill id="14726" level="1"/>
+            <!--Октавис-->
             <skill id="5467" level="1"/>
+            <!--Защита Тьмы-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -486,7 +511,9 @@
             <defence attribute="unholy" value="20"/>
         </attributes>
     </npc>
+    <!--ru name: Зверь Октависа-->
 	<npc id="29210" name="Octavis' Beast" title="">
+		<!--Base character specific-->
 		<set name="baseSTR" value="40"/>
 		<set name="baseCON" value="43"/>
 		<set name="baseDEX" value="30"/>
@@ -517,6 +544,7 @@
 		<set name="baseMCritRate" value="50.0"/>
 		<set name="collision_radius" value="66.0"/>
 		<set name="collision_height" value="56.0"/>
+		<!--Npc specific-->
 		<set name="type" value="Monster"/>
 		<set name="ai_type" value="OctavisRider"/>
 		<set name="level" value="99"/>
@@ -536,6 +564,7 @@
 		</attributes>
 		<skills>
 			<skill id="5464" level="1"/>
+			<!--Animals-->
 			<skill id="4416" level="3"/>
 		</skills>
 	</npc>
@@ -586,8 +615,11 @@
         </rewardlist>
         <skills>
             <skill id="4416" level="6"/>
+            <!--Гуманоиды-->
             <skill id="14726" level="1"/>
+            <!--Октавис-->
             <skill id="5467" level="1"/>
+            <!--Защита Тьмы-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -635,8 +667,11 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="6"/>
+            <!--Гуманоиды-->
             <skill id="14726" level="1"/>
+            <!--Октавис-->
             <skill id="5467" level="1"/>
+            <!--Защита Тьмы-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -684,7 +719,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="9"/>
+            <!--Демоны-->
             <skill id="5467" level="1"/>
+            <!--Защита Тьмы-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -721,7 +758,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="44.0"/>
+        <set name="collision_height" value="43.5"/>
         <set name="collision_radius" value="36.0"/>
         <set name="level" value="97"/>
         <set name="rewardExp" value="0"/>
@@ -732,7 +769,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="9"/>
+            <!--Демоны-->
             <skill id="5467" level="1"/>
+            <!--Защита Тьмы-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -780,7 +819,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="2"/>
+            <!--Магические Создания-->
             <skill id="5464" level="1"/>
+            <!--Защита Ветра-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -828,7 +869,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="2"/>
+            <!--Магические Создания-->
             <skill id="5464" level="1"/>
+            <!--Защита Ветра-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -876,7 +919,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="9"/>
+            <!--Демоны-->
             <skill id="5467" level="1"/>
+            <!--Защита Тьмы-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -962,7 +1007,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="30.0"/>
+        <set name="collision_height" value="25.0"/>
         <set name="collision_radius" value="15.0"/>
         <set name="level" value="98"/>
         <set name="rewardExp" value="0"/>
@@ -973,7 +1018,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="1"/>
+            <!--Нежить-->
             <skill id="5467" level="1"/>
+            <!--Защита Тьмы-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1010,7 +1057,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="55.0"/>
+        <set name="collision_height" value="54.5"/>
         <set name="collision_radius" value="19.0"/>
         <set name="level" value="99"/>
         <set name="rewardExp" value="0"/>
@@ -1021,7 +1068,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="12"/>
+            <!--Жуки-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1069,7 +1118,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="12"/>
+            <!--Жуки-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1117,7 +1168,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="12"/>
+            <!--Жуки-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1165,9 +1218,13 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="10"/>
+            <!--Драконы-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
             <skill id="4122" level="1"/>
+            <!--Антарас-->
             <skill id="4071" level="2"/>
+            <!--Устойчивость к Лукам/Арбалетам-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1204,7 +1261,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="55.0"/>
+        <set name="collision_height" value="54.0"/>
         <set name="collision_radius" value="63.0"/>
         <set name="level" value="97"/>
         <set name="rewardExp" value="0"/>
@@ -1255,7 +1312,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="55.0"/>
+        <set name="collision_height" value="54.0"/>
         <set name="collision_radius" value="63.0"/>
         <set name="level" value="97"/>
         <set name="rewardExp" value="0"/>
@@ -1266,10 +1323,15 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="10"/>
+            <!--Драконы-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
             <skill id="4438" level="5"/>
+            <!--Высокая Устойчивость к Усыпляющим Атакам-->
             <skill id="4440" level="5"/>
+            <!--Высокая Устойчивость к Парализующим Атакам-->
             <skill id="4441" level="5"/>
+            <!--Высокая Устойчивость к Ментальным Атакам-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1317,7 +1379,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="10"/>
+            <!--Драконы-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1354,7 +1418,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="35.0"/>
+        <set name="collision_height" value="34.5"/>
         <set name="collision_radius" value="42.0"/>
         <set name="level" value="99"/>
         <set name="rewardExp" value="0"/>
@@ -1365,7 +1429,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="10"/>
+            <!--Драконы-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1413,9 +1479,13 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="10"/>
+            <!--Драконы-->
             <skill id="5462" level="1"/>
+            <!--Защита Огня-->
             <skill id="4679" level="1"/>
+            <!--Валакас-->
             <skill id="4071" level="2"/>
+            <!--Устойчивость к Лукам/Арбалетам-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1463,7 +1533,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="2"/>
+            <!--Магические Создания-->
             <skill id="5462" level="1"/>
+            <!--Защита Огня-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1500,7 +1572,7 @@
         <set name="baseShldRate" value="0"/>
         <set name="baseWIT" value="78"/>
         <set name="baseWalkSpd" value="1"/>
-        <set name="collision_height" value="50.0"/>
+        <set name="collision_height" value="44.0"/>
         <set name="collision_radius" value="40.0"/>
         <set name="level" value="97"/>
         <set name="rewardExp" value="0"/>
@@ -1511,7 +1583,9 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="10"/>
+            <!--Драконы-->
             <skill id="5465" level="1"/>
+            <!--Защита Земли-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>
@@ -1559,13 +1633,21 @@
         <set name="type" value="Npc"/>
         <skills>
             <skill id="4416" level="1"/>
+            <!--Нежить-->
             <skill id="5467" level="1"/>
+            <!--Защита Тьмы-->
             <skill id="4435" level="5"/>
+            <!--Высокая Устойчивость к Оглушающим Атакам-->
             <skill id="4438" level="5"/>
+            <!--Высокая Устойчивость к Усыпляющим Атакам-->
             <skill id="4440" level="5"/>
+            <!--Высокая Устойчивость к Парализующим Атакам-->
             <skill id="4441" level="5"/>
+            <!--Высокая Устойчивость к Ментальным Атакам-->
             <skill id="4439" level="5"/>
+            <!--Высокая Устойчивость к Удерживающим Атакам-->
             <skill id="4435" level="5"/>
+            <!--Высокая Устойчивость к Оглушающим Атакам-->
         </skills>
         <attributes>
             <defence attribute="fire" value="20"/>

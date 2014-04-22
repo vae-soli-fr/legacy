@@ -148,7 +148,7 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
 			<effect name="Buff" time="1800" val="0" stackOrder="#stackLevel" stackType="vampRage;pAtkSpeedUp;mAtkSpeedUp">
-				<add order="0x40" stat="absorbDam" val="9"/>
+				<add order="0x40" stat="absorbDam" val="2"/>
 				<mul order="0x30" stat="pAtkSpd" val="#vuln1"/>
 				<mul order="0x30" stat="mAtkSpd" val="#vuln2"/>
 			</effect>

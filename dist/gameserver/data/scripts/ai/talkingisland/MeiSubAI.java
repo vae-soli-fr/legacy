@@ -106,7 +106,7 @@ public class MeiSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class MeiSubAI extends DefaultAI
 				ns = NpcString.IF_YOU_IGNORE_THE_TRAINING_GROUNDS_YOU_LL_REGRET_IT;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

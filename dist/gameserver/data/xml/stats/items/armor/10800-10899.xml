@@ -89,7 +89,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="90,91,99,106"/>
+			<player classId="90,91,99,106,139"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="226"/>
@@ -115,7 +115,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="89,113,117,118"/>
+			<player classId="89,113,117,118,140"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="226"/>
@@ -141,7 +141,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="88,114"/>
+			<player classId="88,114,140"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="226"/>
@@ -216,7 +216,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="93,101,108,117"/>
+			<player classId="93,101,108,117,141"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -242,7 +242,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="92,102,109,134"/>
+			<player classId="92,102,109,134,142"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -292,7 +292,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="97,105,112"/>
+			<player classId="97,105,112,146"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="113"/>
@@ -319,7 +319,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="98,115,116"/>
+			<player classId="98,115,116,144"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="113"/>
@@ -346,7 +346,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="96,104,111"/>
+			<player classId="96,104,111,145"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="113"/>
@@ -373,7 +373,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="94,95,103,110"/>
+			<player classId="94,95,103,110,143"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="113"/>
@@ -400,7 +400,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="88,114"/>
+			<player classId="88,114,140"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -426,7 +426,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="89,113,117,118,131,132,133"/>
+			<player classId="89,113,117,118,131,132,133,140"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -452,7 +452,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="98,115,116,136"/>
+			<player classId="98,115,116,136,144"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -478,7 +478,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="96,104,111"/>
+			<player classId="96,104,111,145"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -527,7 +527,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="90,91,99,106"/>
+			<player classId="90,91,99,106,139"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="226"/>
@@ -654,7 +654,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="93,101,108,117"/>
+			<player classId="93,101,108,117,141"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -680,7 +680,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="92,102,109,134"/>
+			<player classId="92,102,109,134,142"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -730,7 +730,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="97,105,112"/>
+			<player classId="97,105,112,146"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="113"/>
@@ -757,7 +757,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="98,115,116"/>
+			<player classId="98,115,116,144"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="113"/>
@@ -784,7 +784,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="96,104,111"/>
+			<player classId="96,104,111,145"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="113"/>
@@ -811,7 +811,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="94,95,103,110"/>
+			<player classId="94,95,103,110,143"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="113"/>
@@ -838,7 +838,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="88,114"/>
+			<player classId="88,114,140"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -864,7 +864,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="89,113,117,118,131,132,133"/>
+			<player classId="89,113,117,118,131,132,133,140"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -890,7 +890,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="98,115,116,136"/>
+			<player classId="98,115,116,136,144"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>
@@ -916,7 +916,7 @@
 		</equip>
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<cond msgId="113" addName="1">
-			<player classId="96,104,111"/>
+			<player classId="96,104,111,145"/>
 		</cond>
 		<for>
 			<add stat="pDef" order="0x10" value="170"/>

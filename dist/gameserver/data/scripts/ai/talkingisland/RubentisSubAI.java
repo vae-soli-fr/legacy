@@ -106,7 +106,7 @@ public class RubentisSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class RubentisSubAI extends DefaultAI
 				ns = NpcString.ONLY_THE_STRONG_SURVIVE_AT_YE_SAGIRA_RUINS;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

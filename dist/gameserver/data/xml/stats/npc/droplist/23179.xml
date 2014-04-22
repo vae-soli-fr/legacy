@@ -5,6 +5,7 @@
 	<droplist>
 		<category id="1" chance="70.000">
 			<item id="57" min="1144" max="2668" chance="100.00000" />		<!-- Адена -->
+			<item id="30423" min="1" max="1" chance="9.15385" />		<!-- Рецепт - Заряд Души Ранг R -->
 		</category>
 		<category id="2" chance="17.402">
 			<item id="18132" min="1" max="1" chance="0.17239" />		<!-- Неопознанные Ботинки Бессмертия -->
@@ -12,7 +13,6 @@
 			<item id="19192" min="1" max="1" chance="49.78163" />		<!-- Материал Неопознанных Кожаных Перчаток Бессмертия -->
 		</category>
 		<category id="3" chance="0.078">
-			<item id="30423" min="1" max="1" chance="96.15385" />		<!-- Рецепт - Заряд Души Ранг R -->
 			<item id="17526" min="1" max="1" chance="3.84615" />		<!-- Свиток: Модифицировать Оружие (R) -->
 		</category>
 	</droplist>

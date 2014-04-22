@@ -2275,11 +2275,6 @@
 		<!--Combat Soldier-->
 	</spawn>
 	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
-		<point x="-110541" y="238789" z="-2920" h="31228"/>
-		<npc id="22995"/>
-		<!--Rider-->
-	</spawn>
-	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
 		<point x="-109725" y="237632" z="-2960" h="63091"/>
 		<npc id="30004"/>
 		<!--Katerina-->

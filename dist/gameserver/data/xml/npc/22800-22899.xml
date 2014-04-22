@@ -1276,13 +1276,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2000.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -1319,13 +1319,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2000.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -1362,13 +1362,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="1674.0"/>
 		<set name="baseMpReg" value="3.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="237"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="200"/>
@@ -1486,13 +1486,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2000.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -1535,13 +1535,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2000.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -1584,13 +1584,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="1708.0"/>
 		<set name="baseMpReg" value="3.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -1702,13 +1702,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="1708.0"/>
 		<set name="baseMpReg" value="3.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -1818,13 +1818,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="1674.0"/>
 		<set name="baseMpReg" value="3.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="140"/>
@@ -1936,13 +1936,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="1743.0"/>
 		<set name="baseMpReg" value="3.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -2045,13 +2045,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="518.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2168.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="200"/>
@@ -2136,13 +2136,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="1777.0"/>
 		<set name="baseMpReg" value="3.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="200"/>
@@ -2230,13 +2230,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="518.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2168.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="362"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="200"/>
@@ -2330,13 +2330,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="518.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2168.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="318"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="170"/>
@@ -2422,13 +2422,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="1037.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2168.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="318"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="170"/>
@@ -2514,13 +2514,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="520.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2126.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="300"/>
@@ -2604,13 +2604,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="1041.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2126.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="50"/>
@@ -2701,13 +2701,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="520.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2126.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="300"/>
@@ -2792,13 +2792,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="1037.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2168.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="200"/>
@@ -2889,13 +2889,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="514.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2253.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="140"/>
@@ -2988,13 +2988,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1048"/>
+		<set name="baseMAtk" value="10480"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="543"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2167"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2260"/>
+		<set name="basePAtk" value="22600"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="612"/>
 		<set name="baseRunSpd" value="160"/>
@@ -3083,13 +3083,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1048"/>
+		<set name="baseMAtk" value="10480"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="543"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2167"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2260"/>
+		<set name="basePAtk" value="22600"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="612"/>
 		<set name="baseRunSpd" value="220"/>
@@ -3183,13 +3183,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1097"/>
+		<set name="baseMAtk" value="10970"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="552"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2210"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2366"/>
+		<set name="basePAtk" value="23660"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="622"/>
 		<set name="baseRunSpd" value="140"/>
@@ -3275,13 +3275,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2000.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -3318,13 +3318,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2000.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -3361,13 +3361,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="0.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2000.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -4113,13 +4113,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="1545.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2263.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -4213,13 +4213,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="1545.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="333"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2263.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="253"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="190"/>
@@ -4314,13 +4314,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="300.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2253.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="210"/>
@@ -4514,13 +4514,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="1030.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2253.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="210"/>
@@ -4614,13 +4614,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="150.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2253.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="248"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="220"/>
@@ -4714,13 +4714,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="300.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2253.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="170"/>
@@ -5580,13 +5580,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1001"/>
+		<set name="baseMAtk" value="10010"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="534"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2126"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2159"/>
+		<set name="basePAtk" value="21590"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="602"/>
 		<set name="baseRunSpd" value="50"/>
@@ -5682,13 +5682,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="518.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2168.0"/>
 		<set name="baseMpReg" value="6.0"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="170"/>
@@ -5778,13 +5778,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="518.0"/>
 		<set name="baseINT" value="42"/>
-		<set name="baseMAtk" value="663"/>
+		<set name="baseMAtk" value="6630"/>
 		<set name="baseMAtkSpd" value="334"/>
 		<set name="baseMDef" value="250"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2168.0"/>
 		<set name="baseMpReg" value="0.9"/>
-		<set name="basePAtk" value="971"/>
+		<set name="basePAtk" value="9710"/>
 		<set name="basePAtkSpd" value="279"/>
 		<set name="basePDef" value="341"/>
 		<set name="baseRunSpd" value="200"/>
@@ -5873,13 +5873,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1317"/>
+		<set name="baseMAtk" value="13170"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="592"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2389"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2841"/>
+		<set name="basePAtk" value="28410"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="666"/>
 		<set name="baseRunSpd" value="180"/>
@@ -5938,13 +5938,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1443"/>
+		<set name="baseMAtk" value="14430"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="612"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2483"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3113"/>
+		<set name="basePAtk" value="31130"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="689"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6003,13 +6003,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6067,13 +6067,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6131,13 +6131,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1511"/>
+		<set name="baseMAtk" value="15110"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="623"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2532"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3258"/>
+		<set name="basePAtk" value="32580"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="701"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6200,13 +6200,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="16550"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="644"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="35690"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="725"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6234,13 +6234,13 @@
 		<rewardlist type="RATED_GROUPED">
 			<group chance="70">
 				<reward item_id="57" min="1722" max="4021" chance="100"/> <!-- Adena -->
+				<reward item_id="30425" min="1" max="1" chance="9.1677"/> <!-- Recipe: Blessed Spiritshot R 100% -->
 			</group>
 			<group chance="0.0300">
 				<reward item_id="18154" min="1" max="1" chance="50.0000"/> <!-- Unidentified Twilight Gauntlet -->
 				<reward item_id="18155" min="1" max="1" chance="50.0000"/> <!-- Unidentified Twilight Boots -->
 			</group>
 			<group chance="0.0403">
-				<reward item_id="30425" min="1" max="1" chance="93.1677"/> <!-- Recipe: Blessed Spiritshot R 100% -->
 				<reward item_id="17526" min="1" max="1" chance="6.8323"/> <!-- Scroll: Enchant Weapon R-Grade -->
 			</group>
 		</rewardlist>
@@ -6267,13 +6267,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="15810"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="633"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="34100"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="713"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6335,13 +6335,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="15810"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="633"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="34100"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="713"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6410,13 +6410,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1317"/>
+		<set name="baseMAtk" value="13170"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="592"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2389"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2841"/>
+		<set name="basePAtk" value="28410"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="666"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6475,13 +6475,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1443"/>
+		<set name="baseMAtk" value="14430"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="612"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2483"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3113"/>
+		<set name="basePAtk" value="31130"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="689"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6540,13 +6540,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6604,13 +6604,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6668,13 +6668,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1511"/>
+		<set name="baseMAtk" value="15110"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="623"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2532"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3258"/>
+		<set name="basePAtk" value="32580"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="701"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6736,13 +6736,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="16550"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="644"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="35690"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="725"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6808,13 +6808,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="15810"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="633"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="34100"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="713"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6882,13 +6882,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="15810"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="633"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="34100"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="713"/>
 		<set name="baseRunSpd" value="180"/>
@@ -6954,13 +6954,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1317"/>
+		<set name="baseMAtk" value="13170"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="592"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2389"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2841"/>
+		<set name="basePAtk" value="28410"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="666"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7019,13 +7019,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1443"/>
+		<set name="baseMAtk" value="14430"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="612"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2483"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3113"/>
+		<set name="basePAtk" value="31130"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="689"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7086,13 +7086,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7150,13 +7150,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7214,13 +7214,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1511"/>
+		<set name="baseMAtk" value="15101"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="623"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2532"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3258"/>
+		<set name="basePAtk" value="32580"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="701"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7281,13 +7281,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="16550"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="644"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="35690"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="725"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7353,13 +7353,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="15810"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="633"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="34100"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="713"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7429,13 +7429,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="15810"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="633"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="34100"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="713"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7501,13 +7501,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1317"/>
+		<set name="baseMAtk" value="13170"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="592"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2389"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2841"/>
+		<set name="basePAtk" value="28410"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="666"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7561,13 +7561,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1443"/>
+		<set name="baseMAtk" value="14430"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="612"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2483"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3113"/>
+		<set name="basePAtk" value="31130"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="689"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7624,13 +7624,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7686,13 +7686,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7748,13 +7748,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1511"/>
+		<set name="baseMAtk" value="15110"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="623"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2532"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3258"/>
+		<set name="basePAtk" value="32580"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="701"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7813,13 +7813,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1655"/>
+		<set name="baseMAtk" value="16550"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="644"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2632"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3569"/>
+		<set name="basePAtk" value="35690"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="725"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7881,13 +7881,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="15810"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="633"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="34100"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="713"/>
 		<set name="baseRunSpd" value="180"/>
@@ -7953,13 +7953,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1581"/>
+		<set name="baseMAtk" value="15810"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="633"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2582"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3410"/>
+		<set name="basePAtk" value="34100"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="713"/>
 		<set name="baseRunSpd" value="180"/>
@@ -8023,13 +8023,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1317"/>
+		<set name="baseMAtk" value="13170"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="592"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2389"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2841"/>
+		<set name="basePAtk" value="28410"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="666"/>
 		<set name="baseRunSpd" value="180"/>
@@ -8084,13 +8084,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1443"/>
+		<set name="baseMAtk" value="14430"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="612"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2483"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3113"/>
+		<set name="basePAtk" value="31130"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="689"/>
 		<set name="baseRunSpd" value="180"/>
@@ -8148,13 +8148,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -8214,13 +8214,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1379"/>
+		<set name="baseMAtk" value="13790"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="602"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2435"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="2974"/>
+		<set name="basePAtk" value="29740"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="678"/>
 		<set name="baseRunSpd" value="180"/>
@@ -8280,13 +8280,13 @@
 		<set name="baseHpRate" value="1.0"/>
 		<set name="baseHpReg" value="13"/>
 		<set name="baseINT" value="21"/>
-		<set name="baseMAtk" value="1511"/>
+		<set name="baseMAtk" value="15110"/>
 		<set name="baseMAtkSpd" value="398"/>
 		<set name="baseMDef" value="623"/>
 		<set name="baseMEN" value="20"/>
 		<set name="baseMpMax" value="2532"/>
 		<set name="baseMpReg" value="4"/>
-		<set name="basePAtk" value="3258"/>
+		<set name="basePAtk" value="32580"/>
 		<set name="basePAtkSpd" value="529"/>
 		<set name="basePDef" value="701"/>
 		<set name="baseRunSpd" value="180"/>

@@ -106,7 +106,7 @@ public class MarshaSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class MarshaSubAI extends DefaultAI
 				ns = NpcString.ISN_T_THERE_AN_EASIER_WAY_TO_GET_THERE;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

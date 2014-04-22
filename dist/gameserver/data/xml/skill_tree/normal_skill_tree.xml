@@ -17516,6 +17516,7 @@
 			<skill id="1516" level="1" cost="8300000" name="Soul Strike" min_level="76" />
 			<skill id="1512" level="1" cost="11000000" name="Soul Vortex" min_level="77" />
 			<skill id="330" level="1" cost="11000000" name="Skill Mastery" min_level="77" />
+			<skill id="331" level="1" cost="13000000" name="Skill Mastery" min_level="77" />
 			<skill id="1469" level="1" cost="32000000" name="Leopold" min_level="78" />
 			<skill id="939" level="1" cost="32000000" name="Soul Rage" min_level="78" />
 			<skill id="538" level="1" cost="60000000" name="Final Form" min_level="79" />
@@ -17541,6 +17542,7 @@
 			<skill id="1516" level="1" cost="8300000" name="Soul Strike" min_level="76" />
 			<skill id="1512" level="1" cost="11000000" name="Soul Vortex" min_level="77" />
 			<skill id="330" level="1" cost="11000000" name="Skill Mastery" min_level="77" />
+			<skill id="331" level="1" cost="13000000" name="Skill Mastery" min_level="77" />
 			<skill id="1469" level="1" cost="32000000" name="Leopold" min_level="78" />
 			<skill id="939" level="1" cost="32000000" name="Soul Rage" min_level="78" />
 			<skill id="538" level="1" cost="60000000" name="Final Form" min_level="79" />
@@ -17566,6 +17568,7 @@
 			<skill id="330" level="1" cost="16000000" name="Skill Mastery" min_level="77" />
 			<skill id="792" level="1" cost="22000000" name="Betrayal Mark" min_level="78" />
 			<skill id="1470" level="1" cost="16000000" name="Prahnah" min_level="78" />
+			<skill id="330" level="1" cost="13000000" name="Skill Mastery" min_level="77" />
 			<skill id="334" level="1" cost="22000000" name="Focus Skill Mastery" min_level="78" />
 			<skill id="939" level="1" cost="22000000" name="Soul Rage" min_level="78" />
 			<skill id="538" level="1" cost="60000000" name="Final Form" min_level="79" />

@@ -106,7 +106,7 @@ public class RotinaSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class RotinaSubAI extends DefaultAI
 				ns = NpcString.YOU_LL_EARN_TONS_OF_ITEMS_USING_THE_TRAINING_GROUNDS;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="147112" y="25608" z="-2016" h="0"/>
+        <npc id="32571"/>
+        <!--Colin-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="147456" y="22576" z="-1984" h="16654"/>
+        <npc id="30857"/>
+        <!--Orven-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="147216" y="22848" z="-1984" h="0"/>
+        <npc id="30858"/>
+        <!--Ross-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="147214" y="23067" z="-1984" h="0"/>
+        <npc id="30861"/>
+        <!--Leonard-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="146991" y="23783" z="-1996" h="49000"/>
+        <npc id="32593"/>
+        <!--Wood-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="147692" y="22848" z="-1984" h="32768"/>
+        <npc id="30860"/>
+        <!--Flownia-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="147693" y="23067" z="-1984" h="32768"/>
+        <npc id="30859"/>
+        <!--Vivyan-->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+		<point x="147784" y="25914" z="-2038" h="57344"/>
+		<npc id="33515"/>
+		<!--Giorgio-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="146737" y="25807" z="-2008" h="2872"/>
+        <npc id="30848"/>
+        <!--Elisa-->
+    </spawn>
+	<!--guarde-->
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="146296" y="25400" z="-2016" h="49151"/>
+        <npc id="30872"/>
+        <!--Conroy-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="146424" y="25400" z="-2016" h="49151"/>
+        <npc id="30873"/>
+        <!--Coleman-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="147560" y="25944" z="-2016" h="16383"/>
+        <npc id="30874"/>
+        <!--Aldis-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="147304" y="25960" z="-2016" h="16383"/>
+        <npc id="30875"/>
+        <!--Carlton-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="148136" y="25720" z="-2016" h="3355"/>
+        <npc id="30876"/>
+        <!--Eastan-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="14152" y="25880" z="-2016" h="3355"/>
+        <npc id="30877"/>
+        <!--Grayson-->
+    </spawn>
+	<!--fin de guarde -->
+    <spawn count="40" respawn="60" respawn_random="0" period_of_day="none">
+        <territory>
+            <add x="144968" y="27016" zmin="-2464" zmax="-2208"/>
+            <add x="145384" y="29992" zmin="-2464" zmax="-2208"/>
+            <add x="149880" y="29912" zmin="-2464" zmax="-2208"/>
+            <add x="149864" y="26984" zmin="-2464" zmax="-2208"/>
+        </territory>
+        <npc id="20661"/>
+    </spawn>
+    <spawn count="40" respawn="60" respawn_random="0" period_of_day="none">
+        <territory>
+            <add x="144968" y="27016" zmin="-2464" zmax="-2208"/>
+            <add x="145384" y="29992" zmin="-2464" zmax="-2208"/>
+            <add x="149880" y="29912" zmin="-2464" zmax="-2208"/>
+            <add x="149864" y="26984" zmin="-2464" zmax="-2208"/>
+        </territory>
+        <npc id="20666"/>
+    </spawn>
+    <spawn count="40" respawn="60" respawn_random="0" period_of_day="none">
+        <territory>
+            <add x="144968" y="27016" zmin="-2464" zmax="-2208"/>
+            <add x="145384" y="29992" zmin="-2464" zmax="-2208"/>
+            <add x="149880" y="29912" zmin="-2464" zmax="-2208"/>
+            <add x="149864" y="26984" zmin="-2464" zmax="-2208"/>
+        </territory>
+        <npc id="20997"/>
+    </spawn>
+
+    <spawn count="40" respawn="60" respawn_random="0" period_of_day="none">
+        <territory>
+            <add x="144904" y="24584" zmin="-2144" zmax="-2144"/>
+            <add x="145272" y="20872" zmin="-2144" zmax="-2144"/>
+            <add x="149000" y="21112" zmin="-2144" zmax="-2144"/>
+            <add x="150600" y="24552" zmin="-2144" zmax="-2144"/>
+        </territory>
+        <npc id="20661"/>
+    </spawn>
+    <spawn count="40" respawn="60" respawn_random="0" period_of_day="none">
+        <territory>
+            <add x="144904" y="24584" zmin="-2144" zmax="-2144"/>
+            <add x="145272" y="20872" zmin="-2144" zmax="-2144"/>
+            <add x="149000" y="21112" zmin="-2144" zmax="-2144"/>
+            <add x="150600" y="24552" zmin="-2144" zmax="-2144"/>
+        </territory>
+        <npc id="20666"/>
+    </spawn>
+    <spawn count="40" respawn="60" respawn_random="0" period_of_day="none">
+        <territory>
+            <add x="144904" y="24584" zmin="-2144" zmax="-2144"/>
+            <add x="145272" y="20872" zmin="-2144" zmax="-2144"/>
+            <add x="149000" y="21112" zmin="-2144" zmax="-2144"/>
+            <add x="150600" y="24552" zmin="-2144" zmax="-2144"/>
+        </territory>
+        <npc id="20997"/>
+    </spawn>
+</list>

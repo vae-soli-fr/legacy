@@ -199,25 +199,18 @@
 	</skill>
     <skill id="10255" levels="1" name="Superior Momentum Mastery">
     <!-- Absorbs Momentum by 20% during a normal physical attack and 40% during a critical attack. Can absorb up to 10 Momentum levels. -->
-		<table name="#effectPoint">655</table>
-		<table name="#power">108</table>
-		<table name="#magicLevel">85</table>
-		<table name="#absorbPart">0.2</table>
-		<set name="effectPoint" val="#effectPoint"/>
-		<set name="power" val="#power"/>
-		<set name="magicLevel" val="#magicLevel"/>
-		<set name="element" val="unholy"/>
-		<set name="target" val="TARGET_ONE"/>
-		<set name="relationSkillsId" val="992;993;"/> 
-		<set name="skillType" val="DRAIN"/>
+		<set name="icon" val="icon.skill0992"/>
+		<set name="magicLevel" val="85"/>
+		<set name="target" val="TARGET_SELF"/>
+		<set name="skillType" val="BUFF"/>
 		<set name="operateType" val="OP_PASSIVE"/>
-		<set name="absorbPart" val="#absorbPart"/>
-		<set name="absorbAbs" val="0"/>
-		<!--Fixed by Zyth, WunkiaKorps 2013-->
-		<enchant1 levels="10" name="Power">
-			<table name="#absorbPart">0.21 0.22 0.23 0.24 0.25 0.26 0.27 0.28 0.29 0.3</table>
-		</enchant1>
-		<for/>
+		<set name="maxCharges" val="10"/>
+		<triggers>
+			<trigger id="10283" level="1" type="ATTACK" chance="20">
+			</trigger>
+			<trigger id="10283" level="1" type="CRIT" chance="40">
+			</trigger>
+		</triggers>	
 	</skill>
     <skill id="10256" levels="1" name="Superior HP Mastery">
     <!-- STR + 2, Max HP + 606, Max CP + 296 and HP Recovery Bonus + 7.3. While sitting, HP Recovery Bonus + 7 and MP recovery bonus + 3.7. When HP falls below 30%, P. Atk. + 172. -->
@@ -1226,11 +1219,14 @@
 	</skill>
     <skill id="10283" levels="1" name="Increase Momentum">
     <!-- none -->
-       <set name="operateType" val="OP_PASSIVE"/>
-       <set name="skillType" val="NOTDONE"/>
-       <set name="target" val="TARGET_SELF"/>
-       <for>
-       </for>
+		<set name="icon" val="icon.skill0008"/>
+		<set name="magicLevel" val="85"/>
+		<set name="effectPoint" val="200"/>
+		<set name="target" val="TARGET_SELF"/>
+		<set name="skillType" val="CHARGE"/>
+		<set name="operateType" val="OP_ACTIVE"/>
+		<set name="charges" val="10"/>
+		<set name="reuseDelay" val="1000"/>
 	</skill>
     <skill id="10284" levels="3" name="Lightning Force">
     <!-- You are imbued with Rage. Atk. Spd. + 10% when equipped with a fist weapon. P. Atk. + 10% when equipped with a sword/blunt/dual sword/spear weapon. 20% chance of raising Lightning Force to level 2 during a critical attack. -->

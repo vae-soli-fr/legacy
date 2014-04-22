@@ -274,27 +274,10 @@
 	<skill id="9438" levels="1" name="Letter Collector's Gift (8th Anniversary">
     <!-- For 2 hours, increases Atk. Spd. by 10%, Casting Spd. by 10%, Speed by 10, and Max HP and Max MP by 10%. -->
 		<set name="reuseDelay" val="1800000"/>
-		<set name="magicType" val="SPECIAL"/>
 		<set name="icon" val="icon.shield_bread_i02"/>
-		<set name="magicLevel" val="1"/>
-		<set name="hitTime" val="100"/>
-		<set name="hitCancelTime" val="500"/>
-		<set name="target" val="TARGET_SELF"/>
-		<set name="skillType" val="BUFF"/>
+		<set name="target" val="TARGET_NONE"/>
+		<set name="skillType" val="NOTDONE"/>
 		<set name="operateType" val="OP_ACTIVE"/>
-		<set name="altUse" val="true"/>
-		<set name="itemConsumeId" val="34949"/>
-		<set name="itemConsumeCount" val="1"/>
-		<set name="isHandler" val="true"/>
-		<for>
-			<effect count="1" name="Buff" stackOrder="1" time="7200" val="0">
-				<mul order="0x30" stat="pAtkSpd" val="1.10"/>
-				<mul order="0x30" stat="mAtkSpd" val="1.10"/>
-				<add order="0x10" stat="runSpd" val="10"/>
-				<mul order="0x30" stat="maxHp" val="1.10"/>
-				<mul order="0x30" stat="maxMp" val="1.10"/>
-			</effect>
-		</for>
 	</skill>
 	<skill id="9439" levels="1" name="10,000 Individual Fame Scroll">
     <!-- 10,000 Individual Fame Replenish Scroll -->
@@ -441,52 +424,6 @@
 		<set name="skillType" val="NOTDONE"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 	</skill>
-	<skill id="9459" levels="1" name="Tauti's Wrath">
-		<!-- Uses Tauti's Wrath to attack nearby enemies with 27552 damage and knock them down. -->
-		<table name="#effectPoint">173</table>
-		<table name="#mpConsume2">191</table>
-		<table name="#power">27552</table>
-		<set name="coolTime" val="300"/>
-		<set name="reuseDelay" val="15000"/>
-		<set name="power" val="#power"/>
-		<set name="hitTime" val="1500"/>
-		<set name="hitCancelTime" val="500"/>
-		<set name="mpConsume2" val="#mpConsume2"/>
-		<set name="activateRate" val="50"/>
-		<set name="effectPoint" val="#effectPoint"/>
-		<set name="target" val="TARGET_AREA"/>
-		<set name="overHit" val="true"/>
-        <set name="skillType" val="DEBUFF"/>
-		<set name="operateType" val="OP_ACTIVE"/>
-		<set name="flyType" val="PUSH_DOWN_HORIZONTAL"/>
-		<set name="nextAction" val="attack"/>
-		<set name="trait" val="SHOCK"/>
-		<set name="saveVs" val="CON"/>
-		<for>
-			<effect count="1" name="Stun" stackOrder="-1" stackType="Stun" time="5" val="0"/>
-		</for>
-	</skill>
-	<skill id="9460" levels="1" name="Tauti's Authority">
-		<!-- Uses Tauti's Authority to attack nearby enemies with 371 damage and knock them down. -->
-		<table name="#effectPoint">173</table>
-		<table name="#mpConsume2">191</table>
-		<table name="#power">371</table>
-		<set name="coolTime" val="300"/>
-		<set name="reuseDelay" val="15000"/>
-		<set name="power" val="#power"/>
-		<set name="hitTime" val="1500"/>
-		<set name="hitCancelTime" val="500"/>
-		<set name="mpConsume2" val="#mpConsume2"/>
-		<set name="activateRate" val="50"/>
-		<set name="effectPoint" val="#effectPoint"/>
-		<set name="target" val="TARGET_AREA"/>
-		<set name="overHit" val="true"/>
-        <set name="skillType" val="DEBUFF"/>
-		<set name="operateType" val="OP_ACTIVE"/>
-		<set name="flyType" val="PUSH_DOWN_HORIZONTAL"/>
-		<set name="nextAction" val="attack"/>
-		<set name="saveVs" val="CON"/>
-	</skill>
 	<skill id="9479" levels="1" name="Extra Pass">
     <!-- none -->
 		<set name="icon" val="icon.skill0000"/>
@@ -531,31 +468,10 @@
 	</skill>
 	<skill id="9487" levels="1" name="Angel Cat's Blessing">
     <!-- Increases M. Atk. By 20%, P. Atk., P. Def., M. Def., Atk. Spd., Casting Spd., and Max HP/MP by 5%, and XP/SP gained through hunt by 30% for 60 minutes. -->
-	    <set name="magicType" val="SPECIAL"/>
-        <set name="reuseDelay" val="2000"/>
-        <set name="magicLevel" val="1"/>
-        <set name="hitTime" val="100"/>
-        <set name="hitCancelTime" val="500"/>
-        <set name="target" val="TARGET_SELF"/>
-        <set name="skillType" val="BUFF"/>
-        <set name="operateType" val="OP_ACTIVE"/>
-        <set name="altUse" val="true"/>
-        <set name="itemConsumeId" val="35669"/>
-		<set name="itemConsumeCount" val="1"/>
-		<set name="isHandler" val="true"/>
-        <for>
-            <effect count="1" name="Buff" stackOrder="1" stackType="AngelCat" time="3600" val="0">
-                <mul order="0x30" stat="mAtk" val="1.2"/>
-				<mul order="0x30" stat="pAtk" val="1.05"/>
-				<mul order="0x30" stat="mDef" val="1.05"/>
-				<mul order="0x30" stat="pDef" val="1.05"/>
-				<mul order="0x30" stat="mAtkSpd" val="1.05"/>
-				<mul order="0x30" stat="pAtkSpd" val="1.05"/>
-				<mul order="0x30" stat="maxHp" val="1.05"/>
-				<mul order="0x30" stat="maxMp" val="1.05"/>
-				<mul order="0x30" stat="ExpMultiplier" val="1.3"/>
-				<mul order="0x30" stat="SpMultiplier" val="1.3"/>
-            </effect>
-        </for>		
+		<set name="reuseDelay" val="1800000"/>
+		<set name="icon" val="icon.skilltransform4"/>
+		<set name="target" val="TARGET_NONE"/>
+		<set name="skillType" val="NOTDONE"/>
+		<set name="operateType" val="OP_ACTIVE"/>
 	</skill>
 </list>

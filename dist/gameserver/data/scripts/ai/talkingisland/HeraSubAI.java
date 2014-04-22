@@ -106,7 +106,7 @@ public class HeraSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(7))
 		{
 			case 1:
@@ -131,7 +131,7 @@ public class HeraSubAI extends DefaultAI
 				ns = NpcString.WHY_HAVE_THE_HEROES_ABANDONED_US;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

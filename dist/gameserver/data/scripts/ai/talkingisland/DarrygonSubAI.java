@@ -106,7 +106,7 @@ public class DarrygonSubAI extends DefaultAI
 		{
 			return;
 		}
-		NpcString ns;
+		/*NpcString ns;
 		switch (Rnd.get(6))
 		{
 			case 1:
@@ -128,7 +128,7 @@ public class DarrygonSubAI extends DefaultAI
 				ns = NpcString.IT_S_DANGEROUS_OUT_THERE_IF_YOU_DON_T_KNOW_WHAT_YOU_RE_DOING;
 				break;
 		}
-		Functions.npcSay(actor, ns);
+		Functions.npcSay(actor, ns);*/
 	}
 	
 	/**

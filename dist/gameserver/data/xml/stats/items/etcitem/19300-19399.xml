@@ -46,7 +46,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="36907"/>
 		<set name="weight" value="60"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -57,7 +56,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="112500"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -68,7 +66,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="44000"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -79,7 +76,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="108750"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -90,7 +86,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="32500"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -101,7 +96,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="32750"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -112,7 +106,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="11600"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -123,7 +116,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="11500"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -134,7 +126,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="21200"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -145,7 +136,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="40000"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -156,7 +146,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="17750"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -167,7 +156,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="5000"/>
 		<set name="weight" value="2"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -179,7 +167,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -190,7 +177,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -201,7 +187,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -212,7 +197,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -223,7 +207,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -234,7 +217,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -245,7 +227,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -256,7 +237,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -267,7 +247,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -278,7 +257,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -289,7 +267,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="314200"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -300,7 +277,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="61550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -311,7 +287,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="164150"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -322,7 +297,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="102600"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -333,7 +307,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="41000"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -344,7 +317,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="41000"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -355,7 +327,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="43050"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -366,7 +337,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="61550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -377,7 +347,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="164150"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -388,7 +357,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="102600"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -399,7 +367,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="41000"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -410,7 +377,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="41000"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -421,7 +387,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="61550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -432,7 +397,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="164150"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -443,7 +407,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="102600"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -454,7 +417,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="41000"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -465,7 +427,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="41000"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -476,7 +437,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="43050"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -487,7 +447,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="42750"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -498,7 +457,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="32050"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -509,7 +467,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="21350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -520,7 +477,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -531,7 +487,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -542,7 +497,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -553,7 +507,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -564,7 +517,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -575,7 +527,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -586,7 +537,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -597,7 +547,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -608,7 +557,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -619,7 +567,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -630,7 +577,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="760950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -641,7 +587,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="149050"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -652,7 +597,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="397550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -663,7 +607,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="248450"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -674,7 +617,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="99350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -685,7 +627,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="99350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -696,7 +637,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="104350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -707,7 +647,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="149050"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -718,7 +657,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="397550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -729,7 +667,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="248450"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -740,7 +677,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="99350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -751,7 +687,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="99350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -762,7 +697,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="149050"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -773,7 +707,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="397550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -784,7 +717,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="248450"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -795,7 +727,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="99350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -806,7 +737,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="99350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -817,7 +747,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="104350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -828,7 +757,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="103500"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -839,7 +767,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="77650"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -850,7 +777,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="51750"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -861,7 +787,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -872,7 +797,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -883,7 +807,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -894,7 +817,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -905,7 +827,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -916,7 +837,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -927,7 +847,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -938,7 +857,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -949,7 +867,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -960,7 +877,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -971,7 +887,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="1641400"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -982,7 +897,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="321550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -993,7 +907,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="857550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -1004,7 +917,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="535950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -1015,7 +927,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="214350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -1026,7 +937,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="214350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -1037,7 +947,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="225100"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -1048,7 +957,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="321550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -1059,7 +967,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="857550"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -1070,7 +977,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="535950"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -1081,7 +987,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="214350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
@@ -1092,7 +997,6 @@
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
-		<set name="price" value="214350"/>
 		<set name="weight" value="30"/>
 		<set name="stackable" value="true"/>
 		<set name="type" value="OTHER"/>
