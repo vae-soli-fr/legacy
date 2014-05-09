@@ -198,12 +198,11 @@ public class CustomSpawnTable
 		try
 		{
 			con = DatabaseFactory.getInstance().getConnection();
-			statement = con.prepareStatement("DELETE FROM custom_spawnlist WHERE locx=? AND locy=? AND locz=? AND npc_templateid=? AND heading=?");
-			statement.setInt(1, spawn.getLoc().getX());
-			statement.setInt(2, spawn.getLoc().getY());
-			statement.setInt(3, spawn.getLoc().getZ());
+			statement = con.prepareStatement("DELETE FROM custom_spawnlist WHERE locx=? AND locy=? AND locz=? AND npc_templateid=?");
+			statement.setInt(1, spawn.getSpawnedLoc().getX());
+			statement.setInt(2, spawn.getSpawnedLoc().getY());
+			statement.setInt(3, spawn.getSpawnedLoc().getZ());
 			statement.setInt(4, spawn.getNpcId());
-			statement.setInt(5, spawn.getHeading());
 			statement.execute();
 		}
 		catch (Exception e1)
