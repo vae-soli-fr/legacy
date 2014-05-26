@@ -71,7 +71,7 @@ public class Party implements PlayerGroup
 	/**
 	 * Field MAX_SIZE. (value is 7)
 	 */
-	public static final int MAX_SIZE = 7;
+	public static final int MAX_SIZE = 9;
 	/**
 	 * Field ITEM_LOOTER. (value is 0)
 	 */

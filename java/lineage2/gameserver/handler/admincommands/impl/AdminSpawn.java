@@ -416,7 +416,7 @@ public class AdminSpawn implements IAdminCommandHandler
 			}
 			else
 			{
-				if (Config.SAVE_GM_SPAWN_CUSTOM)
+				if (Config.SAVE_GM_SPAWN_CUSTOM && respawnTime != 0)
 				{
 					CustomSpawnTable.getInstance().addNewSpawn(spawn);
 				}
