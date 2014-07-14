@@ -244,7 +244,7 @@ public class SubClass
 	 */
 	public void setExp(long val)
 	{
-		_exp = Math.min(Math.max(Experience.LEVEL[_level], val), _maxExp);
+		_exp = Math.min(val, _maxExp);
 		_level = Experience.getLevel(_exp);
 	}
 	
