@@ -57,7 +57,7 @@ public class RaidLimiter extends Task {
 	}
 
 	public void addPoint(Player player, String raidboss) {
-		if (player.getReflection() != ReflectionManager.DEFAULT)
+		if (player.getReflection() != ReflectionManager.DEFAULT || player.isGM())
 			return;
 		if (_list.containsKey(player.getAccountName()) && _done.containsKey(player.getAccountName())) {
 			int points = _list.get(player.getAccountName());
