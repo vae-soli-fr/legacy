@@ -15,6 +15,7 @@ package lineage2.gameserver;
 import java.io.File;
 import java.net.InetAddress;
 import java.net.ServerSocket;
+import java.util.Date;
 
 import lineage2.commons.lang.StatsUtils;
 import lineage2.commons.listener.Listener;
@@ -158,9 +159,18 @@ public class GameServer
 	 * Method uptime.
 	 * @return int
 	 */
-	int uptime()
+	public int uptime()
 	{
 		return time() - _serverStarted;
+	}
+	
+	/**
+	 * Method uptime.
+	 * @return int
+	 */
+	public Date serverStarted()
+	{
+		return new Date(_serverStarted);
 	}
 	
 	/**
@@ -176,7 +186,7 @@ public class GameServer
 		new File("./log/").mkdir();
 		version = new Version(GameServer.class);
 		_log.info("==============================================================");
-		// _log.info("Revision: ................ " + version.getRevisionNumber());
+		_log.info("Revision: ................ " + version.getRevisionNumber());
 		_log.info("Build date: .............. " + version.getBuildDate());
 		_log.info("Compiler version: ........ " + version.getBuildJdk());
 		_log.info("==============================================================");
