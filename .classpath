@@ -16,6 +16,7 @@
 	<classpathentry kind="lib" path="dist/libs/slf4j-api-1.7.7.jar"/>
 	<classpathentry kind="lib" path="dist/libs/slf4j-log4j12-1.7.7.jar"/>
 	<classpathentry kind="lib" path="dist/libs/trove-3.0.3.jar"/>
+	<classpathentry kind="lib" path="dist/libs/worldwind.jar"/>
 	<classpathentry kind="src" path="dist/gameserver/data/scripts"/>
 	<classpathentry kind="src" path="java"/>
 	<classpathentry kind="output" path="bin"/>
