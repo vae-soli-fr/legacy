@@ -308,6 +308,9 @@ import lineage2.gameserver.utils.SiegeUtils;
 import lineage2.gameserver.utils.SqlBatch;
 import lineage2.gameserver.utils.Strings;
 import lineage2.gameserver.utils.TeleportUtils;
+import lineage2.gameserver.vaesoli.Camp;
+import lineage2.gameserver.vaesoli.RpLanguage;
+import lineage2.gameserver.vaesoli.RpVolume;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -550,6 +553,9 @@ public final class Player extends Playable implements PlayerGroup
 	private final SubClassList _subClassList = new SubClassList(this);
 	private final SummonList _summonList = new SummonList(this);
 	private final MentoringSystem mentorSystem;
+	private RpLanguage _rplanguage = RpLanguage.COMMON;
+	private RpVolume _rpvolume = RpVolume.DEFAULT;
+	private final Camp _camp = new Camp();
 	
 	/**
 	 * Constructor for Player.
@@ -15568,5 +15574,30 @@ public final class Player extends Playable implements PlayerGroup
 	public void setIsInLastHero(boolean param)
 	{
 		_inLastHero = param;
+	}
+	
+	public RpLanguage getRpLanguage()
+	{
+		return _rplanguage;
+	}
+	
+	public void setRpLanguage(RpLanguage rplanguage)
+	{
+		_rplanguage = rplanguage;
+	}
+	
+	public RpVolume getRpVolume()
+	{
+		return _rpvolume;
+	}
+	
+	public void setRpVolume(RpVolume rpvolume)
+	{
+		_rpvolume = rpvolume;
+	}
+	
+	public Camp getCamp()
+	{
+		return _camp;
 	}
 }
