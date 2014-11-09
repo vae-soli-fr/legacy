@@ -177,7 +177,7 @@
 		<set name="powerPvP" val="#powerPvP"/>
 		<set name="elementPower" val="#elementPower"/>
 		<set name="element" val="#element"/>
-		<set name="reuseDelay" val="5000"/>
+		<set name="reuseDelay" val="6000"/>
 		<set name="coolTime" val="570"/>
 		<set name="hitTime" val="800"/>
 		<set name="target" val="TARGET_ONE"/>
@@ -236,7 +236,7 @@
 			<table name="#magicLevel">90 91 92 93 94 95 96 97 98 99</table>
 		</enchant8>
 		<for>
-			<effect name="Debuff" time="9" val="0" stackOrder="1" stackType="critical_dmg_down" effectPower="80">
+			<effect name="Debuff" time="27" val="0" stackOrder="1" stackType="critical_dmg_down" effectPower="80">
 				<mul order="0x10" stat="cAtk" val="1.1"/>
 				<mul order="0x30" stat="pDef" val="0.9"/>
 				<sub order="0x40" stat="rEvas" val="2"/>
@@ -405,25 +405,25 @@
 			<table name="#magicLevel">90 91 92 93 94 95 96 97 98 99</table>
 		</enchant9>
 		<for>
+			<effect count="1" name="Mute" stackOrder="-1" stackType="Mute" time="15" val="0"/>		
 			<effect count="1" name="Buff" stackOrder="3" stackType="pAtkDown" time="15" val="0">
 				<mul order="0x30" stat="pAtk" val="0.8"/>
 				<mul order="0x30" stat="mAtk" val="0.8"/>
 			</effect>
 		</for>
+		<set name="castRange" val="40"/>
 	</skill>
 	<skill id="10011" levels="5" name="Shield Impact">
 		<table name="#magicLevel">85 88 91 94 97</table>
 		<table name="#power">9870 10901 10933 12965 13997</table>
 		<table name="#mpConsume2">49 52 54 57 60</table>
 		<table name="#reuseDelay">10000</table>
-		<table name="#activateRate">50</table>
+		<table name="#activateRate">75</table>
 		<table name="#element">none</table>
 		<table name="#elementPower">0</table>
 		<set name="weaponsAllowed" val="2"/>
-		<set name="flyRadius" val="50"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
-		<set name="flyType" val="DUMMY"/>
 		<set name="power" val="#power"/>
 		<set name="element" val="#element"/>
 		<set name="elementPower" val="#elementPower"/>
@@ -432,11 +432,12 @@
 		<set name="hitTime" val="800"/>
 		<set name="target" val="TARGET_ONE"/>
 		<set name="skillType" val="PDAM"/>
+		<set name="castRange" val="40"/>		
 		<set name="trait" val="SHOCK"/>
 		<set name="activateRate" val="#activateRate"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="relationSkillsId" val="92;"/>
-		<set name="nextAction" val="attack"/>
+		<set name="isDebuff" val="true"/>
 		<enchant1 levels="10" name="Cost">
 			<table name="#power">15028 15372 15716 16060 16404 16478 17092 17436 17780 18124</table>
 			<table name="#mpConsume2">56 52 49 45 42 38 34 31 27 24</table>
@@ -489,7 +490,7 @@
 			<table name="#magicLevel">90 91 92 93 94 95 96 97 98 99</table>
 		</enchant9>
 		<for>
-			<effect count="1" name="Stun" stackOrder="5" stackType="Stun" time="5" val="0"/>
+			<effect name="Stun" time="7" stackType="Stun" stackOrder="-1" cancelOnAction="false"/>
 		</for>
 	</skill>
 	<skill id="10012" levels="7" name="Shield Wave">
@@ -501,10 +502,8 @@
 		<table name="#element">none</table>
 		<table name="#elementPower">0</table>
 		<set name="weaponsAllowed" val="2"/>
-		<set name="flyRadius" val="50"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
 		<set name="magicLevel" val="#magicLevel"/>
-		<set name="flyType" val="DUMMY"/>
 		<set name="power" val="#power"/>
 		<set name="element" val="#element"/>
 		<set name="elementPower" val="#elementPower"/>
@@ -571,7 +570,7 @@
 			<table name="#magicLevel">90 91 92 93 94 95 96 97 98 99</table>
 		</enchant9>
 		<for>
-			<effect name="Stun" time="9" stackType="Stun" stackOrder="-1"/>
+			<effect name="Stun" time="11" stackType="Stun" stackOrder="-1"/>
 		</for>
 	</skill>
 	<skill id="10013" levels="8" name="Gust Blade">
@@ -751,9 +750,9 @@
 		<set name="trait" val="PULL"/>
 		<set name="relationSkillsId" val="403;"/>
 		<set name="flyType" val="THROW_HORIZONTAL"/>
-		<set name="flySpeed" val="500"/>
+		<set name="flySpeed" val="900"/>
 		<set name="isUsingWhileCasting" val="true"/>
-		<set name="isSkillTimePermanent" val="true"/>
+		<set name="isSkillTimePermanent" val="true"/>	
 		<cond msgId="113" addName="1">
 			<using kind="Shield"/>
 		</cond>
@@ -774,12 +773,12 @@
 		<set name="mpConsume2" val="#mpConsume2"/>
 		<set name="reuseDelay" val="45000"/>
 		<set name="coolTime" val="1000"/>
-		<set name="hitTime" val="500"/>
+		<set name="hitTime" val="1000"/>
 		<set name="target" val="TARGET_AREA"/>
 		<set name="flyType" val="THROW_HORIZONTAL"/>
 		<set name="flySpeed" val="500"/>
 		<set name="skillType" val="AGGRESSION"/>
-		<set name="castRange" val="#radius"/>
+		<set name="castRange" val="600"/>
 		<set name="skillRadius" val="350"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="trait" val="PULL"/>
@@ -805,6 +804,7 @@
 		<table name="#ref">0.60 0.40 0.20 1</table>
 		<table name="#time">30</table>
 		<table name="#speed">0</table>
+		<table name="#rd">300 200 150 100</table>
 		<table name="#stunPower">0</table>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="skillType" val="BUFF"/>
@@ -841,12 +841,15 @@
 				<add order="0x40" stat="runSpd" val="#speed"/>
 				<add order="0x40" stat="pDef" val="#pDef"/>
 				<add order="0x40" stat="mDef" val="#pDef"/>
-				<mul order="0x30" stat="reflectDam" val="#ref"/>
-				<mul order="0x40" stat="cancelResist" val="1.8"/>
-				<set order="0x30" stat="receiveDamageLimit" val="300">
-					<player damage="300;0"/>
+				<mul order="0x30" stat="reflectDam" val="1.8"/>
+				<add order="0x40" stat="reflectPhysicSkill" val="100"/>
+				<add order="0x40" stat="reflectMagicSkill" val="100"/>
+				<add order="0x40" stat="reflectMSkillDam" val="100"/>
+				<add order="0x40" stat="reflectPSkillDam" val="100"/>				
+				<add order="0x40" stat="cancelResist" val="80"/>
+				<set order="0x30" stat="receiveDamageLimit" val="100">
 				</set>
-			</effect>
+			</effect>	
 		</for>
 	</skill>
 	<skill id="10018" levels="2" name="Noble Sacrifice">
@@ -899,6 +902,8 @@
 		<table name="#speed">0</table>
 		<table name="#time">15</table>
 		<table name="#transferPartyDmg">90 90</table>
+		<table name="#mpConsume2">127 140</table>
+		<set name="mpConsume2" val="#mpConsume2"/>		
 		<set name="magicType" val="MAGIC"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
@@ -941,6 +946,8 @@
 		<table name="#pDef">350 400 450 500</table>
 		<table name="#sDef">700 800 900 1000</table>
 		<table name="#rShld">1.35 1.4 1.45 1.5</table>
+		<table name="#mpConsume2">50</table>
+		<set name="mpConsume2" val="#mpConsume2"/>
 		<set name="magicLevel" val="85"/>
 		<set name="skillType" val="CONT"/>
 		<set name="operateType" val="OP_TOGGLE"/>
@@ -961,7 +968,7 @@
 		<table name="#reuseDelay">60000</table>
 		<table name="#ref">10 15 20 100</table>
 		<table name="#time">10</table>
-		<table name="#power">10 15 20 25</table>
+		<table name="#power">25</table>
 		<set name="weaponsAllowed" val="2"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
@@ -1039,7 +1046,7 @@
 	</skill>
 	<skill id="10023" levels="2" name="King of Beasts">
 		<table name="#magicLevel">95 98</table>
-		<table name="#mpConsume2">136 142</table>
+		<table name="#mpConsume2">1103 1158</table>
 		<table name="#reuseDelay">600000</table>
 		<table name="#power">60000 70000</table>
 		<table name="#powerPvP">0</table>
@@ -1108,7 +1115,7 @@
 			<effect name="KnockDown" abnormalTime="1" val="0" abnormalLvl="1" effectPower="85" effectType="KNOCK_DOWN" abnormalVisualEffect="sknockdown"/>
 		</for>
 	</skill>
-	<skill id="10024" levels="1" name="Party Rescue">
+	<skill id="10024" levels="1" name="Party Rescue">	
 		<table name="#heal">0</table>
 		<table name="#magicLevel">99</table>
 		<table name="#mpConsume2">96</table>
@@ -1247,7 +1254,7 @@
 			<table name="#magicLevel">90 91 92 93 94 95 96 97 98 99</table>
 		</enchant4>
 		<for>
-			<effect count="1" name="Aggression" time="3" val="0">
+			<effect count="1" name="Aggression" time="5" val="0">
 				<div order="0x30" stat="pDef" val="#pDef"/>
 				<div order="0x30" stat="pAtk" val="#pAtk"/>
 				<sub order="0x40" stat="stunResist" val="#stunResist"/>
@@ -1288,7 +1295,7 @@
 			<table name="#magicLevel">90 91 92 93 94 95 96 97 98 99</table>
 		</enchant4>
 		<for>
-			<effect count="1" name="Aggression" time="3" val="0">
+			<effect count="1" name="Aggression" time="5" val="0">
 				<div order="0x30" stat="pDef" val="#pDef"/>
 				<div order="0x30" stat="pAtk" val="#pAtk"/>
 				<sub order="0x40" stat="stunResist" val="#stunResist"/>
@@ -1339,6 +1346,7 @@
 				<mul order="0x30" stat="pAtkSpd" val="#amount"/>
 			</effect>
 		</for>
+		<set name="hitTime" val="500"/>
 	</skill>
 	<skill id="10030" levels="1" name="Challenge Aura">
 		<table name="#magicLevel">85</table>
@@ -1375,6 +1383,7 @@
 				<mul order="0x30" stat="mpConsum" val="0.8"/>
 			</effect>
 		</for>
+		<set name="hitTime" val="500"/>
 	</skill>
 	<skill id="10032" levels="1" name="Iron Aura">
 		<table name="#magicLevel">85</table>
@@ -1430,6 +1439,7 @@
 				<add order="0x40" stat="pDef" val="215"/>
 			</effect>
 		</for>
+		<set name="hitTime" val="500"/>
 	</skill>
 	<skill id="10034" levels="1" name="Aura Resistance">
 		<table name="#magicLevel">85</table>
@@ -1477,6 +1487,7 @@
 				<add order="0x30" stat="defenceUnholy" val="20"/>
 			</effect>
 		</for>
+		<set name="hitTime" val="500"/>
 	</skill>
 	<skill id="10036" levels="1" name="Recovery Aura">
 		<table name="#magicLevel">85</table>
@@ -1527,6 +1538,7 @@
 				<mul order="0x30" stat="hpEff" val="1.15"/>
 			</effect>
 		</for>
+		<set name="hitTime" val="500"/>
 	</skill>
 	<skill id="10038" levels="1" name="Spirit Aura">
 		<table name="#magicLevel">85</table>
@@ -1573,6 +1585,7 @@
 				<mul order="0x30" stat="mpEff" val="1.10"/>
 			</effect>
 		</for>
+		<set name="hitTime" val="500"/>
 	</skill>
 	<skill id="10040" levels="6" name="Summon Golden Lion">
 		<table name="#npcIds">14936 14937 14938 14939 14974 14975</table>
@@ -1607,17 +1620,16 @@
 	</skill>
 	<skill id="10042" levels="3" name="Summon Cubic of Life">
 		<table name="#magicLevel">94 97 99</table>
-		<table name="#heal">3 6 9</table>
+		<table name="#heal">10</table>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="mpConsume2" val="43"/>
-		<set name="reuseDelay" val="30000"/>
-		<set name="coolTime" val="300"/>
-		<set name="hitTime" val="2200"/>
+		<set name="reuseDelay" val="10000"/>
+		<set name="hitTime" val="1100"/>
 		<set name="target" val="TARGET_SELF"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="skillType" val="BUFF"/>
 		<for>
-			<effect count="1" name="HealPercent" time="0" val="#heal"/>
+			<effect count="1" name="HealPercent" time="7" val="#heal"/>
 		</for>
 	</skill>
 	<skill id="10043" levels="8" name="Summon Knight Cubic">
@@ -1635,7 +1647,7 @@
 		<set name="skillType" val="BUFF"/>
 		<set name="cancelable" val="false"/>
 		<set name="isCubic" val="true"/>
-		<set name="relationSkillsId" val="97;"/>
+		<set name="relationSkillsId" val="97;779;780;"/>
 		<for>
 			<effect name="Cubic" stackType="knight_cubic" stackOrder="1" time="900">
 				<def name="cubicId" val="15"/>
@@ -1688,6 +1700,8 @@
 				<sub order="0x40" stat="rEvas" val="#rEvas"/>
 			</effect>
 		</for>
+		<set name="castRange" val="40"/>
+		<set name="hitTime" val="800"/>
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
 		<table name="#Power">11948 11948 11948</table>
@@ -1714,6 +1728,8 @@
 				<sub order="0x40" stat="rEvas" val="#rEvas"/>
 			</effect>
 		</for>
+		<set name="castRange" val="40"/>
+		<set name="hitTime" val="800"/>
 	</skill>
 	<skill id="10047" levels="3" name="Shield Charge IV">
 		<table name="#Power">12700 12700 12700</table>
@@ -1740,6 +1756,8 @@
 				<sub order="0x40" stat="rEvas" val="#rEvas"/>
 			</effect>
 		</for>
+		<set name="castRange" val="40"/>
+		<set name="hitTime" val="800"/>
 	</skill>
 	<skill id="10048" levels="3" name="Shield Charge V">
 		<table name="#Power">13452 13452 13452</table>
@@ -1766,6 +1784,8 @@
 				<sub order="0x40" stat="rEvas" val="#rEvas"/>
 			</effect>
 		</for>
+		<set name="castRange" val="40"/>
+		<set name="hitTime" val="800"/>
 	</skill>
 	<skill id="10049" levels="3" name="Shield Charge VI">
 		<table name="#Power">14204 14204 14204</table>
@@ -1792,6 +1812,8 @@
 				<sub order="0x40" stat="rEvas" val="#rEvas"/>
 			</effect>
 		</for>
+		<set name="castRange" val="40"/>
+		<set name="hitTime" val="800"/>
 	</skill>
 	<skill id="10050" levels="3" name="Shield Charge VII">
 		<table name="#Power">14956 14956 14956</table>
@@ -1818,6 +1840,8 @@
 				<sub order="0x40" stat="rEvas" val="#rEvas"/>
 			</effect>
 		</for>
+		<set name="castRange" val="40"/>
+		<set name="hitTime" val="800"/>
 	</skill>
 	<skill id="10051" levels="6" name="Lion Roar">
 		<table name="#magicLevel">85 86 87 88 89 90</table>
@@ -1843,6 +1867,8 @@
 				<sub order="0x40" stat="defenceEarth" val="#Holy"/>
 			</effect>
 		</for>
+		<set name="castRange" val="400"/>
+		<set name="hitTime" val="2000"/>
 	</skill>
 	<skill id="10052" levels="6" name="Lion Claw">
 		<table name="#magicLevel">85 86 87 88 89 90</table>
@@ -1854,6 +1880,8 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="nextAction" val="attack"/>
 		<for/>
+		<set name="castRange" val="40"/>
+		<set name="hitTime" val="1080"/>
 	</skill>
 	<skill id="10053" levels="6" name="Lion Dash">
 		<table name="#power">88 94 101 115 123 131</table>
@@ -1863,7 +1891,7 @@
 		<set name="effectPoint" val="#effectPoint"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="skillRadius" val="400"/>
-		<set name="castRange" val="600"/>
+		<set name="castRange" val="500"/>
 		<set name="save" val="4"/>
 		<set name="power" val="#power"/>
 		<set name="target" val="TARGET_ONE"/>
@@ -1876,6 +1904,7 @@
 		<for>
 			<effect count="1" name="Stun" stackOrder="-1" stackType="Stun" time="9" val="0"/>
 		</for>
+		<set name="hitTime" val="100"/>
 	</skill>
 	<skill id="10054" levels="6" name="Lion Flame">
 		<table name="#effectPoint">227 243 268 285 313 331</table>
@@ -1890,6 +1919,8 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="shieldignore" val="true"/>
 		<for/>
+		<set name="castRange" val="900"/>
+		<set name="hitTime" val="2500"/>
 	</skill>
 	<skill id="10055" levels="1" name="Cubic Attack">
 		<set name="target" val="TARGET_NONE"/>
@@ -1897,7 +1928,7 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 	</skill>
 	<skill id="10056" levels="8" name="Cubic Protection">
-		<table name="#time">0 3 6 6 6 6 6 6</table>
+		<table name="#time">6</table>
 		<table name="#magicLevel">85 87 89 90 92 94 97 99</table>
 		<table name="#mDef">0 0 0 500 500 500 500 500</table>
 		<table name="#pDef">0 0 500 500 500 500 500 500</table>
@@ -1910,11 +1941,11 @@
 		<set name="isOffensive" val="false"/>
 		<set name="effectPoint" val="408"/>
 		<set name="castRange" val="1000"/>
-		<set name="hitTime" val="3000"/>
+		<set name="hitTime" val="300"/>
 		<set name="useSS" val="false"/>
 		<set name="isHideUseMessage" val="true"/>
 		<for>
-			<effect count="1" name="DispelEffects" time="0" val="0">
+			<effect count="1" name="DispelEffects" time="#time" val="0">
 				<def name="dispelType" val="cleanse"/>
 				<def name="cancelRate" val="100"/>
 				<def name="negateCount" val="10"/>
@@ -1977,6 +2008,8 @@
 				<sub order="0x40" stat="rEvas" val="#rEvas"/>
 			</effect>
 		</for>
+		<set name="castRange" val="40"/>
+		<set name="hitTime" val="800"/>
 	</skill>
 	<skill id="10060" levels="1" name="Aggression Attack">
 		<set name="coolTime" val="200"/>
@@ -2007,6 +2040,7 @@
 				<div order="0x30" stat="pDef" val="1.5"/>
 			</effect>
 		</for>
+		<set name="castRange" val="600"/>
 	</skill>
 	<skill id="10062" levels="4" name="Phoenix Spirit">
 		<table name="#pDef">1.02 1.03 1.04 1.06</table>
@@ -2087,7 +2121,7 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
 			<mul order="0x30" stat="pDef" val="#pDef"/>
-			<mul order="0x30" stat="mDef" val="#pDef"/>
+			<mul order="0x30" stat="mDef" val="#mDef"/>
 		</for>
 		<triggers>
 			<trigger id="10067" level="1" type="RECEIVE_DAMAGE" chance="30">
@@ -2106,23 +2140,26 @@
 		<set name="saveVs" val="STR"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
-			<mul order="0x30" stat="pDef" val="#pDef"/>
-			<mul order="0x30" stat="mDef" val="#pDef"/>
+			<effect count="1" name="Buff" time="10" val="0" stackOrder="1" stackType="Soul_TANK_Human">
+				<mul order="0x30" stat="pDef" val="#pDef"/>
+				<mul order="0x30" stat="mDef" val="#mDef"/>
+			</effect>			
 		</for>
 	</skill>
 	<skill id="10068" levels="4" name="Summon Blood Panther">
+		<table name="#magicLevel">85 90 95 99</table>
 		<table name="#npcIds">15138 15139 15140 15141</table>
+		<table name="#mpConsume2">154 156 164 173</table>
 		<set name="summonTotalLifeTime" val="3600000"/>
 		<set name="summonTimeLostIdle" val="500"/>
 		<set name="summonTimeLostActive" val="1000"/>
-		<set name="target" val="TARGET_SELF"/>
-		<set name="icon" val="icon.skill10068"/>
+		<set name="target" val="TARGET_SELF"/>		
 		<set name="skillType" val="SUMMON"/>
-		<set name="summonType" val="PET"/>
-		<set name="hitTime" val="4500"/>
-		<set name="magicType" val="MAGIC"/>
-		<table name="#magicLevel">85 90 95 99</table>
-		<set name="magicLevel" val="#magicLevel"/>
+		<set name="reuseDelay" val="30000" />
+		<set name="mpConsume2" val="#mpConsume2"/>
+		<set name="summonType" val="SERVITOR"/>
+		<set name="hitTime" val="3500"/>		
+		<set name="magicLevel" val="#magicLevel" />
 		<set name="relationSkillsId" val="283"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="npcId" val="#npcIds"/>
@@ -2162,16 +2199,13 @@
 		<table name="#mDef">1.02 1.03 1.04 1.06</table>
 		<table name="#magicLevel">85 90 95 99</table>
 		<set name="magicLevel" val="#magicLevel"/>
-		<set name="target" val="TARGET_SELF"/>
-		<set name="icon" val="icon.skill10066"/>
-		<set name="hitTime" val="1000"/>
-		<set name="skillType" val="BUFF"/>
-		<set name="reuseDelay" val="1000"/>
-		<set name="saveVs" val="STR"/>
+		<set name="target" val="TARGET_SELF"/>		
+		<set name="skillType" val="BUFF"/>		
+		<set name="saveVs" val="STR"/> 
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
 			<mul order="0x30" stat="pDef" val="#pDef"/>
-			<mul order="0x30" stat="mDef" val="#pDef"/>
+			<mul order="0x30" stat="mDef" val="#mDef"/>
 		</for>
 		<triggers>
 			<trigger id="10072" level="1" type="RECEIVE_DAMAGE" chance="30">
@@ -2189,9 +2223,20 @@
 		<set name="reuseDelay" val="1000"/>
 		<set name="isTrigger" val="true"/>
 		<set name="operateType" val="OP_ACTIVE"/>
+		<table name="#pDef">1.02 1.03 1.04 1.06</table>
+		<table name="#mDef">1.01 1.02 1.03 1.04</table>
+		<table name="#effect">1.01 1.02 1.03 1.04</table>
+		<table name="#magicLevel">85 90 95 99</table>
+		<set name="magicLevel" val="#magicLevel"/>
+		<set name="target" val="TARGET_PARTY"/>
+		<set name="skillType" val="BUFF"/>				
+		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
-			<mul order="0x30" stat="pDef" val="#pDef"/>
-			<mul order="0x30" stat="mDef" val="#mDef"/>
+			<effect count="1" name="Buff" time="10" val="0" stackOrder="1" stackType="Soul_TANK_Elf">
+				<mul order="0x30" stat="pDef" val="#pDef"/>
+				<mul order="0x30" stat="mDef" val="#mDef"/>
+				<mul order="0x30" stat="hpEff" val="#effect"/>
+			</effect>			
 		</for>
 	</skill>
 	<skill id="10073" levels="4" name="Summon Buff Cubic">
@@ -2282,11 +2327,11 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
 			<mul order="0x30" stat="pDef" val="#pDef"/>
-			<mul order="0x30" stat="mDef" val="#pDef"/>
+			<mul order="0x30" stat="mDef" val="#mDef"/>
 		</for>
 		<triggers>
-			<trigger id="10078" level="#LVL" type="RECEIVE_DAMAGE" chance="100">
-				<player damage="1;0"/>
+			<trigger id="10078" level="1" type="RECEIVE_DAMAGE" chance="30">
+				<player damage="50;0"/>
 			</trigger>
 		</triggers>
 	</skill>
@@ -2301,8 +2346,10 @@
 		<set name="isTrigger" val="true"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
-			<mul order="0x30" stat="pDef" val="#pDef"/>
-			<mul order="0x30" stat="mDef" val="#pDef"/>
+			<effect count="1" name="Buff" time="10" val="0" stackOrder="1" stackType="Soul_TANK_Dark_Elf">
+				<mul order="0x30" stat="pDef" val="#pDef"/>
+				<mul order="0x30" stat="mDef" val="#mDef"/>
+			</effect>			
 		</for>
 	</skill>
 	<skill id="10079" levels="4" name="Summon Phantom Cubic">
@@ -2340,7 +2387,7 @@
 		<set name="reuseDelay" val="5000"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="hitTime" val="6000"/>
-		<set name="hitCancelTime" val="500"/>
+		<set name="hitCancelTime" val="200"/>
 		<set name="mpConsume1" val="#mpConsume1"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
 		<set name="target" val="TARGET_SELF"/>
@@ -2357,30 +2404,93 @@
 	</skill>
 	<skill id="10081" levels="4" name="Lightning Root">
 		<table name="#magicLevel">85 90 95 99</table>
-		<table name="#magic">15574 18556 20701 22848</table>
-		<set name="magicType" val="MAGIC"/>
-		<set name="icon" val="icon.skill1170"/>
+		<table name="#mpConsume2">87 95 103 110</table>
+		<table name="#dmg">15574 18556 20701 22848</table>
+		<set name="mpConsume2" val="#mpConsume2"/>
+		<set name="magicType" val="MAGIC"/>		
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="useSS" val="false"/>
-		<set name="power" val="#magic"/>
+		<set name="power" val="#dmg"/>
+		<set name="activateRate" val="35"/>
 		<set name="target" val="TARGET_ONE"/>
-		<set name="skillType" val="PDAM"/>
+		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE"/>
-		<set name="delayedEffect" val="6125"/>
-		<set name="castRange" val="1000"/>
-		<set name="hitTime" val="3000"/>
+		<set name="castRange" val="400"/>
+		<set name="hitTime" val="1500"/>
 		<set name="trait" val="PARALYZE"/>
 		<set name="saveVs" val="STR"/>
-		<set name="reuseDelay" val="5000"/>
+		<set name="reuseDelay" val="10000"/>
 		<for>
 			<effect count="1" name="Paralyze" time="5" val="0"/>
 		</for>
 	</skill>
+	<skill id="10082" levels="4" name="Strong Cubic Heal">
+		<!---TODO Correct Times & Heal Amount-->
+		<table name="#effectPoint">408 467 523 566 597 624 646 653 660 667 674 677 679 682 685 687 700 750 780 801</table>
+		<table name="#magicLevel">43 49 55 60 64 68 72 74 76 78 80 81 82 83 84 85 85</table>
+		<table name="#power">201 241 281 314 339 361 382 390 398 405 413 418 422 426 430 434 468</table>
+		<set name="magicType" val="MAGIC"/>
+		<set name="icon" val="icon.skill10082"/>
+		<set name="power" val="#power"/>
+		<set name="magicLevel" val="#magicLevel"/>
+		<set name="castRange" val="600"/>
+		<set name="effectPoint" val="#effectPoint"/>
+		<set name="useSS" val="false"/>
+		<set name="staticPower" val="true"/>
+		<set name="target" val="TARGET_ONE"/>
+		<set name="skillType" val="HEAL"/>
+		<set name="operateType" val="OP_ACTIVE"/>
+		<set name="isHideUseMessage" val="false"/>
+		<set name="castRange" val="1000"/>
+		<set name="hitTime" val="300"/>	
+	</skill>		
+	<skill id="10083" levels="4" name="Basic Cubic Heal">
+		<table name="#effectPoint">408 467 523 566 597 624 646 653 660 667 674 677 679 682 685 687 700 750 780 801</table>
+		<table name="#magicLevel">43 49 55 60 64 68 72 74 76 78 80 81 82 83 84 85 85</table>
+		<table name="#power">201 241 281 314 339 361 382 390 398 405 413 418 422 426 430 434 468</table>
+		<table name="#mDef">500</table>
+		<table name="#pDef">500</table>		
+		<table name="#time">6</table>
+		<set name="magicType" val="MAGIC"/>
+		<set name="icon" val="icon.skill10083"/>
+		<set name="power" val="#power"/>
+		<set name="magicLevel" val="#magicLevel"/>
+		<set name="castRange" val="600"/>
+		<set name="effectPoint" val="#effectPoint"/>
+		<set name="useSS" val="false"/>
+		<set name="staticPower" val="true"/>
+		<set name="target" val="TARGET_ONE"/>
+		<set name="skillType" val="HEAL"/>
+		<set name="operateType" val="OP_ACTIVE"/>
+		<set name="isHideUseMessage" val="false"/>
+		<set name="castRange" val="1000"/>
+		<set name="hitTime" val="300"/>	
+	</skill>	
+	<skill id="10084" levels="4" name="Basic Cubic Mind">
+		<table name="#effectPoint">408 467 523 566 597 624 646 653 660 667 674 677 679 682 685 687 700 750 780 801</table>
+		<table name="#magicLevel">43 49 55 60 64 68 72 74 76 78 80 81 82 83 84 85 85</table>
+		<table name="#power">201 241 281 314 339 361 382 390 398 405 413 418 422 426 430 434 468</table>
+		<set name="magicType" val="MAGIC"/>
+		<set name="icon" val="icon.skill10084"/>
+		<set name="power" val="#power"/>
+		<set name="magicLevel" val="#magicLevel"/>
+		<set name="castRange" val="600"/>
+		<set name="effectPoint" val="#effectPoint"/>
+		<set name="useSS" val="false"/>
+		<set name="staticPower" val="true"/>
+		<set name="target" val="TARGET_ONE"/>
+		<set name="skillType" val="MANAHEAL"/>
+		<set name="operateType" val="OP_ACTIVE"/>
+		<set name="isHideUseMessage" val="false"/>
+		<set name="castRange" val="1000"/>
+		<set name="hitTime" val="300"/>
+	</skill>	
 	<skill id="10085" levels="4" name="Cubic Falter">
 		<table name="#magicLevel">85 90 95 99</table>
 		<table name="#p">0.95 0.93 0.90 0.95</table>
 		<table name="#m">0.95 0.93 0.90 0.95</table>
 		<set name="levelModifier" val="1"/>
+		<set name="reuseDelay" val="10000"/>	
 		<set name="magicType" val="MAGIC"/>
 		<set name="icon" val="icon.skill1170"/>
 		<set name="magicLevel" val="#magicLevel"/>
@@ -2389,9 +2499,7 @@
 		<set name="skillType" val="DEBUFF"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="delayedEffect" val="6125"/>
-		<set name="isHideUseMessage" val="true"/>
-		<set name="castRange" val="1000"/>
-		<set name="hitTime" val="3000"/>
+		<set name="isHideUseMessage" val="True"/>
 		<for>
 			<effect count="1" name="Debuff" time="5" val="0">
 				<mul order="0x30" stat="pAtkSpd" val="#p"/>
@@ -2404,6 +2512,7 @@
 		<table name="#p">0.95 0.93 0.90 0.95</table>
 		<table name="#m">0.95 0.93 0.90 0.95</table>
 		<set name="levelModifier" val="1"/>
+		<set name="reuseDelay" val="10000"/>		
 		<set name="magicType" val="MAGIC"/>
 		<set name="icon" val="icon.skill1170"/>
 		<set name="magicLevel" val="#magicLevel"/>
@@ -2413,8 +2522,6 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="delayedEffect" val="6125"/>
 		<set name="isHideUseMessage" val="true"/>
-		<set name="castRange" val="1000"/>
-		<set name="hitTime" val="3000"/>
 		<for>
 			<effect count="1" name="Debuff" time="5" val="0">
 				<mul order="0x30" stat="pDef" val="#p"/>

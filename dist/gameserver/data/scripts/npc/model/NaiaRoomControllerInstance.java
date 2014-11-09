@@ -111,7 +111,7 @@ public final class NaiaRoomControllerInstance extends NpcInstance
 				return;
 			}
 			
-			int npcId = getNpcId();
+			int npcId = getId();
 			
 			if (NaiaTowerManager.isRoomDone(npcId, player))
 			{
@@ -316,7 +316,7 @@ public final class NaiaRoomControllerInstance extends NpcInstance
 			try
 			{
 				SimpleSpawner sp = new SimpleSpawner(mobId);
-				sp.setLoc(Territory.getRandomLoc(territory).setH(Rnd.get(65535)));
+				sp.setLoc(Territory.getRandomLoc(territory).setHeading(Rnd.get(65535)));
 				sp.doSpawn(true);
 				sp.stopRespawn();
 				_roomMobList.add(sp.getLastSpawn());

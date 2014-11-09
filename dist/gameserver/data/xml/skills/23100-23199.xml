@@ -1007,7 +1007,7 @@
 		<set name="hitTime" val="3000"/>
 		<set name="itemConsumeId" val="20904"/>
 		<set name="itemConsumeCount" val="10"/>
-		<set name="target" val="TARGET_PARTY"/>
+		<set name="target" val="TARGET_ONE"/>
 		<set name="skillType" val="BUFF"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="isReuseDelayPermanent" val="true"/>
@@ -1031,6 +1031,7 @@
 				<mul order="0x30" stat="mpDanceConsume" val="0.85"/>
 			</effect>
 		</for>
+		<set name="reuseDelay" val="2400000"/>
 	</skill>
 	<skill id="23169" levels="1" name="Mesmerized">
 		<set name="magicType" val="MAGIC"/>

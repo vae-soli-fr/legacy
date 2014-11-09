@@ -78,7 +78,7 @@ public class Q00307_ControlDeviceOfTheGiants extends Quest implements ScriptFile
 				st.takeItems(CaveExplorationText2Sheet, 1);
 				st.takeItems(CaveExplorationText3Sheet, 1);
 				ServerVariables.set("HekatonPrimeRespawn", System.currentTimeMillis() + HekatonPrimeRespawn);
-				NpcInstance boss = st.addSpawn(HekatonPrime, HekatonPrimeLoc.x, HekatonPrimeLoc.y, HekatonPrimeLoc.z, HekatonPrimeLoc.h, 0, 0);
+				NpcInstance boss = st.addSpawn(HekatonPrime, HekatonPrimeLoc.getX(), HekatonPrimeLoc.getY(), HekatonPrimeLoc.getZ(), HekatonPrimeLoc.getHeading(), 0, 0);
 				boss.getMinionList().spawnMinions();
 				htmltext = "droph_q307_3a.htm";
 			}
@@ -95,7 +95,7 @@ public class Q00307_ControlDeviceOfTheGiants extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		String htmltext = "noquest";
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		
 		if (npcId == Droph)
@@ -145,7 +145,7 @@ public class Q00307_ControlDeviceOfTheGiants extends Quest implements ScriptFile
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		
 		if ((cond == 1) && (npcId == HekatonPrime))

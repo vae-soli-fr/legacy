@@ -166,7 +166,7 @@ public final class ErosionHallDefence extends Reflection
 				return;
 			}
 			
-			if (self.getNpcId() == AliveTumor)
+			if (self.getId() == AliveTumor)
 			{
 				((NpcInstance) self).dropItem(killer.getPlayer(), 13797, Rnd.get(2, 5));
 				final NpcInstance deadTumor = addSpawnWithoutRespawn(DeadTumor, self.getLoc(), 0);
@@ -195,7 +195,7 @@ public final class ErosionHallDefence extends Reflection
 					}
 				}, tumorRespawnTime);
 			}
-			else if (self.getNpcId() == SoulWagon)
+			else if (self.getId() == SoulWagon)
 			{
 				if (getAllByNpcId(SoulWagon, true).size() > 0)
 				{
@@ -267,14 +267,14 @@ public final class ErosionHallDefence extends Reflection
 	
 	void spawnCoffin(NpcInstance tumor)
 	{
-		addSpawnWithoutRespawn(RegenerationCoffin, new Location(tumor.getLoc().x, tumor.getLoc().y, tumor.getLoc().z, Location.getRandomHeading()), 250);
+		addSpawnWithoutRespawn(RegenerationCoffin, new Location(tumor.getLoc().getX(), tumor.getLoc().getY(), tumor.getLoc().getZ(), Location.getRandomHeading()), 250);
 	}
 	
 	private NpcInstance getNearestSeed(NpcInstance mob)
 	{
 		for (NpcInstance npc : mob.getAroundNpc(900, 300))
 		{
-			if ((npc.getNpcId() == UnstableSeed) && (mob.getZone(Zone.ZoneType.poison) == npc.getZone(Zone.ZoneType.poison)))
+			if ((npc.getId() == UnstableSeed) && (mob.getZone(Zone.ZoneType.Poison) == npc.getZone(Zone.ZoneType.Poison)))
 			{
 				return npc;
 			}

@@ -88,13 +88,26 @@ public final class SupportMagic extends Functions
 			return;
 		}
 		
-		if ((player.getLevel() > maxSupLvl) || player.getClassId().isOfLevel(ClassLevel.First))
+		if ((player.getLevel() > 39) || player.getClassId().isOfLevel(ClassLevel.First))
 		{
 			show("default/newbie_blessing_no.htm", player, npc);
 			return;
 		}
 		
 		npc.doCast(SkillTable.getInstance().getInfo(5182, 1), player, true);
+	}
+	
+	public void getNoblesseBlessing()
+	{
+		Player player = getSelf();
+		NpcInstance npc = getNpc();
+		
+		if (player.getKarma() > 0)
+		{
+			return;
+		}
+		
+		npc.doCast(SkillTable.getInstance().getInfo(1323, 1), player, true);
 	}
 	
 	private static void castSupportMagic(NpcInstance npc, Player player, int[] extraBuff, Boolean isServitor)

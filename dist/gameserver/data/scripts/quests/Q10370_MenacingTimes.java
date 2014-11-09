@@ -17,8 +17,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q10370_MenacingTimes extends Quest implements ScriptFile
 {
@@ -130,7 +129,7 @@ public class Q10370_MenacingTimes extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		int cond = st.getCond();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		Player player = st.getPlayer();
 		int classid = player.getClassId().getId();
 		String htmltext = "noquest";
@@ -143,7 +142,7 @@ public class Q10370_MenacingTimes extends Quest implements ScriptFile
 			}
 			else if (cond == 0)
 			{
-				if (isAvailableFor(st.getPlayer()) && ArrayUtils.contains(classesav, classid))
+				if (isAvailableFor(st.getPlayer()) && Util.contains(classesav, classid))
 				{
 					htmltext = "start.htm";
 				}
@@ -211,9 +210,9 @@ public class Q10370_MenacingTimes extends Quest implements ScriptFile
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		
-		if ((st.getCond() == 3) && ArrayUtils.contains(mobs, npcId) && (st.getQuestItemsCount(Ashes) < 30))
+		if ((st.getCond() == 3) && Util.contains(mobs, npcId) && (st.getQuestItemsCount(Ashes) < 30))
 		{
 			st.rollAndGive(Ashes, 1, chance);
 			st.playSound(SOUND_ITEMGET);

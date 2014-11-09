@@ -68,7 +68,7 @@ public final class AntharasManager extends Functions implements ScriptFile, OnDe
 	private static ScheduledFuture<?> _moveAtRandomTask;
 	static ScheduledFuture<?> _sleepCheckTask;
 	private static ScheduledFuture<?> _onAnnihilatedTask;
-	static EpicBossState _state;
+	public static EpicBossState _state;
 	private static Zone _zone;
 	static long _lastAttackTime = 0;
 	private static final int FWA_LIMITUNTILSLEEP = 15 * 60000;
@@ -421,7 +421,7 @@ public final class AntharasManager extends Functions implements ScriptFile, OnDe
 		{
 			checkAnnihilated();
 		}
-		else if (self.isNpc() && (self.getNpcId() == ANTHARAS_STRONG))
+		else if (self.isNpc() && (self.getId() == ANTHARAS_STRONG))
 		{
 			ThreadPoolManager.getInstance().schedule(new AntharasSpawn(8), 10);
 		}
@@ -527,7 +527,7 @@ public final class AntharasManager extends Functions implements ScriptFile, OnDe
 			setIntervalEndTask();
 		}
 		
-		_log.info("AntharasManager: Next spawn date of Antharas is " + TimeUtils.toSimpleFormat(_state.getRespawnDate()) + ".");
+		_log.info("AntharasManager: Next spawn date is " + TimeUtils.toSimpleFormat(_state.getRespawnDate()) + ".");
 	}
 	
 	/**

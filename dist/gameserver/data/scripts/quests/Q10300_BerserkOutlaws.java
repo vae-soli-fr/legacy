@@ -16,8 +16,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 /**
  * @author Evil_dnk
@@ -104,16 +103,16 @@ public class Q10300_BerserkOutlaws extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		int cond = st.getCond();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		String htmltext = "noquest";
 		
-		if (ArrayUtils.contains(Adventurequid, npcId))
+		if (Util.contains(Adventurequid, npcId))
 		{
 			if ((st.getPlayer().getLevel() >= 50) && (st.getPlayer().getLevel() <= 54) && (cond == 0))
 			{
 				htmltext = "start.htm";
 			}
-			else if ((cond == 1) && ArrayUtils.contains(Adventurequid, npcId))
+			else if ((cond == 1) && Util.contains(Adventurequid, npcId))
 			{
 				htmltext = "0-4.htm";
 			}
@@ -148,19 +147,19 @@ public class Q10300_BerserkOutlaws extends Quest implements ScriptFile
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		
-		if ((st.getCond() == 1) && ArrayUtils.contains(Basilisk, npcId) && (st.getQuestItemsCount(markofbandit) < 30))
+		if ((st.getCond() == 1) && Util.contains(Basilisk, npcId) && (st.getQuestItemsCount(markofbandit) < 30))
 		{
 			st.giveItems(markofbandit, 1);
 			st.playSound(SOUND_ITEMGET);
 		}
-		else if ((st.getCond() == 1) && ArrayUtils.contains(gnols, npcId) && (st.getQuestItemsCount(markofshaman) < 30))
+		else if ((st.getCond() == 1) && Util.contains(gnols, npcId) && (st.getQuestItemsCount(markofshaman) < 30))
 		{
 			st.giveItems(markofshaman, 1);
 			st.playSound(SOUND_ITEMGET);
 		}
-		else if ((st.getCond() == 1) && ArrayUtils.contains(OelMahum, npcId) && (st.getQuestItemsCount(proofmonstr) < 30))
+		else if ((st.getCond() == 1) && Util.contains(OelMahum, npcId) && (st.getQuestItemsCount(proofmonstr) < 30))
 		{
 			st.giveItems(proofmonstr, 1);
 			st.playSound(SOUND_ITEMGET);

@@ -18,9 +18,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
-
+import lineage2.gameserver.utils.Util;
 import bosses.FourSepulchersManager;
 
 public class Q00620_FourGoblets extends Quest implements ScriptFile
@@ -176,7 +174,7 @@ public class Q00620_FourGoblets extends Quest implements ScriptFile
 				return null;
 			}
 			
-			return "" + str(npc.getNpcId()) + "-0.htm";
+			return "" + str(npc.getId()) + "-0.htm";
 		}
 		else if (event.equalsIgnoreCase("16"))
 		{
@@ -193,7 +191,7 @@ public class Q00620_FourGoblets extends Quest implements ScriptFile
 				return null;
 			}
 			
-			return "" + str(npc.getNpcId()) + "-0.htm";
+			return "" + str(npc.getId()) + "-0.htm";
 		}
 		else if (event.equalsIgnoreCase("17"))
 		{
@@ -251,7 +249,7 @@ public class Q00620_FourGoblets extends Quest implements ScriptFile
 				// empty catch clause
 			}
 			
-			if (ArrayUtils.contains(RCP_REWARDS, id))
+			if (Util.contains(RCP_REWARDS, id))
 			{
 				st.takeItems(RELIC, 1000);
 				st.giveItems(id, 1);
@@ -266,7 +264,7 @@ public class Q00620_FourGoblets extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		String htmltext = "noquest";
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int id = st.getState();
 		int cond = st.getCond();
 		
@@ -410,7 +408,7 @@ public class Q00620_FourGoblets extends Quest implements ScriptFile
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		
 		if (((cond == 1) || (cond == 2)) && (npcId >= 18120) && (npcId <= 18256) && Rnd.chance(30))

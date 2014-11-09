@@ -17,8 +17,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q10307_TheCorruptedLeaderHisTruth extends Quest implements ScriptFile
 {
@@ -48,7 +47,6 @@ public class Q10307_TheCorruptedLeaderHisTruth extends Quest implements ScriptFi
 		{
 			return "noquest";
 		}
-		
 		if (event.equalsIgnoreCase("32896-05.htm"))
 		{
 			st.setCond(1);
@@ -74,7 +72,7 @@ public class Q10307_TheCorruptedLeaderHisTruth extends Quest implements ScriptFi
 	@Override
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
-		String htmltext = "noquest";
+		String htmltext = NO_QUEST_DIALOG;
 		
 		if (st == null)
 		{
@@ -84,7 +82,7 @@ public class Q10307_TheCorruptedLeaderHisTruth extends Quest implements ScriptFi
 		Player player = st.getPlayer();
 		QuestState prevst = player.getQuestState(Q10306_TheCorruptedLeader.class);
 		
-		if (npc.getNpcId() == NPC_NAOMI_KASHERON)
+		if (npc.getId() == NPC_NAOMI_KASHERON)
 		{
 			switch (st.getState())
 			{
@@ -129,7 +127,7 @@ public class Q10307_TheCorruptedLeaderHisTruth extends Quest implements ScriptFi
 					}
 			}
 		}
-		else if (npc.getNpcId() == NPC_MIMILEAD)
+		else if (npc.getId() == NPC_MIMILEAD)
 		{
 			if (st.isStarted())
 			{
@@ -155,7 +153,7 @@ public class Q10307_TheCorruptedLeaderHisTruth extends Quest implements ScriptFi
 			return null;
 		}
 		
-		if (ArrayUtils.contains(MOB_KIMERIAN, npc.getNpcId()))
+		if (Util.contains(MOB_KIMERIAN, npc.getId()))
 		{
 			if (st.getCond() == 1)
 			{

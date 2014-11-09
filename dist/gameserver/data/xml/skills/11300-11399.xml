@@ -190,6 +190,9 @@
 				<mul order="0x30" stat="runSpd" val="1.34"/>
 			</effect>
 		</for>
+		<set name="castRange" val="900"/>
+		<set name="hitTime" val="3500"/>
+		<set name="reuseDelay" val="10000"/>
 	</skill>
 	<skill id="11309" levels="1" name="Mass Servitor Blessing">
 		<table name="#mpConsume2">70</table>
@@ -204,7 +207,13 @@
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="negateEffects" val="Root;Paralyze;Debuff"/>
 		<set name="negateStackType" val="RunSpeedDown;pAtkSpdDown"/>
-		<for/>
+		<for>
+			<effect count="1" name="DispelEffects" time="0" val="0">
+				<def name="dispelType" val="cleanse"/>
+				<def name="cancelRate" val="100"/>
+				<def name="negateCount" val="10"/>
+			</effect>
+		</for>
 	</skill>
 	<skill id="11310" levels="1" name="Mass Servitor Ultimate Defense">
 		<table name="#pDef">4680</table>

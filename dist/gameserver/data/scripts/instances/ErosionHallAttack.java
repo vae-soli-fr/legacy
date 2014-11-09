@@ -144,7 +144,7 @@ public final class ErosionHallAttack extends Reflection
 				return;
 			}
 			
-			if (self.getNpcId() == AliveTumor)
+			if (self.getId() == AliveTumor)
 			{
 				((NpcInstance) self).dropItem(killer.getPlayer(), 13797, Rnd.get(2, 5));
 				NpcInstance deadTumor = addSpawnWithoutRespawn(DeadTumor, self.getLoc(), 0);
@@ -155,7 +155,7 @@ public final class ErosionHallAttack extends Reflection
 				// Schedule regeneration coffins spawn
 				ThreadPoolManager.getInstance().schedule(new RegenerationCoffinSpawn(deadTumor), 20000L);
 			}
-			else if (self.getNpcId() == Cohemenes)
+			else if (self.getId() == Cohemenes)
 			{
 				Functions.npcShout(cohemenes, NpcString.KEU);
 				conquestConclusion(true);
@@ -219,7 +219,7 @@ public final class ErosionHallAttack extends Reflection
 			
 			for (int i = 0; i < 4; i++)
 			{
-				addSpawnWithoutRespawn(RegenerationCoffin, new Location(_deadTumor.getLoc().x, _deadTumor.getLoc().y, _deadTumor.getLoc().z, Location.getRandomHeading()), 250);
+				addSpawnWithoutRespawn(RegenerationCoffin, new Location(_deadTumor.getLoc().getX(), _deadTumor.getLoc().getY(), _deadTumor.getLoc().getZ(), Location.getRandomHeading()), 250);
 			}
 		}
 	}
@@ -340,7 +340,7 @@ public final class ErosionHallAttack extends Reflection
 		
 		for (NpcInstance npc : getNpcs())
 		{
-			if ((npc.getNpcId() == AliveTumor) || (npc.getNpcId() == DeadTumor))
+			if ((npc.getId() == AliveTumor) || (npc.getId() == DeadTumor))
 			{
 				npc.deleteMe();
 			}

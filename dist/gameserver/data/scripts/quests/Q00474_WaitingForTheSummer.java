@@ -17,8 +17,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q00474_WaitingForTheSummer extends Quest implements ScriptFile
 {
@@ -92,7 +91,7 @@ public class Q00474_WaitingForTheSummer extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		st.getPlayer();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int state = st.getState();
 		int cond = st.getCond();
 		
@@ -144,12 +143,12 @@ public class Q00474_WaitingForTheSummer extends Quest implements ScriptFile
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		
 		if ((cond == 1) && (Rnd.chance(50)))
 		{
-			if (ArrayUtils.contains(YETI, npcId))
+			if (Util.contains(YETI, npcId))
 			{
 				if (st.getQuestItemsCount(YETI_MIAT) < 30)
 				{
@@ -157,7 +156,7 @@ public class Q00474_WaitingForTheSummer extends Quest implements ScriptFile
 					st.playSound("ItemSound.quest_itemget");
 				}
 			}
-			else if (ArrayUtils.contains(URSUS, npcId))
+			else if (Util.contains(URSUS, npcId))
 			{
 				if (st.getQuestItemsCount(URSUS_MEAT) < 30)
 				{
@@ -165,7 +164,7 @@ public class Q00474_WaitingForTheSummer extends Quest implements ScriptFile
 					st.playSound("ItemSound.quest_itemget");
 				}
 			}
-			else if (ArrayUtils.contains(BUFFALO, npcId))
+			else if (Util.contains(BUFFALO, npcId))
 			{
 				if (st.getQuestItemsCount(BUFFALO_MEAT) < 30)
 				{

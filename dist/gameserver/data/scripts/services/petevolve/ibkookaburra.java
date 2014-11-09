@@ -58,7 +58,7 @@ public final class ibkookaburra extends Functions
 			return;
 		}
 		
-		if (pet.getNpcId() != BABY_KOOKABURRA)
+		if (pet.getId() != BABY_KOOKABURRA)
 		{
 			show("scripts/services/petevolve/no_pet.htm", player, npc);
 			return;
@@ -79,7 +79,7 @@ public final class ibkookaburra extends Functions
 		int controlItemId = pet.getControlItemObjId();
 		player.getSummonList().unsummonPet(false);
 		ItemInstance control = player.getInventory().getItemByObjectId(controlItemId);
-		control.setItemId(IN_KOOKABURRA_OCARINA);
+		control.setId(IN_KOOKABURRA_OCARINA);
 		control.setEnchantLevel(L2Pet.IMPROVED_BABY_KOOKABURRA.getMinLevel());
 		control.setJdbcState(JdbcEntityState.UPDATED);
 		control.update();

@@ -18,8 +18,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 /**
  * @author cruel
@@ -91,7 +90,7 @@ public class Q00751_LiberatingTheSpirits extends Quest implements ScriptFile
 		String htmltext = "noquest";
 		int cond = st.getCond();
 		
-		if (npc.getNpcId() == Roderik)
+		if (npc.getId() == Roderik)
 		{
 			switch (st.getState())
 			{
@@ -140,7 +139,7 @@ public class Q00751_LiberatingTheSpirits extends Quest implements ScriptFile
 		
 		if (cond == 1)
 		{
-			if (ArrayUtils.contains(Mobs, npc.getNpcId()))
+			if (Util.contains(Mobs, npc.getId()))
 			{
 				Party party = st.getPlayer().getParty();
 				
@@ -167,7 +166,7 @@ public class Q00751_LiberatingTheSpirits extends Quest implements ScriptFile
 				}
 				else
 				{
-					if (st.getQuestItemsCount(Deadmans_Flesh) < 50)
+					if (st.getQuestItemsCount(Deadmans_Flesh) < 40)
 					{
 						st.giveItems(Deadmans_Flesh, 1);
 						st.playSound(SOUND_ITEMGET);
@@ -180,7 +179,7 @@ public class Q00751_LiberatingTheSpirits extends Quest implements ScriptFile
 				}
 			}
 			
-			if (npc.getNpcId() == Scaldisect)
+			if (npc.getId() == Scaldisect)
 			{
 				Party party = st.getPlayer().getParty();
 				

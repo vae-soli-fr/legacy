@@ -22,8 +22,7 @@ import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.utils.Location;
 import lineage2.gameserver.utils.ReflectionUtils;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q00129_PailakaDevilsLegacy extends Quest implements ScriptFile
 {
@@ -113,7 +112,7 @@ public class Q00129_PailakaDevilsLegacy extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		String htmltext = "noquest";
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		int id = st.getState();
 		Player player = st.getPlayer();
@@ -250,7 +249,7 @@ public class Q00129_PailakaDevilsLegacy extends Quest implements ScriptFile
 	public String onKill(NpcInstance npc, QuestState st)
 	{
 		Player player = st.getPlayer();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int refId = player.getReflectionId();
 		
 		if ((npcId == KAMS) && (st.getQuestItemsCount(KDROP) == 0))
@@ -267,7 +266,7 @@ public class Q00129_PailakaDevilsLegacy extends Quest implements ScriptFile
 			st.playSound(SOUND_MIDDLE);
 			addSpawnToInstance(DADVENTURER2, new Location(84990, -208376, -3342, 55000), 0, refId);
 		}
-		else if (ArrayUtils.contains(Pailaka2nd, npcId))
+		else if (Util.contains(Pailaka2nd, npcId))
 		{
 			if (Rnd.get(100) < 80)
 			{

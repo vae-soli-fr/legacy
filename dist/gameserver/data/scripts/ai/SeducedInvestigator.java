@@ -25,8 +25,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.network.serverpackets.ExShowScreenMessage;
 import lineage2.gameserver.network.serverpackets.ExShowScreenMessage.ScreenMessageAlign;
 import lineage2.gameserver.tables.SkillTable;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 /**
  * @author Mobius
@@ -77,7 +76,7 @@ public final class SeducedInvestigator extends Fighter
 		{
 			for (NpcInstance npc : around)
 			{
-				if (ArrayUtils.contains(_allowedTargets, npc.getNpcId()))
+				if (Util.contains(_allowedTargets, npc.getId()))
 				{
 					actor.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, npc, 300);
 				}
@@ -106,15 +105,15 @@ public final class SeducedInvestigator extends Fighter
 					5973
 				};
 				
-				if (actor.getNpcId() == 36562)
+				if (actor.getId() == 36562)
 				{
 					actor.doCast(SkillTable.getInstance().getInfo(buffs[0], 1), player, true);
 				}
-				else if (actor.getNpcId() == 36563)
+				else if (actor.getId() == 36563)
 				{
 					actor.doCast(SkillTable.getInstance().getInfo(buffs[1], 1), player, true);
 				}
-				else if (actor.getNpcId() == 36564)
+				else if (actor.getId() == 36564)
 				{
 					actor.doCast(SkillTable.getInstance().getInfo(buffs[2], 1), player, true);
 				}
@@ -168,7 +167,7 @@ public final class SeducedInvestigator extends Fighter
 			return;
 		}
 		
-		if ((attacker.getNpcId() == 25659) || (attacker.getNpcId() == 25660) || (attacker.getNpcId() == 25661))
+		if ((attacker.getId() == 25659) || (attacker.getId() == 25660) || (attacker.getId() == 25661))
 		{
 			actor.getAggroList().addDamageHate(attacker, 0, 20);
 		}

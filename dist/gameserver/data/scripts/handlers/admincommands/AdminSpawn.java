@@ -316,7 +316,7 @@ public class AdminSpawn implements IAdminCommandHandler, ScriptFile
 				
 				for (NpcInstance _npc : World.getAroundNpc(activeChar))
 				{
-					if ((_npc.getNpcId() == id) || (_npc.getNpcId() == id2))
+					if ((_npc.getId() == id) || (_npc.getId() == id2))
 					{
 						name = _npc.getName();
 						min_x = Math.min(min_x, _npc.getX());
@@ -361,7 +361,7 @@ public class AdminSpawn implements IAdminCommandHandler, ScriptFile
 						}
 						
 						FileWriter writer = new FileWriter(f, true);
-						writer.write("<spawn count=\"1\" respawn=\"60\" respawn_random=\"0\" period_of_day=\"none\">\n\t" + "<point x=\"" + activeChar.getLoc().x + "\" y=\"" + activeChar.getLoc().y + "\" z=\"" + activeChar.getLoc().z + "\" h=\"" + activeChar.getLoc().h + "\" />\n\t" + "<npc id=\"" + Integer.parseInt(id3) + "\" /><!--" + NpcHolder.getInstance().getTemplate(Integer.parseInt(id3)).getName() + "-->\n" + "</spawn>\n");
+						writer.write("<spawn count=\"1\" respawn=\"60\" respawn_random=\"0\" period_of_day=\"none\">\n\t" + "<point x=\"" + activeChar.getLoc().getX() + "\" y=\"" + activeChar.getLoc().getY() + "\" z=\"" + activeChar.getLoc().getZ() + "\" h=\"" + activeChar.getLoc().getHeading() + "\" />\n\t" + "<npc id=\"" + Integer.parseInt(id3) + "\" /><!--" + NpcHolder.getInstance().getTemplate(Integer.parseInt(id3)).getName() + "-->\n" + "</spawn>\n");
 						writer.close();
 					}
 					catch (Exception e)
@@ -426,7 +426,7 @@ public class AdminSpawn implements IAdminCommandHandler, ScriptFile
 			spawn.setRespawnDelay(respawnTime);
 			spawn.setReflection(activeChar.getReflection());
 			
-			if (RaidBossSpawnManager.getInstance().isDefined(template.getNpcId()))
+			if (RaidBossSpawnManager.getInstance().isDefined(template.getId()))
 			{
 				activeChar.sendMessage("Raid Boss " + template.name + " already spawned.");
 			}

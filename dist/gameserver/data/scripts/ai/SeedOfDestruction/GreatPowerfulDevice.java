@@ -53,13 +53,16 @@ public final class GreatPowerfulDevice extends DefaultAI
 	{
 		final NpcInstance actor = getActor();
 		
-		if (checkAllDestroyed(actor.getNpcId()))
+		if (checkAllDestroyed(actor.getId()))
 		{
 			for (int i = 0; i < 6; i++)
 			{
 				for (int mobId : MOBS)
 				{
-					actor.getReflection().addSpawnWithoutRespawn(mobId, Location.findPointToStay(OBELISK_LOC.clone().setZ(-12224), 600, 1200, actor.getGeoIndex()), 0);
+					// actor.getReflection().addSpawnWithoutRespawn(mobId, Location.findPointToStay(OBELISK_LOC.clone().setZ(-12224), 600, 1200, actor.getGeoIndex()), 0);
+					Location loc = OBELISK_LOC.clone();
+					loc.setZ(-12224);
+					actor.getReflection().addSpawnWithoutRespawn(mobId, Location.findPointToStay(loc, 600, 1200, actor.getGeoIndex()), 0);
 				}
 			}
 			
@@ -67,7 +70,7 @@ public final class GreatPowerfulDevice extends DefaultAI
 			
 			for (NpcInstance n : actor.getReflection().getNpcs())
 			{
-				if (n.getNpcId() == 18778)
+				if (n.getId() == 18778)
 				{
 					n.stopDamageBlocked();
 				}
@@ -86,7 +89,7 @@ public final class GreatPowerfulDevice extends DefaultAI
 	{
 		for (NpcInstance n : getActor().getReflection().getNpcs())
 		{
-			if ((n.getNpcId() == mobId) && !n.isDead())
+			if ((n.getId() == mobId) && !n.isDead())
 			{
 				return false;
 			}

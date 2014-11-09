@@ -298,8 +298,8 @@
 		<for>
 			<add stat="pAtk" order="0x10" value="1"/>
 			<add stat="mAtk" order="0x10" value="1"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
 		</for>
 		<set name="crystallizable" value="false"/>
 	</weapon>
@@ -317,8 +317,8 @@
 		<for>
 			<add stat="pAtk" order="0x10" value="1"/>
 			<add stat="mAtk" order="0x10" value="1"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
 		</for>
 		<set name="crystallizable" value="false"/>
 	</weapon>
@@ -336,8 +336,8 @@
 		<for>
 			<add stat="pAtk" order="0x10" value="1"/>
 			<add stat="mAtk" order="0x10" value="1"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
 		</for>
 		<set name="crystallizable" value="false"/>
 	</weapon>
@@ -355,8 +355,8 @@
 		<for>
 			<add stat="pAtk" order="0x10" value="1"/>
 			<add stat="mAtk" order="0x10" value="1"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
 		</for>
 		<set name="crystallizable" value="false"/>
 	</weapon>
@@ -369,6 +369,9 @@
 		<equip>
 			<slot id="BACK"/>
 		</equip>
+		<skills>
+			<skill id="19039" level="1"/>
+		</skills>		
 		<attributes>
 			<attribute element="fire" value="10"/>
 			<attribute element="water" value="10"/>
@@ -377,14 +380,10 @@
 			<attribute element="holy" value="10"/>
 			<attribute element="unholy" value="10"/>
 		</attributes>
-		<skills>
-			<skill id="19039" level="1"/>
-			<skill id="19041" level="1"/>
-		</skills>
 		<for>
 			<add stat="pDef" order="0x10" value="50"/>
 			<add stat="mDef" order="0x10" value="40"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 		<cond msgId="1518">
@@ -400,6 +399,9 @@
 		<equip>
 			<slot id="BACK"/>
 		</equip>
+		<skills>
+			<skill id="19040" level="1"/>
+		</skills>		
 		<attributes>
 			<attribute element="fire" value="10"/>
 			<attribute element="water" value="10"/>
@@ -408,14 +410,10 @@
 			<attribute element="holy" value="10"/>
 			<attribute element="unholy" value="10"/>
 		</attributes>
-		<skills>
-			<skill id="19040" level="1"/>
-			<skill id="19041" level="1"/>
-		</skills>
 		<for>
 			<add stat="pDef" order="0x10" value="50"/>
 			<add stat="mDef" order="0x10" value="40"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 		<cond msgId="1518">
@@ -1407,6 +1405,9 @@
 		<equip>
 			<slot id="BACK"/>
 		</equip>
+		<skills>
+			<skill id="19037" level="1"/>
+		</skills>		
 		<attributes>
 			<attribute element="fire" value="15"/>
 			<attribute element="water" value="15"/>
@@ -1415,10 +1416,6 @@
 			<attribute element="holy" value="15"/>
 			<attribute element="unholy" value="15"/>
 		</attributes>
-		<skills>
-			<skill id="19037" level="1"/>
-			<skill id="19042" level="1"/>
-		</skills>
 		<for>
 			<add stat="pDef" order="0x10" value="50"/>
 			<add stat="mDef" order="0x10" value="40"/>
@@ -1437,6 +1434,9 @@
 		<equip>
 			<slot id="BACK"/>
 		</equip>
+		<skills>
+			<skill id="19038" level="1"/>
+		</skills>		
 		<attributes>
 			<attribute element="fire" value="15"/>
 			<attribute element="water" value="15"/>
@@ -1445,10 +1445,6 @@
 			<attribute element="holy" value="15"/>
 			<attribute element="unholy" value="15"/>
 		</attributes>
-		<skills>
-			<skill id="19038" level="1"/>
-			<skill id="19042" level="1"/>
-		</skills>
 		<for>
 			<add stat="pDef" order="0x10" value="50"/>
 			<add stat="mDef" order="0x10" value="40"/>
@@ -1467,6 +1463,12 @@
 		<equip>
 			<slot id="RIGHT_HAND"/>
 		</equip>
+		<skills>
+			<skill id="3013" level="5"/>
+			<skill id="8297" level="1"/>
+			<skill id="8289" level="1"/>
+			<skill id="9459" level="1"/>
+		</skills>		
 		<set name="rnd_dam" value="10"/>
 		<set name="attack_range" value="40"/>
 		<set name="damage_range" value="0;0;40;120"/>
@@ -1496,6 +1498,12 @@
 		<equip>
 			<slot id="LEFT_RIGHT_HAND"/>
 		</equip>
+		<skills>
+			<skill id="3013" level="5"/>
+			<skill id="8297" level="1"/>
+			<skill id="8289" level="1"/>
+			<skill id="9459" level="1"/>
+		</skills>		
 		<set name="rnd_dam" value="10"/>
 		<set name="attack_range" value="40"/>
 		<set name="damage_range" value="0;0;40;120"/>

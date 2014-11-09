@@ -23,8 +23,8 @@ import lineage2.gameserver.network.serverpackets.ExDynamicQuestPacket;
 import lineage2.gameserver.network.serverpackets.ExDynamicQuestPacket.DynamicQuestInfo;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.utils.ReflectionUtils;
+import lineage2.gameserver.utils.Util;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -94,7 +94,7 @@ public final class LabyrinthOfHarnak extends DynamicQuest implements ScriptFile
 		zoneFirstSecond.addListener(_zoneListener);
 		zoneThird = ReflectionUtils.getZone(QUEST_ZONE_THIRD);
 		zoneThird.addListener(_zoneListener);
-		_log.info("Dynamic Quest: Loaded quest ID " + QUEST_ID + ". Name: Labyrinth of Harnak - Zone Quest");
+		_log.info("Dynamic Quest: ID " + QUEST_ID + ". Name: Labyrinth of Harnak - Zone Quest");
 	}
 	
 	@Override
@@ -314,9 +314,9 @@ public final class LabyrinthOfHarnak extends DynamicQuest implements ScriptFile
 				return;
 			}
 			
-			if (victim.isNpc() && isStarted() && ArrayUtils.contains(LOH_MOBS, victim.getNpcId()))
+			if (victim.isNpc() && isStarted() && Util.contains(LOH_MOBS, victim.getId()))
 			{
-				switch (victim.getNpcId())
+				switch (victim.getId())
 				{
 					case DEMONIC_BATHUS:
 						increaseTaskPoint(KILL_LOH_MOB, actor.getPlayer(), 1);

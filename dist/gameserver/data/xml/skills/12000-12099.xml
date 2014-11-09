@@ -1,17 +1,18 @@
 <?xml version="1.0"?>
 <list>
-	<skill id="12000" levels="1" name="">
+	<skill id="12000" levels="1" name="Aeore Chain Skill Knock Blow">
 		<set name="reuseDelay" val="10000"/>
 		<set name="hitTime" val="2000"/>
 		<set name="mpConsume2" val="40"/>
-		<set name="castRange" val="700"/>
+		<set name="castRange" val="900"/>
 		<set name="power" val="230"/>
 		<set name="magicLevel" val="85"/>
 		<set name="coolTime" val="300"/>
 		<set name="skillType" val="MDAM"/>
 		<set name="magicType" val="MAGIC"/>
 		<set name="target" val="TARGET_ONE"/>
-		<set name="overHit" val="true"/>&gt;<set name="operateType" val="OP_ACTIVE"/>
+		<set name="overHit" val="true"/>
+		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="nextAction" val="attack"/>
 		<set name="isSkillTimePermanent" val="true"/>
 		<set name="isAlterSkill" val="true"/>
@@ -30,7 +31,7 @@
 		<set name="icon" val="icon.skill0000"/>
 		<set name="castRange" val="150"/>
 		<set name="magicLvl" val="85"/>
-		<set name="reuseDelay" val="500"/>
+		<set name="reuseDelay" val="5000"/>
 		<set name="hitTime" val="1000"/>
 		<set name="target" val="TARGET_ONE"/>
 		<set name="skillType" val="BUFF"/>
@@ -48,7 +49,7 @@
 		<set name="magicLvl" val="85"/>
 		<set name="target" val="TARGET_SELF"/>
 		<set name="magicType" val="MAGIC"/>
-		<set name="hitTime" val="300"/>
+		<set name="hitTime" val="3000"/>
 		<set name="reuseDelay" val="30000"/>
 		<set name="skillType" val="SUMMON_ITEM"/>
 		<set name="operateType" val="OP_ACTIVE"/>
@@ -61,6 +62,7 @@
 			<set name="reuseDelay" val="3000"/>
 			<set name="skillType" val="BUFF"/>
 			<set name="operateType" val="OP_ACTIVE"/>
+			<set name="hitTime" val="3000"/>
 		</skill>
 		<skill id="12006" levels="1" name="Spray Insecticide">
 			<set name="icon" val="icon.bug_spray_b"/>
@@ -69,6 +71,7 @@
 			<set name="reuseDelay" val="3000"/>
 			<set name="skillType" val="BUFF"/>
 			<set name="operateType" val="OP_ACTIVE"/>
+			<set name="hitTime" val="3000"/>
 		</skill>
 		<skill id="12007" levels="1" name="Spray Insecticide">
 			<set name="icon" val="icon.bug_spray_c"/>
@@ -77,11 +80,12 @@
 			<set name="reuseDelay" val="3000"/>
 			<set name="skillType" val="BUFF"/>
 			<set name="operateType" val="OP_ACTIVE"/>
+			<set name="hitTime" val="3000"/>
 		</skill>
 	</skill>
 	<skill id="12008" levels="1" name="Orbis' Reflect Shield">
 		<set name="icon" val="icon.skill3260"/>
-		<set name="castRange" val="150"/>
+		<set name="castRange" val="900"/>
 		<set name="target" val="TARGET_ONE"/>
 		<set name="reuseDelay" val="180000"/>
 		<set name="hitTime" val="800"/>

@@ -272,7 +272,7 @@ public final class FourSepulchersSpawn extends Functions implements ScriptFile
 			_archonSpawned.put(npcId, false);
 		}
 		
-		_log.info("FourSepulchersManager: loaded " + count + " Church of duke monsters spawns.");
+		_log.info("FourSepulchersManager: loaded " + count + " Church of duke NPC spawns.");
 	}
 	
 	/**
@@ -282,7 +282,7 @@ public final class FourSepulchersSpawn extends Functions implements ScriptFile
 	{
 		_magicalMonsters.clear();
 		int count = loadSpawn(_magicalMonsters, 2);
-		_log.info("FourSepulchersManager: loaded " + count + " magical monsters spawns.");
+		_log.info("FourSepulchersManager: loaded " + count + " magical NPC spawns.");
 	}
 	
 	/**
@@ -292,7 +292,7 @@ public final class FourSepulchersSpawn extends Functions implements ScriptFile
 	{
 		_physicalMonsters.clear();
 		int count = loadSpawn(_physicalMonsters, 1);
-		_log.info("FourSepulchersManager: loaded " + count + " physical monsters spawns.");
+		_log.info("FourSepulchersManager: loaded " + count + " physical NPC spawns.");
 	}
 	
 	/**
@@ -492,10 +492,10 @@ public final class FourSepulchersSpawn extends Functions implements ScriptFile
 		for (int i = 0; i <= 3; i++)
 		{
 			Location loc = _shadowSpawns.get(gateKeeper[i]);
-			loc.x = _shadowSpawnLoc[locNo][i].x;
-			loc.y = _shadowSpawnLoc[locNo][i].y;
-			loc.z = _shadowSpawnLoc[locNo][i].z;
-			loc.h = _shadowSpawnLoc[locNo][i].h;
+			loc.setX(_shadowSpawnLoc[locNo][i].getX());
+			loc.setY(_shadowSpawnLoc[locNo][i].getY());
+			loc.setZ(_shadowSpawnLoc[locNo][i].getZ());
+			loc.setHeading(_shadowSpawnLoc[locNo][i].getHeading());
 		}
 	}
 	
@@ -582,7 +582,7 @@ public final class FourSepulchersSpawn extends Functions implements ScriptFile
 			return;
 		}
 		
-		NpcTemplate template = NpcHolder.getInstance().getTemplate(_victim.get(npc.getNpcId()));
+		NpcTemplate template = NpcHolder.getInstance().getTemplate(_victim.get(npc.getId()));
 		SepulcherMonsterInstance npc2 = new SepulcherMonsterInstance(IdFactory.getInstance().getNextId(), template);
 		npc2.setSpawnedLoc(npc.getLoc());
 		npc2.spawnMe(npc.getLoc());
@@ -600,7 +600,7 @@ public final class FourSepulchersSpawn extends Functions implements ScriptFile
 			return;
 		}
 		
-		NpcTemplate template = NpcHolder.getInstance().getTemplate(_keyBoxNpc.get(npc.getNpcId()));
+		NpcTemplate template = NpcHolder.getInstance().getTemplate(_keyBoxNpc.get(npc.getId()));
 		SepulcherNpcInstance npc2 = new SepulcherNpcInstance(IdFactory.getInstance().getNextId(), template);
 		npc2.setSpawnedLoc(npc.getLoc());
 		npc2.spawnMe(npc.getLoc());
@@ -790,7 +790,7 @@ public final class FourSepulchersSpawn extends Functions implements ScriptFile
 		
 		for (NpcInstance n : _allMobs)
 		{
-			if ((n.getNpcId() == loc.npcId) && !n.isDead())
+			if ((n.getId() == loc.npcId) && !n.isDead())
 			{
 				return true;
 			}
@@ -807,7 +807,7 @@ public final class FourSepulchersSpawn extends Functions implements ScriptFile
 	{
 		for (NpcInstance n : _allMobs)
 		{
-			if (n.getNpcId() == 18149)
+			if (n.getId() == 18149)
 			{
 				return true;
 			}

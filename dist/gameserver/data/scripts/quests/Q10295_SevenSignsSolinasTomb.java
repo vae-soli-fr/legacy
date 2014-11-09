@@ -22,8 +22,7 @@ import lineage2.gameserver.network.serverpackets.EventTrigger;
 import lineage2.gameserver.network.serverpackets.ExStartScenePlayer;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.utils.Location;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 /**
  * @author pchayka
@@ -253,7 +252,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		String htmltext = "noquest";
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		Player player = st.getPlayer();
 		
@@ -383,17 +382,17 @@ public class Q10295_SevenSignsSolinasTomb extends Quest implements ScriptFile
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		Player player = st.getPlayer();
 		
-		if (ArrayUtils.contains(SolinaGuardians, npcId) && checkGuardians(player, SolinaGuardians))
+		if (Util.contains(SolinaGuardians, npcId) && checkGuardians(player, SolinaGuardians))
 		{
 			player.broadcastPacket(new EventTrigger(21100100, false));
 			player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_SOLINA_TOMB_CLOSING);
 			player.broadcastPacket(new EventTrigger(21100102, true));
 		}
 		
-		if (ArrayUtils.contains(TombGuardians, npcId))
+		if (Util.contains(TombGuardians, npcId))
 		{
 			if (checkGuardians(player, TombGuardians))
 			{
@@ -427,7 +426,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest implements ScriptFile
 	{
 		for (NpcInstance n : player.getReflection().getNpcs())
 		{
-			if (n.getNpcId() == ElcardiaInzone1)
+			if (n.getId() == ElcardiaInzone1)
 			{
 				n.teleToLocation(Location.findPointToStay(player, 100));
 			}
@@ -438,7 +437,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest implements ScriptFile
 	{
 		for (NpcInstance n : player.getReflection().getNpcs())
 		{
-			if (n.getNpcId() == mobId)
+			if (n.getId() == mobId)
 			{
 				for (Effect e : n.getEffectList().getAllEffects())
 				{
@@ -455,7 +454,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest implements ScriptFile
 	{
 		for (NpcInstance n : player.getReflection().getNpcs())
 		{
-			if (ArrayUtils.contains(npcIds, n.getNpcId()) && !n.isDead())
+			if (Util.contains(npcIds, n.getId()) && !n.isDead())
 			{
 				return false;
 			}

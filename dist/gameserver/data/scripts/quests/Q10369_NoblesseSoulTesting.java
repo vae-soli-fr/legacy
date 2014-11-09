@@ -26,8 +26,7 @@ import lineage2.gameserver.network.serverpackets.components.SceneMovie;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.utils.ItemFunctions;
 import lineage2.gameserver.utils.Location;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 /**
  * @author Jocy,vegax
@@ -133,7 +132,7 @@ public class Q10369_NoblesseSoulTesting extends Quest implements ScriptFile, OnM
 		NpcInstance npc = (NpcInstance) target;
 		Player player = st.getPlayer();
 		int cond = st.getCond();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		
 		switch (skill.getId())
 		{
@@ -169,7 +168,7 @@ public class Q10369_NoblesseSoulTesting extends Quest implements ScriptFile, OnM
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		Player player = st.getPlayer();
 		
@@ -185,7 +184,7 @@ public class Q10369_NoblesseSoulTesting extends Quest implements ScriptFile, OnM
 			st.setCond(3);
 		}
 		
-		if ((st.getCond() == 8) && ArrayUtils.contains(HotSprings, npcId) && Rnd.chance(40))
+		if ((st.getCond() == 8) && Util.contains(HotSprings, npcId) && Rnd.chance(40))
 		{
 			st.giveItems(HardLeather, 1);
 			st.playSound("ItemSound.quest_itemget");
@@ -197,7 +196,7 @@ public class Q10369_NoblesseSoulTesting extends Quest implements ScriptFile, OnM
 			st.playSound(SOUND_MIDDLE);
 		}
 		
-		if ((st.getCond() == 12) && ArrayUtils.contains(IsleOf, npcId) && Rnd.chance(40))
+		if ((st.getCond() == 12) && Util.contains(IsleOf, npcId) && Rnd.chance(40))
 		{
 			st.giveItems(HfCeoW, 1);
 			st.playSound("ItemSound.quest_itemget");
@@ -291,9 +290,9 @@ public class Q10369_NoblesseSoulTesting extends Quest implements ScriptFile, OnM
 			{
 				st.takeItems(Ashes, -1);
 				st.takeItems(SummoningStone, -1);
-				st.giveItems(7694, 1);
-				st.giveItems(7562, 10);
-				st.giveItems(34983, 1);
+				st.giveItems(NoblessTiara, 1);
+				st.giveItems(DimensionalDiamond, 10);
+				st.giveItems(NoblessePrivi, 1);
 				st.addExpAndSp(12625440, 0);
 				st.setState(COMPLETED);
 				st.exitCurrentQuest(false);
@@ -316,7 +315,7 @@ public class Q10369_NoblesseSoulTesting extends Quest implements ScriptFile, OnM
 		String htmltext = "noquest";
 		Player player = st.getPlayer();
 		int cond = st.getCond();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		
 		switch (npcId)
 		{

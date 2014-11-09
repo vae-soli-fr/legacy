@@ -57,9 +57,9 @@ public final class Battleground extends SimpleItemHandler
 	@Override
 	protected boolean useItemImpl(Player player, ItemInstance item, boolean ctrl)
 	{
-		final int itemId = item.getItemId();
+		final int itemId = item.getId();
 		
-		if (!player.isInZone(ZoneType.SIEGE))
+		if (!player.isInZone(ZoneType.Siege))
 		{
 			player.sendPacket(new SystemMessage(SystemMessage.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS).addItemName(itemId));
 			return false;

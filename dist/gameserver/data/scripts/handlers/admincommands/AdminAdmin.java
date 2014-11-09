@@ -37,8 +37,6 @@ import lineage2.gameserver.scripts.Functions;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.stats.Stats;
 
-import org.apache.commons.lang3.math.NumberUtils;
-
 /**
  * @author Mobius
  * @version $Revision: 1.0 $
@@ -231,8 +229,8 @@ public class AdminAdmin implements IAdminCommandHandler, ScriptFile
 					{
 						final String val = fullString.substring(15).trim();
 						String[] vals = val.split(" ");
-						int range = NumberUtils.toInt(vals[0], 0);
-						int astate = vals.length > 1 ? NumberUtils.toInt(vals[1], 0) : 0;
+						int range = Integer.valueOf(vals[0]);
+						int astate = vals.length > 1 ? Integer.valueOf(vals[1]) : 0;
 						
 						for (NpcInstance n : activeChar.getAroundNpc(range, 200))
 						{
@@ -466,7 +464,7 @@ public class AdminAdmin implements IAdminCommandHandler, ScriptFile
 					break;
 				
 				case "admin_loc":
-					Functions.sendDebugMessage(activeChar, "Coords: X:" + activeChar.getLoc().x + " Y:" + activeChar.getLoc().y + " Z:" + activeChar.getLoc().z + " H:" + activeChar.getLoc().h);
+					Functions.sendDebugMessage(activeChar, "Coords: X:" + activeChar.getLoc().getX() + " Y:" + activeChar.getLoc().getY() + " Z:" + activeChar.getLoc().getZ() + " H:" + activeChar.getLoc().getHeading());
 					break;
 				
 				case "admin_locdump":
@@ -486,9 +484,9 @@ public class AdminAdmin implements IAdminCommandHandler, ScriptFile
 								f.createNewFile();
 							}
 							
-							Functions.sendDebugMessage(activeChar, "Coords: X:" + activeChar.getLoc().x + " Y:" + activeChar.getLoc().y + " Z:" + activeChar.getLoc().z + " H:" + activeChar.getLoc().h);
+							Functions.sendDebugMessage(activeChar, "Coords: X:" + activeChar.getLoc().getX() + " Y:" + activeChar.getLoc().getY() + " Z:" + activeChar.getLoc().getZ() + " H:" + activeChar.getLoc().getHeading());
 							FileWriter writer = new FileWriter(f, true);
-							writer.write("Loc: " + activeChar.getLoc().x + ", " + activeChar.getLoc().y + ", " + activeChar.getLoc().z + "\n");
+							writer.write("Loc: " + activeChar.getLoc().getX() + ", " + activeChar.getLoc().getY() + ", " + activeChar.getLoc().getZ() + "\n");
 							writer.close();
 						}
 						catch (Exception e)

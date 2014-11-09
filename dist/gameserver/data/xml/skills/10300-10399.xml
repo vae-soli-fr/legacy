@@ -4,14 +4,24 @@
 		<table name="#targetHp">20</table>
 		<table name="#magicLevel">90 95 99</table>
 		<table name="#activateRate">30 40 50</table>
+		<table name="#power">1200 1600 30343</table>
+		<table name="#mpConsume2">92 99 105</table>
+		<table name="#lethal2">100</table>
+		<set name="lethal2" val="#lethal2"/>
+		<set name="power" val="#power"/>
+		<set name="reuseDelay" val="30000"/>
+		<set name="magicLevel" val="#magicLevel"/>
+		<set name="mpConsume2" val="#mpConsume2"/>
 		<set name="target" val="TARGET_ONE"/>
-		<set name="skillType" val="DEBUFF"/>
+		<set name="skillType" val="PDAM"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="activateRate" val="#activateRate"/>
-		<set name="magicLevel" val="#magicLevel"/>
+		<set name="nextAction" val="attack"/>
+		<set name="hitTime" val="1690"/>
+		<set name="blow" val="true"/>
 		<cond msgId="113" addName="1">
 			<and>
-				<target percentHP="#targetHp"/>
+				<target percentHP="#targetHp"/>	
 				<target mob="true"/>
 			</and>
 		</cond>
@@ -38,7 +48,8 @@
 		<table name="#magicLevel">85 90 95 99</table>
 		<table name="#power">17658 20145 22145 25685</table>
 		<set name="coolTime" val="133"/>
-		<set name="reuseDelay" val="5000"/>
+		<set name="reuseDelay" val="10999"/>
+		<set name="hitTime" val="1066"/>
 		<set name="power" val="#power"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="hitTime" val="1667"/>
@@ -92,6 +103,7 @@
 		<table name="#pDef">1.10 1.12 1.15 1.20</table>
 		<table name="#effectPoint">9937 10000 10070 10130</table>
 		<set name="effectPoint" val="#effectPoint"/>
+		<set name="reuseDelay" val="4099"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="power" val="5500"/>
 		<set name="target" val="TARGET_ONE"/>
@@ -132,6 +144,7 @@
 	<skill id="10308" levels="1" name="Wild Roar">
 		<set name="aggroPoints" val="582"/>
 		<set name="magicLevel" val="85"/>
+		<set name="reuseDelay" val="61000"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="skillType" val="BUFF"/>
 		<set name="target" val="TARGET_SELF"/>
@@ -163,12 +176,13 @@
 		<set name="skillType" val="BUFF"/>
 		<set name="magicLvl" val="85"/>
 		<set name="operateType" val="OP_ACTIVE"/>
+		<set name="reuseDelay" val="30000"/>
 		<for>
-			<mul order="0x30" stat="pAtk" val="1.15"/>
-			<using kind="Dual Sword, Dual Blunt, Dual Fist, Sword, Blunt, Fist, Big Blunt, Big Sword"/>
-			<add order="0x40" stat="accCombat" val="8">
-				<using kind="Dual Sword, Dual Blunt, Dual Fist, Sword, Blunt, Fist, Big Blunt, Big Sword"/>
-			</add>
+			<effect name="Buff" time="900" val="0" stackOrder="11" stackType="power">
+				<mul order="0x30" stat="pAtk" val="1.15">
+					<using kind="Dual Sword, Dual Blunt, Dual Fist, Sword, Blunt, Fist, Big Blunt, Big Sword"/>
+				</mul>
+			</effect>
 		</for>
 	</skill>
 	<skill id="10311" levels="4" name="Superior Two-handed Weapon Mastery">
@@ -197,19 +211,20 @@
 	</skill>
 	<skill id="10313" levels="4" name="Infinite Rush">
 		<table name="#mpConsume2">78 87 99 103</table>
-		<table name="#megicLevel">85 90 95 99</table>
+		<table name="#magicLevel">85 90 95 99</table>
 		<set name="coolTime" val="200"/>
-		<set name="magicLevel" val="#megicLevel"/>
+		<set name="magicLevel" val="#magicLevel"/>
 		<set name="castRange" val="400"/>
 		<set name="hitTime" val="800"/>
-		<set name="hitCancelTime" val="500"/>
+		<set name="hitCancelTime" val="5000"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
 		<set name="target" val="TARGET_ONE"/>
 		<set name="skillType" val="DEBUFF"/>
 		<set name="flyType" val="CHARGE"/>
-		<set name="flyRadius" val="400"/>
+		<set name="flyRadius" val="600"/>
 		<set name="flyToBack" val="true"/>
 		<set name="operateType" val="OP_ACTIVE"/>
+		<set name="reuseDelay" val="399"/>
 		<set name="nextAction" val="attack"/>
 		<for>
 			<effect count="1" name="Stun" stackOrder="-1" stackType="Stun" time="9" val="0"/>
@@ -221,12 +236,13 @@
 		<table name="#time">5 10 15 20</table>
 		<table name="#pAtk">1.41 1.42 1.43 1.44</table>
 		<table name="#mAtk">1.41 1.42 1.43 1.44</table>
+		<set name="reuseDelay" val="60999"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="hitTime" val="1800"/>
 		<set name="hitCancelTime" val="500"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
 		<set name="target" val="TARGET_ONE"/>
-		<set name="skillType" val="BUFF"/>
+		<set name="skillType" val="DEBUFF"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for>
 			<effect count="1" name="Disarm" time="#time" val="0">
@@ -245,12 +261,12 @@
 			<mul order="0x40" stat="pvpPhysDmgBonus" val="1.05"/>
 		</for>
 	</skill>
-	<skill id="10317" levels="4" name="Thunder Slasher">
+	<skill id="10317" levels="1" name="Thunder Slasher">
 		<table name="#magicLevel">85 90 95 99</table>
 		<table name="#mpConsume2">78 87 99 103</table>
-		<table name="#power">26003 30409 35883 37680</table>
+		<table name="#power">26003</table>
 		<table name="#rCrit">40 42 45 48</table>
-		<set name="reuseDelay" val="8000"/>
+		<set name="reuseDelay" val="15999"/>
 		<set name="power" val="#power"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="hitTime" val="1800"/>
@@ -263,6 +279,7 @@
 		<set name="skillType" val="PDAM"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<set name="shieldignore" val="true"/>
+		<set name="activateRate" val="80"/>		
 		<for>
 			<effect count="1" name="Stun" stackOrder="-1" stackType="Stun" time="5" val="0"/>
 		</for>
@@ -272,7 +289,7 @@
 		<table name="#mpConsume2">25 26 27 27 28</table>
 		<table name="#magicLevel">85 90 95 99</table>
 		<table name="#power">19685 20445 22698 25758</table>
-		<set name="reuseDelay" val="3000"/>
+		<set name="reuseDelay" val="10999"/>
 		<set name="power" val="#power"/>
 		<set name="magicLevel" val="#magicLevel"/>
 		<set name="castRange" val="600"/>

@@ -23,8 +23,7 @@ import lineage2.gameserver.model.Player;
 import lineage2.gameserver.model.World;
 import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.tables.SkillTable;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 /**
  * @author Mobius
@@ -71,13 +70,13 @@ public final class ForgeOfTheGods extends Fighter
 	{
 		super(actor);
 		
-		if (actor.getNpcId() == TAR_BEETLE)
+		if (actor.getId() == TAR_BEETLE)
 		{
 			AI_TASK_ATTACK_DELAY = 1250;
 			actor.setIsInvul(true);
 			actor.setHasChatWindow(false);
 		}
-		else if (ArrayUtils.contains(RANDOM_SPAWN_MOBS, actor.getNpcId()))
+		else if (Util.contains(RANDOM_SPAWN_MOBS, actor.getId()))
 		{
 			actor.startImmobilized();
 		}
@@ -92,7 +91,7 @@ public final class ForgeOfTheGods extends Fighter
 	{
 		final NpcInstance actor = getActor();
 		
-		if (actor.getNpcId() != TAR_BEETLE)
+		if (actor.getId() != TAR_BEETLE)
 		{
 			return super.thinkActive();
 		}
@@ -122,7 +121,7 @@ public final class ForgeOfTheGods extends Fighter
 	{
 		final NpcInstance actor = getActor();
 		
-		if (ArrayUtils.contains(FOG_MOBS, actor.getNpcId()))
+		if (Util.contains(FOG_MOBS, actor.getId()))
 		{
 			try
 			{
@@ -150,7 +149,7 @@ public final class ForgeOfTheGods extends Fighter
 	@Override
 	protected void onEvtAttacked(Creature attacker, int damage)
 	{
-		if (getActor().getNpcId() == TAR_BEETLE)
+		if (getActor().getId() == TAR_BEETLE)
 		{
 			return;
 		}
@@ -166,7 +165,7 @@ public final class ForgeOfTheGods extends Fighter
 	@Override
 	protected void onEvtAggression(Creature target, int aggro)
 	{
-		if (getActor().getNpcId() == TAR_BEETLE)
+		if (getActor().getId() == TAR_BEETLE)
 		{
 			return;
 		}
@@ -185,7 +184,7 @@ public final class ForgeOfTheGods extends Fighter
 	{
 		final NpcInstance actor = getActor();
 		
-		if (ArrayUtils.contains(RANDOM_SPAWN_MOBS, getActor().getNpcId()) && (target != null) && !actor.isInRange(target, actor.getAggroRange()))
+		if (Util.contains(RANDOM_SPAWN_MOBS, getActor().getId()) && (target != null) && !actor.isInRange(target, actor.getAggroRange()))
 		{
 			actor.getAggroList().remove(target, true);
 			return false;
@@ -201,6 +200,6 @@ public final class ForgeOfTheGods extends Fighter
 	@Override
 	protected boolean randomWalk()
 	{
-		return (ArrayUtils.contains(RANDOM_SPAWN_MOBS, getActor().getNpcId()) || (getActor().getNpcId() == TAR_BEETLE)) ? false : true;
+		return (Util.contains(RANDOM_SPAWN_MOBS, getActor().getId()) || (getActor().getId() == TAR_BEETLE)) ? false : true;
 	}
 }

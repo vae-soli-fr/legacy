@@ -7,8 +7,8 @@
 		<set name="crystal_count" value="4"/>
 		<set name="icon" value="icon.armor_t503_g_i00"/>
 		<set name="type" value="NONE"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="weight" value="510"/>
 		<equip>
 			<slot id="GLOVES"/>
@@ -18,7 +18,7 @@
 			<add stat="pDef" order="0x10" value="76"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -26,8 +26,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="4"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t503_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -38,7 +38,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="76"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -46,8 +46,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="17"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_helmet_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="530"/>
@@ -59,7 +59,7 @@
 			<add stat="pDef" order="0x10" value="126"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -67,8 +67,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="47"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t601_u_i00"/>
 		<set name="type" value="HEAVY"/>
 		<set name="weight" value="7520"/>
@@ -78,9 +78,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="335"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -89,8 +89,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="29"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t601_l_i00"/>
 		<set name="type" value="HEAVY"/>
 		<set name="weight" value="3170"/>
@@ -102,7 +102,7 @@
 			<add stat="pDef" order="0x10" value="209"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -110,8 +110,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="11"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t601_g_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="510"/>
@@ -123,7 +123,7 @@
 			<add stat="pDef" order="0x10" value="84"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -131,8 +131,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="11"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t601_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -143,19 +143,20 @@
 		<for>
 			<add stat="pDef" order="0x10" value="84"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
 	<weapon id="19607" name="Bound Twilight Shield" add_name="Attack Type / Heavy">
 		<set name="icon" value="icon.kratere_i00"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="weight" value="1130"/>
 		<equip>
 			<slot id="LEFT_HAND"/>
 		</equip>
 		<set name="type" value="NONE"/>
+		<set name="ex_type" value="SHIELD"/>
 		<set name="crystal_type" value="R"/>
 		<set name="crystal_count" value="12"/>
 		<for>
@@ -171,8 +172,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="17"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_leather_helmet_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="530"/>
@@ -184,7 +185,7 @@
 			<add stat="pDef" order="0x10" value="126"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -192,8 +193,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="47"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t602_u_i00"/>
 		<set name="type" value="LIGHT"/>
 		<set name="weight" value="4140"/>
@@ -203,9 +204,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="251"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -214,8 +215,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="29"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t602_l_i00"/>
 		<set name="type" value="LIGHT"/>
 		<set name="weight" value="1320"/>
@@ -227,7 +228,7 @@
 			<add stat="pDef" order="0x10" value="157"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -235,8 +236,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="11"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t602_g_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="510"/>
@@ -248,7 +249,7 @@
 			<add stat="pDef" order="0x10" value="84"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -256,8 +257,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="11"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t602_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -268,7 +269,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="84"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -276,8 +277,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="17"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_circlet_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="530"/>
@@ -289,7 +290,7 @@
 			<add stat="pDef" order="0x10" value="126"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -297,8 +298,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="47"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t603_u_i00"/>
 		<set name="type" value="MAGIC"/>
 		<set name="weight" value="1750"/>
@@ -308,9 +309,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="168"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -319,8 +320,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="29"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t603_l_i00"/>
 		<set name="type" value="MAGIC"/>
 		<set name="weight" value="850"/>
@@ -332,7 +333,7 @@
 			<add stat="pDef" order="0x10" value="105"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -340,8 +341,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="11"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t603_g_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="510"/>
@@ -353,7 +354,7 @@
 			<add stat="pDef" order="0x10" value="84"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -361,8 +362,8 @@
 		<set name="crystal_type" value="R"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="11"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t603_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -372,7 +373,7 @@
 		<set name="ex_type" value="FEET"/>
 		<for>
 			<add stat="pDef" order="0x10" value="84"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -380,8 +381,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="38"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_helmet_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="530"/>
@@ -393,7 +394,7 @@
 			<add stat="pDef" order="0x10" value="139"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -401,8 +402,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="102"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t401_u_i00"/>
 		<set name="type" value="HEAVY"/>
 		<set name="weight" value="7520"/>
@@ -412,9 +413,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="370"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -423,8 +424,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="63"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t401_l_i00"/>
 		<set name="type" value="HEAVY"/>
 		<set name="weight" value="3170"/>
@@ -436,7 +437,7 @@
 			<add stat="pDef" order="0x10" value="231"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -444,8 +445,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="25"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t401_g_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="510"/>
@@ -457,7 +458,7 @@
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -465,8 +466,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="25"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t401_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -477,19 +478,20 @@
 		<for>
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
 	<weapon id="19623" name="Bound Seraph Shield" add_name="Attack Type / Heavy">
 		<set name="icon" value="icon.beranka_i00"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="weight" value="1130"/>
 		<equip>
 			<slot id="LEFT_HAND"/>
 		</equip>
 		<set name="type" value="NONE"/>
+		<set name="ex_type" value="SHIELD"/>
 		<set name="crystal_type" value="R95"/>
 		<set name="crystal_count" value="26"/>
 		<for>
@@ -505,8 +507,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="38"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_leather_helmet_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="530"/>
@@ -518,7 +520,7 @@
 			<add stat="pDef" order="0x10" value="139"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -527,8 +529,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="102"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t402_u_i00"/>
 		<set name="type" value="LIGHT"/>
 		<set name="weight" value="4140"/>
@@ -538,9 +540,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="278"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -548,8 +550,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="63"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t402_l_i00"/>
 		<set name="type" value="LIGHT"/>
 		<set name="weight" value="1320"/>
@@ -561,7 +563,7 @@
 			<add stat="pDef" order="0x10" value="173"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -569,8 +571,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="25"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t402_g_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="510"/>
@@ -582,7 +584,7 @@
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -590,8 +592,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="25"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t402_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -602,7 +604,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -610,8 +612,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="38"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_circlet_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="530"/>
@@ -623,7 +625,7 @@
 			<add stat="pDef" order="0x10" value="139"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -631,8 +633,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="102"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t403_u_i00"/>
 		<set name="type" value="MAGIC"/>
 		<set name="weight" value="1750"/>
@@ -642,9 +644,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="185"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -653,8 +655,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="63"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t403_l_i00"/>
 		<set name="type" value="MAGIC"/>
 		<set name="weight" value="850"/>
@@ -666,7 +668,7 @@
 			<add stat="pDef" order="0x10" value="116"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -674,8 +676,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="25"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t403_g_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="510"/>
@@ -687,7 +689,7 @@
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -695,8 +697,8 @@
 		<set name="crystal_type" value="R95"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="25"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t403_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -706,7 +708,7 @@
 		<set name="ex_type" value="FEET"/>
 		<for>
 			<add stat="pDef" order="0x10" value="93"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -714,8 +716,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="84"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_helmet_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="530"/>
@@ -727,7 +729,7 @@
 			<add stat="pDef" order="0x10" value="144"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -735,8 +737,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="225"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t701_u_i00"/>
 		<set name="type" value="HEAVY"/>
 		<set name="weight" value="7520"/>
@@ -746,9 +748,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="385"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -757,8 +759,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="140"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t701_l_i00"/>
 		<set name="type" value="HEAVY"/>
 		<set name="weight" value="3170"/>
@@ -770,7 +772,7 @@
 			<add stat="pDef" order="0x10" value="241"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -778,8 +780,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="56"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t701_g_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="510"/>
@@ -791,7 +793,7 @@
 			<add stat="pDef" order="0x10" value="96"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -799,8 +801,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="56"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t701_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -811,19 +813,20 @@
 		<for>
 			<add stat="pDef" order="0x10" value="96"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
 	<weapon id="19639" name="Bound Eternal Shield" add_name="Attack Type / Heavy">
 		<set name="icon" value="icon.weapon_akra_i00"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="weight" value="1130"/>
 		<equip>
 			<slot id="LEFT_HAND"/>
 		</equip>
 		<set name="type" value="NONE"/>
+		<set name="ex_type" value="SHIELD"/>
 		<set name="crystal_type" value="R99"/>
 		<set name="crystal_count" value="59"/>
 		<for>
@@ -839,8 +842,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="84"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_leather_helmet_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="530"/>
@@ -852,7 +855,7 @@
 			<add stat="pDef" order="0x10" value="144"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -860,8 +863,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="225"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t702_u_i00"/>
 		<set name="type" value="LIGHT"/>
 		<set name="weight" value="4140"/>
@@ -871,9 +874,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="289"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -882,8 +885,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="140"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t702_l_i00"/>
 		<set name="type" value="LIGHT"/>
 		<set name="weight" value="1320"/>
@@ -895,7 +898,7 @@
 			<add stat="pDef" order="0x10" value="181"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -903,8 +906,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="56"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t702_g_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="510"/>
@@ -916,7 +919,7 @@
 			<add stat="pDef" order="0x10" value="96"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -924,8 +927,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="56"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t702_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -936,7 +939,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="96"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -944,8 +947,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="84"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_circlet_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="530"/>
@@ -957,7 +960,7 @@
 			<add stat="pDef" order="0x10" value="144"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -965,8 +968,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="225"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t703_u_i00"/>
 		<set name="type" value="MAGIC"/>
 		<set name="weight" value="1750"/>
@@ -976,9 +979,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="193"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -987,8 +990,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="140"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t703_l_i00"/>
 		<set name="type" value="MAGIC"/>
 		<set name="weight" value="850"/>
@@ -1000,7 +1003,7 @@
 			<add stat="pDef" order="0x10" value="121"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1008,8 +1011,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="56"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t703_g_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="510"/>
@@ -1021,7 +1024,7 @@
 			<add stat="pDef" order="0x10" value="96"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1029,8 +1032,8 @@
 		<set name="crystal_type" value="R99"/>
 		<set name="crystallizable" value="true"/>
 		<set name="crystal_count" value="56"/>
-		<set name="dropable" value="false"/>
-		<set name="tradeable" value="false"/>
+		<set name="dropable" value="true"/>
+		<set name="tradeable" value="true"/>
 		<set name="icon" value="icon.armor_t703_b_i00"/>
 		<set name="type" value="NONE"/>
 		<set name="weight" value="1070"/>
@@ -1041,7 +1044,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="96"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1061,7 +1064,7 @@
 			<add stat="pDef" order="0x10" value="114"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1079,9 +1082,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="304"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -1102,7 +1105,7 @@
 			<add stat="pDef" order="0x10" value="190"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1122,7 +1125,7 @@
 			<add stat="pDef" order="0x10" value="76"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1141,7 +1144,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="76"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1153,6 +1156,7 @@
 		</equip>
 		<set name="isBlessed" value="true"/>
 		<set name="type" value="NONE"/>
+		<set name="ex_type" value="SHIELD"/>
 		<set name="crystal_type" value="R"/>
 		<set name="crystal_count" value="102"/>
 		<for>
@@ -1180,7 +1184,7 @@
 			<add stat="pDef" order="0x10" value="114"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1198,9 +1202,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="228"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -1221,7 +1225,7 @@
 			<add stat="pDef" order="0x10" value="143"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1241,7 +1245,7 @@
 			<add stat="pDef" order="0x10" value="76"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1260,7 +1264,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="76"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1280,7 +1284,7 @@
 			<add stat="pDef" order="0x10" value="114"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1298,9 +1302,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="152"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -1321,7 +1325,7 @@
 			<add stat="pDef" order="0x10" value="95"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1341,7 +1345,7 @@
 			<add stat="pDef" order="0x10" value="76"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1360,7 +1364,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="76"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1380,7 +1384,7 @@
 			<add stat="pDef" order="0x10" value="126"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1398,9 +1402,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="335"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -1421,7 +1425,7 @@
 			<add stat="pDef" order="0x10" value="209"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1441,7 +1445,7 @@
 			<add stat="pDef" order="0x10" value="84"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1459,7 +1463,7 @@
 		<set name="ex_type" value="FEET"/>
 		<for>
 			<add stat="pDef" order="0x10" value="84"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
@@ -1472,6 +1476,7 @@
 		</equip>
 		<set name="isBlessed" value="true"/>
 		<set name="type" value="NONE"/>
+		<set name="ex_type" value="SHIELD"/>
 		<set name="crystal_type" value="R"/>
 		<set name="crystal_count" value="248"/>
 		<for>
@@ -1499,7 +1504,7 @@
 			<add stat="pDef" order="0x10" value="126"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1517,9 +1522,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="251"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -1540,7 +1545,7 @@
 			<add stat="pDef" order="0x10" value="157"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1560,7 +1565,7 @@
 			<add stat="pDef" order="0x10" value="84"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1578,7 +1583,7 @@
 		<set name="isBlessed" value="true"/>
 		<for>
 			<add stat="pDef" order="0x10" value="84"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
@@ -1599,7 +1604,7 @@
 			<add stat="pDef" order="0x10" value="126"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1617,9 +1622,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="168"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -1640,7 +1645,7 @@
 			<add stat="pDef" order="0x10" value="105"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1660,7 +1665,7 @@
 			<add stat="pDef" order="0x10" value="84"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1678,7 +1683,7 @@
 		<set name="ex_type" value="FEET"/>
 		<for>
 			<add stat="pDef" order="0x10" value="84"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
@@ -1699,7 +1704,7 @@
 			<add stat="pDef" order="0x10" value="139"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1717,9 +1722,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="370"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -1740,7 +1745,7 @@
 			<add stat="pDef" order="0x10" value="231"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1760,7 +1765,7 @@
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1779,21 +1784,26 @@
 		<for>
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
 	<weapon id="19687" name="Blessed Seraph Shield" add_name="Attack Type / Heavy">
 		<set name="icon" value="icon.beranka_i00"/>
 		<set name="weight" value="1130"/>
+		<set name="isBlessed" value="true"/>
+		<set name="type" value="NONE"/>
+		<set name="ex_type" value="SHIELD"/>
+		<set name="crystal_type" value="R95"/>
+		<set name="destroyable" value="true"/>
+		<set name="sellable" value="true"/>
+		<set name="tradeable" value="true"/>
+		<set name="crystal_count" value="3597"/>
+		<set name="crystallizable" value="true"/>
+		<set name="isBlessed" value="true"/>		
 		<equip>
 			<slot id="LEFT_HAND"/>
 		</equip>
-		<set name="isBlessed" value="true"/>
-		<set name="type" value="NONE"/>
-		<set name="crystal_type" value="R95"/>
-		<set name="crystal_count" value="0"/>
-		<set name="isBlessed" value="true"/>
 		<for>
 			<add stat="rEvas" order="0x40" value="-8"/>
 			<add stat="sDef" order="0x10" value="505"/>
@@ -1801,7 +1811,6 @@
 			<enchant stat="sDef" order="0x40" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
-		<set name="crystallizable" value="false"/>
 	</weapon>
 	<armor id="19688" name="Blessed Seraph Leather Helmet" add_name="Assassin Type / Light">
 		<set name="crystal_type" value="R95"/>
@@ -1819,7 +1828,7 @@
 			<add stat="pDef" order="0x10" value="139"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1837,9 +1846,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="278"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -1860,7 +1869,7 @@
 			<add stat="pDef" order="0x10" value="173"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1880,7 +1889,7 @@
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1899,7 +1908,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1919,7 +1928,7 @@
 			<add stat="pDef" order="0x10" value="139"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1937,9 +1946,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="185"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>
@@ -1960,7 +1969,7 @@
 			<add stat="pDef" order="0x10" value="116"/>
 			<enchant stat="rCrit" order="0x40" value="0"/>
 			<enchant stat="mCritRate" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1980,7 +1989,7 @@
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="accCombat" order="0x40" value="0"/>
 			<enchant stat="maccCombat" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -1999,7 +2008,7 @@
 		<for>
 			<add stat="pDef" order="0x10" value="93"/>
 			<enchant stat="runSpd" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -2019,7 +2028,7 @@
 			<add stat="pDef" order="0x10" value="144"/>
 			<enchant stat="rEvas" order="0x40" value="0"/>
 			<enchant stat="mEvas" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 		</for>
 	</armor>
@@ -2037,9 +2046,9 @@
 		<set name="ex_type" value="UPPER_PIECE"/>
 		<for>
 			<add stat="pDef" order="0x10" value="385"/>
-			<enchant stat="pAtk" order="0x40" value="0"/>
-			<enchant stat="mAtk" order="0x40" value="0"/>
-			<enchant stat="pDef" order="0x40" value="0"/>
+			<enchant stat="pAtk" order="0x0C" value="0"/>
+			<enchant stat="mAtk" order="0x0C" value="0"/>
+			<enchant stat="pDef" order="0x0C" value="0"/>
 			<enchant stat="maxHp" order="0x80" value="0"/>
 			<add order="0x10" stat="openCloakSlot" value="1"/>
 		</for>

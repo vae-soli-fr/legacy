@@ -10,6 +10,7 @@
 		<set name="target" val="TARGET_NONE"/>
 		<set name="skillType" val="NOTDONE"/>
 		<set name="operateType" val="OP_ACTIVE"/>
+		<set name="castRange" val="40"/>
 	</skill>
 	<skill id="2401" levels="1" name="Mana Recovery Potion (Battleground)">
 		<set name="magicType" val="SPECIAL"/>
@@ -26,7 +27,7 @@
 		<set name="skillType" val="MANAHEAL"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<cond msgId="113" addName="1">
-			<zone type="SIEGE"/>
+			<zone type="Siege"/>
 		</cond>
 	</skill>
 	<skill id="2402" levels="1" name="CP Recovery Potion (Battleground)">
@@ -44,7 +45,7 @@
 		<set name="skillType" val="COMBATPOINTHEAL"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<cond msgId="113" addName="1">
-			<zone type="SIEGE"/>
+			<zone type="Siege"/>
 		</cond>
 	</skill>
 	<skill id="2403" levels="1" name="Hot Springs CP Potion">

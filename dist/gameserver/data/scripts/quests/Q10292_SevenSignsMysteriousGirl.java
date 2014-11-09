@@ -20,8 +20,7 @@ import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.utils.ReflectionUtils;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q10292_SevenSignsMysteriousGirl extends Quest implements ScriptFile
 {
@@ -105,7 +104,7 @@ public class Q10292_SevenSignsMysteriousGirl extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		String htmltext = "noquest";
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		st.getState();
 		Player player = st.getPlayer();
@@ -217,10 +216,10 @@ public class Q10292_SevenSignsMysteriousGirl extends Quest implements ScriptFile
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		
-		if ((cond == 3) && ArrayUtils.contains(MOBS_1, npcId) && Rnd.chance(70))
+		if ((cond == 3) && Util.contains(MOBS_1, npcId) && Rnd.chance(70))
 		{
 			st.giveItems(ELCARDIAS_MARK, 1);
 			

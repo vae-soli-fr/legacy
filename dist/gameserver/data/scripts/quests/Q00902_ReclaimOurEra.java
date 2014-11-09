@@ -16,8 +16,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q00902_ReclaimOurEra extends Quest implements ScriptFile
 {
@@ -108,7 +107,7 @@ public class Q00902_ReclaimOurEra extends Quest implements ScriptFile
 		String htmltext = "noquest";
 		int cond = st.getCond();
 		
-		if (npc.getNpcId() == Mathias)
+		if (npc.getId() == Mathias)
 		{
 			switch (st.getState())
 			{
@@ -166,17 +165,17 @@ public class Q00902_ReclaimOurEra extends Quest implements ScriptFile
 	{
 		int cond = st.getCond();
 		
-		if ((cond == 2) && ArrayUtils.contains(OrcsSilenos, npc.getNpcId()))
+		if ((cond == 2) && Util.contains(OrcsSilenos, npc.getId()))
 		{
 			st.giveItems(ShatteredBones, 1);
 			st.setCond(5);
 		}
-		else if ((cond == 3) && ArrayUtils.contains(CannibalisticStakatoChief, npc.getNpcId()))
+		else if ((cond == 3) && Util.contains(CannibalisticStakatoChief, npc.getId()))
 		{
 			st.giveItems(CannibalisticStakatoLeaderClaw, 1);
 			st.setCond(5);
 		}
-		else if ((cond == 4) && (npc.getNpcId() == Anais))
+		else if ((cond == 4) && (npc.getId() == Anais))
 		{
 			st.giveItems(AnaisScroll, 1);
 			st.setCond(5);

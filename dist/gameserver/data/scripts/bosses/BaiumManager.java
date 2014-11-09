@@ -267,7 +267,7 @@ public final class BaiumManager extends Functions implements ScriptFile, OnDeath
 	private static ScheduledFuture<?> _socialTask = null;
 	private static ScheduledFuture<?> _socialTask2 = null;
 	private static ScheduledFuture<?> _onAnnihilatedTask = null;
-	static EpicBossState _state;
+	public static EpicBossState _state;
 	static long _lastAttackTime = 0;
 	private static NpcInstance _npcBaium;
 	static SimpleSpawner _statueSpawn = null;
@@ -462,7 +462,7 @@ public final class BaiumManager extends Functions implements ScriptFile, OnDeath
 			setIntervalEndTask();
 		}
 		
-		_log.info("BaiumManager: Next spawn date: " + TimeUtils.toSimpleFormat(_state.getRespawnDate()));
+		_log.info("BaiumManager: Next spawn date is " + TimeUtils.toSimpleFormat(_state.getRespawnDate()));
 	}
 	
 	/**
@@ -495,7 +495,7 @@ public final class BaiumManager extends Functions implements ScriptFile, OnDeath
 		{
 			checkAnnihilated();
 		}
-		else if (self.isNpc() && (self.getNpcId() == BAIUM))
+		else if (self.isNpc() && (self.getId() == BAIUM))
 		{
 			onBaiumDie(self);
 		}

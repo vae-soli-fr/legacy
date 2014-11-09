@@ -17,8 +17,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q00487_OpenSecret extends Quest implements ScriptFile
 {
@@ -84,7 +83,7 @@ public class Q00487_OpenSecret extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		int cond = st.getCond();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		String htmltext = "noquest";
 		
 		if (npcId == Adventurequid)
@@ -153,9 +152,9 @@ public class Q00487_OpenSecret extends Quest implements ScriptFile
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		
-		if ((st.getCond() == 1) && ArrayUtils.contains(mobstohunt, npcId) && (st.getQuestItemsCount(DanceGoods) < 30))
+		if ((st.getCond() == 1) && Util.contains(mobstohunt, npcId) && (st.getQuestItemsCount(DanceGoods) < 30))
 		{
 			st.rollAndGive(DanceGoods, 1, chance);
 			st.playSound(SOUND_ITEMGET);

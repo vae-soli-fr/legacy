@@ -24,13 +24,14 @@
 		<table name="#mDef">0.95 0.9 0.85 0.80 0.75</table>
 		<table name="#Tab-bowRcpt">40 45 50 55 60</table>
 		<table name="#mpConsume2">20 22 24 25 28</table>
+		<table name="#activateRate">95</table>		
 		<set name="reuseDelay" val="10000"/>
 		<set name="hitTime" val="500"/>
 		<set name="castRange" val="900"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
 		<set name="relationSkillsId" val="522;122;"/>
 		<set name="magicLvl" val="#magicLevel"/>
-		<set name="activateRate" val="60"/>
+		<set name="activateRate" val="#activateRate"/>
 		<set name="target" val="TARGET_ONE"/>
 		<set name="skillType" val="DEBUFF"/>
 		<set name="operateType" val="OP_ACTIVE"/>
@@ -40,7 +41,7 @@
 		<enchant3 levels="10" name="Break Shock"/>
 		<enchant4 levels="10" name="Break Knockdown"/>
 		<for>
-			<effect name="Debuff" time="10" val="0" effectPower="40" effectType="DEBUFF" stackOrder="1">
+			<effect name="Debuff" time="12" val="0" effectPower="60" effectType="DEBUFF" stackOrder="1">
 				<add order="0x40" stat="bowWpnVuln" val="#Tab-bowRcpt"/>
 				<add order="0x40" stat="crossbowWpnVuln" val="#Tab-bowRcpt"/>
 				<mul order="0x30" stat="mDef" val="#mDef"/>
@@ -79,10 +80,32 @@
 		<for/>
 	</skill>
 	<skill id="10804" levels="1" name="Bullseye">
-		<set name="target" val="TARGET_NONE"/>
-		<set name="skillType" val="NOTDONE"/>
+		<table name="#magicLevel">85 87 92 95 98</table>
+		<table name="#Tab-bowRcpt">60</table>
+		<table name="#mpConsume2">20 22 24 25 28</table>
+		<table name="#activateRate">95</table>		
+		<set name="reuseDelay" val="10000"/>
+		<set name="hitTime" val="500"/>
+		<set name="castRange" val="900"/>
+		<set name="mpConsume2" val="#mpConsume2"/>
+		<set name="relationSkillsId" val="522;122;"/>
+		<set name="magicLvl" val="#magicLevel"/>
+		<set name="activateRate" val="#activateRate"/>
+		<set name="target" val="TARGET_ONE"/>
+		<set name="skillType" val="DEBUFF"/>
 		<set name="operateType" val="OP_ACTIVE"/>
-		<for/>
+		<set name="isDebuff" val="true"/>
+		<enchant1 levels="10" name="Chance"/>
+		<enchant2 levels="10" name="Break Hold"/>
+		<enchant3 levels="10" name="Break Shock"/>
+		<enchant4 levels="10" name="Break Knockdown"/>
+		<for>
+			<effect name="Debuff" time="12" val="0" effectPower="60" effectType="DEBUFF" stackOrder="1">
+				<add order="0x40" stat="bowWpnVuln" val="#Tab-bowRcpt"/>
+				<add order="0x40" stat="crossbowWpnVuln" val="#Tab-bowRcpt"/>
+				<mul order="0x30" stat="mDef" val="1.25"/>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10805" levels="4" name="Quick Charge">
 		<table name="#magicLevel">89 92 95 99</table>
@@ -102,6 +125,8 @@
 		<enchant1 levels="10" name="Distance">
 			<table name="#flyRadius">815 830 845 860 875 890 905 920 935 950</table>
 		</enchant1>
+		<set name="castRange" val="500"/>
+		<set name="hitTime" val="100"/>
 	</skill>
 	<skill id="10806" levels="1" name="Frost Trap">
 		<set name="magicLevel" val="85"/>
@@ -133,6 +158,7 @@
 		<set name="skillType" val="NOTDONE"/>
 		<set name="operateType" val="OP_ACTIVE"/>
 		<for/>
+		<set name="hitTime" val="1000"/>
 	</skill>
 	<skill id="10809" levels="1" name="Survival Movement">
 		<table name="#mpConsume2">54</table>
@@ -161,14 +187,15 @@
 		<set name="hitTime" val="500"/>
 		<set name="mpConsume2" val="#mpConsume2"/>
 		<set name="magicLevel" val="#magicLevel"/>
+		<set name="isAwakeningToggle" val="true"/>
 		<set name="target" val="TARGET_SELF"/>
-		<set name="skillType" val="CONT"/>
-		<set name="operateType" val="OP_TOGGLE"/>
+		<set name="skillType" val="BUFF"/>
+		<set name="operateType" val="OP_ACTIVE"/>
 		<cond msgId="113" addName="1">
 			<using kind="Bow,Crossbow"/>
 		</cond>
 		<for>
-			<effect count="0x7fffffff" name="LDManaDamOverTime" stackOrder="1" stackType="stance" time="5" val="0.2">
+			<effect count="360" name="LDManaDamOverTime" stackOrder="1" stackType="guts" time="5" val="0.2">
 				<mul order="0x30" stat="pAtk" val="#pAtk"/>
 				<mul order="0x30" stat="pDef" val="#pDef"/>
 				<mul order="0x30" stat="pAtkSpd" val="#pAtkSpd"/>
@@ -207,7 +234,7 @@
 			<using kind="Bow,Crossbow"/>
 		</cond>
 		<for>
-			<effect count="0x7fffffff" name="LDManaDamOverTime" stackOrder="1" stackType="stance" time="5" val="0.2">
+			<effect count="360" name="LDManaDamOverTime" stackOrder="1" stackType="stance" time="5" val="0.2">
 				<mul order="0x30" stat="pAtk" val="#pAtk"/>
 				<div order="0x30" stat="pReuse" val="#pReuse"/>
 			</effect>

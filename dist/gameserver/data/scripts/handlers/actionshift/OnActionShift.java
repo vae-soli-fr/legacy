@@ -98,15 +98,15 @@ public final class OnActionShift extends Functions
 			{
 				dialog = HtmCache.getInstance().getNotNull("actionshift/admin.L2NpcInstance.onActionShift.htm", player);
 				dialog = dialog.replaceFirst("%name%", npc.getName());
-				dialog = dialog.replaceFirst("%id%", String.valueOf(npc.getNpcId()));
+				dialog = dialog.replaceFirst("%id%", String.valueOf(npc.getId()));
 				dialog = dialog.replaceFirst("%lvl%", String.valueOf(npc.getLevel()));
 				dialog = dialog.replaceFirst("%objid%", String.valueOf(npc.getObjectId()));
 				dialog = dialog.replaceFirst("%class%", String.valueOf(npc.getClass().getSimpleName().replaceFirst("L2", "").replaceFirst("Instance", "")));
 				dialog = dialog.replaceFirst("%race%", getNpcRaceById(npc.getTemplate().getRace()));
 				dialog = dialog.replaceFirst("%territory%", npc.getCastle() != null ? HtmlUtils.htmlResidenceName(npc.getCastle().getId()) : "None");
-				dialog = dialog.replaceFirst("%spawn%", npc.getSpawnedLoc().x + " " + npc.getSpawnedLoc().y + " " + npc.getSpawnedLoc().z);
-				dialog = dialog.replaceFirst("%loc%", npc.getLoc().x + " " + npc.getLoc().y + " " + npc.getLoc().z);
-				dialog = dialog.replaceFirst("%heading%", String.valueOf(npc.getLoc().h));
+				dialog = dialog.replaceFirst("%spawn%", npc.getSpawnedLoc().getX() + " " + npc.getSpawnedLoc().getY() + " " + npc.getSpawnedLoc().getZ());
+				dialog = dialog.replaceFirst("%loc%", npc.getLoc().getX() + " " + npc.getLoc().getY() + " " + npc.getLoc().getZ());
+				dialog = dialog.replaceFirst("%heading%", String.valueOf(npc.getLoc().getHeading()));
 				dialog = dialog.replaceFirst("%collision_radius%", String.valueOf(npc.getTemplate().getCollisionRadius()));
 				dialog = dialog.replaceFirst("%collision_height%", String.valueOf(npc.getTemplate().getCollisionHeight()));
 				dialog = dialog.replaceFirst("%loc2d%", String.valueOf((long) npc.getDistance(player)));
@@ -152,7 +152,7 @@ public final class OnActionShift extends Functions
 			{
 				dialog = HtmCache.getInstance().getNotNull("actionshift/player.L2NpcInstance.onActionShift.full.htm", player);
 				dialog = dialog.replaceFirst("%class%", String.valueOf(npc.getClass().getSimpleName().replaceFirst("L2", "").replaceFirst("Instance", "")));
-				dialog = dialog.replaceFirst("%id%", String.valueOf(npc.getNpcId()));
+				dialog = dialog.replaceFirst("%id%", String.valueOf(npc.getId()));
 				dialog = dialog.replaceFirst("%respawn%", String.valueOf((npc.getSpawn() != null) ? Util.formatTime(npc.getSpawn().getRespawnDelay()) : "0"));
 				dialog = dialog.replaceFirst("%walkSpeed%", String.valueOf(npc.getWalkSpeed()));
 				dialog = dialog.replaceFirst("%evs%", String.valueOf(npc.getEvasionRate(null)));
@@ -166,7 +166,7 @@ public final class OnActionShift extends Functions
 				dialog = dialog.replaceFirst("%dist%", String.valueOf((int) npc.getDistance3D(player)));
 				dialog = dialog.replaceFirst("%killed%", String.valueOf(0));
 				dialog = dialog.replaceFirst("%spReward%", String.valueOf(npc.getSpReward()));
-				dialog = dialog.replaceFirst("%xyz%", npc.getLoc().x + " " + npc.getLoc().y + " " + npc.getLoc().z);
+				dialog = dialog.replaceFirst("%xyz%", npc.getLoc().getX() + " " + npc.getLoc().getY() + " " + npc.getLoc().getZ());
 				dialog = dialog.replaceFirst("%ai_type%", npc.getAI().getClass().getSimpleName());
 				dialog = dialog.replaceFirst("%direction%", PositionUtils.getDirectionTo(npc, player).toString().toLowerCase());
 				StringBuilder b = new StringBuilder("");
@@ -184,7 +184,7 @@ public final class OnActionShift extends Functions
 			}
 			
 			dialog = dialog.replaceFirst("%name%", nameNpc(npc));
-			dialog = dialog.replaceFirst("%id%", String.valueOf(npc.getNpcId()));
+			dialog = dialog.replaceFirst("%id%", String.valueOf(npc.getId()));
 			dialog = dialog.replaceFirst("%level%", String.valueOf(npc.getLevel()));
 			dialog = dialog.replaceFirst("%respawn%", String.valueOf((npc.getSpawn() != null) ? Util.formatTime(npc.getSpawn().getRespawnDelay()) : "0"));
 			dialog = dialog.replaceFirst("%factionId%", String.valueOf(npc.getFaction()));
@@ -624,13 +624,13 @@ public final class OnActionShift extends Functions
 			
 			String dialog = HtmCache.getInstance().getNotNull("actionshift/admin.L2PetInstance.onActionShift.htm", player);
 			
-			dialog = dialog.replaceFirst("%petId%", Integer.toString(pet.getNpcId()));
-			dialog = dialog.replaceFirst("%controlItemId%", String.valueOf(pet.getControlItem().getItemId()));
+			dialog = dialog.replaceFirst("%petId%", Integer.toString(pet.getId()));
+			dialog = dialog.replaceFirst("%controlItemId%", String.valueOf(pet.getControlItem().getId()));
 			dialog = dialog.replaceFirst("%type%", pet.getClass().getSimpleName().replaceFirst("Instance", ""));
 			dialog = dialog.replaceFirst("%ai%", pet.hasAI() ? String.valueOf(pet.getAI().getIntention().name()) : "NULL");
 			dialog = dialog.replaceFirst("%dist%", String.valueOf((int) pet.getRealDistance(player)));
 			
-			dialog = dialog.replaceFirst("%name%", HtmlUtils.htmlNpcName(pet.getNpcId()));
+			dialog = dialog.replaceFirst("%name%", HtmlUtils.htmlNpcName(pet.getId()));
 			dialog = dialog.replaceFirst("%title%", String.valueOf(StringUtils.isEmpty(pet.getTitle()) ? "Empty" : pet.getTitle()));
 			dialog = dialog.replaceFirst("%level%", String.valueOf(pet.getLevel()));
 			dialog = dialog.replaceFirst("%exp%", Long.toString(pet.getExp()));
@@ -678,7 +678,7 @@ public final class OnActionShift extends Functions
 			String dialog = HtmCache.getInstance().getNotNull("actionshift/admin.L2SummonInstance.onActionShift.htm", player);
 			String name = summon.getName();
 			
-			dialog = dialog.replaceFirst("%summonId%", Integer.toString(summon.getNpcId()));
+			dialog = dialog.replaceFirst("%summonId%", Integer.toString(summon.getId()));
 			dialog = dialog.replaceFirst("%type%", summon.getClass().getSimpleName().replaceFirst("Instance", ""));
 			dialog = dialog.replaceFirst("%ai%", summon.hasAI() ? String.valueOf(summon.getAI().getIntention().name()) : "NULL");
 			
@@ -769,7 +769,7 @@ public final class OnActionShift extends Functions
 			dialog = HtmCache.getInstance().getNotNull("actionshift/admin.L2ItemInstance.onActionShift.htm", player);
 			dialog = dialog.replaceFirst("%name%", String.valueOf(item.getTemplate().getName()));
 			dialog = dialog.replaceFirst("%objId%", String.valueOf(item.getObjectId()));
-			dialog = dialog.replaceFirst("%itemId%", String.valueOf(item.getItemId()));
+			dialog = dialog.replaceFirst("%itemId%", String.valueOf(item.getId()));
 			dialog = dialog.replaceFirst("%grade%", String.valueOf(item.getCrystalType()));
 			dialog = dialog.replaceFirst("%count%", String.valueOf(item.getCount()));
 			Player owner = GameObjectsStorage.getPlayer(item.getOwnerId());
@@ -802,7 +802,7 @@ public final class OnActionShift extends Functions
 	{
 		if (npc.getNameNpcString() == NpcString.NONE)
 		{
-			return HtmlUtils.htmlNpcName(npc.getNpcId());
+			return HtmlUtils.htmlNpcName(npc.getId());
 		}
 		
 		return HtmlUtils.htmlNpcString(npc.getNameNpcString().getId(), npc.getName());

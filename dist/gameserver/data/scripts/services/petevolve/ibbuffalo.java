@@ -59,7 +59,7 @@ public final class ibbuffalo extends Functions
 			return;
 		}
 		
-		if (pl_pet.getNpcId() != BABY_BUFFALO)
+		if (pl_pet.getId() != BABY_BUFFALO)
 		{
 			show("scripts/services/petevolve/no_pet.htm", player, npc);
 			return;
@@ -80,7 +80,7 @@ public final class ibbuffalo extends Functions
 		int controlItemId = pl_pet.getControlItemObjId();
 		player.getSummonList().unsummonPet(false);
 		ItemInstance control = player.getInventory().getItemByObjectId(controlItemId);
-		control.setItemId(IN_BABY_BUFFALO_NECKLACE);
+		control.setId(IN_BABY_BUFFALO_NECKLACE);
 		control.setEnchantLevel(L2Pet.IMPROVED_BABY_BUFFALO.getMinLevel());
 		control.setJdbcState(JdbcEntityState.UPDATED);
 		control.update();

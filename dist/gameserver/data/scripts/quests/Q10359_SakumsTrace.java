@@ -17,8 +17,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q10359_SakumsTrace extends Quest implements ScriptFile
 {
@@ -155,7 +154,7 @@ public class Q10359_SakumsTrace extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		int cond = st.getCond();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		String htmltext = "noquest";
 		
 		if (npcId == guild)
@@ -377,15 +376,15 @@ public class Q10359_SakumsTrace extends Quest implements ScriptFile
 	public String onKill(NpcInstance npc, QuestState st)
 	{
 		int cond = st.getCond();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		
 		if ((cond == 2) && (st.getQuestItemsCount(frag) < 20))
 		{
-			if (ArrayUtils.contains(huntl, npcId))
+			if (Util.contains(huntl, npcId))
 			{
 				st.rollAndGive(frag, 1, 15);
 			}
-			else if (ArrayUtils.contains(hunth, npcId))
+			else if (Util.contains(hunth, npcId))
 			{
 				st.rollAndGive(frag, 1, 35);
 			}

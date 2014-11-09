@@ -250,7 +250,7 @@ public final class LindviorManager extends Functions implements ScriptFile, OnDe
 		{
 			checkAnnihilated();
 		}
-		else if (self.isNpc() && (self.getNpcId() == LINDVIOR))
+		else if (self.isNpc() && (self.getId() == LINDVIOR))
 		{
 			ThreadPoolManager.getInstance().schedule(new LindviorSpawn(3), 10);
 		}
@@ -351,7 +351,7 @@ public final class LindviorManager extends Functions implements ScriptFile, OnDe
 			setIntervalEndTask();
 		}
 		
-		_log.info("LindviorManager: Next spawn date of Lindvior is " + TimeUtils.toSimpleFormat(EPIC_BOSS_STATE.getRespawnDate()) + ".");
+		_log.info("LindviorManager: Next spawn date is " + TimeUtils.toSimpleFormat(EPIC_BOSS_STATE.getRespawnDate()) + ".");
 	}
 	
 	/**

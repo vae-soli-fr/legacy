@@ -17,8 +17,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q00278_HomeSecurity extends Quest implements ScriptFile
 {
@@ -57,7 +56,7 @@ public class Q00278_HomeSecurity extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		String htmltext = "noquest";
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		
 		if (npcId == Tunatun)
@@ -156,12 +155,12 @@ public class Q00278_HomeSecurity extends Quest implements ScriptFile
 	@Override
 	public String onKill(NpcInstance npc, QuestState st)
 	{
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int cond = st.getCond();
 		
 		if (cond == 1)
 		{
-			if (ArrayUtils.contains(FarmMonsters, npcId) && (st.getQuestItemsCount(SelMahumMane) < 300))
+			if (Util.contains(FarmMonsters, npcId) && (st.getQuestItemsCount(SelMahumMane) < 300))
 			{
 				st.giveItems(SelMahumMane, 1, true);
 				

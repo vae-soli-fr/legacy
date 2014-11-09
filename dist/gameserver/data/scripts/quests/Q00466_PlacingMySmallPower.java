@@ -18,8 +18,7 @@ import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.scripts.ScriptFile;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 public class Q00466_PlacingMySmallPower extends Quest implements ScriptFile
 {
@@ -109,7 +108,7 @@ public class Q00466_PlacingMySmallPower extends Quest implements ScriptFile
 	public String onTalk(NpcInstance npc, QuestState st)
 	{
 		Player player = st.getPlayer();
-		int npcId = npc.getNpcId();
+		int npcId = npc.getId();
 		int state = st.getState();
 		int cond = st.getCond();
 		
@@ -203,17 +202,17 @@ public class Q00466_PlacingMySmallPower extends Quest implements ScriptFile
 			return null;
 		}
 		
-		if (ArrayUtils.contains(WingMobs, npc.getNpcId()) && Rnd.chance(7))
+		if (Util.contains(WingMobs, npc.getId()) && Rnd.chance(7))
 		{
 			st.giveItems(WingI, 1);
 		}
 		
-		if (ArrayUtils.contains(CoconMobs, npc.getNpcId()) && Rnd.chance(10))
+		if (Util.contains(CoconMobs, npc.getId()) && Rnd.chance(10))
 		{
 			st.giveItems(CoconI, 1);
 		}
 		
-		if (ArrayUtils.contains(BreathMobs, npc.getNpcId()) && Rnd.chance(12))
+		if (Util.contains(BreathMobs, npc.getId()) && Rnd.chance(12))
 		{
 			st.giveItems(BreathI, 1);
 		}
