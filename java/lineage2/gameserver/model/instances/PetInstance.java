@@ -36,6 +36,7 @@ import lineage2.gameserver.model.base.Experience;
 import lineage2.gameserver.model.items.ItemInstance;
 import lineage2.gameserver.model.items.PetInventory;
 import lineage2.gameserver.model.items.attachment.FlagItemAttachment;
+import lineage2.gameserver.network.serverpackets.ExChangeNpcState;
 import lineage2.gameserver.network.serverpackets.InventoryUpdate;
 import lineage2.gameserver.network.serverpackets.SocialAction;
 import lineage2.gameserver.network.serverpackets.SystemMessage;
@@ -76,14 +77,14 @@ public class PetInstance extends Summon
 			{
 			}
 			
-			if (PetDataTable.isVitaminPet(getNpcId()) && (getCurrentFed() <= 0))
+			if (PetDataTable.isVitaminPet(getId()) && (getCurrentFed() <= 0))
 			{
 				deleteMe();
 			}
 			else if (getCurrentFed() <= (0.10 * getMaxFed()))
 			{
 				owner.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2PetInstance.UnSummonHungryPet", owner));
-				unSummon();
+				owner.getSummonList().unsummonPet(false);
 				return;
 			}
 			
@@ -125,7 +126,7 @@ public class PetInstance extends Summon
 			
 			if (!rset.next())
 			{
-				if (PetDataTable.isBabyPet(template.getNpcId()) || PetDataTable.isImprovedBabyPet(template.getNpcId()))
+				if (PetDataTable.isBabyPet(template.getId()) || PetDataTable.isImprovedBabyPet(template.getId()))
 				{
 					pet = new PetBabyInstance(IdFactory.getInstance().getNextId(), template, owner, control);
 				}
@@ -137,7 +138,7 @@ public class PetInstance extends Summon
 				return pet;
 			}
 			
-			if (PetDataTable.isBabyPet(template.getNpcId()) || PetDataTable.isImprovedBabyPet(template.getNpcId()))
+			if (PetDataTable.isBabyPet(template.getId()) || PetDataTable.isImprovedBabyPet(template.getId()))
 			{
 				pet = new PetBabyInstance(rset.getInt("objId"), template, owner, control, rset.getInt("level"), rset.getLong("exp"));
 			}
@@ -196,7 +197,7 @@ public class PetInstance extends Summon
 		
 		if (_level <= 0)
 		{
-			if (template.npcId == PetDataTable.SIN_EATER_ID)
+			if (template.getId() == PetDataTable.SIN_EATER_ID)
 			{
 				_level = owner.getLevel();
 			}
@@ -208,7 +209,7 @@ public class PetInstance extends Summon
 			_exp = getExpForThisLevel();
 		}
 		
-		int minLevel = PetDataTable.getMinLevel(template.npcId);
+		int minLevel = PetDataTable.getMinLevel(template.getId());
 		
 		if (_level < minLevel)
 		{
@@ -230,13 +231,13 @@ public class PetInstance extends Summon
 			_level--;
 		}
 		
-		if (PetDataTable.isVitaminPet(template.npcId))
+		if (PetDataTable.isVitaminPet(template.getId()))
 		{
 			_level = owner.getLevel();
 			_exp = getExpForNextLevel();
 		}
 		
-		_data = PetDataTable.getInstance().getInfo(template.npcId, _level);
+		_data = PetDataTable.getInstance().getInfo(template.getId(), _level);
 		_inventory = new PetInventory(this);
 	}
 	
@@ -248,6 +249,7 @@ public class PetInstance extends Summon
 	{
 		super.onSpawn();
 		startFeed(false);
+		broadcastFatigueState();
 	}
 	
 	/**
@@ -272,9 +274,9 @@ public class PetInstance extends Summon
 			return false;
 		}
 		
-		boolean deluxFood = PetDataTable.isStrider(getNpcId()) && (item.getItemId() == DELUXE_FOOD_FOR_STRIDER);
+		boolean deluxFood = PetDataTable.isStrider(getId()) && (item.getId() == DELUXE_FOOD_FOR_STRIDER);
 		
-		if ((getFoodId() != item.getItemId()) && !deluxFood)
+		if ((getFoodId() != item.getId()) && !deluxFood)
 		{
 			return false;
 		}
@@ -285,7 +287,7 @@ public class PetInstance extends Summon
 		{
 			if (getInventory().destroyItem(item, 1L))
 			{
-				getPlayer().sendPacket(new SystemMessage(SystemMessage.PET_TOOK_S1_BECAUSE_HE_WAS_HUNGRY).addItemName(item.getItemId()));
+				getPlayer().sendPacket(new SystemMessage(SystemMessage.PET_TOOK_S1_BECAUSE_HE_WAS_HUNGRY).addItemName(item.getId()));
 				setCurrentFed(newFed);
 				sendStatusUpdate();
 			}
@@ -302,7 +304,7 @@ public class PetInstance extends Summon
 	{
 		ItemInstance food = getInventory().getItemByItemId(getFoodId());
 		
-		if ((food == null) && PetDataTable.isStrider(getNpcId()))
+		if ((food == null) && PetDataTable.isStrider(getId()))
 		{
 			food = getInventory().getItemByItemId(DELUXE_FOOD_FOR_STRIDER);
 		}
@@ -320,7 +322,7 @@ public class PetInstance extends Summon
 	{
 		Player owner = getPlayer();
 		
-		if (PetDataTable.isVitaminPet(getNpcId()))
+		if (PetDataTable.isVitaminPet(getId()))
 		{
 			return;
 		}
@@ -446,7 +448,7 @@ public class PetInstance extends Summon
 		owner.sendPacket(new SystemMessage(SystemMessage.THE_PET_HAS_BEEN_KILLED_IF_YOU_DO_NOT_RESURRECT_IT_WITHIN_24_HOURS_THE_PETS_BODY_WILL_DISAPPEAR_ALONG_WITH_ALL_THE_PETS_ITEMS));
 		startDecay(86400000L);
 		
-		if (PetDataTable.isVitaminPet(getNpcId()))
+		if (PetDataTable.isVitaminPet(getId()))
 		{
 			return;
 		}
@@ -474,7 +476,7 @@ public class PetInstance extends Summon
 		
 		if (item.isCursed())
 		{
-			owner.sendPacket(new SystemMessage(SystemMessage.YOU_HAVE_FAILED_TO_PICK_UP_S1).addItemName(item.getItemId()));
+			owner.sendPacket(new SystemMessage(SystemMessage.YOU_HAVE_FAILED_TO_PICK_UP_S1).addItemName(item.getId()));
 			return;
 		}
 		
@@ -666,7 +668,7 @@ public class PetInstance extends Summon
 	@Override
 	public long getExpForNextLevel()
 	{
-		return PetDataTable.getInstance().getInfo(getNpcId(), _level + 1).getExp();
+		return PetDataTable.getInstance().getInfo(getId(), _level + 1).getExp();
 	}
 	
 	/**
@@ -676,7 +678,7 @@ public class PetInstance extends Summon
 	@Override
 	public long getExpForThisLevel()
 	{
-		return PetDataTable.getInstance().getInfo(getNpcId(), _level).getExp();
+		return PetDataTable.getInstance().getInfo(getId(), _level).getExp();
 	}
 	
 	/**
@@ -761,7 +763,7 @@ public class PetInstance extends Summon
 	 */
 	public long getMaxExp()
 	{
-		return PetDataTable.getInstance().getInfo(getNpcId(), Experience.getMaxLevel()).getExp();
+		return PetDataTable.getInstance().getInfo(getId(), Experience.getMaxLevel()).getExp();
 	}
 	
 	/**
@@ -873,7 +875,12 @@ public class PetInstance extends Summon
 	@Override
 	public int getPAtkSpd()
 	{
-		return (int) calcStat(Stats.POWER_ATTACK_SPEED, calcStat(Stats.ATK_BASE, _data.getAtkSpeed(), null, null), null, null);
+		int val = super.getPAtkSpd();
+		if (isHungry())
+		{
+			val = val / 2;
+		}
+		return val;
 	}
 	
 	/**
@@ -883,7 +890,12 @@ public class PetInstance extends Summon
 	@Override
 	public int getMAtkSpd()
 	{
-		return (int) calcStat(Stats.MAGIC_ATTACK_SPEED, _data.getCastSpeed(), null, null);
+		int val = super.getMAtkSpd();
+		if (isHungry())
+		{
+			val = val / 2;
+		}
+		return val;
 	}
 	
 	/**
@@ -891,9 +903,39 @@ public class PetInstance extends Summon
 	 * @return int
 	 */
 	@Override
-	public int getRunSpeed()
+	public final int getRunSpeed()
 	{
-		return getSpeed(_data.getSpeed());
+		int val = super.getRunSpeed();
+		if (isHungry())
+		{
+			val = val / 2;
+		}
+		return val;
+	}
+	
+	/**
+	 * Method getWalkSpeed.
+	 * @return int
+	 */
+	@Override
+	public final int getWalkSpeed()
+	{
+		int val = super.getWalkSpeed();
+		if (isHungry())
+		{
+			val = val / 2;
+		}
+		return val;
+	}
+	
+	/**
+	 * Method getMovementSpeedMultiplier.
+	 * @return double
+	 */
+	@Override
+	public final double getMovementSpeedMultiplier()
+	{
+		return super.getMovementSpeedMultiplier() * (isHungry() ? 0.5d : 1.0d);
 	}
 	
 	/**
@@ -903,7 +945,7 @@ public class PetInstance extends Summon
 	@Override
 	public int getSoulshotConsumeCount()
 	{
-		return PetDataTable.getSoulshots(getNpcId());
+		return PetDataTable.getSoulshots(getId());
 	}
 	
 	/**
@@ -913,7 +955,7 @@ public class PetInstance extends Summon
 	@Override
 	public int getSpiritshotConsumeCount()
 	{
-		return PetDataTable.getSpiritshots(getNpcId());
+		return PetDataTable.getSpiritshots(getId());
 	}
 	
 	/**
@@ -969,7 +1011,7 @@ public class PetInstance extends Summon
 	@Override
 	public NpcTemplate getTemplate()
 	{
-		return (NpcTemplate) _template;
+		return _template;
 	}
 	
 	/**
@@ -1010,7 +1052,8 @@ public class PetInstance extends Summon
 	 */
 	public void setCurrentFed(int num)
 	{
-		_curFed = Math.min(getMaxFed(), Math.max(0, num));
+		_curFed = num > getMaxFed() ? getMaxFed() : num;
+		broadcastFatigueState();
 	}
 	
 	/**
@@ -1045,7 +1088,7 @@ public class PetInstance extends Summon
 		{
 			int feedTime;
 			
-			if (PetDataTable.isVitaminPet(getNpcId()))
+			if (PetDataTable.isVitaminPet(getId()))
 			{
 				feedTime = 10000;
 			}
@@ -1187,7 +1230,7 @@ public class PetInstance extends Summon
 	 */
 	private void updateData()
 	{
-		_data = PetDataTable.getInstance().getInfo(getTemplate().npcId, _level);
+		_data = PetDataTable.getInstance().getInfo(getTemplate().getId(), _level);
 	}
 	
 	/**
@@ -1197,7 +1240,7 @@ public class PetInstance extends Summon
 	@Override
 	public double getExpPenalty()
 	{
-		return PetDataTable.getExpPenalty(getTemplate().npcId);
+		return PetDataTable.getExpPenalty(getTemplate().getId());
 	}
 	
 	/**
@@ -1225,7 +1268,7 @@ public class PetInstance extends Summon
 		}
 		else
 		{
-			owner.sendPacket(new SystemMessage(SystemMessage.THE_PET_GAVE_DAMAGE_OF_S1).addNumber(damage));
+			owner.sendPacket(new SystemMessage(SystemMessage.THE_PET_GAVE_DAMAGE_OF_S1).addNumber(damage).addDamage(target, target, -damage));
 		}
 	}
 	
@@ -1245,14 +1288,14 @@ public class PetInstance extends Summon
 			
 			if (attacker.isNpc())
 			{
-				sm.addNpcName(((NpcInstance) attacker).getTemplate().npcId);
+				sm.addNpcName(((NpcInstance) attacker).getTemplate().getId());
 			}
 			else
 			{
 				sm.addString(attacker.getName());
 			}
 			
-			sm.addNumber((long) damage);
+			sm.addNumber((long) damage).addDamage(this, attacker, -damage);
 			owner.sendPacket(sm);
 		}
 	}
@@ -1264,7 +1307,7 @@ public class PetInstance extends Summon
 	@Override
 	public int getFormId()
 	{
-		switch (getNpcId())
+		switch (getId())
 		{
 			case PetDataTable.GREAT_WOLF_ID:
 			case PetDataTable.WGREAT_WOLF_ID:
@@ -1326,5 +1369,30 @@ public class PetInstance extends Summon
 	public int getSummonSkillLvl()
 	{
 		return 0;
+	}
+	
+	/**
+	 * Method isHungry.
+	 * @return boolean
+	 */
+	@Override
+	public final boolean isHungry()
+	{
+		return getCurrentFed() < (0.55 * getMaxFed());
+	}
+	
+	/**
+	 * Method broadcastFatigueState.
+	 */
+	void broadcastFatigueState()
+	{
+		if (isHungry())
+		{
+			getPlayer().broadcastPacket(new ExChangeNpcState(getObjectId(), 0x64));
+		}
+		else
+		{
+			getPlayer().broadcastPacket(new ExChangeNpcState(getObjectId(), 0x65));
+		}
 	}
 }

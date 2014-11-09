@@ -31,8 +31,8 @@ import lineage2.gameserver.model.Territory;
 import lineage2.gameserver.templates.npc.NpcTemplate;
 import lineage2.gameserver.utils.Location;
 import lineage2.gameserver.utils.ReflectionUtils;
+import lineage2.gameserver.utils.Util;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -241,7 +241,7 @@ public class HellboundManager
 				
 				case 1:
 				{
-					switch (cha.getNpcId())
+					switch (cha.getId())
 					{
 						case 22320:
 						case 22321:
@@ -268,7 +268,7 @@ public class HellboundManager
 				
 				case 2:
 				{
-					switch (cha.getNpcId())
+					switch (cha.getId())
 					{
 						case 18463:
 						case 18464:
@@ -287,7 +287,7 @@ public class HellboundManager
 				
 				case 3:
 				{
-					switch (cha.getNpcId())
+					switch (cha.getId())
 					{
 						case 22342:
 						case 22343:
@@ -310,7 +310,7 @@ public class HellboundManager
 				
 				case 4:
 				{
-					switch (cha.getNpcId())
+					switch (cha.getId())
 					{
 						case 18465:
 							addConfidence(10000);
@@ -329,7 +329,7 @@ public class HellboundManager
 				
 				case 5:
 				{
-					switch (cha.getNpcId())
+					switch (cha.getId())
 					{
 						case 22448:
 							reduceConfidence(50);
@@ -341,7 +341,7 @@ public class HellboundManager
 				
 				case 6:
 				{
-					switch (cha.getNpcId())
+					switch (cha.getId())
 					{
 						case 22326:
 							addConfidence(500);
@@ -357,7 +357,7 @@ public class HellboundManager
 				
 				case 8:
 				{
-					switch (cha.getNpcId())
+					switch (cha.getId())
 					{
 						case 18466:
 							addConfidence(10000);
@@ -384,7 +384,7 @@ public class HellboundManager
 		
 		for (HellboundSpawn hbsi : _list)
 		{
-			if (ArrayUtils.contains(hbsi.getStages(), getHellboundLevel()))
+			if (Util.contains(hbsi.getStages(), getHellboundLevel()))
 			{
 				try
 				{
@@ -421,7 +421,7 @@ public class HellboundManager
 			}
 		}
 		
-		_log.info("HellboundManager: Spawned " + _spawnList.size() + " mobs and NPCs according to the current Hellbound stage");
+		_log.info("HellboundManager: Spawned " + _spawnList.size() + " mobs and NPCs.");
 	}
 	
 	/**

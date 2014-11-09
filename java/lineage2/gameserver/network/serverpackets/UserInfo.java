@@ -12,7 +12,8 @@
  */
 package lineage2.gameserver.network.serverpackets;
 
-import javolution.util.FastList;
+import java.util.ArrayList;
+
 import lineage2.gameserver.Config;
 import lineage2.gameserver.data.xml.holder.NpcHolder;
 import lineage2.gameserver.instancemanager.CursedWeaponsManager;
@@ -140,7 +141,7 @@ public class UserInfo extends L2GameServerPacket
 	private final boolean _openCloak;
 	private final double _expPercent;
 	private final TeamType _team;
-	private final FastList<Integer> _aveList;
+	private final ArrayList<Integer> _aveList;
 	private final PcInventory _inventory;
 	
 	public UserInfo(Player player)
@@ -331,9 +332,9 @@ public class UserInfo extends L2GameServerPacket
 		}
 		
 		writeC(0x32);
-		writeD(_loc.x);
-		writeD(_loc.y);
-		writeD(_loc.z + Config.CLIENT_Z_SHIFT);
+		writeD(_loc.getX());
+		writeD(_loc.getY());
+		writeD(_loc.getZ() + Config.CLIENT_Z_SHIFT);
 		writeD(_vehicleObjId);
 		writeD(_objectId);
 		writeS(_name);
@@ -450,9 +451,9 @@ public class UserInfo extends L2GameServerPacket
 		writeC(_noble);
 		writeC(_hero);
 		writeC(_fishing);
-		writeD(_fishLoc.x);
-		writeD(_fishLoc.y);
-		writeD(_fishLoc.z);
+		writeD(_fishLoc.getX());
+		writeD(_fishLoc.getY());
+		writeD(_fishLoc.getZ());
 		writeD(_nameColor);
 		writeC(_running);
 		writeD(_pledgeClass);

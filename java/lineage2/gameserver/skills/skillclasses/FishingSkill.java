@@ -87,7 +87,7 @@ public class FishingSkill extends Skill
 			return false;
 		}
 		
-		if (!player.isInZone(ZoneType.FISHING) || player.isInWater())
+		if (!player.isInZone(ZoneType.Fishing) || player.isInWater())
 		{
 			player.sendPacket(new SystemMessage(SystemMessage.YOU_CANT_FISH_HERE));
 			return false;
@@ -125,7 +125,7 @@ public class FishingSkill extends Skill
 		
 		for (Zone zone : zones)
 		{
-			if (zone.getType() == ZoneType.FISHING)
+			if (zone.getType() == ZoneType.Fishing)
 			{
 				z = zone.getTerritory().getZmax();
 				isInWater = true;
@@ -167,7 +167,7 @@ public class FishingSkill extends Skill
 			return;
 		}
 		
-		Zone zone = player.getZone(ZoneType.FISHING);
+		Zone zone = player.getZone(ZoneType.Fishing);
 		
 		if (zone == null)
 		{
@@ -175,8 +175,8 @@ public class FishingSkill extends Skill
 		}
 		
 		zone.getParams().getInteger("distribution_id");
-		int lureId = lure.getItemId();
-		int group = lineage2.gameserver.model.Fishing.getFishGroup(lure.getItemId());
+		int lureId = lure.getId();
+		int group = lineage2.gameserver.model.Fishing.getFishGroup(lure.getId());
 		int type = lineage2.gameserver.model.Fishing.getRandomFishType(lureId);
 		int lvl = lineage2.gameserver.model.Fishing.getRandomFishLvl(player);
 		List<FishTemplate> fishs = FishTable.getInstance().getFish(group, type, lvl);

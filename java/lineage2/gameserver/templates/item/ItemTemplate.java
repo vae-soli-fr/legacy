@@ -224,16 +224,16 @@ public abstract class ItemTemplate extends StatTemplate
 	public static final int ATTRIBUTE_EARTH = 3;
 	public static final int ATTRIBUTE_HOLY = 4;
 	public static final int ATTRIBUTE_DARK = 5;
-	protected final int _itemId;
+	private final int _itemId;
 	private final ItemClass _class;
-	protected final String _name;
-	protected final String _addname;
-	protected final String _icon;
-	protected final String _icon32;
+	private final String _name;
+	private final String _addname;
+	private final String _icon;
+	private final String _icon32;
 	protected int _type1;
 	protected int _type2;
 	private final int _weight;
-	protected final Grade _crystalType;
+	private final Grade _crystalType;
 	private final int _durability;
 	protected int _bodyPart;
 	private final int _referencePrice;
@@ -367,10 +367,10 @@ public abstract class ItemTemplate extends StatTemplate
 	}
 	
 	/**
-	 * Method getItemId.
+	 * Method getId.
 	 * @return int
 	 */
-	public final int getItemId()
+	public final int getId()
 	{
 		return _itemId;
 	}
@@ -986,7 +986,7 @@ public abstract class ItemTemplate extends StatTemplate
 		{
 			if (_condition.getSystemMsg().size() > 0)
 			{
-				player.sendPacket(new SystemMessage2(_condition.getSystemMsg()).addItemName(getItemId()));
+				player.sendPacket(new SystemMessage2(_condition.getSystemMsg()).addItemName(getId()));
 			}
 			else
 			{
@@ -1218,5 +1218,14 @@ public abstract class ItemTemplate extends StatTemplate
 	public boolean isMagicWeapon()
 	{
 		return false;
+	}
+	
+	/**
+	 * Checks if is attribute crystal.
+	 * @return true, if is attribute crystal
+	 */
+	public boolean isAttributeCrystal()
+	{
+		return (_itemId == 9552) || (_itemId == 9553) || (_itemId == 9554) || (_itemId == 9555) || (_itemId == 9556) || (_itemId == 9557);
 	}
 }

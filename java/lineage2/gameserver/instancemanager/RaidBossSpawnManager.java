@@ -255,7 +255,7 @@ public class RaidBossSpawnManager
 	 */
 	public void onBossSpawned(RaidBossInstance raidboss)
 	{
-		int bossId = raidboss.getNpcId();
+		int bossId = raidboss.getId();
 		
 		if (!_spawntable.containsKey(bossId))
 		{
@@ -279,7 +279,7 @@ public class RaidBossSpawnManager
 	 */
 	public void onBossDespawned(RaidBossInstance raidboss)
 	{
-		updateStatusDb(raidboss.getNpcId());
+		updateStatusDb(raidboss.getId());
 	}
 	
 	/**
@@ -298,6 +298,23 @@ public class RaidBossSpawnManager
 		
 		NpcInstance npc = spawner.getFirstSpawned();
 		return npc == null ? Status.DEAD : Status.ALIVE;
+	}
+	
+	/**
+	 * Method getRespawnDelay.
+	 * @param bossId int
+	 * @return Status
+	 */
+	public long getRespawnDelay(int bossId)
+	{
+		Spawner spawner = _spawntable.get(bossId);
+		
+		if (spawner == null)
+		{
+			return 0;
+		}
+		
+		return spawner.getRespawnDelay();
 	}
 	
 	/**

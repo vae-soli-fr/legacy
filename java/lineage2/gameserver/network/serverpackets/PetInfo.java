@@ -27,6 +27,8 @@ public class PetInfo extends L2GameServerPacket
 	private final int PAtkSpd;
 	private final int pvp_flag;
 	private final int karma;
+	private final double _AttackSpeedMultiplier;
+	private final double _MovementSpeedMultiplier;
 	private int rideable;
 	private final int _type;
 	private final int obj_id;
@@ -77,7 +79,7 @@ public class PetInfo extends L2GameServerPacket
 		_type = summon.getSummonType();
 		_ownerId = summon.getPlayer().getObjectId();
 		obj_id = summon.getObjectId();
-		npc_id = summon.getTemplate().npcId;
+		npc_id = summon.getTemplate().getId();
 		_loc = summon.getLoc();
 		MAtkSpd = summon.getMAtkSpd();
 		PAtkSpd = summon.getPAtkSpd();
@@ -133,6 +135,8 @@ public class PetInfo extends L2GameServerPacket
 		_mevasion = summon.getMEvasionRate(null);
 		_maccuracy = summon.getMAccuracy();
 		_mCritRate = (int) summon.getMagicCriticalRate(null, null);
+		_AttackSpeedMultiplier = summon.getAttackSpeedMultiplier();
+		_MovementSpeedMultiplier = summon.getMovementSpeedMultiplier();
 	}
 	
 	public PetInfo update()
@@ -149,10 +153,10 @@ public class PetInfo extends L2GameServerPacket
 		writeD(obj_id);
 		writeD(npc_id + 1000000);
 		writeD(0); // 1=attackable
-		writeD(_loc.x);
-		writeD(_loc.y);
-		writeD(_loc.z);
-		writeD(_loc.h);
+		writeD(_loc.getX());
+		writeD(_loc.getY());
+		writeD(_loc.getZ());
+		writeD(_loc.getHeading());
 		writeD(0);
 		writeD(MAtkSpd);
 		writeD(PAtkSpd);
@@ -164,8 +168,8 @@ public class PetInfo extends L2GameServerPacket
 		writeD(_walkSpd/* _flWalkSpd */);
 		writeD(_runSpd/* _flyRunSpd */);
 		writeD(_walkSpd/* _flyWalkSpd */);
-		writeF(1/* _cha.getProperMultiplier() */);
-		writeF(1/* _cha.getAttackSpeedMultiplier() */);
+		writeF(_MovementSpeedMultiplier);
+		writeF(_AttackSpeedMultiplier);
 		writeF(col_redius);
 		writeF(col_height);
 		writeD(0); // right hand weapon

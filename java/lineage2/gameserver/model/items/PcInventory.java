@@ -34,6 +34,7 @@ import lineage2.gameserver.taskmanager.DelayedItemsManager;
 import lineage2.gameserver.templates.item.EtcItemTemplate.EtcItemType;
 import lineage2.gameserver.templates.item.ItemTemplate;
 import lineage2.gameserver.utils.ItemFunctions;
+import lineage2.gameserver.utils.Util;
 
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -530,10 +531,10 @@ public class PcInventory extends Inventory
 		switch (_lockType)
 		{
 			case INCLUDE:
-				return ArrayUtils.contains(_lockItems, item.getItemId());
+				return Util.contains(_lockItems, item.getId());
 				
 			case EXCLUDE:
-				return !ArrayUtils.contains(_lockItems, item.getItemId());
+				return !Util.contains(_lockItems, item.getId());
 				
 			default:
 				return false;
@@ -853,7 +854,7 @@ public class PcInventory extends Inventory
 			
 			if (sm != null)
 			{
-				sm.addItemName(item.getItemId());
+				sm.addItemName(item.getId());
 				player.sendPacket(sm);
 			}
 		}
@@ -895,7 +896,7 @@ public class PcInventory extends Inventory
 			
 			if (left <= 0)
 			{
-				player.sendPacket(new SystemMessage(SystemMessage.THE_LIMITED_TIME_ITEM_HAS_BEEN_DELETED).addItemName(item.getItemId()));
+				player.sendPacket(new SystemMessage(SystemMessage.THE_LIMITED_TIME_ITEM_HAS_BEEN_DELETED).addItemName(item.getId()));
 			}
 		}
 	}

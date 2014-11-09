@@ -527,9 +527,9 @@ public class CursedWeaponsManager
 				statement.setInt(3, cw.getPlayerKarma());
 				statement.setInt(4, cw.getPlayerPkKills());
 				statement.setInt(5, cw.getNbKills());
-				statement.setInt(6, cw.getLoc().x);
-				statement.setInt(7, cw.getLoc().y);
-				statement.setInt(8, cw.getLoc().z);
+				statement.setInt(6, cw.getLoc().getX());
+				statement.setInt(7, cw.getLoc().getY());
+				statement.setInt(8, cw.getLoc().getZ());
 				statement.setLong(9, cw.getEndTime() / 1000);
 				statement.executeUpdate();
 			}
@@ -567,7 +567,7 @@ public class CursedWeaponsManager
 			return;
 		}
 		
-		CursedWeapon cw = _cursedWeaponsMap.get(item.getItemId());
+		CursedWeapon cw = _cursedWeaponsMap.get(item.getId());
 		
 		if (cw == null)
 		{
@@ -598,7 +598,7 @@ public class CursedWeaponsManager
 			return;
 		}
 		
-		CursedWeapon cw = _cursedWeaponsMap.get(item.getItemId());
+		CursedWeapon cw = _cursedWeaponsMap.get(item.getId());
 		
 		if (cw == null)
 		{
@@ -607,7 +607,7 @@ public class CursedWeaponsManager
 		
 		if (player.isCursedWeaponEquipped())
 		{
-			if (player.getCursedWeaponEquippedId() != item.getItemId())
+			if (player.getCursedWeaponEquippedId() != item.getId())
 			{
 				CursedWeapon cw2 = _cursedWeaponsMap.get(player.getCursedWeaponEquippedId());
 				cw2.setNbKills(cw2.getStageKills() - 1);

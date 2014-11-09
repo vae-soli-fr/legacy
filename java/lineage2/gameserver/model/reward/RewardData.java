@@ -21,8 +21,7 @@ import lineage2.gameserver.Config;
 import lineage2.gameserver.data.xml.holder.ItemHolder;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.templates.item.ItemTemplate;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 /**
  * @author Mobius
@@ -45,7 +44,7 @@ public class RewardData implements Cloneable
 	{
 		_item = ItemHolder.getInstance().getTemplate(itemId);
 		
-		if (_item.isArrow() || (Config.NO_RATE_EQUIPMENT && _item.isEquipment()) || (Config.NO_RATE_KEY_MATERIAL && _item.isKeyMatherial()) || (Config.NO_RATE_RECIPES && _item.isRecipe()) || ArrayUtils.contains(Config.NO_RATE_ITEMS, itemId))
+		if (_item.isArrow() || (Config.NO_RATE_EQUIPMENT && _item.isEquipment()) || (Config.NO_RATE_KEY_MATERIAL && _item.isKeyMatherial()) || (Config.NO_RATE_RECIPES && _item.isRecipe()) || Util.contains(Config.NO_RATE_ITEMS, itemId))
 		{
 			_notRate = true;
 		}
@@ -85,12 +84,12 @@ public class RewardData implements Cloneable
 	}
 	
 	/**
-	 * Method getItemId.
+	 * Method getId.
 	 * @return int
 	 */
-	public int getItemId()
+	public int getId()
 	{
-		return _item.getItemId();
+		return _item.getId();
 	}
 	
 	/**
@@ -191,7 +190,7 @@ public class RewardData implements Cloneable
 	@Override
 	public RewardData clone()
 	{
-		return new RewardData(getItemId(), getMinDrop(), getMaxDrop(), getChance());
+		return new RewardData(getId(), getMinDrop(), getMaxDrop(), getChance());
 	}
 	
 	/**
@@ -205,7 +204,7 @@ public class RewardData implements Cloneable
 		if (o instanceof RewardData)
 		{
 			RewardData drop = (RewardData) o;
-			return drop.getItemId() == getItemId();
+			return drop.getId() == getId();
 		}
 		
 		return false;
@@ -260,7 +259,7 @@ public class RewardData implements Cloneable
 				
 				if (t == null)
 				{
-					ret.add(t = new RewardItem(_item.getItemId()));
+					ret.add(t = new RewardItem(_item.getId()));
 					t.count = count;
 				}
 				else

@@ -39,7 +39,6 @@ import lineage2.gameserver.handlers.VoicedCommandHandler;
 import lineage2.gameserver.idfactory.IdFactory;
 import lineage2.gameserver.instancemanager.ArcanManager;
 import lineage2.gameserver.instancemanager.AwakingManager;
-import lineage2.gameserver.instancemanager.BloodAltarManager;
 import lineage2.gameserver.instancemanager.CastleManorManager;
 import lineage2.gameserver.instancemanager.CoupleManager;
 import lineage2.gameserver.instancemanager.CursedWeaponsManager;
@@ -79,12 +78,10 @@ import lineage2.gameserver.network.GameClient;
 import lineage2.gameserver.network.GamePacketHandler;
 import lineage2.gameserver.network.loginservercon.LoginServerCommunication;
 import lineage2.gameserver.scripts.Scripts;
-import lineage2.gameserver.tables.AttributeDamageResistTable;
 import lineage2.gameserver.tables.AugmentationData;
 import lineage2.gameserver.tables.ClanTable;
 import lineage2.gameserver.tables.DualClassTable;
 import lineage2.gameserver.tables.EnchantHPBonusTable;
-import lineage2.gameserver.tables.EnchantStatBonusTable;
 import lineage2.gameserver.tables.FakePlayersTable;
 import lineage2.gameserver.tables.PetSkillsTable;
 import lineage2.gameserver.tables.SkillTreeTable;
@@ -222,8 +219,6 @@ public class GameServer
 		SkillTreeTable.getInstance();
 		AugmentationData.getInstance();
 		EnchantHPBonusTable.getInstance();
-		EnchantStatBonusTable.getInstance();
-		AttributeDamageResistTable.getInstance();
 		PetSkillsTable.getInstance();
 		ItemAuctionManager.getInstance();
 		CommissionShopManager.getInstance();
@@ -259,9 +254,9 @@ public class GameServer
 		}
 		
 		ItemHandler.getInstance();
-		AdminCommandHandler.getInstance().log();
-		UserCommandHandler.getInstance().log();
-		VoicedCommandHandler.getInstance().log();
+		AdminCommandHandler.getInstance();
+		UserCommandHandler.getInstance();
+		VoicedCommandHandler.getInstance();
 		TaskManager.getInstance();
 		_log.info("=[Events]=========================================");
 		ResidenceHolder.getInstance().callInit();
@@ -270,7 +265,7 @@ public class GameServer
 		BoatHolder.getInstance().spawnAll();
 		CastleManorManager.getInstance();
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
-		_log.info("IdFactory: Free ObjectID's remaining: " + IdFactory.getInstance().size());
+		_log.info("IdFactory: Free Object IDs remaining: " + IdFactory.getInstance().size());
 		CoupleManager.getInstance();
 		
 		if (Config.ALT_FISH_CHAMPIONSHIP_ENABLED)
@@ -285,7 +280,6 @@ public class GameServer
 		SoIManager.getInstance();
 		SoHManager.getInstance();
 		HarnakUndegroundManager.getInstance();
-		BloodAltarManager.getInstance();
 		L2TopManager.getInstance();
 		MMOTopManager.getInstance();
 		SMSWayToPay.getInstance();
@@ -304,9 +298,9 @@ public class GameServer
 		
 		// Uncomment to check for double spawns
 		/*
-		 * for (NpcInstance npcInst : GameObjectsStorage.getAllNpcsForIterate()) { final List<NpcInstance> around = npcInst.getAroundNpc(10, 10); if ((around != null) && !around.isEmpty()) { for (NpcInstance npc : around) { if ((npcInst.getNpcId() == npc.getNpcId()) && !npcInst.isMonster() &&
-		 * !npc.getTitle().equals("Double Spawn") && !npcInst.getName().contains("Star Stone") && !npcInst.getName().contains("Wisp")) { npcInst.setTitle("Double Spawn"); npc.setTitle("Double Spawn"); _log.info("Probable double spawn: NpcId " + npc.getNpcId() + " Location " + npc.getSpawnedLoc().x +
-		 * " " + npc.getSpawnedLoc().y + " " + npc.getSpawnedLoc().z + " " + npc.getSpawnedLoc().h); } } } }
+		 * for (NpcInstance npcInst : GameObjectsStorage.getAllNpcsForIterate()) { final List<NpcInstance> around = npcInst.getAroundNpc(10, 10); if ((around != null) && !around.isEmpty()) { for (NpcInstance npc : around) { if ((npcInst.getId() == npc.getId()) && !npcInst.isMonster() &&
+		 * !npc.getTitle().equals("Double Spawn") && !npcInst.getName().contains("Star Stone") && !npcInst.getName().contains("Wisp")) { npcInst.setTitle("Double Spawn"); npc.setTitle("Double Spawn"); _log.info("Probable double spawn: NpcId " + npc.getId() + " Location " + npc.getSpawnedLoc().getX()
+		 * + " " + npc.getSpawnedLoc().getY() + " " + npc.getSpawnedLoc().getZ() + " " + npc.getSpawnedLoc().getHeading()); } } } }
 		 */
 		
 		Shutdown.getInstance().schedule(Config.RESTART_AT_TIME, Shutdown.RESTART);

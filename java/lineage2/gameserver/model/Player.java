@@ -203,6 +203,7 @@ import lineage2.gameserver.network.serverpackets.ExBR_AgathionEnergyInfo;
 import lineage2.gameserver.network.serverpackets.ExBR_ExtraUserInfo;
 import lineage2.gameserver.network.serverpackets.ExBasicActionList;
 import lineage2.gameserver.network.serverpackets.ExDominionWarStart;
+import lineage2.gameserver.network.serverpackets.ExMagicAttackInfo;
 import lineage2.gameserver.network.serverpackets.ExNewSkillToLearnByLevelUp;
 import lineage2.gameserver.network.serverpackets.ExNotifyPremiumItem;
 import lineage2.gameserver.network.serverpackets.ExOlympiadMatchEnd;
@@ -308,12 +309,12 @@ import lineage2.gameserver.utils.SiegeUtils;
 import lineage2.gameserver.utils.SqlBatch;
 import lineage2.gameserver.utils.Strings;
 import lineage2.gameserver.utils.TeleportUtils;
+import lineage2.gameserver.utils.Util;
 import lineage2.gameserver.vaesoli.Camp;
 import lineage2.gameserver.vaesoli.RpLanguage;
 import lineage2.gameserver.vaesoli.RpVolume;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.napile.primitive.Containers;
@@ -2679,7 +2680,7 @@ public final class Player extends Playable implements PlayerGroup
 			
 			if (nextTimeUse > System.currentTimeMillis())
 			{
-				TimeStamp timeStamp = new TimeStamp(item.getItemId(), nextTimeUse, item.getTemplate().getReuseDelay());
+				TimeStamp timeStamp = new TimeStamp(item.getId(), nextTimeUse, item.getTemplate().getReuseDelay());
 				addSharedGroupReuse(item.getTemplate().getReuseGroup(), timeStamp);
 				
 				if (item.getTemplate().getReuseDelay() > 0)
@@ -3096,9 +3097,9 @@ public final class Player extends Playable implements PlayerGroup
 		{
 			if (applyToPet)
 			{
-				if ((pet != null) && !pet.isDead() && !PetDataTable.isVitaminPet(pet.getNpcId()))
+				if ((pet != null) && !pet.isDead() && !PetDataTable.isVitaminPet(pet.getId()))
 				{
-					if (pet.getNpcId() == PetDataTable.SIN_EATER_ID)
+					if (pet.getId() == PetDataTable.SIN_EATER_ID)
 					{
 						pet.addExpAndSp(addToExp, 0);
 						addToExp = 0;
@@ -3164,7 +3165,7 @@ public final class Player extends Playable implements PlayerGroup
 			levelSet(levels);
 		}
 		
-		if ((pet != null) && pet.isPet() && PetDataTable.isVitaminPet(pet.getNpcId()))
+		if ((pet != null) && pet.isPet() && PetDataTable.isVitaminPet(pet.getId()))
 		{
 			PetInstance _pet = (PetInstance) pet;
 			_pet.setLevel(getLevel());
@@ -3912,7 +3913,8 @@ public final class Player extends Playable implements PlayerGroup
 	public void broadcastStatusUpdate()
 	{
 		super.broadcastStatusUpdate();
-		sendPacket(new StatusUpdate(this).addAttribute(StatusUpdateField.CUR_HP, StatusUpdateField.CUR_MP, StatusUpdateField.CUR_CP, StatusUpdateField.MAX_HP, StatusUpdateField.MAX_MP, StatusUpdateField.MAX_CP));
+		sendPacket(new StatusUpdate(this).addAttribute(StatusUpdateField.CUR_HP, StatusUpdateField.CUR_MP, StatusUpdateField.MAX_HP, StatusUpdateField.MAX_MP));
+		sendPacket(new StatusUpdate(this).addAttribute(StatusUpdateField.CUR_CP, StatusUpdateField.MAX_CP));
 		
 		if (isInParty())
 		// Send the Server->Client packet PartySmallWindowUpdate with current HP, MP and Level to all other L2Player of the Party
@@ -4274,7 +4276,7 @@ public final class Player extends Playable implements PlayerGroup
 			{
 				SystemMessage sm;
 				
-				if (item.getItemId() == 57)
+				if (item.getId() == 57)
 				{
 					sm = new SystemMessage(SystemMessage.YOU_HAVE_FAILED_TO_PICK_UP_S1_ADENA);
 					sm.addNumber(item.getCount());
@@ -4282,7 +4284,7 @@ public final class Player extends Playable implements PlayerGroup
 				else
 				{
 					sm = new SystemMessage(SystemMessage.YOU_HAVE_FAILED_TO_PICK_UP_S1);
-					sm.addItemName(item.getItemId());
+					sm.addItemName(item.getId());
 				}
 				
 				sendPacket(sm);
@@ -4339,17 +4341,17 @@ public final class Player extends Playable implements PlayerGroup
 			return false;
 		}
 		
-		if ((item.getItemId() == ItemTemplate.ITEM_ID_ADENA) || (item.getItemId() == 6353))
+		if ((item.getId() == ItemTemplate.ITEM_ID_ADENA) || (item.getId() == 6353))
 		{
 			Quest q = QuestManager.getQuest(255);
 			
 			if (q != null)
 			{
-				processQuestEvent(q.getName(), "CE" + item.getItemId(), null);
+				processQuestEvent(q.getName(), "CE" + item.getId(), null);
 			}
 		}
 		
-		if ((item.getItemId() == ItemTemplate.ITEM_ID_ADENA))
+		if ((item.getId() == ItemTemplate.ITEM_ID_ADENA))
 		{
 			if (item.getOwnerId() == 0)
 			{
@@ -4536,12 +4538,12 @@ public final class Player extends Playable implements PlayerGroup
 			WorldStatisticsManager.getInstance().updateStat(attacker.getPlayer(), CategoryType.DAMAGE_TO_PC_MAX, getActiveClassId(), (long) damage);
 			WorldStatisticsManager.getInstance().updateStat(this, CategoryType.DAMAGE_FROM_PC, (long) damage);
 			
-			if ((attacker.getKarma() > 0) && (getEffectList().getEffectsBySkillId(5182) != null) && !isInZone(ZoneType.SIEGE))
+			if ((attacker.getKarma() > 0) && (getEffectList().getEffectsBySkillId(5182) != null) && !isInZone(ZoneType.Siege))
 			{
 				return;
 			}
 			
-			if ((getKarma() > 0) && (attacker.getEffectList().getEffectsBySkillId(5182) != null) && !attacker.isInZone(ZoneType.SIEGE))
+			if ((getKarma() > 0) && (attacker.getEffectList().getEffectsBySkillId(5182) != null) && !attacker.isInZone(ZoneType.Siege))
 			{
 				return;
 			}
@@ -4872,7 +4874,7 @@ public final class Player extends Playable implements PlayerGroup
 		{
 			for (ItemInstance item : getInventory().getItems())
 			{
-				if (!item.canBeDropped(this, true) || Config.KARMA_LIST_NONDROPPABLE_ITEMS.contains(item.getItemId()))
+				if (!item.canBeDropped(this, true) || Config.KARMA_LIST_NONDROPPABLE_ITEMS.contains(item.getId()))
 				{
 					continue;
 				}
@@ -4912,11 +4914,11 @@ public final class Player extends Playable implements PlayerGroup
 				
 				if (item.getEnchantLevel() > 0)
 				{
-					sendPacket(new SystemMessage(SystemMessage.DROPPED__S1_S2).addNumber(item.getEnchantLevel()).addItemName(item.getItemId()));
+					sendPacket(new SystemMessage(SystemMessage.DROPPED__S1_S2).addNumber(item.getEnchantLevel()).addItemName(item.getId()));
 				}
 				else
 				{
-					sendPacket(new SystemMessage(SystemMessage.YOU_HAVE_DROPPED_S1).addItemName(item.getItemId()));
+					sendPacket(new SystemMessage(SystemMessage.YOU_HAVE_DROPPED_S1).addItemName(item.getId()));
 				}
 				
 				if (killer.isPlayable() && ((Config.AUTO_LOOT && Config.AUTO_LOOT_PK) || isInFlyingTransform()))
@@ -5528,7 +5530,7 @@ public final class Player extends Playable implements PlayerGroup
 		
 		if (Config.SERVICES_ENABLE_NO_CARRIER)
 		{
-			time = NumberUtils.toInt(getVar("noCarrier"), Config.SERVICES_NO_CARRIER_DEFAULT_TIME);
+			time = getVar("noCarrier") != null ? getVarInt("noCarrier") : Config.SERVICES_NO_CARRIER_DEFAULT_TIME;
 		}
 		
 		scheduleDelete(time * 1000L);
@@ -5929,7 +5931,7 @@ public final class Player extends Playable implements PlayerGroup
 				}
 				else if (activeWeapon.getItemType() == WeaponType.CROSSBOW)
 				{
-					getInventory().findArrowForCrossbow(activeWeapon.getTemplate());
+					_arrowItem = getInventory().findArrowForCrossbow(activeWeapon.getTemplate());
 				}
 			}
 			
@@ -6566,7 +6568,7 @@ public final class Player extends Playable implements PlayerGroup
 					{
 						for (Zone zone : zones)
 						{
-							if (zone.getType() == ZoneType.no_restart)
+							if (zone.getType() == ZoneType.NoRestart)
 							{
 								if (((System.currentTimeMillis() / 1000L) - player.getLastAccess()) > zone.getRestartTime())
 								{
@@ -6574,7 +6576,7 @@ public final class Player extends Playable implements PlayerGroup
 									player.setLoc(TeleportUtils.getRestartLocation(player, RestartType.TO_VILLAGE));
 								}
 							}
-							else if (zone.getType() == ZoneType.SIEGE)
+							else if (zone.getType() == ZoneType.Siege)
 							{
 								SiegeEvent<?, ?> siegeEvent = player.getEvent(SiegeEvent.class);
 								
@@ -6797,9 +6799,9 @@ public final class Player extends Playable implements PlayerGroup
 				}
 				else
 				{
-					statement.setInt(5, _stablePoint.x);
-					statement.setInt(6, _stablePoint.y);
-					statement.setInt(7, _stablePoint.z);
+					statement.setInt(5, _stablePoint.getX());
+					statement.setInt(6, _stablePoint.getY());
+					statement.setInt(7, _stablePoint.getZ());
 				}
 				
 				statement.setInt(8, getKarma());
@@ -7852,7 +7854,7 @@ public final class Player extends Playable implements PlayerGroup
 	{
 		for (ItemInstance item : getInventory().getPaperdollItems())
 		{
-			if ((item != null) && (item.getItemId() == itemId))
+			if ((item != null) && (item.getId() == itemId))
 			{
 				final int newMp = item.getLifeTime() - mp;
 				
@@ -7913,7 +7915,7 @@ public final class Player extends Playable implements PlayerGroup
 	 */
 	public boolean checkLandingState()
 	{
-		if (isInZone(ZoneType.no_landing))
+		if (isInZone(ZoneType.NoLanding))
 		{
 			return false;
 		}
@@ -8114,13 +8116,13 @@ public final class Player extends Playable implements PlayerGroup
 		{
 			SystemMessage sm = new SystemMessage(SystemMessage.EQUIPMENT_OF__S1_S2_HAS_BEEN_REMOVED);
 			sm.addNumber(wpn.getEnchantLevel());
-			sm.addItemName(wpn.getItemId());
+			sm.addItemName(wpn.getId());
 			sendPacket(sm);
 		}
 		else
 		{
 			SystemMessage sm = new SystemMessage(SystemMessage.S1__HAS_BEEN_DISARMED);
-			sm.addItemName(wpn.getItemId());
+			sm.addItemName(wpn.getId());
 			sendPacket(sm);
 		}
 	}
@@ -10622,7 +10624,7 @@ public final class Player extends Playable implements PlayerGroup
 			getSummonList().unsummonAllServitors();
 			PetInstance pet = getSummonList().getPet();
 			
-			if ((pet != null) && (Config.ALT_IMPROVED_PETS_LIMITED_USE && (((pet.getNpcId() == PetDataTable.IMPROVED_BABY_KOOKABURRA_ID) && !isMageClass()) || ((pet.getNpcId() == PetDataTable.IMPROVED_BABY_BUFFALO_ID) && isMageClass()))))
+			if ((pet != null) && (Config.ALT_IMPROVED_PETS_LIMITED_USE && (((pet.getId() == PetDataTable.IMPROVED_BABY_KOOKABURRA_ID) && !isMageClass()) || ((pet.getId() == PetDataTable.IMPROVED_BABY_BUFFALO_ID) && isMageClass()))))
 			{
 				getSummonList().unsummonPet(false);
 			}
@@ -10845,7 +10847,7 @@ public final class Player extends Playable implements PlayerGroup
 	 * @return int
 	 */
 	@Override
-	public int getNpcId()
+	public int getId()
 	{
 		return -2;
 	}
@@ -12578,7 +12580,7 @@ public final class Player extends Playable implements PlayerGroup
 		{
 			for (TradeItem i : _buyList)
 			{
-				val += i.getItemId() + ";" + i.getCount() + ";" + i.getOwnersPrice() + ":";
+				val += i.getId() + ";" + i.getCount() + ";" + i.getOwnersPrice() + ":";
 			}
 			
 			setVar("buylist", val, -1);
@@ -12992,7 +12994,7 @@ public final class Player extends Playable implements PlayerGroup
 			
 			for (Summon summon : getSummonList())
 			{
-				if ((summon.getNpcId() == 14916) || (summon.getNpcId() == 14917))
+				if ((summon.getId() == 14916) || (summon.getId() == 14917))
 				{
 					summon.unSummon();
 				}
@@ -14186,21 +14188,22 @@ public final class Player extends Playable implements PlayerGroup
 		{
 			if (magic)
 			{
-				sendPacket(new SystemMessage(SystemMessage.MAGIC_CRITICAL_HIT).addName(this).addDamage(target, target, damage));
+				sendPacket(new ExMagicAttackInfo(this, target, 1));
+				sendPacket(new SystemMessage(SystemMessage.MAGIC_CRITICAL_HIT).addName(this));
 			}
 			else
 			{
-				sendPacket(new SystemMessage(SystemMessage.C1_HAD_A_CRITICAL_HIT).addName(this).addDamage(target, target, damage));
+				sendPacket(new SystemMessage(SystemMessage.C1_HAD_A_CRITICAL_HIT).addName(this));
 			}
 		}
 		
 		if (miss)
 		{
-			sendPacket(new SystemMessage(SystemMessage.C1S_ATTACK_WENT_ASTRAY).addName(this).addDamage(target, target, damage));
+			sendPacket(new SystemMessage(SystemMessage.C1S_ATTACK_WENT_ASTRAY).addName(this));
 		}
 		else if (!target.isDamageBlocked())
 		{
-			sendPacket(new SystemMessage(SystemMessage.C1_HAS_GIVEN_C2_DAMAGE_OF_S3).addName(this).addName(target).addNumber(damage).addDamage(target, target, damage));
+			sendPacket(new SystemMessage(SystemMessage.C1_HAS_GIVEN_C2_DAMAGE_OF_S3).addName(this).addName(target).addNumber(damage).addDamage(target, target, -damage));
 		}
 		
 		if (target.isPlayer())
@@ -14226,7 +14229,7 @@ public final class Player extends Playable implements PlayerGroup
 	{
 		if (attacker != this)
 		{
-			sendPacket(new SystemMessage(SystemMessage.C1_HAS_RECEIVED_DAMAGE_OF_S3_FROM_C2).addName(this).addName(attacker).addNumber((long) damage).addDamage(attacker, attacker, damage));
+			sendPacket(new SystemMessage(SystemMessage.C1_HAS_RECEIVED_DAMAGE_OF_S3_FROM_C2).addName(this).addName(attacker).addNumber(damage));
 		}
 	}
 	
@@ -14311,15 +14314,15 @@ public final class Player extends Playable implements PlayerGroup
 		
 		if (hours > 0)
 		{
-			sendPacket(new SystemMessage2(item.getTemplate().getReuseType().getMessages()[2]).addItemName(item.getTemplate().getItemId()).addInteger(hours).addInteger(minutes).addInteger(seconds));
+			sendPacket(new SystemMessage2(item.getTemplate().getReuseType().getMessages()[2]).addItemName(item.getTemplate().getId()).addInteger(hours).addInteger(minutes).addInteger(seconds));
 		}
 		else if (minutes > 0)
 		{
-			sendPacket(new SystemMessage2(item.getTemplate().getReuseType().getMessages()[1]).addItemName(item.getTemplate().getItemId()).addInteger(minutes).addInteger(seconds));
+			sendPacket(new SystemMessage2(item.getTemplate().getReuseType().getMessages()[1]).addItemName(item.getTemplate().getId()).addInteger(minutes).addInteger(seconds));
 		}
 		else
 		{
-			sendPacket(new SystemMessage2(item.getTemplate().getReuseType().getMessages()[0]).addItemName(item.getTemplate().getItemId()).addInteger(seconds));
+			sendPacket(new SystemMessage2(item.getTemplate().getReuseType().getMessages()[0]).addItemName(item.getTemplate().getId()).addInteger(seconds));
 		}
 	}
 	
@@ -14561,7 +14564,7 @@ public final class Player extends Playable implements PlayerGroup
 	{
 		for (Reflection r : ReflectionManager.getInstance().getAll())
 		{
-			if ((r != null) && ArrayUtils.contains(r.getVisitors(), getObjectId()))
+			if ((r != null) && Util.contains(r.getVisitors(), getObjectId()))
 			{
 				return r;
 			}
@@ -15457,7 +15460,7 @@ public final class Player extends Playable implements PlayerGroup
 					break;
 				}
 				
-				if (ArrayUtils.contains(newProductList, itemId))
+				if (Util.contains(newProductList, itemId))
 				{
 					continue;
 				}

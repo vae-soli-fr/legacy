@@ -271,16 +271,16 @@ public class AwakingManager implements OnPlayerEnterListener
 		AWAKEN_POWER.put(168, 32268);
 		AWAKEN_POWER.put(169, 32268);
 		AWAKEN_POWER.put(170, 32268);
-		AWAKEN_POWER.put(144, 32269);
-		AWAKEN_POWER.put(171, 32269);
-		AWAKEN_POWER.put(172, 32269);
-		AWAKEN_POWER.put(173, 32269);
-		AWAKEN_POWER.put(174, 32269);
-		AWAKEN_POWER.put(175, 32269);
-		AWAKEN_POWER.put(145, 32270);
-		AWAKEN_POWER.put(176, 32270);
-		AWAKEN_POWER.put(177, 32270);
-		AWAKEN_POWER.put(178, 32270);
+		AWAKEN_POWER.put(144, 32270);
+		AWAKEN_POWER.put(171, 32270);
+		AWAKEN_POWER.put(172, 32270);
+		AWAKEN_POWER.put(173, 32270);
+		AWAKEN_POWER.put(174, 32270);
+		AWAKEN_POWER.put(175, 32270);
+		AWAKEN_POWER.put(145, 32269);
+		AWAKEN_POWER.put(176, 32269);
+		AWAKEN_POWER.put(177, 32269);
+		AWAKEN_POWER.put(178, 32269);
 		AWAKEN_POWER.put(146, 32271);
 		AWAKEN_POWER.put(179, 32271);
 		AWAKEN_POWER.put(180, 32271);
@@ -409,7 +409,8 @@ public class AwakingManager implements OnPlayerEnterListener
 		ALTER_SKILLS.put(Integer.valueOf(180), _AlterAerore);
 		ALTER_SKILLS.put(Integer.valueOf(181), _AlterAerore);
 		
-		_log.info("AwakingManager: Loaded 34 Awaking class for " + _CA.size() + " normal class. Loaded " + LEGACY_WEAPONS.size() + " Legacy Weapons.");
+		_log.info("AwakingManager: Loaded 34 Awaking class for " + _CA.size() + " normal class.");
+		_log.info("AwakingManager: Loaded " + LEGACY_WEAPONS.size() + " Legacy Weapons.");
 	}
 	
 	/**
@@ -477,30 +478,30 @@ public class AwakingManager implements OnPlayerEnterListener
 	public void SetAwakingId(Player player)
 	{
 		int _oldId = player.getClassId().getId();
-		giveGiantEssences(player, false);
+		player.broadcastPacket(new SocialAction(player.getObjectId(), 20));
 		
 		if (Config.ALT_DELETE_SKILL_PROF) // its important part of correct skill assignment this If sentence, removed from player.java
 		{
 			onTransferOnlyRemoveSkills(player);
 		}
 		
-		if (player.getActiveSubClass().isBase())
-		{
-			ItemFunctions.addItem(player, CHAOS_POMANDER, 2, true);
-		}
-		
-		if (player.getActiveSubClass().isDual())
-		{
-			ItemFunctions.addItem(player, CHAOS_POMANDER_DUAL_CLASS, 2, true);
-		}
-		
+		getRaceSkill(player);
 		player.setClassId(_CA.get(_oldId), false, false);
 		player.broadcastUserInfo();
-		player.sendUserInfo();
-		player.updateStats();
-		player.broadcastPacket(new SocialAction(player.getObjectId(), 20));
 		giveItems(player, _oldId, _CA.get(_oldId));
-		getRaceSkill(player);
+		giveItemsChaosPomander(player);
+		giveItemsChaosEssence(player);
+		giveGiantEssences(player, false);
+	}
+	
+	public void giveItemsChaosPomander(Player player)
+	{
+		ItemFunctions.addItem(player, player.isBaseClassActive() ? CHAOS_POMANDER : CHAOS_POMANDER_DUAL_CLASS, 2, true);
+	}
+	
+	public void giveItemsChaosEssence(Player player)
+	{
+		ItemFunctions.addItem(player, player.isBaseClassActive() ? CHAOS_ESSENCE : CHAOS_ESSENCE_DUAL_CLASS, 1, true);
 	}
 	
 	/**
@@ -568,7 +569,6 @@ public class AwakingManager implements OnPlayerEnterListener
 		{
 			ItemFunctions.addItem(player, AWAKEN_POWER.get(newClassId), 1, true);
 			ItemFunctions.addItem(player, LEGACY_WEAPONS.get(previousClassId), 1, true);
-			ItemFunctions.addItem(player, CHAOS_ESSENCE, 1, true);
 		}
 		else
 		{
@@ -579,7 +579,6 @@ public class AwakingManager implements OnPlayerEnterListener
 			}
 			
 			ItemFunctions.addItem(player, CLOAK_DUAL_CLASS.get(newClassId), 1, true);
-			ItemFunctions.addItem(player, CHAOS_ESSENCE_DUAL_CLASS, 1, true);
 		}
 	}
 	

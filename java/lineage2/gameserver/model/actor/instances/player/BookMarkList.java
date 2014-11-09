@@ -40,12 +40,12 @@ public class BookMarkList
 {
 	private static final ZoneType[] FORBIDDEN_ZONES = new ZoneType[]
 	{
-		ZoneType.RESIDENCE,
-		ZoneType.ssq_zone,
-		ZoneType.battle_zone,
-		ZoneType.SIEGE,
-		ZoneType.no_restart,
-		ZoneType.no_summon,
+		ZoneType.Residence,
+		ZoneType.SevenSigns,
+		ZoneType.Battle,
+		ZoneType.Siege,
+		ZoneType.NoRestart,
+		ZoneType.NoSummon,
 	};
 	private static final Logger _log = LoggerFactory.getLogger(BookMarkList.class);
 	private final Player owner;
@@ -173,7 +173,7 @@ public class BookMarkList
 		
 		BookMark bookmark = elementData.get(slot - 1);
 		
-		if (!checkTeleportLocation(owner, bookmark.x, bookmark.y, bookmark.z))
+		if (!checkTeleportLocation(owner, bookmark.getX(), bookmark.getY(), bookmark.getZ()))
 		{
 			return false;
 		}
@@ -185,7 +185,7 @@ public class BookMarkList
 			return false;
 		}
 		
-		owner.teleToLocation(bookmark.x, bookmark.y, bookmark.z);
+		owner.teleToLocation(bookmark.getX(), bookmark.getY(), bookmark.getZ());
 		return true;
 	}
 	
@@ -274,9 +274,9 @@ public class BookMarkList
 				statement.setString(3, bookmark.getName());
 				statement.setString(4, bookmark.getAcronym());
 				statement.setInt(5, bookmark.getIcon());
-				statement.setInt(6, bookmark.x);
-				statement.setInt(7, bookmark.y);
-				statement.setInt(8, bookmark.z);
+				statement.setInt(6, bookmark.getX());
+				statement.setInt(7, bookmark.getY());
+				statement.setInt(8, bookmark.getZ());
 				statement.execute();
 			}
 		}
@@ -431,7 +431,7 @@ public class BookMarkList
 	 */
 	private static boolean checkTeleportLocation(Player player, Location loc)
 	{
-		return checkTeleportLocation(player, loc.x, loc.y, loc.z);
+		return checkTeleportLocation(player, loc.getX(), loc.getY(), loc.getZ());
 	}
 	
 	/**

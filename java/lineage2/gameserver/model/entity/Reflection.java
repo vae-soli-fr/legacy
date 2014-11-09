@@ -774,7 +774,7 @@ public class Reflection
 				{
 					NpcInstance npc = (NpcInstance) o;
 					
-					if ((npcId == npc.getNpcId()) && (!onlyAlive || !npc.isDead()))
+					if ((npcId == npc.getId()) && (!onlyAlive || !npc.isDead()))
 					{
 						result.add(npc);
 					}
@@ -938,7 +938,7 @@ public class Reflection
 				door.openMe();
 			}
 			
-			_doors.put(template.getNpcId(), door);
+			_doors.put(template.getId(), door);
 		}
 		
 		initDoors();
@@ -955,8 +955,8 @@ public class Reflection
 			
 			switch (zone.getType())
 			{
-				case no_landing:
-				case SIEGE:
+				case NoLanding:
+				case Siege:
 					zone.addListener(NoLandingZoneListener.STATIC);
 					break;
 				
@@ -964,7 +964,7 @@ public class Reflection
 					zone.addListener(new AirshipControllerZoneListener());
 					break;
 				
-				case RESIDENCE:
+				case Residence:
 					zone.addListener(ResidenceEnterLeaveListenerImpl.STATIC);
 					break;
 				
@@ -1005,7 +1005,7 @@ public class Reflection
 				door.openMe();
 			}
 			
-			_doors.put(info.getTemplate().getNpcId(), door);
+			_doors.put(info.getTemplate().getId(), door);
 		}
 		
 		initDoors();
@@ -1022,8 +1022,8 @@ public class Reflection
 			
 			switch (zone.getType())
 			{
-				case no_landing:
-				case SIEGE:
+				case NoLanding:
+				case Siege:
 					zone.addListener(NoLandingZoneListener.STATIC);
 					break;
 				
@@ -1031,7 +1031,7 @@ public class Reflection
 					zone.addListener(new AirshipControllerZoneListener());
 					break;
 				
-				case RESIDENCE:
+				case Residence:
 					zone.addListener(ResidenceEnterLeaveListenerImpl.STATIC);
 					break;
 				
@@ -1135,7 +1135,7 @@ public class Reflection
 		
 		if (randomOffset > 0)
 		{
-			newLoc = Location.findPointToStay(loc, 0, randomOffset, getGeoIndex()).setH(loc.h);
+			newLoc = Location.findPointToStay(loc, 0, randomOffset, getGeoIndex()).setHeading(loc.getHeading());
 		}
 		else
 		{

@@ -39,7 +39,6 @@ import lineage2.gameserver.network.loginservercon.ServerType;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
-import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -97,7 +96,7 @@ public class Config
 	public static int SHIFT_BY_Z;
 	public static int MAP_MIN_Z;
 	public static int MAP_MAX_Z;
-	public static boolean SERVER_SIDE_NPC_TITLE_ETC;
+	public static boolean SHOW_NPC_LVL;
 	public static boolean ALLOW_PACKET_FAIL;
 	public static boolean RWHO_LOG;
 	// public static int RWHO_FORCE_INC;
@@ -242,13 +241,10 @@ public class Config
 	public static boolean ALT_CHECK_SKILLS_AWAKENING;
 	public static boolean ALT_GAME_EXP_LOST;
 	public static boolean ALT_ARENA_EXP;
-	// public static boolean ALT_GAME_SUBCLASS_WITHOUT_QUESTS;
-	public static boolean ALT_ALLOW_SUBCLASS_WITHOUT_BAIUM;
 	public static int ALT_GAME_LEVEL_TO_GET_SUBCLASS;
 	public static int ALT_MAX_LEVEL;
 	public static int ALT_MAX_SUB_LEVEL;
 	public static int ALT_MAX_DUAL_SUB_LEVEL;
-	// public static int ALT_GAME_SUB_ADD;
 	public static boolean ALT_GAME_SUB_BOOK;
 	public static double[] ALT_GAME_DUALCLASS_REAWAKENING_COST;
 	public static int ALT_GAME_RESET_CERTIFICATION_COST;
@@ -528,15 +524,24 @@ public class Config
 	public static int REPUTATION_COUNT;
 	public static int PK_KILLER_NAME_COLOR;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_SHOP;
-	public static int OVERENCHANT_LIMIT1;
-	public static int OVERENCHANT_LIMIT2;
-	public static int OVERENCHANT_LIMIT3;
-	public static int OVERENCHANT_LIMIT4;
-	public static double OVERENCHANT_MUL1;
-	public static double OVERENCHANT_MUL2;
-	public static double OVERENCHANT_MUL3;
-	public static double OVERENCHANT_MUL4;
-	public static double BLESSED_ARMOR_WEAPON_MUL;
+	public static int ENCHANT_CHANCE_WEAPON;
+	public static int ENCHANT_CHANCE_ARMOR;
+	public static int ENCHANT_CHANCE_ACCESSORY;
+	public static int ENCHANT_CHANCE_BLESSED_WEAPON;
+	public static int ENCHANT_CHANCE_BLESSED_ARMOR;
+	public static int ENCHANT_CHANCE_BLESSED_ACCESSORY;
+	public static int ENCHANT_CHANCE_CRYSTAL_WEAPON;
+	public static int ENCHANT_CHANCE_CRYSTAL_ARMOR;
+	public static int ENCHANT_CHANCE_CRYSTAL_ACCESSORY;
+	public static int ENCHANT_CHANCE_GIANT_WEAPON;
+	public static int ENCHANT_CHANCE_GIANT_ARMOR;
+	public static int ENCHANT_CHANCE_GIANT_ACCESSORY;
+	public static int ENCHANT_MAX;
+	public static int ENCHANT_ATTRIBUTE_STONE_CHANCE;
+	public static int ENCHANT_ATTRIBUTE_CRYSTAL_CHANCE;
+	public static int ARMOR_OVERENCHANT_HPBONUS_LIMIT;
+	public static int SAFE_ENCHANT_COMMON;
+	public static int SAFE_ENCHANT_FULL_BODY;
 	public static boolean SHOW_ENCHANT_EFFECT_RESULT;
 	public static boolean REGEN_SIT_WAIT;
 	public static double RATE_RAID_REGEN;
@@ -732,6 +737,7 @@ public class Config
 	public static double ALT_NPC_MAXMP_MODIFIER;
 	public static boolean ALLOW_TALK_WHILE_SITTING;
 	public static boolean PARTY_LEADER_ONLY_CAN_INVITE;
+	public static boolean PARTY_MATCHMAKING_ON_ENTERWORLD;
 	// public static boolean ALLOW_CLANSKILLS;
 	public static boolean ALLOW_LEARN_TRANS_SKILLS_WO_QUEST;
 	public static boolean ALLOW_MANOR;
@@ -1018,7 +1024,7 @@ public class Config
 		GARBAGE_COLLECTOR_INTERVAL = serverSettings.getProperty("GarbageCollectorInterval", 30) * 60000;
 		HTM_CACHE_MODE = serverSettings.getProperty("HtmCacheMode", HtmCache.LAZY);
 		HTM_DEBUG_MODE = serverSettings.getProperty("DebugHtmlMessage", false);
-		SERVER_SIDE_NPC_TITLE_ETC = serverSettings.getProperty("ServerSideNpcTitleEtc", false);
+		SHOW_NPC_LVL = serverSettings.getProperty("ShowNpcLevel", false);
 		ALLOW_PACKET_FAIL = serverSettings.getProperty("AllowPacketFail", false);
 		Random ppc = new Random();
 		int z = ppc.nextInt(6);
@@ -1331,16 +1337,26 @@ public class Config
 		WAREHOUSE_SLOTS_DWARF = otherSettings.getProperty("BaseWarehouseSlotsForDwarf", 120);
 		WAREHOUSE_SLOTS_CLAN = otherSettings.getProperty("MaximumWarehouseSlotsForClan", 200);
 		FREIGHT_SLOTS = otherSettings.getProperty("MaximumFreightSlots", 10);
+		ENCHANT_CHANCE_WEAPON = otherSettings.getProperty("EnchantChanceWeapon", 66);
+		ENCHANT_CHANCE_ARMOR = otherSettings.getProperty("EnchantChanceArmor", ENCHANT_CHANCE_WEAPON);
+		ENCHANT_CHANCE_ACCESSORY = otherSettings.getProperty("EnchantChanceAccessory", ENCHANT_CHANCE_ARMOR);
+		ENCHANT_CHANCE_BLESSED_WEAPON = otherSettings.getProperty("EnchantChanceBlessedWeapon", 66);
+		ENCHANT_CHANCE_BLESSED_ARMOR = otherSettings.getProperty("EnchantChanceBlessedArmor", ENCHANT_CHANCE_BLESSED_WEAPON);
+		ENCHANT_CHANCE_BLESSED_ACCESSORY = otherSettings.getProperty("EnchantChanceBlessedAccessory", ENCHANT_CHANCE_BLESSED_ARMOR);
+		ENCHANT_CHANCE_CRYSTAL_WEAPON = otherSettings.getProperty("EnchantChanceCrystalWeapon", 66);
+		ENCHANT_CHANCE_CRYSTAL_ARMOR = otherSettings.getProperty("EnchantChanceCrystalArmor", ENCHANT_CHANCE_CRYSTAL_WEAPON);
+		ENCHANT_CHANCE_CRYSTAL_ACCESSORY = otherSettings.getProperty("EnchantChanceCrystalAccessory", ENCHANT_CHANCE_CRYSTAL_ARMOR);
+		ENCHANT_CHANCE_GIANT_WEAPON = otherSettings.getProperty("EnchantChanceGiantWeapon", 66);
+		ENCHANT_CHANCE_GIANT_ARMOR = otherSettings.getProperty("EnchantChanceGiantArmor", ENCHANT_CHANCE_GIANT_WEAPON);
+		ENCHANT_CHANCE_GIANT_ACCESSORY = otherSettings.getProperty("EnchantChanceGiantAccessory", ENCHANT_CHANCE_GIANT_ARMOR);
+		SAFE_ENCHANT_COMMON = otherSettings.getProperty("SafeEnchantCommon", 3);
+		SAFE_ENCHANT_FULL_BODY = otherSettings.getProperty("SafeEnchantFullBody", 4);
+		ENCHANT_MAX = otherSettings.getProperty("EnchantMax", 20);
+		ARMOR_OVERENCHANT_HPBONUS_LIMIT = otherSettings.getProperty("ArmorOverEnchantHPBonusLimit", 10) - 3;
 		SHOW_ENCHANT_EFFECT_RESULT = otherSettings.getProperty("ShowEnchantEffectResult", false);
-		OVERENCHANT_LIMIT1 = otherSettings.getProperty("overEnchantLimit1", 3);
-		OVERENCHANT_LIMIT2 = otherSettings.getProperty("overEnchantLimit2", 6);
-		OVERENCHANT_LIMIT3 = otherSettings.getProperty("overEnchantLimit3", 9);
-		OVERENCHANT_LIMIT4 = otherSettings.getProperty("overEnchantLimit4", 19);
-		OVERENCHANT_MUL1 = otherSettings.getProperty("overEnchantMul1", 2);
-		OVERENCHANT_MUL2 = otherSettings.getProperty("overEnchantMul2", 3);
-		OVERENCHANT_MUL3 = otherSettings.getProperty("overEnchantMul3", 4);
-		OVERENCHANT_MUL4 = otherSettings.getProperty("overEnchantMul4", 5);
-		BLESSED_ARMOR_WEAPON_MUL = otherSettings.getProperty("blessedArmorWeaponMul", 1.5);
+		ENCHANT_ATTRIBUTE_STONE_CHANCE = otherSettings.getProperty("EnchantAttributeChance", 50);
+		ENCHANT_ATTRIBUTE_CRYSTAL_CHANCE = otherSettings.getProperty("EnchantAttributeCrystalChance", 30);
+		REGEN_SIT_WAIT = otherSettings.getProperty("RegenSitWait", false);
 		REGEN_SIT_WAIT = otherSettings.getProperty("RegenSitWait", false);
 		STARTING_ADENA = otherSettings.getProperty("StartingAdena", 0);
 		STARTING_LEVEL = otherSettings.getProperty("StartingLevel", 1);
@@ -1506,10 +1522,7 @@ public class Config
 		ALT_GAME_SHOW_DROPLIST = altSettings.getProperty("AltShowDroplist", true);
 		ALLOW_NPC_SHIFTCLICK = altSettings.getProperty("AllowShiftClick", false);
 		ALT_FULL_NPC_STATS_PAGE = altSettings.getProperty("AltFullStatsPage", false);
-		// ALT_GAME_SUBCLASS_WITHOUT_QUESTS = altSettings.getProperty("AltAllowSubClassWithoutQuest", false);
-		ALT_ALLOW_SUBCLASS_WITHOUT_BAIUM = altSettings.getProperty("AltAllowSubClassWithoutBaium", true);
 		ALT_GAME_LEVEL_TO_GET_SUBCLASS = altSettings.getProperty("AltLevelToGetSubclass", 75);
-		// ALT_GAME_SUB_ADD = altSettings.getProperty("AltSubAdd", 0);
 		ALT_GAME_SUB_BOOK = altSettings.getProperty("AltSubBook", false);
 		ALT_GAME_RESET_CERTIFICATION_COST = altSettings.getProperty("AltResetCertificationCost", 10000000);
 		ALT_GAME_RESET_DUALCERTIFICATION_COST = altSettings.getProperty("AltResetDualCertificationCost", 20000000);
@@ -1624,6 +1637,7 @@ public class Config
 		// ALLOW_CLANSKILLS = altSettings.getProperty("AllowClanSkills", true);
 		ALLOW_LEARN_TRANS_SKILLS_WO_QUEST = altSettings.getProperty("AllowLearnTransSkillsWOQuest", false);
 		PARTY_LEADER_ONLY_CAN_INVITE = altSettings.getProperty("PartyLeaderOnlyCanInvite", true);
+		PARTY_MATCHMAKING_ON_ENTERWORLD = altSettings.getProperty("PartyMatchmakingOnEnterWorld", false);
 		ALLOW_TALK_WHILE_SITTING = altSettings.getProperty("AllowTalkWhileSitting", true);
 		ALLOW_NOBLE_TP_TO_ALL = altSettings.getProperty("AllowNobleTPToAll", false);
 		ALLOW_FAKE_PLAYERS = altSettings.getProperty("AllowFakePlayers", false);
@@ -2321,15 +2335,15 @@ public class Config
 			}
 			else if (field.getType() == int.class)
 			{
-				field.setInt(null, NumberUtils.toInt(value));
+				field.setInt(null, Integer.valueOf(value));
 			}
 			else if (field.getType() == long.class)
 			{
-				field.setLong(null, NumberUtils.toLong(value));
+				field.setLong(null, Long.valueOf(value));
 			}
 			else if (field.getType() == double.class)
 			{
-				field.setDouble(null, NumberUtils.toDouble(value));
+				field.setDouble(null, Double.valueOf(value));
 			}
 			else if (field.getType() == String.class)
 			{

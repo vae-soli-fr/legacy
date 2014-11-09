@@ -222,7 +222,7 @@ public class CastleSiegeEvent extends SiegeEvent<Castle, SiegeClanObject>
 			{
 				for (ItemInstance item : getResidence().getSpawnMerchantTickets())
 				{
-					MerchantGuard guard = getResidence().getMerchantGuard(item.getItemId());
+					MerchantGuard guard = getResidence().getMerchantGuard(item.getId());
 					addObject(HIRED_GUARDS, new SpawnSimpleObject(guard.getNpcId(), item.getLoc()));
 					item.deleteMe();
 				}
@@ -567,8 +567,8 @@ public class CastleSiegeEvent extends SiegeEvent<Castle, SiegeClanObject>
 	@Override
 	public boolean canRessurect(Player resurrectPlayer, Creature target, boolean force)
 	{
-		boolean playerInZone = resurrectPlayer.isInZone(Zone.ZoneType.SIEGE);
-		boolean targetInZone = target.isInZone(Zone.ZoneType.SIEGE);
+		boolean playerInZone = resurrectPlayer.isInZone(Zone.ZoneType.Siege);
+		boolean targetInZone = target.isInZone(Zone.ZoneType.Siege);
 		
 		if (!playerInZone && !targetInZone)
 		{

@@ -379,7 +379,7 @@ public abstract class Inventory extends ItemContainer
 		
 		if (item != null)
 		{
-			return item.getItemId();
+			return item.getId();
 		}
 		else if (slot == PAPERDOLL_HAIR)
 		{
@@ -387,7 +387,7 @@ public abstract class Inventory extends ItemContainer
 			
 			if (item != null)
 			{
-				return item.getItemId();
+				return item.getId();
 			}
 		}
 		
@@ -736,7 +736,7 @@ public abstract class Inventory extends ItemContainer
 				final ItemTemplate rHandItemTemplate = rHandItem == null ? null : rHandItem.getTemplate();
 				final ItemTemplate newItem = item.getTemplate();
 				
-				if (newItem.getItemType() == EtcItemType.ARROW)
+				if ((newItem.getItemType() == EtcItemType.ARROW) || (newItem.getItemType() == EtcItemType.UNLIMITED_ARROW))
 				{
 					if (rHandItemTemplate == null)
 					{
@@ -993,7 +993,7 @@ public abstract class Inventory extends ItemContainer
 				break;
 			
 			default:
-				_log.warn("unknown body slot:" + bodySlot + " for item id: " + item.getItemId());
+				_log.warn("unknown body slot:" + bodySlot + " for item id: " + item.getId());
 				return;
 		}
 		
@@ -1080,7 +1080,7 @@ public abstract class Inventory extends ItemContainer
 	{
 		long slots = 0;
 		
-		if (!item.isStackable() || (getItemByItemId(item.getItemId()) == null))
+		if (!item.isStackable() || (getItemByItemId(item.getId()) == null))
 		{
 			slots++;
 		}
@@ -1110,7 +1110,7 @@ public abstract class Inventory extends ItemContainer
 	{
 		long slots = 0;
 		
-		if (!item.isStackable() || (getItemByItemId(item.getItemId()) == null))
+		if (!item.isStackable() || (getItemByItemId(item.getId()) == null))
 		{
 			slots = count;
 		}

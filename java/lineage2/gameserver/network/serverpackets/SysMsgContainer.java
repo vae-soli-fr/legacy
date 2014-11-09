@@ -104,15 +104,15 @@ public abstract class SysMsgContainer<T extends SysMsgContainer<T>> extends L2Ga
 		
 		if (object.isNpc())
 		{
-			return add(new NpcNameArgument(((NpcInstance) object).getNpcId() + 1000000));
+			return add(new NpcNameArgument(((NpcInstance) object).getId() + 1000000));
 		}
 		else if (object instanceof Summon)
 		{
-			return add(new NpcNameArgument(((Summon) object).getNpcId() + 1000000));
+			return add(new NpcNameArgument(((Summon) object).getId() + 1000000));
 		}
 		else if (object.isItem())
 		{
-			return add(new ItemNameArgument(((ItemInstance) object).getItemId()));
+			return add(new ItemNameArgument(((ItemInstance) object).getId()));
 		}
 		else if (object.isPlayer())
 		{
@@ -167,7 +167,7 @@ public abstract class SysMsgContainer<T extends SysMsgContainer<T>> extends L2Ga
 	
 	public T addItemNameWithAugmentation(ItemInstance item)
 	{
-		return add(new ItemNameWithAugmentationArgument(item.getItemId(), item.getAugmentationId()));
+		return add(new ItemNameWithAugmentationArgument(item.getId(), item.getAugmentationId()));
 	}
 	
 	public T addZoneName(Creature c)
@@ -177,7 +177,7 @@ public abstract class SysMsgContainer<T extends SysMsgContainer<T>> extends L2Ga
 	
 	public T addZoneName(Location loc)
 	{
-		return add(new ZoneArgument(loc.x, loc.y, loc.z));
+		return add(new ZoneArgument(loc.getX(), loc.getY(), loc.getZ()));
 	}
 	
 	public T addZoneName(int x, int y, int z)

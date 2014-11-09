@@ -26,8 +26,7 @@ import lineage2.gameserver.network.serverpackets.SystemMessage2;
 import lineage2.gameserver.network.serverpackets.components.SystemMsg;
 import lineage2.gameserver.templates.item.ExItemType;
 import lineage2.gameserver.templates.item.ItemTemplate.Grade;
-
-import org.apache.commons.lang3.ArrayUtils;
+import lineage2.gameserver.utils.Util;
 
 /**
  * @author kick
@@ -104,7 +103,7 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 			return;
 		}
 		
-		AppearanceStone appearanceStone = EnchantItemHolder.getInstance().getAppearanceStone(stone.getItemId());
+		AppearanceStone appearanceStone = EnchantItemHolder.getInstance().getAppearanceStone(stone.getId());
 		
 		if (appearanceStone == null)
 		{
@@ -134,7 +133,7 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 		
 		if ((stoneGrades != null) && (stoneGrades.length > 0))
 		{
-			if (!ArrayUtils.contains(stoneGrades, targetItem.getTemplate().getItemGrade()))
+			if (!Util.contains(stoneGrades, targetItem.getTemplate().getItemGrade()))
 			{
 				player.sendPacket(ExShapeShiftingResult.FAIL);
 				player.setAppearanceStone(null);
@@ -153,11 +152,11 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 			return;
 		}
 		
-		if (!ArrayUtils.contains(targetTypes, ShapeTargetType.ALL))
+		if (!Util.contains(targetTypes, ShapeTargetType.ALL))
 		{
 			if (targetItem.isWeapon())
 			{
-				if (!ArrayUtils.contains(targetTypes, ShapeTargetType.WEAPON))
+				if (!Util.contains(targetTypes, ShapeTargetType.WEAPON))
 				{
 					player.sendPacket(ExShapeShiftingResult.FAIL);
 					player.setAppearanceStone(null);
@@ -167,7 +166,7 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 			}
 			else if (targetItem.isArmor())
 			{
-				if (!ArrayUtils.contains(targetTypes, ShapeTargetType.ARMOR))
+				if (!Util.contains(targetTypes, ShapeTargetType.ARMOR))
 				{
 					player.sendPacket(ExShapeShiftingResult.FAIL);
 					player.setAppearanceStone(null);
@@ -177,7 +176,7 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 			}
 			else
 			{
-				if (!ArrayUtils.contains(targetTypes, ShapeTargetType.ACCESSORY))
+				if (!Util.contains(targetTypes, ShapeTargetType.ACCESSORY))
 				{
 					player.sendPacket(ExShapeShiftingResult.FAIL);
 					player.setAppearanceStone(null);
@@ -191,7 +190,7 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 		
 		if ((itemTypes != null) && (itemTypes.length > 0))
 		{
-			if (!ArrayUtils.contains(itemTypes, targetItem.getExItemType()))
+			if (!Util.contains(itemTypes, targetItem.getExItemType()))
 			{
 				player.sendPacket(ExShapeShiftingResult.FAIL);
 				player.setAppearanceStone(null);
@@ -264,7 +263,7 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 				return;
 			}
 			
-			extracItemId = extracItem.getItemId();
+			extracItemId = extracItem.getId();
 		}
 		
 		if (targetItem.getOwnerId() != player.getObjectId())
@@ -329,11 +328,11 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 					break;
 				
 				case NORMAL:
-					targetItem.setVisualId(extracItem.getItemId());
+					targetItem.setVisualId(extracItem.getId());
 					break;
 				
 				case BLESSED:
-					targetItem.setVisualId(extracItem.getItemId());
+					targetItem.setVisualId(extracItem.getId());
 					break;
 				
 				case FIXED:
@@ -364,6 +363,6 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 		// player.sendPacket(new IStaticPacket[] { new ExShapeShiftingResult(targetItem.getItemId(), extracItem.getVisualId()), new UserInfo(player), new ExBR_ExtraUserInfo(player) });
 		player.setAppearanceStone(null);
 		player.setAppearanceExtractItem(null);
-		player.sendPacket(new ExShapeShiftingResult(ExShapeShiftingResult.SUCCESS_RESULT, targetItem.getItemId(), extracItemId));
+		player.sendPacket(new ExShapeShiftingResult(ExShapeShiftingResult.SUCCESS_RESULT, targetItem.getId(), extracItemId));
 	}
 }

@@ -141,7 +141,7 @@ public class VoicedCommands implements IVoicedCommandHandler
 			if (phrase != null)
 			{
 				pet.broadcastPacket(new NpcSay(new NpcInstance(pet.getObjectId(), pet.getTemplate()), ChatType.NPC_SAY, phrase));
-				pet.broadcastPacket(new Say2(pet.getNpcId(), ChatType.ALL, "[" + pet.getName() + "]", phrase));
+				pet.broadcastPacket(new Say2(pet.getId(), ChatType.ALL, "[" + pet.getName() + "]", phrase));
 			}
 			else
 			{

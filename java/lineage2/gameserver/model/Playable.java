@@ -148,7 +148,7 @@ public abstract class Playable extends Creature
 			return false;
 		}
 		
-		if (isInZone(ZoneType.SIEGE) && target.isInZone(ZoneType.SIEGE))
+		if (isInZone(ZoneType.Siege) && target.isInZone(ZoneType.Siege))
 		{
 			return false;
 		}
@@ -220,7 +220,7 @@ public abstract class Playable extends Creature
 			return false;
 		}
 		
-		if (player.isInZone(ZoneType.epic) != target.isInZone(ZoneType.epic))
+		if (player.isInZone(ZoneType.Epic) != target.isInZone(ZoneType.Epic))
 		{
 			player.sendPacket(new SystemMessage(SystemMessage.INVALID_TARGET));
 			return false;
@@ -562,7 +562,7 @@ public abstract class Playable extends Creature
 				return false;
 			}
 			
-			if (player.isInZone(ZoneType.epic) != pcAttacker.isInZone(ZoneType.epic))
+			if (player.isInZone(ZoneType.Epic) != pcAttacker.isInZone(ZoneType.Epic))
 			{
 				return false;
 			}
@@ -602,7 +602,7 @@ public abstract class Playable extends Creature
 				return false;
 			}
 			
-			if (isInZone(ZoneType.SIEGE))
+			if (isInZone(ZoneType.Siege))
 			{
 				return true;
 			}
@@ -775,12 +775,12 @@ public abstract class Playable extends Creature
 			if (item.getEnchantLevel() > 0)
 			{
 				int msg_id = isPlayer() ? SystemMessage.ATTENTION_S1_PICKED_UP__S2_S3 : SystemMessage.ATTENTION_S1_PET_PICKED_UP__S2_S3;
-				msg = new SystemMessage(msg_id).addString(player_name).addNumber(item.getEnchantLevel()).addItemName(item.getItemId());
+				msg = new SystemMessage(msg_id).addString(player_name).addNumber(item.getEnchantLevel()).addItemName(item.getId());
 			}
 			else
 			{
 				int msg_id = isPlayer() ? SystemMessage.ATTENTION_S1_PICKED_UP_S2 : SystemMessage.ATTENTION_S1_PET_PICKED_UP__S2_S3;
-				msg = new SystemMessage(msg_id).addString(player_name).addItemName(item.getItemId());
+				msg = new SystemMessage(msg_id).addString(player_name).addItemName(item.getId());
 			}
 			
 			player.broadcastPacket(msg);
@@ -965,7 +965,7 @@ public abstract class Playable extends Creature
 	 */
 	public boolean isOnSiegeField()
 	{
-		return isInZone(ZoneType.SIEGE);
+		return isInZone(ZoneType.Siege);
 	}
 	
 	/**
@@ -974,7 +974,7 @@ public abstract class Playable extends Creature
 	 */
 	public boolean isInSSQZone()
 	{
-		return isInZone(ZoneType.ssq_zone);
+		return isInZone(ZoneType.SevenSigns);
 	}
 	
 	/**
@@ -983,7 +983,7 @@ public abstract class Playable extends Creature
 	 */
 	public boolean isInDangerArea()
 	{
-		return isInZone(ZoneType.damage) || isInZone(ZoneType.swamp) || isInZone(ZoneType.poison) || isInZone(ZoneType.instant_skill);
+		return isInZone(ZoneType.Damage) || isInZone(ZoneType.Swamp) || isInZone(ZoneType.Poison) || isInZone(ZoneType.InstantSkill);
 	}
 	
 	/**

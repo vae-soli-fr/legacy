@@ -14,6 +14,7 @@ package lineage2.gameserver.network.clientpackets;
 
 import lineage2.commons.dao.JdbcEntityState;
 import lineage2.commons.util.Rnd;
+import lineage2.gameserver.Config;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.model.base.Element;
 import lineage2.gameserver.model.items.ItemInstance;
@@ -112,7 +113,7 @@ public class RequestEnchantItemAttribute extends L2GameClientPacket
 			return;
 		}
 		
-		AttributeStoneInfo asi = AttributeStoneManager.getStoneInfo(stone.getItemId());
+		AttributeStoneInfo asi = AttributeStoneManager.getStoneInfo(stone.getId());
 		
 		if (asi == null)
 		{
@@ -171,21 +172,31 @@ public class RequestEnchantItemAttribute extends L2GameClientPacket
 			return;
 		}
 		
-		if (Rnd.chance(asi.getChance()))
+		int chance; // = asi.getChance(); ?
+		if (stone.getTemplate().isAttributeCrystal())
+		{
+			chance = Config.ENCHANT_ATTRIBUTE_CRYSTAL_CHANCE;
+		}
+		else
+		{
+			chance = Config.ENCHANT_ATTRIBUTE_STONE_CHANCE;
+		}
+		
+		if (Rnd.chance(chance))
 		{
 			if (itemToEnchant.getEnchantLevel() == 0)
 			{
 				SystemMessage sm = new SystemMessage(SystemMessage.S2_ELEMENTAL_POWER_HAS_BEEN_ADDED_SUCCESSFULLY_TO_S1);
-				sm.addItemName(itemToEnchant.getItemId());
-				sm.addItemName(stone.getItemId());
+				sm.addItemName(itemToEnchant.getId());
+				sm.addItemName(stone.getId());
 				activeChar.sendPacket(sm);
 			}
 			else
 			{
 				SystemMessage sm = new SystemMessage(SystemMessage.S3_ELEMENTAL_POWER_HAS_BEEN_ADDED_SUCCESSFULLY_TO__S1S2);
 				sm.addNumber(itemToEnchant.getEnchantLevel());
-				sm.addItemName(itemToEnchant.getItemId());
-				sm.addItemName(stone.getItemId());
+				sm.addItemName(itemToEnchant.getId());
+				sm.addItemName(stone.getId());
 				activeChar.sendPacket(sm);
 			}
 			

@@ -142,7 +142,7 @@ public class SpawnManager
 			
 			if (npcTemplate.isRaid && group.equals(PeriodOfDay.NONE.name()))
 			{
-				RaidBossSpawnManager.getInstance().addNewSpawn(npcTemplate.getNpcId(), spawner);
+				RaidBossSpawnManager.getInstance().addNewSpawn(npcTemplate.getId(), spawner);
 			}
 		}
 		
@@ -191,7 +191,9 @@ public class SpawnManager
 			// }
 		}
 		
-		_log.info("SpawnManager: spawned " + npcSpawnCount + " npc; spawns: " + spawnerList.size() + "; group: " + group);
+		_log.info("SpawnManager: Spawned " + npcSpawnCount + " npcs.");
+		_log.info("SpawnManager: Spawn size: " + spawnerList.size());
+		_log.info("SpawnManager: Spawn group: " + group);
 	}
 	
 	/**

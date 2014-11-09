@@ -3115,7 +3115,7 @@ public class SystemMessage extends L2GameServerPacket
 	
 	public static SystemMessage obtainItemsByMail(ItemInstance item)
 	{
-		return new SystemMessage(SystemMessage.YOU_HAVE_ACQUIRED_S2_S1).addItemName(item.getItemId()).addNumber(item.getCount());
+		return new SystemMessage(SystemMessage.YOU_HAVE_ACQUIRED_S2_S1).addItemName(item.getId()).addNumber(item.getCount());
 	}
 	
 	public SystemMessage addString(String text)
@@ -3153,12 +3153,12 @@ public class SystemMessage extends L2GameServerPacket
 			return addDoorName(((DoorInstance) cha).getDoorId());
 		}
 		
-		if (cha.getNpcId() <= 0)
+		if (cha.getId() <= 0)
 		{
 			return addString(cha.getName());
 		}
 		
-		return addNpcName(cha.getNpcId());
+		return addNpcName(cha.getId());
 	}
 	
 	public SystemMessage addDoorName(int id)
@@ -3318,9 +3318,9 @@ public class SystemMessage extends L2GameServerPacket
 				case TYPE_ZONE_NAME:
 				{
 					Location coord = (Location) e.obj;
-					writeD(coord.x);
-					writeD(coord.y);
-					writeD(coord.z);
+					writeD(coord.getX());
+					writeD(coord.getY());
+					writeD(coord.getZ());
 					break;
 				}
 				

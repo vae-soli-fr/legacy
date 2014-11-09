@@ -32,7 +32,6 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import javolution.util.FastList;
 import lineage2.commons.collections.LazyArrayList;
 import lineage2.commons.lang.reference.HardReference;
 import lineage2.commons.lang.reference.HardReferences;
@@ -120,8 +119,8 @@ import lineage2.gameserver.templates.spawn.WalkerRouteTemplate;
 import lineage2.gameserver.utils.Location;
 import lineage2.gameserver.utils.Log;
 import lineage2.gameserver.utils.PositionUtils;
+import lineage2.gameserver.utils.Util;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.napile.primitive.maps.IntObjectMap;
 import org.napile.primitive.maps.impl.CHashIntObjectMap;
@@ -254,9 +253,9 @@ public abstract class Creature extends GameObject
 				
 				if (!isFlying() && !isInBoat() && !isInWater() && !isBoat())
 				{
-					if ((loc.z - getZ()) > 256)
+					if ((loc.getZ() - getZ()) > 256)
 					{
-						String bug_text = "geo bug 1 at: " + getLoc() + " => " + loc.x + "," + loc.y + "," + loc.z + "\tAll path: " + moveList.get(0) + " => " + moveList.get(moveList.size() - 1);
+						String bug_text = "geo bug 1 at: " + getLoc() + " => " + loc.getX() + "," + loc.getY() + "," + loc.getZ() + "\tAll path: " + moveList.get(0) + " => " + moveList.get(moveList.size() - 1);
 						Log.add(bug_text, "geo");
 						stopMove();
 						return;
@@ -279,7 +278,7 @@ public abstract class Creature extends GameObject
 				
 				if (isFollow && ((now - _followTimestamp) > (_forestalling ? 500 : 1000)) && (follow != null) && !follow.isInRange(movingDestTempPos, Math.max(100, _offset)))
 				{
-					if ((Math.abs(getZ() - loc.z) > 1000) && !isFlying())
+					if ((Math.abs(getZ() - loc.getZ()) > 1000) && !isFlying())
 					{
 						sendPacket(SystemMsg.CANNOT_SEE_TARGET);
 						stopMove();
@@ -340,7 +339,7 @@ public abstract class Creature extends GameObject
 	private int _abnormalEffects;
 	private int _abnormalEffects2;
 	private int _abnormalEffects3;
-	private final FastList<Integer> _aveList = new FastList<>();
+	private final ArrayList<Integer> _aveList = new ArrayList<>();
 	protected boolean _isAttackAborted;
 	protected long _attackEndTime;
 	protected long _attackReuseEndTime;
@@ -1426,7 +1425,7 @@ public abstract class Creature extends GameObject
 				
 				if (ie != null)
 				{
-					if (ArrayUtils.contains(ie.getTemplate().getParam().getIntegerArray("skillId"), skill.getId()))
+					if (Util.contains(ie.getTemplate().getParam().getIntegerArray("skillId"), skill.getId()))
 					{
 						itr.remove();
 						continue;
@@ -2141,12 +2140,12 @@ public abstract class Creature extends GameObject
 			
 			if (isFlying())
 			{
-				if (isPlayer() && ((Player) this).isInFlyingTransform() && ((loc.z <= 0) || (loc.z >= 6000)))
+				if (isPlayer() && ((Player) this).isInFlyingTransform() && ((loc.getZ() <= 0) || (loc.getZ() >= 6000)))
 				{
 					return null;
 				}
 				
-				if (GeoEngine.moveCheckInAir(getX(), getY(), getZ(), loc.x, loc.y, loc.z, getColRadius(), getGeoIndex()) == null)
+				if (GeoEngine.moveCheckInAir(getX(), getY(), getZ(), loc.getX(), loc.getY(), loc.getZ(), getColRadius(), getGeoIndex()) == null)
 				{
 					return null;
 				}
@@ -2155,11 +2154,11 @@ public abstract class Creature extends GameObject
 			{
 				loc.correctGeoZ();
 				
-				if (!GeoEngine.canMoveToCoord(getX(), getY(), getZ(), loc.x, loc.y, loc.z, getGeoIndex()))
+				if (!GeoEngine.canMoveToCoord(getX(), getY(), getZ(), loc.getX(), loc.getY(), loc.getZ(), getGeoIndex()))
 				{
 					loc = target.getLoc();
 					
-					if (!GeoEngine.canMoveToCoord(getX(), getY(), getZ(), loc.x, loc.y, loc.z, getGeoIndex()))
+					if (!GeoEngine.canMoveToCoord(getX(), getY(), getZ(), loc.getX(), loc.getY(), loc.getZ(), getGeoIndex()))
 					{
 						return null;
 					}
@@ -2325,9 +2324,9 @@ public abstract class Creature extends GameObject
 	
 	/**
 	 * Method getAveList.
-	 * @return FastList<Integer>
+	 * @return ArrayList<Integer>
 	 */
-	public FastList<Integer> getAveList()
+	public ArrayList<Integer> getAveList()
 	{
 		return _aveList;
 	}
@@ -2389,7 +2388,7 @@ public abstract class Creature extends GameObject
 	 * Method getAttackSpeedMultiplier.
 	 * @return double
 	 */
-	public final double getAttackSpeedMultiplier()
+	public double getAttackSpeedMultiplier()
 	{
 		return (1.1 * getPAtkSpd()) / getTemplate().getBasePAtkSpd();
 	}
@@ -3323,9 +3322,9 @@ public abstract class Creature extends GameObject
 			return point;
 		}
 		
-		long dx = point.x - getX();
-		long dy = point.y - getY();
-		long dz = point.z - getZ();
+		long dx = point.getX() - getX();
+		long dy = point.getY() - getY();
+		long dz = point.getZ() - getZ();
 		double distance = Math.sqrt((dx * dx) + (dy * dy) + (dz * dz));
 		
 		if (distance <= offset)
@@ -3336,10 +3335,10 @@ public abstract class Creature extends GameObject
 		
 		if (distance >= 1)
 		{
-			double cut = offset / distance;
-			point.x -= (int) ((dx * cut) + 0.5);
-			point.y -= (int) ((dy * cut) + 0.5);
-			point.z -= (int) ((dz * cut) + 0.5);
+			final double cut = offset / distance;
+			point.setX(point.getX() - ((int) ((dx * cut) + 0.5)));
+			point.setY(point.getY() - ((int) ((dy * cut) + 0.5)));
+			point.setZ(point.getZ() - ((int) ((dz * cut) + 0.5)));
 			
 			if (!isFlying() && !isInBoat() && !isInWater() && !isBoat())
 			{
@@ -3365,9 +3364,9 @@ public abstract class Creature extends GameObject
 			return points;
 		}
 		
-		long dx = points.get(points.size() - 1).x - points.get(0).x;
-		long dy = points.get(points.size() - 1).y - points.get(0).y;
-		long dz = points.get(points.size() - 1).z - points.get(0).z;
+		long dx = points.get(points.size() - 1).getX() - points.get(0).getX();
+		long dy = points.get(points.size() - 1).getY() - points.get(0).getY();
+		long dz = points.get(points.size() - 1).getZ() - points.get(0).getZ();
 		double distance = Math.sqrt((dx * dx) + (dy * dy) + (dz * dz));
 		
 		if (distance <= offset)
@@ -3463,12 +3462,12 @@ public abstract class Creature extends GameObject
 			
 			if (isFlying())
 			{
-				if (GeoEngine.canSeeCoord(this, dest.x, dest.y, dest.z, true))
+				if (GeoEngine.canSeeCoord(this, dest.getX(), dest.getY(), dest.getZ(), true))
 				{
 					return setSimplePath(dest);
 				}
 				
-				nextloc = GeoEngine.moveCheckInAir(getX(), getY(), getZ(), dest.x, dest.y, dest.z, getColRadius(), geoIndex);
+				nextloc = GeoEngine.moveCheckInAir(getX(), getY(), getZ(), dest.getX(), dest.getY(), dest.getZ(), getColRadius(), geoIndex);
 				
 				if ((nextloc != null) && !nextloc.equals(getX(), getY(), getZ()))
 				{
@@ -3478,7 +3477,7 @@ public abstract class Creature extends GameObject
 			else
 			{
 				int waterZ = getWaterZ();
-				nextloc = GeoEngine.moveInWaterCheck(getX(), getY(), getZ(), dest.x, dest.y, dest.z, waterZ, geoIndex);
+				nextloc = GeoEngine.moveInWaterCheck(getX(), getY(), getZ(), dest.getX(), dest.getY(), dest.getZ(), waterZ, geoIndex);
 				
 				if (nextloc == null)
 				{
@@ -3493,11 +3492,11 @@ public abstract class Creature extends GameObject
 					_targetRecorder.add(moveList);
 				}
 				
-				int dz = dest.z - nextloc.z;
+				int dz = dest.getZ() - nextloc.getZ();
 				
 				if ((dz > 0) && (dz < 128))
 				{
-					moveList = GeoEngine.MoveList(nextloc.x, nextloc.y, nextloc.z, dest.x, dest.y, geoIndex, false);
+					moveList = GeoEngine.MoveList(nextloc.getX(), nextloc.getY(), nextloc.getZ(), dest.getX(), dest.getY(), geoIndex, false);
 					
 					if (moveList != null)
 					{
@@ -3514,7 +3513,7 @@ public abstract class Creature extends GameObject
 			return false;
 		}
 		
-		List<Location> moveList = GeoEngine.MoveList(getX(), getY(), getZ(), dest.x, dest.y, geoIndex, true);
+		List<Location> moveList = GeoEngine.MoveList(getX(), getY(), getZ(), dest.getX(), dest.getY(), geoIndex, true);
 		
 		if (moveList != null)
 		{
@@ -3564,7 +3563,7 @@ public abstract class Creature extends GameObject
 		}
 		
 		applyOffset(dest, offset);
-		moveList = GeoEngine.MoveList(getX(), getY(), getZ(), dest.x, dest.y, geoIndex, false);
+		moveList = GeoEngine.MoveList(getX(), getY(), getZ(), dest.getX(), dest.getY(), geoIndex, false);
 		
 		if ((moveList != null) && !moveList.isEmpty())
 		{
@@ -3641,9 +3640,9 @@ public abstract class Creature extends GameObject
 			getAI().clearNextAction();
 			stopMove(false, false);
 			
-			if (buildPathTo(loc.x, loc.y, loc.z, offset, target, forestalling, !target.isDoor()))
+			if (buildPathTo(loc.getX(), loc.getY(), loc.getZ(), offset, target, forestalling, !target.isDoor()))
 			{
-				movingDestTempPos.set(loc.x, loc.y, loc.z);
+				movingDestTempPos.set(loc.getX(), loc.getY(), loc.getZ());
 			}
 			else
 			{
@@ -3673,7 +3672,7 @@ public abstract class Creature extends GameObject
 	 */
 	public boolean moveToLocation(Location loc, int offset, boolean pathfinding)
 	{
-		return moveToLocation(loc.x, loc.y, loc.z, offset, pathfinding);
+		return moveToLocation(loc.getX(), loc.getY(), loc.getZ(), offset, pathfinding);
 	}
 	
 	/**
@@ -3782,7 +3781,7 @@ public abstract class Creature extends GameObject
 		
 		if (distance != 0)
 		{
-			setHeading(PositionUtils.calculateHeadingFrom(getX(), getY(), destination.x, destination.y));
+			setHeading(PositionUtils.calculateHeadingFrom(getX(), getY(), destination.getX(), destination.getY()));
 		}
 		
 		broadcastMove();
@@ -3903,7 +3902,7 @@ public abstract class Creature extends GameObject
 			{
 				zone = _zones.get(i);
 				
-				if (zone.getType() == ZoneType.water)
+				if (zone.getType() == ZoneType.Water)
 				{
 					if ((waterZ == Integer.MIN_VALUE) || (waterZ < zone.getTerritory().getZmax()))
 					{
@@ -3963,7 +3962,7 @@ public abstract class Creature extends GameObject
 				{
 					zone = _zones.get(i);
 					
-					if (!ArrayUtils.contains(zones, zone) || !zone.checkIfInZone(getX(), getY(), getZ(), getReflection()))
+					if (!Util.contains(zones, zone) || !zone.checkIfInZone(getX(), getY(), getZ(), getReflection()))
 					{
 						leaving.add(zone);
 					}
@@ -4054,7 +4053,7 @@ public abstract class Creature extends GameObject
 	 */
 	public boolean isInZonePeace()
 	{
-		return isInZone(ZoneType.peace_zone) && !isInZoneBattle();
+		return isInZone(ZoneType.Peace) && !isInZoneBattle();
 	}
 	
 	/**
@@ -4063,7 +4062,7 @@ public abstract class Creature extends GameObject
 	 */
 	public boolean isInZoneBattle()
 	{
-		return isInZone(ZoneType.battle_zone);
+		return isInZone(ZoneType.Battle);
 	}
 	
 	/**
@@ -4072,7 +4071,7 @@ public abstract class Creature extends GameObject
 	 */
 	public boolean isInWater()
 	{
-		return isInZone(ZoneType.water) && !(isInBoat() || isBoat() || isFlying());
+		return isInZone(ZoneType.Water) && !(isInBoat() || isBoat() || isFlying());
 	}
 	
 	/**
@@ -4204,7 +4203,7 @@ public abstract class Creature extends GameObject
 				{
 					ZoneType type = zone.getType();
 					
-					if ((type == ZoneType.battle_zone) || (type == ZoneType.peace_zone) || (type == ZoneType.offshore) || (type == ZoneType.dummy))
+					if ((type == ZoneType.Battle) || (type == ZoneType.Peace) || (type == ZoneType.Offshore) || (type == ZoneType.Dummy))
 					{
 						return zone.getSpawn();
 					}
@@ -4238,7 +4237,7 @@ public abstract class Creature extends GameObject
 				{
 					ZoneType type = zone.getType();
 					
-					if ((type == ZoneType.battle_zone) || (type == ZoneType.peace_zone) || (type == ZoneType.offshore) || (type == ZoneType.dummy))
+					if ((type == ZoneType.Battle) || (type == ZoneType.Peace) || (type == ZoneType.Offshore) || (type == ZoneType.Dummy))
 					{
 						return zone.getPKSpawn();
 					}
@@ -4262,7 +4261,7 @@ public abstract class Creature extends GameObject
 	{
 		if (isFlying() || isInWater() || isInBoat() || isBoat() || isDoor())
 		{
-			return loc.z;
+			return loc.getZ();
 		}
 		
 		return super.getGeoZ(loc);
@@ -4895,12 +4894,12 @@ public abstract class Creature extends GameObject
 		
 		if ((attacker != null) && attacker.isPlayer() && (Math.abs(attacker.getLevel() - getLevel()) > 10))
 		{
-			if ((attacker.getKarma() < 0) && (getEffectList().getEffectsBySkillId(5182) != null) && !isInZone(ZoneType.SIEGE))
+			if ((attacker.getKarma() < 0) && (getEffectList().getEffectsBySkillId(5182) != null) && !isInZone(ZoneType.Siege))
 			{
 				return;
 			}
 			
-			if ((getKarma() < 0) && (attacker.getEffectList().getEffectsBySkillId(5182) != null) && !attacker.isInZone(ZoneType.SIEGE))
+			if ((getKarma() < 0) && (attacker.getEffectList().getEffectsBySkillId(5182) != null) && !attacker.isInZone(ZoneType.Siege))
 			{
 				return;
 			}
@@ -6597,7 +6596,7 @@ public abstract class Creature extends GameObject
 	 */
 	public void teleToLocation(Location loc)
 	{
-		teleToLocation(loc.x, loc.y, loc.z, getReflection());
+		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), getReflection());
 	}
 	
 	/**
@@ -6607,7 +6606,7 @@ public abstract class Creature extends GameObject
 	 */
 	public void teleToLocation(Location loc, int refId)
 	{
-		teleToLocation(loc.x, loc.y, loc.z, refId);
+		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), refId);
 	}
 	
 	/**
@@ -6617,7 +6616,7 @@ public abstract class Creature extends GameObject
 	 */
 	public void teleToLocation(Location loc, Reflection r)
 	{
-		teleToLocation(loc.x, loc.y, loc.z, r);
+		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), r);
 	}
 	
 	/**
@@ -6968,7 +6967,7 @@ public abstract class Creature extends GameObject
 	 * Method getNpcId.
 	 * @return int
 	 */
-	public int getNpcId()
+	public int getId()
 	{
 		return 0;
 	}
@@ -7269,7 +7268,7 @@ public abstract class Creature extends GameObject
 	@Override
 	public void setLoc(Location loc)
 	{
-		setXYZ(loc.x, loc.y, loc.z);
+		setXYZ(loc.getX(), loc.getY(), loc.getZ());
 	}
 	
 	/**
@@ -7279,7 +7278,7 @@ public abstract class Creature extends GameObject
 	 */
 	public void setLoc(Location loc, boolean MoveTask)
 	{
-		setXYZ(loc.x, loc.y, loc.z, MoveTask);
+		setXYZ(loc.getX(), loc.getY(), loc.getZ(), MoveTask);
 	}
 	
 	/**
@@ -7339,9 +7338,9 @@ public abstract class Creature extends GameObject
 	@Override
 	public void spawnMe(Location loc)
 	{
-		if (loc.h > 0)
+		if (loc.getHeading() > 0)
 		{
-			setHeading(loc.h);
+			setHeading(loc.getHeading());
 		}
 		
 		super.spawnMe(loc);
@@ -7844,5 +7843,10 @@ public abstract class Creature extends GameObject
 		}
 		
 		super.onActionTargeted(player, forced);
+	}
+	
+	public boolean isHungry()
+	{
+		return false;
 	}
 }

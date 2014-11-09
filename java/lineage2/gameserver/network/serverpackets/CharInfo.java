@@ -12,7 +12,8 @@
  */
 package lineage2.gameserver.network.serverpackets;
 
-import javolution.util.FastList;
+import java.util.ArrayList;
+
 import lineage2.gameserver.Config;
 import lineage2.gameserver.instancemanager.CursedWeaponsManager;
 import lineage2.gameserver.instancemanager.ReflectionManager;
@@ -97,7 +98,7 @@ public class CharInfo extends L2GameServerPacket
 	private int _curMP;
 	private int _maxMP;
 	private int _curCP;
-	private FastList<Integer> _aveList;
+	private ArrayList<Integer> _aveList;
 	private PcInventory _inventory;
 	private int _talismanCount;
 	private boolean _openCloak;
@@ -316,9 +317,9 @@ public class CharInfo extends L2GameServerPacket
 		}
 		
 		writeC(0x31);
-		writeD(_loc.x);
-		writeD(_loc.y);
-		writeD(_loc.z + Config.CLIENT_Z_SHIFT);
+		writeD(_loc.getX());
+		writeD(_loc.getY());
+		writeD(_loc.getZ() + Config.CLIENT_Z_SHIFT);
 		writeD(_clanBoatObjectId);
 		writeD(_objId);
 		writeS(_name);
@@ -398,11 +399,11 @@ public class CharInfo extends L2GameServerPacket
 		writeC(_noble);
 		writeC(_hero);
 		writeC(_fishing);
-		writeD(_fishLoc.x);
-		writeD(_fishLoc.y);
-		writeD(_fishLoc.z);
+		writeD(_fishLoc.getX());
+		writeD(_fishLoc.getY());
+		writeD(_fishLoc.getZ());
 		writeD(_nameColor);
-		writeD(_loc.h);
+		writeD(_loc.getHeading());
 		writeD(_pledgeClass);
 		writeD(_pledgeType);
 		writeD(_title_color);

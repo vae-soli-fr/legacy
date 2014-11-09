@@ -34,7 +34,7 @@ public class DropItem extends L2GameServerPacket
 	{
 		_playerId = playerId;
 		item_obj_id = item.getObjectId();
-		item_id = item.getItemId();
+		item_id = item.getId();
 		_loc = item.getLoc();
 		_stackable = item.isStackable() ? 1 : 0;
 		_count = item.getCount();
@@ -47,9 +47,9 @@ public class DropItem extends L2GameServerPacket
 		writeD(_playerId);
 		writeD(item_obj_id);
 		writeD(item_id);
-		writeD(_loc.x);
-		writeD(_loc.y);
-		writeD(_loc.z + Config.CLIENT_Z_SHIFT);
+		writeD(_loc.getX());
+		writeD(_loc.getY());
+		writeD(_loc.getZ() + Config.CLIENT_Z_SHIFT);
 		writeD(_stackable);
 		writeQ(_count);
 		writeD(1); // unknown

@@ -475,7 +475,7 @@ public class NpcInstance extends Creature
 		{
 			SystemMessage2 sm;
 			
-			if (item.getItemId() == 57)
+			if (item.getId() == 57)
 			{
 				sm = new SystemMessage2(SystemMsg.C1_HAS_DIED_AND_DROPPED_S2_ADENA);
 				sm.addName(this);
@@ -485,7 +485,7 @@ public class NpcInstance extends Creature
 			{
 				sm = new SystemMessage2(SystemMsg.C1_DIED_AND_DROPPED_S3_S2);
 				sm.addName(this);
-				sm.addItemName(item.getItemId());
+				sm.addItemName(item.getId());
 				sm.addLong(item.getCount());
 			}
 			
@@ -562,13 +562,13 @@ public class NpcInstance extends Creature
 	}
 	
 	/**
-	 * Method getNpcId.
+	 * Method getId.
 	 * @return int
 	 */
 	@Override
-	public int getNpcId()
+	public int getId()
 	{
-		return getTemplate().npcId;
+		return getTemplate().getId();
 	}
 	
 	protected boolean _unAggred = false;
@@ -635,7 +635,7 @@ public class NpcInstance extends Creature
 	 */
 	public boolean isInFaction(NpcInstance npc)
 	{
-		return getFaction().equals(npc.getFaction()) && !getFaction().isIgnoreNpcId(npc.getNpcId());
+		return getFaction().equals(npc.getFaction()) && !getFaction().isIgnoreNpcId(npc.getId());
 	}
 	
 	/**
@@ -1010,6 +1010,11 @@ public class NpcInstance extends Creature
 		return _hasRandomWalk;
 	}
 	
+	public void setRandomWalk(boolean value)
+	{
+		_hasRandomWalk = value;
+	}
+	
 	/**
 	 * Method getCastle.
 	 * @return Castle
@@ -1031,7 +1036,7 @@ public class NpcInstance extends Creature
 			return null;
 		}
 		
-		if (Config.SERVICES_OFFSHORE_NO_CASTLE_TAX && isInZone(ZoneType.offshore))
+		if (Config.SERVICES_OFFSHORE_NO_CASTLE_TAX && isInZone(ZoneType.Offshore))
 		{
 			return null;
 		}
@@ -1269,7 +1274,7 @@ public class NpcInstance extends Creature
 			return;
 		}
 		
-		_log.info("Incorrect htm bypass! npcId=" + getTemplate().npcId + " command=[" + command + "]");
+		_log.info("Incorrect htm bypass! npcId=" + getTemplate().getId() + " command=[" + command + "]");
 	}
 	
 	/**
@@ -1286,7 +1291,7 @@ public class NpcInstance extends Creature
 		{
 			for (TeleportLocation tl : list)
 			{
-				if (tl.getItem().getItemId() == ItemTemplate.ITEM_ID_ADENA)
+				if (tl.getItem().getId() == ItemTemplate.ITEM_ID_ADENA)
 				{
 					double pricemod = player.getLevel() <= Config.GATEKEEPER_FREE ? 0. : Config.GATEKEEPER_MODIFIER;
 					
@@ -1320,7 +1325,7 @@ public class NpcInstance extends Creature
 				}
 				else
 				{
-					sb.append("[scripts_Util:QuestGatekeeper ").append(tl.getX()).append(' ').append(tl.getY()).append(' ').append(tl.getZ()).append(' ').append(tl.getPrice()).append(' ').append(tl.getItem().getItemId()).append(" @811;F;").append('|').append(HtmlUtils.htmlNpcString(tl.getName())).append(" - ").append(tl.getPrice()).append(' ').append(HtmlUtils.htmlItemName(tl.getItem().getItemId())).append("]<br1>\n");
+					sb.append("[scripts_Util:QuestGatekeeper ").append(tl.getX()).append(' ').append(tl.getY()).append(' ').append(tl.getZ()).append(' ').append(tl.getPrice()).append(' ').append(tl.getItem().getId()).append(" @811;F;").append('|').append(HtmlUtils.htmlNpcString(tl.getName())).append(" - ").append(tl.getPrice()).append(' ').append(HtmlUtils.htmlItemName(tl.getItem().getId())).append("]<br1>\n");
 				}
 			}
 		}
@@ -1381,8 +1386,8 @@ public class NpcInstance extends Creature
 		{
 			int quest1 = quest.getDescrState(player, isStart);
 			int quest2 = info.getQuest().getDescrState(player, isStart);
-			int questId1 = quest.getQuestIntId();
-			int questId2 = info.getQuest().getQuestIntId();
+			int questId1 = quest.getId();
+			int questId2 = info.getQuest().getId();
 			
 			if ((quest1 == 1) && (quest2 == 2))
 			{
@@ -1440,9 +1445,9 @@ public class NpcInstance extends Creature
 		{
 			for (Quest x : starts)
 			{
-				if ((x.getQuestIntId() > 0) && !options.containsKey(x.getQuestIntId()))
+				if ((x.getId() > 0) && !options.containsKey(x.getId()))
 				{
-					options.put(x.getQuestIntId(), new QuestInfo(x, player, true));
+					options.put(x.getId(), new QuestInfo(x, player, true));
 				}
 			}
 		}
@@ -1451,9 +1456,9 @@ public class NpcInstance extends Creature
 		{
 			for (QuestState x : awaits)
 			{
-				if ((x.getQuest().getQuestIntId() > 0) && !options.containsKey(x.getQuest().getQuestIntId()))
+				if ((x.getQuest().getId() > 0) && !options.containsKey(x.getQuest().getId()))
 				{
-					options.put(x.getQuest().getQuestIntId(), new QuestInfo(x.getQuest(), player, false));
+					options.put(x.getQuest().getId(), new QuestInfo(x.getQuest(), player, false));
 				}
 			}
 		}
@@ -1517,7 +1522,7 @@ public class NpcInstance extends Creature
 		}
 		
 		String filename;
-		int npcId = getNpcId();
+		int npcId = getId();
 		
 		switch (npcId)
 		{
@@ -1680,7 +1685,7 @@ public class NpcInstance extends Creature
 			return;
 		}
 		
-		int npcId = getTemplate().npcId;
+		int npcId = getTemplate().getId();
 		
 		if (getTemplate().getTeachInfo().isEmpty())
 		{
@@ -1707,11 +1712,11 @@ public class NpcInstance extends Creature
 		{
 			if (this instanceof WarehouseInstance)
 			{
-				showChatWindow(player, "warehouse/" + getNpcId() + "-noteach.htm");
+				showChatWindow(player, "warehouse/" + getId() + "-noteach.htm");
 			}
 			else if (this instanceof TrainerInstance)
 			{
-				showChatWindow(player, "trainer/" + getNpcId() + "-noteach.htm");
+				showChatWindow(player, "trainer/" + getId() + "-noteach.htm");
 			}
 			else
 			{
@@ -1780,7 +1785,7 @@ public class NpcInstance extends Creature
 		{
 			if (!player.isQuestCompleted("Q00136_MoreThanMeetsTheEye"))
 			{
-				showChatWindow(player, "trainer/" + getNpcId() + "-noquest.htm");
+				showChatWindow(player, "trainer/" + getId() + "-noquest.htm");
 				return;
 			}
 		}
@@ -1878,7 +1883,7 @@ public class NpcInstance extends Creature
 	@Override
 	public String toString()
 	{
-		return getNpcId() + " " + getName();
+		return getId() + " " + getName();
 	}
 	
 	/**
@@ -2103,7 +2108,7 @@ public class NpcInstance extends Creature
 	{
 		if (isFlying() || isInWater() || isInBoat() || isBoat() || isDoor())
 		{
-			return loc.z;
+			return loc.getZ();
 		}
 		
 		if (isNpc())
@@ -2113,7 +2118,7 @@ public class NpcInstance extends Creature
 				return GeoEngine.getHeight(loc, getGeoIndex());
 			}
 			
-			return loc.z;
+			return loc.getZ();
 		}
 		
 		return super.getGeoZ(loc);

@@ -52,7 +52,7 @@ public abstract class Effect extends RunnableImpl implements Comparable<Effect>,
 	private static final int ACTING = 2;
 	private static final int FINISHING = 3;
 	private static final int FINISHED = 4;
-	protected final Creature _effector;
+	public final Creature _effector;
 	public final Creature _effected;
 	protected final Skill _skill;
 	protected final int _displayId;
@@ -711,7 +711,11 @@ public abstract class Effect extends RunnableImpl implements Comparable<Effect>,
 			
 			if (getSkill().getDelayedEffect() > 0)
 			{
-				SkillTable.getInstance().getInfo(getSkill().getDelayedEffect(), 1).getEffects(_effector, _effected, false, false);
+				Skill delayErrects = SkillTable.getInstance().getInfo(getSkill().getDelayedEffect(), 1);
+				if (delayErrects != null)
+				{
+					delayErrects.getEffects(_effector, _effected, false, false);
+				}
 			}
 			
 			boolean msg = !isHidden() && (getEffected().getEffectList().getEffectsCountForSkill(getSkill().getId()) == 1);

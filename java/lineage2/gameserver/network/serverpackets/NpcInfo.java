@@ -12,7 +12,8 @@
  */
 package lineage2.gameserver.network.serverpackets;
 
-import javolution.util.FastList;
+import java.util.ArrayList;
+
 import lineage2.gameserver.Config;
 import lineage2.gameserver.model.Creature;
 import lineage2.gameserver.model.Summon;
@@ -75,11 +76,11 @@ public class NpcInfo extends L2GameServerPacket
 	private NpcString _titleNpcString = NpcString.NONE;
 	private TeamType _team;
 	private int _transformId;
-	private FastList<Integer> _aveList;
+	private ArrayList<Integer> _aveList;
 	
 	public NpcInfo(NpcInstance cha, Creature attacker)
 	{
-		_npcId = cha.getDisplayId() != 0 ? cha.getDisplayId() : cha.getTemplate().npcId;
+		_npcId = cha.getDisplayId() != 0 ? cha.getDisplayId() : cha.getTemplate().getId();
 		_isAttackable = (attacker != null) && cha.isAutoAttackable(attacker);
 		_rhand = cha.getRightHandItem();
 		_lhand = cha.getLeftHandItem();
@@ -92,21 +93,17 @@ public class NpcInfo extends L2GameServerPacket
 		if (Config.SERVER_SIDE_NPC_TITLE || (cha.getTemplate().displayId != 0) || (!cha.getTitle().equals(cha.getTemplate().title)))
 		{
 			_title = cha.getTitle();
-			
-			if (Config.SERVER_SIDE_NPC_TITLE_ETC)
+		}
+		
+		if (Config.SHOW_NPC_LVL && cha.isMonster())
+		{
+			String t = "Lv " + cha.getLevel() + (cha.isAggressive() ? "*" : "");
+			if (_title != null)
 			{
-				if (cha.isMonster())
-				{
-					if (_title.isEmpty())
-					{
-						_title = "Lv " + cha.getLevel();
-					}
-					else
-					{
-						_title = "Lv " + cha.getLevel() + "|" + _title;
-					}
-				}
+				t += " " + _title;
 			}
+			
+			_title = t;
 		}
 		
 		_HP = (int) cha.getCurrentHp();
@@ -132,7 +129,7 @@ public class NpcInfo extends L2GameServerPacket
 			return;
 		}
 		
-		_npcId = cha.getTemplate().npcId;
+		_npcId = cha.getTemplate().getId();
 		_isAttackable = cha.isAutoAttackable(attacker);
 		_rhand = 0;
 		_lhand = 0;
@@ -197,10 +194,10 @@ public class NpcInfo extends L2GameServerPacket
 		writeD(_npcObjId);
 		writeD(_npcId + 1000000); // npctype id c4
 		writeD(_isAttackable ? 1 : 0);
-		writeD(_loc.x);
-		writeD(_loc.y);
-		writeD(_loc.z + Config.CLIENT_Z_SHIFT);
-		writeD(_loc.h);
+		writeD(_loc.getX());
+		writeD(_loc.getY());
+		writeD(_loc.getZ() + Config.CLIENT_Z_SHIFT);
+		writeD(_loc.getHeading());
 		writeD(0x00);
 		writeD(_mAtkSpd);
 		writeD(_pAtkSpd);
