@@ -42,7 +42,7 @@ public class AdminCommand implements IAdminCommandHandler
 					{
 						String phrase = fullString.substring(11);
 						target.broadcastPacket(new NpcSay(target, ChatType.NPC_SAY, phrase));
-						target.broadcastPacket(new Say2(target.getNpcId(), ChatType.ALL, target.getName(), phrase));
+						target.broadcastPacket(new Say2(target.getId(), ChatType.ALL, target.getName(), phrase));
 					}
 					else
 					{
