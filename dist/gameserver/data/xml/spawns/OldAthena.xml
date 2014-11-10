@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "npc.dtd">
+<list>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="210424" y="13384" z="-3728" h="32767"/>
+        <npc id="200001"/>
+        <!--Zimenf -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="209528" y="15272" z="-3720" h="57343"/>
+        <npc id="200002"/>
+        <!--Priestess of Dusk -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="209640" y="15208" z="-3720" h="16383"/>
+        <npc id="200003"/>
+        <!--Priest of Dawn -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="210776" y="15224" z="-3728" h="37604"/>
+        <npc id="200004"/>
+        <!--Mina -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="208232" y="13464" z="-3720" h="0"/>
+        <npc id="200005"/>
+        <!--Merchant of Mammon -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="208280" y="13400" z="-3720" h="0"/>
+        <npc id="200006"/>
+        <!--Blacksmith of Mammon -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211720" y="13656" z="-3720" h="49151"/>
+        <npc id="200007"/>
+        <!--Minia -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211656" y="13624" z="-3720" h="32767"/>
+        <npc id="200008"/>
+        <!--Pintage -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211656" y="13576" z="-3720" h="21220"/>
+        <npc id="200009"/>
+        <!--Gwinter -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211608" y="13576" z="-3720" h="4836"/>
+        <npc id="200010"/>
+        <!--Bitz -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211208" y="11672" z="-3728" h="0"/>
+        <npc id="200011"/>
+        <!--Klufe -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="212936" y="14568" z="-3712" h="49151"/>
+        <npc id="200012"/>
+        <!--Rant -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="213432" y="13976" z="-3712" h="24575"/>
+        <npc id="200019"/>
+        <!--Klump-->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="210376" y="16056" z="-3712" h="40959"/>
+        <npc id="200020"/>
+        <!--Blotin -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="212072" y="15592" z="-3720" h="8191"/>
+        <npc id="200021"/>
+        <!--Enverun -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="212040" y="15640" z="-3712" h="0"/>
+        <npc id="200022"/>
+        <!--Adventure Guildsman Fardon -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211944" y="15656" z="-3720" h="6469"/>
+        <npc id="200023"/>
+        <!--Caisses -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211944" y="15592" z="-3728" h="20607"/>
+        <npc id="200023"/>
+        <!--Caisses -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211880" y="15624" z="-3720" h="0"/>
+        <npc id="200023"/>
+        <!--Caisses -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="213096" y="14136" z="-3712" h="31287"/>
+        <npc id="200024"/>
+        <!--Trooper Level Mercenary -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="212056" y="15624" z="-3712" h="16383"/>
+        <npc id="200025"/>
+        <!--Pano -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211000" y="11240" z="-3712" h="16383"/>
+        <npc id="200026"/>
+        <!--Alexandria -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="210584" y="11192" z="-3720" h="38901"/>
+        <npc id="200027"/>
+        <!--Harne -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="211944" y="13224" z="-3720" h="24575"/>
+        <npc id="200028"/>
+        <!--Buka -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="208472" y="13720" z="-3720" h="49151"/>
+        <npc id="200029"/>
+        <!--Anabel -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="208744" y="11864" z="-3728" h="39107"/>
+        <npc id="200030"/>
+        <!--Sentry -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="212088" y="14872" z="-3728" h="62180"/>
+        <npc id="200031"/>
+        <!--Nerga -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="218136" y="22344" z="-3328" h="24575"/>
+        <npc id="200032"/>
+        <!--Rivian -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="210568" y="13384" z="-3728" h="0"/>
+        <npc id="200033"/>
+        <!--Native -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="-113544" y="245928" z="-3712" h="0"/>
+        <npc id="200049"/>
+        <!--Denerias -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="217912" y="22536" z="-3328" h="53988"/>
+        <npc id="200035"/>
+        <!--Theodore -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="217976" y="22584" z="-3328" h="52507"/>
+        <npc id="200036"/>
+        <!--Devon -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="218040" y="22632" z="-3328" h="53988"/>
+        <npc id="200037"/>
+        <!--Icarus -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="218120" y="22632" z="-3328" h="44315"/>
+        <npc id="200038"/>
+        <!--Eindburgh -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="218152" y="22600" z="-3328" h="40959"/>
+        <npc id="200039"/>
+        <!--Kekropus -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="218184" y="22520" z="-3328" h="34826"/>
+        <npc id="200040"/>
+        <!--Gallint -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="218168" y="22424" z="-3328" h="29412"/>
+        <npc id="200041"/>
+        <!--Moka -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="218312" y="22472" z="-3328" h="0"/>
+        <npc id="200042"/>
+        <!--Weathermaster -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="218296" y="22408" z="-3328" h="60699"/>
+        <npc id="200042"/>
+        <!--Weathermaster -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="217992" y="22728" z="-3328" h="37604"/>
+        <npc id="200043"/>
+        <!--Trap -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="217896" y="22696" z="-3328" h="36123"/>
+        <npc id="200043"/>
+        <!--Trap -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="217944" y="22712" z="-3328" h="37604"/>
+        <npc id="200043"/>
+        <!--Trap -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="218040" y="22456" z="-3328" h="40959"/>
+        <npc id="200044"/>
+        <!--Teleportation Cubic -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="209352" y="14296" z="-3754" h="0"/>
+        <npc id="200045"/>
+        <!--Traus -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="212936" y="13288" z="-3753" h="62980"/>
+        <npc id="200046"/>
+        <!--Creta -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="210680" y="11576" z="-3754" h="11547"/>
+        <npc id="200047"/>
+        <!--Dimensional Merchant -->
+    </spawn>
+	<spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="217912" y="22232" z="-3328" h="0"/>
+        <npc id="200048"/>
+        <!--Denerias -->
+    </spawn>
+</list>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "npc.dtd">
+<list>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="44632" y="51960" z="-2838" h="49151"/>
+        <npc id="200050"/>
+        <!--Templier -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="46104" y="51944" z="-2838" h="49151"/>
+        <npc id="200050"/>
+        <!--Templier -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="45432" y="51960" z="-2829" h="49151"/>
+        <npc id="200051"/>
+        <!--Templier -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="45432" y="52056" z="-2821" h="16383"/>
+        <npc id="200052"/>
+        <!--Templier -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="46888" y="51528" z="-3002" h="60699"/>
+        <npc id="200063"/>
+        <!--Gatekeeper -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="45944" y="41160" z="-3533" h="16383"/>
+        <npc id="200053"/>
+        <!--Templier -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="46360" y="41160" z="-3533" h="16383"/>
+        <npc id="200053"/>
+        <!--Templier -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="42952" y="51384" z="-3021" h="40959"/>
+        <npc id="200054"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="42808" y="51160" z="-3021" h="8191"/>
+        <npc id="200054"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="47768" y="51736" z="-3022" h="24575"/>
+        <npc id="200054"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="47560" y="51928" z="-3022" h="57343"/>
+        <npc id="200054"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="46872" y="51640" z="-3002" h="49151"/>
+        <npc id="200055"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="45512" y="46459" z="-3021" h="0"/>
+        <npc id="200056"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="45768" y="46488" z="-3021" h="32767"/>
+        <npc id="200056"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="45896" y="42120" z="-3499" h="0"/>
+        <npc id="200056"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="46168" y="42152" z="-3504" h="32767"/>
+        <npc id="200056"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="45912" y="52392" z="-2821" h="40958"/>
+        <npc id="200064"/>
+        <!--Elros -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="45000" y="52120" z="-2821" h="16383"/>
+        <npc id="200065"/>
+        <!--Lalaith -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="44712" y="52264" z="-2821" h="0"/>
+        <npc id="200066"/>
+        <!--Lindiel -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="45256" y="49048" z="-3085" h="53988"/>
+        <npc id="200073"/>
+        <!--Kilin -->
+    </spawn>	
+	<!--Armurerie -->
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="44712" y="47240" z="-3011" h="11547"/>
+        <npc id="200059"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="44648" y="47160" z="-3009" h="45796"/>
+        <npc id="200060"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="44664" y="46904" z="-3009" h="27931"/>
+        <npc id="30147"/>
+        <!--Unoren -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="44680" y="46952" z="-3009" h="27931"/>
+        <npc id="30148"/>
+        <!--Ariel -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="44200" y="47048" z="-3009" h="3355"/>
+        <npc id="30363"/>
+        <!--Aios -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="44408" y="47176" z="-3009" h="40959"/>
+        <npc id="30149"/>
+        <!--Creamees -->
+    </spawn>
+	<!-- Comptoir des semeurs -->
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="44056" y="49592" z="-3085" h="0"/>
+        <npc id="200067"/>
+        <!--Cirth -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="43960" y="49688" z="-3074" h="32767"/>
+        <npc id="200068"/>
+        <!--Cuthalion -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="43624" y="49688" z="-3074" h="60699"/>
+        <npc id="200069"/>
+        <!--Altaress -->
+    </spawn>
+	<!--Apothicaire -->
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="43048" y="50056" z="-3010" h="61567"/>
+        <npc id="200061"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="42984" y="50104" z="-3009" h="24575"/>
+        <npc id="200062"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="42744" y="50072" z="-3009" h="8191"/>
+        <npc id="30150"/>
+        <!--Herbiel -->
+    </spawn>
+	<!--Entrepot -->
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="47608" y="49784" z="-3021" h="32767"/>
+        <npc id="200057"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="47752" y="49768" z="-3010" h="0"/>
+        <npc id="200058"/>
+        <!--Sentinnelle -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="47880" y="50168" z="-3010" h="49151"/>
+        <npc id="30151"/>
+        <!--Chad -->
+    </spawn>
+    <spawn count="1" respawn="60" respawn_random="0" period_of_day="none">
+        <point x="48072" y="49576" z="-3010" h="24575"/>
+        <npc id="30152"/>
+        <!--Julia -->
+    </spawn>	
+</list>
