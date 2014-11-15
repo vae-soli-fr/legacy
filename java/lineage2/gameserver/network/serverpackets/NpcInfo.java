@@ -18,6 +18,7 @@ import lineage2.gameserver.Config;
 import lineage2.gameserver.model.Creature;
 import lineage2.gameserver.model.Summon;
 import lineage2.gameserver.model.base.TeamType;
+import lineage2.gameserver.model.instances.MonsterInstance;
 import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.model.pledge.Alliance;
 import lineage2.gameserver.model.pledge.Clan;
@@ -104,6 +105,12 @@ public class NpcInfo extends L2GameServerPacket
 			}
 			
 			_title = t;
+		}
+		
+		int level;
+		if (cha.isMonster() && ((level = ((MonsterInstance) cha).getChampion()) > 0))
+		{
+			_title = (level == 1 ? "Champion " : "Anomaly ") + _title;
 		}
 		
 		_HP = (int) cha.getCurrentHp();
