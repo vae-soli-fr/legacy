@@ -51,6 +51,7 @@ public class Say2C extends L2GameClientPacket
 	private static final Logger _log = LoggerFactory.getLogger(Say2C.class);
 	private static final Pattern EX_ITEM_LINK_PATTERN = Pattern.compile("[\b]\tType=[0-9]+[\\s]+\tID=([0-9]+)[\\s]+\tColor=[0-9]+[\\s]+\tUnderline=[0-9]+[\\s]+\tTitle=\u001B(.[^\u001B]*)[^\b]");
 	private static final Pattern SKIP_ITEM_LINK_PATTERN = Pattern.compile("[\b]\tType=[0-9]+(.[^\b]*)[\b]");
+	private static final Pattern THREE_LETTER_WORD_PATTERN = Pattern.compile("[A-ZÀ-ÿa-z]{3,}");
 	private String _text;
 	private ChatType _type;
 	private String _target;
@@ -341,6 +342,8 @@ public class Say2C extends L2GameClientPacket
 				if (activeChar.isCursedWeaponEquipped())
 				{
 					cs = new Say2(activeChar.getObjectId(), _type, activeChar.getTransformationName(), _text);
+				} else {
+					cs = new Say2(activeChar.getObjectId(), _type, activeChar.getName(), activeChar.getRpVolume().toString() + activeChar.getRpLanguage().toString() + _text);
 				}
 				
 				List<Player> list = null;
@@ -365,7 +368,19 @@ public class Say2C extends L2GameClientPacket
 				}
 				else
 				{
-					list = World.getAroundPlayers(activeChar);
+					switch(activeChar.getRpVolume())
+					{
+						case WHISPER:
+							list = World.getAroundPlayers(activeChar, 100, 100);
+							break;
+						case SHOUT:
+							list = World.getAroundPlayers(activeChar, 2900, 1000);
+							break;
+						default:
+						case DEFAULT:
+							list = World.getAroundPlayers(activeChar, 1250, 500);
+							break;
+					}
 				}
 				
 				if (list != null)
@@ -378,6 +393,17 @@ public class Say2C extends L2GameClientPacket
 						}
 						
 						player.sendPacket(cs);
+						
+						if (_text.startsWith("(") && _text.endsWith(")") || EX_ITEM_LINK_PATTERN.matcher(_text).find())
+						{
+							continue;
+						}
+							
+						long rolepex = 0;
+						Matcher matcher = THREE_LETTER_WORD_PATTERN.matcher(_text);
+						while (matcher.find()) rolepex++;
+						rolepex *= player.getLevel();
+						player.addExpAndSp(rolepex, Math.round(rolepex/10D), 0L, 0L, true, false, false);
 					}
 				}
 				
