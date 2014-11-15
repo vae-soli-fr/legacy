@@ -14188,7 +14188,7 @@ public final class Player extends Playable implements PlayerGroup
 		{
 			if (magic)
 			{
-				sendPacket(new ExMagicAttackInfo(this, target, 1));
+                sendPacket(new ExMagicAttackInfo(this, target, 1));
 				sendPacket(new SystemMessage(SystemMessage.MAGIC_CRITICAL_HIT).addName(this));
 			}
 			else
