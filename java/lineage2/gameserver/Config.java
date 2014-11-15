@@ -1024,7 +1024,7 @@ public class Config
 		GARBAGE_COLLECTOR_INTERVAL = serverSettings.getProperty("GarbageCollectorInterval", 30) * 60000;
 		HTM_CACHE_MODE = serverSettings.getProperty("HtmCacheMode", HtmCache.LAZY);
 		HTM_DEBUG_MODE = serverSettings.getProperty("DebugHtmlMessage", false);
-		SHOW_NPC_LVL = serverSettings.getProperty("ShowNpcLevel", false);
+		SHOW_NPC_LVL = serverSettings.getProperty("ShowNpcLevel", true);
 		ALLOW_PACKET_FAIL = serverSettings.getProperty("AllowPacketFail", false);
 		Random ppc = new Random();
 		int z = ppc.nextInt(6);
