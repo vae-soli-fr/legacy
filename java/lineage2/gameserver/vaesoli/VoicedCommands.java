@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 
 import lineage2.gameserver.database.DatabaseFactory;
 import lineage2.gameserver.handlers.IVoicedCommandHandler;
+import lineage2.gameserver.handlers.VoicedCommandHandler;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.model.Summon;
 import lineage2.gameserver.model.instances.NpcInstance;
@@ -17,8 +18,9 @@ import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
 import lineage2.gameserver.network.serverpackets.NpcSay;
 import lineage2.gameserver.network.serverpackets.Say2;
 import lineage2.gameserver.network.serverpackets.components.ChatType;
+import lineage2.gameserver.scripts.ScriptFile;
 
-public class VoicedCommands implements IVoicedCommandHandler
+public class VoicedCommands implements IVoicedCommandHandler, ScriptFile
 {
 	
 	private static final String[] _voicedCommands =
@@ -295,5 +297,33 @@ public class VoicedCommands implements IVoicedCommandHandler
 	public String[] getVoicedCommandList()
 	{
 		return _voicedCommands;
+	}
+	
+	/**
+	 * Method onLoad.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
+	 */
+	@Override
+	public void onLoad()
+	{
+		VoicedCommandHandler.getInstance().registerVoicedCommandHandler(this);
+	}
+	
+	/**
+	 * Method onReload.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
+	 */
+	@Override
+	public void onReload()
+	{
+	}
+	
+	/**
+	 * Method onShutdown.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
+	 */
+	@Override
+	public void onShutdown()
+	{
 	}
 }

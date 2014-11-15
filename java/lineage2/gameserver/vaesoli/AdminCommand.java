@@ -1,5 +1,6 @@
 package lineage2.gameserver.vaesoli;
 
+import lineage2.gameserver.handlers.AdminCommandHandler;
 import lineage2.gameserver.handlers.IAdminCommandHandler;
 import lineage2.gameserver.model.GameObject;
 import lineage2.gameserver.model.Player;
@@ -8,8 +9,9 @@ import lineage2.gameserver.network.serverpackets.NpcSay;
 import lineage2.gameserver.network.serverpackets.Say2;
 import lineage2.gameserver.network.serverpackets.SystemMessage;
 import lineage2.gameserver.network.serverpackets.components.ChatType;
+import lineage2.gameserver.scripts.ScriptFile;
 
-public class AdminCommand implements IAdminCommandHandler
+public class AdminCommand implements IAdminCommandHandler, ScriptFile
 {
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -66,5 +68,33 @@ public class AdminCommand implements IAdminCommandHandler
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
+	}
+	
+	/**
+	 * Method onLoad.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
+	 */
+	@Override
+	public void onLoad()
+	{
+		AdminCommandHandler.getInstance().registerAdminCommandHandler(this);
+	}
+	
+	/**
+	 * Method onReload.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
+	 */
+	@Override
+	public void onReload()
+	{
+	}
+	
+	/**
+	 * Method onShutdown.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
+	 */
+	@Override
+	public void onShutdown()
+	{
 	}
 }
