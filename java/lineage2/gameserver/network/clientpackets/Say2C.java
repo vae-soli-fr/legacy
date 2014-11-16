@@ -481,7 +481,7 @@ public class Say2C extends L2GameClientPacket
 				break;
 			
 			case HERO_VOICE:
-				boolean PremiumHeroChat = false;
+				/*boolean PremiumHeroChat = false;
 				
 				if (Config.PREMIUM_HEROCHAT && (activeChar.getNetConnection().getBonus() > 1))
 				{
@@ -496,13 +496,13 @@ public class Say2C extends L2GameClientPacket
 				if (activeChar.isHero() || activeChar.getPlayerAccess().CanAnnounce || PremiumHeroChat)
 				{
 					if (!activeChar.getPlayerAccess().CanAnnounce)
-					{
+					{*/
 						if (!activeChar.antiFlood.canHero(_text))
 						{
 							activeChar.sendMessage("Hero chat is allowed once per 10 seconds.");
 							return;
 						}
-					}
+					/*}*/
 					
 					for (Player player : GameObjectsStorage.getAllPlayersForIterate())
 					{
@@ -511,7 +511,7 @@ public class Say2C extends L2GameClientPacket
 							player.sendPacket(cs);
 						}
 					}
-				}
+				/*}*/
 				
 				break;
 			
