@@ -57,11 +57,18 @@
 	</target>
 	
 	<target name="commons-jar" depends="compile-commons">
+		<exec dir="${basedir}" executable="cmd" outputproperty="build.revision" failifexecutionfails="false">
+			<arg value="/c" />
+			<arg value="git log -1 --pretty=format:%h" />
+		</exec>
+
 		<jar destfile="${build}/lineage2-commons.jar">
 			<fileset dir="${build.classes}" />
 			<manifest>
 				<attribute name="Build-By" value="${user.name}" />
 				<attribute name="Build-Date" value="${build.tstamp}" />
+				<attribute name="Implementation-Build" value="${build.revision}" />
+				<attribute name="Implementation-Version" value="${build.version}" />
 			</manifest>
 		</jar>
 	</target>
@@ -75,6 +82,10 @@
 	</target>
 	
 	<target name="gameserver-jar" depends="compile-gameserver">
+		<exec dir="${basedir}" executable="cmd" outputproperty="build.revision" failifexecutionfails="false">
+			<arg value="/c" />
+			<arg value="git log -1 --pretty=format:%h" />
+		</exec>
 		<jar destfile="${build}/lineage2-gameserver.jar">
 			<fileset dir="${build.classes}" />
 			<manifest>
@@ -82,6 +93,8 @@
 				<attribute name="Class-Path" value="${jar.list} lineage2-commons.jar" />
 				<attribute name="Build-By" value="${user.name}" />
 				<attribute name="Build-Date" value="${build.tstamp}" />
+				<attribute name="Implementation-Build" value="${build.revision}" />
+				<attribute name="Implementation-Version" value="${build.version}" />
 			</manifest>
 		</jar>
 	</target>
@@ -121,6 +134,10 @@
 	</target>
 	
 	<target name="loginserver-jar" depends="compile-loginserver">
+		<exec dir="${basedir}" executable="cmd" outputproperty="build.revision" failifexecutionfails="false">
+			<arg value="/c" />
+			<arg value="git log -1 --pretty=format:%h" />
+		</exec>
 		<jar destfile="${build}/lineage2-loginserver.jar">
 			<fileset dir="${build.classes}" />
 			<manifest>
@@ -128,6 +145,8 @@
 				<attribute name="Class-Path" value="${jar.list} lineage2-commons.jar" />
 				<attribute name="Build-By" value="${user.name}" />
 				<attribute name="Build-Date" value="${build.tstamp}" />
+				<attribute name="Implementation-Build" value="${build.revision}" />
+				<attribute name="Implementation-Version" value="${build.version}" />
 			</manifest>
 		</jar>
 	</target>

@@ -16,6 +16,7 @@ import java.util.Calendar;
 
 import lineage2.gameserver.Announcements;
 import lineage2.gameserver.Config;
+import lineage2.gameserver.GameServer;
 import lineage2.gameserver.dao.MailDAO;
 import lineage2.gameserver.data.StringHolder;
 import lineage2.gameserver.data.xml.holder.ResidenceHolder;
@@ -100,6 +101,8 @@ import lineage2.gameserver.templates.item.ItemTemplate;
 import lineage2.gameserver.utils.GameStats;
 import lineage2.gameserver.utils.ItemFunctions;
 import lineage2.gameserver.utils.TradeHelper;
+import lineage2.gameserver.vaesoli.BgManager;
+import lineage2.gameserver.vaesoli.CommunityManager;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
@@ -215,6 +218,17 @@ public class EnterWorld extends L2GameClientPacket
 		
 		activeChar.sendPacket(SystemMsg.WELCOME_TO_THE_WORLD_OF_LINEAGE_II);
 		// activeChar.sendPacket(new ExBR_NewIConCashBtnWnd());
+		
+		activeChar.sendMessage("Le serveur utilise Mobius fondé par Mobius,");
+        activeChar.sendMessage("un fork de L2J fondé par L2Chef.");	
+        activeChar.sendMessage("©2004-2013 l2jserver  ©2013-2015 mobius");
+        
+        activeChar.sendMessage("===================================");
+        activeChar.sendMessage("Revision: ..................... " + GameServer.getInstance().getVersion().getRevisionNumber());
+        activeChar.sendMessage("Build date: .................. " + GameServer.getInstance().getVersion().getBuildDate());
+        activeChar.sendMessage("Compiler version: ...... " + GameServer.getInstance().getVersion().getBuildJdk());
+        activeChar.sendMessage("===================================");
+		
 		Announcements.getInstance().showAnnouncements(activeChar);
 		
 		if (first)
@@ -603,6 +617,11 @@ public class EnterWorld extends L2GameClientPacket
 				AwakingManager.getInstance().checkAwakenPlayerSkills(activeChar);
 			}
 		}
+		
+		// update community table
+		CommunityManager.getInstance().refreshCommunityBoard();
+		// check for validated background
+		BgManager.getInstance().check(activeChar);
 	}
 	
 	/**
