@@ -3096,6 +3096,7 @@ public class SystemMessage extends L2GameServerPacket
 	public static final int YOU_CANNOT_MOVE_WHILE_DEAD = 3392;
 	public static final int YOU_CANNOT_MOVE_DURING_COMBAT = 3393;
 	public static final int SUBCLASS_S1_HAS_BEEN_UPGRADED_TO_DUAL_CLASS_S2_CONGRATULATION = 3279;
+	public static final String CANT_USE_MANA_POTION_IN_PVP = "Can't use mana potion in pvp.";
 	
 	public SystemMessage(SystemMsg msg)
 	{

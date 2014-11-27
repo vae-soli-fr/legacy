@@ -287,9 +287,9 @@
 		<set name="type" value="POTION"/>
 		<set name="ex_type" value="POTION"/>
 		<set name="weight" value="0"/>
-		<skills>
-			<skill id="90001" level="1"/>
-		</skills>
+		<!--<skills>
+			<skill id="90003" level="1"/>
+		</skills>-->
 		<cond msgId="1508">
 			<not>
 				<player olympiad="true"/>
