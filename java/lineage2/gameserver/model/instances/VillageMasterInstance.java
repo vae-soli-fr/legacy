@@ -32,7 +32,6 @@ import lineage2.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import lineage2.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
 import lineage2.gameserver.network.serverpackets.PledgeStatusChanged;
 import lineage2.gameserver.network.serverpackets.SystemMessage;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.network.serverpackets.components.SystemMsg;
 import lineage2.gameserver.scripts.Functions;
 import lineage2.gameserver.tables.ClanTable;
@@ -74,17 +73,15 @@ public final class VillageMasterInstance extends NpcInstance
 		
 		if (command.startsWith("create_clan") && (command.length() > 12))
 		{
-			String val = command.substring(12);
-			createClan(player, val);
+			createClan(player, command.substring(12));
 		}
 		else if (command.startsWith("create_academy") && (command.length() > 15))
 		{
-			String sub = command.substring(15, command.length());
-			createSubPledge(player, sub, Clan.SUBUNIT_ACADEMY, 5, "");
+			createSubPledge(player, command.substring(15, command.length()), Clan.SUBUNIT_ACADEMY, 5, "");
 		}
 		else if (command.startsWith("create_royal") && (command.length() > 15))
 		{
-			String[] sub = command.substring(13, command.length()).split(" ", 2);
+			final String[] sub = command.substring(13, command.length()).split(" ", 2);
 			
 			if (sub.length == 2)
 			{
@@ -93,7 +90,7 @@ public final class VillageMasterInstance extends NpcInstance
 		}
 		else if (command.startsWith("create_knight") && (command.length() > 16))
 		{
-			String[] sub = command.substring(14, command.length()).split(" ", 2);
+			final String[] sub = command.substring(14, command.length()).split(" ", 2);
 			
 			if (sub.length == 2)
 			{
@@ -102,7 +99,7 @@ public final class VillageMasterInstance extends NpcInstance
 		}
 		else if (command.startsWith("assign_subpl_leader") && (command.length() > 22))
 		{
-			String[] sub = command.substring(20, command.length()).split(" ", 2);
+			final String[] sub = command.substring(20, command.length()).split(" ", 2);
 			
 			if (sub.length == 2)
 			{
@@ -111,14 +108,12 @@ public final class VillageMasterInstance extends NpcInstance
 		}
 		else if (command.startsWith("assign_new_clan_leader") && (command.length() > 23))
 		{
-			String val = command.substring(23);
-			setLeader(player, val);
+			setLeader(player, command.substring(23));
 		}
 		
 		if (command.startsWith("create_ally") && (command.length() > 12))
 		{
-			String val = command.substring(12);
-			createAlly(player, val);
+			createAlly(player, command.substring(12));
 		}
 		else if (command.startsWith("dissolve_ally"))
 		{
@@ -149,12 +144,12 @@ public final class VillageMasterInstance extends NpcInstance
 			
 			super.onBypassFeedback(player, command);
 		}
-		else if (command.equalsIgnoreCase("CertificationList"))
+		else if (command.equals("CertificationList"))
 		{
 			CertificationFunctions.showCertificationList(this, player, 65);
 		}/*
-		 * else if (command.equalsIgnoreCase("GetCertification65")) { CertificationFunctions.getCertification65(this, player); } else if (command.equalsIgnoreCase("GetCertification70")) { CertificationFunctions.getCertification70(this, player); } else if
-		 * (command.equalsIgnoreCase("GetCertification80")) { CertificationFunctions.getCertification80(this, player); }
+		 * else if (command.equals("GetCertification65")) { CertificationFunctions.getCertification65(this, player); } else if (command.equals("GetCertification70")) { CertificationFunctions.getCertification70(this, player); } else if (command.equals("GetCertification80")) {
+		 * CertificationFunctions.getCertification80(this, player); }
 		 */
 		else
 		{
@@ -223,7 +218,7 @@ public final class VillageMasterInstance extends NpcInstance
 			return;
 		}
 		
-		Clan clan = ClanTable.getInstance().createClan(player, clanName);
+		final Clan clan = ClanTable.getInstance().createClan(player, clanName);
 		
 		if (clan == null)
 		{
@@ -252,13 +247,13 @@ public final class VillageMasterInstance extends NpcInstance
 		
 		if (leader.getEvent(SiegeEvent.class) != null)
 		{
-			leader.sendMessage(new CustomMessage("scripts.services.Rename.SiegeNow", leader));
+			leader.sendMessage("Can't do that because siege in progress.");
 			return;
 		}
 		
-		Clan clan = leader.getClan();
-		SubUnit mainUnit = clan.getSubUnit(Clan.SUBUNIT_MAIN_CLAN);
-		UnitMember member = mainUnit.getUnitMember(newLeader);
+		final Clan clan = leader.getClan();
+		final SubUnit mainUnit = clan.getSubUnit(Clan.SUBUNIT_MAIN_CLAN);
+		final UnitMember member = mainUnit.getUnitMember(newLeader);
 		
 		if (member == null)
 		{
@@ -268,7 +263,7 @@ public final class VillageMasterInstance extends NpcInstance
 		
 		if (member.getLeaderOf() != Clan.SUBUNIT_NONE)
 		{
-			leader.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2VillageMasterInstance.CannotAssignUnitLeader", leader));
+			leader.sendMessage("Subunit leader cannot be assigned as new Clan Leader.");
 			return;
 		}
 		
@@ -284,7 +279,7 @@ public final class VillageMasterInstance extends NpcInstance
 	 */
 	public static void setLeader(Player player, Clan clan, SubUnit unit, UnitMember newLeader)
 	{
-		player.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2VillageMasterInstance.ClanLeaderWillBeChangedFromS1ToS2", player).addString(clan.getLeaderName()).addString(newLeader.getName()));
+		player.sendMessage("Clan leader will be changed from " + clan.getLeaderName() + " to " + newLeader.getName() + ". New clan leader will enter the duties after the closest maintenance period.");
 		unit.setLeader(newLeader, true);
 		clan.broadcastClanStatus(true, true, false);
 	}
@@ -300,7 +295,7 @@ public final class VillageMasterInstance extends NpcInstance
 	public void createSubPledge(Player player, String clanName, int pledgeType, int minClanLvl, String leaderName)
 	{
 		UnitMember subLeader = null;
-		Clan clan = player.getClan();
+		final Clan clan = player.getClan();
 		
 		if ((clan == null) || !player.isClanLeader())
 		{
@@ -314,7 +309,7 @@ public final class VillageMasterInstance extends NpcInstance
 			return;
 		}
 		
-		Collection<SubUnit> subPledge = clan.getAllSubUnits();
+		final Collection<SubUnit> subPledge = clan.getAllSubUnits();
 		
 		for (SubUnit element : subPledge)
 		{
@@ -337,7 +332,7 @@ public final class VillageMasterInstance extends NpcInstance
 			return;
 		}
 		
-		SubUnit unit = clan.getSubUnit(Clan.SUBUNIT_MAIN_CLAN);
+		final SubUnit unit = clan.getSubUnit(Clan.SUBUNIT_MAIN_CLAN);
 		
 		if (pledgeType != Clan.SUBUNIT_ACADEMY)
 		{
@@ -345,12 +340,12 @@ public final class VillageMasterInstance extends NpcInstance
 			
 			if (subLeader == null)
 			{
-				player.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2VillageMasterInstance.PlayerCantBeAssignedAsSubUnitLeader", player));
+				player.sendMessage("The selected player can't be assigned as sub-unit leader: he isn't a direct member of your clan.");
 				return;
 			}
 			else if (subLeader.getLeaderOf() != Clan.SUBUNIT_NONE)
 			{
-				player.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2VillageMasterInstance.ItCantBeSubUnitLeader", player));
+				player.sendMessage("You can't be a sub-unit leader.");
 				return;
 			}
 		}
@@ -407,11 +402,11 @@ public final class VillageMasterInstance extends NpcInstance
 	 */
 	public void assignSubPledgeLeader(Player player, String clanName, String leaderName)
 	{
-		Clan clan = player.getClan();
+		final Clan clan = player.getClan();
 		
 		if (clan == null)
 		{
-			player.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2VillageMasterInstance.ClanDoesntExist", player));
+			player.sendMessage("The clan doesn't exist.");
 			return;
 		}
 		
@@ -430,7 +425,7 @@ public final class VillageMasterInstance extends NpcInstance
 				continue;
 			}
 			
-			if (unit.getName().equalsIgnoreCase(clanName))
+			if (unit.getName().equals(clanName))
 			{
 				targetUnit = unit;
 			}
@@ -438,22 +433,22 @@ public final class VillageMasterInstance extends NpcInstance
 		
 		if (targetUnit == null)
 		{
-			player.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2VillageMasterInstance.SubUnitNotFound", player));
+			player.sendMessage("Sub-unit not found.");
 			return;
 		}
 		
-		SubUnit mainUnit = clan.getSubUnit(Clan.SUBUNIT_MAIN_CLAN);
-		UnitMember subLeader = mainUnit.getUnitMember(leaderName);
+		final SubUnit mainUnit = clan.getSubUnit(Clan.SUBUNIT_MAIN_CLAN);
+		final UnitMember subLeader = mainUnit.getUnitMember(leaderName);
 		
 		if (subLeader == null)
 		{
-			player.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2VillageMasterInstance.PlayerCantBeAssignedAsSubUnitLeader", player));
+			player.sendMessage("The selected player can't be assigned as sub-unit leader: he isn't a direct member of your clan.");
 			return;
 		}
 		
 		if (subLeader.getLeaderOf() != Clan.SUBUNIT_NONE)
 		{
-			player.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2VillageMasterInstance.ItCantBeSubUnitLeader", player));
+			player.sendMessage("You can't be a sub-unit leader.");
 			return;
 		}
 		
@@ -467,7 +462,7 @@ public final class VillageMasterInstance extends NpcInstance
 			subLeader.getPlayer().broadcastCharInfo();
 		}
 		
-		player.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2VillageMasterInstance.NewSubUnitLeaderHasBeenAssigned", player));
+		player.sendMessage("New sub-unit leader has been assigned.");
 	}
 	
 	/**
@@ -481,7 +476,7 @@ public final class VillageMasterInstance extends NpcInstance
 			return;
 		}
 		
-		Clan clan = player.getClan();
+		final Clan clan = player.getClan();
 		
 		if (!player.isClanLeader())
 		{
@@ -549,7 +544,6 @@ public final class VillageMasterInstance extends NpcInstance
 					player.reduceAdena(650000, true);
 					increaseClanLevel = true;
 				}
-				
 				break;
 			
 			case 1:
@@ -559,7 +553,6 @@ public final class VillageMasterInstance extends NpcInstance
 					player.reduceAdena(2500000, true);
 					increaseClanLevel = true;
 				}
-				
 				break;
 			
 			case 2:
@@ -568,7 +561,6 @@ public final class VillageMasterInstance extends NpcInstance
 					player.setSp(player.getSp() - 350000);
 					increaseClanLevel = true;
 				}
-				
 				break;
 			
 			case 3:
@@ -577,7 +569,6 @@ public final class VillageMasterInstance extends NpcInstance
 					player.setSp(player.getSp() - 1000000);
 					increaseClanLevel = true;
 				}
-				
 				break;
 			
 			case 4:
@@ -586,7 +577,6 @@ public final class VillageMasterInstance extends NpcInstance
 					player.setSp(player.getSp() - 2500000);
 					increaseClanLevel = true;
 				}
-				
 				break;
 			
 			case 5:
@@ -595,7 +585,6 @@ public final class VillageMasterInstance extends NpcInstance
 					clan.incReputation(-Config.ALT_CLAN_REP_COUNT_6LVL, false, "LvlUpClan");
 					increaseClanLevel = true;
 				}
-				
 				break;
 			
 			case 6:
@@ -604,7 +593,6 @@ public final class VillageMasterInstance extends NpcInstance
 					clan.incReputation(-Config.ALT_CLAN_REP_COUNT_7LVL, false, "LvlUpClan");
 					increaseClanLevel = true;
 				}
-				
 				break;
 			
 			case 7:
@@ -613,7 +601,6 @@ public final class VillageMasterInstance extends NpcInstance
 					clan.incReputation(-Config.ALT_CLAN_REP_COUNT_8LVL, false, "LvlUpClan");
 					increaseClanLevel = true;
 				}
-				
 				break;
 			
 			case 8:
@@ -625,7 +612,6 @@ public final class VillageMasterInstance extends NpcInstance
 						increaseClanLevel = true;
 					}
 				}
-				
 				break;
 			
 			case 9:
@@ -637,14 +623,13 @@ public final class VillageMasterInstance extends NpcInstance
 						increaseClanLevel = true;
 					}
 				}
-				
 				break;
 			
 			case 10:
 				if ((clan.getReputationScore() >= Config.ALT_CLAN_REP_COUNT_11LVL) && (clan.getAllSize() >= Config.ALT_CLAN_PLAYER_COUNT_11LVL) && (clan.getCastle() > 0))
 				{
-					Castle castle = ResidenceHolder.getInstance().getResidence(clan.getCastle());
-					Dominion dominion = castle.getDominion();
+					final Castle castle = ResidenceHolder.getInstance().getResidence(clan.getCastle());
+					final Dominion dominion = castle.getDominion();
 					// Radian Cloak of Light
 					if ((dominion.getLordObjectId() == player.getObjectId()) && player.getInventory().destroyItemByItemId(34996, 1))
 					{
@@ -652,7 +637,6 @@ public final class VillageMasterInstance extends NpcInstance
 						increaseClanLevel = true;
 					}
 				}
-				
 				break;
 		}
 		

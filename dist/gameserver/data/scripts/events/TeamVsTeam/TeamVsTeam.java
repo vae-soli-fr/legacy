@@ -59,7 +59,6 @@ import lineage2.gameserver.network.serverpackets.ExShowScreenMessage;
 import lineage2.gameserver.network.serverpackets.ExShowScreenMessage.ScreenMessageAlign;
 import lineage2.gameserver.network.serverpackets.Revive;
 import lineage2.gameserver.network.serverpackets.components.ChatType;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.scripts.Functions;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.tables.SkillTable;
@@ -134,92 +133,6 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 	private static int redPoints = 0;
 	private static TIntObjectHashMap<MutableInt> score = new TIntObjectHashMap<>();
 	
-	@Override
-	public void onLoad()
-	{
-		CharListenerList.addGlobal(this);
-		
-		_zones.put("[colosseum_battle]", ReflectionUtils.getZone("[colosseum_battle]").getTemplate());
-		_zones.put("[cleft_tvt]", ReflectionUtils.getZone("[cleft_tvt]").getTemplate());
-		_zones.put("[cleft_tvt]", ReflectionUtils.getZone("[cleft_tvt]").getTemplate());
-		
-		for (final int doorId : doors)
-		{
-			_doors.put(doorId, ReflectionUtils.getDoor(doorId).getTemplate());
-		}
-		
-		int geoIndex = GeoEngine.NextGeoIndex(24, 19, reflection.getId());
-		reflection.setGeoIndex(geoIndex);
-		reflection.init(_doors, _zones);
-		
-		_zone = reflection.getZone("[cleft_tvt]");
-		_zone1 = reflection.getZone("[cleft_tvt]");
-		_active = ServerVariables.getString("TvT", "off").equalsIgnoreCase("on");
-		if (isActive())
-		{
-			scheduleEventStart();
-		}
-		
-		_zone.addListener(_zoneListener);
-		_zone1.addListener(_zoneListener);
-		
-		int i = 0;
-		
-		if (Config.EVENT_TvTBuffPlayers && (Config.EVENT_TvTMageBuffs.length != 0))
-		{
-			for (String skill : Config.EVENT_TvTMageBuffs)
-			{
-				String[] splitSkill = skill.split(",");
-				mage_buffs[i][0] = Integer.parseInt(splitSkill[0]);
-				mage_buffs[i][1] = Integer.parseInt(splitSkill[1]);
-				i++;
-			}
-		}
-		
-		i = 0;
-		
-		if (Config.EVENT_TvTBuffPlayers && (Config.EVENT_TvTMageBuffs.length != 0))
-		{
-			for (String skill : Config.EVENT_TvTFighterBuffs)
-			{
-				String[] splitSkill = skill.split(",");
-				fighter_buffs[i][0] = Integer.parseInt(splitSkill[0]);
-				fighter_buffs[i][1] = Integer.parseInt(splitSkill[1]);
-				i++;
-			}
-		}
-		
-		i = 0;
-		if (Config.EVENT_TvTRewards.length != 0)
-		{
-			for (String reward : Config.EVENT_TvTRewards)
-			{
-				String[] splitReward = reward.split(",");
-				rewards[i][0] = Integer.parseInt(splitReward[0]);
-				rewards[i][1] = Integer.parseInt(splitReward[1]);
-				i++;
-			}
-		}
-		
-		_log.info("Loaded Event: TvT");
-	}
-	
-	@Override
-	public void onReload()
-	{
-		if (_startTask != null)
-		{
-			_startTask.cancel(false);
-			_startTask = null;
-		}
-	}
-	
-	@Override
-	public void onShutdown()
-	{
-		onReload();
-	}
-	
 	private static long getStarterTime()
 	{
 		return _startedTime;
@@ -247,7 +160,7 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 			
 			ServerVariables.set("TvT", "on");
 			_log.info("Event 'TvT' activated.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.TvT.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("Event 'TvT' activated.");
 		}
 		else
 		{
@@ -276,7 +189,7 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 			}
 			ServerVariables.unset("TvT");
 			_log.info("Event 'TvT' deactivated.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.TvT.AnnounceEventStoped", null);
+			Announcements.getInstance().announceToAll("Event 'TvT' deactivated.");
 		}
 		else
 		{
@@ -367,7 +280,7 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		Player player = getSelf();
 		if (var.length != 2)
 		{
-			show(new CustomMessage("common.Error", player), player);
+			show("Error.", player);
 			return;
 		}
 		
@@ -380,7 +293,7 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		}
 		catch (Exception e)
 		{
-			show(new CustomMessage("common.Error", player), player);
+			show("Error.", player);
 			return;
 		}
 		
@@ -400,7 +313,7 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		
 		if (_endTask != null)
 		{
-			show(new CustomMessage("common.TryLater", player), player);
+			show("Try later.", player);
 			return;
 		}
 		
@@ -415,21 +328,15 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		
 		playerRestoreCoord = new LinkedHashMap<>();
 		
-		String[] param =
-		{
-			String.valueOf(_time_to_start),
-			String.valueOf(_minLevel),
-			String.valueOf(_maxLevel)
-		};
-		sayToAll("scripts.events.TvT.AnnouncePreStart", param);
+		sayToAll("TvT: Start in " + String.valueOf(_time_to_start) + " min. for levels " + String.valueOf(_minLevel) + "-" + String.valueOf(_maxLevel) + ". Information in the community board (alt+b).");
 		
 		executeTask("events.TeamVsTeam.TeamVsTeam", "question", new Object[0], 10000);
 		executeTask("events.TeamVsTeam.TeamVsTeam", "announce", new Object[0], 60000);
 	}
 	
-	public static void sayToAll(String address, String[] replacements)
+	public static void sayToAll(String address)
 	{
-		Announcements.getInstance().announceByCustomMessage(address, replacements, ChatType.CRITICAL_ANNOUNCE);
+		Announcements.getInstance().announceToAll(address, ChatType.CRITICAL_ANNOUNCE);
 	}
 	
 	public static void question()
@@ -438,7 +345,7 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		{
 			if ((player != null) && !player.isDead() && (player.getLevel() >= _minLevel) && (player.getLevel() <= _maxLevel) && player.getReflection().isDefault() && !player.isInOlympiadMode() && !player.isInObserverMode())
 			{
-				player.scriptRequest(new CustomMessage("scripts.events.TvT.AskPlayer", player).toString(), "events.TeamVsTeam.TeamVsTeam:addPlayer", new Object[0]);
+				player.scriptRequest("Do you want to participate in the 'TvT' event?", "events.TeamVsTeam.TeamVsTeam:addPlayer", new Object[0]);
 			}
 		}
 	}
@@ -448,20 +355,14 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		if (_time_to_start > 1)
 		{
 			_time_to_start--;
-			String[] param =
-			{
-				String.valueOf(_time_to_start),
-				String.valueOf(_minLevel),
-				String.valueOf(_maxLevel)
-			};
-			sayToAll("scripts.events.TvT.AnnouncePreStart", param);
+			sayToAll("TvT: Start in " + String.valueOf(_time_to_start) + " min. for levels " + String.valueOf(_minLevel) + "-" + String.valueOf(_maxLevel) + ". Information in the community board (alt+b).");
 			executeTask("events.TeamVsTeam.TeamVsTeam", "announce", new Object[0], 60000);
 		}
 		else
 		{
 			if (players_list1.isEmpty() || players_list2.isEmpty() || (players_list1.size() < Config.EVENT_TvTMinPlayerInTeam) || (players_list2.size() < Config.EVENT_TvTMinPlayerInTeam))
 			{
-				sayToAll("scripts.events.TvT.AnnounceEventCancelled", null);
+				sayToAll("TvT: Event cancelled, not enough players.");
 				_isRegistrationActive = false;
 				_status = 0;
 				executeTask("events.TeamVsTeam.TeamVsTeam", "autoContinue", new Object[0], 10000);
@@ -470,7 +371,7 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 			}
 			_status = 1;
 			_isRegistrationActive = false;
-			sayToAll("scripts.events.TvT.AnnounceEventStarting", null);
+			sayToAll("TvT: Registration ended, teleporting players...");
 			executeTask("events.TeamVsTeam.TeamVsTeam", "prepare", new Object[0], 5000);
 		}
 	}
@@ -487,17 +388,17 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		
 		if ((size1 == Config.EVENT_TvTMaxPlayerInTeam) && (size2 == Config.EVENT_TvTMaxPlayerInTeam))
 		{
-			show(new CustomMessage("scripts.events.TvT.CancelledCount", player), player);
+			show("TvT event cancelled, not enough players.", player);
 			_isRegistrationActive = false;
 			return;
 		}
 		
 		if (!Config.EVENT_TvTAllowMultiReg)
 		{
-			if ("IP".equalsIgnoreCase(Config.EVENT_TvTCheckWindowMethod))
+			if ("IP".equals(Config.EVENT_TvTCheckWindowMethod))
 			{
 				boxes.put(player.getStoredId(), player.getIP());
-				// if("HWid".equalsIgnoreCase(Config.EVENT_TvTCheckWindowMethod))
+				// if("HWid".equals(Config.EVENT_TvTCheckWindowMethod))
 				// boxes.put(player.getStoredId(), player.getNetConnection().getHWID());
 			}
 		}
@@ -519,13 +420,13 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		{
 			players_list1.add(player.getStoredId());
 			live_list1.add(player.getStoredId());
-			show(new CustomMessage("scripts.events.TvT.Registered", player), player);
+			show("You have been registered in the TvT event. Please, do not register in other events and avoid duels until countdown end.", player);
 		}
 		else if (team == 2)
 		{
 			players_list2.add(player.getStoredId());
 			live_list2.add(player.getStoredId());
-			show(new CustomMessage("scripts.events.TvT.Registered", player), player);
+			show("You have been registered in the TvT event. Please, do not register in other events and avoid duels until countdown end.", player);
 		}
 		else
 		{
@@ -539,14 +440,14 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		
 		if (first && (!_isRegistrationActive || player.isDead()))
 		{
-			show(new CustomMessage("scripts.events.Late", player), player);
+			show("Event is already running, registration closed.", player);
 			return false;
 		}
 		
 		if (first && (players_list1.contains(player.getStoredId()) || players_list2.contains(player.getStoredId())))
 		{
 			player.setRegisteredInEvent(false);
-			show(new CustomMessage("scripts.events.TvT.Cancelled", player), player);
+			show("Registration cancelled.", player);
 			if (players_list1.contains(player.getStoredId()))
 			{
 				players_list1.remove(player.getStoredId());
@@ -572,49 +473,49 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		
 		if ((player.getLevel() < _minLevel) || (player.getLevel() > _maxLevel))
 		{
-			show(new CustomMessage("scripts.events.TvT.CancelledLevel", player), player);
+			show("Registration cancelled. Inconsistent level.", player);
 			return false;
 		}
 		
 		if (player.isMounted())
 		{
-			show(new CustomMessage("scripts.events.TvT.Cancelled", player), player);
+			show("Registration cancelled.", player);
 			return false;
 		}
 		
 		if (player.isCursedWeaponEquipped())
 		{
-			show(new CustomMessage("scripts.events.CtF.Cancelled", player), player);
+			show("Registration cancelled.", player);
 			return false;
 		}
 		
 		if (player.isInDuel())
 		{
-			show(new CustomMessage("scripts.events.TvT.CancelledDuel", player), player);
+			show("Registration cancelled. You can't participate while in duel state.", player);
 			return false;
 		}
 		
 		if (player.getTeam() != TeamType.NONE)
 		{
-			show(new CustomMessage("scripts.events.TvT.CancelledOtherEvent", player), player);
+			show("Registration cancelled. You are already participating other event.", player);
 			return false;
 		}
 		
 		if ((player.getOlympiadGame() != null) || (first && Olympiad.isRegistered(player)))
 		{
-			show(new CustomMessage("scripts.events.TvT.CancelledOlympiad", player), player);
+			show("Registration cancelled. You are registered in the olympiad.", player);
 			return false;
 		}
 		
 		if (player.isInObserverMode())
 		{
-			show(new CustomMessage("scripts.event.TvT.CancelledObserver", player), player);
+			show("Registration cancelled. You are in observer mode.", player);
 			return false;
 		}
 		
 		if (player.isTeleporting())
 		{
-			show(new CustomMessage("scripts.events.TvT.CancelledTeleport", player), player);
+			show("Registration cancelled. You are teleporting.", player);
 			return false;
 		}
 		return true;
@@ -640,7 +541,7 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		executeTask("events.TeamVsTeam.TeamVsTeam", "buffPlayers", new Object[0], 5000);
 		executeTask("events.TeamVsTeam.TeamVsTeam", "go", new Object[0], 60000);
 		
-		sayToAll("scripts.events.TvT.AnnounceFinalCountdown", null);
+		sayToAll("TvT: 1 minute to start.");
 	}
 	
 	public static void go()
@@ -648,7 +549,7 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		_status = 2;
 		upParalyzePlayers();
 		checkLive();
-		sayToAll("scripts.events.TvT.AnnounceFight", null);
+		sayToAll("TvT: >>> FIGHT!!! <<<");
 		for (Zone z : reflection.getZones())
 		{
 			z.setType(ZoneType.Battle);
@@ -729,21 +630,21 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 		
 		if (bluePoints > redPoints)
 		{
-			sayToAll("scripts.events.TvT.AnnounceFinishedBlueWins", null);
+			sayToAll("TvT: Red wins.");
 			giveItemsToWinner(false, true, 1);
 		}
 		else if (bluePoints < redPoints)
 		{
-			sayToAll("scripts.events.TvT.AnnounceFinishedRedWins", null);
+			sayToAll("TvT: Blue wins.");
 			giveItemsToWinner(true, false, 1);
 		}
 		else if (bluePoints == redPoints)
 		{
-			sayToAll("scripts.events.TvT.AnnounceFinishedDraw", null);
+			sayToAll("TvT: Draw.");
 			giveItemsToWinner(true, true, 0.5);
 		}
 		
-		sayToAll("scripts.events.TvT.AnnounceEnd", null);
+		sayToAll("TvT: Event ended. 30 sec countdown before teleporting players back.");
 		executeTask("events.TeamVsTeam.TeamVsTeam", "end", new Object[0], 30000);
 		_isRegistrationActive = false;
 		if (_endTask != null)
@@ -1458,15 +1359,15 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 	{
 		if (!Config.EVENT_TvTAllowMultiReg)
 		{
-			if ("IP".equalsIgnoreCase(Config.EVENT_TvTCheckWindowMethod))
+			if ("IP".equals(Config.EVENT_TvTCheckWindowMethod))
 			{
 				if (boxes.containsValue(player.getIP()))
 				{
-					show(new CustomMessage("scripts.events.TvT.CancelledBox", player), player);
+					show("You cannot register your second windows in this event.", player);
 					return false;
 				}
 			}
-			// else if ("HWid".equalsIgnoreCase(Config.EVENT_TvTCheckWindowMethod))
+			// else if ("HWid".equals(Config.EVENT_TvTCheckWindowMethod))
 			// {
 			// if (boxes.containsValue(player.getNetConnection().getHWID()))
 			// {
@@ -1540,5 +1441,91 @@ public class TeamVsTeam extends Functions implements ScriptFile, OnDeathListener
 			return true;
 		}
 		return false;
+	}
+	
+	@Override
+	public void onLoad()
+	{
+		CharListenerList.addGlobal(this);
+		
+		_zones.put("[colosseum_battle]", ReflectionUtils.getZone("[colosseum_battle]").getTemplate());
+		_zones.put("[cleft_tvt]", ReflectionUtils.getZone("[cleft_tvt]").getTemplate());
+		_zones.put("[cleft_tvt]", ReflectionUtils.getZone("[cleft_tvt]").getTemplate());
+		
+		for (final int doorId : doors)
+		{
+			_doors.put(doorId, ReflectionUtils.getDoor(doorId).getTemplate());
+		}
+		
+		int geoIndex = GeoEngine.NextGeoIndex(24, 19, reflection.getId());
+		reflection.setGeoIndex(geoIndex);
+		reflection.init(_doors, _zones);
+		
+		_zone = reflection.getZone("[cleft_tvt]");
+		_zone1 = reflection.getZone("[cleft_tvt]");
+		_active = ServerVariables.getString("TvT", "off").equals("on");
+		if (isActive())
+		{
+			scheduleEventStart();
+		}
+		
+		_zone.addListener(_zoneListener);
+		_zone1.addListener(_zoneListener);
+		
+		int i = 0;
+		
+		if (Config.EVENT_TvTBuffPlayers && (Config.EVENT_TvTMageBuffs.length != 0))
+		{
+			for (String skill : Config.EVENT_TvTMageBuffs)
+			{
+				String[] splitSkill = skill.split(",");
+				mage_buffs[i][0] = Integer.parseInt(splitSkill[0]);
+				mage_buffs[i][1] = Integer.parseInt(splitSkill[1]);
+				i++;
+			}
+		}
+		
+		i = 0;
+		
+		if (Config.EVENT_TvTBuffPlayers && (Config.EVENT_TvTMageBuffs.length != 0))
+		{
+			for (String skill : Config.EVENT_TvTFighterBuffs)
+			{
+				String[] splitSkill = skill.split(",");
+				fighter_buffs[i][0] = Integer.parseInt(splitSkill[0]);
+				fighter_buffs[i][1] = Integer.parseInt(splitSkill[1]);
+				i++;
+			}
+		}
+		
+		i = 0;
+		if (Config.EVENT_TvTRewards.length != 0)
+		{
+			for (String reward : Config.EVENT_TvTRewards)
+			{
+				String[] splitReward = reward.split(",");
+				rewards[i][0] = Integer.parseInt(splitReward[0]);
+				rewards[i][1] = Integer.parseInt(splitReward[1]);
+				i++;
+			}
+		}
+		
+		_log.info("Loaded Event: TvT");
+	}
+	
+	@Override
+	public void onReload()
+	{
+		if (_startTask != null)
+		{
+			_startTask.cancel(false);
+			_startTask = null;
+		}
+	}
+	
+	@Override
+	public void onShutdown()
+	{
+		onReload();
 	}
 }

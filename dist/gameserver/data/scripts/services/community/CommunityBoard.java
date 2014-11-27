@@ -24,7 +24,6 @@ import lineage2.gameserver.handlers.ICommunityBoardHandler;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.network.serverpackets.ExBuySellList;
 import lineage2.gameserver.network.serverpackets.ShowBoard;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.scripts.Scripts;
 import lineage2.gameserver.utils.BbsUtil;
@@ -105,7 +104,7 @@ public final class CommunityBoard implements ScriptFile, ICommunityBoardHandler
 	{
 		if (!Config.ALLOW_COMMUNITYBOARD_IN_COMBAT && player.isInCombat())
 		{
-			player.sendMessage(new CustomMessage("scripts.services.community.CommunityBoard.NotUse", player));
+			player.sendMessage("It is forbidden to use during battle!");
 			return;
 		}
 		
@@ -163,7 +162,7 @@ public final class CommunityBoard implements ScriptFile, ICommunityBoardHandler
 			}
 			
 			int listId = Integer.parseInt(mBypass[1]);
-			MultiSellHolder.getInstance().SeparateAndSend(listId, player, 0);
+			MultiSellHolder.getInstance().SeparateAndSend(listId, player, 0, -1);
 			return;
 		}
 		else if (bypass.startsWith("_bbssell"))

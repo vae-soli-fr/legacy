@@ -47,28 +47,6 @@ public final class SummerMeleons extends Functions implements ScriptFile, OnDeat
 	private static final File multiSellFile = new File(Config.DATAPACK_ROOT, "data/xml/other/event/SummerMeleons/3790004.xml");
 	
 	/**
-	 * Method onLoad.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
-	 */
-	@Override
-	public void onLoad()
-	{
-		CharListenerList.addGlobal(this);
-		
-		if (isActive())
-		{
-			_active = true;
-			loadMultiSell();
-			spawnEventManagers();
-			_log.info("Loaded Event: Summer Meleons [state: activated]");
-		}
-		else
-		{
-			_log.info("Loaded Event: Summer Meleons [state: deactivated]");
-		}
-	}
-	
-	/**
 	 * Method isActive.
 	 * @return boolean
 	 */
@@ -94,7 +72,7 @@ public final class SummerMeleons extends Functions implements ScriptFile, OnDeat
 			loadMultiSell();
 			spawnEventManagers();
 			System.out.println("Event 'Summer Meleons' started.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.SummerMeleons.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The event 'Summer Meleons' started.");
 		}
 		else
 		{
@@ -121,7 +99,7 @@ public final class SummerMeleons extends Functions implements ScriptFile, OnDeat
 		{
 			unSpawnEventManagers();
 			System.out.println("Event 'Summer Meleons' stopped.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.SummerMeleons.AnnounceEventStoped", null);
+			Announcements.getInstance().announceToAll("The event 'Summer Meleons' stopped.");
 		}
 		else
 		{
@@ -238,32 +216,6 @@ public final class SummerMeleons extends Functions implements ScriptFile, OnDeat
 	}
 	
 	/**
-	 * Method onReload.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
-	 */
-	@Override
-	public void onReload()
-	{
-		unSpawnEventManagers();
-		
-		if (MultiSellLoaded)
-		{
-			MultiSellHolder.getInstance().remove(multiSellFile);
-			MultiSellLoaded = false;
-		}
-	}
-	
-	/**
-	 * Method onShutdown.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
-	 */
-	@Override
-	public void onShutdown()
-	{
-		// empty method
-	}
-	
-	/**
 	 * Method onDeath.
 	 * @param cha Creature
 	 * @param killer Creature
@@ -288,7 +240,55 @@ public final class SummerMeleons extends Functions implements ScriptFile, OnDeat
 	{
 		if (_active)
 		{
-			Announcements.getInstance().announceToPlayerByCustomMessage(player, "scripts.events.SummerMeleons.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The event 'Summer Meleons' started.");
 		}
+	}
+	
+	/**
+	 * Method onLoad.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
+	 */
+	@Override
+	public void onLoad()
+	{
+		CharListenerList.addGlobal(this);
+		
+		if (isActive())
+		{
+			_active = true;
+			loadMultiSell();
+			spawnEventManagers();
+			_log.info("Loaded Event: Summer Meleons [state: activated]");
+		}
+		else
+		{
+			_log.info("Loaded Event: Summer Meleons [state: deactivated]");
+		}
+	}
+	
+	/**
+	 * Method onReload.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
+	 */
+	@Override
+	public void onReload()
+	{
+		unSpawnEventManagers();
+		
+		if (MultiSellLoaded)
+		{
+			MultiSellHolder.getInstance().remove(multiSellFile);
+			MultiSellLoaded = false;
+		}
+	}
+	
+	/**
+	 * Method onShutdown.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
+	 */
+	@Override
+	public void onShutdown()
+	{
+		// empty method
 	}
 }

@@ -22,6 +22,7 @@ import lineage2.commons.collections.MultiValueSet;
 import lineage2.commons.dao.JdbcEntityState;
 import lineage2.commons.lang.reference.HardReference;
 import lineage2.commons.util.Rnd;
+import lineage2.gameserver.Config;
 import lineage2.gameserver.dao.SiegeClanDAO;
 import lineage2.gameserver.data.xml.holder.ResidenceHolder;
 import lineage2.gameserver.instancemanager.ReflectionManager;
@@ -260,7 +261,7 @@ public abstract class SiegeEvent<R extends Residence, S extends SiegeClanObject>
 		List<Player> players = new ArrayList<>();
 		Clan ownerClan = getResidence().getOwner();
 		
-		if (t.equalsIgnoreCase(OWNER))
+		if (t.equals(OWNER))
 		{
 			if (ownerClan != null)
 			{
@@ -273,7 +274,7 @@ public abstract class SiegeEvent<R extends Residence, S extends SiegeClanObject>
 				}
 			}
 		}
-		else if (t.equalsIgnoreCase(ATTACKERS))
+		else if (t.equals(ATTACKERS))
 		{
 			for (Player player : getPlayersInZone())
 			{
@@ -285,7 +286,7 @@ public abstract class SiegeEvent<R extends Residence, S extends SiegeClanObject>
 				}
 			}
 		}
-		else if (t.equalsIgnoreCase(DEFENDERS))
+		else if (t.equals(DEFENDERS))
 		{
 			for (Player player : getPlayersInZone())
 			{
@@ -302,7 +303,7 @@ public abstract class SiegeEvent<R extends Residence, S extends SiegeClanObject>
 				}
 			}
 		}
-		else if (t.equalsIgnoreCase(SPECTATORS))
+		else if (t.equals(SPECTATORS))
 		{
 			for (Player player : getPlayersInZone())
 			{
@@ -326,7 +327,7 @@ public abstract class SiegeEvent<R extends Residence, S extends SiegeClanObject>
 		{
 			Location loc = null;
 			
-			if (t.equalsIgnoreCase(OWNER) || t.equalsIgnoreCase(DEFENDERS))
+			if (t.equals(OWNER) || t.equals(DEFENDERS))
 			{
 				loc = getResidence().getOwnerRestartPoint();
 			}
@@ -566,20 +567,23 @@ public abstract class SiegeEvent<R extends Residence, S extends SiegeClanObject>
 	@Override
 	protected void printInfo()
 	{
-		final long startSiegeMillis = startTimeMillis();
-		
-		/*
-		 * if (startSiegeMillis == 0) { info(getName() + " time - undefined"); } else { info(getName() + " time - " + TimeUtils.toSimpleFormat(startSiegeMillis)); }
-		 */
-		
-		info(getName());
-		if (startSiegeMillis == 0)
+		if (Config.DEBUG_EVENT_SCHEDULES || Config.DEBUG)
 		{
-			info("Time: Undefined");
-		}
-		else
-		{
-			info("Time: " + TimeUtils.toSimpleFormat(startSiegeMillis));
+			final long startSiegeMillis = startTimeMillis();
+			
+			/*
+			 * if (startSiegeMillis == 0) { info(getName() + " time - undefined"); } else { info(getName() + " time - " + TimeUtils.toSimpleFormat(startSiegeMillis)); }
+			 */
+			
+			info(getName());
+			if (startSiegeMillis == 0)
+			{
+				info("Time: Undefined");
+			}
+			else
+			{
+				info("Time: " + TimeUtils.toSimpleFormat(startSiegeMillis));
+			}
 		}
 	}
 	
@@ -667,7 +671,6 @@ public abstract class SiegeEvent<R extends Residence, S extends SiegeClanObject>
 				{
 					player.sendPacket(SystemMsg.IF_A_BASE_CAMP_DOES_NOT_EXIST_RESURRECTION_IS_NOT_POSSIBLE);
 				}
-				
 				break;
 			
 			default:
@@ -821,7 +824,7 @@ public abstract class SiegeEvent<R extends Residence, S extends SiegeClanObject>
 	@Override
 	public void action(String name, boolean start)
 	{
-		if (name.equalsIgnoreCase(REGISTRATION))
+		if (name.equals(REGISTRATION))
 		{
 			setRegistrationOver(!start);
 		}

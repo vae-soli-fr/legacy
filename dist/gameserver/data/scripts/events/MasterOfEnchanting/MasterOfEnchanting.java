@@ -292,7 +292,7 @@ public final class MasterOfEnchanting extends Functions implements ScriptFile, O
 		{
 			spawnEventManagers();
 			System.out.println("Event: Master of Enchanting started.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.MasOfEnch.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The event 'Master of Enchanting' started. Please speak with Master Yogi, which you can find in the town.");
 		}
 		else
 		{
@@ -319,7 +319,7 @@ public final class MasterOfEnchanting extends Functions implements ScriptFile, O
 		{
 			unSpawnEventManagers();
 			System.out.println("Event: Master of Enchanting stopped.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.MasOfEnch.AnnounceEventStoped", null);
+			Announcements.getInstance().announceToAll("The event 'Master of Enchanting' stopped.");
 		}
 		else
 		{
@@ -328,6 +328,20 @@ public final class MasterOfEnchanting extends Functions implements ScriptFile, O
 		
 		_active = false;
 		show("html/admin/events.htm", player);
+	}
+	
+	/**
+	 * Method onPlayerEnter.
+	 * @param player Player
+	 * @see lineage2.gameserver.listener.actor.player.OnPlayerEnterListener#onPlayerEnter(Player)
+	 */
+	@Override
+	public void onPlayerEnter(Player player)
+	{
+		if (_active)
+		{
+			Announcements.getInstance().announceToAll("The event 'Master of Enchanting' started. Please speak with Master Yogi, which you can find in the town.");
+		}
 	}
 	
 	/**
@@ -369,19 +383,5 @@ public final class MasterOfEnchanting extends Functions implements ScriptFile, O
 	public void onShutdown()
 	{
 		unSpawnEventManagers();
-	}
-	
-	/**
-	 * Method onPlayerEnter.
-	 * @param player Player
-	 * @see lineage2.gameserver.listener.actor.player.OnPlayerEnterListener#onPlayerEnter(Player)
-	 */
-	@Override
-	public void onPlayerEnter(Player player)
-	{
-		if (_active)
-		{
-			Announcements.getInstance().announceToPlayerByCustomMessage(player, "scripts.events.MasOfEnch.AnnounceEventStarted", null);
-		}
 	}
 }

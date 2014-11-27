@@ -62,27 +62,6 @@ public final class TrickOfTransmutation extends Functions implements ScriptFile,
 	private static final int MagicReagentsMax = 30;
 	
 	/**
-	 * Method onLoad.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
-	 */
-	@Override
-	public void onLoad()
-	{
-		CharListenerList.addGlobal(this);
-		
-		if (isActive())
-		{
-			_active = true;
-			spawnEventManagers();
-			_log.info("Loaded Event: Trick of Transmutation [state: activated]");
-		}
-		else
-		{
-			_log.info("Loaded Event: Trick of Transmutation [state: deactivated]");
-		}
-	}
-	
-	/**
 	 * Method isActive.
 	 * @return boolean
 	 */
@@ -107,7 +86,7 @@ public final class TrickOfTransmutation extends Functions implements ScriptFile,
 		{
 			spawnEventManagers();
 			System.out.println("Event 'Trick of Transmutation' started.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.TrickOfTrans.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("Event 'Trick Of Transmutation' started.");
 		}
 		else
 		{
@@ -134,7 +113,7 @@ public final class TrickOfTransmutation extends Functions implements ScriptFile,
 		{
 			unSpawnEventManagers();
 			System.out.println("Event 'Trick of Transmutation' stopped.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.TrickOfTrans.AnnounceEventStoped", null);
+			Announcements.getInstance().announceToAll("Event 'Trick Of Transmutation' stopped.");
 		}
 		else
 		{
@@ -155,28 +134,8 @@ public final class TrickOfTransmutation extends Functions implements ScriptFile,
 	{
 		if (_active)
 		{
-			Announcements.getInstance().announceToPlayerByCustomMessage(player, "scripts.events.TrickOfTrans.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("Event 'Trick Of Transmutation' started.");
 		}
-	}
-	
-	/**
-	 * Method onReload.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
-	 */
-	@Override
-	public void onReload()
-	{
-		unSpawnEventManagers();
-	}
-	
-	/**
-	 * Method onShutdown.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
-	 */
-	@Override
-	public void onShutdown()
-	{
-		unSpawnEventManagers();
 	}
 	
 	/**
@@ -467,5 +426,46 @@ public final class TrickOfTransmutation extends Functions implements ScriptFile,
 		{
 			show("scripts/events/TrickOfTrans/TrickOfTrans_03.htm", player);
 		}
+	}
+	
+	/**
+	 * Method onLoad.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
+	 */
+	@Override
+	public void onLoad()
+	{
+		CharListenerList.addGlobal(this);
+		
+		if (isActive())
+		{
+			_active = true;
+			spawnEventManagers();
+			_log.info("Loaded Event: Trick of Transmutation [state: activated]");
+		}
+		else
+		{
+			_log.info("Loaded Event: Trick of Transmutation [state: deactivated]");
+		}
+	}
+	
+	/**
+	 * Method onReload.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
+	 */
+	@Override
+	public void onReload()
+	{
+		unSpawnEventManagers();
+	}
+	
+	/**
+	 * Method onShutdown.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
+	 */
+	@Override
+	public void onShutdown()
+	{
+		unSpawnEventManagers();
 	}
 }

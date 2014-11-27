@@ -173,9 +173,9 @@ public final class SquashAI extends Fighter
 	private final static int Squash_Poisoned = 4514;
 	private static final String[] textOnSpawn = new String[]
 	{
-		"scripts.events.TheFallHarvest.SquashAI.textOnSpawn.0",
-		"scripts.events.TheFallHarvest.SquashAI.textOnSpawn.1",
-		"scripts.events.TheFallHarvest.SquashAI.textOnSpawn.2"
+		"I only have to drink nectar to be able to grow up...",
+		"Come, believe me, sprinkle a nectar! I can certainly turn the big pumpkin!!!",
+		"Take nectar to come, pumpkin nectar!"
 	};
 	private static final String[] textOnAttack = new String[]
 	{
@@ -278,7 +278,7 @@ public final class SquashAI extends Fighter
 	{
 		super(actor);
 		_npcId = getActor().getId();
-		Functions.npcSayCustomMessage(getActor(), textOnSpawn[Rnd.get(textOnSpawn.length)]);
+		Functions.npcSay(getActor(), textOnSpawn[Rnd.get(textOnSpawn.length)]);
 		_timeToUnspawn = System.currentTimeMillis() + 120000;
 	}
 	
@@ -342,7 +342,6 @@ public final class SquashAI extends Fighter
 					Functions.npcSay(actor, textFail0[Rnd.get(textFail0.length)]);
 					actor.broadcastPacket(new MagicSkillUse(actor, actor, Squash_Poisoned, 1, NECTAR_REUSE, 0));
 				}
-				
 				break;
 			
 			case 1:
@@ -366,7 +365,6 @@ public final class SquashAI extends Fighter
 					Functions.npcSay(actor, textFail1[Rnd.get(textFail1.length)]);
 					actor.broadcastPacket(new MagicSkillUse(actor, actor, Squash_Poisoned, 1, NECTAR_REUSE, 0));
 				}
-				
 				break;
 			
 			case 2:
@@ -390,7 +388,6 @@ public final class SquashAI extends Fighter
 					Functions.npcSay(actor, textFail2[Rnd.get(textFail2.length)]);
 					actor.broadcastPacket(new MagicSkillUse(actor, actor, Squash_Poisoned, 1, NECTAR_REUSE, 0));
 				}
-				
 				break;
 			
 			case 3:
@@ -414,7 +411,6 @@ public final class SquashAI extends Fighter
 					Functions.npcSay(actor, textFail3[Rnd.get(textFail3.length)]);
 					actor.broadcastPacket(new MagicSkillUse(actor, actor, Squash_Poisoned, 1, NECTAR_REUSE, 0));
 				}
-				
 				break;
 			
 			case 4:

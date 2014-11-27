@@ -47,8 +47,8 @@ public class LettersCollection extends Functions implements ScriptFile, OnDeathL
 	protected static String _name;
 	protected static int[][] letters;
 	protected static int[][] EVENT_MANAGERS = null;
-	protected static String _msgStarted;
-	protected static String _msgEnded;
+	protected static String _msgStarted = "The event 'Letters Collection' started.";
+	protected static String _msgEnded = "The event 'Letters Collection' ended.";
 	protected static final int A = 3875;
 	protected static final int C = 3876;
 	protected static final int E = 3877;
@@ -69,27 +69,6 @@ public class LettersCollection extends Functions implements ScriptFile, OnDeathL
 	protected static final Map<String, Integer[][]> _words = new HashMap<>();
 	protected static final Map<String, RewardData[]> _rewards = new HashMap<>();
 	private static final List<SimpleSpawner> _spawns = new ArrayList<>();
-	
-	/**
-	 * Method onLoad.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
-	 */
-	@Override
-	public void onLoad()
-	{
-		CharListenerList.addGlobal(this);
-		
-		if (isActive())
-		{
-			_active = true;
-			spawnEventManagers();
-			_log.info("Loaded Event: " + _name + " [state: activated]");
-		}
-		else
-		{
-			_log.info("Loaded Event: " + _name + " [state: deactivated]");
-		}
-	}
 	
 	/**
 	 * Method isActive.
@@ -114,26 +93,6 @@ public class LettersCollection extends Functions implements ScriptFile, OnDeathL
 	private void unSpawnEventManagers()
 	{
 		deSpawnNPCs(_spawns);
-	}
-	
-	/**
-	 * Method onReload.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
-	 */
-	@Override
-	public void onReload()
-	{
-		unSpawnEventManagers();
-	}
-	
-	/**
-	 * Method onShutdown.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
-	 */
-	@Override
-	public void onShutdown()
-	{
-		unSpawnEventManagers();
 	}
 	
 	/**
@@ -172,7 +131,7 @@ public class LettersCollection extends Functions implements ScriptFile, OnDeathL
 		{
 			spawnEventManagers();
 			System.out.println("Event '" + _name + "' started.");
-			Announcements.getInstance().announceByCustomMessage(_msgStarted, null);
+			Announcements.getInstance().announceToAll(_msgStarted);
 		}
 		else
 		{
@@ -199,7 +158,7 @@ public class LettersCollection extends Functions implements ScriptFile, OnDeathL
 		{
 			unSpawnEventManagers();
 			System.out.println("Event '" + _name + "' stopped.");
-			Announcements.getInstance().announceByCustomMessage(_msgEnded, null);
+			Announcements.getInstance().announceToAll(_msgEnded);
 		}
 		else
 		{
@@ -277,7 +236,7 @@ public class LettersCollection extends Functions implements ScriptFile, OnDeathL
 	{
 		if (_active)
 		{
-			Announcements.getInstance().announceToPlayerByCustomMessage(player, _msgStarted, null);
+			Announcements.getInstance().announceToAll(_msgStarted);
 		}
 	}
 	
@@ -301,5 +260,46 @@ public class LettersCollection extends Functions implements ScriptFile, OnDeathL
 		}
 		
 		return append.toString();
+	}
+	
+	/**
+	 * Method onLoad.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
+	 */
+	@Override
+	public void onLoad()
+	{
+		CharListenerList.addGlobal(this);
+		
+		if (isActive())
+		{
+			_active = true;
+			spawnEventManagers();
+			_log.info("Loaded Event: " + _name + " [state: activated]");
+		}
+		else
+		{
+			_log.info("Loaded Event: " + _name + " [state: deactivated]");
+		}
+	}
+	
+	/**
+	 * Method onReload.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
+	 */
+	@Override
+	public void onReload()
+	{
+		unSpawnEventManagers();
+	}
+	
+	/**
+	 * Method onShutdown.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
+	 */
+	@Override
+	public void onShutdown()
+	{
+		unSpawnEventManagers();
 	}
 }

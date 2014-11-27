@@ -64,28 +64,6 @@ public final class GlitteringMedal extends Functions implements ScriptFile, OnDe
 	};
 	
 	/**
-	 * Method onLoad.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
-	 */
-	@Override
-	public void onLoad()
-	{
-		CharListenerList.addGlobal(this);
-		
-		if (isActive())
-		{
-			_active = true;
-			loadMultiSell();
-			spawnEventManagers();
-			_log.info("Loaded Event: L2 Medal Collection Event [state: activated]");
-		}
-		else
-		{
-			_log.info("Loaded Event: L2 Medal Collection Event [state: deactivated]");
-		}
-	}
-	
-	/**
 	 * Method isActive.
 	 * @return boolean
 	 */
@@ -111,7 +89,7 @@ public final class GlitteringMedal extends Functions implements ScriptFile, OnDe
 			loadMultiSell();
 			spawnEventManagers();
 			System.out.println("Event 'L2 Medal Collection Event' started.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.glitmedal.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The event 'L2 Medal Collection Event' started.");
 		}
 		else
 		{
@@ -138,7 +116,7 @@ public final class GlitteringMedal extends Functions implements ScriptFile, OnDe
 		{
 			unSpawnEventManagers();
 			System.out.println("Event 'L2 Medal Collection Event' stopped.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.glitmedal.AnnounceEventStoped", null);
+			Announcements.getInstance().announceToAll("The event 'L2 Medal Collection Event' stopped.");
 		}
 		else
 		{
@@ -159,7 +137,7 @@ public final class GlitteringMedal extends Functions implements ScriptFile, OnDe
 	{
 		if (_active)
 		{
-			Announcements.getInstance().announceToPlayerByCustomMessage(player, "scripts.events.glitmedal.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The event 'L2 Medal Collection Event' started.");
 		}
 	}
 	
@@ -382,36 +360,6 @@ public final class GlitteringMedal extends Functions implements ScriptFile, OnDe
 		}
 		
 		MultiSellLoaded = true;
-	}
-	
-	/**
-	 * Method onReload.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
-	 */
-	@Override
-	public void onReload()
-	{
-		unSpawnEventManagers();
-		
-		if (MultiSellLoaded)
-		{
-			for (File f : multiSellFiles)
-			{
-				MultiSellHolder.getInstance().remove(f);
-			}
-			
-			MultiSellLoaded = false;
-		}
-	}
-	
-	/**
-	 * Method onShutdown.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
-	 */
-	@Override
-	public void onShutdown()
-	{
-		// empty method
 	}
 	
 	/**
@@ -795,5 +743,57 @@ public final class GlitteringMedal extends Functions implements ScriptFile, OnDe
 		
 		show("scripts/events/glitmedal/event_col_agent2_q0996_26.htm", player);
 		return;
+	}
+	
+	/**
+	 * Method onLoad.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
+	 */
+	@Override
+	public void onLoad()
+	{
+		CharListenerList.addGlobal(this);
+		
+		if (isActive())
+		{
+			_active = true;
+			loadMultiSell();
+			spawnEventManagers();
+			_log.info("Loaded Event: L2 Medal Collection Event [state: activated]");
+		}
+		else
+		{
+			_log.info("Loaded Event: L2 Medal Collection Event [state: deactivated]");
+		}
+	}
+	
+	/**
+	 * Method onReload.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
+	 */
+	@Override
+	public void onReload()
+	{
+		unSpawnEventManagers();
+		
+		if (MultiSellLoaded)
+		{
+			for (File f : multiSellFiles)
+			{
+				MultiSellHolder.getInstance().remove(f);
+			}
+			
+			MultiSellLoaded = false;
+		}
+	}
+	
+	/**
+	 * Method onShutdown.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
+	 */
+	@Override
+	public void onShutdown()
+	{
+		// empty method
 	}
 }

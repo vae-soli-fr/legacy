@@ -93,7 +93,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 							client.onUnknownPacket();
 							break;
 					}
-					
 					break;
 				
 				case AUTHED:
@@ -156,14 +155,12 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 									client.onUnknownPacket();
 									break;
 							}
-							
 							break;
 						
 						default:
 							client.onUnknownPacket();
 							break;
 					}
-					
 					break;
 				
 				case IN_GAME:
@@ -384,7 +381,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 							{
 								msg = new SendWareHouseDepositList();
 							}
-							
 							break;
 						
 						case 0x3c:
@@ -462,7 +458,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 									client.onUnknownPacket();
 									break;
 							}
-							
 							break;
 						
 						case 0x4b:
@@ -498,7 +493,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 								default:
 									client.onUnknownPacket();
 							}
-							
 							break;
 						
 						case 0x50:
@@ -1096,7 +1090,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 											msg = new RequestSetPledgeCrestLarge(4);
 											break;
 									}
-									
 									break;
 								
 								case 0x12:
@@ -1362,7 +1355,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 											client.onUnknownPacket();
 											break;
 									}
-									
 									break;
 								
 								case 0x4F:
@@ -1631,7 +1623,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 											// msg = new RequestExProceedCancelAgitLot chdc 0x0A
 											break;
 									}
-									
 									break;
 								
 								case 0x81:
@@ -1731,7 +1722,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 											client.onUnknownPacket();
 											break;
 									}
-									
 									break;
 								
 								case 0x94:
@@ -1795,11 +1785,11 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 									break;
 								
 								case 0xA3:
-									msg = new RequestWorldStatistics();
+									// msg = new RequestWorldStatistics(); -- Removed with Lindvior
 									break;
 								
 								case 0xA4:
-									msg = new RequestUserStatistics();
+									// msg = new RequestUserStatistics(); -- Removed with Lindvior
 									break;
 								
 								case 0xA5:
@@ -2091,7 +2081,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 									client.onUnknownPacket();
 									break;
 							}
-							
 							break;
 						
 						default:
@@ -2100,7 +2089,6 @@ public final class GamePacketHandler implements IPacketHandler<GameClient>, ICli
 							break;
 						}
 					}
-					
 					break;
 				
 				default:

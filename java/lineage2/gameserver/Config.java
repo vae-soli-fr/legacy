@@ -74,7 +74,7 @@ public class Config
 	public static final String OLYMPIAD_DATA_FILE = "config/olympiad.ini";
 	private static final String ANUSEWORDS_CONFIG_FILE = "config/abusewords.txt";
 	public static final String FAKE_PLAYERS_LIST = "config/fake_players.list";
-	public static final String GM_ACCESS_FILES_DIR = "config/xml/AccessLevels/";
+	public static final String PLAYER_ACCESS_FILES_DIR = "config/xml/AccessLevels/";
 	public static int HTM_CACHE_MODE;
 	public static boolean HTM_DEBUG_MODE;
 	public static int[] PORTS_GAME;
@@ -205,6 +205,8 @@ public class Config
 	public static boolean SECOND_AUTH_ENABLED;
 	public static int SECOND_AUTH_MAX_ATTEMPTS;
 	public static int SECOND_AUTH_BAN_TIME;
+	public static boolean DEBUG_SPAWN_MANAGER;
+	public static boolean DEBUG_EVENT_SCHEDULES;
 	public static double ALT_RAID_RESPAWN_MULTIPLIER;
 	public static boolean ALT_ALLOW_AUGMENT_ALL;
 	public static boolean ALT_ALLOW_DROP_AUGMENTED;
@@ -393,7 +395,7 @@ public class Config
 	public static boolean OLYMPIAD_OLDSTYLE_STAT;
 	public static long NONOWNER_ITEM_PICKUP_DELAY;
 	public static boolean LOG_CHAT;
-	public static final Map<Integer, PlayerAccess> GM_ACCESS = new HashMap<>();
+	public static final Map<Integer, PlayerAccess> PLAYER_ACCESS = new HashMap<>();
 	public static double RATE_XP;
 	public static double RATE_SP;
 	public static double RATE_QUESTS_REWARD;
@@ -479,7 +481,6 @@ public class Config
 	public static int MAX_PROTOCOL_REVISION;
 	public static int MIN_NPC_ANIMATION;
 	public static int MAX_NPC_ANIMATION;
-	public static String DEFAULT_LANG;
 	static String RESTART_AT_TIME;
 	public static int GAME_SERVER_LOGIN_PORT;
 	// public static boolean GAME_SERVER_LOGIN_CRYPT;
@@ -639,8 +640,7 @@ public class Config
 	public static boolean COMMUNITYBOARD_ENABLED;
 	public static boolean ALLOW_COMMUNITYBOARD_IN_COMBAT;
 	public static boolean COMMUNITYBOARD_BUFFER_ENABLED;
-	// public static boolean COMMUNITYBOARD_SELL_ENABLED;
-	// public static boolean COMMUNITYBOARD_SHOP_ENABLED;
+	public static boolean COMMUNITYBOARD_SHOP_ENABLED;
 	// public static boolean COMMUNITYBOARD_BUFFER_PET_ENABLED;
 	// public static boolean COMMUNITYBOARD_BUFFER_SAVE_ENABLED;
 	// public static boolean COMMUNITYBOARD_ABNORMAL_ENABLED;
@@ -652,7 +652,7 @@ public class Config
 	public static final List<Integer> COMMUNITYBOARD_BUFF_ALLOW = new ArrayList<>();
 	public static final List<Integer> COMMUNITI_LIST_MAGE_SUPPORT = new ArrayList<>();
 	public static final List<Integer> COMMUNITI_LIST_FIGHTER_SUPPORT = new ArrayList<>();
-	public static final List<String> COMMUNITYBOARD_MULTISELL_ALLOW = new ArrayList<>();
+	public static final List<Integer> COMMUNITYBOARD_MULTISELL_ALLOW = new ArrayList<>();
 	public static String BBS_DEFAULT;
 	public static String BBS_HOME_DIR;
 	public static boolean COMMUNITYBOARD_TELEPORT_ENABLED;
@@ -906,6 +906,8 @@ public class Config
 		SECOND_AUTH_ENABLED = serverSettings.getProperty("SecondAuth", false);
 		SECOND_AUTH_MAX_ATTEMPTS = serverSettings.getProperty("SecondAuthMaxEnter", 5);
 		SECOND_AUTH_BAN_TIME = serverSettings.getProperty("SecondAuthBanTime", 480);
+		DEBUG_SPAWN_MANAGER = serverSettings.getProperty("DebugSpawnManager", false);
+		DEBUG_EVENT_SCHEDULES = serverSettings.getProperty("DebugEventSchedules", false);
 		// HIDE_GM_STATUS = serverSettings.getProperty("HideGMStatus", false);
 		SHOW_GM_LOGIN = serverSettings.getProperty("ShowGMLogin", true);
 		SAVE_GM_EFFECTS = serverSettings.getProperty("SaveGMEffects", false);
@@ -999,7 +1001,6 @@ public class Config
 			counter++;
 		}
 		CHATFILTER_WORK_TYPE = serverSettings.getProperty("ChatFilterWorkType", 1);
-		DEFAULT_LANG = serverSettings.getProperty("DefaultLang", "ru");
 		RESTART_AT_TIME = serverSettings.getProperty("AutoRestartAt", "0 5 * * *");
 		SHIFT_BY = serverSettings.getProperty("HShift", 12);
 		SHIFT_BY_Z = serverSettings.getProperty("VShift", 11);
@@ -1148,12 +1149,11 @@ public class Config
 			// COMMUNITYBOARD_ABNORMAL_ENABLED = communitySettings.getProperty("AllowAbnormalState", false);
 			BBS_DEFAULT = communitySettings.getProperty("BBSStartPage", "_bbshome");
 			BBS_HOME_DIR = communitySettings.getProperty("BBSHomeDir", "scripts/services/community/");
-			// COMMUNITYBOARD_SHOP_ENABLED = communitySettings.getProperty("CommunityShopEnable", false);
-			// COMMUNITYBOARD_SELL_ENABLED = communitySettings.getProperty("CommunitySellEnable", false);
+			COMMUNITYBOARD_SHOP_ENABLED = communitySettings.getProperty("CommunityShopEnable", false);
 			
-			for (String name : communitySettings.getProperty("AllowMultisell", ArrayUtils.EMPTY_STRING_ARRAY))
+			for (int id : communitySettings.getProperty("AllowMultisell", new int[] {}))
 			{
-				COMMUNITYBOARD_MULTISELL_ALLOW.add(name);
+				COMMUNITYBOARD_MULTISELL_ALLOW.add(Integer.valueOf(id));
 			}
 			
 			COMMUNITYBOARD_BUFFER_ENABLED = communitySettings.getProperty("CommunityBufferEnable", false);
@@ -2137,7 +2137,7 @@ public class Config
 		loadExtSettings();
 		loadCommunityConfig();
 		abuseLoad();
-		loadGMAccess();
+		loadPlayerAccess();
 	}
 	
 	/**
@@ -2172,7 +2172,10 @@ public class Config
 			
 			ABUSEWORD_LIST = tmp.toArray(new Pattern[tmp.size()]);
 			tmp.clear();
-			_log.info("Abuse: Loaded " + ABUSEWORD_LIST.length + " abuse words.");
+			if (DEBUG)
+			{
+				_log.info("Abuse: Loaded " + ABUSEWORD_LIST.length + " abuse words.");
+			}
 		}
 		catch (IOException e1)
 		{
@@ -2195,12 +2198,12 @@ public class Config
 	}
 	
 	/**
-	 * Method loadGMAccess.
+	 * Method loadPlayerAccess.
 	 */
-	public static void loadGMAccess()
+	public static void loadPlayerAccess()
 	{
-		GM_ACCESS.clear();
-		File dir = new File(GM_ACCESS_FILES_DIR);
+		PLAYER_ACCESS.clear();
+		File dir = new File(PLAYER_ACCESS_FILES_DIR);
 		
 		if (!dir.exists() || !dir.isDirectory())
 		{
@@ -2212,16 +2215,16 @@ public class Config
 		{
 			if (!file.isDirectory() && file.getName().endsWith(".xml"))
 			{
-				loadGMAccess(file);
+				loadPlayerAccess(file);
 			}
 		}
 	}
 	
 	/**
-	 * Method loadGMAccess.
+	 * Method loadPlayerAccess.
 	 * @param file File
 	 */
-	public static void loadGMAccess(File file)
+	public static void loadPlayerAccess(File file)
 	{
 		try
 		{
@@ -2235,7 +2238,7 @@ public class Config
 			{
 				for (Node n = nod.getFirstChild(); n != null; n = n.getNextSibling())
 				{
-					if (!n.getNodeName().equalsIgnoreCase("access"))
+					if (!n.getNodeName().equals("access"))
 					{
 						continue;
 					}
@@ -2247,7 +2250,7 @@ public class Config
 						Class<?> cls = access.getClass();
 						String node = d.getNodeName();
 						
-						if (node.equalsIgnoreCase("#text"))
+						if (node.equals("#text"))
 						{
 							continue;
 						}
@@ -2262,17 +2265,17 @@ public class Config
 							continue;
 						}
 						
-						if (field.getType().getName().equalsIgnoreCase("boolean"))
+						if (field.getType().getName().equals("boolean"))
 						{
 							field.setBoolean(access, Boolean.parseBoolean(d.getAttributes().getNamedItem("set").getNodeValue()));
 						}
-						else if (field.getType().getName().equalsIgnoreCase("int"))
+						else if (field.getType().getName().equals("int"))
 						{
 							field.setInt(access, Integer.valueOf(d.getAttributes().getNamedItem("set").getNodeValue()));
 						}
 					}
 					
-					GM_ACCESS.put(access.AccessLevel, access);
+					PLAYER_ACCESS.put(access.AccessLevel, access);
 				}
 			}
 		}

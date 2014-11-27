@@ -49,7 +49,6 @@ import lineage2.gameserver.model.entity.residence.Residence;
 import lineage2.gameserver.model.instances.DoorInstance;
 import lineage2.gameserver.network.serverpackets.Revive;
 import lineage2.gameserver.network.serverpackets.components.ChatType;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.scripts.Functions;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.skills.AbnormalEffect;
@@ -107,73 +106,6 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 	
 	private static final Location _enter = new Location(149505, 46719, -3417);
 	
-	@Override
-	public void onLoad()
-	{
-		CharListenerList.addGlobal(this);
-		
-		_zones.put("[colosseum_battle]", ReflectionUtils.getZone("[colosseum_battle]").getTemplate());
-		for (final int doorId : doors)
-		{
-			_doors.put(doorId, ReflectionUtils.getDoor(doorId).getTemplate());
-		}
-		reflection.init(_doors, _zones);
-		_zone = reflection.getZone("[colosseum_battle]");
-		_zone.addListener(_zoneListener);
-		
-		_active = ServerVariables.getString("LastHero", "off").equalsIgnoreCase("on");
-		
-		if (isActive())
-		{
-			scheduleEventStart();
-		}
-		
-		int i = 0;
-		
-		if (Config.EVENT_LHBuffPlayers && (Config.EVENT_LHMageBuffs.length != 0))
-		{
-			for (String skill : Config.EVENT_LHMageBuffs)
-			{
-				String[] splitSkill = skill.split(",");
-				mage_buffs[i][0] = Integer.parseInt(splitSkill[0]);
-				mage_buffs[i][1] = Integer.parseInt(splitSkill[1]);
-				i++;
-			}
-		}
-		
-		i = 0;
-		
-		if (Config.EVENT_LHBuffPlayers && (Config.EVENT_LHFighterBuffs.length != 0))
-		{
-			for (String skill : Config.EVENT_LHFighterBuffs)
-			{
-				String[] splitSkill = skill.split(",");
-				fighter_buffs[i][0] = Integer.parseInt(splitSkill[0]);
-				fighter_buffs[i][1] = Integer.parseInt(splitSkill[1]);
-				i++;
-			}
-		}
-		
-		_log.info("Loaded Event: Last Hero");
-	}
-	
-	@Override
-	public void onReload()
-	{
-		_zone.removeListener(_zoneListener);
-		if (_startTask != null)
-		{
-			_startTask.cancel(false);
-			_startTask = null;
-		}
-	}
-	
-	@Override
-	public void onShutdown()
-	{
-		onReload();
-	}
-	
 	private static boolean isActive()
 	{
 		return _active;
@@ -195,7 +127,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 			}
 			ServerVariables.set("LastHero", "on");
 			_log.info("Event 'Last Hero' activated.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.LastHero.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("Event 'Last Hero' activated.");
 		}
 		else
 		{
@@ -238,7 +170,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 			}
 			ServerVariables.unset("LastHero");
 			_log.info("Event 'Last Hero' deactivated.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.LastHero.AnnounceEventStoped", null);
+			Announcements.getInstance().announceToAll("Event 'Last Hero' deactivated.");
 		}
 		else
 		{
@@ -329,7 +261,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		Player player = getSelf();
 		if (var.length != 2)
 		{
-			show(new CustomMessage("common.Error", player), player);
+			show("Error.", player);
 			return;
 		}
 		Integer category;
@@ -341,7 +273,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		}
 		catch (Exception e)
 		{
-			show(new CustomMessage("common.Error", player), player);
+			show("Error.", player);
 			return;
 		}
 		
@@ -361,7 +293,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		
 		if (_endTask != null)
 		{
-			show(new CustomMessage("common.TryLater", player), player);
+			show("Try later.", player);
 			return;
 		}
 		
@@ -372,21 +304,16 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		players_list = new CopyOnWriteArrayList<>();
 		live_list = new CopyOnWriteArrayList<>();
 		playerRestoreCoord = new LinkedHashMap<>();
-		String[] param =
-		{
-			String.valueOf(_time_to_start),
-			String.valueOf(_minLevel),
-			String.valueOf(_maxLevel)
-		};
-		sayToAll("scripts.events.LastHero.AnnouncePreStart", param);
+		
+		sayToAll("Last Hero: Start in " + String.valueOf(_time_to_start) + " min. for levels " + String.valueOf(_minLevel) + "-" + String.valueOf(_maxLevel) + ". Information in the community board (alt+b).");
 		
 		executeTask("events.LastHero.LastHero", "question", new Object[0], 10000);
 		executeTask("events.LastHero.LastHero", "announce", new Object[0], 60000);
 	}
 	
-	public static void sayToAll(String address, String[] replacements)
+	public static void sayToAll(String address)
 	{
-		Announcements.getInstance().announceByCustomMessage(address, replacements, ChatType.CRITICAL_ANNOUNCE);
+		Announcements.getInstance().announceToAll(address, ChatType.CRITICAL_ANNOUNCE);
 	}
 	
 	public static void question()
@@ -395,7 +322,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		{
 			if ((player != null) && !player.isDead() && (player.getLevel() >= _minLevel) && (player.getLevel() <= _maxLevel) && player.getReflection().isDefault() && !player.isInOlympiadMode() && !player.isInObserverMode())
 			{
-				player.scriptRequest(new CustomMessage("scripts.events.LastHero.AskPlayer", player).toString(), "events.LastHero.LastHero:addPlayer", new Object[0]);
+				player.scriptRequest("Do you want to participate in event 'Last Hero'?", "events.LastHero.LastHero:addPlayer", new Object[0]);
 			}
 		}
 	}
@@ -404,7 +331,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 	{
 		if (players_list.size() < 2)
 		{
-			sayToAll("scripts.events.LastHero.AnnounceEventCancelled", null);
+			sayToAll("Last Hero: Event cancelled, not enough players.");
 			_isRegistrationActive = false;
 			_status = 0;
 			executeTask("events.LastHero.LastHero", "autoContinue", new Object[0], 10000);
@@ -414,20 +341,14 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		if (_time_to_start > 1)
 		{
 			_time_to_start--;
-			String[] param =
-			{
-				String.valueOf(_time_to_start),
-				String.valueOf(_minLevel),
-				String.valueOf(_maxLevel)
-			};
-			sayToAll("scripts.events.LastHero.AnnouncePreStart", param);
+			sayToAll("Last Hero: Start in " + String.valueOf(_time_to_start) + " min. for levels " + String.valueOf(_minLevel) + "-" + String.valueOf(_maxLevel) + ". Information in the community board (alt+b).");
 			executeTask("events.LastHero.LastHero", "announce", new Object[0], 60000);
 		}
 		else
 		{
 			_status = 1;
 			_isRegistrationActive = false;
-			sayToAll("scripts.events.LastHero.AnnounceEventStarting", null);
+			sayToAll("Last Hero: Registration ended, teleporting players...");
 			executeTask("events.LastHero.LastHero", "prepare", new Object[0], 5000);
 		}
 	}
@@ -443,7 +364,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		players_list.add(player.getStoredId());
 		live_list.add(player.getStoredId());
 		
-		show(new CustomMessage("scripts.events.LastHero.Registered", player), player);
+		show("You have been registered in the Last Hero event. Please, do not register in other events and avoid duels until countdown end.", player);
 		player.setRegisteredInEvent(true);
 	}
 	
@@ -451,14 +372,14 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 	{
 		if (first && (!_isRegistrationActive || player.isDead()))
 		{
-			show(new CustomMessage("scripts.events.Late", player), player);
+			show("Event is already running, registration closed.", player);
 			return false;
 		}
 		
 		if (first && players_list.contains(player.getStoredId()))
 		{
 			player.setRegisteredInEvent(false);
-			show(new CustomMessage("scripts.events.LastHero.Cancelled", player), player);
+			show("Registration cancelled.", player);
 			if (players_list.contains(player.getStoredId()))
 			{
 				players_list.remove(player.getStoredId());
@@ -476,54 +397,54 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		
 		if ((player.getLevel() < _minLevel) || (player.getLevel() > _maxLevel))
 		{
-			show(new CustomMessage("scripts.events.LastHero.CancelledLevel", player), player);
+			show("Registration cancelled. Inconsistent level.", player);
 			return false;
 		}
 		
 		if (player.isMounted())
 		{
-			show(new CustomMessage("scripts.events.LastHero.Cancelled", player), player);
+			show("Registration cancelled.", player);
 			return false;
 		}
 		
 		if (player.isCursedWeaponEquipped())
 		{
-			show(new CustomMessage("scripts.events.CtF.Cancelled", player), player);
+			show("Registration cancelled.", player);
 			return false;
 		}
 		
 		if (player.isInDuel())
 		{
-			show(new CustomMessage("scripts.events.LastHero.CancelledDuel", player), player);
+			show("Registration cancelled. You can't participate while in a duel.", player);
 			return false;
 		}
 		
 		if (player.getTeam() != TeamType.NONE)
 		{
-			show(new CustomMessage("scripts.events.CtF.CancelledOtherEvent", player), player);
+			show("Registration cancelled. You are already participating other event.", player);
 			return false;
 		}
 		
 		if ((player.getOlympiadGame() != null) || (first && Olympiad.isRegistered(player)))
 		{
-			show(new CustomMessage("scripts.events.LastHero.CancelledOlympiad", player), player);
+			show("Registration cancelled. You are in the olympiad zone.", player);
 			return false;
 		}
 		
 		if (player.isTeleporting())
 		{
-			show(new CustomMessage("scripts.events.LastHero.CancelledTeleport", player), player);
+			show("Registration cancelled. You are teleporting.", player);
 			return false;
 		}
 		
 		if (player.isInObserverMode())
 		{
-			show(new CustomMessage("scripts.event.LastHero.CancelledObserver", player), player);
+			show("Registration cancelled. You are in observer mode.", player);
 			return false;
 		}
 		if (!Config.ALLOW_HEROES_LASTHERO && player.isHero())
 		{
-			show(new CustomMessage("scripts.event.LastHero.CancelledHero", player), player);
+			show("Registration cancelled. Heroes are now allowed.", player);
 			return false;
 		}
 		
@@ -553,7 +474,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		executeTask("events.LastHero.LastHero", "buffPlayers", new Object[0], 5000);
 		executeTask("events.LastHero.LastHero", "go", new Object[0], 60000);
 		
-		sayToAll("scripts.events.LastHero.AnnounceFinalCountdown", null);
+		sayToAll("Last Hero: 1 minute to start.");
 	}
 	
 	public static void go()
@@ -562,7 +483,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		upParalyzePlayers();
 		checkLive();
 		clearArena();
-		sayToAll("scripts.events.LastHero.AnnounceFight", null);
+		sayToAll("Last Hero: >>> FIGHT!!! <<<");
 		for (Zone z : reflection.getZones())
 		{
 			z.setType(ZoneType.Battle);
@@ -584,17 +505,13 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		{
 			for (Player player : getPlayers(live_list))
 			{
-				String[] repl =
-				{
-					player.getName()
-				};
-				sayToAll("scripts.events.LastHero.AnnounceWiner", repl);
+				sayToAll("Last Hero: " + player.getName() + " wins.");
 				addItem(player, Config.EVENT_LastHeroItemID, Math.round(Config.EVENT_LastHeroRateFinal ? player.getLevel() * Config.EVENT_LastHeroItemCOUNTFinal : 1 * Config.EVENT_LastHeroItemCOUNTFinal));
 				player.setHero(true);
 				break;
 			}
 		}
-		sayToAll("scripts.events.LastHero.AnnounceEnd", null);
+		sayToAll("Last Hero: Event ended. 30 sec countdown before teleporting players back.");
 		executeTask("events.LastHero.LastHero", "end", new Object[0], 30000);
 		_isRegistrationActive = false;
 		if (_endTask != null)
@@ -887,7 +804,7 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 		{
 			live_list.remove(player.getStoredId());
 			player.setTeam(TeamType.NONE);
-			show(new CustomMessage("scripts.events.LastHero.YouLose", player), player);
+			show("You lose! Please wait event end.", player);
 		}
 	}
 	
@@ -1032,16 +949,16 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 	{
 		if (!Config.EVENT_LHAllowMultiReg)
 		{
-			if ("IP".equalsIgnoreCase(Config.EVENT_LHCheckWindowMethod))
+			if ("IP".equals(Config.EVENT_LHCheckWindowMethod))
 			{
 				if (boxes.containsValue(player.getIP()))
 				{
-					show(new CustomMessage("scripts.events.LH.CancelledBox", player), player);
+					show("Multibox is not allowed.", player);
 					return false;
 				}
 			}
 			
-			// else if ("HWid".equalsIgnoreCase(Config.EVENT_LHCheckWindowMethod)) {
+			// else if ("HWid".equals(Config.EVENT_LHCheckWindowMethod)) {
 			// if (boxes.containsValue(player.getNetConnection().getHWID())) {
 			// show(new CustomMessage("scripts.events.TvT.CancelledBox",
 			// player), player);
@@ -1099,5 +1016,72 @@ public class LastHero extends Functions implements ScriptFile, OnDeathListener, 
 				});
 			}
 		}
+	}
+	
+	@Override
+	public void onLoad()
+	{
+		CharListenerList.addGlobal(this);
+		
+		_zones.put("[colosseum_battle]", ReflectionUtils.getZone("[colosseum_battle]").getTemplate());
+		for (final int doorId : doors)
+		{
+			_doors.put(doorId, ReflectionUtils.getDoor(doorId).getTemplate());
+		}
+		reflection.init(_doors, _zones);
+		_zone = reflection.getZone("[colosseum_battle]");
+		_zone.addListener(_zoneListener);
+		
+		_active = ServerVariables.getString("LastHero", "off").equals("on");
+		
+		if (isActive())
+		{
+			scheduleEventStart();
+		}
+		
+		int i = 0;
+		
+		if (Config.EVENT_LHBuffPlayers && (Config.EVENT_LHMageBuffs.length != 0))
+		{
+			for (String skill : Config.EVENT_LHMageBuffs)
+			{
+				String[] splitSkill = skill.split(",");
+				mage_buffs[i][0] = Integer.parseInt(splitSkill[0]);
+				mage_buffs[i][1] = Integer.parseInt(splitSkill[1]);
+				i++;
+			}
+		}
+		
+		i = 0;
+		
+		if (Config.EVENT_LHBuffPlayers && (Config.EVENT_LHFighterBuffs.length != 0))
+		{
+			for (String skill : Config.EVENT_LHFighterBuffs)
+			{
+				String[] splitSkill = skill.split(",");
+				fighter_buffs[i][0] = Integer.parseInt(splitSkill[0]);
+				fighter_buffs[i][1] = Integer.parseInt(splitSkill[1]);
+				i++;
+			}
+		}
+		
+		_log.info("Loaded Event: Last Hero");
+	}
+	
+	@Override
+	public void onReload()
+	{
+		_zone.removeListener(_zoneListener);
+		if (_startTask != null)
+		{
+			_startTask.cancel(false);
+			_startTask = null;
+		}
+	}
+	
+	@Override
+	public void onShutdown()
+	{
+		onReload();
 	}
 }

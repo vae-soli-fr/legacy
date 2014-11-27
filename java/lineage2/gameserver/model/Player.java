@@ -94,7 +94,6 @@ import lineage2.gameserver.instancemanager.CursedWeaponsManager;
 import lineage2.gameserver.instancemanager.MatchingRoomManager;
 import lineage2.gameserver.instancemanager.QuestManager;
 import lineage2.gameserver.instancemanager.ReflectionManager;
-import lineage2.gameserver.instancemanager.WorldStatisticsManager;
 import lineage2.gameserver.instancemanager.games.HandysBlockCheckerManager;
 import lineage2.gameserver.instancemanager.games.HandysBlockCheckerManager.ArenaParticipantsHolder;
 import lineage2.gameserver.listener.actor.player.OnAnswerListener;
@@ -185,7 +184,6 @@ import lineage2.gameserver.model.pledge.UnitMember;
 import lineage2.gameserver.model.quest.Quest;
 import lineage2.gameserver.model.quest.QuestEventType;
 import lineage2.gameserver.model.quest.QuestState;
-import lineage2.gameserver.model.worldstatistics.CategoryType;
 import lineage2.gameserver.network.GameClient;
 import lineage2.gameserver.network.serverpackets.AbnormalStatusUpdate;
 import lineage2.gameserver.network.serverpackets.AutoAttackStart;
@@ -264,7 +262,6 @@ import lineage2.gameserver.network.serverpackets.TargetSelected;
 import lineage2.gameserver.network.serverpackets.TargetUnselected;
 import lineage2.gameserver.network.serverpackets.TeleportToLocation;
 import lineage2.gameserver.network.serverpackets.UserInfo;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.network.serverpackets.components.IStaticPacket;
 import lineage2.gameserver.network.serverpackets.components.SceneMovie;
 import lineage2.gameserver.network.serverpackets.components.SystemMsg;
@@ -301,7 +298,6 @@ import lineage2.gameserver.utils.AntiFlood;
 import lineage2.gameserver.utils.EffectsComparator;
 import lineage2.gameserver.utils.GameStats;
 import lineage2.gameserver.utils.ItemFunctions;
-import lineage2.gameserver.utils.Language;
 import lineage2.gameserver.utils.Location;
 import lineage2.gameserver.utils.Log;
 import lineage2.gameserver.utils.MentorUtil;
@@ -3173,7 +3169,6 @@ public final class Player extends Playable implements PlayerGroup
 			_pet.broadcastStatusUpdate();
 		}
 		
-		WorldStatisticsManager.getInstance().updateStat(this, CategoryType.EXP_ADDED, addToExp);
 		updateStats();
 	}
 	
@@ -4351,14 +4346,6 @@ public final class Player extends Playable implements PlayerGroup
 			}
 		}
 		
-		if ((item.getId() == ItemTemplate.ITEM_ID_ADENA))
-		{
-			if (item.getOwnerId() == 0)
-			{
-				WorldStatisticsManager.getInstance().updateStat(this, CategoryType.ADENA_ADDED, item.getCount());
-			}
-		}
-		
 		Log.LogItem(this, log, item);
 		sendPacket(SystemMessage2.obtainItems(item));
 		getInventory().addItem(item);
@@ -4534,10 +4521,6 @@ public final class Player extends Playable implements PlayerGroup
 		
 		if (attacker.isPlayer() && (Math.abs(attacker.getLevel() - getLevel()) > 10))
 		{
-			WorldStatisticsManager.getInstance().updateStat(attacker.getPlayer(), CategoryType.DAMAGE_TO_PC, (long) damage);
-			WorldStatisticsManager.getInstance().updateStat(attacker.getPlayer(), CategoryType.DAMAGE_TO_PC_MAX, getActiveClassId(), (long) damage);
-			WorldStatisticsManager.getInstance().updateStat(this, CategoryType.DAMAGE_FROM_PC, (long) damage);
-			
 			if ((attacker.getKarma() > 0) && (getEffectList().getEffectsBySkillId(5182) != null) && !isInZone(ZoneType.Siege))
 			{
 				return;
@@ -4550,11 +4533,6 @@ public final class Player extends Playable implements PlayerGroup
 		}
 		
 		super.reduceCurrentHp(damage, reflectableDamage, attacker, skill, awake, standUp, directHp, canReflect, transferDamage, isDot, sendMessage);
-		
-		if (attacker.getPlayer() == null)
-		{
-			WorldStatisticsManager.getInstance().updateStat(this, CategoryType.DAMAGE_FROM_MONSTERS, getClassId().getId(), (long) damage);
-		}
 	}
 	
 	/**
@@ -4692,8 +4670,6 @@ public final class Player extends Playable implements PlayerGroup
 		final int pkCountMulti = Math.max(killer.getPkKills() / 2, 1);
 		killer.decreaseKarma(Config.KARMA_MIN_KARMA * pkCountMulti);
 		killer.setPkKills(killer.getPkKills() + 1);
-		WorldStatisticsManager.getInstance().updateStat(killer, CategoryType.PK_COUNT, 1);
-		WorldStatisticsManager.getInstance().updateStat(this, CategoryType.KILLED_BY_PK_COUNT, 1);
 	}
 	
 	/**
@@ -4714,7 +4690,6 @@ public final class Player extends Playable implements PlayerGroup
 			}
 			
 			killer.setNameColor(Config.PK_KILLER_NAME_COLOR);
-			WorldStatisticsManager.getInstance().updateStat(killer, CategoryType.PVP_COUNT, 1);
 		}
 	}
 	
@@ -4799,8 +4774,6 @@ public final class Player extends Playable implements PlayerGroup
 			if ((_pvpFlag > 0) || war)
 			{
 				pk.setPvpKills(pk.getPvpKills() + 1);
-				WorldStatisticsManager.getInstance().updateStat(pk, CategoryType.PVP_COUNT, 1);
-				WorldStatisticsManager.getInstance().updateStat(this, CategoryType.KILLED_IN_PVP_COUNT, 1);
 			}
 			else
 			{
@@ -5008,13 +4981,6 @@ public final class Player extends Playable implements PlayerGroup
 			{
 				processQuestEvent(q.getName(), "CE30", null);
 			}
-		}
-		
-		WorldStatisticsManager.getInstance().updateStat(this, CategoryType.DIE_COUNT, 1);
-		
-		if ((killer != null) && (killer.getPlayer() == null))
-		{
-			WorldStatisticsManager.getInstance().updateStat(this, CategoryType.KILLED_BY_MONSTER_COUNT, 1);
 		}
 		
 		super.onDeath(killer);
@@ -6053,18 +6019,22 @@ public final class Player extends Playable implements PlayerGroup
 		
 		if (Config.EVERYONE_HAS_ADMIN_RIGHTS)
 		{
-			_playerAccess = Config.GM_ACCESS.get(Config.DEFAULT_ACCESS_FOR_EVERYONE);
+			_playerAccess = Config.PLAYER_ACCESS.get(Config.DEFAULT_ACCESS_FOR_EVERYONE);
 		}
-		else if (Config.GM_ACCESS.get(_accessLevel) != null)
+		else if (Config.PLAYER_ACCESS.get(_accessLevel) != null)
 		{
-			_playerAccess = Config.GM_ACCESS.get(_accessLevel);
+			_playerAccess = Config.PLAYER_ACCESS.get(_accessLevel);
 		}
 		else
 		{
-			_playerAccess = Config.GM_ACCESS.get(0);
+			_playerAccess = Config.PLAYER_ACCESS.get(0);
 		}
 		
 		_isGM = _playerAccess.IsGM;
+		if (_isGM)
+		{
+			_log.warn("Character " + getName() + " logged in game with access level " + _accessLevel + "!");
+		}
 	}
 	
 	/**
@@ -6572,7 +6542,7 @@ public final class Player extends Playable implements PlayerGroup
 							{
 								if (((System.currentTimeMillis() / 1000L) - player.getLastAccess()) > zone.getRestartTime())
 								{
-									player.sendMessage(new CustomMessage("lineage2.gameserver.clientpackets.EnterWorld.TeleportedReasonNoRestart", player));
+									player.sendMessage("You have been teleported to the nearest town due to you being in an No Restart zone.");
 									player.setLoc(TeleportUtils.getRestartLocation(player, RestartType.TO_VILLAGE));
 								}
 							}
@@ -6819,12 +6789,6 @@ public final class Player extends Playable implements PlayerGroup
 				statement.setLong(20, getDeleteClanTime() / 1000L);
 				statement.setLong(21, _NoChannel > 0 ? getNoChannelRemained() / 1000 : _NoChannel);
 				statement.setInt(22, (int) (_onlineBeginTime > 0 ? ((_onlineTime + System.currentTimeMillis()) - _onlineBeginTime) / 1000L : _onlineTime / 1000L));
-				
-				if (_onlineBeginTime > 0L)
-				{
-					WorldStatisticsManager.getInstance().updateStat(this, CategoryType.TIME_PLAYED, (System.currentTimeMillis() - _onlineBeginTime) / 1000);
-				}
-				
 				statement.setInt(23, getPledgeType());
 				statement.setInt(24, getPowerGrade());
 				statement.setInt(25, getLvlJoinedAcademy());
@@ -7078,7 +7042,6 @@ public final class Player extends Playable implements PlayerGroup
 							}
 						}
 					}
-					
 					break;
 				}
 			}
@@ -7864,7 +7827,6 @@ public final class Player extends Playable implements PlayerGroup
 					sendPacket(new InventoryUpdate().addModifiedItem(item));
 					return true;
 				}
-				
 				break;
 			}
 		}
@@ -7979,7 +7941,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					addSkill(SkillTable.getInstance().getInfo(Skill.SKILL_STRIDER_ASSAULT, 1), false);
 				}
-				
 				break;
 			
 			case PetDataTable.WYVERN_ID:
@@ -8479,16 +8440,6 @@ public final class Player extends Playable implements PlayerGroup
 	}
 	
 	/**
-	 * Method sendMessage.
-	 * @param message CustomMessage
-	 */
-	@Override
-	public void sendMessage(CustomMessage message)
-	{
-		sendMessage(message.toString());
-	}
-	
-	/**
 	 * Method teleToLocation.
 	 * @param x int
 	 * @param y int
@@ -8899,7 +8850,7 @@ public final class Player extends Playable implements PlayerGroup
 	 */
 	public void addToBlockList(final String charName)
 	{
-		if ((charName == null) || charName.equalsIgnoreCase(getName()) || isInBlockList(charName))
+		if ((charName == null) || charName.equals(getName()) || isInBlockList(charName))
 		{
 			sendPacket(new SystemMessage(SystemMessage.YOU_HAVE_FAILED_TO_REGISTER_THE_USER_TO_YOUR_IGNORE_LIST));
 			return;
@@ -8929,7 +8880,7 @@ public final class Player extends Playable implements PlayerGroup
 			return;
 		}
 		
-		if (Config.GM_ACCESS.containsKey(getAccessLevel()) && Config.GM_ACCESS.get(getAccessLevel()).IsGM)
+		if (Config.PLAYER_ACCESS.containsKey(getAccessLevel()) && Config.PLAYER_ACCESS.get(getAccessLevel()).IsGM)
 		{
 			sendPacket(new SystemMessage(SystemMessage.YOU_MAY_NOT_IMPOSE_A_BLOCK_ON_A_GM));
 			return;
@@ -8949,7 +8900,7 @@ public final class Player extends Playable implements PlayerGroup
 		
 		for (int blockId : _blockList.keySet())
 		{
-			if (charName.equalsIgnoreCase(_blockList.get(blockId)))
+			if (charName.equals(_blockList.get(blockId)))
 			{
 				charId = blockId;
 				break;
@@ -9000,7 +8951,7 @@ public final class Player extends Playable implements PlayerGroup
 	{
 		for (int blockId : _blockList.keySet())
 		{
-			if (charName.equalsIgnoreCase(_blockList.get(blockId)))
+			if (charName.equals(_blockList.get(blockId)))
 			{
 				return true;
 			}
@@ -9438,7 +9389,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					_pledgeClass = RANK_VASSAL;
 				}
-				
 				break;
 			
 			case 4:
@@ -9450,7 +9400,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					_pledgeClass = RANK_HEIR;
 				}
-				
 				break;
 			
 			case 5:
@@ -9466,7 +9415,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					_pledgeClass = RANK_HEIR;
 				}
-				
 				break;
 			
 			case 6:
@@ -9490,7 +9438,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					_pledgeClass = RANK_KNIGHT;
 				}
-				
 				break;
 			
 			case 7:
@@ -9522,7 +9469,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					_pledgeClass = RANK_WISEMAN;
 				}
-				
 				break;
 			
 			case 8:
@@ -9554,7 +9500,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					_pledgeClass = RANK_BARON;
 				}
-				
 				break;
 			
 			case 9:
@@ -9586,7 +9531,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					_pledgeClass = RANK_VISCOUNT;
 				}
-				
 				break;
 			
 			case 10:
@@ -9618,7 +9562,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					_pledgeClass = RANK_COUNT;
 				}
-				
 				break;
 			
 			case 11:
@@ -9650,7 +9593,6 @@ public final class Player extends Playable implements PlayerGroup
 				{
 					_pledgeClass = RANK_MARQUIS;
 				}
-				
 				break;
 		}
 		
@@ -9839,7 +9781,7 @@ public final class Player extends Playable implements PlayerGroup
 			return defaultVal;
 		}
 		
-		return !(var.equals("0") || var.equalsIgnoreCase("false"));
+		return !(var.equals("0") || var.equals("false"));
 	}
 	
 	/**
@@ -9850,7 +9792,7 @@ public final class Player extends Playable implements PlayerGroup
 	public boolean getVarB(String name)
 	{
 		String var = user_variables.get(name);
-		return !((var == null) || var.equals("0") || var.equalsIgnoreCase("false"));
+		return !((var == null) || var.equals("0") || var.equals("false"));
 	}
 	
 	/**
@@ -9942,11 +9884,6 @@ public final class Player extends Playable implements PlayerGroup
 				String value = Strings.stripSlashes(rs.getString("value"));
 				user_variables.put(name, value);
 			}
-			
-			if (getVar("lang@") == null)
-			{
-				setVar("lang@", Config.DEFAULT_LANG, -1);
-			}
 		}
 		catch (Exception e)
 		{
@@ -9993,24 +9930,6 @@ public final class Player extends Playable implements PlayerGroup
 			DbUtils.closeQuietly(con, offline, rs);
 		}
 		return value;
-	}
-	
-	/**
-	 * Method getLang.
-	 * @return String
-	 */
-	public String getLang()
-	{
-		return getVar("lang@");
-	}
-	
-	/**
-	 * Method getLanguage.
-	 * @return Language
-	 */
-	public Language getLanguage()
-	{
-		return Language.ENGLISH;
 	}
 	
 	/**
@@ -10133,9 +10052,6 @@ public final class Player extends Playable implements PlayerGroup
 			pkt.addName(reviver).addString(Math.round(percent) + " percent");
 			ask(pkt, new ReviveAnswerListener(this, percent, pet));
 		}
-		
-		WorldStatisticsManager.getInstance().updateStat(reviver, CategoryType.RESURRECTED_CHAR_COUNT, 1);
-		WorldStatisticsManager.getInstance().updateStat(this, CategoryType.RESURRECTED_BY_OTHER_COUNT, 1);
 	}
 	
 	/**

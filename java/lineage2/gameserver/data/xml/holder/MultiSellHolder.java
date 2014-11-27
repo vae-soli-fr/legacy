@@ -24,7 +24,6 @@ import lineage2.gameserver.model.base.MultiSellEntry;
 import lineage2.gameserver.model.base.MultiSellIngredient;
 import lineage2.gameserver.model.items.ItemInstance;
 import lineage2.gameserver.network.serverpackets.MultiSellList;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.templates.item.ItemTemplate;
 import lineage2.gameserver.utils.XMLUtil;
 
@@ -42,7 +41,10 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 public class MultiSellHolder
 {
 	private static final Logger _log = LoggerFactory.getLogger(MultiSellHolder.class);
-	private static final MultiSellHolder _instance = new MultiSellHolder();
+	private static MultiSellHolder _instance = new MultiSellHolder();
+	private static final String NODE_PRODUCTION = "production";
+	private static final String NODE_INGRIDIENT = "ingredient";
+	private final TIntObjectHashMap<MultiSellListContainer> entries = new TIntObjectHashMap<>();
 	
 	/**
 	 * Method getInstance.
@@ -53,16 +55,12 @@ public class MultiSellHolder
 		return _instance;
 	}
 	
-	private static final String NODE_PRODUCTION = "production";
-	private static final String NODE_INGRIDIENT = "ingredient";
-	private final TIntObjectHashMap<MultiSellListContainer> entries = new TIntObjectHashMap<>();
-	
 	/**
 	 * Method getList.
 	 * @param id int
 	 * @return MultiSellListContainer
 	 */
-	private MultiSellListContainer getList(int id)
+	public MultiSellListContainer getList(int id)
 	{
 		return entries.get(id);
 	}
@@ -92,17 +90,16 @@ public class MultiSellHolder
 		parse();
 	}
 	
-	/**
-	 * @author Mobius
-	 */
 	public static class MultiSellListContainer
 	{
 		private int _listId;
 		private boolean _isnew = false;
+		private boolean _isnewProduction = false;
 		private boolean _showall = true;
 		private boolean keep_enchanted = false;
 		private boolean is_dutyfree = false;
 		private boolean nokey = false;
+		List<Integer> _npcsAllowed = new ArrayList<>();
 		final List<MultiSellEntry> entries = new ArrayList<>();
 		
 		/**
@@ -139,6 +136,24 @@ public class MultiSellHolder
 		public boolean isNew()
 		{
 			return _isnew;
+		}
+		
+		/**
+		 * Method setIsNewProduction.
+		 * @param bool boolean
+		 */
+		public void setIsNewProduction(boolean bool)
+		{
+			_isnewProduction = bool;
+		}
+		
+		/**
+		 * Method isNewProduction.
+		 * @return boolean
+		 */
+		public boolean isNewProduction()
+		{
+			return _isnewProduction;
 		}
 		
 		/**
@@ -214,6 +229,35 @@ public class MultiSellHolder
 		}
 		
 		/**
+		 * Method allowNpc.
+		 * @param npcId int
+		 */
+		public void allowNpc(int npcId)
+		{
+			_npcsAllowed.add(npcId);
+		}
+		
+		/**
+		 * Method isNpcAllowed.
+		 * @param npcId int
+		 * @return boolean
+		 */
+		public boolean isNpcAllowed(int npcId)
+		{
+			// Community Board
+			if (npcId == -1)
+			{
+				if (Config.COMMUNITYBOARD_SHOP_ENABLED && Config.COMMUNITYBOARD_MULTISELL_ALLOW.contains(getListId()))
+				{
+					return true;
+				}
+				return false;
+			}
+			
+			return (_npcsAllowed.isEmpty() || _npcsAllowed.contains(npcId));
+		}
+		
+		/**
 		 * Method addEntry.
 		 * @param e MultiSellEntry
 		 */
@@ -249,15 +293,12 @@ public class MultiSellHolder
 	private void hashFiles(String dirname, List<File> hash)
 	{
 		File dir = new File(Config.DATAPACK_ROOT, "data/xml/" + dirname);
-		
 		if (!dir.exists())
 		{
 			_log.info("Dir " + dir.getAbsolutePath() + " not exists");
 			return;
 		}
-		
 		File[] files = dir.listFiles();
-		
 		for (File f : files)
 		{
 			if (f.getName().endsWith(".xml"))
@@ -282,7 +323,6 @@ public class MultiSellHolder
 		{
 			_log.warn("MultiSell redefined: " + id);
 		}
-		
 		list.setListId(id);
 		entries.put(id, list);
 	}
@@ -292,7 +332,7 @@ public class MultiSellHolder
 	 * @param s String
 	 * @return MultiSellListContainer
 	 */
-	MultiSellListContainer remove(String s)
+	public MultiSellListContainer remove(String s)
 	{
 		return remove(new File(s));
 	}
@@ -312,7 +352,7 @@ public class MultiSellHolder
 	 * @param id int
 	 * @return MultiSellListContainer
 	 */
-	private MultiSellListContainer remove(int id)
+	public MultiSellListContainer remove(int id)
 	{
 		return entries.remove(id);
 	}
@@ -324,7 +364,6 @@ public class MultiSellHolder
 	public void parseFile(File f)
 	{
 		int id = 0;
-		
 		try
 		{
 			id = Integer.parseInt(f.getName().replaceAll(".xml", ""));
@@ -334,9 +373,7 @@ public class MultiSellHolder
 			_log.error("Error loading file " + f, e);
 			return;
 		}
-		
 		Document doc = null;
-		
 		try
 		{
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -349,7 +386,6 @@ public class MultiSellHolder
 			_log.error("Error loading file " + f, e);
 			return;
 		}
-		
 		try
 		{
 			addMultiSellListContainer(id, parseDocument(doc, id));
@@ -367,7 +403,6 @@ public class MultiSellHolder
 	{
 		List<File> files = new ArrayList<>();
 		hashFiles("multisell", files);
-		
 		for (File f : files)
 		{
 			parseFile(f);
@@ -380,11 +415,10 @@ public class MultiSellHolder
 	 * @param id int
 	 * @return MultiSellListContainer
 	 */
-	private MultiSellListContainer parseDocument(Document doc, int id)
+	protected MultiSellListContainer parseDocument(Document doc, int id)
 	{
 		MultiSellListContainer list = new MultiSellListContainer();
 		int entId = 1;
-		
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{
 			if ("list".equalsIgnoreCase(n.getNodeName()))
@@ -394,7 +428,6 @@ public class MultiSellHolder
 					if ("item".equalsIgnoreCase(d.getNodeName()))
 					{
 						MultiSellEntry e = parseEntry(d, id);
-						
 						if (e != null)
 						{
 							e.setEntryId(entId++);
@@ -404,6 +437,7 @@ public class MultiSellHolder
 					else if ("config".equalsIgnoreCase(d.getNodeName()))
 					{
 						list.setIsNew(XMLUtil.getAttributeBooleanValue(d, "isnew", false));
+						list.setIsNewProduction(XMLUtil.getAttributeBooleanValue(d, "isnewProduction", false));
 						list.setShowAll(XMLUtil.getAttributeBooleanValue(d, "showall", true));
 						list.setNoTax(XMLUtil.getAttributeBooleanValue(d, "notax", false));
 						list.setKeepEnchant(XMLUtil.getAttributeBooleanValue(d, "keepenchanted", false));
@@ -412,7 +446,6 @@ public class MultiSellHolder
 				}
 			}
 		}
-		
 		return list;
 	}
 	
@@ -422,10 +455,9 @@ public class MultiSellHolder
 	 * @param multiSellId int
 	 * @return MultiSellEntry
 	 */
-	private MultiSellEntry parseEntry(Node n, int multiSellId)
+	protected MultiSellEntry parseEntry(Node n, int multiSellId)
 	{
 		MultiSellEntry entry = new MultiSellEntry();
-		
 		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 		{
 			if (NODE_INGRIDIENT.equalsIgnoreCase(d.getNodeName()))
@@ -433,47 +465,38 @@ public class MultiSellHolder
 				int id = Integer.parseInt(d.getAttributes().getNamedItem("id").getNodeValue());
 				long count = Long.parseLong(d.getAttributes().getNamedItem("count").getNodeValue());
 				MultiSellIngredient mi = new MultiSellIngredient(id, count);
-				
 				if (d.getAttributes().getNamedItem("enchant") != null)
 				{
 					mi.setItemEnchant(Integer.parseInt(d.getAttributes().getNamedItem("enchant").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("mantainIngredient") != null)
 				{
 					mi.setMantainIngredient(Boolean.parseBoolean(d.getAttributes().getNamedItem("mantainIngredient").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("fireAttr") != null)
 				{
 					mi.getItemAttributes().setFire(Integer.parseInt(d.getAttributes().getNamedItem("fireAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("waterAttr") != null)
 				{
 					mi.getItemAttributes().setWater(Integer.parseInt(d.getAttributes().getNamedItem("waterAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("earthAttr") != null)
 				{
 					mi.getItemAttributes().setEarth(Integer.parseInt(d.getAttributes().getNamedItem("earthAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("windAttr") != null)
 				{
 					mi.getItemAttributes().setWind(Integer.parseInt(d.getAttributes().getNamedItem("windAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("holyAttr") != null)
 				{
 					mi.getItemAttributes().setHoly(Integer.parseInt(d.getAttributes().getNamedItem("holyAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("unholyAttr") != null)
 				{
 					mi.getItemAttributes().setUnholy(Integer.parseInt(d.getAttributes().getNamedItem("unholyAttr").getNodeValue()));
 				}
-				
 				entry.addIngredient(mi);
 			}
 			else if (NODE_PRODUCTION.equalsIgnoreCase(d.getNodeName()))
@@ -481,83 +504,64 @@ public class MultiSellHolder
 				int id = Integer.parseInt(d.getAttributes().getNamedItem("id").getNodeValue());
 				long count = Long.parseLong(d.getAttributes().getNamedItem("count").getNodeValue());
 				MultiSellIngredient mi = new MultiSellIngredient(id, count);
-				
 				if (d.getAttributes().getNamedItem("enchant") != null)
 				{
 					mi.setItemEnchant(Integer.parseInt(d.getAttributes().getNamedItem("enchant").getNodeValue()));
 				}
-				
-				if (d.getAttributes().getNamedItem("chance") != null)
-				{
-					mi.setChance(Integer.parseInt(d.getAttributes().getNamedItem("chance").getNodeValue()));
-				}
-				
+				mi.setChance((d.getAttributes().getNamedItem("chance") != null) ? Integer.parseInt(d.getAttributes().getNamedItem("chance").getNodeValue()) : -1);
 				if (d.getAttributes().getNamedItem("fireAttr") != null)
 				{
 					mi.getItemAttributes().setFire(Integer.parseInt(d.getAttributes().getNamedItem("fireAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("waterAttr") != null)
 				{
 					mi.getItemAttributes().setWater(Integer.parseInt(d.getAttributes().getNamedItem("waterAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("earthAttr") != null)
 				{
 					mi.getItemAttributes().setEarth(Integer.parseInt(d.getAttributes().getNamedItem("earthAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("windAttr") != null)
 				{
 					mi.getItemAttributes().setWind(Integer.parseInt(d.getAttributes().getNamedItem("windAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("holyAttr") != null)
 				{
 					mi.getItemAttributes().setHoly(Integer.parseInt(d.getAttributes().getNamedItem("holyAttr").getNodeValue()));
 				}
-				
 				if (d.getAttributes().getNamedItem("unholyAttr") != null)
 				{
 					mi.getItemAttributes().setUnholy(Integer.parseInt(d.getAttributes().getNamedItem("unholyAttr").getNodeValue()));
 				}
-				
 				if (!Config.ALT_ALLOW_SHADOW_WEAPONS && (id > 0))
 				{
 					ItemTemplate item = ItemHolder.getInstance().getTemplate(id);
-					
 					if ((item != null) && item.isShadowItem() && item.isWeapon() && !Config.ALT_ALLOW_SHADOW_WEAPONS)
 					{
 						return null;
 					}
 				}
-				
 				entry.addProduct(mi);
 			}
 		}
-		
 		if (entry.getIngredients().isEmpty() || entry.getProduction().isEmpty())
 		{
 			_log.warn("MultiSell [" + multiSellId + "] is empty!");
 			return null;
 		}
-		
 		if ((entry.getIngredients().size() == 1) && (entry.getProduction().size() == 1) && (entry.getIngredients().get(0).getItemId() == 57))
 		{
 			ItemTemplate item = ItemHolder.getInstance().getTemplate(entry.getProduction().get(0).getItemId());
-			
 			if (item == null)
 			{
 				_log.warn("MultiSell [" + multiSellId + "] Production [" + entry.getProduction().get(0).getItemId() + "] not found!");
 				return null;
 			}
-			
 			if (((entry.getIngredients().get(0).getItemId() == 57) && (item.getReferencePrice() > entry.getIngredients().get(0).getItemCount())) && !Config.LOGIN_SERVER_IS_PVP)
 			{
 				_log.warn("MultiSell [" + multiSellId + "] Production '" + item.getName() + "' [" + entry.getProduction().get(0).getItemId() + "] price is lower than referenced | " + item.getReferencePrice() + " > " + entry.getIngredients().get(0).getItemCount());
 			}
 		}
-		
 		return entry;
 	}
 	
@@ -572,9 +576,7 @@ public class MultiSellHolder
 		{
 			return null;
 		}
-		
 		String[] a = s.split(":");
-		
 		try
 		{
 			long id = Integer.parseInt(a[0]);
@@ -603,21 +605,16 @@ public class MultiSellHolder
 		{
 			return null;
 		}
-		
 		String[] a = s.split("->");
-		
 		if (a.length != 2)
 		{
 			return null;
 		}
-		
 		long[] ingredient, production;
-		
 		if (((ingredient = parseItemIdAndCount(a[0])) == null) || ((production = parseItemIdAndCount(a[1])) == null))
 		{
 			return null;
 		}
-		
 		MultiSellEntry entry = new MultiSellEntry();
 		entry.addIngredient(new MultiSellIngredient((int) ingredient[0], ingredient[1]));
 		entry.addProduct(new MultiSellIngredient((int) production[0], production[1]));
@@ -629,26 +626,28 @@ public class MultiSellHolder
 	 * @param listId int
 	 * @param player Player
 	 * @param taxRate double
+	 * @param npcId
 	 */
-	public void SeparateAndSend(int listId, Player player, double taxRate)
+	public void SeparateAndSend(int listId, Player player, double taxRate, int npcId)
 	{
 		for (int i : Config.ALT_DISABLED_MULTISELL)
 		{
 			if (i == listId)
 			{
-				player.sendMessage(new CustomMessage("common.Disabled", player));
+				player.sendMessage("Function disabled.");
 				return;
 			}
 		}
-		
 		MultiSellListContainer list = getList(listId);
-		
 		if (list == null)
 		{
-			player.sendMessage(new CustomMessage("common.Disabled", player));
+			player.sendMessage("Function disabled.");
 			return;
 		}
-		
+		if (!list.isNpcAllowed(npcId))
+		{
+			return;
+		}
 		SeparateAndSend(list, player, taxRate);
 	}
 	
@@ -665,21 +664,18 @@ public class MultiSellHolder
 		int page = 1;
 		temp.setListId(list.getListId());
 		player.setMultisell(list);
-		
 		for (MultiSellEntry e : list.getEntries())
 		{
 			if (temp.getEntries().size() == Config.MULTISELL_SIZE)
 			{
-				player.sendPacket(new MultiSellList(temp, page, 0));
+				player.sendPacket(new MultiSellList(temp, page, 0, list.isNew(), list.isNewProduction()));
 				page++;
 				temp = new MultiSellListContainer();
 				temp.setListId(list.getListId());
 			}
-			
 			temp.addEntry(e);
 		}
-		
-		player.sendPacket(new MultiSellList(temp, page, 1));
+		player.sendPacket(new MultiSellList(temp, page, 1, list.isNew(), list.isNewProduction()));
 	}
 	
 	/**
@@ -693,27 +689,28 @@ public class MultiSellHolder
 	{
 		MultiSellListContainer list = new MultiSellListContainer();
 		list.setListId(container.getListId());
+		boolean isnew = container.isNew();
+		boolean isnewProduction = container.isNewProduction();
 		boolean enchant = container.isKeepEnchant();
 		boolean notax = container.isNoTax();
 		boolean showall = container.isShowAll();
 		boolean nokey = container.isNoKey();
+		list.setIsNew(isnew);
+		list.setIsNewProduction(isnewProduction);
 		list.setShowAll(showall);
 		list.setKeepEnchant(enchant);
 		list.setNoTax(notax);
 		list.setNoKey(nokey);
 		ItemInstance[] items = player.getInventory().getItems();
-		
 		for (MultiSellEntry origEntry : container.getEntries())
 		{
 			MultiSellEntry ent = origEntry.clone();
 			List<MultiSellIngredient> ingridients;
-			
 			if (!notax && (taxRate > 0.))
 			{
 				double tax = 0;
 				long adena = 0;
 				ingridients = new ArrayList<>(ent.getIngredients().size() + 1);
-				
 				for (MultiSellIngredient i : ent.getIngredients())
 				{
 					if (i.getItemId() == 57)
@@ -722,34 +719,26 @@ public class MultiSellHolder
 						tax += i.getItemCount() * taxRate;
 						continue;
 					}
-					
 					ingridients.add(i);
-					
 					if (i.getItemId() == ItemTemplate.ITEM_ID_CLAN_REPUTATION_SCORE)
 					{
 						tax += (i.getItemCount() / 120) * 1000 * taxRate * 100;
 					}
-					
 					if (i.getItemId() < 1)
 					{
 						continue;
 					}
-					
 					ItemTemplate item = ItemHolder.getInstance().getTemplate(i.getItemId());
-					
 					if (item.isStackable())
 					{
 						tax += item.getReferencePrice() * i.getItemCount() * taxRate;
 					}
 				}
-				
 				adena = Math.round(adena + tax);
-				
 				if (adena > 0)
 				{
 					ingridients.add(new MultiSellIngredient(57, adena));
 				}
-				
 				ent.setTax(Math.round(tax));
 				ent.getIngredients().clear();
 				ent.getIngredients().addAll(ingridients);
@@ -758,7 +747,6 @@ public class MultiSellHolder
 			{
 				ingridients = ent.getIngredients();
 			}
-			
 			if (showall)
 			{
 				list.entries.add(ent);
@@ -766,25 +754,21 @@ public class MultiSellHolder
 			else
 			{
 				List<Integer> itms = new ArrayList<>();
-				
 				for (MultiSellIngredient ingredient : ingridients)
 				{
 					ItemTemplate template = ingredient.getItemId() <= 0 ? null : ItemHolder.getInstance().getTemplate(ingredient.getItemId());
-					
 					if ((ingredient.getItemId() <= 0) || nokey || ((template != null) && template.isEquipment()))
 					{
 						if (ingredient.getItemId() == 12374)
 						{
 							continue;
 						}
-						
 						if (ingredient.getItemId() == ItemTemplate.ITEM_ID_CLAN_REPUTATION_SCORE)
 						{
 							if (!itms.contains(ingredient.getItemId()) && (player.getClan() != null) && (player.getClan().getReputationScore() >= ingredient.getItemCount()))
 							{
 								itms.add(ingredient.getItemId());
 							}
-							
 							continue;
 						}
 						else if (ingredient.getItemId() == ItemTemplate.ITEM_ID_PC_BANG_POINTS)
@@ -793,7 +777,6 @@ public class MultiSellHolder
 							{
 								itms.add(ingredient.getItemId());
 							}
-							
 							continue;
 						}
 						else if (ingredient.getItemId() == ItemTemplate.ITEM_ID_FAME)
@@ -802,10 +785,8 @@ public class MultiSellHolder
 							{
 								itms.add(ingredient.getItemId());
 							}
-							
 							continue;
 						}
-						
 						for (final ItemInstance item : items)
 						{
 							if ((item.getId() == ingredient.getItemId()) && item.canBeExchanged(player))
@@ -814,42 +795,36 @@ public class MultiSellHolder
 								{
 									continue;
 								}
-								
 								if (item.getEnchantLevel() < ingredient.getItemEnchant())
 								{
 									continue;
 								}
-								
 								if (item.isStackable() && (item.getCount() < ingredient.getItemCount()))
 								{
 									break;
 								}
-								
 								itms.add(enchant ? ingredient.getItemId() + (ingredient.getItemEnchant() * 100000) : ingredient.getItemId());
 								MultiSellEntry possibleEntry = new MultiSellEntry(enchant ? ent.getEntryId() + (item.getEnchantLevel() * 100000) : ent.getEntryId());
-								
 								for (MultiSellIngredient p : ent.getProduction())
 								{
 									if (enchant && (template != null) && template.canBeEnchanted())
 									{
 										p.setItemEnchant(item.getEnchantLevel());
 										p.setItemAttributes(item.getAttributes().clone());
+										p.setAugmentationId(item.getAugmentationId());
 									}
-									
 									possibleEntry.addProduct(p);
 								}
-								
 								for (MultiSellIngredient ig : ingridients)
 								{
 									if (enchant && (ig.getItemId() > 0) && ItemHolder.getInstance().getTemplate(ig.getItemId()).canBeEnchanted())
 									{
 										ig.setItemEnchant(item.getEnchantLevel());
 										ig.setItemAttributes(item.getAttributes().clone());
+										ig.setAugmentationId(item.getAugmentationId());
 									}
-									
 									possibleEntry.addIngredient(ig);
 								}
-								
 								list.entries.add(possibleEntry);
 								break;
 							}
@@ -858,7 +833,6 @@ public class MultiSellHolder
 				}
 			}
 		}
-		
 		return list;
 	}
 }

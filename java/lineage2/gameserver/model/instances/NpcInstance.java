@@ -77,7 +77,6 @@ import lineage2.gameserver.network.serverpackets.NpcHtmlMessage;
 import lineage2.gameserver.network.serverpackets.NpcInfo;
 import lineage2.gameserver.network.serverpackets.SocialAction;
 import lineage2.gameserver.network.serverpackets.SystemMessage2;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.network.serverpackets.components.NpcString;
 import lineage2.gameserver.network.serverpackets.components.SystemMsg;
 import lineage2.gameserver.stats.Stats;
@@ -1219,7 +1218,6 @@ public class NpcInstance extends Creature
 								{
 									return;
 								}
-								
 								break;
 							}
 						}
@@ -1535,7 +1533,6 @@ public class NpcInstance extends Creature
 				{
 					filename = getHtmlPath(npcId, 0, player);
 				}
-				
 				break;
 			
 			default:
@@ -1692,16 +1689,7 @@ public class NpcInstance extends Creature
 			NpcHtmlMessage html = new NpcHtmlMessage(player, this);
 			StringBuilder sb = new StringBuilder();
 			sb.append("<html><head><body>");
-			
-			if (player.getVar("lang@").equalsIgnoreCase("en"))
-			{
-				sb.append("I cannot teach you. My class list is empty.<br> Ask admin to fix it. <br>NpcId:" + npcId + ", Your classId:" + player.getClassId().getId() + "<br>");
-			}
-			else
-			{
-				sb.append("Я не могу обучит�? теб�?. Дл�? твоего кла�?�?а мой �?пи�?ок пу�?т.<br> Св�?жи�?�? �? админом дл�? фик�?а �?того. <br>NpcId:" + npcId + ", твой classId:" + player.getClassId().getId() + "<br>");
-			}
-			
+			sb.append("I cannot teach you. My class list is empty.<br> Ask admin to fix it. <br>NpcId:" + npcId + ", Your classId:" + player.getClassId().getId() + "<br>");
 			sb.append("</body></html>");
 			html.setHtml(sb.toString());
 			player.sendPacket(html);
@@ -1723,7 +1711,7 @@ public class NpcInstance extends Creature
 				NpcHtmlMessage html = new NpcHtmlMessage(player, this);
 				StringBuilder sb = new StringBuilder();
 				sb.append("<html><head><body>");
-				sb.append(new CustomMessage("lineage2.gameserver.model.instances.L2NpcInstance.WrongTeacherClass", player));
+				sb.append("I cannot teach you any skills.<br>You must find your current class teachers.");
 				sb.append("</body></html>");
 				html.setHtml(sb.toString());
 				player.sendPacket(html);

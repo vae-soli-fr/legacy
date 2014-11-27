@@ -174,7 +174,7 @@ public class RequestBypassToServer extends L2GameClientPacket
 				String firstVal = ar[0].split("=")[1];
 				String secondVal = ar[1].split("=")[1];
 				
-				if (firstVal.equalsIgnoreCase("move_op_field"))
+				if (firstVal.equals("move_op_field"))
 				{
 					if (!Config.ENABLE_OLYMPIAD_SPECTATING)
 					{
@@ -219,7 +219,7 @@ public class RequestBypassToServer extends L2GameClientPacket
 			}
 			else if (bp.bypass.startsWith("multisell "))
 			{
-				MultiSellHolder.getInstance().SeparateAndSend(Integer.parseInt(bp.bypass.substring(10)), activeChar, 0);
+				MultiSellHolder.getInstance().SeparateAndSend(Integer.parseInt(bp.bypass.substring(10)), activeChar, 0, npc != null ? npc.getId() : -1);
 			}
 			else if (bp.bypass.startsWith("menu_select?"))
 			{

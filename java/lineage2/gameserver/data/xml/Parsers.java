@@ -12,7 +12,6 @@
  */
 package lineage2.gameserver.data.xml;
 
-import lineage2.gameserver.data.StringHolder;
 import lineage2.gameserver.data.htm.HtmCache;
 import lineage2.gameserver.data.xml.holder.BuyListHolder;
 import lineage2.gameserver.data.xml.holder.ManorDataHolder;
@@ -48,7 +47,6 @@ import lineage2.gameserver.data.xml.parser.SkillAcquireParser;
 import lineage2.gameserver.data.xml.parser.SoulCrystalParser;
 import lineage2.gameserver.data.xml.parser.SpawnParser;
 import lineage2.gameserver.data.xml.parser.StaticObjectParser;
-import lineage2.gameserver.data.xml.parser.StatuesSpawnParser;
 import lineage2.gameserver.data.xml.parser.WalkerRoutesParser;
 import lineage2.gameserver.data.xml.parser.ZoneParser;
 import lineage2.gameserver.instancemanager.ReflectionManager;
@@ -68,7 +66,6 @@ public abstract class Parsers
 	public static void parseAll()
 	{
 		HtmCache.getInstance().reload();
-		StringHolder.getInstance().load();
 		SkillTable.getInstance().load();
 		RestorationInfoParser.getInstance().load();
 		OptionDataParser.getInstance().load();
@@ -108,7 +105,6 @@ public abstract class Parsers
 		PlayerTemplateParser.getInstance().load();
 		ClassDataParser.getInstance().load();
 		LevelBonusParser.getInstance().load();
-		StatuesSpawnParser.getInstance().load();
 		BeautyShopParser.getInstance().load();
 	}
 }

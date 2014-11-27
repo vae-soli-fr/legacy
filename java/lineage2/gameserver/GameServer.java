@@ -56,7 +56,6 @@ import lineage2.gameserver.instancemanager.SoDManager;
 import lineage2.gameserver.instancemanager.SoHManager;
 import lineage2.gameserver.instancemanager.SoIManager;
 import lineage2.gameserver.instancemanager.SpawnManager;
-import lineage2.gameserver.instancemanager.WorldStatisticsManager;
 import lineage2.gameserver.instancemanager.commission.CommissionShopManager;
 import lineage2.gameserver.instancemanager.games.FishingChampionShipManager;
 import lineage2.gameserver.instancemanager.games.LotteryManager;
@@ -89,7 +88,6 @@ import lineage2.gameserver.tables.SubClassTable;
 import lineage2.gameserver.taskmanager.ItemsAutoDestroy;
 import lineage2.gameserver.taskmanager.TaskManager;
 import lineage2.gameserver.taskmanager.tasks.RestoreOfflineTraders;
-import lineage2.gameserver.utils.Strings;
 import net.sf.ehcache.CacheManager;
 
 import org.slf4j.Logger;
@@ -104,9 +102,6 @@ public class GameServer
 	public static final int LOGIN_SERVER_PROTOCOL = 2;
 	private static final Logger _log = LoggerFactory.getLogger(GameServer.class);
 	
-	/**
-	 * @author Mobius
-	 */
 	private class GameServerListenerList extends ListenerList<GameServer>
 	{
 		public GameServerListenerList()
@@ -192,87 +187,75 @@ public class GameServer
 		Class.forName(Config.DATABASE_DRIVER).newInstance();
 		DatabaseFactory.getInstance().getConnection().close();
 		IdFactory _idFactory = IdFactory.getInstance();
-		
 		if (!_idFactory.isInitialized())
 		{
 			_log.error("Could not read object IDs from DB. Please Check Your Data.");
 			throw new Exception("Could not initialize the ID factory");
 		}
-		
 		CacheManager.getInstance();
 		ThreadPoolManager.getInstance();
+		GameTimeController.getInstance();
+		GeoEngine.load();
+		World.init();
+		Scripts.getInstance();
+		Parsers.parseAll();
+		ItemsDAO.getInstance();
 		AttributeStoneManager.load();
 		LifeStoneManager.load();
 		EnchantScrollManager.load();
 		CrystallizationManager.load();
-		Scripts.getInstance();
-		GeoEngine.load();
-		Strings.reload();
-		GameTimeController.getInstance();
-		World.init();
-		Parsers.parseAll();
-		ItemsDAO.getInstance();
 		CrestCache.getInstance();
 		CharacterDAO.getInstance();
 		ClanTable.getInstance();
 		FakePlayersTable.getInstance();
-		SkillTreeTable.getInstance();
-		AugmentationData.getInstance();
 		EnchantHPBonusTable.getInstance();
+		SkillTreeTable.getInstance();
 		PetSkillsTable.getInstance();
+		AugmentationData.getInstance();
 		ItemAuctionManager.getInstance();
 		CommissionShopManager.getInstance();
 		SpawnManager.getInstance().spawnAll();
 		StaticObjectHolder.getInstance().spawnAll();
 		RaidBossSpawnManager.getInstance();
 		Scripts.getInstance().init();
-		DelusionChamberManager.getInstance();
+		L2TopManager.getInstance();
+		MMOTopManager.getInstance();
+		SMSWayToPay.getInstance();
 		Announcements.getInstance();
-		LotteryManager.getInstance();
+		PetitionManager.getInstance();
 		PlayerMessageStack.getInstance();
-		
 		if (Config.AUTODESTROY_ITEM_AFTER > 0)
 		{
 			ItemsAutoDestroy.getInstance();
 		}
-		
-		MonsterRace.getInstance();
-		
 		if (Config.ENABLE_OLYMPIAD)
 		{
 			Olympiad.load();
 			Hero.getInstance();
 		}
-		
-		PetitionManager.getInstance();
-		CursedWeaponsManager.getInstance();
-		
+		if (Config.ALT_FISH_CHAMPIONSHIP_ENABLED)
+		{
+			FishingChampionShipManager.getInstance();
+		}
 		if (!Config.ALLOW_WEDDING)
 		{
 			CoupleManager.getInstance();
 			_log.info("CoupleManager initialized");
 		}
-		
+		CoupleManager.getInstance();
+		MonsterRace.getInstance();
+		LotteryManager.getInstance();
+		CursedWeaponsManager.getInstance();
+		DelusionChamberManager.getInstance();
 		ItemHandler.getInstance();
 		AdminCommandHandler.getInstance();
 		UserCommandHandler.getInstance();
 		VoicedCommandHandler.getInstance();
 		TaskManager.getInstance();
-		_log.info("=[Events]=========================================");
 		ResidenceHolder.getInstance().callInit();
 		EventHolder.getInstance().callInit();
-		_log.info("==================================================");
 		BoatHolder.getInstance().spawnAll();
 		CastleManorManager.getInstance();
-		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
-		_log.info("IdFactory: Free Object IDs remaining: " + IdFactory.getInstance().size());
-		CoupleManager.getInstance();
-		
-		if (Config.ALT_FISH_CHAMPIONSHIP_ENABLED)
-		{
-			FishingChampionShipManager.getInstance();
-		}
-		
 		HellboundManager.getInstance();
 		NaiaTowerManager.getInstance();
 		NaiaCoreManager.getInstance();
@@ -280,60 +263,55 @@ public class GameServer
 		SoIManager.getInstance();
 		SoHManager.getInstance();
 		HarnakUndegroundManager.getInstance();
-		L2TopManager.getInstance();
-		MMOTopManager.getInstance();
-		SMSWayToPay.getInstance();
 		MiniGameScoreManager.getInstance();
 		AwakingManager.getInstance();
 		FindPartyManager.getInstance().load();
 		ArcanManager.getInstance();
-		WorldStatisticsManager.getInstance();
 		SubClassTable.getInstance();
 		DualClassTable.getInstance();
-		
 		if (Config.GARBAGE_COLLECTOR_INTERVAL > 0)
 		{
 			Class.forName(GarbageCollector.class.getName());
 		}
-		
 		// Uncomment to check for double spawns
 		/*
 		 * for (NpcInstance npcInst : GameObjectsStorage.getAllNpcsForIterate()) { final List<NpcInstance> around = npcInst.getAroundNpc(10, 10); if ((around != null) && !around.isEmpty()) { for (NpcInstance npc : around) { if ((npcInst.getId() == npc.getId()) && !npcInst.isMonster() &&
 		 * !npc.getTitle().equals("Double Spawn") && !npcInst.getName().contains("Star Stone") && !npcInst.getName().contains("Wisp")) { npcInst.setTitle("Double Spawn"); npc.setTitle("Double Spawn"); _log.info("Probable double spawn: NpcId " + npc.getId() + " Location " + npc.getSpawnedLoc().getX()
 		 * + " " + npc.getSpawnedLoc().getY() + " " + npc.getSpawnedLoc().getZ() + " " + npc.getSpawnedLoc().getHeading()); } } } }
 		 */
-		
-		Shutdown.getInstance().schedule(Config.RESTART_AT_TIME, Shutdown.RESTART);
+		_log.info("==============================================================");
 		_log.info("GameServer Started");
+		_log.info("==============================================================");
+		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
+		Shutdown.getInstance().schedule(Config.RESTART_AT_TIME, Shutdown.RESTART);
 		_log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
-		GamePacketHandler gph = new GamePacketHandler();
-		InetAddress serverAddr = Config.GAMESERVER_HOSTNAME.equalsIgnoreCase("*") ? null : InetAddress.getByName(Config.GAMESERVER_HOSTNAME);
-		_selectorThreads = new SelectorThread[Config.PORTS_GAME.length];
+		_log.info("IdFactory: Free Object IDs remaining: " + IdFactory.getInstance().size());
+		getListeners().onStart();
+		_log.info("==============================================================");
+		String memUsage = new StringBuilder().append(StatsUtils.getMemUsage()).toString();
+		for (String line : memUsage.split("\n"))
+		{
+			_log.info(line);
+		}
+		_log.info("==============================================================");
+		_log.info("Server loaded in " + uptime() + " seconds.");
+		_log.info("==============================================================");
 		
+		InetAddress serverAddr = Config.GAMESERVER_HOSTNAME.equals("*") ? null : InetAddress.getByName(Config.GAMESERVER_HOSTNAME);
+		_selectorThreads = new SelectorThread[Config.PORTS_GAME.length];
+		GamePacketHandler gph = new GamePacketHandler();
 		for (int i = 0; i < Config.PORTS_GAME.length; i++)
 		{
 			_selectorThreads[i] = new SelectorThread<>(Config.SELECTOR_CONFIG, gph, gph, gph, null);
 			_selectorThreads[i].openServerSocket(serverAddr, Config.PORTS_GAME[i]);
 			_selectorThreads[i].start();
 		}
-		
 		LoginServerCommunication.getInstance().start();
 		
 		if (Config.SERVICES_OFFLINE_TRADE_RESTORE_AFTER_RESTART)
 		{
 			ThreadPoolManager.getInstance().schedule(new RestoreOfflineTraders(), 30000L);
 		}
-		
-		getListeners().onStart();
-		_log.info("=================================================");
-		String memUsage = new StringBuilder().append(StatsUtils.getMemUsage()).toString();
-		
-		for (String line : memUsage.split("\n"))
-		{
-			_log.info(line);
-		}
-		
-		_log.info("=================================================");
 	}
 	
 	/**
@@ -391,7 +369,7 @@ public class GameServer
 				{
 					ServerSocket ss;
 					
-					if (Config.GAMESERVER_HOSTNAME.equalsIgnoreCase("*"))
+					if (Config.GAMESERVER_HOSTNAME.equals("*"))
 					{
 						ss = new ServerSocket(PORT_GAME);
 					}

@@ -47,28 +47,6 @@ public final class TheFallHarvest extends Functions implements ScriptFile, OnDea
 	private static final File multiSellFile = new File(Config.DATAPACK_ROOT, "data/xml/other/event/TheFallHarvest/31255.xml");
 	
 	/**
-	 * Method onLoad.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
-	 */
-	@Override
-	public void onLoad()
-	{
-		CharListenerList.addGlobal(this);
-		
-		if (isActive())
-		{
-			_active = true;
-			loadMultiSell();
-			spawnEventManagers();
-			_log.info("Loaded Event: The Fall Harvest [state: activated]");
-		}
-		else
-		{
-			_log.info("Loaded Event: The Fall Harvest [state: deactivated]");
-		}
-	}
-	
-	/**
 	 * Method isActive.
 	 * @return boolean
 	 */
@@ -94,7 +72,7 @@ public final class TheFallHarvest extends Functions implements ScriptFile, OnDea
 			loadMultiSell();
 			spawnEventManagers();
 			System.out.println("Event 'The Fall Harvest' started.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.TheFallHarvest.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The event 'The Fall Harvest' started.");
 		}
 		else
 		{
@@ -121,7 +99,7 @@ public final class TheFallHarvest extends Functions implements ScriptFile, OnDea
 		{
 			unSpawnEventManagers();
 			System.out.println("Event 'The Fall Harvest' stopped.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.TheFallHarvest.AnnounceEventStoped", null);
+			Announcements.getInstance().announceToAll("The event 'The Fall Harvest' stopped.");
 		}
 		else
 		{
@@ -238,32 +216,6 @@ public final class TheFallHarvest extends Functions implements ScriptFile, OnDea
 	}
 	
 	/**
-	 * Method onReload.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
-	 */
-	@Override
-	public void onReload()
-	{
-		unSpawnEventManagers();
-		
-		if (MultiSellLoaded)
-		{
-			MultiSellHolder.getInstance().remove(multiSellFile);
-			MultiSellLoaded = false;
-		}
-	}
-	
-	/**
-	 * Method onShutdown.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
-	 */
-	@Override
-	public void onShutdown()
-	{
-		// empty method
-	}
-	
-	/**
 	 * Method onDeath.
 	 * @param cha Creature
 	 * @param killer Creature
@@ -288,7 +240,55 @@ public final class TheFallHarvest extends Functions implements ScriptFile, OnDea
 	{
 		if (_active)
 		{
-			Announcements.getInstance().announceToPlayerByCustomMessage(player, "scripts.events.TheFallHarvest.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The event 'The Fall Harvest' started.");
 		}
+	}
+	
+	/**
+	 * Method onLoad.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
+	 */
+	@Override
+	public void onLoad()
+	{
+		CharListenerList.addGlobal(this);
+		
+		if (isActive())
+		{
+			_active = true;
+			loadMultiSell();
+			spawnEventManagers();
+			_log.info("Loaded Event: The Fall Harvest [state: activated]");
+		}
+		else
+		{
+			_log.info("Loaded Event: The Fall Harvest [state: deactivated]");
+		}
+	}
+	
+	/**
+	 * Method onReload.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
+	 */
+	@Override
+	public void onReload()
+	{
+		unSpawnEventManagers();
+		
+		if (MultiSellLoaded)
+		{
+			MultiSellHolder.getInstance().remove(multiSellFile);
+			MultiSellLoaded = false;
+		}
+	}
+	
+	/**
+	 * Method onShutdown.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
+	 */
+	@Override
+	public void onShutdown()
+	{
+		// empty method
 	}
 }

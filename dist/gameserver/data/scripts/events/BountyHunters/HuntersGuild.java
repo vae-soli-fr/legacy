@@ -32,7 +32,6 @@ import lineage2.gameserver.model.instances.MinionInstance;
 import lineage2.gameserver.model.instances.MonsterInstance;
 import lineage2.gameserver.model.instances.RaidBossInstance;
 import lineage2.gameserver.model.instances.TamedBeastInstance;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.scripts.Functions;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.templates.npc.NpcTemplate;
@@ -53,44 +52,6 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 		"declinetask"
 	};
 	private static final Logger _log = LoggerFactory.getLogger(HuntersGuild.class);
-	
-	/**
-	 * Method onLoad.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
-	 */
-	@Override
-	public void onLoad()
-	{
-		CharListenerList.addGlobal(this);
-		
-		if (!Config.EVENT_BOUNTY_HUNTERS_ENABLED)
-		{
-			return;
-		}
-		
-		VoicedCommandHandler.getInstance().registerVoicedCommandHandler(this);
-		_log.info("Loaded Event: Bounty Hunters Guild");
-	}
-	
-	/**
-	 * Method onReload.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
-	 */
-	@Override
-	public void onReload()
-	{
-		// empty method
-	}
-	
-	/**
-	 * Method onShutdown.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
-	 */
-	@Override
-	public void onShutdown()
-	{
-		// empty method
-	}
 	
 	/**
 	 * Method checkTarget.
@@ -178,7 +139,7 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 			
 			if ((monsters == null) || monsters.isEmpty())
 			{
-				show(new CustomMessage("scripts.events.bountyhunters.NoTargets", player), player);
+				show("Guild has no tasks for you.", player);
 				return;
 			}
 			
@@ -194,7 +155,7 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 			
 			if (targets.isEmpty())
 			{
-				show(new CustomMessage("scripts.events.bountyhunters.NoTargets", player), player);
+				show("Guild has no tasks for you.", player);
 				return;
 			}
 			
@@ -206,13 +167,13 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 			
 			if ((target == null) || !checkTarget(target))
 			{
-				show(new CustomMessage("scripts.events.bountyhunters.WrongTarget", player), player);
+				show("This is not a monster!", player);
 				return;
 			}
 			
 			if ((player.getLevel() - target.level) > 5)
 			{
-				show(new CustomMessage("scripts.events.bountyhunters.TooEasy", player), player);
+				show("This monster is too weak, find better target.", player);
 				return;
 			}
 			
@@ -262,7 +223,7 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 			player.setVar("bhRewardCount", String.valueOf(adenarewardvalue / ItemHolder.getInstance().getTemplate(crystal).getReferencePrice()), -1);
 		}
 		
-		show(new CustomMessage("scripts.events.bountyhunters.TaskGiven", player).addNumber(mobcount).addString(target.name), player);
+		show("Your task - kill " + mobcount + " " + target.name + ".", player);
 	}
 	
 	/**
@@ -291,7 +252,7 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 			}
 			else
 			{
-				sendMessage(new CustomMessage("scripts.events.bountyhunters.NotifyKill", killer.getPlayer()).addNumber(needed - count), killer.getPlayer());
+				sendMessage((needed - count) + " monsters of this type left!", killer.getPlayer());
 			}
 		}
 	}
@@ -325,12 +286,12 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 		}
 		
 		addItem(player, rewardid, rewardcount);
-		show(new CustomMessage("scripts.events.bountyhunters.TaskCompleted", player).addNumber(rewardcount).addItemName(rewardid), player);
+		show("Task completed! Your reward is " + rewardcount + " " + rewardid + ".", player);
 	}
 	
 	/**
 	 * Method getVoicedCommandList.
-	 * @return String[] * @see lineage2.gameserver.handlers.voicedcommands.IVoicedCommandHandler#getVoicedCommandList()
+	 * @return String[]
 	 */
 	@Override
 	public String[] getVoicedCommandList()
@@ -356,17 +317,17 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 		
 		if (activeChar.getLevel() < 20)
 		{
-			sendMessage(new CustomMessage("scripts.events.bountyhunters.TooLowLevel", activeChar), activeChar);
+			sendMessage("You must be at least 20 level.", activeChar);
 			return true;
 		}
 		
-		if (command.equalsIgnoreCase("gettask"))
+		if (command.equals("gettask"))
 		{
 			if (activeChar.getVar("bhMonstersId") != null)
 			{
 				final int mobid = Integer.parseInt(activeChar.getVar("bhMonstersId"));
 				final int mobcount = Integer.parseInt(activeChar.getVar("bhMonstersNeeded")) - Integer.parseInt(activeChar.getVar("bhMonstersKilled"));
-				show(new CustomMessage("scripts.events.bountyhunters.TaskGiven", activeChar).addNumber(mobcount).addString(NpcHolder.getInstance().getTemplate(mobid).name), activeChar);
+				show("Your task - kill " + mobcount + " " + NpcHolder.getInstance().getTemplate(mobid).name + ".", activeChar);
 				return true;
 			}
 			
@@ -380,12 +341,11 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 			getTask(activeChar, id);
 			return true;
 		}
-		
-		if (command.equalsIgnoreCase("declinetask"))
+		else if (command.equals("declinetask"))
 		{
 			if (activeChar.getVar("bhMonstersId") == null)
 			{
-				sendMessage(new CustomMessage("scripts.events.bountyhunters.NoTask", activeChar), activeChar);
+				sendMessage("You have no task.", activeChar);
 				return true;
 			}
 			
@@ -404,10 +364,46 @@ public final class HuntersGuild extends Functions implements ScriptFile, IVoiced
 				activeChar.setVar("bhfails", "1", -1);
 			}
 			
-			show(new CustomMessage("scripts.events.bountyhunters.TaskCanceled", activeChar), activeChar);
+			show("You declined your task, your reputation was reduced.", activeChar);
 			return true;
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Method onLoad.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
+	 */
+	@Override
+	public void onLoad()
+	{
+		CharListenerList.addGlobal(this);
+		
+		if (!Config.EVENT_BOUNTY_HUNTERS_ENABLED)
+		{
+			return;
+		}
+		
+		VoicedCommandHandler.getInstance().registerVoicedCommandHandler(this);
+		_log.info("Loaded Event: Bounty Hunters Guild");
+	}
+	
+	/**
+	 * Method onReload.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
+	 */
+	@Override
+	public void onReload()
+	{
+	}
+	
+	/**
+	 * Method onShutdown.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
+	 */
+	@Override
+	public void onShutdown()
+	{
 	}
 }

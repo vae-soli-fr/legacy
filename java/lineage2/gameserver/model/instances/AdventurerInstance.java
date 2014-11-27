@@ -17,7 +17,6 @@ import lineage2.gameserver.model.Player;
 import lineage2.gameserver.model.Spawner;
 import lineage2.gameserver.network.serverpackets.ExShowQuestInfo;
 import lineage2.gameserver.network.serverpackets.RadarControl;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.templates.npc.NpcTemplate;
 import lineage2.gameserver.utils.Location;
 
@@ -71,7 +70,7 @@ public class AdventurerInstance extends NpcInstance
 						break;
 					
 					case UNDEFINED:
-						player.sendMessage(new CustomMessage("lineage2.gameserver.model.instances.L2AdventurerInstance.BossNotInGame", player).addNumber(bossId));
+						player.sendMessage("Boss isn't in game , Boss ID: " + bossId);
 						break;
 				}
 			}
@@ -92,7 +91,7 @@ public class AdventurerInstance extends NpcInstance
 			
 			showChatWindow(player, filename);
 		}
-		else if (command.equalsIgnoreCase("questlist"))
+		else if (command.equals("questlist"))
 		{
 			player.sendPacket(ExShowQuestInfo.STATIC);
 		}

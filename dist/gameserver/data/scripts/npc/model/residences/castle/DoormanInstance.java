@@ -67,14 +67,14 @@ public final class DoormanInstance extends npc.model.residences.DoormanInstance
 		switch (cond)
 		{
 			case COND_OWNER:
-				if (command.equalsIgnoreCase("openDoors"))
+				if (command.equals("openDoors"))
 				{
 					for (int i : _doors)
 					{
 						ReflectionUtils.getDoor(i).openMe(player, true);
 					}
 				}
-				else if (command.equalsIgnoreCase("closeDoors"))
+				else if (command.equals("closeDoors"))
 				{
 					for (int i : _doors)
 					{
@@ -91,7 +91,6 @@ public final class DoormanInstance extends npc.model.residences.DoormanInstance
 						player.teleToLocation(loc);
 					}
 				}
-				
 				break;
 			
 			case COND_SIEGE:
@@ -109,7 +108,6 @@ public final class DoormanInstance extends npc.model.residences.DoormanInstance
 				{
 					player.sendPacket(new NpcHtmlMessage(player, this, _siegeDialog, 0));
 				}
-				
 				break;
 			
 			case COND_FAIL:

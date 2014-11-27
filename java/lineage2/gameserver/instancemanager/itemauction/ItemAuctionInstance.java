@@ -218,7 +218,6 @@ public class ItemAuctionInstance
 						{
 							nextAuction = auctions[0];
 						}
-						
 						break;
 					}
 					
@@ -239,7 +238,6 @@ public class ItemAuctionInstance
 					default:
 						throw new IllegalArgumentException();
 				}
-				
 				break;
 			}
 			
@@ -286,7 +284,6 @@ public class ItemAuctionInstance
 				{
 					nextAuction = createAuction(System.currentTimeMillis() + START_TIME_SPACE);
 				}
-				
 				break;
 			}
 		}
@@ -393,8 +390,23 @@ public class ItemAuctionInstance
 					
 					if (Config.ALT_ITEM_AUCTION_START_ANNOUNCE)
 					{
-						String[] params = {};
-						Announcements.getInstance().announceByCustomMessage("lineage2.gameserver.model.instances.L2ItemAuctionBrokerInstance.announce." + _auction.getInstanceId(), params);
+						String town = "";
+						switch (_auction.getInstanceId())
+						{
+							case 32320:
+								town = "Giran";
+								break;
+							
+							case 32321:
+								town = "Aden";
+								break;
+							
+							case 32322:
+								town = "Rune";
+								break;
+						}
+						
+						Announcements.getInstance().announceToAll("Item auction started in " + town + ", details on Item Broker.");
 					}
 					
 					checkAndSetCurrentAndNextAuction();
@@ -413,7 +425,6 @@ public class ItemAuctionInstance
 								setStateTask(ThreadPoolManager.getInstance().schedule(this, Math.max(_auction.getEndingTime() - System.currentTimeMillis(), 0L)));
 								return;
 							}
-							
 							break;
 						}
 						
@@ -425,7 +436,6 @@ public class ItemAuctionInstance
 								setStateTask(ThreadPoolManager.getInstance().schedule(this, Math.max(_auction.getEndingTime() - System.currentTimeMillis(), 0L)));
 								return;
 							}
-							
 							break;
 						}
 					}

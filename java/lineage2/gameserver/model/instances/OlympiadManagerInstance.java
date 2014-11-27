@@ -115,7 +115,6 @@ public class OlympiadManagerInstance extends NpcInstance
 						
 						player.sendPacket(html);
 					}
-					
 					break;
 				
 				case 4:
@@ -138,15 +137,14 @@ public class OlympiadManagerInstance extends NpcInstance
 					{
 						player.sendPacket(html.setFile(Olympiad.OLYMPIAD_HTML_PATH + "manager_nopoints.htm"));
 					}
-					
 					break;
 				
 				case 7:
-					MultiSellHolder.getInstance().SeparateAndSend(102, player, 0);
+					MultiSellHolder.getInstance().SeparateAndSend(102, player, 0, getId());
 					break;
 				
 				case 9:
-					MultiSellHolder.getInstance().SeparateAndSend(103, player, 0);
+					MultiSellHolder.getInstance().SeparateAndSend(103, player, 0, getId());
 					break;
 				
 				default:
@@ -205,7 +203,6 @@ public class OlympiadManagerInstance extends NpcInstance
 						
 						player.sendPacket(reply);
 					}
-					
 					break;
 				
 				case 3:

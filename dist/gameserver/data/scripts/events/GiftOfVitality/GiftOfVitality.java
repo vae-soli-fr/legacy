@@ -259,7 +259,7 @@ public final class GiftOfVitality extends Functions implements ScriptFile
 		{
 			spawnEventManagers();
 			System.out.println("Event: 'Gift Of Vitality' started.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.GiftOfVitality.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The evil has come to the lands of Aden! Jack the Sage has returned to help all adventurers in fight. Visit him at all major towns to receive the Gift of Vitality.");
 		}
 		else
 		{
@@ -285,7 +285,7 @@ public final class GiftOfVitality extends Functions implements ScriptFile
 		{
 			unSpawnEventManagers();
 			System.out.println("Event: 'Gift Of Vitality' stopped.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.GiftOfVitality.AnnounceEventStoped", null);
+			Announcements.getInstance().announceToAll("Jack the Sage has left the world for now and Gift of Vitality event has ended.");
 		}
 		else
 		{
@@ -293,6 +293,98 @@ public final class GiftOfVitality extends Functions implements ScriptFile
 		}
 		
 		show("admin/events.htm", player);
+	}
+	
+	/**
+	 * Method buffMe.
+	 * @param type BuffType
+	 */
+	private void buffMe(BuffType type)
+	{
+		if ((getSelf() == null) || (getNpc() == null) || (getSelf().getPlayer() == null))
+		{
+			return;
+		}
+		
+		String htmltext = null;
+		final Player player = getSelf().getPlayer();
+		final NpcInstance npc = getNpc();
+		final String var = player.getVar("govEventTime");
+		
+		switch (type)
+		{
+			case VITALITY:
+				if (((var != null) && (Long.parseLong(var) > System.currentTimeMillis())) || (player.getBaseClassId() != player.getActiveClassId()))
+				{
+					htmltext = "jack-notime.htm";
+				}
+				else
+				{
+					npc.broadcastPacket(new MagicSkillUse(npc, player, 23179, 1, 0, 0));
+					player.altOnMagicUseTimer(player, SkillTable.getInstance().getInfo(23179, 1));
+					player.setVar("govEventTime", String.valueOf(System.currentTimeMillis() + (REUSE_HOURS * 60 * 60 * 1000L)), -1);
+					player.setVitality(Config.MAX_VITALITY);
+					htmltext = "jack-okvitality.htm";
+				}
+				break;
+			
+			case PLAYER:
+				if (player.getLevel() < 76)
+				{
+					htmltext = "jack-nolevel.htm";
+				}
+				else
+				{
+					if (!player.isMageClass() || (player.getTemplate().getRace() == Race.orc))
+					{
+						for (int[] buff : _warrBuff)
+						{
+							npc.broadcastPacket(new MagicSkillUse(npc, player, buff[0], buff[1], 0, 0));
+							player.altOnMagicUseTimer(player, SkillTable.getInstance().getInfo(buff[0], buff[1]));
+						}
+					}
+					else
+					{
+						for (int[] buff : _mageBuff)
+						{
+							npc.broadcastPacket(new MagicSkillUse(npc, player, buff[0], buff[1], 0, 0));
+							player.altOnMagicUseTimer(player, SkillTable.getInstance().getInfo(buff[0], buff[1]));
+						}
+					}
+					
+					htmltext = "jack-okbuff.htm";
+				}
+				break;
+			
+			default:
+				break;
+		}
+		
+		show("scripts/events/GiftOfVitality/" + htmltext, getSelf().getPlayer());
+	}
+	
+	/**
+	 * Method buffVitality.
+	 */
+	public void buffVitality()
+	{
+		buffMe(BuffType.VITALITY);
+	}
+	
+	/**
+	 * Method buffSummon.
+	 */
+	public void buffSummon()
+	{
+		buffMe(BuffType.SUMMON);
+	}
+	
+	/**
+	 * Method buffPlayer.
+	 */
+	public void buffPlayer()
+	{
+		buffMe(BuffType.PLAYER);
 	}
 	
 	/**
@@ -331,99 +423,5 @@ public final class GiftOfVitality extends Functions implements ScriptFile
 	public void onShutdown()
 	{
 		unSpawnEventManagers();
-	}
-	
-	/**
-	 * Method buffMe.
-	 * @param type BuffType
-	 */
-	private void buffMe(BuffType type)
-	{
-		if ((getSelf() == null) || (getNpc() == null) || (getSelf().getPlayer() == null))
-		{
-			return;
-		}
-		
-		String htmltext = null;
-		final Player player = getSelf().getPlayer();
-		final NpcInstance npc = getNpc();
-		final String var = player.getVar("govEventTime");
-		
-		switch (type)
-		{
-			case VITALITY:
-				if (((var != null) && (Long.parseLong(var) > System.currentTimeMillis())) || (player.getBaseClassId() != player.getActiveClassId()))
-				{
-					htmltext = "jack-notime.htm";
-				}
-				else
-				{
-					npc.broadcastPacket(new MagicSkillUse(npc, player, 23179, 1, 0, 0));
-					player.altOnMagicUseTimer(player, SkillTable.getInstance().getInfo(23179, 1));
-					player.setVar("govEventTime", String.valueOf(System.currentTimeMillis() + (REUSE_HOURS * 60 * 60 * 1000L)), -1);
-					player.setVitality(Config.MAX_VITALITY);
-					htmltext = "jack-okvitality.htm";
-				}
-				
-				break;
-			
-			case PLAYER:
-				if (player.getLevel() < 76)
-				{
-					htmltext = "jack-nolevel.htm";
-				}
-				else
-				{
-					if (!player.isMageClass() || (player.getTemplate().getRace() == Race.orc))
-					{
-						for (int[] buff : _warrBuff)
-						{
-							npc.broadcastPacket(new MagicSkillUse(npc, player, buff[0], buff[1], 0, 0));
-							player.altOnMagicUseTimer(player, SkillTable.getInstance().getInfo(buff[0], buff[1]));
-						}
-					}
-					else
-					{
-						for (int[] buff : _mageBuff)
-						{
-							npc.broadcastPacket(new MagicSkillUse(npc, player, buff[0], buff[1], 0, 0));
-							player.altOnMagicUseTimer(player, SkillTable.getInstance().getInfo(buff[0], buff[1]));
-						}
-					}
-					
-					htmltext = "jack-okbuff.htm";
-				}
-				
-				break;
-			
-			default:
-				break;
-		}
-		
-		show("scripts/events/GiftOfVitality/" + htmltext, getSelf().getPlayer());
-	}
-	
-	/**
-	 * Method buffVitality.
-	 */
-	public void buffVitality()
-	{
-		buffMe(BuffType.VITALITY);
-	}
-	
-	/**
-	 * Method buffSummon.
-	 */
-	public void buffSummon()
-	{
-		buffMe(BuffType.SUMMON);
-	}
-	
-	/**
-	 * Method buffPlayer.
-	 */
-	public void buffPlayer()
-	{
-		buffMe(BuffType.PLAYER);
 	}
 }

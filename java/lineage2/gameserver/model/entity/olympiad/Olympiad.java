@@ -36,7 +36,6 @@ import lineage2.gameserver.model.entity.olympiad.tasks.ValidationTask;
 import lineage2.gameserver.model.entity.olympiad.tasks.WeeklyTask;
 import lineage2.gameserver.model.instances.NpcInstance;
 import lineage2.gameserver.network.serverpackets.SystemMessage2;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.network.serverpackets.components.SystemMsg;
 import lineage2.gameserver.templates.StatsSet;
 import lineage2.gameserver.utils.Location;
@@ -140,7 +139,6 @@ public class Olympiad
 				{
 					_isOlympiadEnd = false;
 				}
-				
 				break;
 			
 			case 1:
@@ -300,7 +298,7 @@ public class Olympiad
 		
 		if (getNoblePoints(noble.getObjectId()) < 3)
 		{
-			noble.sendMessage(new CustomMessage("lineage2.gameserver.model.entity.Olympiad.LessPoints", noble));
+			noble.sendMessage("Can't register when you have less than 3 points.");
 			return false;
 		}
 		
@@ -377,7 +375,6 @@ public class Olympiad
 					validPlayer.sendPacket(SystemMsg.THE_TOTAL_NUMBER_OF_MATCHES_THAT_CAN_BE_ENTERED_IN_1_WEEK_IS_60_CLASS_IRRELEVANT_INDIVIDUAL_MATCHES_30_SPECIFIC_MATCHES_AND_10_TEAM_MATCHES);
 					return false;
 				}
-				
 				break;
 			
 			case NON_CLASSED:
@@ -392,7 +389,6 @@ public class Olympiad
 					validPlayer.sendPacket(SystemMsg.THE_TOTAL_NUMBER_OF_MATCHES_THAT_CAN_BE_ENTERED_IN_1_WEEK_IS_60_CLASS_IRRELEVANT_INDIVIDUAL_MATCHES_30_SPECIFIC_MATCHES_AND_10_TEAM_MATCHES);
 					return false;
 				}
-				
 				break;
 			
 			default:

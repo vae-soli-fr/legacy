@@ -48,7 +48,6 @@ import lineage2.gameserver.ai.PlayableAI.nextAction;
 import lineage2.gameserver.geodata.GeoEngine;
 import lineage2.gameserver.geodata.GeoMove;
 import lineage2.gameserver.instancemanager.ReflectionManager;
-import lineage2.gameserver.instancemanager.WorldStatisticsManager;
 import lineage2.gameserver.model.GameObjectTasks.AltMagicUseTask;
 import lineage2.gameserver.model.GameObjectTasks.CastEndTimeTask;
 import lineage2.gameserver.model.GameObjectTasks.HitTask;
@@ -71,7 +70,6 @@ import lineage2.gameserver.model.pledge.Clan;
 import lineage2.gameserver.model.quest.QuestEventType;
 import lineage2.gameserver.model.quest.QuestState;
 import lineage2.gameserver.model.reference.L2Reference;
-import lineage2.gameserver.model.worldstatistics.CategoryType;
 import lineage2.gameserver.network.serverpackets.ActionFail;
 import lineage2.gameserver.network.serverpackets.Attack;
 import lineage2.gameserver.network.serverpackets.AutoAttackStart;
@@ -93,7 +91,6 @@ import lineage2.gameserver.network.serverpackets.StopMove;
 import lineage2.gameserver.network.serverpackets.SystemMessage;
 import lineage2.gameserver.network.serverpackets.TeleportToLocation;
 import lineage2.gameserver.network.serverpackets.ValidateLocation;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.network.serverpackets.components.IStaticPacket;
 import lineage2.gameserver.network.serverpackets.components.SystemMsg;
 import lineage2.gameserver.skills.AbnormalEffect;
@@ -2220,7 +2217,6 @@ public abstract class Creature extends GameObject
 			if (killerPlayer != null)
 			{
 				killerPlayer.getListeners().onKillIgnorePetOrSummon(this);
-				WorldStatisticsManager.getInstance().updateStat(killerPlayer, CategoryType.MONSTERS_KILLED, 1L);
 			}
 			
 			killer.getListeners().onKill(this);
@@ -4566,7 +4562,6 @@ public abstract class Creature extends GameObject
 					target.setLoc(flyLoc);
 					broadcastPacket(new FlyToLocation(target, flyLoc, skill.getFlyType(), 0));
 				}
-				
 				break;
 			
 			// CASTER FLYTYPE
@@ -4581,7 +4576,6 @@ public abstract class Creature extends GameObject
 					setLoc(flyLocCharge);
 					broadcastPacket(new FlyToLocation(this, flyLocCharge, skill.getFlyType(), 0));
 				}
-				
 				break;
 			
 			case DUMMY:
@@ -4598,7 +4592,6 @@ public abstract class Creature extends GameObject
 				{
 					sendPacket(SystemMsg.CANNOT_SEE_TARGET);
 				}
-				
 				break;
 			
 			default:
@@ -4789,12 +4782,6 @@ public abstract class Creature extends GameObject
 		}
 		
 		onReduceCurrentHp(damage, attacker, skill, awake, standUp, directHp);
-		
-		if (attacker.isPlayer())
-		{
-			WorldStatisticsManager.getInstance().updateStat(attacker.getPlayer(), CategoryType.DAMAGE_TO_MONSTERS, attacker.getPlayer().getClassId().getId(), (long) damage);
-			WorldStatisticsManager.getInstance().updateStat(attacker.getPlayer(), CategoryType.DAMAGE_TO_MONSTERS_MAX, attacker.getPlayer().getClassId().getId(), (long) damage);
-		}
 	}
 	
 	/**
@@ -6723,14 +6710,6 @@ public abstract class Creature extends GameObject
 	public boolean onTeleported()
 	{
 		return isTeleporting.compareAndSet(true, false);
-	}
-	
-	/**
-	 * Method sendMessage.
-	 * @param message CustomMessage
-	 */
-	public void sendMessage(CustomMessage message)
-	{
 	}
 	
 	/**

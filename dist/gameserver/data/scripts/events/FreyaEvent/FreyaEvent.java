@@ -268,32 +268,11 @@ public final class FreyaEvent extends Functions implements ScriptFile, OnDeathLi
 		}
 	};
 	private static final String _name = "Freya Celebration";
-	private static final String _msgStarted = "scripts.events.FreyaEvent.AnnounceEventStarted";
-	private static final String _msgEnded = "scripts.events.FreyaEvent.AnnounceEventStoped";
+	private static final String _msgStarted = "The event 'Freya Celebration' started.";
+	private static final String _msgEnded = "The event 'Freya Celebration' stopped.";
 	private static final Logger _log = LoggerFactory.getLogger(FreyaEvent.class);
 	private static final List<SimpleSpawner> _spawns = new ArrayList<>();
 	private static boolean _active = false;
-	
-	/**
-	 * Method onLoad.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
-	 */
-	@Override
-	public void onLoad()
-	{
-		CharListenerList.addGlobal(this);
-		
-		if (isActive())
-		{
-			_active = true;
-			spawnEventManagers();
-			_log.info("Loaded Event: " + _name + " [state: activated]");
-		}
-		else
-		{
-			_log.info("Loaded Event: " + _name + " [state: deactivated]");
-		}
-	}
 	
 	/**
 	 * Method isActive.
@@ -318,26 +297,6 @@ public final class FreyaEvent extends Functions implements ScriptFile, OnDeathLi
 	protected void unSpawnEventManagers()
 	{
 		deSpawnNPCs(_spawns);
-	}
-	
-	/**
-	 * Method onReload.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
-	 */
-	@Override
-	public void onReload()
-	{
-		unSpawnEventManagers();
-	}
-	
-	/**
-	 * Method onShutdown.
-	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
-	 */
-	@Override
-	public void onShutdown()
-	{
-		unSpawnEventManagers();
 	}
 	
 	/**
@@ -376,7 +335,7 @@ public final class FreyaEvent extends Functions implements ScriptFile, OnDeathLi
 		{
 			spawnEventManagers();
 			System.out.println("Event '" + _name + "' started.");
-			Announcements.getInstance().announceByCustomMessage(_msgStarted, null);
+			Announcements.getInstance().announceToAll(_msgStarted);
 		}
 		else
 		{
@@ -403,7 +362,7 @@ public final class FreyaEvent extends Functions implements ScriptFile, OnDeathLi
 		{
 			unSpawnEventManagers();
 			System.out.println("Event '" + _name + "' stopped.");
-			Announcements.getInstance().announceByCustomMessage(_msgEnded, null);
+			Announcements.getInstance().announceToAll(_msgEnded);
 		}
 		else
 		{
@@ -424,7 +383,7 @@ public final class FreyaEvent extends Functions implements ScriptFile, OnDeathLi
 	{
 		if (_active)
 		{
-			Announcements.getInstance().announceToPlayerByCustomMessage(player, _msgStarted, null);
+			Announcements.getInstance().announceToAll(_msgStarted);
 		}
 	}
 	
@@ -485,5 +444,46 @@ public final class FreyaEvent extends Functions implements ScriptFile, OnDeathLi
 				player.sendPacket(new SystemMessage(SystemMessage._2_UNITS_OF_THE_ITEM_S1_IS_REQUIRED).addNumber(GIFT_PRICE));
 			}
 		}
+	}
+	
+	/**
+	 * Method onLoad.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onLoad()
+	 */
+	@Override
+	public void onLoad()
+	{
+		CharListenerList.addGlobal(this);
+		
+		if (isActive())
+		{
+			_active = true;
+			spawnEventManagers();
+			_log.info("Loaded Event: " + _name + " [state: activated]");
+		}
+		else
+		{
+			_log.info("Loaded Event: " + _name + " [state: deactivated]");
+		}
+	}
+	
+	/**
+	 * Method onReload.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onReload()
+	 */
+	@Override
+	public void onReload()
+	{
+		unSpawnEventManagers();
+	}
+	
+	/**
+	 * Method onShutdown.
+	 * @see lineage2.gameserver.scripts.ScriptFile#onShutdown()
+	 */
+	@Override
+	public void onShutdown()
+	{
+		unSpawnEventManagers();
 	}
 }

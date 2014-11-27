@@ -49,7 +49,7 @@ public final class Torocco extends Dwarvs
 	{
 		super.onEvtScriptEvent(event, arg1, arg2);
 		
-		if (event.equalsIgnoreCase("TOROCCO_1"))
+		if (event.equals("TOROCCO_1"))
 		{
 			addTimer(1, 1200);
 		}
@@ -83,7 +83,6 @@ public final class Torocco extends Dwarvs
 					final NpcInstance rogin = list.get(0);
 					rogin.getAI().notifyEvent(CtrlEvent.EVT_SCRIPT_EVENT, "ROGIN_1");
 				}
-				
 				break;
 		}
 	}

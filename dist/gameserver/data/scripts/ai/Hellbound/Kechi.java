@@ -94,11 +94,11 @@ public final class Kechi extends DefaultAI
 	};
 	private static final String[] chat = new String[]
 	{
-		"Стража, убейте их!",
-		"Стража!",
-		"Стража, на помощ�?!",
-		"Добейте их.",
-		"Вы в�?е умрете!"
+		"Guards, kill them!",
+		"Guards!",
+		"Guards, help!",
+		"Finish them off.",
+		"You will all die!"
 	};
 	private int stage = 0;
 	
@@ -148,7 +148,6 @@ public final class Kechi extends DefaultAI
 					spawnMobs();
 					return true;
 				}
-				
 				break;
 			
 			case 1:
@@ -157,7 +156,6 @@ public final class Kechi extends DefaultAI
 					spawnMobs();
 					return true;
 				}
-				
 				break;
 			
 			case 2:
@@ -166,7 +164,6 @@ public final class Kechi extends DefaultAI
 					spawnMobs();
 					return true;
 				}
-				
 				break;
 			
 			case 3:
@@ -175,7 +172,6 @@ public final class Kechi extends DefaultAI
 					spawnMobs();
 					return true;
 				}
-				
 				break;
 			
 			case 4:
@@ -184,7 +180,6 @@ public final class Kechi extends DefaultAI
 					spawnMobs();
 					return true;
 				}
-				
 				break;
 			
 			case 5:
@@ -193,7 +188,6 @@ public final class Kechi extends DefaultAI
 					spawnMobs();
 					return true;
 				}
-				
 				break;
 			
 			case 6:
@@ -202,7 +196,6 @@ public final class Kechi extends DefaultAI
 					spawnMobs();
 					return true;
 				}
-				
 				break;
 		}
 		

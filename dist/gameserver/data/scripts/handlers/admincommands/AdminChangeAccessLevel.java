@@ -87,7 +87,6 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler, ScriptFile
 						player.setAccessLevel(lvl);
 					}
 				}
-				
 				break;
 			
 			case "admin_moders":
@@ -108,7 +107,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler, ScriptFile
 					count = Integer.parseInt(wordList[2]);
 				}
 				
-				String reason = "не указана";
+				String reason = "not available";
 				
 				if (wordList.length > 3)
 				{
@@ -146,14 +145,13 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler, ScriptFile
 				{
 					if (Config.BANCHAT_ANNOUNCE_FOR_ALL_WORLD)
 					{
-						Announcements.getInstance().announceToAll(activeChar + " о�?трафовал модератора " + wordList[1] + " на " + count + ", причина: " + reason + ".");
+						Announcements.getInstance().announceToAll(activeChar + " fined moderator " + wordList[1] + " on " + count + ", reasons: " + reason + ".");
 					}
 					else
 					{
-						Announcements.shout(activeChar, activeChar + " о�?трафовал модератора " + wordList[1] + " на " + count + ", причина: " + reason + ".", ChatType.CRITICAL_ANNOUNCE);
+						Announcements.shout(activeChar, activeChar + " fined moderator " + wordList[1] + " on " + count + ", reasons: " + reason + ".", ChatType.CRITICAL_ANNOUNCE);
 					}
 				}
-				
 				break;
 		}
 		
@@ -168,7 +166,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler, ScriptFile
 	{
 		NpcHtmlMessage reply = new NpcHtmlMessage(5);
 		String html = "Moderators managment panel.<br>";
-		File dir = new File(Config.GM_ACCESS_FILES_DIR);
+		File dir = new File(Config.PLAYER_ACCESS_FILES_DIR);
 		
 		if (!dir.exists() || !dir.isDirectory())
 		{

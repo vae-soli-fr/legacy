@@ -14,9 +14,7 @@ package zones;
 
 import lineage2.gameserver.listener.zone.OnZoneEnterLeaveListener;
 import lineage2.gameserver.model.Creature;
-import lineage2.gameserver.model.Player;
 import lineage2.gameserver.model.Zone;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.utils.Location;
 import lineage2.gameserver.utils.ReflectionUtils;
@@ -28,6 +26,48 @@ import lineage2.gameserver.utils.ReflectionUtils;
 public final class EpicZone implements ScriptFile
 {
 	private static ZoneListener _zoneListener;
+	
+	/**
+	 * @author Mobius
+	 */
+	public final class ZoneListener implements OnZoneEnterLeaveListener
+	{
+		/**
+		 * Method onZoneEnter.
+		 * @param zone Zone
+		 * @param cha Creature
+		 * @see lineage2.gameserver.listener.zone.OnZoneEnterLeaveListener#onZoneEnter(Zone, Creature)
+		 */
+		@Override
+		public void onZoneEnter(Zone zone, Creature cha)
+		{
+			if ((zone.getParams() == null) || !cha.isPlayable() || cha.getPlayer().isGM())
+			{
+				return;
+			}
+			
+			if (cha.getLevel() > zone.getParams().getInteger("levelLimit"))
+			{
+				if (cha.isPlayer())
+				{
+					cha.getPlayer().sendMessage("Your level is too high to access this zone. You've been banished out.");
+				}
+				
+				cha.teleToLocation(Location.parseLoc(zone.getParams().getString("tele")));
+			}
+		}
+		
+		/**
+		 * Method onZoneLeave.
+		 * @param zone Zone
+		 * @param cha Creature
+		 * @see lineage2.gameserver.listener.zone.OnZoneEnterLeaveListener#onZoneLeave(Zone, Creature)
+		 */
+		@Override
+		public void onZoneLeave(Zone zone, Creature cha)
+		{
+		}
+	}
 	
 	/**
 	 * Method onLoad.
@@ -57,47 +97,5 @@ public final class EpicZone implements ScriptFile
 	@Override
 	public void onShutdown()
 	{
-	}
-	
-	/**
-	 * @author Mobius
-	 */
-	public final class ZoneListener implements OnZoneEnterLeaveListener
-	{
-		/**
-		 * Method onZoneEnter.
-		 * @param zone Zone
-		 * @param cha Creature
-		 * @see lineage2.gameserver.listener.zone.OnZoneEnterLeaveListener#onZoneEnter(Zone, Creature)
-		 */
-		@Override
-		public void onZoneEnter(Zone zone, Creature cha)
-		{
-			if ((zone.getParams() == null) || !cha.isPlayable() || cha.getPlayer().isGM())
-			{
-				return;
-			}
-			
-			if (cha.getLevel() > zone.getParams().getInteger("levelLimit"))
-			{
-				if (cha.isPlayer())
-				{
-					cha.getPlayer().sendMessage(new CustomMessage("scripts.zones.epic.banishMsg", (Player) cha));
-				}
-				
-				cha.teleToLocation(Location.parseLoc(zone.getParams().getString("tele")));
-			}
-		}
-		
-		/**
-		 * Method onZoneLeave.
-		 * @param zone Zone
-		 * @param cha Creature
-		 * @see lineage2.gameserver.listener.zone.OnZoneEnterLeaveListener#onZoneLeave(Zone, Creature)
-		 */
-		@Override
-		public void onZoneLeave(Zone zone, Creature cha)
-		{
-		}
 	}
 }

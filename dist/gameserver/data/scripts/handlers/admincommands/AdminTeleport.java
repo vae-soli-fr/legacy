@@ -154,7 +154,6 @@ public class AdminTeleport implements IAdminCommandHandler, ScriptFile
 					activeChar.sendMessage("USAGE: //walk x y z");
 					return false;
 				}
-				
 				break;
 			
 			case "admin_gonorth":
@@ -206,11 +205,11 @@ public class AdminTeleport implements IAdminCommandHandler, ScriptFile
 			case "admin_teleto":
 			case "admin_tele_to":
 			case "admin_instant_move":
-				if ((wordList.length > 1) && wordList[1].equalsIgnoreCase("r"))
+				if ((wordList.length > 1) && wordList[1].equals("r"))
 				{
 					activeChar.setTeleMode(2);
 				}
-				else if ((wordList.length > 1) && wordList[1].equalsIgnoreCase("end"))
+				else if ((wordList.length > 1) && wordList[1].equals("end"))
 				{
 					activeChar.setTeleMode(0);
 				}
@@ -218,7 +217,6 @@ public class AdminTeleport implements IAdminCommandHandler, ScriptFile
 				{
 					activeChar.setTeleMode(1);
 				}
-				
 				break;
 			
 			case "admin_tonpc":
@@ -322,7 +320,6 @@ public class AdminTeleport implements IAdminCommandHandler, ScriptFile
 				{
 					activeChar.sendMessage("->" + targetName + "<- is incorrect.");
 				}
-				
 				break;
 			
 			case "admin_setref":

@@ -18,7 +18,6 @@ import lineage2.gameserver.handlers.AdminCommandHandler;
 import lineage2.gameserver.handlers.IAdminCommandHandler;
 import lineage2.gameserver.model.Player;
 import lineage2.gameserver.model.World;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.scripts.ScriptFile;
 
 /**
@@ -110,7 +109,6 @@ public class AdminGeodata implements IAdminCommandHandler, ScriptFile
 				{
 					activeChar.sendMessage("None Target!");
 				}
-				
 				break;
 			
 			case "admin_geo_load":
@@ -137,10 +135,9 @@ public class AdminGeodata implements IAdminCommandHandler, ScriptFile
 					}
 					catch (Exception e)
 					{
-						activeChar.sendMessage(new CustomMessage("common.Error", activeChar));
+						activeChar.sendMessage("Error.");
 					}
 				}
-				
 				break;
 			
 			case "admin_geo_dump":
@@ -161,11 +158,11 @@ public class AdminGeodata implements IAdminCommandHandler, ScriptFile
 					return false;
 				}
 				
-				if (wordList[1].equalsIgnoreCase("on"))
+				if (wordList[1].equals("on"))
 				{
 					activeChar.setVar("trace", "1", -1);
 				}
-				else if (wordList[1].equalsIgnoreCase("off"))
+				else if (wordList[1].equals("off"))
 				{
 					activeChar.unsetVar("trace");
 				}
@@ -173,7 +170,6 @@ public class AdminGeodata implements IAdminCommandHandler, ScriptFile
 				{
 					activeChar.sendMessage("Usage: //geo_trace on|off");
 				}
-				
 				break;
 			
 			case "admin_geo_map":

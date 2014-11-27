@@ -52,15 +52,15 @@ public final class ChangeOfHeart extends Functions implements ScriptFile, OnDeat
 	{
 		{
 			"Rock",
-			"�?амен�?"
+			"Rock"
 		},
 		{
 			"Scissors",
-			"�?ожницы"
+			"Scissors"
 		},
 		{
 			"Paper",
-			"Бумага"
+			"Paper"
 		}
 	};
 	static
@@ -131,7 +131,7 @@ public final class ChangeOfHeart extends Functions implements ScriptFile, OnDeat
 		{
 			spawnEventManagers();
 			System.out.println("Event 'Change of Heart' started.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.ChangeofHeart.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The event 'Change of Heart' started. Please speak with Buzz the Cat.");
 		}
 		else
 		{
@@ -158,7 +158,7 @@ public final class ChangeOfHeart extends Functions implements ScriptFile, OnDeat
 		{
 			unSpawnEventManagers();
 			System.out.println("Event 'Change of Heart' stopped.");
-			Announcements.getInstance().announceByCustomMessage("scripts.events.ChangeofHeart.AnnounceEventStoped", null);
+			Announcements.getInstance().announceToAll("The event 'Change of Heart' stopped.");
 		}
 		else
 		{
@@ -208,7 +208,7 @@ public final class ChangeOfHeart extends Functions implements ScriptFile, OnDeat
 		
 		if (!haveAllHearts(player))
 		{
-			if (var[0].equalsIgnoreCase("Quit"))
+			if (var[0].equals("Quit"))
 			{
 				show("scripts/events/heart/hearts_00b.htm", player);
 			}
@@ -220,7 +220,7 @@ public final class ChangeOfHeart extends Functions implements ScriptFile, OnDeat
 			return;
 		}
 		
-		if (var[0].equalsIgnoreCase("Quit"))
+		if (var[0].equals("Quit"))
 		{
 			final int curr_guesses = getGuesses(player);
 			takeHeartsSet(player);
@@ -467,7 +467,7 @@ public final class ChangeOfHeart extends Functions implements ScriptFile, OnDeat
 	{
 		if (_active)
 		{
-			Announcements.getInstance().announceToPlayerByCustomMessage(player, "scripts.events.ChangeofHeart.AnnounceEventStarted", null);
+			Announcements.getInstance().announceToAll("The event 'Change of Heart' started. Please speak with Buzz the Cat.");
 		}
 	}
 	

@@ -16,7 +16,6 @@ import lineage2.commons.threading.RunnableImpl;
 import lineage2.gameserver.Config;
 import lineage2.gameserver.ThreadPoolManager;
 import lineage2.gameserver.dao.OlympiadNobleDAO;
-import lineage2.gameserver.data.StringHolder;
 import lineage2.gameserver.data.htm.HtmCache;
 import lineage2.gameserver.data.xml.holder.BuyListHolder;
 import lineage2.gameserver.data.xml.holder.MultiSellHolder;
@@ -36,7 +35,6 @@ import lineage2.gameserver.scripts.ScriptFile;
 import lineage2.gameserver.tables.FishTable;
 import lineage2.gameserver.tables.PetDataTable;
 import lineage2.gameserver.tables.SkillTable;
-import lineage2.gameserver.utils.Strings;
 
 /**
  * @author Mobius
@@ -58,11 +56,9 @@ public class AdminReload implements IAdminCommandHandler, ScriptFile
 		"admin_reload_spawn",
 		"admin_reload_fish",
 		"admin_reload_abuse",
-		"admin_reload_translit",
 		"admin_reload_shops",
 		"admin_reload_static",
 		"admin_reload_pets",
-		"admin_reload_locale",
 		"admin_reload_nobles",
 		"admin_reload_im"
 	};
@@ -124,7 +120,7 @@ public class AdminReload implements IAdminCommandHandler, ScriptFile
 			{
 				try
 				{
-					Config.loadGMAccess();
+					Config.loadPlayerAccess();
 					
 					for (Player player : GameObjectsStorage.getAllPlayersForIterate())
 					{
@@ -181,7 +177,6 @@ public class AdminReload implements IAdminCommandHandler, ScriptFile
 						reloadQuestStates(activeChar);
 					}
 				}
-				
 				break;
 			}
 			
@@ -234,12 +229,6 @@ public class AdminReload implements IAdminCommandHandler, ScriptFile
 				break;
 			}
 			
-			case "admin_reload_translit":
-			{
-				Strings.reload();
-				break;
-			}
-			
 			case "admin_reload_shops":
 			{
 				BuyListHolder.reload();
@@ -254,12 +243,6 @@ public class AdminReload implements IAdminCommandHandler, ScriptFile
 			case "admin_reload_pets":
 			{
 				PetDataTable.getInstance().reload();
-				break;
-			}
-			
-			case "admin_reload_locale":
-			{
-				StringHolder.getInstance().reload();
 				break;
 			}
 			

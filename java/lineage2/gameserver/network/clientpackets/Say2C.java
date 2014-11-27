@@ -31,11 +31,9 @@ import lineage2.gameserver.network.serverpackets.ActionFail;
 import lineage2.gameserver.network.serverpackets.Say2;
 import lineage2.gameserver.network.serverpackets.SystemMessage;
 import lineage2.gameserver.network.serverpackets.components.ChatType;
-import lineage2.gameserver.network.serverpackets.components.CustomMessage;
 import lineage2.gameserver.tables.FakePlayersTable;
 import lineage2.gameserver.utils.Log;
 import lineage2.gameserver.utils.MapUtils;
-import lineage2.gameserver.utils.Strings;
 import lineage2.gameserver.utils.Util;
 
 import org.apache.commons.lang3.StringUtils;
@@ -134,7 +132,7 @@ public class Say2C extends L2GameClientPacket
 				}
 			}
 			
-			activeChar.sendMessage(new CustomMessage("common.command404", activeChar));
+			activeChar.sendMessage("Command not found.");
 			return;
 		}
 		
@@ -146,7 +144,7 @@ public class Say2C extends L2GameClientPacket
 			}
 			else if (Config.CHATFILTER_WORK_TYPE == 2)
 			{
-				activeChar.sendMessage(new CustomMessage("chat.NotHavePermission", activeChar).addNumber(Config.CHATFILTER_MIN_LEVEL));
+				activeChar.sendMessage("In order to write messages in this chat channel you should be level " + Config.CHATFILTER_MIN_LEVEL + ".");
 				return;
 			}
 		}
@@ -160,11 +158,11 @@ public class Say2C extends L2GameClientPacket
 				if (activeChar.getNoChannel() > 0)
 				{
 					int timeRemained = Math.round(activeChar.getNoChannelRemained() / 60000);
-					activeChar.sendMessage(new CustomMessage("common.ChatBanned", activeChar).addNumber(timeRemained));
+					activeChar.sendMessage("You are banned in all chats, time remained " + timeRemained + " min.");
 				}
 				else
 				{
-					activeChar.sendMessage(new CustomMessage("common.ChatBannedPermanently", activeChar));
+					activeChar.sendMessage("You are banned in all chats permanently.");
 				}
 				
 				activeChar.sendActionFailed();
@@ -186,7 +184,7 @@ public class Say2C extends L2GameClientPacket
 			}
 			else if (Config.ABUSEWORD_BANCHAT && Config.containsAbuseWord(_text))
 			{
-				activeChar.sendMessage(new CustomMessage("common.ChatBanned", activeChar).addNumber(Config.ABUSEWORD_BANTIME * 60));
+				activeChar.sendMessage("You are banned in all chats, time remained " + (Config.ABUSEWORD_BANTIME * 60) + " min.");
 				Log.add(activeChar + ": " + _text, "abuse");
 				activeChar.updateNoChannel(Config.ABUSEWORD_BANTIME * 60000);
 				activeChar.sendActionFailed();
@@ -210,23 +208,6 @@ public class Say2C extends L2GameClientPacket
 			}
 			
 			ItemInfoCache.getInstance().put(item);
-		}
-		
-		String translit = activeChar.getVar("translit");
-		
-		if (translit != null)
-		{
-			m = SKIP_ITEM_LINK_PATTERN.matcher(_text);
-			StringBuilder sb = new StringBuilder();
-			int end = 0;
-			
-			while (m.find())
-			{
-				sb.append(Strings.fromTranslit(_text.substring(end, end = m.start()), translit.equals("tl") ? 1 : 2));
-				sb.append(_text.substring(end, end = m.end()));
-			}
-			
-			_text = sb.append(Strings.fromTranslit(_text.substring(end, _text.length()), translit.equals("tl") ? 1 : 2)).toString();
 		}
 		
 		Log.LogChat(_type.name(), activeChar.getName(), _target, _text);
@@ -273,7 +254,6 @@ public class Say2C extends L2GameClientPacket
 				{
 					activeChar.sendPacket(new SystemMessage(SystemMessage.YOU_HAVE_BEEN_BLOCKED_FROM_THE_CONTACT_YOU_SELECTED), ActionFail.STATIC);
 				}
-				
 				break;
 			
 			case SHOUT:
@@ -415,7 +395,6 @@ public class Say2C extends L2GameClientPacket
 				{
 					activeChar.getClan().broadcastToOnlineMembers(cs);
 				}
-				
 				break;
 			
 			case ALLIANCE:
@@ -423,7 +402,6 @@ public class Say2C extends L2GameClientPacket
 				{
 					activeChar.getClan().getAlliance().broadcastToOnlineMembers(cs);
 				}
-				
 				break;
 			
 			case PARTY:
@@ -431,7 +409,6 @@ public class Say2C extends L2GameClientPacket
 				{
 					activeChar.getParty().broadCast(cs);
 				}
-				
 				break;
 			
 			case PARTY_ROOM:
@@ -441,7 +418,6 @@ public class Say2C extends L2GameClientPacket
 				{
 					r.broadCast(cs);
 				}
-				
 				break;
 			
 			case COMMANDCHANNEL_ALL:
@@ -459,7 +435,6 @@ public class Say2C extends L2GameClientPacket
 				{
 					activeChar.sendPacket(new SystemMessage(SystemMessage.ONLY_CHANNEL_OPENER_CAN_GIVE_ALL_COMMAND));
 				}
-				
 				break;
 			
 			case COMMANDCHANNEL_COMMANDER:
@@ -477,7 +452,6 @@ public class Say2C extends L2GameClientPacket
 				{
 					activeChar.sendPacket(new SystemMessage(SystemMessage.ONLY_A_PARTY_LEADER_CAN_ACCESS_THE_COMMAND_CHANNEL));
 				}
-				
 				break;
 			
 			case HERO_VOICE:
@@ -512,7 +486,6 @@ public class Say2C extends L2GameClientPacket
 						}
 					}
 				/*}*/
-				
 				break;
 			
 			case PETITION_PLAYER:
@@ -539,7 +512,6 @@ public class Say2C extends L2GameClientPacket
 						player.sendPacket(cs);
 					}
 				}
-				
 				break;
 			
 			case MPCC_ROOM:
@@ -549,7 +521,6 @@ public class Say2C extends L2GameClientPacket
 				{
 					r2.broadCast(cs);
 				}
-				
 				break;
 			
 			default:
