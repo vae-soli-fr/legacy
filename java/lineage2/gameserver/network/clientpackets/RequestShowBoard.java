@@ -16,8 +16,7 @@ import lineage2.gameserver.Config;
 import lineage2.gameserver.handlers.CommunityBoardManager;
 import lineage2.gameserver.handlers.ICommunityBoardHandler;
 import lineage2.gameserver.model.Player;
-import lineage2.gameserver.network.serverpackets.SystemMessage2;
-import lineage2.gameserver.network.serverpackets.components.SystemMsg;
+import lineage2.gameserver.vaesoli.CommunityManager;
 
 /**
  * @author Mobius
@@ -61,7 +60,8 @@ public class RequestShowBoard extends L2GameClientPacket
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage2(SystemMsg.THE_COMMUNITY_SERVER_IS_CURRENTLY_OFFLINE));
+			//activeChar.sendPacket(new SystemMessage2(SystemMsg.THE_COMMUNITY_SERVER_IS_CURRENTLY_OFFLINE));
+			CommunityManager.getInstance().showOldCommunity(activeChar);
 		}
 	}
 }
