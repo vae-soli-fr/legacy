@@ -105,7 +105,7 @@
 		<mkdir dir="${build.dist.gameserver}" />
 		<mkdir dir="${build.dist.gameserver}/geodata" />
 		<mkdir dir="${build.dist.gameserver}/log" />
-		<copy todir="${build.dist}/libs">
+		<copy todir="${build.dist.gameserver}/libs">
 			<fileset dir="${build}">
 				<include name="lineage2-gameserver.jar" />
 			</fileset>
@@ -154,15 +154,14 @@
 	<target name="loginserver" depends="loginserver-jar">
 		<mkdir dir="${build.dist}" />
 		<mkdir dir="${build.dist.loginserver}" />
-		<mkdir dir="${build.dist}/libs" />
 		<mkdir dir="${build.dist.loginserver}/log" />
-		<copy todir="${build.dist}/libs">
+		<copy todir="${build.dist.gameserver}/libs">
 			<fileset dir="${build}">
 				<include name="lineage2-loginserver.jar" />
 				<include name="lineage2-commons.jar" />
 			</fileset>
 		</copy>
-		<copy todir="${build.dist}/libs">
+		<copy todir="${build.dist.gameserver}/libs">
 			<fileset dir="${libraries}">
 				<include name="*.jar" />
 				<exclude name="lineage2-gameserver.jar" />
