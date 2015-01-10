@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 public class Config
 {
 	private final static Logger _log = LoggerFactory.getLogger(Config.class);
-	private static final String LOGIN_CONFIGURATION_FILE = "config/loginserver.ini";
+	private static final String LOGIN_CONFIG_FILE = "config/LoginServer.ini";
 	private static final String SERVER_NAMES_FILE = "config/xml/servername.xml";
 	public static String LOGIN_HOST;
 	public static int PORT_LOGIN;
@@ -119,7 +119,7 @@ public class Config
 			_keyPairs[i] = new ScrambledKeyPair(keygen.generateKeyPair());
 		}
 		
-		_log.info("Cached " + _keyPairs.length + " KeyPairs for RSA communication");
+		_log.info("Cached " + _keyPairs.length + " KeyPairs for RSA communication.");
 		_blowfishKeys = new byte[Config.LOGIN_BLOWFISH_KEYS][16];
 		
 		for (int i = 0; i < _blowfishKeys.length; i++)
@@ -130,7 +130,7 @@ public class Config
 			}
 		}
 		
-		_log.info("Stored " + _blowfishKeys.length + " keys for Blowfish communication");
+		_log.info("Stored " + _blowfishKeys.length + " keys for Blowfish communication.");
 	}
 	
 	/**
@@ -158,7 +158,7 @@ public class Config
 				}
 			}
 			
-			_log.info("Loaded " + SERVER_NAMES.size() + " server names");
+			_log.info("Loaded " + SERVER_NAMES.size() + " server names.");
 		}
 		catch (Exception e)
 		{
@@ -171,7 +171,7 @@ public class Config
 	 */
 	private static void loadConfiguration()
 	{
-		ExProperties serverSettings = load(LOGIN_CONFIGURATION_FILE);
+		ExProperties serverSettings = load(LOGIN_CONFIG_FILE);
 		LOGIN_HOST = serverSettings.getProperty("LoginserverHostname", "127.0.0.1");
 		PORT_LOGIN = serverSettings.getProperty("LoginserverPort", 2106);
 		GAME_SERVER_LOGIN_HOST = serverSettings.getProperty("LoginHost", "127.0.0.1");

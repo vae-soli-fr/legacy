@@ -73,6 +73,8 @@ import lineage2.gameserver.data.xml.holder.EventHolder;
 import lineage2.gameserver.data.xml.holder.HennaHolder;
 import lineage2.gameserver.data.xml.holder.InstantZoneHolder;
 import lineage2.gameserver.data.xml.holder.ItemHolder;
+import lineage2.gameserver.data.xml.holder.LevelUpRewardHolder;
+import lineage2.gameserver.data.xml.holder.LevelUpRewardHolder.ItemLevel;
 import lineage2.gameserver.data.xml.holder.MultiSellHolder.MultiSellListContainer;
 import lineage2.gameserver.data.xml.holder.NpcHolder;
 import lineage2.gameserver.data.xml.holder.PlayerTemplateHolder;
@@ -140,7 +142,6 @@ import lineage2.gameserver.model.entity.Reflection;
 import lineage2.gameserver.model.entity.boat.Boat;
 import lineage2.gameserver.model.entity.boat.ClanAirShip;
 import lineage2.gameserver.model.entity.events.GlobalEvent;
-import lineage2.gameserver.model.entity.events.impl.DominionSiegeEvent;
 import lineage2.gameserver.model.entity.events.impl.DuelEvent;
 import lineage2.gameserver.model.entity.events.impl.SiegeEvent;
 import lineage2.gameserver.model.entity.olympiad.CompType;
@@ -200,7 +201,6 @@ import lineage2.gameserver.network.serverpackets.ExAutoSoulShot;
 import lineage2.gameserver.network.serverpackets.ExBR_AgathionEnergyInfo;
 import lineage2.gameserver.network.serverpackets.ExBR_ExtraUserInfo;
 import lineage2.gameserver.network.serverpackets.ExBasicActionList;
-import lineage2.gameserver.network.serverpackets.ExDominionWarStart;
 import lineage2.gameserver.network.serverpackets.ExMagicAttackInfo;
 import lineage2.gameserver.network.serverpackets.ExNewSkillToLearnByLevelUp;
 import lineage2.gameserver.network.serverpackets.ExNotifyPremiumItem;
@@ -210,6 +210,8 @@ import lineage2.gameserver.network.serverpackets.ExOlympiadSpelledInfo;
 import lineage2.gameserver.network.serverpackets.ExPCCafePointInfo;
 import lineage2.gameserver.network.serverpackets.ExQuestItemList;
 import lineage2.gameserver.network.serverpackets.ExSetCompassZoneCode;
+import lineage2.gameserver.network.serverpackets.ExShowScreenMessage;
+import lineage2.gameserver.network.serverpackets.ExShowScreenMessage.ScreenMessageAlign;
 import lineage2.gameserver.network.serverpackets.ExStartScenePlayer;
 import lineage2.gameserver.network.serverpackets.ExStorageMaxCount;
 import lineage2.gameserver.network.serverpackets.ExSubjobInfo;
@@ -3949,15 +3951,10 @@ public final class Player extends Playable implements PlayerGroup
 		
 		L2GameServerPacket ci = isPolymorphed() ? new NpcInfoPoly(this) : new CharInfo(this);
 		L2GameServerPacket exCi = new ExBR_ExtraUserInfo(this);
-		L2GameServerPacket dominion = getEvent(DominionSiegeEvent.class) != null ? new ExDominionWarStart(this) : null;
 		for (Player player : World.getAroundPlayers(this))
 		{
 			player.sendPacket(ci, exCi);
 			player.sendPacket(RelationChanged.update(player, this, player));
-			if (dominion != null)
-			{
-				player.sendPacket(dominion);
-			}
 		}
 		return;
 	}
@@ -4033,11 +4030,7 @@ public final class Player extends Playable implements PlayerGroup
 		}
 		
 		sendPacket(new UserInfo(this), new ExBR_ExtraUserInfo(this));
-		DominionSiegeEvent siegeEvent = getEvent(DominionSiegeEvent.class);
-		if (siegeEvent != null)
-		{
-			sendPacket(new ExDominionWarStart(this));
-		}
+		
 		return;
 	}
 	
@@ -5289,11 +5282,7 @@ public final class Player extends Playable implements PlayerGroup
 		}
 		
 		list.add(RelationChanged.update(forPlayer, this, forPlayer));
-		DominionSiegeEvent dominionSiegeEvent = getEvent(DominionSiegeEvent.class);
-		if (dominionSiegeEvent != null)
-		{
-			list.add(new ExDominionWarStart(this));
-		}
+		
 		if (isInBoat())
 		{
 			list.add(getBoat().getOnPacket(this, getInBoatPosition()));
@@ -5431,6 +5420,21 @@ public final class Player extends Playable implements PlayerGroup
 					MentorUtil.removeConditions(this);
 					MentorUtil.removeSkills(this);
 					MentorUtil.graduateMenteeMail(this);
+				}
+			}
+		}
+		
+		if ((LevelUpRewardHolder.getInstance().getItemLevel(getLevel()) != null))
+		{
+			final String var = getVar("LevelUpReward" + getLevel());
+			
+			for (ItemLevel entry : LevelUpRewardHolder.getInstance().getItemLevel(getLevel()))
+			{
+				if (var == null)
+				{
+					ItemFunctions.addItem(this, entry.id, entry.count, true);
+					sendPacket(new ExShowScreenMessage("Congratulations you have reached " + getLevel() + " level and earned a special gift.", 6000, ScreenMessageAlign.TOP_CENTER, true, 1, -1, true));
+					setVar("LevelUpReward" + getLevel(), "Rewarded", -1);
 				}
 			}
 		}
