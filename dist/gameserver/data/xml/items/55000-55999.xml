@@ -321,7 +321,7 @@
 		</skills>-->
 		<set name="capsuled" value="true"/>
 	</etcitem>
-	<etcitem id="55317" type="Armor" name="Undecaying Corpse Mask (Event) - Blessing of Skooldy : Protection of Darkness - illimited"><!-- 20746 pas trouvé j'ai mis n'importe quoi -->
+	<etcitem id="55317" name="Undecaying Corpse Mask (Event) - Blessing of Skooldy : Protection of Darkness - illimited"><!-- 20746 pas trouvé j'ai mis n'importe quoi -->
 		<set name="class" value="OTHER"/>
 		<set name="ex_type" value="OTHER_ITEMS"/>
 		<set name="crystal_type" value="NONE"/>
